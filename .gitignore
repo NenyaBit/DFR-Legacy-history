@@ -1,0 +1,5 @@
+.vscode/
+*.pex
+*.esp
+meta.ini
+*.code-workspace
