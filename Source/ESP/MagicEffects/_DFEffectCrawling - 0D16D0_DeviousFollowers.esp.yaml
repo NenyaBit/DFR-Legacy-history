@@ -1,0 +1,40 @@
+FormKey: 0D16D0:DeviousFollowers.esp
+EditorID: _DFEffectCrawling
+VirtualMachineAdapter:
+  Scripts:
+  - Name: _DFCrawlingEffect
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zbc
+      Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tick
+      Object: 010617:DeviousFollowers.esp
+Name:
+  TargetLanguage: English
+  Value: _DFCrawling
+MenuDisplayObject: 0435A5:Skyrim.esm
+Flags:
+- NoDuration
+- NoMagnitude
+- NoArea
+- NoRecast
+- Painless
+Archetype:
+  MutagenObjectType: MagicEffectArchetype
+  Type: Script
+DualCastScale: 1
+CastingSoundLevel: Normal
+Sounds: []
+Description:
+  TargetLanguage: English
+  Value: ''
+Conditions:
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: WornHasKeywordConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Keyword: 05226C:Devious Devices - Integration.esm
+  ComparisonValue: 1

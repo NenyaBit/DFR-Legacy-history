@@ -1,0 +1,18 @@
+FormKey: 0E047E:DeviousFollowers.esp
+EditorID: _DFlowDebtMLR
+Description:
+  TargetLanguage: English
+  Value: >-
+    You owe me %.0f gold.
+
+    I'm getting a bit tired, but I'm able to go on.
+
+    It looks like a good night's sleep would help you.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

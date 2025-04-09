@@ -1,0 +1,28 @@
+FormKey: 10D539:DeviousFollowers.esp
+EditorID: _DFWhoreLightArmour
+Name:
+  TargetLanguage: English
+  Value: Light Whore Armor
+WorldModel:
+  Female:
+    Model:
+      File: armor\shitty\Blade\9no1_gnd.nif
+      Data: 0x020000000000000000000000
+BodyTemplate:
+  FirstPersonFlags:
+  - Body
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 0009C0:Update.esm
+- 06C0EC:Skyrim.esm
+- 06BBD3:Skyrim.esm
+- 10FCDA:DeviousFollowers.esp
+Description:
+  TargetLanguage: English
+  Value: Armor given to you by your follower to display you as the whore you are.
+Armature:
+- 10D53E:DeviousFollowers.esp
+Value: 20
+Weight: 2
+ArmorRating: 26

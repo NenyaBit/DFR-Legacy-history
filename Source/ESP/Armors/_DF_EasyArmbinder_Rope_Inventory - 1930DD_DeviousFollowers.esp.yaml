@@ -1,0 +1,183 @@
+FormKey: 1930DD:DeviousFollowers.esp
+EditorID: _DF_EasyArmbinder_Rope_Inventory
+VirtualMachineAdapter:
+  Scripts:
+  - Name: zadequipscript
+    Properties:
+    - MutagenObjectType: ScriptBoolProperty
+      Name: AllowLockPick
+    - MutagenObjectType: ScriptObjectProperty
+      Name: deviceRendered
+      Object: 1930DE:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeLockPickSuccessMSG
+      Object: 063003:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: CutDeviceEscapeChance
+      Data: 60
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_UnlockFailJammedMSG
+      Object: 063007:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_RepairLockNotJammedMSG
+      Object: 063008:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptStringProperty
+      Name: deviceName
+      Data: Armbinder
+    - MutagenObjectType: ScriptObjectProperty
+      Name: deviceInventory
+      Object: 1930DD:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeStruggleMSG
+      Object: 062FFE:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptBoolProperty
+      Name: DestroyOnRemove
+      Data: True
+    - MutagenObjectType: ScriptBoolProperty
+      Name: DisableLockManipulation
+      Data: True
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviceMsgMagic
+      Object: 00B573:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeDeviceMSG
+      Object: 063013:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnLeaveItNotWornMSG
+      Object: 06300F:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_RepairLockFailureMSG
+      Object: 06300B:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_RepairLockMSG
+      Object: 063009:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: EscapeCooldown
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeCutFailureMSG
+      Object: 063005:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeLockPickMSG
+      Object: 063001:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnNoKeyMSG
+      Object: 06300D:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_KeyBreakMSG
+      Object: 063011:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: deviceQuest
+      Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnPutOnDevice
+      Object: 07AA14:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviceRemoveMsg
+      Object: 00C039:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Lockpick
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviousDevice
+      Object: 05226C:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_RepairLockSuccessMSG
+      Object: 06300A:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: BaseEscapeChance
+      Data: 100
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnEquipDeviceMSG
+      Object: 06300C:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: CatastrophicFailureChance
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeCutMSG
+      Object: 063004:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptStringListProperty
+      Name: struggleIdles
+      Data:
+      - DDRegElbStruggle01
+      - DDRegElbStruggle02
+      - DDRegElbStruggle03
+      - DDRegElbStruggle04
+      - DDRegElbStruggle05
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnLeaveItWornMSG
+      Object: 063010:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnNotEnoughKeysMSG
+      Object: 06300E:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: deviceKey
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeStruggleSuccessMSG
+      Object: 063000:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_EquipRequiredFailMsg
+      Object: 08362F:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeLockPickFailureMSG
+      Object: 063002:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptStringListProperty
+      Name: struggleIdlesHob
+      Data:
+      - DDHobElbStruggle01
+      - DDHobElbStruggle02
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeStruggleFailureMSG
+      Object: 062FFF:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeCutSuccessMSG
+      Object: 063006:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: UnlockCooldown
+      Data: 2
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviceEscapeMsg
+      Object: 05A3E0:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: LockAccessDifficulty
+      Data: 60
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_KeyBreakJamMSG
+      Object: 063012:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_EquipConflictFailMsg
+      Object: 08362E:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviceMsg
+      Object: 0491AA:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: libs
+      Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_UnEquipFailMsg
+      Object: 083630:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Aroused
+      Object: 04290F:SexLabAroused.esm
+Name:
+  TargetLanguage: English
+  Value: Easy Rope Armbinder
+WorldModel:
+  Male:
+    Model:
+      File: devious\FeuerTin\FT_RopeCoils_go.nif
+      Data: 0x020000000000000000000000
+  Female:
+    Model:
+      File: devious\FeuerTin\FT_RopeCoils_go.nif
+      Data: 0x020000000000000000000000
+BodyTemplate:
+  ArmorType: Clothing
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 0C27BD:Skyrim.esm
+- 0FF9FB:Skyrim.esm
+- 02B5F0:Devious Devices - Integration.esm
+Description:
+  TargetLanguage: English
+  Value: A rope armbinder it feels loose enough to easily struggle out of.
+Value: 170
+Weight: 1

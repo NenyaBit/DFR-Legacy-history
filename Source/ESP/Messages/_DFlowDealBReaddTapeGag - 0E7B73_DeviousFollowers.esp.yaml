@@ -1,0 +1,22 @@
+FormKey: 0E7B73:DeviousFollowers.esp
+EditorID: _DFlowDealBReaddTapeGag
+Description:
+  TargetLanguage: English
+  Value: >-
+    Afterwards <Alias.ShortName=_DMaster> gathers up your mingled juices with <Alias.PronounPosObj> hands.
+
+    <Alias.PronounCap=_DMaster> holds your mouth open and pours them in, then repeats this until your mouth is full before taping your mouth back up.
+
+    <Alias.ShortName=_DMaster> laughs and says "Enjoy!"
+
+    You stare back as you are forced to swallow it all down.
+
+    It leaves a taste of sex and sweat, that you wish you could wash away.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

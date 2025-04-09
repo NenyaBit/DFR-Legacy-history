@@ -1,0 +1,39 @@
+FormKey: 2E040F:DeviousFollowers.esp
+EditorID: _DFlowFindFollower
+Flags:
+- StartGameEnabled
+- 0x10
+- RunOnce
+NextAliasID: 1
+Aliases:
+- Name: FoundFollower00
+  Flags:
+  - Optional
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0BCC9A:Skyrim.esm
+    ComparisonValue: 1
+  VoiceTypes: Null

@@ -1,0 +1,21 @@
+FormKey: 009F7B:DeviousFollowers.esp
+EditorID: _Dflow_DD_OnPutOnDevice
+Description:
+  TargetLanguage: English
+  Value: As your follower's slave, you put the device on, bitterly hating the loss of your freedom. *sob*
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Lock it on!
+- Text:
+    TargetLanguage: English
+    Value: Manipulate the locks
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetLevelConditionData
+      RunOnType: Reference
+      Reference: 000014:Skyrim.esm

@@ -1,0 +1,20 @@
+FormKey: 095FE7:DeviousFollowers.esp
+EditorID: _DFlowDealPReplace
+Description:
+  TargetLanguage: English
+  Value: >-
+    <Alias.ShortName=_DMaster> slides <Alias.PronounPosObj=_DMaster> hands beneath your armour, groping your breasts.
+
+    Pulling on your piercings, <Alias.Pronoun=_DMaster> <Alias.Pronoun=_DMaster>deftly slips them out!
+
+    Your hopes rise, then there's a soft click, and <Alias.ShortName=_DMaster> kisses your cheek.
+
+    "Those were boring. These will be much more fun!" <Alias.Pronoun=_DMaster> says.
+INAM: 0x00000000
+Quest: 06BE67:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

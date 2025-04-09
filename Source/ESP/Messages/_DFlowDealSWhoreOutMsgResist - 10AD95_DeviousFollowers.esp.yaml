@@ -1,0 +1,18 @@
+FormKey: 10AD95:DeviousFollowers.esp
+EditorID: _DFlowDealSWhoreOutMsgResist
+Description:
+  TargetLanguage: English
+  Value: >-
+    The client walks away.
+
+    <Alias.ShortName=_DMaster> grabs your hands and says "Look! You made this deal. I'll add some debt every time you resist"  *click*.
+
+    As <Alias.ShortName=_DMaster> turns away you glance down and see they've locked some handcuffs on you.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

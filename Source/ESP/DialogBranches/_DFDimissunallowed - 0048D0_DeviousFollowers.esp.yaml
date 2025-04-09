@@ -1,0 +1,7 @@
+FormKey: 0048D0:DeviousFollowers.esp
+EditorID: _DFDimissunallowed
+Quest: 000D62:DeviousFollowers.esp
+Category: Player
+Flags:
+- TopLevel
+StartingTopic: 0048D1:DeviousFollowers.esp

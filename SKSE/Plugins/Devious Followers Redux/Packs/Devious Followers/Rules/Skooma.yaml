@@ -1,0 +1,6 @@
+formId: 0x39181D
+hint: You must consume skooma daily.
+type: consume
+level: 1
+requirements: 
+   - SexLabSkoomaWhore.esp

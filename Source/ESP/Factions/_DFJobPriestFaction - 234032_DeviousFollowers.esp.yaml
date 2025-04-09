@@ -1,0 +1,9 @@
+FormKey: 234032:DeviousFollowers.esp
+EditorID: _DFJobPriestFaction
+Name:
+  TargetLanguage: English
+  Value: DF Donatable Priests
+CrimeValues:
+  Arrest: True
+  AttackOnSight: True
+VendorValues: {}

@@ -1,0 +1,54 @@
+FormKey: 1930DE:DeviousFollowers.esp
+EditorID: _DF_EasyArmbinder_Rope_Rendered
+ObjectEffect: 068BDB:Devious Devices - Integration.esm
+WorldModel:
+  Male:
+    Model:
+      File: Devious\Devices\armbinder01_go.nif
+      Data: 0x020000000000000000000000
+      AlternateTextures:
+      - Name: Armbinder002_geo:3
+        NewTexture: 00F00B:Devious Devices - Expansion.esm
+        Index: 1
+      - Name: Armbinder002_geo:4
+        NewTexture: 00F00A:Devious Devices - Expansion.esm
+      - Name: Armbinder002_geo:2
+        NewTexture: 00F00B:Devious Devices - Expansion.esm
+        Index: 2
+      - Name: Armbinder002_geo:1
+        NewTexture: 00F00A:Devious Devices - Expansion.esm
+        Index: 3
+  Female:
+    Model:
+      File: Devious\Devices\armbinder01_go.nif
+      Data: 0x020000000000000000000000
+      AlternateTextures:
+      - Name: Armbinder002_geo:4
+        NewTexture: 00F00A:Devious Devices - Expansion.esm
+      - Name: Armbinder002_geo:3
+        NewTexture: 00F00B:Devious Devices - Expansion.esm
+        Index: 1
+      - Name: Armbinder002_geo:2
+        NewTexture: 00F00B:Devious Devices - Expansion.esm
+        Index: 2
+      - Name: Armbinder002_geo:1
+        NewTexture: 00F00A:Devious Devices - Expansion.esm
+        Index: 3
+BodyTemplate:
+  FirstPersonFlags:
+  - 0x10000
+  ArmorType: Clothing
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 0C27BD:Skyrim.esm
+- 0FF9FB:Skyrim.esm
+- 02F16E:SexLab.esm
+- 062539:Devious Devices - Integration.esm
+- 003894:Devious Devices - Assets.esm
+- 05226C:Devious Devices - Integration.esm
+Description:
+  TargetLanguage: English
+  Value: Item reference reserved for scripts interaction. This should not appear in your inventory. Check your Devious Devices mod configuration.
+Armature:
+- 0486E2:Devious Devices - Expansion.esm

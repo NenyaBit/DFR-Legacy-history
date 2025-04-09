@@ -1,0 +1,115 @@
+FormKey: 31D0B2:DeviousFollowers.esp
+EditorID: _DFSlaveryWatcher
+VirtualMachineAdapter:
+  Scripts:
+  - Name: _DFSlaveryWatching
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: q
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tick
+      Object: 010617:DeviousFollowers.esp
+  - Name: _Dx_QF__DFSlaveryWatcher_0931D0B2
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlow
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_PlayerSlave
+      Object: 31D0B2:DeviousFollowers.esp
+      Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tick
+      Object: 010617:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowEnable
+      Object: 00C54B:DeviousFollowers.esp
+  FileName: _Dx_QF__DFSlaveryWatcher_0931D0B2
+  Fragments:
+  - Stage: 50
+    Unknown2: 1
+    ScriptName: _Dx_QF__DFSlaveryWatcher_0931D0B2
+    FragmentName: Fragment_1
+  - Stage: 10
+    Unknown2: 1
+    ScriptName: _Dx_QF__DFSlaveryWatcher_0931D0B2
+    FragmentName: Fragment_0
+  - Stage: 80
+    Unknown2: 1
+    ScriptName: _Dx_QF__DFSlaveryWatcher_0931D0B2
+    FragmentName: Fragment_4
+  - Stage: 90
+    Unknown2: 1
+    ScriptName: _Dx_QF__DFSlaveryWatcher_0931D0B2
+    FragmentName: Fragment_6
+  - Stage: 100
+    Unknown2: 1
+    ScriptName: _Dx_QF__DFSlaveryWatcher_0931D0B2
+    FragmentName: Fragment_7
+  Aliases:
+  - Property:
+      Name: ''
+      Object: 31D0B2:DeviousFollowers.esp
+      Alias: 0
+    Scripts:
+    - Name: _DFSlaveryWatching
+Name:
+  TargetLanguage: English
+  Value: I let my follower enslave me!
+Flags:
+- AllowRepeatedStages
+Type: MainQuest
+Stages:
+- Index: 10
+  Flags:
+  - StartUpStage
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Start external slavery.
+- Index: 50
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Initial discussions possible... Waiting for external slavery to end.  Complete your enslavement and return to your Devious Follower.
+- Index: 60
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Initial discussions over... Waiting for external slavery to end.  Complete your enslavement and return to your Devious Follower.
+- Index: 80
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Unpause and return PC to DFC handling.
+- Index: 90
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Stop event listeners.
+- Index: 100
+  Flags:
+  - ShutDownStage
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Terminate slavery watcher.
+Objectives:
+- Index: 10
+  Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: Satisfy your owner to earn your release
+NextAliasID: 1
+Aliases:
+- Name: PlayerSlave
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null

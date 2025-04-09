@@ -1,0 +1,103 @@
+FormKey: 0F19F9:DeviousFollowers.esp
+EditorID: _DFlowDealSWhoreOut
+Flags:
+- 0x4
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: Complete
+  CompletionConditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsSceneActionCompleteConditionData
+      Scene: 0F19F9:DeviousFollowers.esp
+      SceneActionIndex: 3
+    ComparisonValue: 1
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- ID: 1
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+- ID: 3
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+- Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Name: ''
+  ActorID: 1
+  Index: 1
+  StartPhase: 0
+  EndPhase: 0
+  Topic: 0F19FA:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: ''
+  ActorID: 3
+  Index: 2
+  StartPhase: 1
+  EndPhase: 1
+  Topic: 0F1A02:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: ''
+  ActorID: 1
+  Index: 3
+  StartPhase: 2
+  EndPhase: 2
+  Topic: 0F1A08:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Package
+  Name: ''
+  ActorID: 1
+  Index: 5
+  StartPhase: 0
+  EndPhase: 2
+  Packages:
+  - 0F92AC:DeviousFollowers.esp
+- Type: Package
+  Name: ''
+  ActorID: 3
+  Index: 7
+  StartPhase: 0
+  EndPhase: 2
+  Packages:
+  - 0F41AA:DeviousFollowers.esp
+- Type: Package
+  Name: ''
+  ActorID: 0
+  Index: 8
+  StartPhase: 0
+  EndPhase: 2
+  Packages:
+  - 0F41AA:DeviousFollowers.esp
+Quest: 0E53C8:DeviousFollowers.esp
+LastActionIndex: 8
+VNAM: 0x03000000030000000300000003000000

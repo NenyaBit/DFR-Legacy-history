@@ -1,0 +1,28 @@
+FormKey: 152AC4:DeviousFollowers.esp
+EditorID: _DflowDealOWindEnd
+Flags: []
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Name: ''
+  ActorID: 0
+  Index: 1
+  StartPhase: 0
+  EndPhase: 0
+  Topic: 152AC5:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+Quest: 01C868:DeviousFollowers.esp
+LastActionIndex: 1
+VNAM: 0x03000000030000000300000003000000

@@ -1,0 +1,27 @@
+FormKey: 0AC460:DeviousFollowers.esp
+EditorID: _DFKeyGameCKeysS
+Description:
+  TargetLanguage: English
+  Value: >-
+    Key Casino - Keys Concealed:
+
+    ??? = Restraint Keys
+
+    ??? = Chastity Keys
+
+    ??? = Piercing Tools
+
+    For "%.0f" and I get to have sex with you.
+Name:
+  TargetLanguage: English
+  Value: Key Casino - Keys Concealed
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Reroll
+- Text:
+    TargetLanguage: English
+    Value: Accept

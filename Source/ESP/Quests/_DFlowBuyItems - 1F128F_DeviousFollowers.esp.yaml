@@ -1,0 +1,9 @@
+FormKey: 1F128F:DeviousFollowers.esp
+EditorID: _DFlowBuyItems
+Flags:
+- StartGameEnabled
+- 0x10
+- RunOnce
+Stages:
+- {}
+NextAliasID: 0

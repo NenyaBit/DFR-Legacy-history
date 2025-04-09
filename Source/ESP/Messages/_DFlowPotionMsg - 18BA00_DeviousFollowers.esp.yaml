@@ -1,0 +1,20 @@
+FormKey: 18BA00:DeviousFollowers.esp
+EditorID: _DFlowPotionMsg
+Description:
+  TargetLanguage: English
+  Value: >-
+    You suddenly feel weak...
+
+    Your skin burns like fire, forcing you to tear off any clothing that you can.
+
+    With the initial rush of pain over, your body feels tender, and your muscles weak.
+
+    Anything you wear is painful and encumbering.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

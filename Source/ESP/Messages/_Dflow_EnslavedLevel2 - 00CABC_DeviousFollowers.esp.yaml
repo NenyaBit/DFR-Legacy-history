@@ -1,0 +1,12 @@
+FormKey: 00CABC:DeviousFollowers.esp
+EditorID: _Dflow_EnslavedLevel2
+Description:
+  TargetLanguage: English
+  Value: Since you've got yourself into more trouble, now you have a new set of rules.
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: '*nod*'

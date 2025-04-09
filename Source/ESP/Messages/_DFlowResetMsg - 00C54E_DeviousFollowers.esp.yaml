@@ -1,0 +1,20 @@
+FormKey: 00C54E:DeviousFollowers.esp
+EditorID: _DFlowResetMsg
+Description:
+  TargetLanguage: English
+  Value: >-
+    All debt cleared.
+
+    Follower states clear.
+
+    If you still have devices on, use DCL "Free Me!!!" option.
+Name:
+  TargetLanguage: English
+  Value: It has reset
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: ^^

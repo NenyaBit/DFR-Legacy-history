@@ -1,0 +1,12 @@
+FormKey: 2943FB:DeviousFollowers.esp
+EditorID: _DFArmorEnchantingImpairment
+Name:
+  TargetLanguage: English
+  Value: Impair Enchanting
+Flags:
+- NoAutoCalc
+EnchantType: Enchantment
+Effects:
+- BaseEffect: 2943F8:DeviousFollowers.esp
+  Data:
+    Magnitude: 16

@@ -1,0 +1,70 @@
+FormKey: 1034B9:DeviousFollowers.esp
+EditorID: _DFlowDealSPayTheif
+Flags:
+- 0x4
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- ID: 1
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+- ID: 3
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+- ID: 2
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Name: ''
+  ActorID: 3
+  Index: 3
+  StartPhase: 0
+  EndPhase: 0
+  Topic: 1034BC:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: ''
+  ActorID: 2
+  Index: 4
+  StartPhase: 1
+  EndPhase: 1
+  Topic: 1034C1:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: ''
+  ActorID: 1
+  Index: 5
+  StartPhase: 2
+  EndPhase: 2
+  Topic: 1034C6:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+Quest: 0E53C8:DeviousFollowers.esp
+LastActionIndex: 5
+VNAM: 0x03000000030000000300000003000000

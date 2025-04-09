@@ -1,0 +1,23 @@
+FormKey: 1AE4BA:DeviousFollowers.esp
+EditorID: _DFIronCuffsFrontRendered
+ObjectEffect: 068BDB:Devious Devices - Integration.esm
+BodyTemplate:
+  FirstPersonFlags:
+  - 0x10000
+  ArmorType: Clothing
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 003894:Devious Devices - Assets.esm
+- 02F16E:SexLab.esm
+- 0C27BD:Skyrim.esm
+- 0FF9FB:Skyrim.esm
+- 063AD9:Devious Devices - Integration.esm
+- 05226C:Devious Devices - Integration.esm
+- 05AEA8:Devious Devices - Integration.esm
+- 1AE4BB:DeviousFollowers.esp
+Description:
+  TargetLanguage: English
+  Value: Item reference reserved for scripts interaction. This should not appear in your inventory. Check your Devious Devices mod configuration.
+Armature:
+- 037C15:Devious Devices - Expansion.esm

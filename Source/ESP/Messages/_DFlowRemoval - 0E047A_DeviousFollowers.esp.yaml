@@ -1,0 +1,22 @@
+FormKey: 0E047A:DeviousFollowers.esp
+EditorID: _DFlowRemoval
+Description:
+  TargetLanguage: English
+  Value: >-
+    I can remove devices for a price.
+
+    The starting price is %.0f gold.
+
+    The price increases %.0f each time.
+
+    When I get some rest, I'll reset the cost.
+
+    Oh, and if you don't have the gold, I can still help, but it will cost  %.0f %% extra, and I'll add it to your debt.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

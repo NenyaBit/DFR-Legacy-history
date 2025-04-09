@@ -1,0 +1,24 @@
+FormKey: 01A2A2:DeviousFollowers.esp
+EditorID: _D_CursedDwarvenGloves
+Description:
+  TargetLanguage: English
+  Value: >-
+    A warm pulse comes from the gauntlets you donned, and everything you're wearing disappears.
+
+    Something tightens around your wrists inside the gauntlets, and they force your fingers to curl into fists.
+
+    An invisible force pulls your hands closer together until they reach a fixed distance.
+
+    No matter how you try you cannot force your wrists further apart, or closer together.
+
+    What strange dwemer curse is this?
+Name:
+  TargetLanguage: English
+  Value: Oh no!
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

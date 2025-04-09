@@ -1,0 +1,42 @@
+FormKey: 26BB92:DeviousFollowers.esp
+EditorID: _DFlowBoredom
+VirtualMachineAdapter:
+  Scripts:
+  - Name: _DBoredom
+  - Name: _Dx_QF__DFlowBoredom_0926BB92
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DFQ
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_Follower
+      Object: 26BB92:DeviousFollowers.esp
+      Alias: 0
+  FileName: _Dx_QF__DFlowBoredom_0926BB92
+  Fragments:
+  - Stage: 10
+    Unknown2: 1
+    ScriptName: _Dx_QF__DFlowBoredom_0926BB92
+    FragmentName: Fragment_0
+Name:
+  TargetLanguage: English
+  Value: Bored Followers
+Flags:
+- StartGameEnabled
+- 0x10
+Priority: 90
+Stages:
+- {}
+- Index: 10
+  Flags:
+  - StartUpStage
+  LogEntries:
+  - Flags: []
+NextAliasID: 1
+Aliases:
+- Name: Follower
+  Flags:
+  - Optional
+  - AllowReuseInQuest
+  - Essential
+  VoiceTypes: Null

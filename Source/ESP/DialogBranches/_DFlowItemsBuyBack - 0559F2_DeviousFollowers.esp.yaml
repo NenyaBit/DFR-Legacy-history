@@ -1,0 +1,7 @@
+FormKey: 0559F2:DeviousFollowers.esp
+EditorID: _DFlowItemsBuyBack
+Quest: 0559F0:DeviousFollowers.esp
+Category: Player
+Flags:
+- TopLevel
+StartingTopic: 0559F3:DeviousFollowers.esp

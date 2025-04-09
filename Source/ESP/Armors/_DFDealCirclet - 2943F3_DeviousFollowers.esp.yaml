@@ -1,0 +1,33 @@
+FormKey: 2943F3:DeviousFollowers.esp
+EditorID: _DFDealCirclet
+Name:
+  TargetLanguage: English
+  Value: Gaudy Circlet
+ObjectEffect: 2943F4:DeviousFollowers.esp
+WorldModel:
+  Male:
+    Model:
+      File: Armor\Circlets\Circlet7_GO.nif
+      Data: 0x020000000000000000000000
+BodyTemplate:
+  FirstPersonFlags:
+  - Circlet
+  ArmorType: Clothing
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 06BBE9:Skyrim.esm
+- 0C27BD:Skyrim.esm
+- 0A8664:Skyrim.esm
+- 10CD08:Skyrim.esm
+- 294400:DeviousFollowers.esp
+- 02F16E:SexLab.esm
+Description:
+  TargetLanguage: English
+  Value: This over-ostentatious circlet is likely the product of a failed enchanting attempt to improve the wearer's alchemy skill. Unfortunately, this botched effort does the opposite.
+Armature:
+- 0167AE:Skyrim.esm
+- 01678D:Skyrim.esm
+- 3314D0:DeviousFollowers.esp
+Value: 10
+Weight: 2

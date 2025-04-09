@@ -1,0 +1,406 @@
+{
+  "animations": [
+    {
+      "actors": [
+        {
+          "stages": [
+            {
+              "id": "DF_Spank_NibblesSpanking_A1_S1"
+            },
+            {
+              "id": "DF_Spank_NibblesSpanking_A1_S2"
+            },
+            {
+              "id": "DF_Spank_NibblesSpanking_A1_S3"
+            },
+            {
+              "id": "DF_Spank_NibblesSpanking_A1_S4"
+            },
+            {
+              "id": "DF_Spank_NibblesSpanking_A1_S5"
+            }
+          ],
+          "type": "Female"
+        },
+        {
+          "stages": [
+            {
+              "id": "DF_Spank_NibblesSpanking_A2_S1"
+            },
+            {
+              "id": "DF_Spank_NibblesSpanking_A2_S2"
+            },
+            {
+              "id": "DF_Spank_NibblesSpanking_A2_S3"
+            },
+            {
+              "id": "DF_Spank_NibblesSpanking_A2_S4"
+            },
+            {
+              "id": "DF_Spank_NibblesSpanking_A2_S5"
+            }
+          ],
+          "type": "Male"
+        }
+      ],
+      "id": "DF_NibblesSpanking",
+      "name": "DF Nibbles Spanking (Paddle)",
+      "sound": "none",
+      "stages": [
+        {
+          "number": 5,
+          "timer": 25.0
+        }
+      ],
+      "tags": "Nibbles,Sex,Sitting,Holding,MF,AnimObject,Furniture,Chair,spanking"
+    },
+    
+    {
+      "actors": [
+        {
+          "stages": [
+            {
+              "id": "DF_Spank_NibblesSpankingChair_A1_S1"
+            },
+            {
+              "id": "DF_Spank_NibblesSpankingChair_A1_S2"
+            },
+            {
+              "id": "DF_Spank_NibblesSpankingChair_A1_S3"
+            },
+            {
+              "id": "DF_Spank_NibblesSpankingChair_A1_S4"
+            }
+          ],
+          "type": "Female"
+        },
+        {
+          "stages": [
+            {
+              "id": "DF_Spank_NibblesSpankingChair_A2_S1"
+            },
+            {
+              "id": "DF_Spank_NibblesSpankingChair_A2_S2"
+            },
+            {
+              "id": "DF_Spank_NibblesSpankingChair_A2_S3"
+            },
+            {
+              "id": "DF_Spank_NibblesSpankingChair_A2_S4"
+            }
+          ],
+          "type": "Male"
+        }
+      ],
+      "id": "DF_NibblesSpankingChair",
+      "name": "DF Nibbles Spanking (Chair)",
+      "sound": "none",
+      "tags": "Nibbles,Sex,Sitting,Holding,MF,AnimObject,Furniture,Chair,spanking"
+    },
+
+    {
+       "actors": [
+        {
+          "add_cum": 2,
+          "stages": [
+            {
+              "id": "DF_Spank_Anubs_rape_A1_S1",
+              "silent": true
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A1_S2"
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A1_S3"
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A1_S4",
+              "open_mouth": true,
+              "silent": true
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A1_S5",
+              "silent": true
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A1_S6"
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A1_S7"
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A1_S8"
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A1_S9",
+              "silent": true
+            }
+          ],
+          "type": "Female"
+        },
+        {
+          "stages": [
+            {
+              "id": "DF_Spank_Anubs_rape_A2_S1",
+              "silent": true,
+              "strap_on": true
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A2_S2",
+              "silent": true,
+              "strap_on": true
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A2_S3",
+              "silent": true,
+              "strap_on": true
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A2_S4",
+              "strap_on": true
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A2_S5",
+              "silent": true,
+              "strap_on": true
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A2_S6",
+              "silent": true,
+              "strap_on": true
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A2_S7",
+              "strap_on": true
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A2_S8",
+              "strap_on": true
+            },
+            {
+              "id": "DF_Spank_Anubs_rape_A2_S9",
+              "strap_on": true
+            }
+          ],
+          "type": "Male"
+        }
+      ],
+      "id": "DF_Anubs_rape",
+      "name": "DF Anubs Rape",
+      "sound": "Squishing",
+      "tags": "Anubs,Dirty,Sex,Anal,Aggressive,AggressiveDefault,MF"
+    },
+    
+    {
+       "actors": [
+        {
+          "stages": [
+            {
+              "id": "DF_Spank_Anubs_spank_A1_S1"
+            },
+            {
+              "id": "DF_Spank_Anubs_spank_A1_S2"
+            },
+            {
+              "id": "DF_Spank_Anubs_spank_A1_S3"
+            }
+          ],
+          "type": "Female"
+        },
+        {
+          "stages": [
+            {
+              "id": "DF_Spank_Anubs_spank_A2_S1",
+              "silent": true,
+              "strap_on": false
+            },
+            {
+              "id": "DF_Spank_Anubs_spank_A2_S2",
+              "silent": true,
+              "strap_on": false
+            },
+            {
+              "id": "DF_Spank_Anubs_spank_A2_S3",
+              "silent": true,
+              "strap_on": false
+            }
+          ],
+          "type": "Male"
+        }
+      ],
+      "id": "DF_Anubs_spank",
+      "name": "DF Anubs Spank",
+      "sound": "none",
+      "tags": "Anubs,Dirty,Aggressive,AggressiveDefault,MF"
+    },
+
+    {
+       "actors": [
+        {
+          "stages": [
+            {
+              "id": "DF_Spank_Anubs_spankfist_A1_S1"
+            },
+            {
+              "id": "DF_Spank_Anubs_spankfist_A1_S2"
+            },
+            {
+              "id": "DF_Spank_Anubs_spankfist_A1_S3"
+            },
+            {
+              "id": "DF_Spank_Anubs_spankfist_A1_S4"
+            }
+          ],
+          "type": "Female"
+        },
+        {
+          "stages": [
+            {
+              "id": "DF_Spank_Anubs_spankfist_A2_S1",
+              "silent": true,
+              "strap_on": false
+            },
+            {
+              "id": "DF_Spank_Anubs_spankfist_A2_S2",
+              "silent": true,
+              "strap_on": false
+            },
+            {
+              "id": "DF_Spank_Anubs_spankfist_A2_S3",
+              "silent": true,
+              "strap_on": false
+            },
+            {
+              "id": "DF_Spank_Anubs_spankfist_A2_S4",
+              "silent": true,
+              "strap_on": false
+            }
+          ],
+          "type": "Male"
+        }
+      ],
+      "id": "DF_Anubs_spank_fist",
+      "name": "DF Anubs Spank Fist",
+      "sound": "Squishing",
+      "tags": "Anubs,Dirty,Sex,Anal,Aggressive,AggressiveDefault,MF"
+    },
+    
+    {
+      "actors": [
+        {
+          "stages": [
+            {
+              "id": "DF_Spank_rydin_overlap_spanking_A1_S1"
+            },
+            {
+              "id": "DF_Spank_rydin_overlap_spanking_A1_S2"
+            },
+            {
+              "id": "DF_Spank_rydin_overlap_spanking_A1_S3"
+            },
+            {
+              "id": "DF_Spank_rydin_overlap_spanking_A1_S4"
+            },
+            {
+              "id": "DF_Spank_rydin_overlap_spanking_A1_S5"
+            },
+            {
+              "id": "DF_Spank_rydin_overlap_spanking_A1_S6"
+            }
+          ],
+          "type": "type"
+        },
+        {
+          "stages": [
+            {
+              "id": "DF_Spank_rydin_overlap_spanking_A2_S1",
+               "silent": true,
+               "strap_on": false
+            },
+            {
+              "id": "DF_Spank_rydin_overlap_spanking_A2_S2",
+               "silent": true,
+               "strap_on": false
+            },
+            {
+              "id": "DF_Spank_rydin_overlap_spanking_A2_S3",
+               "silent": true,
+               "strap_on": false
+            },
+            {
+              "id": "DF_Spank_rydin_overlap_spanking_A2_S4",
+               "silent": true,
+               "strap_on": false
+            },
+            {
+              "id": "DF_Spank_rydin_overlap_spanking_A2_S5",
+               "silent": true,
+               "strap_on": false
+            },
+            {
+              "id": "DF_Spank_rydin_overlap_spanking_A2_S6",
+               "silent": true,
+               "strap_on": false
+            }
+          ],
+          "type": "type"
+        }
+      ],
+      "id": "DF_Spank_rydin_overlap_spanking",
+      "name": "DF Rydin Overlap Spanking",
+      "sound": "none",
+      "tags": "Rydin,Dirty,Sitting,Spanking,Discipline,Fetish"
+    },
+    {
+      "actors": [
+        {
+          "stages": [
+            {
+              "id": "DF_Spank_rydin_underarm_spanking_A1_S1"
+            },
+            {
+              "id": "DF_Spank_rydin_underarm_spanking_A1_S2"
+            },
+            {
+              "id": "DF_Spank_rydin_underarm_spanking_A1_S3"
+            },
+            {
+              "id": "DF_Spank_rydin_underarm_spanking_A1_S4"
+            }
+          ],
+          "type": "type"
+        },
+        {
+          "stages": [
+            {
+              "id": "DF_Spank_rydin_underarm_spanking_A2_S1",
+               "silent": true,
+               "strap_on": false
+            },
+            {
+              "id": "DF_Spank_rydin_underarm_spanking_A2_S2",
+               "silent": true,
+               "strap_on": false
+            },
+            {
+              "id": "DF_Spank_rydin_underarm_spanking_A2_S3",
+               "silent": true,
+               "strap_on": false
+            },
+            {
+              "id": "DF_Spank_rydin_underarm_spanking_A2_S4",
+               "silent": true,
+               "strap_on": false
+            }
+          ],
+          "type": "type"
+        }
+      ],
+      "id": "DF_Spank_rydin_underarm_spanking",
+      "name": "DF Rydin Underarm Spanking",
+      "sound": "none",
+      "tags": "Rydin,Dirty,Standing,Spanking,Discipline,Fetish"
+    }
+  ],
+  "name": "DF Spank"
+}

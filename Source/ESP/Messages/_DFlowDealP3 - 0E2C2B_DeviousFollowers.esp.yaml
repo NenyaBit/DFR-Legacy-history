@@ -1,0 +1,18 @@
+FormKey: 0E2C2B:DeviousFollowers.esp
+EditorID: _DFlowDealP3
+Description:
+  TargetLanguage: English
+  Value: >-
+    ==Deal %.0f==
+
+    You must wear nipple and genital piercings at all times.
+
+    <Alias.ShortName=_DMaster> requires that they be on display when talking to people, because it's not fair to hide them. To make sure you're not cheating, <Alias.Pronoun=_DMaster>'ll check that you're wearing them every so often.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

@@ -1,0 +1,191 @@
+FormKey: 01C868:DeviousFollowers.esp
+EditorID: _DflowDealO
+VirtualMachineAdapter:
+  Scripts:
+  - Name: QF__DflowDealO_0A01C868
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowDealBaseDays
+      Object: 03CDFB:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_Follower
+      Object: 01C868:DeviousFollowers.esp
+      Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowDealOPTimer
+      Object: 03CDFD:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+  - Name: _DF_OwnershipDeal
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ArmCuffs
+      Object: 01775B:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FlAlias
+      Object: 01C868:DeviousFollowers.esp
+      Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DC
+      Object: 01C86D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LDC
+      Object: 1C494F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Item1
+      Object: 13ED9E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: TheScene2
+      Object: 152ABA:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: TheScene4
+      Object: 152AC1:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tool
+      Object: 01210D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: TheScene5
+      Object: 152ABE:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: boots
+      Object: 0116F1:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DMaster
+      Object: 000D62:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptIntProperty
+      Name: Stat
+    - MutagenObjectType: ScriptObjectProperty
+      Name: TheScene3
+      Object: 152AC4:DeviousFollowers.esp
+    - MutagenObjectType: ScriptFloatProperty
+      Name: Delay
+    - MutagenObjectType: ScriptObjectProperty
+      Name: theScene
+      Object: 152AB3:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Collar
+      Object: 01775C:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LegCuffs
+      Object: 01775D:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: gag
+      Object: 034255:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFBoredom
+      Object: 231892:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: libs
+      Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Item1R
+      Object: 13ED9F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Chasity
+      Object: 032741:Devious Devices - Integration.esm
+  FileName: QF__DflowDealO_0A01C868
+  Fragments:
+  - Unknown2: 1
+    ScriptName: QF__DflowDealO_0A01C868
+    FragmentName: Fragment_18
+  - Stage: 2
+    Unknown2: 1
+    ScriptName: QF__DflowDealO_0A01C868
+    FragmentName: Fragment_15
+  - Stage: 1
+    Unknown2: 1
+    ScriptName: QF__DflowDealO_0A01C868
+    FragmentName: Fragment_9
+  - Stage: 3
+    Unknown2: 1
+    ScriptName: QF__DflowDealO_0A01C868
+    FragmentName: Fragment_16
+  - Stage: 4
+    Unknown2: 1
+    ScriptName: QF__DflowDealO_0A01C868
+    FragmentName: Fragment_17
+Name:
+  TargetLanguage: English
+  Value: Ownership Deal
+Flags:
+- StartGameEnabled
+- AllowRepeatedStages
+- 0x10
+Priority: 75
+DialogConditions:
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetIsRaceConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Race: 00283A:Dawnguard.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetIsRaceConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Race: 0CDD84:Skyrim.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetInFactionConditionData
+    Faction: 015712:DeviousFollowers.esp
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: GreaterThanOrEqualTo
+  Data:
+    MutagenObjectType: GetStageConditionData
+    Quest: 000D62:DeviousFollowers.esp
+  ComparisonValue: 10
+Stages:
+- Flags:
+  - StartUpStage
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: 0
+- Index: 1
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: You have made a deal with your follower to wear cuffs.
+- Index: 2
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: You have made a deal with your follower to wear cuffs and a collar.
+- Index: 3
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: You have made a deal with your follower to wear cuffs, collar, and chastity belt.
+- Index: 4
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: reset
+NextAliasID: 1
+Aliases:
+- Name: Follower
+  Flags:
+  - Optional
+  VoiceTypes: Null

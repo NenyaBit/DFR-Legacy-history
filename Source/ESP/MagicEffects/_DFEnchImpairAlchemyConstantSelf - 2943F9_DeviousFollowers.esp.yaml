@@ -1,0 +1,26 @@
+FormKey: 2943F9:DeviousFollowers.esp
+EditorID: _DFEnchImpairAlchemyConstantSelf
+Name:
+  TargetLanguage: English
+  Value: Impair Alchemy
+MenuDisplayObject: 0435A5:Skyrim.esm
+Keywords:
+- 074F5A:Skyrim.esm
+Flags:
+- Recover
+- Detrimental
+- NoHitEvent
+- NoDuration
+- NoArea
+- PowerAffectsMagnitude
+- Painless
+- NoHitEffect
+BaseCost: 17
+Archetype:
+  MutagenObjectType: MagicEffectPeakValueModArchetype
+  ActorValue: AlchemyPowerModifier
+DualCastScale: 1
+Sounds: []
+Description:
+  TargetLanguage: English
+  Value: Alchemy skill is reduced by <mag>

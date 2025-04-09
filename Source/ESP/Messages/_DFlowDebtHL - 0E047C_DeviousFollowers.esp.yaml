@@ -1,0 +1,16 @@
+FormKey: 0E047C:DeviousFollowers.esp
+EditorID: _DFlowDebtHL
+Description:
+  TargetLanguage: English
+  Value: >-
+    You owe me %.0f gold.
+
+    I won't need to rest any time soon.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

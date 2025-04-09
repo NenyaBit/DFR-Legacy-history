@@ -1,0 +1,7 @@
+name: Circlet
+formId: 0x3824F1
+hint: You must wear an annoying circlet.
+type: wear
+slots:
+   - 42
+level: 1

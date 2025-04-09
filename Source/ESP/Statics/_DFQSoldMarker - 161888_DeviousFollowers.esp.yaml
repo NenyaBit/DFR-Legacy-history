@@ -1,0 +1,15 @@
+FormKey: 161888:DeviousFollowers.esp
+MajorRecordFlagsRaw: 8388608
+EditorID: _DFQSoldMarker
+SkyrimMajorRecordFlags:
+- 0x800000
+ObjectBounds:
+  First: -29, -28, 0
+  Second: 29, 60, 133
+Model:
+  File: MarkerTeleport.nif
+  Data: 0x020000000000000000000000
+MaxAngle: 90
+Unused: 0x000000
+MajorFlags:
+- IsMarker

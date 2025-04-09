@@ -1,0 +1,168 @@
+FormKey: 2FEA42:DeviousFollowers.esp
+EditorID: _DFLicenses
+VirtualMachineAdapter:
+  Scripts:
+  - Name: _DFLicensing
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseSupplyWeapon
+      Object: 2FEA61:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DWill
+      Object: 01A2A7:Update.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseSupplyCurfew
+      Object: 2FEA64:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseSupplyMagic
+      Object: 2FEA60:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowGoldMode
+      Object: 112478:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseEnabledMagic
+      Object: 303BA3:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseSupplyBikini
+      Object: 2FEA65:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlow
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseEnabledProtection
+      Object: 303BA2:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseSupplyWhore
+      Object: 2FEA63:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseStatus
+      Object: 2FEA69:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseLocations
+      Object: 317FB0:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseEnableCount
+      Object: 303BA1:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseSupplyClothes
+      Object: 2FEA62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseSupplyArmor
+      Object: 2FEA5F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseSupplyProtection
+      Object: 2FEA68:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: KeywordCity
+      Object: 013168:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowDealController
+      Object: 01C86D:DeviousFollowers.esp
+  - Name: _Dx_QF__DFLicenses_092FEA42
+  FileName: _Dx_QF__DFLicenses_092FEA42
+  Fragments:
+  - Stage: 9
+    Unknown2: 1
+    ScriptName: _Dx_QF__DFLicenses_092FEA42
+    FragmentName: Fragment_6
+  - Stage: 10
+    Unknown2: 1
+    ScriptName: _Dx_QF__DFLicenses_092FEA42
+    FragmentName: Fragment_2
+  - Stage: 1
+    Unknown2: 1
+    ScriptName: _Dx_QF__DFLicenses_092FEA42
+    FragmentName: Fragment_0
+  - Stage: 90
+    Unknown2: 1
+    ScriptName: _Dx_QF__DFLicenses_092FEA42
+    FragmentName: Fragment_4
+  - Stage: 100
+    Unknown2: 1
+    ScriptName: _Dx_QF__DFLicenses_092FEA42
+    FragmentName: Fragment_5
+Name:
+  TargetLanguage: English
+  Value: SexLab Survival Licenses
+Flags:
+- AllowRepeatedStages
+Priority: 70
+DialogConditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetInFactionConditionData
+    Faction: 015712:DeviousFollowers.esp
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: GreaterThanOrEqualTo
+  Data:
+    MutagenObjectType: GetStageConditionData
+    Quest: 000D62:DeviousFollowers.esp
+  ComparisonValue: 10
+- MutagenObjectType: ConditionFloat
+  CompareOperator: LessThan
+  Data:
+    MutagenObjectType: GetStageConditionData
+    Quest: 000D62:DeviousFollowers.esp
+  ComparisonValue: 98
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetIsRaceConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Race: 0CDD84:Skyrim.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetIsRaceConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Race: 00283A:Dawnguard.esm
+  ComparisonValue: 1
+Stages:
+- Index: 1
+  Flags:
+  - StartUpStage
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Ask your follower about licenses.
+- Index: 9
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Your follower is managing your licenses because they are also looking after your gold.
+- Index: 10
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Your helpful follower will look after those bothersome licenses for you...
+- Index: 90
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Follower is stopping looking after licenses.
+- Index: 100
+  Flags:
+  - ShutDownStage
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Your licenses are your own problem again.
+- Index: 110
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Don't talk about licenses
+NextAliasID: 0

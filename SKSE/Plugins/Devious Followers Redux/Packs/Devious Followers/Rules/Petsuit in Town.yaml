@@ -1,0 +1,10 @@
+formId: 0x39181A
+hint: You will be put into a petsuit in towns.
+type: wear
+slots:
+   - 46
+subRules:
+   - type: heavy bondage
+level: 3
+location:
+   - town

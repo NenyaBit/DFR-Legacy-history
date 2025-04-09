@@ -1,0 +1,76 @@
+FormKey: 0559F0:DeviousFollowers.esp
+EditorID: _DFlowItems
+VirtualMachineAdapter:
+  Scripts:
+  - Name: QF__DFlowItems_080559F0
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_PawnMerchant
+      Object: 0559F0:DeviousFollowers.esp
+      Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowEDHalf
+      Object: 0110DE:DeviousFollowers.esp
+  FileName: QF__DFlowItems_080559F0
+  Fragments:
+  - Unknown2: 1
+    ScriptName: QF__DFlowItems_080559F0
+    FragmentName: Fragment_1
+  - Stage: 2
+    Unknown2: 1
+    ScriptName: QF__DFlowItems_080559F0
+    FragmentName: Fragment_2
+  - Stage: 1
+    Unknown2: 1
+    ScriptName: QF__DFlowItems_080559F0
+    FragmentName: Fragment_0
+Name:
+  TargetLanguage: English
+  Value: My follower sold my items.
+Flags:
+- StartGameEnabled
+- AllowRepeatedStages
+- 0x10
+Type: Misc
+TextDisplayGlobals:
+- 0110DE:DeviousFollowers.esp
+DialogConditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetInFactionConditionData
+    Faction: 058192:DeviousFollowers.esp
+  ComparisonValue: 1
+Stages:
+- Flags:
+  - StartUpStage
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: 1
+- Index: 1
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Your items have been pawned.
+- Index: 2
+  LogEntries:
+  - Flags: []
+Objectives:
+- Index: 1
+  Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: My items have been sold to Ahkari.
+  Targets:
+  - {}
+NextAliasID: 1
+Aliases:
+- Name: PawnMerchant
+  Flags:
+  - Essential
+  UniqueActor: 01B1D6:Skyrim.esm
+  Factions:
+  - 058192:DeviousFollowers.esp
+  VoiceTypes: Null

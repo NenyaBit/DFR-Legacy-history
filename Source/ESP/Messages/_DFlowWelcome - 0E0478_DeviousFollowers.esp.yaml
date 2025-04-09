@@ -1,0 +1,30 @@
+FormKey: 0E0478:DeviousFollowers.esp
+EditorID: _DFlowWelcome
+Description:
+  TargetLanguage: English
+  Value: >-
+    == Welcome to Devious Followers ==
+
+
+    <Alias.ShortName=_DMaster> is a hired follower who you must pay or suffer the consequences.
+
+    <Alias.PronounCap=_DMaster> has lives that are lost when:
+
+    - <Alias.Pronoun=_DMaster> is knocked down -
+
+    - <Alias.Pronoun=_DMaster> removes a device -
+
+    - <Alias.Pronoun=_DMaster> updates your debt -
+
+
+    Sleep for 6+ hours to restore <Alias.PronounPosObj=_DMaster> lives.
+
+    This will also restore some of your willpower.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

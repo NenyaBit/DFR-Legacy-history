@@ -1,0 +1,21 @@
+FormKey: 03CDF9:DeviousFollowers.esp
+EditorID: _DflowDealRules
+Description:
+  TargetLanguage: English
+  Value: >-
+    We can make a new deal, or we can upgrade an existing deal.
+
+    If you agree, I'll forget <Global=_DflowDealBaseDebtl> debt, but if you refuse, I'll add half of that as debt.
+
+    In <Global=_DflowDealBaseDays> days you can buy out of the deal for <Global=_DflowDealBasePrice> times the level of the deal.
+
+    You can buy out early, if you want to spoil the fun, but it costs extra.
+
+    Also, if you upgrade the deal with time left on it, I'll add those days to the upgrade.
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

@@ -1,0 +1,21 @@
+FormKey: 0E0483:DeviousFollowers.esp
+EditorID: _DFlowGambleRolls
+Description:
+  TargetLanguage: English
+  Value: >+
+    I'll roll a six sided die:
+
+    1 = %.0f debt
+
+    2 = %.0f gold and %.0f debt
+
+    3 = %.0f gold and %.0f debt...
+
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

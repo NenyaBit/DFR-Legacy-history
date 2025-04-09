@@ -1,0 +1,7 @@
+FormKey: 007408:DeviousFollowers.esp
+EditorID: _DFlowRemove
+Quest: 000D62:DeviousFollowers.esp
+Category: Player
+Flags:
+- TopLevel
+StartingTopic: 0AC465:DeviousFollowers.esp

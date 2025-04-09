@@ -1,0 +1,11 @@
+FormKey: 2B7B94:DeviousFollowers.esp
+EditorID: _DFStorage
+ObjectBounds:
+  First: -48, -23, 0
+  Second: 48, 26, 49
+Name:
+  TargetLanguage: English
+  Value: Chest
+Model:
+  File: Clutter\Upperclass\UpperChest01.nif
+  Data: 0x020000000000000000000000

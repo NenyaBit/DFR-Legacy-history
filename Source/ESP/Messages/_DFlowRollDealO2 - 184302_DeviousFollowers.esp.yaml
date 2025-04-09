@@ -1,0 +1,18 @@
+FormKey: 184302:DeviousFollowers.esp
+EditorID: _DFlowRollDealO2
+Description:
+  TargetLanguage: English
+  Value: >-
+    <Alias.ShortName=_DMaster> gets out a cup with a %.0f sided die inside and shakes it.
+
+    <Alias.PronounCap=_DMaster> grins deviously at you and says "Remember the deal? You need a six."
+
+    After a while, <Alias.Pronoun=_DMaster> rolls the die from the cup and it comes up with a %.0f.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

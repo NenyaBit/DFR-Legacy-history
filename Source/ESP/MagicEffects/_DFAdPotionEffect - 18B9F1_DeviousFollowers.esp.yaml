@@ -1,0 +1,33 @@
+FormKey: 18B9F1:DeviousFollowers.esp
+EditorID: _DFAdPotionEffect
+VirtualMachineAdapter:
+  Scripts:
+  - Name: _DFPotAddictEffect
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowPotion
+      Object: 186A9E:DeviousFollowers.esp
+Name:
+  TargetLanguage: English
+  Value: _DFAdPotionEffect
+Flags:
+- Recover
+- NoHitEvent
+- NoDuration
+- NoMagnitude
+- NoArea
+- HideInUI
+- NoRecast
+- Painless
+- NoHitEffect
+- NoDeathDispel
+Archetype:
+  MutagenObjectType: MagicEffectArchetype
+  Type: Script
+CastType: FireAndForget
+DualCastScale: 1
+CastingSoundLevel: Normal
+Sounds: []
+Description:
+  TargetLanguage: English
+  Value: A weird potion, shot through with odd swirls and sparkles. It has a slimy consistency and smells like rotting fish.

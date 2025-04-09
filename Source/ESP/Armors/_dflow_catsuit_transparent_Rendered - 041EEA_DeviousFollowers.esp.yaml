@@ -1,0 +1,36 @@
+FormKey: 041EEA:DeviousFollowers.esp
+EditorID: _dflow_catsuit_transparent_Rendered
+WorldModel:
+  Male:
+    Model:
+      File: devious\mxw_catsuit\catsuit_body_ground.nif
+      Data: 0x020000000000000000000000
+  Female:
+    Model:
+      File: devious\mxw_catsuit\catsuit_body_ground.nif
+      Data: 0x020000000000000000000000
+BodyTemplate:
+  FirstPersonFlags:
+  - Body
+  - Forearms
+  - Calves
+  ArmorType: Clothing
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 003894:Devious Devices - Assets.esm
+- 0C27BD:Skyrim.esm
+- 02F16E:SexLab.esm
+- 0FF9FB:Skyrim.esm
+- 02AFA3:Devious Devices - Assets.esm
+- 041422:DeviousFollowers.esp
+- CC0E1A:Update.esm
+- 040EBA:DeviousFollowers.esp
+- CC0E14:Update.esm
+- 0A8657:Skyrim.esm
+- 10FCDA:DeviousFollowers.esp
+Description:
+  TargetLanguage: English
+  Value: This should not appear in your inventory. Check your Devious Devices mod configuration.
+Armature:
+- 03D2D9:Devious Devices - Expansion.esm

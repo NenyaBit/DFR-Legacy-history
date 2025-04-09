@@ -1,0 +1,24 @@
+FormKey: 0E047B:DeviousFollowers.esp
+EditorID: _DFlowDealHelp
+Description:
+  TargetLanguage: English
+  Value: >-
+    I'll let you make a new deal, or upgrade an existing deal.
+
+    If you agree, I'll remove %.0f debt, otherwise I'll just add half that as debt.
+
+    In %.0f hours, you can remove them for %.0f  gold, times the level of the deal.
+
+    You can buy out early if you want to spoil the fun, but it'll cost extra based on time left.
+
+    If you upgrade a deal I'll add more time on.
+
+    I will supply devices for you to use, but you can use any equivalent device you want.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

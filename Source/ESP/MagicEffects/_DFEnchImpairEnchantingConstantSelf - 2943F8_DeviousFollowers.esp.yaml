@@ -1,0 +1,24 @@
+FormKey: 2943F8:DeviousFollowers.esp
+EditorID: _DFEnchImpairEnchantingConstantSelf
+Name:
+  TargetLanguage: English
+  Value: Impair Enchanting
+MenuDisplayObject: 0435A5:Skyrim.esm
+Flags:
+- Recover
+- Detrimental
+- NoHitEvent
+- NoDuration
+- NoArea
+- PowerAffectsMagnitude
+- Painless
+- NoHitEffect
+Archetype:
+  MutagenObjectType: MagicEffectPeakValueModArchetype
+  ActorValue: EnchantingPowerModifier
+DualCastScale: 1
+CastingSoundLevel: Silent
+Sounds: []
+Description:
+  TargetLanguage: English
+  Value: Enchanting skill is reduced by <mag>

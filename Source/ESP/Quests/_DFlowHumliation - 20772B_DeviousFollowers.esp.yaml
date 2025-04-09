@@ -1,0 +1,61 @@
+FormKey: 20772B:DeviousFollowers.esp
+EditorID: _DFlowHumliation
+VirtualMachineAdapter:
+  Scripts:
+  - Name: _DFlowHumliation
+    Properties:
+    - MutagenObjectType: ScriptFloatProperty
+      Name: NotiPer
+      Data: 1.01
+    - MutagenObjectType: ScriptFloatProperty
+      Name: timer
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tool
+      Object: 01210D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptFloatProperty
+      Name: Multi
+      Data: 5
+    - MutagenObjectType: ScriptBoolProperty
+      Name: active
+      Data: True
+  - Name: QF__DFlowHumliation_0820772B
+  FileName: QF__DFlowHumliation_0820772B
+  Fragments:
+  - Stage: 1
+    Unknown2: 1
+    ScriptName: QF__DFlowHumliation_0820772B
+    FragmentName: Fragment_0
+Flags:
+- StartGameEnabled
+- AllowRepeatedStages
+- 0x10
+DialogConditions:
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetIsRaceConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Race: 00283A:Dawnguard.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetIsRaceConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Race: 0CDD84:Skyrim.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: LessThan
+  Data:
+    MutagenObjectType: GetStageConditionData
+    Quest: 000D62:DeviousFollowers.esp
+  ComparisonValue: -100
+Stages:
+- Flags:
+  - StartUpStage
+- Index: 1
+  LogEntries:
+  - Flags: []
+NextAliasID: 0

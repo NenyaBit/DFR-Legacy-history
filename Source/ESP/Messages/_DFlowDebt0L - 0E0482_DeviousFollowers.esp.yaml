@@ -1,0 +1,16 @@
+FormKey: 0E0482:DeviousFollowers.esp
+EditorID: _DFlowDebt0L
+Description:
+  TargetLanguage: English
+  Value: >-
+    You work it out!
+
+    I really need to get some rest.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

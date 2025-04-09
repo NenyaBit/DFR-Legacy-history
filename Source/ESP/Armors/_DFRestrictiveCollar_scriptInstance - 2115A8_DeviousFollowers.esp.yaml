@@ -1,0 +1,24 @@
+FormKey: 2115A8:DeviousFollowers.esp
+EditorID: _DFRestrictiveCollar_scriptInstance
+WorldModel:
+  Male:
+    Model:
+      File: devious\devices\koffii\restrictiveCollar_go.nif
+      Data: 0x020000000000000000000000
+BodyTemplate:
+  FirstPersonFlags:
+  - 0x8000
+  ArmorType: Clothing
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 003894:Devious Devices - Assets.esm
+- 003DF7:Devious Devices - Assets.esm
+- 02F16E:SexLab.esm
+- 0FF9FB:Skyrim.esm
+- 0C27BD:Skyrim.esm
+Description:
+  TargetLanguage: English
+  Value: Item reference reserved for scripts interaction. This should not appear in your inventory. Check your Devious Devices mod configuration.
+Armature:
+- 02745A:Devious Devices - Assets.esm

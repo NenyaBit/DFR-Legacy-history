@@ -1,0 +1,7 @@
+name: Boots
+formId: 0x3875FA
+hint: You must wear devious boots. 
+type: wear
+slots:
+   - 37
+level: 2

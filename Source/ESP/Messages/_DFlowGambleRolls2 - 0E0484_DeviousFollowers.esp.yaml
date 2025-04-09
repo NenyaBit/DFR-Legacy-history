@@ -1,0 +1,20 @@
+FormKey: 0E0484:DeviousFollowers.esp
+EditorID: _DFlowGambleRolls2
+Description:
+  TargetLanguage: English
+  Value: >+
+    ... then ...
+
+    4 = %.0f gold, and %.0f debt
+
+    5 = %.0f gold, and %.0f debt
+
+    6 = %.0f gold, and %.0f debt
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

@@ -1,0 +1,25 @@
+FormKey: 00A4DF:DeviousFollowers.esp
+EditorID: _Dflow_Enslaved
+Description:
+  TargetLanguage: English
+  Value: >-
+    ==== You have exceeded your debt limit  ====
+
+
+    You have been enslaved!
+
+
+    While enslaved, you will be restricted under a new set of rules (ask follower).
+
+    Your deals are temporarily inactive (don't worry, once you're free again they'll be waiting for you).
+
+    Debt will not increase unless you break the rules.
+
+    To free yourself you must pay off all your debt (price of freedom).
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: '*nod*'

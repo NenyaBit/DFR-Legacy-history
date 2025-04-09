@@ -1,0 +1,128 @@
+FormKey: 18E19D:DeviousFollowers.esp
+MajorRecordFlagsRaw: 4
+EditorID: _DFWeakenPotionWPerk
+SkyrimMajorRecordFlags:
+- NotPlayable
+Name:
+  TargetLanguage: English
+  Value: Weakness
+Description:
+  TargetLanguage: English
+  Value: >+
+    Your body feels weak.
+
+    -50% Damage dealt.
+
+    +200% Damage taken.
+
+    Things you wear seem unbearably heavy.
+
+    Your spells are weak and hard to cast.
+
+NumRanks: 1
+Effects:
+- MutagenObjectType: PerkEntryPointModifyValue
+  Conditions:
+  - Conditions:
+    - MutagenObjectType: ConditionFloat
+      Flags:
+      - OR
+      Data:
+        MutagenObjectType: GetStageConditionData
+        Quest: 186A9E:DeviousFollowers.esp
+      ComparisonValue: 20
+    - MutagenObjectType: ConditionFloat
+      Data:
+        MutagenObjectType: GetStageConditionData
+        Quest: 186A9E:DeviousFollowers.esp
+      ComparisonValue: 100
+  EntryPoint: ModIncomingDamage
+  PerkConditionTabCount: 3
+  Modification: Multiply
+  Value: 3
+- MutagenObjectType: PerkEntryPointModifyValue
+  EntryPoint: ModSpellRange
+  PerkConditionTabCount: 2
+  Modification: Multiply
+  Value: 0.5
+- MutagenObjectType: PerkEntryPointModifyValue
+  EntryPoint: ModSpellCost
+  PerkConditionTabCount: 2
+  Modification: Multiply
+  Value: 2
+- MutagenObjectType: PerkEntryPointModifyValue
+  EntryPoint: ModPlayerIntimidation
+  PerkConditionTabCount: 2
+  Modification: Multiply
+  Value: 0.1
+- MutagenObjectType: PerkEntryPointModifyValue
+  EntryPoint: ModSpellMagnitude
+  PerkConditionTabCount: 3
+  Modification: Multiply
+  Value: 0.1
+- MutagenObjectType: PerkEntryPointModifyValue
+  EntryPoint: ModIncomingStagger
+  PerkConditionTabCount: 2
+  Modification: Multiply
+  Value: 2
+- MutagenObjectType: PerkEntryPointModifyValue
+  Conditions:
+  - Conditions:
+    - MutagenObjectType: ConditionFloat
+      Flags:
+      - OR
+      Data:
+        MutagenObjectType: GetStageConditionData
+        Quest: 186A9E:DeviousFollowers.esp
+      ComparisonValue: 20
+    - MutagenObjectType: ConditionFloat
+      Data:
+        MutagenObjectType: GetStageConditionData
+        Quest: 186A9E:DeviousFollowers.esp
+      ComparisonValue: 100
+  EntryPoint: ModAttackDamage
+  PerkConditionTabCount: 3
+  Modification: Multiply
+  Value: 0.5
+- MutagenObjectType: PerkEntryPointModifyValue
+  Conditions:
+  - Conditions:
+    - MutagenObjectType: ConditionFloat
+      Flags:
+      - OR
+      Data:
+        MutagenObjectType: GetStageConditionData
+        Quest: 186A9E:DeviousFollowers.esp
+      ComparisonValue: 20
+    - MutagenObjectType: ConditionFloat
+      Data:
+        MutagenObjectType: GetStageConditionData
+        Quest: 186A9E:DeviousFollowers.esp
+      ComparisonValue: 100
+  - RunOnTabIndex: 1
+    Conditions:
+    - MutagenObjectType: ConditionFloat
+      Flags:
+      - OR
+      Data:
+        MutagenObjectType: HasKeywordConditionData
+        Keyword: 06BBE8:Skyrim.esm
+      ComparisonValue: 1
+    - MutagenObjectType: ConditionFloat
+      Flags:
+      - OR
+      Data:
+        MutagenObjectType: HasKeywordConditionData
+        Keyword: 06BBD3:Skyrim.esm
+      ComparisonValue: 1
+    - MutagenObjectType: ConditionFloat
+      Data:
+        MutagenObjectType: HasKeywordConditionData
+        Keyword: 06BBD2:Skyrim.esm
+      ComparisonValue: 1
+  EntryPoint: ModArmorWeight
+  PerkConditionTabCount: 2
+  Modification: Multiply
+  Value: 30
+MajorFlags:
+- NonPlayable

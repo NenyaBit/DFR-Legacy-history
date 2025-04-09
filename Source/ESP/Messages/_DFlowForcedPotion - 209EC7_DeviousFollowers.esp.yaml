@@ -1,0 +1,22 @@
+FormKey: 209EC7:DeviousFollowers.esp
+EditorID: _DFlowForcedPotion
+Description:
+  TargetLanguage: English
+  Value: >-
+    Your follower forces you to drink the stranger's weird potion. It tastes of sex and sweat.
+
+    You try not to swallow, but they hold you nose and cover you mouth, and eventually you are forced to gulp it down.
+
+    Gagging and almost vomiting, you expect the worst to happen, then nothing!
+
+    Apart from the horrible taste, you feel fine, and now you're free of your deals!
+
+    Perhaps you finally got lucky?
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

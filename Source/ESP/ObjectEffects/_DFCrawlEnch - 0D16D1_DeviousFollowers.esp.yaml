@@ -1,0 +1,38 @@
+FormKey: 0D16D1:DeviousFollowers.esp
+EditorID: _DFCrawlEnch
+Name:
+  TargetLanguage: English
+  Value: Crawling enchantment
+Flags:
+- NoAutoCalc
+EnchantType: Enchantment
+Effects:
+- BaseEffect: 0D16D0:DeviousFollowers.esp
+  Data: {}
+- BaseEffect: 010FCF:Dawnguard.esm
+  Data:
+    Magnitude: 1000
+- BaseEffect: 01332D:Devious Devices - Expansion.esm
+  Data:
+    Magnitude: 20
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: WornHasKeywordConditionData
+      Keyword: 05F4BB:Devious Devices - Integration.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: WornHasKeywordConditionData
+      Keyword: 05F4BA:Devious Devices - Integration.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetVMQuestVariableConditionData
+      RunOnTypeIndex: 0
+      Quest: 01A282:Devious Devices - Integration.esm
+      SecondUnusedIntParameter: 227959136
+      VariableName: ::bootsSlowdownToggle_var
+    ComparisonValue: 1

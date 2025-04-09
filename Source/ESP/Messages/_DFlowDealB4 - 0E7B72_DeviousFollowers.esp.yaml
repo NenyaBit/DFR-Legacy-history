@@ -1,0 +1,20 @@
+FormKey: 0E7B72:DeviousFollowers.esp
+EditorID: _DFlowDealB4
+Description:
+  TargetLanguage: English
+  Value: >-
+    ==Deal %.0f==
+
+    You need to wear bondage gloves and boots with your corset or harness. 
+
+    <Alias.ShortName=_DMaster> will tape your mouth up because slaves don't need words.
+
+    If you take off the tape <Alias.ShortName=_DMaster> will kindly replace it for you after they have fucked you.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

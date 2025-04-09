@@ -1,0 +1,13 @@
+FormKey: 0E0477:DeviousFollowers.esp
+EditorID: _DFDebt001
+Name:
+  TargetLanguage: English
+  Value: Debt
+Model:
+  File: Clutter\Coin01.nif
+  Data: 0x020000000000000000000000
+Icons:
+  LargeIconFilename: Clutter\Coin01.dds
+Keywords:
+- 0914E9:Skyrim.esm
+Value: 1

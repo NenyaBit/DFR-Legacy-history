@@ -1,0 +1,7 @@
+name: Blindfold
+formId: 0x3875F9
+hint: You must wear a blindfold.
+type: wear
+slots:
+   - 55
+level: 3

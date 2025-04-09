@@ -1,0 +1,24 @@
+FormKey: 0EA316:DeviousFollowers.esp
+EditorID: _DFlowDealBCleaning3
+Description:
+  TargetLanguage: English
+  Value: >-
+    You start drinking the cum, sweat and spit quickly, trying not to taste it. But there's so much...
+
+    <Alias.ShortName=_DMaster> laughs "There, must be a good pint or so in there. You're lucky I feed you so well!"
+
+    You sigh, as you eventually finish the pungent meal.
+
+    Afterwards, you try to get a drink of anything else, to remove the taste...
+
+    <Alias.ShortName=_DMaster> stops you "Oh no... You will learn to love the taste of me."
+
+    <Alias.PronounCap=_DMaster> tapes your mouth up, leaving the aftertaste of cum and sweat to stew in your mouth.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

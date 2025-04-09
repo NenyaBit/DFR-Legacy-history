@@ -1,0 +1,10 @@
+FormKey: 05C80C:Skyrim.esm
+EditorID: DialogueFollowerDismissTopic
+Version2: 5
+Name:
+  TargetLanguage: English
+  Value: It's time for us to part ways.
+Priority: 10
+Branch: 05C84F:Skyrim.esm
+Quest: 0750BA:Skyrim.esm
+SubtypeName: CUST

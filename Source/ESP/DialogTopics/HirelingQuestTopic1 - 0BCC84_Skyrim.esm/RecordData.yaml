@@ -1,0 +1,10 @@
+FormKey: 0BCC84:Skyrim.esm
+EditorID: HirelingQuestTopic1
+Version2: 5
+Name:
+  TargetLanguage: English
+  Value: Consider yourself hired. [<global=hirelinggold>]
+Priority: 60
+Branch: 0BCC95:Skyrim.esm
+Quest: 0BCC94:Skyrim.esm
+SubtypeName: CUST

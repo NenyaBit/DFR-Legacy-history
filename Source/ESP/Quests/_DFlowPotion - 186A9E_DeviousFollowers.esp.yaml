@@ -1,0 +1,231 @@
+FormKey: 186A9E:DeviousFollowers.esp
+EditorID: _DFlowPotion
+VirtualMachineAdapter:
+  Scripts:
+  - Name: QF__DFlowPotion_08186A9E
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_Follower
+      Object: 186A9E:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_Player
+      Object: 186A9E:DeviousFollowers.esp
+      Alias: 2
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_PlayerRef
+      Object: 186A9E:DeviousFollowers.esp
+      Alias: 3
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias__DFAddictedTo
+      Object: 186A9E:DeviousFollowers.esp
+      Alias: 0
+  - Name: _DFPotionQuest
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: WeakenMsg
+      Object: 18BA00:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tool
+      Object: 01210D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: q
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowPotionDeal
+      Object: 1930DF:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Dtick
+      Object: 010617:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ForcedDrink
+      Object: 209EC7:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DMaster
+      Object: 000D62:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: RopesR
+      Object: 1930DE:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: RopesI
+      Object: 1930DD:DeviousFollowers.esp
+    - MutagenObjectType: ScriptBoolProperty
+      Name: EnabledEvil
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowPotionDealEvil
+      Object: 1930E0:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: bleedOutStart
+      Object: 013ECC:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DAddicted
+      Object: 186A9E:DeviousFollowers.esp
+      Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: bleedOutStop
+      Object: 013ECE:Skyrim.esm
+    - MutagenObjectType: ScriptBoolProperty
+      Name: Enabled
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFPotion
+      Object: 18B9EF:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Follower
+      Object: 186A9E:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptIntProperty
+      Name: nState
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Weakened2
+      Object: 18E19D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GagMsg
+      Object: 0EA313:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: theScene
+      Object: 1930F0:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DC
+      Object: 01C86D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptFloatProperty
+      Name: Delay
+  FileName: QF__DFlowPotion_08186A9E
+  Fragments:
+  - Unknown2: 1
+    ScriptName: QF__DFlowPotion_08186A9E
+    FragmentName: Fragment_0
+  - Stage: 50
+    Unknown2: 1
+    ScriptName: QF__DFlowPotion_08186A9E
+    FragmentName: Fragment_3
+  - Stage: 10
+    Unknown2: 1
+    ScriptName: QF__DFlowPotion_08186A9E
+    FragmentName: Fragment_1
+  - Stage: 100
+    Unknown2: 1
+    ScriptName: QF__DFlowPotion_08186A9E
+    FragmentName: Fragment_4
+  - Stage: 20
+    Unknown2: 1
+    ScriptName: QF__DFlowPotion_08186A9E
+    FragmentName: Fragment_2
+Name:
+  TargetLanguage: English
+  Value: Weird Potion
+Flags:
+- StartGameEnabled
+- AllowRepeatedStages
+- 0x10
+Type: MainQuest
+DialogConditions:
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetIsRaceConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Race: 00283A:Dawnguard.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetIsRaceConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Race: 0CDD84:Skyrim.esm
+  ComparisonValue: 1
+Stages:
+- LogEntries:
+  - Flags: []
+- Index: 10
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: I drank that weird potion. It tasted of sex and bad milk and <Alias.ShortName=_DFAddictedTo> laughed as I tried to swallow it and keep it down. At least now I have a chance to be free.
+- Index: 20
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: My body is so weak! Anything I wear seems to get a hundred times heavier. I seem to get hurt easily, and I can barley swing a weapon or cast a spell. There is no way I can survive for long like this. The hunger is the worst part. Nothing I eat seems to help. I think it must have something to do with that potion I drank. I need to ask <Alias.ShortName=_DFAddictedTo> about it.
+- Index: 50
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: I had drink my <Alias.ShortName=_DFAddictedTo>'s sex fluids to cure my weakened state. It was so humiliating. They said it will happen again and I will need to do this for the rest of my life. Why did I drink that potion?
+- Index: 100
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: My body is weak again. Anything I wear feels a hundred times heavier. I get hurt easily, and I can barley swing a weapon or cast a spell. I have to drink that person's sex fluids again. I can't believe it!  I'm trapped ... addicted to their cum for the rest of my life... And the constant gnawing hunger... Only that stuff can relieve it.
+Objectives:
+- Index: 10
+  Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: ''
+- Index: 20
+  Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: Talk to <Alias.ShortName=_DFAddictedTo>
+  Targets:
+  - {}
+- Index: 50
+  Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: ''
+- Index: 100
+  Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: Talk to <Alias.ShortName=_DFAddictedTo> for another meal.
+  Targets:
+  - {}
+NextAliasID: 4
+Aliases:
+- Name: _DFAddictedTo
+  Flags:
+  - Optional
+  - AllowReuseInQuest
+  - StoresText
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null
+- ID: 1
+  Name: Follower
+  Flags:
+  - Optional
+  - AllowReuseInQuest
+  - StoresText
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null
+- ID: 2
+  Name: Player
+  Flags:
+  - Optional
+  - AllowReuseInQuest
+  - StoresText
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null
+- ID: 3
+  Name: PlayerRef
+  Flags:
+  - Optional
+  - StoresText
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null

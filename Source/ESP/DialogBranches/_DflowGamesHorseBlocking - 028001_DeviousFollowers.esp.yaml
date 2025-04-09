@@ -1,0 +1,7 @@
+FormKey: 028001:DeviousFollowers.esp
+EditorID: _DflowGamesHorseBlocking
+Quest: 0110DC:DeviousFollowers.esp
+Category: Player
+Flags:
+- Blocking
+StartingTopic: 028002:DeviousFollowers.esp

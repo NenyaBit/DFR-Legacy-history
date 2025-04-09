@@ -1,0 +1,20 @@
+FormKey: 1173B9:DeviousFollowers.esp
+EditorID: _DflowGoldContRules
+Description:
+  TargetLanguage: English
+  Value: >-
+    After each rest <Alias.ShortName=_DMaster> will set a value between %.0f and %.0f every day.
+
+    Then decide if you have the option to leave or not.
+
+    Every time you change area, they correct your gold if it differs from this value, adjusting your debt and credit.
+
+    To make this fun for <Alias.ShortName=_DMaster> the only time they will tell you your debt is after sleeping.
+
+    You can ask to carry more gold, and if agreed, that will be the new amount until you rest.
+
+    The amount you can carry may be reduced by 20%% on debt update, follower bleedout, or device removal.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox

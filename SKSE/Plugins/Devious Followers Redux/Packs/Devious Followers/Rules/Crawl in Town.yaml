@@ -1,0 +1,11 @@
+formId: 0x39180D
+hint: You must crawl in towns.
+level: 3
+type: wear
+slots:
+   - 48
+level: 2
+location:
+   - town
+exclude:
+   - devious followers/petsuit in town

@@ -1,0 +1,17 @@
+FormKey: 0E2C2C:DeviousFollowers.esp
+EditorID: _DFlowDealSlave
+Description:
+  TargetLanguage: English
+  Value: >+
+    ===You are a slave to deals===
+
+    You have a set of deals you need to follow unless you can afford to buy out of them.
+
+    Cost to buy out will vary over time, based on your MCM settings.
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

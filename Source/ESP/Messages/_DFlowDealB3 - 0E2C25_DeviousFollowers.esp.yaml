@@ -1,0 +1,18 @@
+FormKey: 0E2C25:DeviousFollowers.esp
+EditorID: _DFlowDealB3
+Description:
+  TargetLanguage: English
+  Value: >-
+    ==Deal %.0f==
+
+    You need to wear a gag, bondage gloves and boots with your corset or harness. 
+
+    <Alias.ShortName=_DMaster> will take off your gag now and again to remind you what your owner tastes like.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

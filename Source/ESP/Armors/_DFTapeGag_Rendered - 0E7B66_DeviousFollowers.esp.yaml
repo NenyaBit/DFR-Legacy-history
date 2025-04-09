@@ -1,0 +1,49 @@
+FormKey: 0E7B66:DeviousFollowers.esp
+EditorID: _DFTapeGag_Rendered
+ObjectEffect: 02B078:Devious Devices - Integration.esm
+WorldModel:
+  Male:
+    Model:
+      File: Devious\Devices\gagStrapBall_go.nif
+      Data: 0x020000000000000000000000
+      AlternateTextures:
+      - Name: gagSimpleBall_go003:1
+        NewTexture: 011113:Devious Devices - Expansion.esm
+        Index: 2
+      - Name: gagSimpleBall_go003:2
+        NewTexture: 011114:Devious Devices - Expansion.esm
+        Index: 1
+      - Name: gagSimpleBall_go003:3
+        NewTexture: 011113:Devious Devices - Expansion.esm
+  Female:
+    Model:
+      File: Devious\Devices\gagStrapBall_go.nif
+      Data: 0x020000000000000000000000
+      AlternateTextures:
+      - Name: gagSimpleBall_go003:1
+        NewTexture: 011113:Devious Devices - Expansion.esm
+        Index: 2
+      - Name: gagSimpleBall_go003:2
+        NewTexture: 011114:Devious Devices - Expansion.esm
+        Index: 1
+      - Name: gagSimpleBall_go003:3
+        NewTexture: 011113:Devious Devices - Expansion.esm
+BodyTemplate:
+  FirstPersonFlags:
+  - 0x4000
+  ArmorType: Clothing
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 0C27BD:Skyrim.esm
+- 0FF9FB:Skyrim.esm
+- 007EB8:Devious Devices - Assets.esm
+- 02F16E:SexLab.esm
+- 003894:Devious Devices - Assets.esm
+- 07EAD1:Devious Devices - Integration.esm
+- 0E7B67:DeviousFollowers.esp
+Description:
+  TargetLanguage: English
+  Value: Item reference reserved for scripts interaction. This should not appear in your inventory. Check your Devious Devices mod configuration.
+Armature:
+- 04B7B3:Devious Devices - Expansion.esm

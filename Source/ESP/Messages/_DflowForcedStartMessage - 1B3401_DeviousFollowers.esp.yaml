@@ -1,0 +1,13 @@
+FormKey: 1B3401:DeviousFollowers.esp
+EditorID: _DflowForcedStartMessage
+Description:
+  TargetLanguage: English
+  Value: >-
+    You have been given %.0f Debt to settle with your follower.
+
+    Make deals or pay them...
+
+    Or wait, and they will decide how to make you pay!
+INAM: 0x00000000
+Flags:
+- MessageBox

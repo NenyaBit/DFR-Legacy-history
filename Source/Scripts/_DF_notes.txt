@@ -1,0 +1,369 @@
+DF Notes
+
+DialogueFavorGeneric has the main "Follow me" in it.
+DialogueFollower has the main follower dialogs in it.
+HirelingQuest has the main hireline hires in it.
+
+_Dtick::Suspend :: 1 = suspended due to scene, 0 = normal - triggers off dhlp-Suspend/Resume
+_DflowDiaToggle :: default 0, enabled blocking dialog vs non-blocking ... obsolete ... I disabled the toggle for it in the MCM. Blocking dialogs aren't used now.
+_DflowDiaWarning :: default 0, set to 1 after the follower has announced deviousness.
+ED = half max debt
+
+Debt = -1 triggers spider game
+
+_Dfendless keyword is from items added by endless mode instead of slavery.
+
+_DFlow Quest stages
+--------------------
+Stages < 10 enable dismissal dialogs
+Setting some stages causes reset of some internal data - check stage scripts
+== 0 no DF (this is also set on pay-off)
+== 1 start
+== 2 hireline start
+== 5 shutdown
+== 9 payoff (dismissable)
+>= 10 AND < 100 = normal deals
+== 10 greet
+== 40 in debt
+
+== 98 remove all gold and enslave => stage 100
+== 99 as above, but set freedom cost => stage 100
+
+== 100 basic enslavement (free fuck in no collar)
+== 101 gagged working slave in dungeon? (Reached from 100, via "I have a gift for you", which adds a gag and sets SlaveEvents to 100)
+in this stage you can get punished with chains
+== 110 collar
+== 150 + other devices (cannot use arms)
+>= 100 < 200 = slave
+> 200 = in a game ("too helpless")
+
+98 = Enslave - deal enslavement - needs to transition player to 100
+100, town collar flag = town collar required
+100 = mittens and boots required
+101 = master won't talk - gagged? - must be naked in dungeon
+101 = straightjacket game (not in dungeon)
+150 = must be naked in dungeon
+150 = no arms outside dungeon
+>= 100 < 200 = must be naked except in dungeon
+200 = jacket / pony game / jarl game
+
+_DflowGames Quest Stages
+-------------------------
+Games 100+ = jacket (ends via player dialogue "Haha, of course my pet...")
+Games 200+ = pony (ends at 299)
+Games 300+ = sleep with gag - triggered sleep event from SleepGameCheck() in _DFTools (ends at 399)
+Games 400+ = petsuit (ends at 9999)
+
+
+_DflowSlaveEvents Quest Stages
+-------------------------------
+100 = gagged, be silent
+101 = advertising the whore
+
+
+Triggers including _DFlow stage tests
+-------------------------------------------
+
+*Blindfold
+>= 10 < 100, timer, in dungeon, will < 6 || debt > ED, no jacket, no blockgeneric, no heavy, no suit, blindfold = start blindfold straightjacket game 100
+
+* Jarl
+>= 10 < 100, timer, in castle, will < 6, deals > 4, no blockgeneric, no heavy, no belt = start Jarl game 400
+
+* Boots
+>= 10 < 100, dungeon, debt > ED || will < 6, no blockgeneric, no heavy, no gloves, no boots = pony game? 200
+
+* Gift
+== 100, timer, no dungeon, no block generic = straightjacket game 101
+
+* Spider
+Debt == -1, will < 10, no blindfold, have collar = fit blindfold, no quest stage
+
+* Not keeping up
+== 100, debt >= failure
+remove all items, add prisoner chains, set crime gold 1000 in WR and b and c holds, reset quest, set stage 0, start DF
+
+== 100, Must wear mittens and boots (added collar and non-collar variants)
+remove cuffs, armcuffs, legcuffs, yoke, armbinder, add collar is missing, remove half total gold
+
+== 101, Must wear mittens and boots outside dungeon
+remove any armbinder, add yoke, remove half total gold
+
+To get into stage 150, the player must ask the follower to remove a BlockGeneric as a slave.
+Will not fire is wearing 'endless' keyword chains.
+The follower then give an armbinder (doesn't fit it) and transitions to stage 150 in TIF_Dflow_0B00CAB6
+
+== 150, Must wear armbinder, or heavy bondage, and not in dungeon
+add armbinder, 500 debt
+
+== 150, No block generic
+remove all gold, set debt, show a message, reset quest, set stage 100.
+
+
+* What is it?
+Deals == 0 && Stage >= 10 && Stage < 100
+
+* Yes
+Deals >= 1 && Deals < 6 && Stage < 100
+
+Hey! Slave!
+Deals >= 6 && Stage < 100
+
+* Yes slave
+* What is it, whore?
+* Does my pet need something?
+* Huh? What is it, fuck pig?
+Stage >= 100 && Stage < 200 && Stage != 101
+
+[Click Me!]
+* Nice to meet you!
+Stage >= 10 && Warning == 0
+
+
+DiaToggle (if 1.0 disables dialog)
+DiaWarning (must be 1.0 to enable dialog) - set after player has begun devious dialogs.
+
+
+BuyItems
+Stage > 1 && Stage < 100
+
+
+Want to do:
+
+Move Credit handling to QF__Gift so credit can be managed properly. Get rid of the circular dependency in QF__Gold that relies on GoldControl.
+Rebuild the scanner so it is script-light.
+Fix the slavery items.
+Review the slavery quest stage chain.
+Map out dependencies.
+Add limiter for will lost per day.
+Review all resistance losses. Add resistance loss categories.
+Reset boredom button.
+Reset fatigue button.
+Enslave me button.
+Improve layouts.
+Boredom --- does it get reset, reduced? EVER?
+
+Modular Deals: cuffs, collar, gag, nips, clit, naked, whore, boots, gloves, petsuit, crawl, innkeeper, bound, merchant, jacket
+
+_DflowDealB => Bondage Deal - 1 corset, 2 boots+gloves, 3 gag, 4 tape-gag, (3+ forcegreets occur), (4 tape-gag forcegreets occur)
+_DflowDealH => Slut Deal    - 1 speech, 2 naked in town, 3 bound-hands in town, 4 cum layers (Hellos in _DflowDealH)
+_DflowDealO => Ownership    - 1 arm+leg cuffs, 2 collar, 3 chastity belt, (3 forcegreets general chastity gloating), (4 forcegreets chance to cum)
+_DflowDealP => Piercings    - 1 nipple-piercings, 2 pussy-piercings, 3 naked when talking to people (3+ piercings are checked by forcegreet)
+_DflowDealS => Slave        - 1 anal-plug, 2 whore-armor, 3 sign
+(There is a stage 100-200 version of the forcegreet slut dialog for slaves)
+
+Forcegreets come from the _DFlow._DMaster alias. Stages >= 10 < 98, Suspend == 0
+_DflowDealOForceGreetAI => DealO==3, not dungeons => _DflowDealOForceGreetTopic
+_DflowDealOForceGreetAIO2 => DealO==4, not dungeons => _DflowDealO2ForceGreetTopic
+_DflowDealOForceGreetAIB => DealB==3, not dungeons => _DflowDealBForceGreetTopic
+_DflowDealOForceGreetAIB2 => DealB==4, not dungeons => _DflowDealBForceGreetTopic
+_DflowDealOForceGreetAIP => DealP>=3, not dungeons, no warmer or suit, wearing clothes or armor => _DflowDealPForceGreetTopic
+_DflowOverDebtForceGreetAI => not _Dfendless, _DflowDebt >= _DflowEnslaveDebt, DebtPunTimer < days => _DFlowFGDebtFailTopic
+
+Routine deal enforcement is on the Misc hellos for the specific deal quests.
+ModDealController does the same for modular deals (_DFlow stage check is in quest conditions for this).
+Main debt update driven off _DFlow Hellos.
+
+PotionQuest
+nState
+0
+1
+2 => 1000 gold
+3 => 2000 gold
+4 => 5000 gold
+5 => free
+6 => bound sex
+
+DialogueFollower contains the dismissal...
+DialogFavorGeneric contains the "Follow me. I need your help." For non-hirelings.
+HirelingQuest contains "Consider yourself hired."
+
+
+ToDo:
+
+* DONE -- Feature flag for licenses - MCM done - implement flagging/start/stop.
+* DONE -- License prices in MCM - MCM done - implement debt charging.
+* DONE -- Fix that bad dialog where it doesn't update quickly enough.
+* DONE -- Licenses - dismiss supplying follower.
+* DONE -- Defaults for potion quest duration need fixing (fixed?).
+* DONE -- Fix sex events
+* DONE -- Add missing locations to the dismissal location list.
+* DONE -- Missing state in Licenses - don't offer removal/add options for license classes that aren't enabled.
+* DONE -- Missing state in licenses - don't offer start options if no licenses enabled.
+* DONE -- Also - if no licenses enabled - have a status for currently running that says so.
+* DONE -- Licenses - don't supply clothes license if have any naked in town deals.
+* DONE -- Increase expected deals on dismissal.
+* DONE -- Test the boredom restore mechanic and expected deals update.
+
+* Improve chastity in sex - some fixes already done?
+* Check locations that shouldn't be on dismissal location list. Add exclude list?
+* Check tail plug removable.
+* Fix broken sign toggle for whore deal. Make actual whore deal use a fixed plug.
+
+
+LATER...
+* Reduce expected deals during slavery.
+* Add the slavery overwatch quest - it can remove the expected deals but would also monitor SLTR and SD+ slavery.
+* SLS Magic collar removal - get new version - check API.
+
+
+
+DF_FollowerNeverDevious - A value >= 0 means DF ignores this follower.
+DF_FollowerMaster - A value >= 0 means this is the current DF master.
+DF_FollowerLastHired - A value >= 0 is the float value in game time of the last hiring event. Used to calculate the value below, which accumulates across multiple hirings.
+DF_FollowerMasterDays - A value >= 0 is the completed days this follower was/has been a DF master for. On current and dismissed followers.
+DF_FollowerBoredom - Value >= 0 is the boredom the follower was last set with. Remains on dismissed followers.
+
+DF_FollowerPersonality - 0 - 6 : 0 Default, 1 Slaver, 2 Profiteer, 3 Sexy, 4 Sadist, 5 Moral, 6 Nightmare
+
+DF_FollowerAggression - Value >= 0 <= 100, is a measure of how aggressive and forceful this DF is. Not used yet, but planned to be used for eager deals feature.
+DF_FollowerGreed
+
+
+Future maybe...
+===============
+Ownership deal not adding arm cuffs, or LDC broken?
+While follower fresh, opt to reduce existing fatigue in return for higher fees forward
+Take deals to fast travel to walled cities
+Confessions
+Ultimatums
+Scams (plus honesty value)
+Offer followers higher fees to raise honesty
+Hire more follower to raise honesty
+Loot handling/selling
+
+Enslavement "hidden" buyout with requests.
+Enslavement take all items except ones given
+Enslavement can ask for arms/armor
+
+More fun with gags
+SLS license awareness
+
+L3 sex deal with more sex and chastity belt.
+L3 cuffs deal with special cuffs that are heavy and also impair carry capacity
+vaginal plug deal, not really a plug
+no orgasm deal, comes with chastity belt - belt not required, just no orgasms
+
+
+
+_DFlowDealO QF__DflowDealO_0A01C868
+_DFlowDealB QF__DflowDealB_0A01C866
+_DFlowDealH
+_DflowDealP
+_DflowDealS
+
+Deal texts:
+===========
+
+1  B-1     I think you'd look amazing in a corset or harness, so I want you to wear one.
+2  B-2     As well as wearing the corset or harness, how about you sell me your hands and feet? You'll make sure they stay locked away for me, won't you?
+3  B-3     I want you to sell me your mouth. I'll keep it gagged, except when I want to use it for something.
+        (requires B1)
+4  B-3     I love how you look with those boots, but you talk too much. I'll tape your mouth shut. If it falls off, I'll fuck your mouth before taping it shut again.
+        (requires B2)
+        
+11 H-1     When I put my hand on your shoulder, you need to tell that person that you're a slut, or I'll add debt.
+12 H-2     So slut, when we are around towns, I'm going to strip your clothes off, so everyone can see you naked.
+        So sissy, when we are around towns, I'm going to strip your clothes off, so everyone can see you naked.
+13 H-3     Slut, when we're in towns, as well as stripping you naked, I'm going to bind your wrists together.
+        (requires H1)
+14 H-3     Slut, when we're in towns, as well as stripping you naked, I'll make sure you look like the slut you are.
+        (requires H2)
+
+21 O-1     I want you to wear arm and leg cuffs. Any kind, I'm not picky.
+22 O-2     I want you wear a collar to go with those cuffs. Any lockable collar is fine.
+23 O-3     That collar says you're owned, but I want to own your pussy too. When I'm not using it, you'll need to wear a chastity belt.
+        That collar says you're owned, but I want to own your dick too. When I'm not using it, you'll need to wear a chastity belt.
+        (requires O1)
+24 O-3     That collar says you're owned, but I want to own your pussy too. You'll wear a special belt I have for you. But once a day you'll get a chance to cum.
+        (requires O2)
+        
+31 P-1     I want you to wear some nipple piercings. You want to look pretty for me, don't you?        
+32 P-2     I want your pussy to have a piercing, to match your nipples.
+33 P-3     When you talk to people, I want you to show off your piercings. Sometimes I'll check that you're still wearing them.
+
+41 S-1     I want you to keep a plug in your ass for me. 
+42 S-2     I've got some nice protective armor I want you to wear. I'll be able to see if you're wearing that plug. Or you can be naked instead.
+43 S-3     So now you look like a whore, I think I should whore you out. Let's start by upgrading your little plug.
+
+I'll pick an existing deal to extend to twice the normal time, for double debt reduction. [At least 7 days]
+
+;  1 CuffsRule             L1+2
+			I want you to wear some arm and leg cuffs. Purely ornamental, but lockable. I'm sure you'll barely notice them.
+;  2 CollarRule            L1+2
+			I want you to wear a lockable collar. That look will really suit you.
+;  3 GagRule               L1+2
+			You will have to wear a gag, everywhere, except in dungeons. Gag talk is so sexy, don't you agree?
+;  4 NPRule                L1+2 nipple piercing
+			You'll wear some nipple piercings as a constantly arousing reminder of your debt to me.
+;  5 VPRule                L1+2 vaginal piercing
+			I want you to wear a piercing in a very private place. Well... private for most people. For you, not so much, right?
+;  6 NakedRule             L1+2
+			You will promise to stay naked while we're in town. You're a bit of an exhibitionist so I think you'll like it.
+;  7 WhoreRule             L1+2 whore armor
+			You will wear some sexy armor for me. Or if that's too much of a burden you can go naked instead.
+;  8 BlindFoldRule         L1+2
+			You will keep yourself blindfolded while we're in civilized areas. Don't worry, I won't let you totter into an open well or anything.
+;  9 BootsRule             L1+2
+			I want you to wear lockable boots or shoes to highlight those sexy legs. You're comfortable in heels though aren't you? Shouldn't be a problem.
+; 10 GlovesRule            L1+2
+			I want you to wear lockable gloves. It needs to be something tight to show off those slippery fingers of yours.
+; 11 PetSuitInTownRule     L3
+			I want you to be my helpless and dependent pet, just while we're in town. I think you'll have a lot of fun with this game.
+			Maybe after a while you'll like it so much that you'll want to stay my pet for good?
+; 12 CrawlInTownRule       L3
+			I want you to wear an enchanted tail in town. It will keep you on your hands and knees like the good little dog you are.
+			You're easily confused, so this should help you understand your role in this relationship.
+; 13 InnKeeperRule         L3
+			I will offer the use of your body to innkeepers so we can get cheaper rooms.
+			It's a favor to you really, as it will save you money, and I know you love to fuck them.
+; 14 BoundInTownRule       L3
+			You will wear heavy restraints in town so I can be sure you're not getting up to anything you shouldn't.
+			It should put a stop to you fishing around in my stuff all the time too.
+; 15 MerchantRule          L3
+			I'll trade the use of your body to merchants for a discount. You're probably looking forward to it already, right?
+			You're such a slut, and I know you're hungry to fuck them anyway. I can't wait to watch.
+; 16 JacketRule            L3
+			You will wear a straightjacket in town. It's not that I don't trust you or anything but...
+			At least you'll look sexy in it, and those sticky fingers of yours won't get us in trouble.
+; 17 ExpensiveRule         L1+2+3
+			I'm feeling generous. I'll take the normal amount off your debt and you won't have to do anything sexy at all.
+			But I will expect you to pay me back later ... with interest. Until you do that we'll be staying close.
+; 18 KeyRule               L3
+			You will promise to give me any keys you get so I can look after them. I've noticed how you keep losing them.
+			I'll keep them safe for you, don't worry about that. Very safe.
+; 19 SkoomaRule            L3
+			I think you've got a bit sluggish lately. Too many sweetrolls? Anyway, I have something I want you to drink.
+			You will promise to drink it every day, for your health.
+; 20 MilkingRule           L3
+			I think you'd make a good cow. I want you to produce a delicious drink of your own body's milk for me every day.
+			You'll probably enjoy the milking. I hear it's very relaxing.
+; 21 SpankRule             L1+2
+			You need more discipline, so I want you to beg me to spank you at least once each day. It's for your own improvement!
+; 22 SexRule                L1+2
+			We're always together but I'm not getting my fair share. I want you to beg me to fuck you at least once each day.
+			The idea of you begging for it is turning me on already. Maybe you should ask right now?
+; 23 LactacidRule          L1+2
+			I've obtained a potion that will help your tits get bigger. I want you to drink a little every day.
+; 24 RingRule              L1+2
+			I'll give you a treasured ring of mine. I really want you to wear it, so you'll always be reminded of me.
+; 25 AmuletRule            L1+2
+			I'll give you a beloved amulet of mine. I want you to promise to wear it always, as a special favor to me.
+; 26 CircletRule           L1+2
+			I have a circlet that would be perfect for you. You must wear it always, and think of me.
+
+
+Bear
+Wolf
+Dragon
+Skeever
+Slaughterfish
+
+HirelingErikTheSlayer - Rorikstead
+HirelingStenvar - Windhelm
+HirelingJanassa - Whiterun
+HirelingBelrand - Solitude
+HirelingMarcurio - Riften
+HirelingVorstag - Markarth
+DLC2RRTeldrynSero - Raven Rock
+

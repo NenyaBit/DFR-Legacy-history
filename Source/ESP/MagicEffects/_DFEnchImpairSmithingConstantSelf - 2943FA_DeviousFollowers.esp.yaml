@@ -1,0 +1,25 @@
+FormKey: 2943FA:DeviousFollowers.esp
+EditorID: _DFEnchImpairSmithingConstantSelf
+Name:
+  TargetLanguage: English
+  Value: Impair Smithing
+MenuDisplayObject: 0435A5:Skyrim.esm
+Flags:
+- Recover
+- Detrimental
+- NoHitEvent
+- NoDuration
+- NoArea
+- PowerAffectsMagnitude
+- Painless
+- NoHitEffect
+MagicSkill: Restoration
+Archetype:
+  MutagenObjectType: MagicEffectPeakValueModArchetype
+  ActorValue: SmithingPowerModifier
+DualCastScale: 1
+CastingSoundLevel: Silent
+Sounds: []
+Description:
+  TargetLanguage: English
+  Value: Smithing skill is reduced by <mag>

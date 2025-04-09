@@ -1,0 +1,21 @@
+{
+    "name": "1000008",
+    "priority": 10000300,
+    "conditions": [
+        {
+            "condition": "IsChild",
+            "requiredVersion": "1.0.0.0",
+            "negated": true
+        },
+        {
+            "condition": "IsWornHasKeyword",
+            "requiredVersion": "1.0.0.0",
+            "Keyword": {
+                "form": {
+                    "pluginName": "DeviousFollowers.esp",
+                    "formID": "213D46"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,124 @@
+FormKey: 1DD588:DeviousFollowers.esp
+EditorID: _DFlowDealM1
+VirtualMachineAdapter:
+  Scripts:
+  - Name: _MDDeal
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tool
+      Object: 01210D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DMC
+      Object: 1BD274:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+    - MutagenObjectType: ScriptIntProperty
+      Name: Rule2Code
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
+    - MutagenObjectType: ScriptIntProperty
+      Name: Rule1Code
+    - MutagenObjectType: ScriptIntProperty
+      Name: Enabled
+      Data: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowDealBaseDays
+      Object: 03CDFB:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DealPrice
+      Object: 1DD589:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LDC
+      Object: 1C494F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DealPriceTimer
+      Object: 1DD58A:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: Stat
+    - MutagenObjectType: ScriptIntProperty
+      Name: Rule3Code
+    - MutagenObjectType: ScriptFloatProperty
+      Name: Delay
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DC
+      Object: 01C86D:DeviousFollowers.esp
+  - Name: QF__DFlowDealM1_081DD588
+  FileName: QF__DFlowDealM1_081DD588
+  Fragments:
+  - Unknown2: 1
+    ScriptName: QF__DFlowDealM1_081DD588
+    FragmentName: Fragment_3
+  - Stage: 2
+    Unknown2: 1
+    ScriptName: QF__DFlowDealM1_081DD588
+    FragmentName: Fragment_1
+  - Stage: 1
+    Unknown2: 1
+    ScriptName: QF__DFlowDealM1_081DD588
+    FragmentName: Fragment_0
+  - Stage: 3
+    Unknown2: 1
+    ScriptName: QF__DFlowDealM1_081DD588
+    FragmentName: Fragment_2
+Flags:
+- StartGameEnabled
+- AllowRepeatedStages
+- 0x10
+DialogConditions:
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetIsRaceConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Race: 00283A:Dawnguard.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetIsRaceConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Race: 0CDD84:Skyrim.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: LessThan
+  Data:
+    MutagenObjectType: GetStageConditionData
+    Quest: 000D62:DeviousFollowers.esp
+  ComparisonValue: 100
+Stages:
+- Flags:
+  - StartUpStage
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: 0
+- Index: 1
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: 1
+- Index: 2
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: 2
+- Index: 3
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: 2
+- Index: 4
+  LogEntries:
+  - Flags: []
+NextAliasID: 0

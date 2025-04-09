@@ -1,0 +1,18 @@
+FormKey: 17F3CD:DeviousFollowers.esp
+EditorID: _DFlowDealH4
+Description:
+  TargetLanguage: English
+  Value: >-
+    ==Deal %.0f==
+
+    You need to say "I'm a slut" to the person you are speaking to when <Alias.ShortName=_DMaster> puts their hand on your shoulder.
+
+    In town <Alias.ShortName=_DMaster> will make sure you're naked and covered in cum so you look like the slut you are.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

@@ -1,0 +1,7 @@
+FormKey: 1EC357:DeviousFollowers.esp
+EditorID: _DFlowModDealControllerRemoveDevice
+Quest: 1BD274:DeviousFollowers.esp
+Category: Player
+Flags:
+- TopLevel
+StartingTopic: 1EC358:DeviousFollowers.esp

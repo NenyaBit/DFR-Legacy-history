@@ -1,0 +1,20 @@
+FormKey: 0822F6:DeviousFollowers.esp
+EditorID: _DFlowDealPMsgFail
+Description:
+  TargetLanguage: English
+  Value: >-
+    <Alias.ShortName=_DMaster> works <Alias.PronounPosObj=_DMaster> hands beneath your armour, searching out your breasts and pussy.
+
+    <Alias.PronounCap=_DMaster> takes <Alias.PronounPosObj=_DMaster> time groping you, feeling around your breasts, fingers brushing over your pussy.
+
+    There's a sudden sharp pain. <Alias.ShortName=_DMaster> has pierced you - and you did nothing to stop it.
+
+    You yelp, uselessly, and <Alias.ShortName=_DMaster> says, "Bad girl! I'll add some debt and check again soon."
+INAM: 0x00000000
+Quest: 06BE67:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

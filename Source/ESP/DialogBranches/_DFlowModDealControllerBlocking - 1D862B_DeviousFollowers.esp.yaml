@@ -1,0 +1,7 @@
+FormKey: 1D862B:DeviousFollowers.esp
+EditorID: _DFlowModDealControllerBlocking
+Quest: 1BD274:DeviousFollowers.esp
+Category: Player
+Flags:
+- Blocking
+StartingTopic: 1D862C:DeviousFollowers.esp

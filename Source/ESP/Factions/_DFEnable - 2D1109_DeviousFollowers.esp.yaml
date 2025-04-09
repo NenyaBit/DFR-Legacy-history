@@ -1,0 +1,13 @@
+FormKey: 2D1109:DeviousFollowers.esp
+EditorID: _DFEnable
+Flags:
+- IgnoreMurder
+- IgnoreAssault
+- IgnoreStealing
+- IgnoreTrespass
+- IgnorePickpocket
+- IgnoreWerewolf
+CrimeValues:
+  Arrest: True
+  AttackOnSight: True
+VendorValues: {}

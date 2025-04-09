@@ -1,0 +1,33 @@
+FormKey: 0239EE:DeviousFollowers.esp
+EditorID: _DFlowStarterDebug
+Flags:
+- StartGameEnabled
+- AllowRepeatedStages
+- 0x10
+DialogConditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 00C54B:DeviousFollowers.esp
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetIsVoiceTypeConditionData
+    VoiceTypeOrList: 013AE8:Skyrim.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetIsVoiceTypeConditionData
+    VoiceTypeOrList: 013AE9:Skyrim.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 0239ED:DeviousFollowers.esp
+  ComparisonValue: 1
+Stages:
+- Flags:
+  - StartUpStage
+NextAliasID: 1

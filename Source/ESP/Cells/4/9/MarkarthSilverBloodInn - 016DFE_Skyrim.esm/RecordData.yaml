@@ -1,0 +1,63 @@
+FormKey: 016DFE:Skyrim.esm
+IsCompressed: True
+MajorRecordFlagsRaw: 262144
+EditorID: MarkarthSilverBloodInn
+Version2: 6
+SkyrimMajorRecordFlags:
+- Compressed
+Name:
+  TargetLanguage: English
+  Value: Silver-Blood Inn
+Flags:
+- IsInteriorCell
+- PublicArea
+Lighting:
+  AmbientColor: '#00232323'
+  DirectionalColor: '#005C574B'
+  FogNearColor: '#003D484E'
+  FogFar: 4000
+  DirectionalRotationZ: 90
+  DirectionalFade: 1
+  FogClipDistance: 4000
+  FogPower: 1
+  AmbientColors:
+    DirectionalXPlus: '#00262324'
+    DirectionalXMinus: '#001F2321'
+    DirectionalYPlus: '#00232423'
+    DirectionalYMinus: '#00232123'
+    DirectionalZPlus: '#0010100F'
+    DirectionalZMinus: '#00353536'
+    Specular: '#00596A73'
+    Scale: 1
+  FogFarColor: '#00596A73'
+  FogMax: 1
+  Inherits:
+  - DirectionalColor
+  - DirectionalRotation
+  - DirectionalFade
+  - LightFadeDistances
+LightingTemplate: 09F281:Skyrim.esm
+WaterHeight: -2.1474836E+09
+Location: 01F30E:Skyrim.esm
+Owner: 06566F:Skyrim.esm
+AcousticSpace: 0C5B6D:Skyrim.esm
+Music: 017035:Skyrim.esm
+ImageSpace: 09F282:Skyrim.esm
+Persistent:
+- MutagenObjectType: PlacedNpc
+  FormKey: 0B9984:Skyrim.esm
+  MajorRecordFlagsRaw: 1024
+  EditorID: HirelingVorstagRef
+  Version2: 4
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 0B997F:Skyrim.esm
+  PersistentLocation: 018A59:Skyrim.esm
+  LocationReference: 01F30E:Skyrim.esm
+  Placement:
+    Position: -5614.0063, -1259.7983, -8
+    Rotation: 0, -0, 3.1000087
+  MajorFlags:
+  - Persistent
+MajorFlags:
+- 0x40000

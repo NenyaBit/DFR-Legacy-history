@@ -1,0 +1,18 @@
+FormKey: 0AC463:DeviousFollowers.esp
+EditorID: _DFKeyGameCAll
+Description:
+  TargetLanguage: English
+  Value: "Key Casino - Keys and Cost Concealed:\n??? = Restraint Keys\n??? = Chastity Keys\n??? = Piercing Tools\nFor ??? "
+Name:
+  TargetLanguage: English
+  Value: Key Casino - Keys and Cost Concealed
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Reroll
+- Text:
+    TargetLanguage: English
+    Value: Accept

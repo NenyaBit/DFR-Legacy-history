@@ -1,0 +1,6 @@
+FormKey: 0B8A73:DeviousFollowers.esp
+EditorID: _DFDisable
+CrimeValues:
+  Arrest: True
+  AttackOnSight: True
+VendorValues: {}

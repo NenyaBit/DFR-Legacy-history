@@ -1,0 +1,25 @@
+FormKey: 0392B0:DeviousFollowers.esp
+EditorID: _DflowGambleRules
+Description:
+  TargetLanguage: English
+  Value: >-
+    Roll a 6 Side die:
+
+    1 = 000 gold for 900 debt
+
+    2 = 200 gold for 800 debt
+
+    3 = 400 gold for 700 debt
+
+    4 = 500 gold for 600 debt
+
+    5 = 700 gold for 500 debt
+
+    6 = 1500 gold for 400 debt
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

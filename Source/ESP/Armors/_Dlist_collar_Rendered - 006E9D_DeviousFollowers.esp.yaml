@@ -1,0 +1,20 @@
+FormKey: 006E9D:DeviousFollowers.esp
+EditorID: _Dlist_collar_Rendered
+BodyTemplate:
+  FirstPersonFlags:
+  - 0x8000
+  ArmorType: Clothing
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 0C27BD:Skyrim.esm
+- 0FF9FB:Skyrim.esm
+- 02F16E:SexLab.esm
+- 003894:Devious Devices - Assets.esm
+- 003DF7:Devious Devices - Assets.esm
+- 009A12:DeviousFollowers.esp
+Description:
+  TargetLanguage: English
+  Value: This should not appear in your inventory. Check your Devious Devices mod configuration.
+Armature:
+- 02E4C6:Devious Devices - Expansion.esm

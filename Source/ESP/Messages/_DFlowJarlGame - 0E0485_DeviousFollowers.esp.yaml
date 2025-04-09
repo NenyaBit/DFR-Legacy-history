@@ -1,0 +1,24 @@
+FormKey: 0E0485:DeviousFollowers.esp
+EditorID: _DFlowJarlGame
+Description:
+  TargetLanguage: English
+  Value: >-
+    <Alias.ShortName=_DMaster> calls the guards over and they hold you in place.
+
+    <Alias.PronounCap=_DMaster> begins to force your arms into some device.
+
+    You try and explain that you're not a slave, and beg to be released.
+
+    The guards just laugh and grab your collar. "Quiet down slave," they say.
+
+    <Alias.PronounCap=_DMaster> finishes sealing your legs away in this crazy device.
+
+    You whimper helplessly as <Alias.PronounCap=_DMaster> softly kisses your forehead and lowers you to the ground.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

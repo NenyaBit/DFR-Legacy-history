@@ -1,0 +1,19 @@
+FormKey: 01210E:DeviousFollowers.esp
+EditorID: _DHitlistCloak
+Name:
+  TargetLanguage: English
+  Value: Cloak for hitlist
+EquipmentType: 013F44:Skyrim.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Flags:
+- AreaEffectIgnoresLOS
+- IgnoreResistance
+- NoAbsorbOrReflect
+CastType: FireAndForget
+Effects:
+- BaseEffect: 012110:DeviousFollowers.esp
+  Data:
+    Magnitude: 100
+    Duration: 2

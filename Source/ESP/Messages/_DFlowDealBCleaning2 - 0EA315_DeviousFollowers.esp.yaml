@@ -1,0 +1,32 @@
+FormKey: 0EA315:DeviousFollowers.esp
+EditorID: _DFlowDealBCleaning2
+Description:
+  TargetLanguage: English
+  Value: >-
+    First <Alias.ShortName=_DMaster> guides your head, forcing you to lick up all the cum and sweat from them and off the floor.
+
+    <Alias.PronounCap=_DMaster> makes you spit it into a bottle until you have cleaned it all up.
+
+    Next, <Alias.Pronoun=_DMaster> guides you to their especially dirty and sweaty areas, from their feet to their armpits and genitals.
+
+    All you can taste is sweat, and your mouth is full of grit.
+
+    <Alias.ShortName=_DMaster> says "Ahh, nothing like a good wash. You deserve a reward." <Alias.PronounCap=_DMaster> points at the bottle.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Drink it.
+- Text:
+    TargetLanguage: English
+    Value: Don't drink it.
+  Conditions:
+  - MutagenObjectType: ConditionGlobal
+    CompareOperator: GreaterThan
+    Data:
+      MutagenObjectType: GetGlobalValueConditionData
+      Global: 01A2A7:Update.esm
+    ComparisonValue: 03E8F4:Update.esm

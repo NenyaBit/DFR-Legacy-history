@@ -1,0 +1,17 @@
+FormKey: 00CABD:DeviousFollowers.esp
+EditorID: _Dflow_EnslavedReturnToLevel1
+Description:
+  TargetLanguage: English
+  Value: >-
+    Well done for getting out of those Devious Devices.
+
+    Now your follower can be in full control again.
+
+    The rules have changed back...
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: '*nod*'

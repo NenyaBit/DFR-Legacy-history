@@ -1,0 +1,15 @@
+FormKey: 119B64:DeviousFollowers.esp
+EditorID: _DFlowDebtCreditMsg
+Description:
+  TargetLanguage: English
+  Value: >-
+    Today you're allowed to carry %.0f gold.
+
+    You may ask for more.
+
+    Debt = %.0f
+
+    Credit = %.0f
+INAM: 0x00000000
+Flags:
+- MessageBox

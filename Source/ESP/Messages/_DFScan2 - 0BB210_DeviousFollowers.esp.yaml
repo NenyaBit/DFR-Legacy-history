@@ -1,0 +1,21 @@
+FormKey: 0BB210:DeviousFollowers.esp
+EditorID: _DFScan2
+Description:
+  TargetLanguage: English
+  Value: >-
+    Set <Alias.ShortName=Scan> to become your slaver if you get the Devious Followers outcome from Simple Slavery?
+
+    They need to be a character that can normally act as a follower.
+
+    Using this on a character who doesn't offer the "Follow me" option is likely to cause problems.
+INAM: 0x00000000
+Quest: 0BB20F:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Yes
+- Text:
+    TargetLanguage: English
+    Value: No

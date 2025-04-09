@@ -1,0 +1,21 @@
+FormKey: 0BB20E:DeviousFollowers.esp
+EditorID: _DFScan
+Description:
+  TargetLanguage: English
+  Value: >-
+    Disable <Alias.ShortName=Scan> ?
+
+    The person will not become a devious follower.
+
+    Toggle again to reverse this.
+INAM: 0x00000000
+Quest: 0BB20F:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Yes
+- Text:
+    TargetLanguage: English
+    Value: No

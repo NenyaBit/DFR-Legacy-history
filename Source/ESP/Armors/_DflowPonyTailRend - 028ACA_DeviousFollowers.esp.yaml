@@ -1,0 +1,22 @@
+FormKey: 028ACA:DeviousFollowers.esp
+EditorID: _DflowPonyTailRend
+ObjectEffect: 02EFB1:Devious Devices - Expansion.esm
+BodyTemplate:
+  FirstPersonFlags:
+  - 0x40000
+  ArmorType: Clothing
+  ActsLike44: True
+PickUpSound: 03E879:Skyrim.esm
+PutDownSound: 03E909:Skyrim.esm
+Race: 000019:Skyrim.esm
+Keywords:
+- 0C27BD:Skyrim.esm
+- 02F16E:SexLab.esm
+- 0FF9FB:Skyrim.esm
+- 003331:Devious Devices - Assets.esm
+- 01DD7D:Devious Devices - Assets.esm
+Description:
+  TargetLanguage: English
+  Value: This should not appear in your inventory. Check your Devious Devices mod configuration.
+Armature:
+- 02E4C4:Devious Devices - Expansion.esm

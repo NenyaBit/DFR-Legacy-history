@@ -1,0 +1,22 @@
+FormKey: 0BB211:DeviousFollowers.esp
+EditorID: _DFSSMessage
+Description:
+  TargetLanguage: English
+  Value: >-
+    You've been sold to a slaver who offers you a choice:
+
+
+    1. Become my enslaved follower and obey the rules I set. Perhaps one day, you may earn your freedom?
+
+
+    2. I can chain you, dump you in pit, and report you for being an escaped slave. This adds a nice bounty in several holds.
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: 1. Yes master, I agree to your terms.
+- Text:
+    TargetLanguage: English
+    Value: 2. I'll never be a slave! Do your worst!

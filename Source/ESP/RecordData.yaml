@@ -1,0 +1,30 @@
+SpriggitSource:
+  PackageName: 0.36.14
+  Version: ''
+ModKey: DeviousFollowers.esp
+GameRelease: SkyrimSE
+ModHeader:
+  Stats:
+    Version: 1.7
+  Author: Lozeak, Lupine00
+  Description: Version 2.14.2
+  MasterReferences:
+  - Master: Skyrim.esm
+    FileSize: 0
+  - Master: Update.esm
+    FileSize: 0
+  - Master: Dawnguard.esm
+    FileSize: 0
+  - Master: Dragonborn.esm
+    FileSize: 0
+  - Master: SexLab.esm
+    FileSize: 0
+  - Master: Devious Devices - Assets.esm
+    FileSize: 0
+  - Master: SexLabAroused.esm
+    FileSize: 0
+  - Master: Devious Devices - Integration.esm
+    FileSize: 0
+  - Master: Devious Devices - Expansion.esm
+    FileSize: 0
+  INTV: 1

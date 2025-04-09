@@ -1,0 +1,33 @@
+FormKey: 020E95:DeviousFollowers.esp
+EditorID: zad_DD_EscapeDeviceMSGD_PickLockDisabled
+Description:
+  TargetLanguage: English
+  Value: What do you want to try?
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Struggle
+- Text:
+    TargetLanguage: English
+    Value: Pick lock
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: GreaterThan
+    Data:
+      MutagenObjectType: GetIsSexConditionData
+    ComparisonValue: 1
+- Text:
+    TargetLanguage: English
+    Value: Cut open
+- Text:
+    TargetLanguage: English
+    Value: Examine
+- Text:
+    TargetLanguage: English
+    Value: Repair lock
+- Text:
+    TargetLanguage: English
+    Value: Nothing

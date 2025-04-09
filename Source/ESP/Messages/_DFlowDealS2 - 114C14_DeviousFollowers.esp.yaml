@@ -1,0 +1,20 @@
+FormKey: 114C14:DeviousFollowers.esp
+EditorID: _DFlowDealS2
+Description:
+  TargetLanguage: English
+  Value: >-
+    ==Deal %.0f==
+
+    You must have an anal plug inserted at all times.
+
+    You're only allowed to wear the armor <Alias.ShortName=_DMaster> gives you (or nothing at all).
+
+    It will make you look like a whore.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

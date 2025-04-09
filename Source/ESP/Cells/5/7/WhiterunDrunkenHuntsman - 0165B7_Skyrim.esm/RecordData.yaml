@@ -1,0 +1,67 @@
+FormKey: 0165B7:Skyrim.esm
+IsCompressed: True
+MajorRecordFlagsRaw: 262144
+EditorID: WhiterunDrunkenHuntsman
+Version2: 12
+SkyrimMajorRecordFlags:
+- Compressed
+Name:
+  TargetLanguage: English
+  Value: The Drunken Huntsman
+Flags:
+- IsInteriorCell
+- PublicArea
+- ShowSky
+Lighting:
+  AmbientColor: '#000E0D0C'
+  DirectionalColor: '#0040494A'
+  FogNearColor: '#00585347'
+  FogNear: 128
+  FogFar: 2000
+  DirectionalRotationXY: 180
+  FogClipDistance: 2000
+  FogPower: 1
+  AmbientColors:
+    DirectionalXPlus: '#000F0D0C'
+    DirectionalXMinus: '#000C0D0B'
+    DirectionalYPlus: '#000E0D0C'
+    DirectionalYMinus: '#000E0C0C'
+    DirectionalZPlus: '#00060605'
+    DirectionalZMinus: '#00151312'
+    Specular: '#00585347'
+    Scale: 1
+  FogFarColor: '#00585347'
+  FogMax: 1
+  Inherits:
+  - AmbientColor
+  - DirectionalColor
+  - FogColor
+  - FogNear
+  - FogFar
+  - ClipDistance
+LightingTemplate: 06175D:Skyrim.esm
+WaterHeight: 0
+Location: 01F872:Skyrim.esm
+Owner: 0CD069:Skyrim.esm
+SkyAndWeatherFromRegion: 070408:Skyrim.esm
+AcousticSpace: 0C5B6B:Skyrim.esm
+Music: 017035:Skyrim.esm
+ImageSpace: 036ED2:Skyrim.esm
+Persistent:
+- MutagenObjectType: PlacedNpc
+  FormKey: 0E1BA9:Skyrim.esm
+  MajorRecordFlagsRaw: 1024
+  EditorID: HirelingJenassaREF
+  Version2: 2
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 0B9982:Skyrim.esm
+  PersistentLocation: 018A56:Skyrim.esm
+  LocationReference: 01F872:Skyrim.esm
+  Placement:
+    Position: 230.47462, -1040.189, 69.99262
+    Rotation: 0, -0, 4.2000017
+  MajorFlags:
+  - Persistent
+MajorFlags:
+- 0x40000

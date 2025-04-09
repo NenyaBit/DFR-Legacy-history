@@ -1,0 +1,12 @@
+FormKey: 2943F4:DeviousFollowers.esp
+EditorID: _DFArmorAlchemyImpairment
+Name:
+  TargetLanguage: English
+  Value: Impair Alchemy
+Flags:
+- NoAutoCalc
+EnchantType: Enchantment
+Effects:
+- BaseEffect: 2943F9:DeviousFollowers.esp
+  Data:
+    Magnitude: 16

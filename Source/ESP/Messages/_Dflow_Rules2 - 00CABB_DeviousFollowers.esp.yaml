@@ -1,0 +1,23 @@
+FormKey: 00CABB:DeviousFollowers.esp
+EditorID: _Dflow_Rules2
+Description:
+  TargetLanguage: English
+  Value: >-
+    You must remain naked in dungeons.
+
+    Outside a dungeon, you must follow these rules...
+
+    One...  Be naked.
+
+    Two...  Your hands must always be bound, or in a yoke.
+
+    But...  I'll untie your hands in dungeons as long as it's not something I can't remove.
+
+    Also...  Until I take my heavy bondage off you, everything you pay me is halved.
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: '*nod*'

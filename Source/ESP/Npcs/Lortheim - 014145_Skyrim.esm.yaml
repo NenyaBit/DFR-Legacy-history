@@ -1,0 +1,199 @@
+FormKey: 014145:Skyrim.esm
+IsCompressed: True
+MajorRecordFlagsRaw: 262144
+EditorID: Lortheim
+SkyrimMajorRecordFlags:
+- Compressed
+VirtualMachineAdapter:
+  Scripts:
+  - Name: WIDeadBodyCleanupScript
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DeathContainer
+      Object: 0F5255:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: WI
+      Object: 035D64:Skyrim.esm
+Configuration:
+  Flags:
+  - AutoCalcStats
+  - Unique
+  Level:
+    MutagenObjectType: NpcLevel
+    Level: 4
+  SpeedMultiplier: 100
+  DispositionBase: 35
+Factions:
+- Faction: 0267E3:Skyrim.esm
+  Fluff: 0x000000
+- Faction: 028173:Skyrim.esm
+  Fluff: 0x000000
+- Faction: 045F61:Skyrim.esm
+  Fluff: 0x000000
+- Faction: 103961:Skyrim.esm
+  Fluff: 0x000000
+- Faction: 234032:DeviousFollowers.esp
+  Fluff: 0x000000
+Voice: 013AE6:Skyrim.esm
+Race: 013746:Skyrim.esm
+Items:
+- Item:
+    Item: 01397E:Skyrim.esm
+    Count: 1
+- Item:
+    Item: 1046D2:Skyrim.esm
+    Count: 1
+AIData:
+  Confidence: Average
+  EnergyLevel: 50
+  Responsibility: NoCrime
+  Assistance: HelpsAllies
+Packages:
+- 035E92:Skyrim.esm
+- 035E91:Skyrim.esm
+- 0235AC:Skyrim.esm
+- 0235AB:Skyrim.esm
+- 035E3E:Skyrim.esm
+Class: 013276:Skyrim.esm
+Name:
+  TargetLanguage: English
+  Value: Lortheim
+PlayerSkills:
+  SkillValues:
+  - Key: OneHanded
+    Value: 20
+  - Key: TwoHanded
+    Value: 25
+  - Key: Archery
+    Value: 15
+  - Key: Block
+    Value: 20
+  - Key: Smithing
+    Value: 24
+  - Key: HeavyArmor
+    Value: 15
+  - Key: LightArmor
+    Value: 20
+  - Key: Pickpocket
+    Value: 15
+  - Key: Lockpicking
+    Value: 15
+  - Key: Sneak
+    Value: 15
+  - Key: Alchemy
+    Value: 19
+  - Key: Speech
+    Value: 25
+  - Key: Alteration
+    Value: 15
+  - Key: Conjuration
+    Value: 19
+  - Key: Destruction
+    Value: 15
+  - Key: Illusion
+    Value: 15
+  - Key: Restoration
+    Value: 20
+  - Key: Enchanting
+    Value: 17
+  SkillOffsets:
+  - Key: OneHanded
+    Value: 0
+  - Key: TwoHanded
+    Value: 0
+  - Key: Archery
+    Value: 0
+  - Key: Block
+    Value: 0
+  - Key: Smithing
+    Value: 0
+  - Key: HeavyArmor
+    Value: 0
+  - Key: LightArmor
+    Value: 0
+  - Key: Pickpocket
+    Value: 0
+  - Key: Lockpicking
+    Value: 0
+  - Key: Sneak
+    Value: 0
+  - Key: Alchemy
+    Value: 0
+  - Key: Speech
+    Value: 0
+  - Key: Alteration
+    Value: 0
+  - Key: Conjuration
+    Value: 0
+  - Key: Destruction
+    Value: 0
+  - Key: Illusion
+    Value: 0
+  - Key: Restoration
+    Value: 0
+  - Key: Enchanting
+    Value: 0
+  Health: 75
+  Magicka: 50
+  Stamina: 70
+  Unused: 16748
+  Unused2: 0xFE440F
+HeadParts:
+- 024244:Skyrim.esm
+- 08555F:Skyrim.esm
+- 099D7E:Skyrim.esm
+- 0C7123:Skyrim.esm
+- 0D2EBE:Skyrim.esm
+HairColor: 0A0437:Skyrim.esm
+NAM5: 255
+Height: 1
+Weight: 20
+SoundLevel: Normal
+DefaultOutfit: 0C2A5A:Skyrim.esm
+SleepingOutfit: 0C2A5A:Skyrim.esm
+CrimeFaction: 0267E3:Skyrim.esm
+HeadTexture: 0D071D:Skyrim.esm
+TextureLighting: '#00B79C91'
+FaceMorph:
+  NoseLongVsShort: 0.26
+  NoseUpVsDown: -0.3
+  JawUpVsDown: 0.4
+  JawNarrowVsWide: 0.5
+  JawForwardVsBack: -0.76
+  CheeksUpVsDown: 0.02
+  CheeksForwardVsBack: 0.2
+  EyesUpVsDown: -0.5
+  EyesInVsOut: 0.14
+  BrowsUpVsDown: -0.1
+  BrowsForwardVsBack: -0.44
+  LipsUpVsDown: 0.26
+  LipsInVsOut: -1
+  ChinNarrowVsWide: 0.3
+  ChinUpVsDown: 1
+  ChinUnderbiteVsOverbite: -0.2
+  EyesForwardVsBack: -1
+  Unknown: 3.4028235E+38
+FaceParts:
+  Nose: 4
+  Unknown: 4294967295
+  Eyes: 13
+  Mouth: 15
+TintLayers:
+- Index: 1
+  Color: '#00B79C91'
+  InterpolationValue: 1
+  Preset: 76
+- Index: 2
+  Color: '#00430401'
+  InterpolationValue: 0.42
+  Preset: 87
+- Index: 3
+  Color: '#00500901'
+  InterpolationValue: 0.5
+  Preset: 96
+- Index: 8
+  Color: '#00A95452'
+  InterpolationValue: 0.19
+  Preset: 120
+MajorFlags:
+- 0x40000

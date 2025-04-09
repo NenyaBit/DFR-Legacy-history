@@ -1,0 +1,18 @@
+FormKey: 0EA313:DeviousFollowers.esp
+EditorID: _DFlowPotionGagMsg
+Description:
+  TargetLanguage: English
+  Value: >-
+    Being gagged, you wonder how you'll can comsume <Alias.ShortName=_DFAddictedTo>'s fluids, but as they touch and run down your skin you feel your mouth watering with the taste of them rather than your saliva.
+
+    Soon, your mouth is full to the point that the fluid is pouring from the sides of your gag and you must swallow or choke.
+
+    Gulping it down, you realize that even gagged you're forced to taste their secretions, and you shudder, cursing whoever made that potion.
+INAM: 0x00000000
+Quest: 186A9E:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

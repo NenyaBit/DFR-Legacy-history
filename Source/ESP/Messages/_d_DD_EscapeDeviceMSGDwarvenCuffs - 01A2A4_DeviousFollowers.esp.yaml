@@ -1,0 +1,47 @@
+FormKey: 01A2A4:DeviousFollowers.esp
+EditorID: _d_DD_EscapeDeviceMSGDwarvenCuffs
+Description:
+  TargetLanguage: English
+  Value: What do you want to try?
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Struggle
+- Text:
+    TargetLanguage: English
+    Value: Pick lock
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetLevelConditionData
+    ComparisonValue: -1
+- Text:
+    TargetLanguage: English
+    Value: Cut open
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetLevelConditionData
+    ComparisonValue: -1
+- Text:
+    TargetLanguage: English
+    Value: Examine
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetLevelConditionData
+    ComparisonValue: -1
+- Text:
+    TargetLanguage: English
+    Value: Repair lock
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetLevelConditionData
+    ComparisonValue: -1
+- Text:
+    TargetLanguage: English
+    Value: Nothing

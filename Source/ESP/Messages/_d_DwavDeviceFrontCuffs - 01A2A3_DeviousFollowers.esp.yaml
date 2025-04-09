@@ -1,0 +1,49 @@
+FormKey: 01A2A3:DeviousFollowers.esp
+EditorID: _d_DwavDeviceFrontCuffs
+Description:
+  TargetLanguage: English
+  Value: >-
+    This set of magnetic cuffs holds the wearer's hands in front of <Alias.Pronoun=Player>.
+
+    The magnetic bar joining the cuffs together is short, but allows some mobility and fine manipulation.
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Put it on
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: WornHasKeywordConditionData
+      Keyword: 063AD9:Devious Devices - Integration.esm
+    ComparisonValue: 1
+- Text:
+    TargetLanguage: English
+    Value: Unlock
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: WornHasKeywordConditionData
+      Keyword: 063AD9:Devious Devices - Integration.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: WornHasKeywordConditionData
+      Keyword: 063AD9:Devious Devices - Integration.esm
+    ComparisonValue: 1
+- Text:
+    TargetLanguage: English
+    Value: Try to escape
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: WornHasKeywordConditionData
+      Keyword: 063AD9:Devious Devices - Integration.esm
+    ComparisonValue: 1
+- Text:
+    TargetLanguage: English
+    Value: Carry on

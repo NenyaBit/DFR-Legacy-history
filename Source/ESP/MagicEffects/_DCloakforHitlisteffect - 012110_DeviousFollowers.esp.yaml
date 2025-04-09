@@ -1,0 +1,19 @@
+FormKey: 012110:DeviousFollowers.esp
+EditorID: _DCloakforHitlisteffect
+Name:
+  TargetLanguage: English
+  Value: Cloak for hitlist Effect
+Flags:
+- NoHitEvent
+- HideInUI
+- Painless
+Archetype:
+  MutagenObjectType: MagicEffectCloakArchetype
+  Association: 011BA9:DeviousFollowers.esp
+CastType: FireAndForget
+DualCastScale: 1
+CastingSoundLevel: Normal
+Sounds: []
+Description:
+  TargetLanguage: English
+  Value: ''

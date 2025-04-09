@@ -1,0 +1,7 @@
+FormKey: 2D1106:DeviousFollowers.esp
+EditorID: _DFlowForcedStartPlayerAsksGuard
+Quest: 1ABD14:DeviousFollowers.esp
+Category: Player
+Flags:
+- TopLevel
+StartingTopic: 2D1107:DeviousFollowers.esp

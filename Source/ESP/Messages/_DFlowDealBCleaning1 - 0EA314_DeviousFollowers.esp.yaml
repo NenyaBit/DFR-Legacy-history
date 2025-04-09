@@ -1,0 +1,23 @@
+FormKey: 0EA314:DeviousFollowers.esp
+EditorID: _DFlowDealBCleaning1
+Description:
+  TargetLanguage: English
+  Value: Afterwards <Alias.ShortName=_DMaster> says "Ok slave, time for my bath. I want you to lick me clean."
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok
+- Text:
+    TargetLanguage: English
+    Value: Resist
+  Conditions:
+  - MutagenObjectType: ConditionGlobal
+    CompareOperator: GreaterThan
+    Data:
+      MutagenObjectType: GetGlobalValueConditionData
+      Global: 01A2A7:Update.esm
+    ComparisonValue: 03E8F4:Update.esm

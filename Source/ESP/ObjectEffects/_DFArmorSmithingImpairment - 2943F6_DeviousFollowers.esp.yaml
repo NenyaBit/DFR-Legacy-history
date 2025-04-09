@@ -1,0 +1,12 @@
+FormKey: 2943F6:DeviousFollowers.esp
+EditorID: _DFArmorSmithingImpairment
+Name:
+  TargetLanguage: English
+  Value: Impair Smithing
+Flags:
+- NoAutoCalc
+EnchantType: Enchantment
+Effects:
+- BaseEffect: 2943FA:DeviousFollowers.esp
+  Data:
+    Magnitude: 16

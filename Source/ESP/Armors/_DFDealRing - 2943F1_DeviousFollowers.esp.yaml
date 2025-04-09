@@ -1,0 +1,31 @@
+FormKey: 2943F1:DeviousFollowers.esp
+EditorID: _DFDealRing
+Name:
+  TargetLanguage: English
+  Value: Gaudy Ring
+ObjectEffect: 2943F6:DeviousFollowers.esp
+WorldModel:
+  Male:
+    Model:
+      File: Armor\AmuletsandRings\SilverRingGarnetGO.nif
+      Data: 0x020000000000000000000000
+BodyTemplate:
+  FirstPersonFlags:
+  - Ring
+  ArmorType: Clothing
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 06BBE9:Skyrim.esm
+- 0A8664:Skyrim.esm
+- 10CD09:Skyrim.esm
+- 0C27BD:Skyrim.esm
+- 2943FE:DeviousFollowers.esp
+- 02F16E:SexLab.esm
+Description:
+  TargetLanguage: English
+  Value: A large, elaborate, but cheap-looking ring. It has a knack of getting in the way when you're performing smithing tasks.
+Armature:
+- 08E841:Skyrim.esm
+Value: 5
+Weight: 0.25

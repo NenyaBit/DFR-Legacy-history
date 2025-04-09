@@ -1,0 +1,186 @@
+FormKey: 2EF728:DeviousFollowers.esp
+EditorID: _DFlowGuardScan
+Flags:
+- AllowRepeatedStages
+- 0x1000
+Stages:
+- Flags:
+  - StartUpStage
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Scan for followers
+NextAliasID: 13
+Aliases:
+- ID: 10
+  Name: Guard00
+  Flags:
+  - Optional
+  - MatchingRefInLoadedArea
+  - AllowReserved
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionGlobal
+    CompareOperator: LessThan
+    Data:
+      MutagenObjectType: GetDistanceConditionData
+      Target: 000014:Skyrim.esm
+    ComparisonValue: 2EF726:DeviousFollowers.esp
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: IsChildConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: IsInCombatConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsInSceneConditionData
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsGuardConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsInListConditionData
+      FormList: 2EF72E:DeviousFollowers.esp
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 00E50F:SexLab.esm
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 029567:Devious Devices - Integration.esm
+  - MutagenObjectType: ConditionGlobal
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsSexConditionData
+    ComparisonValue: 2EF723:DeviousFollowers.esp
+  - MutagenObjectType: ConditionGlobal
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsSexConditionData
+      MaleFemaleGender: Female
+    ComparisonValue: 2EF725:DeviousFollowers.esp
+  VoiceTypes: Null
+- ID: 11
+  Name: Guard01
+  Flags:
+  - Optional
+  - MatchingRefInLoadedArea
+  - AllowReserved
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionGlobal
+    CompareOperator: LessThan
+    Data:
+      MutagenObjectType: GetDistanceConditionData
+      Target: 000014:Skyrim.esm
+    ComparisonValue: 2EF726:DeviousFollowers.esp
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: IsChildConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: IsInCombatConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsInSceneConditionData
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsGuardConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsInListConditionData
+      FormList: 2EF72E:DeviousFollowers.esp
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 00E50F:SexLab.esm
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 029567:Devious Devices - Integration.esm
+  - MutagenObjectType: ConditionGlobal
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsSexConditionData
+    ComparisonValue: 2EF723:DeviousFollowers.esp
+  - MutagenObjectType: ConditionGlobal
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsSexConditionData
+      MaleFemaleGender: Female
+    ComparisonValue: 2EF725:DeviousFollowers.esp
+  VoiceTypes: Null
+- ID: 12
+  Name: Guard02
+  Flags:
+  - Optional
+  - MatchingRefInLoadedArea
+  - AllowReserved
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionGlobal
+    CompareOperator: LessThan
+    Data:
+      MutagenObjectType: GetDistanceConditionData
+      Target: 000014:Skyrim.esm
+    ComparisonValue: 2EF726:DeviousFollowers.esp
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: IsChildConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: IsInCombatConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsInSceneConditionData
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsGuardConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsInListConditionData
+      FormList: 2EF72E:DeviousFollowers.esp
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 00E50F:SexLab.esm
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 029567:Devious Devices - Integration.esm
+  - MutagenObjectType: ConditionGlobal
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsSexConditionData
+    ComparisonValue: 2EF723:DeviousFollowers.esp
+  - MutagenObjectType: ConditionGlobal
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsSexConditionData
+      MaleFemaleGender: Female
+    ComparisonValue: 2EF725:DeviousFollowers.esp
+  VoiceTypes: Null

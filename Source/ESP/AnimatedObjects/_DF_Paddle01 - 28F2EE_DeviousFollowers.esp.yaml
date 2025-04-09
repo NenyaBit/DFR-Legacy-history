@@ -1,0 +1,9 @@
+FormKey: 28F2EE:DeviousFollowers.esp
+MajorRecordFlagsRaw: 512
+EditorID: _DF_Paddle01
+SkyrimMajorRecordFlags:
+- 0x200
+Model:
+  File: AnimObjects\NibblesAnims_Object\Paddle01.nif
+  Data: 0x020000000000000000000000
+UnloadEvent: AnimObjectUnequip

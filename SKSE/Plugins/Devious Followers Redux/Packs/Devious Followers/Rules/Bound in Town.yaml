@@ -1,0 +1,11 @@
+name: Bound in Town
+formId: 0x3875FB
+hint: Your follower will bind your arms in town.
+type: wear
+slots: 
+   - 46
+subRules:
+   - type: heavy bondage
+location:
+   - town
+level: 3

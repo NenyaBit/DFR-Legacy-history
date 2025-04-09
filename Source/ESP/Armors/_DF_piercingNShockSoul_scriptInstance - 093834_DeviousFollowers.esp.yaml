@@ -1,0 +1,22 @@
+FormKey: 093834:DeviousFollowers.esp
+EditorID: _DF_piercingNShockSoul_scriptInstance
+BodyTemplate:
+  FirstPersonFlags:
+  - Decapitate
+  ArmorType: Clothing
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 0C27BD:Skyrim.esm
+- 0FF9FB:Skyrim.esm
+- 02F16E:SexLab.esm
+- 00CA39:Devious Devices - Assets.esm
+- 050C82:Devious Devices - Integration.esm
+- 01EDFA:Devious Devices - Integration.esm
+- 003894:Devious Devices - Assets.esm
+- 093835:DeviousFollowers.esp
+Description:
+  TargetLanguage: English
+  Value: This item should not appear in your inventory. Check your Devious Devices mod configuration.
+Armature:
+- 014930:Devious Devices - Expansion.esm

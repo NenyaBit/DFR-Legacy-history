@@ -1,0 +1,10 @@
+FormKey: 060020:Skyrim.esm
+EditorID: DialogueFollowerTradeTopic
+Version2: 8
+Name:
+  TargetLanguage: English
+  Value: I need to trade some things with you.
+Priority: 25
+Branch: 060024:Skyrim.esm
+Quest: 0750BA:Skyrim.esm
+SubtypeName: CUST

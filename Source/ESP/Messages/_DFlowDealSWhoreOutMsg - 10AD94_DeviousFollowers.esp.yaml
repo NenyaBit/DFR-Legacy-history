@@ -1,0 +1,23 @@
+FormKey: 10AD94:DeviousFollowers.esp
+EditorID: _DFlowDealSWhoreOutMsg
+Description:
+  TargetLanguage: English
+  Value: Your follower is trying to whore you out for 50g.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok
+- Text:
+    TargetLanguage: English
+    Value: Resist
+  Conditions:
+  - MutagenObjectType: ConditionGlobal
+    CompareOperator: GreaterThan
+    Data:
+      MutagenObjectType: GetGlobalValueConditionData
+      Global: 01A2A7:Update.esm
+    ComparisonValue: 03E8F4:Update.esm

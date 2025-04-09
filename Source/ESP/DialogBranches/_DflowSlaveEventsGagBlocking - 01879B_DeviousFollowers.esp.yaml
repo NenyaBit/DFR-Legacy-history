@@ -1,0 +1,7 @@
+FormKey: 01879B:DeviousFollowers.esp
+EditorID: _DflowSlaveEventsGagBlocking
+Quest: 018797:DeviousFollowers.esp
+Category: Player
+Flags:
+- Blocking
+StartingTopic: 01879C:DeviousFollowers.esp

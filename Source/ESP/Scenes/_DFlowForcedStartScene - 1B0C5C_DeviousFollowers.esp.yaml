@@ -1,0 +1,100 @@
+FormKey: 1B0C5C:DeviousFollowers.esp
+EditorID: _DFlowForcedStartScene
+VirtualMachineAdapter:
+  Scripts:
+  - Name: SF__DFlowForcedStartScene_081B0C5C
+  ScriptFragments:
+    FileName: SF__DFlowForcedStartScene_081B0C5C
+    OnEnd:
+      ExtraBindDataVersion: 1
+      ScriptName: SF__DFlowForcedStartScene_081B0C5C
+      FragmentName: Fragment_0
+Flags:
+- 0x4
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+- ID: 1
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Name: ''
+  ActorID: 1
+  Index: 1
+  StartPhase: 0
+  EndPhase: 0
+  Topic: 1B0C5D:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: ''
+  ActorID: 0
+  Index: 2
+  StartPhase: 1
+  EndPhase: 1
+  Topic: 1B0C5F:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: ''
+  ActorID: 1
+  Index: 3
+  StartPhase: 2
+  EndPhase: 2
+  Topic: 1B0C61:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: ''
+  ActorID: 0
+  Index: 4
+  StartPhase: 3
+  EndPhase: 3
+  Topic: 1B0C63:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: trouble
+  ActorID: 1
+  Index: 5
+  StartPhase: 4
+  EndPhase: 4
+  Topic: 2115A1:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+Quest: 1ABD14:DeviousFollowers.esp
+LastActionIndex: 5
+VNAM: 0x03000000030000000300000003000000

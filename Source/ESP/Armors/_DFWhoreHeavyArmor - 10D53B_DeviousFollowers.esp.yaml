@@ -1,0 +1,27 @@
+FormKey: 10D53B:DeviousFollowers.esp
+EditorID: _DFWhoreHeavyArmor
+Name:
+  TargetLanguage: English
+  Value: Heavy Whore Armor
+WorldModel:
+  Male:
+    Model:
+      File: armor\shitty\Ebony\bikini_2_gnd.nif
+      Data: 0x020000000000000000000000
+BodyTemplate:
+  FirstPersonFlags:
+  - Body
+  ArmorType: HeavyArmor
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 06BBD2:Skyrim.esm
+- 06C0EC:Skyrim.esm
+- 10FCDA:DeviousFollowers.esp
+Description:
+  TargetLanguage: English
+  Value: Armor given to you by your follower to display you as the whore you are.
+Armature:
+- 10D53D:DeviousFollowers.esp
+Weight: 6
+ArmorRating: 34

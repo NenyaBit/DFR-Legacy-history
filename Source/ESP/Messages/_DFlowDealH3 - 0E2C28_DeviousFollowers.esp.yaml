@@ -1,0 +1,18 @@
+FormKey: 0E2C28:DeviousFollowers.esp
+EditorID: _DFlowDealH3
+Description:
+  TargetLanguage: English
+  Value: >-
+    ==Deal %.0f==
+
+    You must say "I'm a slut" to the person you're speaking to when <Alias.ShortName=_DMaster> puts <Alias.PronounPosObj=_DMaster> hand on your shoulder.
+
+    <Alias.ShortName=_DMaster> will tie your hands up and strip you in towns to show off the little slut that <Alias.Pronoun=_DMaster> tricked into being a slave.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

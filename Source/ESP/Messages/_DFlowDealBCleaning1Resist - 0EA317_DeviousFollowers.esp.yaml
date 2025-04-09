@@ -1,0 +1,20 @@
+FormKey: 0EA317:DeviousFollowers.esp
+EditorID: _DFlowDealBCleaning1Resist
+Description:
+  TargetLanguage: English
+  Value: >-
+    <Alias.ShortName=_DMaster> says "Oh too good for that?" <Alias.PronounCap=_DMaster> overpowers you and forces you to the ground.
+     You don't have the courage to resist.
+    <Alias.PronounCap=_DMaster> holds you mouth open and pisses into it until it's overflowing.
+
+    <Alias.PronounCap=_DMaster> holds your mouth and nose closed until you swallow.
+
+    <Alias.ShortName=_DMaster> gulps down a large amount of water and says, "In a few hours we can fuck again and see how you act... Oh and I'll add some debt on for good measure."
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

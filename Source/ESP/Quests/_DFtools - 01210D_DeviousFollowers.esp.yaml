@@ -1,0 +1,527 @@
+FormKey: 01210D:DeviousFollowers.esp
+EditorID: _DFtools
+VirtualMachineAdapter:
+  Scripts:
+  - Name: QF__DTools_0B01210D
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_PlayerRef
+      Object: 01210D:DeviousFollowers.esp
+      Alias: 0
+  - Name: _DFtools
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealB3
+      Object: 0E2C25:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ActorList
+      Object: 012111:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DH
+      Object: 01C867:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Pit
+      Object: 0372BC:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ddPiercingKey
+      Object: 0409A3:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PunishBeltR
+      Object: 00435E:Devious Devices - Assets.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFWhoreHeavyArmorCust
+      Object: 12D856:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealP1
+      Object: 0E2C29:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DP
+      Object: 06BE67:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DWillMed
+      Object: 03E8F5:Update.esm
+    - MutagenObjectType: ScriptIntProperty
+      Name: Suspend
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFSexScanAllowFemale
+      Object: 2EF725:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealS2
+      Object: 114C14:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ddChastityKey
+      Object: 026F5D:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Warmer
+      Object: 041422:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFKeyGameCKeys
+      Object: 0AC461:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealH1
+      Object: 0E2C26:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealH3
+      Object: 0E2C28:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFSexScanAllowMale
+      Object: 2EF723:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DS
+      Object: 0E53C8:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowSexScan
+      Object: 2EF722:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: SexLab
+      Object: 000D62:SexLab.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: bleedOutStart
+      Object: 013ECC:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PunishPlugAR
+      Object: 01491A:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFPunishmentTimer
+      Object: 2E040E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Debt
+      Object: 00C54F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: SLNS
+      Object: 02F16E:SexLab.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: RKey
+      Object: 01775F:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LocTypeCity
+      Object: 013168:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ddRestraintsKey
+      Object: 026F5E:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PrisonerchainsR
+      Object: 00AFB5:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CrimeFacWinterhold
+      Object: 02816F:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealO4
+      Object: 155266:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealS1
+      Object: 114C13:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealP3
+      Object: 0E2C2B:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowGuardScan
+      Object: 2EF728:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Mittens
+      Object: 02324D:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowFindFollower
+      Object: 2E040F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LocTypeBanditCamp
+      Object: 0130DF:Skyrim.esm
+    - MutagenObjectType: ScriptBoolProperty
+      Name: Suspended
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFGuardScanFound
+      Object: 2EF72E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: boots
+      Object: 0116F1:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CKey
+      Object: 008A4F:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFSexScanFound
+      Object: 2EF727:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LocTypeDwelling
+      Object: 0130DC:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HitlistSpell
+      Object: 01210E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ETimerP
+      Object: 017209:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFExpectedDealCount
+      Object: 231895:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFKeyGameCAll
+      Object: 0AC463:DeviousFollowers.esp
+    - MutagenObjectType: ScriptStringListProperty
+      Name: SpankAnimationNames
+      Data:
+      - DF Nibbles Spanking (Chair)
+      - DF Nibbles Spanking (Paddle)
+      - DF Anubs Rape
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Jacket
+      Object: 039C6F:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFFatigue
+      Object: 22C95B:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PTool
+      Object: 0409A4:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFHorseScanFound
+      Object: 2EF72F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CrimeFacWhiterun
+      Object: 0267EA:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealB2
+      Object: 0E2C24:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VanillaFollower
+      Object: 0750BA:Skyrim.esm
+      Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PrisonerchainsI
+      Object: 00AFB6:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFWhoreLightArmor
+      Object: 10D539:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DO
+      Object: 01C868:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFKeyGameAllS
+      Object: 0AC45F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CrimeFacMorthal
+      Object: 02816D:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Dog
+      Object: 14DB6C:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CrimeFacWindhelm
+      Object: 0267E3:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowGames
+      Object: 0110DC:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _Dfendless
+      Object: 0403EA:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DM5
+      Object: 1E24D4:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: MittensR
+      Object: 02324E:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFInternalEnslaveWeight
+      Object: 31D0B4:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFSpankDealRequests
+      Object: 29E61D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gloves
+      Object: 0159AC:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowGamesDogKitten
+      Object: 0C2917:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFSlutCount
+      Object: 2943F0:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Collar
+      Object: 047002:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFWhoreMageArmorCust
+      Object: 12D85B:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFWhoreMageArmor
+      Object: 10D53C:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HEDebt
+      Object: 0110DE:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PC
+      Object: 0C0168:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DWillLow
+      Object: 03E8F4:Update.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ChainsOfDebtI
+      Object: 0403E8:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DM2
+      Object: 1E24D1:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealP2
+      Object: 0E2C2A:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFKeyGameCPrice
+      Object: 0AC464:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CrimeFacSolitude
+      Object: 029DB0:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLolaEnslaveWeight
+      Object: 31D0B3:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ArmorClothing
+      Object: 06BBE8:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowGamesDogKitten2
+      Object: 14DB6D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LocTypeHold
+      Object: 016771:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealH4
+      Object: 17F3CD:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DB
+      Object: 01C866:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFWhoreLightArmorCust
+      Object: 12D85A:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFGoldPerFatigue
+      Object: 234041:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HorseRace
+      Object: 0131FD:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealH2
+      Object: 0E2C27:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealO1
+      Object: 0E2C20:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFOutdoorSpanking
+      Object: 27AEDC:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Blindfold
+      Object: 004E25:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealB1
+      Object: 0E2C23:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CrimeFacMarkarth
+      Object: 02816C:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealO2
+      Object: 0E2C21:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowHorseScan
+      Object: 2EF72D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PunishPlugAI
+      Object: 01491B:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFBoredomIntervalDays
+      Object: 231893:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LDC
+      Object: 1C494F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFFatigueRate
+      Object: 22C95C:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: JacketR
+      Object: 02D9E5:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: BinderR
+      Object: 00D4D5:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: gag
+      Object: 034255:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ArmorHeavy
+      Object: 06BBD2:Skyrim.esm
+    - MutagenObjectType: ScriptStringListProperty
+      Name: SpankAnimationNamesExtAlt
+      Data:
+      - DF Rydin Overlap Spanking
+      - DF Rydin Underarm Spanking
+      - DF Anubs Rape
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFSlaveryTarget
+      Object: 31D0B5:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Horse
+      Object: 098493:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFGameCommentTimer
+      Object: 2F4838:DeviousFollowers.esp
+    - MutagenObjectType: ScriptStringListProperty
+      Name: SpankAnimationNamesExt
+      Data:
+      - DF Anubs Spank
+      - DF Anubs Spank Fist
+      - DF Anubs Rape
+    - MutagenObjectType: ScriptBoolProperty
+      Name: PEnslave
+    - MutagenObjectType: ScriptObjectProperty
+      Name: bleedOutStop
+      Object: 013ECE:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealS3
+      Object: 114C15:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CrimeFacRiften
+      Object: 02816B:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFKeyGameCKeysS
+      Object: 0AC460:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PunishBeltI
+      Object: 00EB5D:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Follower
+      Object: 000D62:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFBoredomTimer
+      Object: 231896:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DM3
+      Object: 1E24D2:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFSpankEagerness
+      Object: 27AEA4:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ArmorLight
+      Object: 06BBD3:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFGemP
+      Object: 093835:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFBoredom
+      Object: 231892:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ArmCuffs
+      Object: 032744:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PunishPlugVI
+      Object: 01490F:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LegCuffs
+      Object: 032743:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DM1
+      Object: 1DD588:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DismissedFollowerFac
+      Object: 05C84C:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ChainsOfDebtR
+      Object: 0403E9:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LocTypeDungeon
+      Object: 0130DB:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowWill
+      Object: 01A2A7:Update.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DM4
+      Object: 1E24D3:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PunishPlugVR
+      Object: 01490E:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealO3
+      Object: 0E2C22:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowResist
+      Object: 01A2A6:Update.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Binder
+      Object: 00D4D6:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: libs
+      Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptBoolProperty
+      Name: DealODog
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LocTypePlayerHouse
+      Object: 0FC1A3:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowSimpleSlaveryOdds
+      Object: 02F68A:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFKeyGameAll
+      Object: 0AC45E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CrimeFacFalkreath
+      Object: 028170:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: hitlist
+      Object: 011641:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: q
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFSexScanRadius
+      Object: 2EF726:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: MCM
+      Object: 00C545:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealB4
+      Object: 0E7B72:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFWhoreHeavyArmor
+      Object: 10D53B:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: g
+      Object: 0110DC:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LocTypeInn
+      Object: 01CB87:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFKeyGameCAllS
+      Object: 0AC462:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CrimeFacDawnstar
+      Object: 02816E:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFResistanceBroken
+      Object: 2C6EAE:DeviousFollowers.esp
+  FileName: QF__DTools_0B01210D
+  Fragments:
+  - Stage: 1
+    Unknown2: 1
+    ScriptName: QF__DTools_0B01210D
+    FragmentName: Fragment_5
+Flags:
+- StartGameEnabled
+- 0x10
+- RunOnce
+Stages:
+- Flags:
+  - StartUpStage
+- Index: 1
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Tester
+NextAliasID: 1
+Aliases:
+- Name: PlayerRef
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null

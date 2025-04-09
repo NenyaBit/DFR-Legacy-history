@@ -1,0 +1,29 @@
+FormKey: 2115A6:DeviousFollowers.esp
+EditorID: _DFSlaveCollarRendered
+WorldModel:
+  Male:
+    Model:
+      File: Devious\Devices\collarPostureSteel_go.nif
+      Data: 0x020000000000000000000000
+  Female:
+    Model:
+      File: Devious\Devices\collarPostureSteel_go.nif
+      Data: 0x020000000000000000000000
+BodyTemplate:
+  FirstPersonFlags:
+  - 0x8000
+  ArmorType: Clothing
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 003894:Devious Devices - Assets.esm
+- 003DF7:Devious Devices - Assets.esm
+- 02F16E:SexLab.esm
+- 0FF9FB:Skyrim.esm
+- 0C27BD:Skyrim.esm
+- 009A12:DeviousFollowers.esp
+Description:
+  TargetLanguage: English
+  Value: Item reference reserved for scripts interaction. This should not appear in your inventory. Check your Devious Devices mod configuration.
+Armature:
+- 0012C8:Devious Devices - Assets.esm

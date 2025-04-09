@@ -1,0 +1,15 @@
+FormKey: 18B9EF:DeviousFollowers.esp
+EditorID: _DFAddictionPotion
+Name:
+  TargetLanguage: English
+  Value: A weird potion
+Model:
+  File: Clutter\Potions\PotionHealthLesser.nif
+  Data: 0x020000000000000000000000
+PickUpSound: 03EDBD:Skyrim.esm
+PutDownSound: 03EDC0:Skyrim.esm
+Weight: 0.5
+ConsumeSound: 0B6435:Skyrim.esm
+Effects:
+- BaseEffect: 18B9F1:DeviousFollowers.esp
+  Data: {}

@@ -1,0 +1,24 @@
+FormKey: 006939:DeviousFollowers.esp
+EditorID: _Dflow_Rules
+Description:
+  TargetLanguage: English
+  Value: >-
+    In dungeons you may wear what you please.
+
+
+    Outside, you must follow these rules...
+
+    One...   Be naked. For my entertainment. 
+
+    Two...   Wear your mittens. Keeps you helpless.
+
+    Three...   Wear your boots. Standing might hurt.
+
+    Four...   Wear your collar, marking you as my slave.
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: '*nod*'

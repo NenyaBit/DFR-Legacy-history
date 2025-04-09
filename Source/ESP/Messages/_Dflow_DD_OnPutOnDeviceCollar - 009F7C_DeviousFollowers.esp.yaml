@@ -1,0 +1,22 @@
+FormKey: 009F7C:DeviousFollowers.esp
+EditorID: _Dflow_DD_OnPutOnDeviceCollar
+Description:
+  TargetLanguage: English
+  Value: You take the slave collar your master gave you, hesitate, then fasten it around your neck. Now, everyone can see that you are <Alias.PronounPosObj=_DMaster> property. As it locks, you feel a terrible weight dragging you down. Only when the dangling chain touches the ground does the weight lift.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Submit
+- Text:
+    TargetLanguage: English
+    Value: Manipulate the locks
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetLevelConditionData
+      RunOnType: Reference
+      Reference: 000014:Skyrim.esm

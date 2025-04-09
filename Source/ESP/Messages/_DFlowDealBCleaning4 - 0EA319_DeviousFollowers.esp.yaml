@@ -1,0 +1,24 @@
+FormKey: 0EA319:DeviousFollowers.esp
+EditorID: _DFlowDealBCleaning4
+Description:
+  TargetLanguage: English
+  Value: >-
+    Broken and defeated, you lick up all the cum and sweat into a bottle, filling it without being ordered.
+
+    You move on to licking <Alias.ShortName=_DMaster> all over, licking out every crevice and sweaty area.
+
+    Once <Alias.Pronoun=_DMaster> is satisfied, <Alias.Pronoun=_DMaster> says "Good slave, now enjoy your reward."
+
+    Afraid to hesitate, you drink the mix of cum of sweat down quickly. It tastes awful, but you've learned it's easier if you get it over with quickly.
+
+    <Alias.ShortName=_DMaster> seals your mouth again, locking the flavours in, and smiles.
+
+    "Wow, you must really love that stuff now? See how fast you drink it?"
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

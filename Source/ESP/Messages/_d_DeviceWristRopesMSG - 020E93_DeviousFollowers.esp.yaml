@@ -1,0 +1,46 @@
+FormKey: 020E93:DeviousFollowers.esp
+EditorID: _d_DeviceWristRopesMSG
+Description:
+  TargetLanguage: English
+  Value: Ropes that tie your hands, knotted tight by your follower. Perhaps you can struggle out of them and escape?
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Put it on
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: WornHasKeywordConditionData
+      Keyword: 05226C:Devious Devices - Integration.esm
+    ComparisonValue: 1
+- Text:
+    TargetLanguage: English
+    Value: Unlock
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: WornHasKeywordConditionData
+      Keyword: 00CA3A:Devious Devices - Assets.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: WornHasKeywordConditionData
+      Keyword: 00CA3A:Devious Devices - Assets.esm
+    ComparisonValue: 1
+- Text:
+    TargetLanguage: English
+    Value: Try to escape
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: WornHasKeywordConditionData
+      Keyword: 00CA3A:Devious Devices - Assets.esm
+    ComparisonValue: 1
+- Text:
+    TargetLanguage: English
+    Value: Carry on

@@ -1,0 +1,48 @@
+FormKey: 1D5E8C:DeviousFollowers.esp
+EditorID: _DF_CrawlEnchPlugPonytail
+Name:
+  TargetLanguage: English
+  Value: Ponytail Plug
+EnchantType: Enchantment
+Effects:
+- BaseEffect: 02EFB0:Devious Devices - Expansion.esm
+  Data: {}
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: HasLoaded3DConditionData
+    ComparisonValue: 1
+- BaseEffect: 0D16D0:DeviousFollowers.esp
+  Data: {}
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: LocationHasKeywordConditionData
+      RunOnType: Reference
+      Reference: 000014:Skyrim.esm
+      Keyword: 0130DC:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: LocationHasKeywordConditionData
+      RunOnType: Reference
+      Reference: 000014:Skyrim.esm
+      Keyword: 013166:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: LocationHasKeywordConditionData
+      RunOnType: Reference
+      Reference: 000014:Skyrim.esm
+      Keyword: 013168:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetVMQuestVariableConditionData
+      Quest: 010617:DeviousFollowers.esp
+      SecondUnusedIntParameter: 227959144
+      VariableName: ::Suspend_var

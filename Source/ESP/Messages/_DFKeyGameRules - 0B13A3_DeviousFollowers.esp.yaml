@@ -1,0 +1,28 @@
+FormKey: 0B13A3:DeviousFollowers.esp
+EditorID: _DFKeyGameRules
+Description:
+  TargetLanguage: English
+  Value: >-
+    Basically, I'll roll some dice that determine what keys I will sell for what cost.
+
+    Here's the fun part! 
+
+    They also determine what is concealed from you keys/cost/both and if your body is part of the cost.
+
+    You can't refuse, but I'll let you reroll.
+
+    Warning - Reroll increases cost and concealment chances. 
+
+    After three rerolls there are chances the cost will increase a lot.
+
+    Cost is capped at "%.0f", and if you can't afford it the debt is +25% % of this.
+Name:
+  TargetLanguage: English
+  Value: Key Casino - Rules
+INAM: 0x00000000
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

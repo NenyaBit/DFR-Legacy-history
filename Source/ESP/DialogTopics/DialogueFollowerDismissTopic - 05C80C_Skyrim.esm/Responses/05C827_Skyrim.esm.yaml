@@ -1,0 +1,48 @@
+FormKey: 05C827:Skyrim.esm
+Version2: 12
+VirtualMachineAdapter:
+  Scripts:
+  - Name: TIF__0005C827
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: pDialogueFollower
+      Object: 0750BA:Skyrim.esm
+  ScriptFragments:
+    MutagenObjectType: ScriptFragments
+    FileName: TIF__0005C827
+    OnEnd:
+      ExtraBindDataVersion: 1
+      ScriptName: TIF__0005C827
+      FragmentName: Fragment_0
+Flags:
+  Flags:
+  - Goodbye
+PreviousDialog: 05C826:Skyrim.esm
+FavorLevel: None
+Responses:
+- Emotion: Puzzled
+  EmotionValue: 25
+  ResponseNumber: 1
+  Unknown2: 0x000000
+  Flags:
+  - UseEmotionAnimation
+  Unknown3: 0x000000
+  Text:
+    TargetLanguage: English
+    Value: (whine)
+  ScriptNotes: dog whining
+  Edits: ''
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetIsRaceConditionData
+    Race: 0F1AC4:Skyrim.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetInFactionConditionData
+    Faction: 05C84E:Skyrim.esm
+  ComparisonValue: 1
+Prompt:
+  TargetLanguage: English
+  Value: It's time for you to go back home, dog.

@@ -1,0 +1,18 @@
+FormKey: 0E2C22:DeviousFollowers.esp
+EditorID: _DFlowDealO3
+Description:
+  TargetLanguage: English
+  Value: >-
+    ==Deal %.0f==
+
+    You must wear a chastity belt, collar, arm cuffs and leg cuffs.
+
+    The chastity belt will only be unlocked when <Alias.ShortName=_DMaster> wants to use <Alias.PronounPosObj=_DMaster> property.
+INAM: 0x00000000
+Quest: 000D62:DeviousFollowers.esp
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Ok

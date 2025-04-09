@@ -1,0 +1,183 @@
+FormKey: 093831:DeviousFollowers.esp
+EditorID: _DF_piercingVShockSoulInventory
+VirtualMachineAdapter:
+  Scripts:
+  - Name: zadPiercingVaginalScript
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: deviceRendered
+      Object: 093832:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeLockPickSuccessMSG
+      Object: 063003:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: CutDeviceEscapeChance
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_UnlockFailJammedMSG
+      Object: 063007:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_RepairLockNotJammedMSG
+      Object: 063008:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptStringProperty
+      Name: deviceName
+      Data: Clitoris Piercing
+    - MutagenObjectType: ScriptObjectProperty
+      Name: deviceInventory
+      Object: 093831:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeStruggleMSG
+      Object: 062FFE:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptBoolProperty
+      Name: DisableLockManipulation
+      Data: True
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviceMsgMagic
+      Object: 00B573:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeDeviceMSG
+      Object: 063013:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnLeaveItNotWornMSG
+      Object: 06300F:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_RepairLockFailureMSG
+      Object: 06300B:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_RepairLockMSG
+      Object: 063009:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeCutMSG
+      Object: 063004:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeLockPickMSG
+      Object: 063001:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnNoKeyMSG
+      Object: 06300D:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_KeyBreakMSG
+      Object: 083B93:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: LockPickEscapeChance
+      Data: 10
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnEquipDeviceMSG
+      Object: 06300C:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnPutOnDevice
+      Object: 07AA14:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviceRemoveMsg
+      Object: 00C039:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviousDevice
+      Object: 023E70:Devious Devices - Assets.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_RepairLockSuccessMSG
+      Object: 06300A:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: BaseEscapeChance
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Lockpick
+      Object: 00000A:Skyrim.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: CatastrophicFailureChance
+      Data: 5
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeCutFailureMSG
+      Object: 063005:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_UnEquipFailMsg
+      Object: 083630:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviceEscapeMsg
+      Object: 05A3E0:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnNotEnoughKeysMSG
+      Object: 06300E:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: KeyBreakChance
+      Data: 33
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeStruggleSuccessMSG
+      Object: 063000:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_EquipRequiredFailMsg
+      Object: 08362F:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnLeaveItWornMSG
+      Object: 063010:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: deviceQuest
+      Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeStruggleFailureMSG
+      Object: 062FFF:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeCutSuccessMSG
+      Object: 063006:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeLockPickFailureMSG
+      Object: 063002:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: LockJamChance
+      Data: 33
+    - MutagenObjectType: ScriptObjectProperty
+      Name: deviceKey
+      Object: 0409A4:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_KeyBreakJamMSG
+      Object: 083B94:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_EquipConflictFailMsg
+      Object: 08362E:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviceMsg
+      Object: 06DCF0:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: libs
+      Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: LockAccessDifficulty
+      Data: 10
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Aroused
+      Object: 04290F:SexLabAroused.esm
+Name:
+  TargetLanguage: English
+  Value: Slave Piercings (Clitoral) (Shock)
+WorldModel:
+  Male:
+    Model:
+      File: devious\devices\piercingVSoul_go.nif
+      Data: 0x020000000000000000000000
+      AlternateTextures:
+      - Name: piercingC_soul002:1
+        NewTexture: 01492C:Devious Devices - Expansion.esm
+        Index: 1
+      - Name: piercingC_soul002:2
+        NewTexture: 01492C:Devious Devices - Expansion.esm
+  Female:
+    Model:
+      File: devious\devices\piercingVSoul_go.nif
+      Data: 0x020000000000000000000000
+      AlternateTextures:
+      - Name: piercingC_soul002:1
+        NewTexture: 01492C:Devious Devices - Expansion.esm
+        Index: 1
+      - Name: piercingC_soul002:2
+        NewTexture: 01492C:Devious Devices - Expansion.esm
+BodyTemplate:
+  ArmorType: Clothing
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Keywords:
+- 0C27BD:Skyrim.esm
+- 0FF9FB:Skyrim.esm
+- 02F16E:SexLab.esm
+- 02B5F0:Devious Devices - Integration.esm
+Description:
+  TargetLanguage: English
+  Value: A pair of nipple piercings enchanted to deliver shocks on command. Cannot be controlled by the wearer.
+Value: 95
+Weight: 0.5

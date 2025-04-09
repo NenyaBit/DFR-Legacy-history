@@ -1,0 +1,11 @@
+FormKey: 011BA6:DeviousFollowers.esp
+EditorID: _DCalm
+Relations:
+- Target: 011BA6:DeviousFollowers.esp
+  Reaction: Ally
+Flags:
+- HiddenFromPC
+CrimeValues:
+  Arrest: True
+  AttackOnSight: True
+VendorValues: {}
