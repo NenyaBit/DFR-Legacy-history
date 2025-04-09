@@ -9,6 +9,7 @@ Actor akSpeaker = akSpeakerRef as Actor
 Float a = 500
 PlayerRef.RemoveItem(Gold001, 500)
 Q.Debtpay(a)
+DFR_RelationshipManager.Get().IncFavour()
 ;END CODE
 EndFunction
 ;END FRAGMENT

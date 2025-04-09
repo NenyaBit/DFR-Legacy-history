@@ -6,11 +6,10 @@ Scriptname TIF_Dflow_0B02243C Extends TopicInfo Hidden
 Function Fragment_8(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-tool.unequipgear()
+Tool.UnequipGear()
 tool.PunDebt()
 libs.EquipDevice(libs.PlayerRef, I , R,libs.zad_DeviousArmbinder)
 (GetOwningQuest() as _DDeal).Triggered = True
-(Humility As _DflowHumliation).BoundHands = 1
 ;END CODE
 EndFunction
 ;END FRAGMENT

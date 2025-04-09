@@ -1,0 +1,351 @@
+name: Whore Armor (Heavy)
+addKeywords:
+  - _DFWArmor
+  - Adv_RuleItemKwd
+variants:
+  - severity: 1
+    sequence:
+      - key: wayward
+    pieces:
+      - name: Wayward Knight Skirt - SMP
+        id: 0x960|ahzWaywardKnight.esp
+      - name: Wayward Knight Innerwear
+        id: 0x83D|ahzWaywardKnight.esp
+      - name: Wayward Knight Gauntlets - Bracers
+        id: 0x823|ahzWaywardKnight.esp
+      - name: Wayward Knight Gorget
+        id: 0x81B|ahzWaywardKnight.esp
+      - name: Wayward Knight Pauldrons
+        id: 0x819|ahzWaywardKnight.esp
+      - name: Wayward Knight Rerebraces
+        id: 0x818|ahzWaywardKnight.esp
+      - name: Wayward Knight Tassets
+        id: 0x816|ahzWaywardKnight.esp
+      - name: Wayward Knight Couters
+        id: 0x817|ahzWaywardKnight.esp
+      - name: Wayward Knight Legguards
+        id: 0x814|ahzWaywardKnight.esp
+      - name: Wayward Knight Armor
+        id: 0x801|ahzWaywardKnight.esp
+      - name: Wayward Knight Gauntlets
+        id: 0x811|ahzWaywardKnight.esp
+      - name: Wayward Knight Boots - Sabatons
+        id: 0x812|ahzWaywardKnight.esp
+  - severity: 2
+    sequence:
+      - key: wayward
+    pieces:
+      - name: Wayward Knight Skirt - SMP
+        id: 0x960|ahzWaywardKnight.esp
+      - name: Wayward Knight Innerwear
+        id: 0x83D|ahzWaywardKnight.esp
+      - name: Wayward Knight Armor S
+        id: 0x825|ahzWaywardKnight.esp
+      - name: Wayward Knight Gauntlets - Bracers
+        id: 0x823|ahzWaywardKnight.esp
+      - name: Wayward Knight Gorget
+        id: 0x81B|ahzWaywardKnight.esp
+      - name: Wayward Knight Tassets
+        id: 0x816|ahzWaywardKnight.esp
+      - name: Wayward Knight Pauldrons
+        id: 0x819|ahzWaywardKnight.esp
+      - name: Wayward Knight Rerebraces
+        id: 0x818|ahzWaywardKnight.esp
+      - name: Wayward Knight Couters
+        id: 0x817|ahzWaywardKnight.esp
+      - name: Wayward Knight Legguards
+        id: 0x814|ahzWaywardKnight.esp
+      - name: Wayward Knight Gauntlets
+        id: 0x811|ahzWaywardKnight.esp
+      - name: Wayward Knight Boots - Sabatons
+        id: 0x812|ahzWaywardKnight.esp
+  - severity: 3
+    sequence:
+      - key: wayward
+    pieces:
+      - name: Wayward Knight Skirt - Pulled
+        id: 0x844|ahzWaywardKnight.esp
+      - name: Wayward Knight Innerwear
+        id: 0x83D|ahzWaywardKnight.esp
+      - name: Wayward Knight Armor S
+        id: 0x825|ahzWaywardKnight.esp
+      - name: Wayward Knight Gauntlets - Bracers
+        id: 0x823|ahzWaywardKnight.esp
+      - name: Wayward Knight Tassets
+        id: 0x816|ahzWaywardKnight.esp
+      - name: Wayward Knight Gorget
+        id: 0x81B|ahzWaywardKnight.esp
+      - name: Wayward Knight Pauldrons
+        id: 0x819|ahzWaywardKnight.esp
+      - name: Wayward Knight Rerebraces
+        id: 0x818|ahzWaywardKnight.esp
+      - name: Wayward Knight Couters
+        id: 0x817|ahzWaywardKnight.esp
+      - name: Wayward Knight Legguards
+        id: 0x814|ahzWaywardKnight.esp
+      - name: Wayward Knight Gauntlets
+        id: 0x811|ahzWaywardKnight.esp
+      - name: Wayward Knight Boots - Sabatons
+        id: 0x812|ahzWaywardKnight.esp
+  - severity: 4
+    tags: [bikini]
+    addKeywords:
+      - _SLS_BikiniArmor
+    sequence:
+      - key: wayward
+    pieces:
+      - name: Wayward Knight Skirt - Pulled
+        id: 0x844|ahzWaywardKnight.esp
+      - name: Wayward Knight Innerwear
+        id: 0x83D|ahzWaywardKnight.esp
+      - name: Wayward Knight Top - Pulled
+        id: 0x838|ahzWaywardKnight.esp
+      - name: Wayward Knight Gauntlets - Bracers
+        id: 0x823|ahzWaywardKnight.esp
+      - name: Wayward Knight Gorget
+        id: 0x81B|ahzWaywardKnight.esp
+      - name: Wayward Knight Pauldrons
+        id: 0x819|ahzWaywardKnight.esp
+      - name: Wayward Knight Rerebraces
+        id: 0x818|ahzWaywardKnight.esp
+      - name: Wayward Knight Couters
+        id: 0x817|ahzWaywardKnight.esp
+      - name: Wayward Knight Tassets
+        id: 0x816|ahzWaywardKnight.esp
+      - name: Wayward Knight Legguards
+        id: 0x814|ahzWaywardKnight.esp
+      - name: Dwarven Bikini Top 03 - Slot 48
+        id: 0x1337F|The Amazing World of Bikini Armors REMASTERED.esp
+      - name: Wayward Knight Gauntlets
+        id: 0x811|ahzWaywardKnight.esp
+      - name: Wayward Knight Boots - Sabatons
+        id: 0x812|ahzWaywardKnight.esp
+  - severity: 5
+    sequence:
+      - key: wayward
+    tags: [bikini]
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Wayward Knight Top - Pulled
+        id: 0x838|ahzWaywardKnight.esp
+      - name: Wayward Knight Gauntlets - Bracers
+        id: 0x823|ahzWaywardKnight.esp
+      - name: Wayward Knight Gorget
+        id: 0x81B|ahzWaywardKnight.esp
+      - name: Wayward Knight Pauldrons
+        id: 0x819|ahzWaywardKnight.esp
+      - name: Wayward Knight Rerebraces
+        id: 0x818|ahzWaywardKnight.esp
+      - name: Wayward Knight Couters
+        id: 0x817|ahzWaywardKnight.esp
+      - name: Wayward Knight Tassets
+        id: 0x816|ahzWaywardKnight.esp
+      - name: Wayward Knight Legguards
+        id: 0x814|ahzWaywardKnight.esp
+      - name: Dwarven Bikini Top 03 - Slot 48
+        id: 0x1337F|The Amazing World of Bikini Armors REMASTERED.esp
+      - name: Dwarven Bikini Bottom III
+        id: 0x12DF2|The Amazing World of Bikini Armors REMASTERED.esp
+      - name: Wayward Knight Gauntlets
+        id: 0x811|ahzWaywardKnight.esp
+      - name: Wayward Knight Boots - Sabatons
+        id: 0x812|ahzWaywardKnight.esp
+  - severity: 1
+    sequence:
+      - key: fleet
+    pieces:
+      - name: Fleet Knight Couters
+        id: 0xDF9|ahzFleetKnight.esp
+      - name: Fleet Knight Waistcloth SMP
+        id: 0xDF7|ahzFleetKnight.esp
+      - name: Fleet Knight Helm - Open
+        id: 0x831|ahzFleetKnight.esp
+      - name: Fleet Knight Greaves
+        id: 0x81B|ahzFleetKnight.esp
+      - name: Fleet Knight Cloak
+        id: 0x81A|ahzFleetKnight.esp
+      - name: Fleet Knight Shoulderguard
+        id: 0x817|ahzFleetKnight.esp
+      - name: Fleet Knight Gauntlets
+        id: 0x802|ahzFleetKnight.esp
+      - name: Fleet Knight Armor
+        id: 0x801|ahzFleetKnight.esp
+      - name: Fleet Knight Boots
+        id: 0x800|ahzFleetKnight.esp
+  - severity: 2
+    sequence:
+      - key: fleet
+    pieces:
+      - name: Fleet Knight Couters
+        id: 0xDF9|ahzFleetKnight.esp
+      - name: Fleet Knight Waistcloth SMP
+        id: 0xDF7|ahzFleetKnight.esp
+      - name: Fleet Knight Armor S
+        id: 0xDE8|ahzFleetKnight.esp
+      - name: Fleet Knight Helm - Open
+        id: 0x831|ahzFleetKnight.esp
+      - name: Fleet Knight Greaves
+        id: 0x81B|ahzFleetKnight.esp
+      - name: Fleet Knight Cloak
+        id: 0x81A|ahzFleetKnight.esp
+      - name: Fleet Knight Shoulderguard
+        id: 0x817|ahzFleetKnight.esp
+      - name: Fleet Knight Gauntlets
+        id: 0x802|ahzFleetKnight.esp
+      - name: Fleet Knight Boots
+        id: 0x800|ahzFleetKnight.esp
+      - name: Hide Short Pants 1
+        id: 0x16532|The Amazing World of Bikini Armors REMASTERED.esp
+  - severity: 3
+    sequence:
+      - key: fleet
+    pieces:
+      - name: Fleet Knight Couters
+        id: 0xDF9|ahzFleetKnight.esp
+      - name: Fleet Knight Waistcloth SMP
+        id: 0xDF7|ahzFleetKnight.esp
+      - name: Fleet Knight Armor S
+        id: 0xDE8|ahzFleetKnight.esp
+      - name: Fleet Knight Helm - Open
+        id: 0x831|ahzFleetKnight.esp
+      - name: Fleet Knight Greaves
+        id: 0x81B|ahzFleetKnight.esp
+      - name: Fleet Knight Cloak
+        id: 0x81A|ahzFleetKnight.esp
+      - name: Fleet Knight Shoulderguard
+        id: 0x817|ahzFleetKnight.esp
+      - name: Fleet Knight Gauntlets
+        id: 0x802|ahzFleetKnight.esp
+      - name: Fleet Knight Boots
+        id: 0x800|ahzFleetKnight.esp
+      - name: Iron Bikini Bottom I
+        id: 0x002E36|The Amazing World of Bikini Armors REMASTERED.esp
+  - severity: 4
+    sequence:
+      - key: fleet
+    tags: [bikini]
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Fleet Knight Couters
+        id: 0xDF9|ahzFleetKnight.esp
+      - name: Fleet Knight Waistcloth SMP
+        id: 0xDF7|ahzFleetKnight.esp
+      - name: Fleet Knight Helm - Open
+        id: 0x831|ahzFleetKnight.esp
+      - name: Fleet Knight Greaves
+        id: 0x81B|ahzFleetKnight.esp
+      - name: Fleet Knight Cloak
+        id: 0x81A|ahzFleetKnight.esp
+      - name: Fleet Knight Shoulderguard
+        id: 0x817|ahzFleetKnight.esp
+      - name: Fleet Knight Top S
+        id: 0x815|ahzFleetKnight.esp
+      - name: Fleet Knight Gauntlets
+        id: 0x802|ahzFleetKnight.esp
+      - name: Fleet Knight Boots
+        id: 0x800|ahzFleetKnight.esp
+      - name: Dwarven Bikini Top 07 - Slot 48
+        id: 0x61B62|The Amazing World of Bikini Armors REMASTERED.esp
+      - name: Iron Bikini Bottom I
+        id: 0x002E36|The Amazing World of Bikini Armors REMASTERED.esp
+  - severity: 5
+    sequence:
+      - key: fleet
+    tags: [bikini]
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Fleet Knight Couters
+        id: 0xDF9|ahzFleetKnight.esp
+      - name: Fleet Knight Helm - Open
+        id: 0x831|ahzFleetKnight.esp
+      - name: Fleet Knight Greaves
+        id: 0x81B|ahzFleetKnight.esp
+      - name: Fleet Knight Cloak
+        id: 0x81A|ahzFleetKnight.esp
+      - name: Fleet Knight Shoulderguard
+        id: 0x817|ahzFleetKnight.esp
+      - name: Fleet Knight Top S
+        id: 0x815|ahzFleetKnight.esp
+      - name: Fleet Knight Gauntlets
+        id: 0x802|ahzFleetKnight.esp
+      - name: Fleet Knight Boots
+        id: 0x800|ahzFleetKnight.esp
+      - name: Dwarven Bikini Top 07 - Slot 48
+        id: 0x61B62|The Amazing World of Bikini Armors REMASTERED.esp
+      - name: Iron Bikini Bottom I
+        id: 0x002E36|The Amazing World of Bikini Armors REMASTERED.esp
+  - severity: 1
+    sequence:
+      - key: kardia
+    pieces:
+      - name: Kardia's Plate Heels
+        id: 0x000D65|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Armor
+        id: 0x000D64|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Helm (Opened)
+        id: 0x000810|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Gauntlets (B)
+        id: 0x000880|TBD - NiseKardiaArmor.esp
+      - name: Elven leggings long
+        id: 0xEEC3|The Amazing World of Bikini Armors REMASTERED.esp
+  - severity: 2
+    sequence:
+      - key: kardia
+    pieces:
+      - name: Kardia's Plate Heels
+        id: 0x000D65|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Armor
+        id: 0x000D64|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Legs
+        id: 0x00082C|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Helm (Opened)
+        id: 0x000810|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Gauntlets (B)
+        id: 0x000880|TBD - NiseKardiaArmor.esp
+      - name: Wayward Knight Skirt - SMP
+        id: 0x000960|ahzWaywardKnight.esp
+      - name: Wayward Knight Innerwear
+        id: 0x00083D|ahzWaywardKnight.esp
+  - severity: 3
+    sequence:
+      - key: kardia
+    tags: [bikini]
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Kardia's Panty Fabric (B)
+        id: 0x000DEA|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Heels
+        id: 0x000D65|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Armor
+        id: 0x000D64|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Legs
+        id: 0x00082C|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Helm (Opened)
+        id: 0x000810|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Gauntlets (B)
+        id: 0x000880|TBD - NiseKardiaArmor.esp
+  - severity: 4
+    sequence:
+      - key: kardia
+    tags: [bikini]
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Kardia's Plate Armor (No BP)
+        id: 0x00080D|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Panty Fabric (B)
+        id: 0x000DEA|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Heels
+        id: 0x000D65|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Xtra Breast Plates
+        id: 0x00083B|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Legs
+        id: 0x00082C|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Helm (Opened)
+        id: 0x000810|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Gauntlets (B)
+        id: 0x000880|TBD - NiseKardiaArmor.esp

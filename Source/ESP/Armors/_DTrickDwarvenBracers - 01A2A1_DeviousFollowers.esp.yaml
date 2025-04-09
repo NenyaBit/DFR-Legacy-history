@@ -5,11 +5,11 @@ VirtualMachineAdapter:
   - Name: _Dtrick
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: libs
-      Object: 00F624:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
       Name: CurseMSG
       Object: 01A2A2:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: libs
+      Object: 00F624:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: deviceRendered
       Object: 019276:DeviousFollowers.esp

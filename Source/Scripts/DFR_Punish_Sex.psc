@@ -10,5 +10,7 @@ bool function OnStart(Actor akTarget)
     Tool.Sex(akTarget)
     Tool.WaitForSex()
     Stop()
+    DFR_RelationshipManager.Get().CompleteEvent(GetEventId())
+
     return true
 endFunction

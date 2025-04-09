@@ -22,6 +22,11 @@ Description:
 NumRanks: 1
 Effects:
 - MutagenObjectType: PerkEntryPointModifyValue
+  EntryPoint: ModIncomingStagger
+  PerkConditionTabCount: 2
+  Modification: Multiply
+  Value: 2
+- MutagenObjectType: PerkEntryPointModifyValue
   Conditions:
   - Conditions:
     - MutagenObjectType: ConditionFloat
@@ -41,27 +46,17 @@ Effects:
   Modification: Multiply
   Value: 3
 - MutagenObjectType: PerkEntryPointModifyValue
+  EntryPoint: ModPlayerIntimidation
+  PerkConditionTabCount: 2
+  Modification: Multiply
+  Value: 0.1
+- MutagenObjectType: PerkEntryPointModifyValue
   EntryPoint: ModSpellRange
   PerkConditionTabCount: 2
   Modification: Multiply
   Value: 0.5
 - MutagenObjectType: PerkEntryPointModifyValue
   EntryPoint: ModSpellCost
-  PerkConditionTabCount: 2
-  Modification: Multiply
-  Value: 2
-- MutagenObjectType: PerkEntryPointModifyValue
-  EntryPoint: ModPlayerIntimidation
-  PerkConditionTabCount: 2
-  Modification: Multiply
-  Value: 0.1
-- MutagenObjectType: PerkEntryPointModifyValue
-  EntryPoint: ModSpellMagnitude
-  PerkConditionTabCount: 3
-  Modification: Multiply
-  Value: 0.1
-- MutagenObjectType: PerkEntryPointModifyValue
-  EntryPoint: ModIncomingStagger
   PerkConditionTabCount: 2
   Modification: Multiply
   Value: 2
@@ -124,5 +119,10 @@ Effects:
   PerkConditionTabCount: 2
   Modification: Multiply
   Value: 30
+- MutagenObjectType: PerkEntryPointModifyValue
+  EntryPoint: ModSpellMagnitude
+  PerkConditionTabCount: 3
+  Modification: Multiply
+  Value: 0.1
 MajorFlags:
 - NonPlayable

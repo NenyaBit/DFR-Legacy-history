@@ -5,24 +5,24 @@ VirtualMachineAdapter:
   - Name: DFR_DefeatHandler
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: MasterAlias
-      Object: 000D62:DeviousFollowers.esp
-      Alias: 1
-    - MutagenObjectType: ScriptObjectProperty
       Name: Lives
       Object: 02DB9E:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: GoldCon
-      Object: 112478:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: q
+      Name: MasterAlias
       Object: 000D62:DeviousFollowers.esp
+      Alias: 1
     - MutagenObjectType: ScriptObjectProperty
       Name: PlayerRef
       Object: 000014:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: MCM
       Object: 00C545:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: q
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GoldCon
+      Object: 112478:DeviousFollowers.esp
   FileName: ''
   Aliases:
   - Property:

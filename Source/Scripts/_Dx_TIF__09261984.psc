@@ -8,7 +8,6 @@ Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 libs.RemoveDevice(libs.PlayerRef, I , R, libs.zad_DeviousArmbinder)
 (GetOwningQuest() As _DDeal).Triggered = False
-(Humility As _DflowHumliation).BoundHands = 0
 (tool As _DFtools).ReduceResist(2)
 ;END CODE
 EndFunction

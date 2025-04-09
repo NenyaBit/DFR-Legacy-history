@@ -1,0 +1,5 @@
+name: Brute
+faction: DFR_Trait_Brute
+data:
+  escalation-increase-multiplier: 2
+  escalation-decrease-multiplier: 0.5

@@ -1,0 +1,211 @@
+name: Whore Armor (Mage)
+addKeywords:
+  - _DFWArmor
+  - Adv_RuleItemKwd
+variants:
+  - severity: 1
+    sequence:
+      - key: magecore
+    pieces:
+      - name: Mage Robes
+        id: 0x6B46B|Skyrim.esm
+      - name: Mage Silk Gloves
+        id: 0xB5D|[Caenarvon] Magecore.esp
+      - name: Mage Rune Bodywrap
+        id: 0xB5B|[Caenarvon] Magecore.esp
+      - name: Mage Field Tome
+        id: 0xB5A|[Caenarvon] Magecore.esp
+      - name: Mage Silver Thighlet
+        id: 0xB58|[Caenarvon] Magecore.esp
+      - name: Mage Hide Hat
+        id: 0xBDF|[Caenarvon] Magecore.esp
+      - name: Mage Silk Stocking
+        id: 0xB52|[Caenarvon] Magecore.esp
+      - name: Mage Collar with Pendant
+        id: 0xB4F|[Caenarvon] Magecore.esp
+      - name: Mage Field Bracers
+        id: 0xB4D|[Caenarvon] Magecore.esp
+      - name: Mage Field Boots
+        id: 0xB4C|[Caenarvon] Magecore.esp
+      - name: Mage Silver Armlet
+        id: 0xB49|[Caenarvon] Magecore.esp
+  - severity: 3
+    sequence:
+      - key: magecore
+    pieces:
+      - name: Mage Novice Student Robe of Magicka
+        id: 0xC01|[Caenarvon] Magecore.esp
+      - name: Mage Silk Gloves
+        id: 0xB5D|[Caenarvon] Magecore.esp
+      - name: Mage Rune Bodywrap
+        id: 0xB5B|[Caenarvon] Magecore.esp
+      - name: Mage Field Tome
+        id: 0xB5A|[Caenarvon] Magecore.esp
+      - name: Mage Silver Thighlet
+        id: 0xB58|[Caenarvon] Magecore.esp
+      - name: Mage Hide Hat
+        id: 0xBDF|[Caenarvon] Magecore.esp
+      - name: Mage Novice Panty
+        id: 0xB56|[Caenarvon] Magecore.esp
+      - name: Mage Silk Stocking
+        id: 0xB52|[Caenarvon] Magecore.esp
+      - name: Mage Collar with Pendant
+        id: 0xB4F|[Caenarvon] Magecore.esp
+      - name: Mage Field Bracers
+        id: 0xB4D|[Caenarvon] Magecore.esp
+      - name: Mage Field Boots
+        id: 0xB4C|[Caenarvon] Magecore.esp
+      - name: Mage Silver Armlet
+        id: 0xB49|[Caenarvon] Magecore.esp
+  - severity: 4
+    sequence:
+      - key: magecore
+    pieces:
+      - name: Mage Silk Gloves
+        id: 0xB5D|[Caenarvon] Magecore.esp
+      - name: Mage Rune Bodywrap
+        id: 0xB5B|[Caenarvon] Magecore.esp
+      - name: Mage Field Tome
+        id: 0xB5A|[Caenarvon] Magecore.esp
+      - name: Mage Silver Thighlet
+        id: 0xB58|[Caenarvon] Magecore.esp
+      - name: Mage Hide Hat
+        id: 0xBDF|[Caenarvon] Magecore.esp
+      - name: Mage Novice Panty
+        id: 0xB56|[Caenarvon] Magecore.esp
+      - name: Mage Silk Stocking
+        id: 0xB52|[Caenarvon] Magecore.esp
+      - name: Mage Collar with Pendant
+        id: 0xB4F|[Caenarvon] Magecore.esp
+      - name: Mage Field Bracers
+        id: 0xB4D|[Caenarvon] Magecore.esp
+      - name: Mage Field Boots
+        id: 0xB4C|[Caenarvon] Magecore.esp
+      - name: Mage Silver Armlet
+        id: 0xB49|[Caenarvon] Magecore.esp
+      - name: Mage Novice Student Robe (Lewd)
+        id: 0xB48|[Caenarvon] Magecore.esp
+      - name: LUX Purr Lingerie Pasties (Black 1)
+        id: 0x12D78|Luxury Collection.esp
+  - severity: 1
+    sequence:
+      - key: modular
+    pieces:
+      - name: Adept Corset 1 Topless
+        id: 0x000DB1|[Imp] Modular Mage.esp
+      - name: Adept Sash
+        id: 0x000D97|[Imp] Modular Mage.esp
+      - name: Adept High Heels
+        id: 0x000D79|[Imp] Modular Mage.esp
+      - name: Adept Wrap Top Shirt
+        id: 0x0009AE|[Imp] Modular Mage.esp
+      - name: Adept Mantle 1
+        id: 0x0008BB|[Imp] Modular Mage.esp
+      - name: Adept Armwraps
+        id: 0x000887|[Imp] Modular Mage.esp
+      - name: Adept Panties 4
+        id: 0x000EAA|[Imp] Modular Mage.esp
+      - name: Adept Tight Skirt
+        id: 0x000D9A|[Imp] Modular Mage.esp
+      - name: Adept Sleeves 2
+        id: 0x000837|[Imp] Modular Mage.esp
+      - name: Adept Stockings 1
+        id: 0x000818|[Imp] Modular Mage.esp
+  - severity: 2
+    sequence:
+      - key: modular
+    pieces:
+      - name: Adept Corset 1 Topless
+        id: 0x000DB1|[Imp] Modular Mage.esp
+      - name: Adept Sash
+        id: 0x000D97|[Imp] Modular Mage.esp
+      - name: Adept Panties 4
+        id: 0x000EAA|[Imp] Modular Mage.esp
+      - name: Adept High Heels
+        id: 0x000D79|[Imp] Modular Mage.esp
+      - name: Adept Wrap Top
+        id: 0x0009B1|[Imp] Modular Mage.esp
+      - name: Adept Mantle 1
+        id: 0x0008BB|[Imp] Modular Mage.esp
+      - name: Adept Armwraps
+        id: 0x000887|[Imp] Modular Mage.esp
+      - name: Adept Tight Skirt
+        id: 0x000D9A|[Imp] Modular Mage.esp
+      - name: Adept Sleeves 2
+        id: 0x000837|[Imp] Modular Mage.esp
+      - name: Adept Stockings 1
+        id: 0x000818|[Imp] Modular Mage.esp
+  - severity: 3
+    sequence:
+      - key: modular
+    pieces:
+      - name: Adept Corset 1 Topless
+        id: 0x000DB1|[Imp] Modular Mage.esp
+      - name: Adept Sash
+        id: 0x000D97|[Imp] Modular Mage.esp
+      - name: Adept String Thong
+        id: 0x000D82|[Imp] Modular Mage.esp
+      - name: Adept High Heels
+        id: 0x000D79|[Imp] Modular Mage.esp
+      - name: Adept Wrap Top
+        id: 0x0009B1|[Imp] Modular Mage.esp
+      - name: Adept Mantle 1
+        id: 0x0008BB|[Imp] Modular Mage.esp
+      - name: Adept Armwraps
+        id: 0x000887|[Imp] Modular Mage.esp
+      - name: Adept Mini Skirt
+        id: 0x0008B4|[Imp] Modular Mage.esp
+      - name: Adept Garterbelt
+        id: 0x00084D|[Imp] Modular Mage.esp
+      - name: Adept Sleeves 2
+        id: 0x000837|[Imp] Modular Mage.esp
+      - name: Adept Stockings 1
+        id: 0x000818|[Imp] Modular Mage.esp
+  - severity: 4
+    sequence:
+      - key: modular
+    pieces:
+      - name: Adept Jacket
+        id: 0x000F41|[Imp] Modular Mage.esp
+      - name: Adept String Thong
+        id: 0x000D82|[Imp] Modular Mage.esp
+      - name: Adept String Bra
+        id: 0x000D7F|[Imp] Modular Mage.esp
+      - name: Adept Mini Skirt
+        id: 0x0008B4|[Imp] Modular Mage.esp
+      - name: Adept High Heels
+        id: 0x000D79|[Imp] Modular Mage.esp
+      - name: Adept Sleeves 2
+        id: 0x000837|[Imp] Modular Mage.esp
+      - name: Adept Stockings 1
+        id: 0x000818|[Imp] Modular Mage.esp
+  - severity: 5
+    sequence:
+      - key: modular
+    pieces:
+      - name: Adept Jacket
+        id: 0x000F41|[Imp] Modular Mage.esp
+      - name: Adept High Heels
+        id: 0x000D79|[Imp] Modular Mage.esp
+      - name: Adept Sleeves 2
+        id: 0x000837|[Imp] Modular Mage.esp
+      - name: Adept Stockings 1
+        id: 0x000818|[Imp] Modular Mage.esp
+      - name: Adept Sling Bikini
+        id: 0x000808|[Imp] Modular Mage.esp
+  - severity: 5
+    sequence:
+      - key: modular
+    pieces:
+      - name: Adept Jacket
+        id: 0x000F41|[Imp] Modular Mage.esp
+      - name: Adept String Thong
+        id: 0x000D82|[Imp] Modular Mage.esp
+      - name: Adept String Bra
+        id: 0x000D7F|[Imp] Modular Mage.esp
+      - name: Adept High Heels
+        id: 0x000D79|[Imp] Modular Mage.esp
+      - name: Adept Sleeves 2
+        id: 0x000837|[Imp] Modular Mage.esp
+      - name: Adept Stockings 1
+        id: 0x000818|[Imp] Modular Mage.esp

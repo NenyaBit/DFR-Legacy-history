@@ -4,80 +4,80 @@ VirtualMachineAdapter:
   Scripts:
   - Name: _DFGoldConQScript
     Properties:
-    - MutagenObjectType: ScriptFloatProperty
-      Name: Decay
-      Data: 0.01
-    - MutagenObjectType: ScriptIntProperty
-      Name: AgreedGoldSlaveDefault
-      Data: 10
-    - MutagenObjectType: ScriptObjectProperty
-      Name: q
-      Object: 000D62:DeviousFollowers.esp
-    - MutagenObjectType: ScriptIntProperty
-      Name: AgreedGoldMax
-      Data: 2000
-    - MutagenObjectType: ScriptIntProperty
-      Name: AgreedGoldMin
-      Data: 100
-    - MutagenObjectType: ScriptIntProperty
-      Name: CredToLeave
-      Data: 1000
-    - MutagenObjectType: ScriptIntProperty
-      Name: AskForMore
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowDebtCreditMsg2
-      Object: 119B66:DeviousFollowers.esp
-    - MutagenObjectType: ScriptBoolProperty
-      Name: OTHER
-      Data: True
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFCred001
-      Object: 1173B0:DeviousFollowers.esp
-    - MutagenObjectType: ScriptIntProperty
-      Name: credit
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Gold001
-      Object: 00000F:Skyrim.esm
-    - MutagenObjectType: ScriptBoolProperty
-      Name: KnockDown
-      Data: True
-    - MutagenObjectType: ScriptBoolProperty
-      Name: CredToLeaveBool
-    - MutagenObjectType: ScriptIntProperty
-      Name: AgreedGold
-      Data: 1000
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowDebtCreditMsg1
-      Object: 132793:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: _DWill
       Object: 01A2A7:Update.esm
     - MutagenObjectType: ScriptIntProperty
+      Name: credit
+    - MutagenObjectType: ScriptFloatProperty
+      Name: Decay
+      Data: 0.01
+    - MutagenObjectType: ScriptIntProperty
       Name: AgreedGoldDefault
       Data: 1000
-    - MutagenObjectType: ScriptBoolProperty
-      Name: active
-      Data: True
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDebtCreditMsg2
+      Object: 119B66:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: RelManager
       Object: 38C70D:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: _DFLicenses
       Object: 2FEA42:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDebtCreditMsg1
+      Object: 132793:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: q
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptBoolProperty
+      Name: OTHER
+      Data: True
+    - MutagenObjectType: ScriptBoolProperty
+      Name: CredToLeaveBool
+    - MutagenObjectType: ScriptObjectProperty
+      Name: AgreedGoldGlobal
+      Object: 39188B:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: AgreedGoldMin
+      Data: 100
+    - MutagenObjectType: ScriptBoolProperty
+      Name: active
+      Data: True
+    - MutagenObjectType: ScriptIntProperty
+      Name: AgreedGoldMax
+      Data: 2000
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowDebt
+      Object: 00C54F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: AskForMore
+    - MutagenObjectType: ScriptIntProperty
+      Name: AgreedGold
+      Data: 1000
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFCred001
+      Object: 1173B0:DeviousFollowers.esp
+    - MutagenObjectType: ScriptBoolProperty
+      Name: KnockDown
+      Data: True
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
+    - MutagenObjectType: ScriptIntProperty
+      Name: CredToLeave
+      Data: 1000
     - MutagenObjectType: ScriptFloatProperty
       Name: RedGoldMod
       Data: 0.2
     - MutagenObjectType: ScriptObjectProperty
       Name: _DFlowDebtCreditMsg0
       Object: 132792:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: AgreedGoldGlobal
-      Object: 39188B:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: AgreedGoldSlaveDefault
+      Data: 10
     - MutagenObjectType: ScriptBoolProperty
       Name: Enabled
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowDebt
-      Object: 00C54F:DeviousFollowers.esp
   - Name: QF__DflowGoldMode_08112478
   FileName: QF__DflowGoldMode_08112478
   Fragments:

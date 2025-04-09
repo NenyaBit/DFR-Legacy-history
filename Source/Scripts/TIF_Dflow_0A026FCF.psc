@@ -2,22 +2,22 @@
 ;NEXT FRAGMENT INDEX 10
 Scriptname TIF_Dflow_0A026FCF Extends TopicInfo Hidden
 
-;BEGIN FRAGMENT Fragment_9
-Function Fragment_9(ObjectReference akSpeakerRef)
-Actor akSpeaker = akSpeakerRef as Actor
-;BEGIN CODE
-libs.equipDevice(PlayerRef, D , DE, libs.zad_DeviousStraitJacket, skipevents = false, skipmutex = true)
-GetowningQuest().setstage(200)
-GameQ.setstage(200)
-;END CODE
-EndFunction
-;END FRAGMENT
-
 ;BEGIN FRAGMENT Fragment_7
 Function Fragment_7(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 msg.show()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_9
+Function Fragment_9(ObjectReference akSpeakerRef)
+Actor akSpeaker = akSpeakerRef as Actor
+;BEGIN CODE
+libs.LockDevice(PlayerRef, D)
+GetowningQuest().setstage(200)
+GameQ.setstage(200)
 ;END CODE
 EndFunction
 ;END FRAGMENT

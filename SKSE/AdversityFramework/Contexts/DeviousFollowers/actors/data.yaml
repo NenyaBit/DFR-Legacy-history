@@ -1,0 +1,44 @@
+- id: HirelingBelrand
+  traits:
+    - id: Profiteer
+  data:
+    devious: true
+    combatStyle: heavy
+    playerCombatPref: light
+- id: HirelingErikTheSlayer
+  traits:
+    - id: Profiteer
+  data:
+    devious: true
+    combatStyle: light
+    playerCombatPref: heavy
+- id: HirelingJenassa
+  traits:
+    - id: Profiteer
+  data:
+    devious: true
+    combatStyle: light
+    playerCombatPref: heavy
+- id: HirelingMarcurio
+  traits:
+    - id: Profiteer
+  data:
+    devious: true
+    combatStyle: magic
+    playerCombatPref: light
+- id: HirelingStenvar
+  traits:
+    - id: Profiteer
+    - id: Brute
+  data:
+    devious: true
+    combatStyle: heavy
+    playerCombatPref: magic
+- id: HirelingVorstag
+  traits:
+    - id: Profiteer
+  data:
+    devious: true
+    combatStyle: heavy
+    playerCombatPref: light
+    

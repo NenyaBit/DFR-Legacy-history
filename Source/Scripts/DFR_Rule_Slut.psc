@@ -1,1 +1,1 @@
-Scriptname DFR_Rule_Slut extends Adv_EventBase  
+Scriptname DFR_Rule_Slut extends Adv_EventBase

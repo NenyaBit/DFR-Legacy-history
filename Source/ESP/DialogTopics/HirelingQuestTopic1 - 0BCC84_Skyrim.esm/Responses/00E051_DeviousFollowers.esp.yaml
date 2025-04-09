@@ -4,11 +4,11 @@ VirtualMachineAdapter:
   - Name: TIF__000BDFB1
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: HasHirelingGV
-      Object: 0BCC98:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
       Name: HirelingRecognizeStenvar
       Object: 104F3C:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HasHirelingGV
+      Object: 0BCC98:Skyrim.esm
 Flags: {}
 PreviousDialog: Null
 FavorLevel: None

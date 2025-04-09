@@ -8,6 +8,7 @@ bool function OnStart(Actor akTarget)
     (GetOwningQuest() as _DFlowModDealController).EquipOrLockDevice(OpenBelt)
     Deal.DelayDaysRange(2, 5)
     Deal.Triggered = false
+    return true
 endFunction 
 
 function OnStop()

@@ -5,14 +5,20 @@ VirtualMachineAdapter:
   - Name: DFR_RelationshipManager
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: DealController
-      Object: 01C86D:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
       Name: GameDaysPassed
       Object: 000039:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
+      Name: events
+      Object: 38C75F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DebugMode
+      Object: 41028C:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
       Name: FavourGlobal
       Object: 3E293B:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: TargetSeverity
+      Object: 4153CB:DeviousFollowers.esp
   FileName: ''
   Aliases:
   - Property:

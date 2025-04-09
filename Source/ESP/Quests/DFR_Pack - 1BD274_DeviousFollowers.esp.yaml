@@ -5,143 +5,149 @@ VirtualMachineAdapter:
   - Name: _DFlowModDealController
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFKeyContainer
-      Object: 2B7B95:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowPonyTailDealRend
-      Object: 1D5E8B:DeviousFollowers.esp
-    - MutagenObjectType: ScriptIntProperty
-      Name: CrawlInTownRule
-      Data: 1
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFMilkBarrel
-      Object: 2C1DA9:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: ddRestraintsKey
-      Object: 026F5E:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: ddPiercingKey
-      Object: 0409A3:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFDailyDealTimer
-      Object: 29E61E:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DealM2
-      Object: 1E24D1:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: tool
-      Object: 01210D:DeviousFollowers.esp
-    - MutagenObjectType: ScriptIntProperty
-      Name: BlindFoldRule
-      Data: 1
-    - MutagenObjectType: ScriptIntProperty
-      Name: InnKeeperRule
-      Data: 1
-    - MutagenObjectType: ScriptIntProperty
-      Name: BootsRule
-      Data: 1
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DealO
-      Object: 01C868:DeviousFollowers.esp
-    - MutagenObjectType: ScriptIntProperty
-      Name: VPRule
-      Data: 1
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFModSkoomaWhorePresent
-      Object: 29E630:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DealH
-      Object: 01C867:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Follower
-      Object: 1BD274:DeviousFollowers.esp
-      Alias: 1
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFModMmePresent
-      Object: 29E62F:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowPonyTailDealInventory
-      Object: 1D5E8A:DeviousFollowers.esp
-    - MutagenObjectType: ScriptIntProperty
-      Name: CuffsRule
-      Data: 1
-    - MutagenObjectType: ScriptIntProperty
-      Name: NPRule
-      Data: 1
-    - MutagenObjectType: ScriptObjectProperty
       Name: Deals
       Object: 0E53C8:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DealM3
-      Object: 1E24D2:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Actor1
-      Object: 1BD274:DeviousFollowers.esp
-      Alias: 3
-    - MutagenObjectType: ScriptObjectProperty
-      Name: InnScene
-      Object: 1D8631:DeviousFollowers.esp
     - MutagenObjectType: ScriptIntProperty
-      Name: BoundInTownRule
-      Data: 1
-    - MutagenObjectType: ScriptObjectProperty
-      Name: PlayerRef
-      Object: 000014:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: MerchantScene
-      Object: 1D8643:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DealM4
-      Object: 1E24D3:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFSpankDealRequests
-      Object: 29E61D:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFKeyFound
-      Object: 2B7B99:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DealM5
-      Object: 1E24D4:DeviousFollowers.esp
-    - MutagenObjectType: ScriptIntProperty
-      Name: GlovesRule
-      Data: 1
-    - MutagenObjectType: ScriptObjectProperty
-      Name: You
-      Object: 1BD274:DeviousFollowers.esp
-      Alias: 2
-    - MutagenObjectType: ScriptIntProperty
-      Name: MaxModDealsSetting
-      Data: 3
-    - MutagenObjectType: ScriptIntProperty
-      Name: WhoreRule
-      Data: 1
-    - MutagenObjectType: ScriptIntProperty
-      Name: CollarRule
-      Data: 1
-    - MutagenObjectType: ScriptObjectProperty
-      Name: VendorItemFood
-      Object: 08CDEA:Skyrim.esm
-    - MutagenObjectType: ScriptIntProperty
-      Name: GagRule
+      Name: PetSuitInTownRule
       Data: 1
     - MutagenObjectType: ScriptIntProperty
       Name: MerchantRule
       Data: 1
     - MutagenObjectType: ScriptObjectProperty
-      Name: DealM1
-      Object: 1DD588:DeviousFollowers.esp
+      Name: Follower
+      Object: 1BD274:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptIntProperty
+      Name: InnKeeperRule
+      Data: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DealM5
+      Object: 1E24D4:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowPonyTailDealInventory
+      Object: 1D5E8A:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tool
+      Object: 01210D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DealO
+      Object: 01C868:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: InnScene
+      Object: 1D8631:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: BootsRule
+      Data: 1
     - MutagenObjectType: ScriptIntProperty
       Name: DealsBuilt
     - MutagenObjectType: ScriptIntProperty
-      Name: PetSuitInTownRule
+      Name: WhoreRule
       Data: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Actor1
+      Object: 1BD274:DeviousFollowers.esp
+      Alias: 3
+    - MutagenObjectType: ScriptIntProperty
+      Name: CrawlInTownRule
+      Data: 1
+    - MutagenObjectType: ScriptIntProperty
+      Name: NPRule
+      Data: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFDailyDealTimer
+      Object: 29E61E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFKeyContainer
+      Object: 2B7B95:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DWill
+      Object: 01A2A7:Update.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DealM2
+      Object: 1E24D1:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: CollarRule
+      Data: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowPonyTailDealRend
+      Object: 1D5E8B:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: GlovesRule
+      Data: 1
+    - MutagenObjectType: ScriptIntProperty
+      Name: CuffsRule
+      Data: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DealM1
+      Object: 1DD588:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ddRestraintsKey
+      Object: 026F5E:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptIntProperty
+      Name: BlindFoldRule
+      Data: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFModMmePresent
+      Object: 29E62F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFSpankDealRequests
+      Object: 29E61D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: NakedRule
+      Data: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: MerchantScene
+      Object: 1D8643:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: DealB
       Object: 01C866:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
+      Name: ddChastityKey
+      Object: 026F5D:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: You
+      Object: 1BD274:DeviousFollowers.esp
+      Alias: 2
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFKeyFound
+      Object: 2B7B99:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ddPiercingKey
+      Object: 0409A3:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptIntProperty
+      Name: GagRule
+      Data: 1
+    - MutagenObjectType: ScriptObjectProperty
       Name: Player
       Object: 1BD274:DeviousFollowers.esp
       Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DealM3
+      Object: 1E24D2:DeviousFollowers.esp
+    - MutagenObjectType: ScriptFloatProperty
+      Name: TimerSetting
+      Data: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DealH
+      Object: 01C867:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: MaxModDealsSetting
+      Data: 3
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DealM4
+      Object: 1E24D3:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VendorItemFood
+      Object: 08CDEA:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFMilkBarrel
+      Object: 2C1DA9:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: BoundInTownRule
+      Data: 1
     - MutagenObjectType: ScriptObjectProperty
       Name: _DFEnableKeySearchGreeter
       Object: 2C6EAD:DeviousFollowers.esp
@@ -149,17 +155,11 @@ VirtualMachineAdapter:
       Name: DealP
       Object: 06BE67:DeviousFollowers.esp
     - MutagenObjectType: ScriptIntProperty
-      Name: NakedRule
-      Data: 1
-    - MutagenObjectType: ScriptFloatProperty
-      Name: TimerSetting
+      Name: VPRule
       Data: 1
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DWill
-      Object: 01A2A7:Update.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: ddChastityKey
-      Object: 026F5D:Devious Devices - Integration.esm
+      Name: _DFModSkoomaWhorePresent
+      Object: 29E630:DeviousFollowers.esp
   - Name: QF__DFlowModDealController_081BD274
     Properties:
     - MutagenObjectType: ScriptObjectProperty
@@ -167,13 +167,13 @@ VirtualMachineAdapter:
       Object: 1BD274:DeviousFollowers.esp
       Alias: 3
     - MutagenObjectType: ScriptObjectProperty
-      Name: Alias_Follower
-      Object: 1BD274:DeviousFollowers.esp
-      Alias: 1
-    - MutagenObjectType: ScriptObjectProperty
       Name: Alias_PlayerRef
       Object: 1BD274:DeviousFollowers.esp
       Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_Follower
+      Object: 1BD274:DeviousFollowers.esp
+      Alias: 1
     - MutagenObjectType: ScriptObjectProperty
       Name: Alias_Rules
       Object: 1BD274:DeviousFollowers.esp
@@ -185,11 +185,11 @@ VirtualMachineAdapter:
   - Name: Adv_PackBase
     Properties:
     - MutagenObjectType: ScriptStringProperty
-      Name: Context
-      Data: DeviousFollowers
-    - MutagenObjectType: ScriptStringProperty
       Name: PackName
       Data: core
+    - MutagenObjectType: ScriptStringProperty
+      Name: Context
+      Data: DeviousFollowers
   FileName: QF__DFlowModDealController_081BD274
   Aliases:
   - Property:
@@ -200,49 +200,65 @@ VirtualMachineAdapter:
     - Name: _DFModDealPlayer
       Properties:
       - MutagenObjectType: ScriptObjectProperty
+        Name: _DFKeyFound
+        Object: 2B7B99:DeviousFollowers.esp
+      - MutagenObjectType: ScriptObjectProperty
         Name: ddRestraintsKey
         Object: 026F5E:Devious Devices - Integration.esm
-      - MutagenObjectType: ScriptObjectProperty
-        Name: ddPiercingKey
-        Object: 0409A3:Devious Devices - Integration.esm
-      - MutagenObjectType: ScriptObjectProperty
-        Name: ddChastityKey
-        Object: 026F5D:Devious Devices - Integration.esm
       - MutagenObjectType: ScriptObjectProperty
         Name: Player
         Object: 000014:Skyrim.esm
       - MutagenObjectType: ScriptObjectProperty
-        Name: _DFKeyFound
-        Object: 2B7B99:DeviousFollowers.esp
+        Name: ddChastityKey
+        Object: 026F5D:Devious Devices - Integration.esm
+      - MutagenObjectType: ScriptObjectProperty
+        Name: ddPiercingKey
+        Object: 0409A3:Devious Devices - Integration.esm
   - Property:
       Name: ''
       Object: 1BD274:DeviousFollowers.esp
       Alias: 4
     Scripts:
-    - Name: DFR_Rule_Spanking
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Spanking
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 21
-    - Name: DFR_Rule_Lactacid
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: lactacid
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 23
-    - Name: DFR_Rule_NoBathing
+    - Name: DFR_Rule_Gag
       Properties:
       - MutagenObjectType: ScriptObjectProperty
-        Name: ScoldScene
-        Object: 3E2936:DeviousFollowers.esp
+        Name: deal
+        Object: 01C866:DeviousFollowers.esp
       - MutagenObjectType: ScriptStringProperty
         Name: eventName
-        Data: No Bathing
+        Data: gag
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 3
+    - Name: DFR_Rule_Sex
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: sex
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 22
+    - Name: DFR_Rule_Extend
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: extend
+    - Name: DFR_Rule_Key
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Key
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 18
+    - Name: DFR_Rule_Amulet
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Amulet
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 25
     - Name: DFR_Rule_Merchant
       Properties:
       - MutagenObjectType: ScriptStringProperty
@@ -251,6 +267,121 @@ VirtualMachineAdapter:
       - MutagenObjectType: ScriptIntProperty
         Name: ruleIndex
         Data: 15
+    - Name: DFR_Rule_AnalPlug
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Anal Plug
+    - Name: DFR_Rule_PetsuitInTown
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: petsuit in town
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 11
+    - Name: DFR_Rule_NPiercing
+      Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: deal
+        Object: 06BE67:DeviousFollowers.esp
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: nipple piercing
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 4
+    - Name: DFR_Rule_Spanking
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Spanking
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 21
+    - Name: DFR_Rule_Inkeeper
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Innkeeper
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 13
+    - Name: DFR_Rule_WhoreArmor
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: whore armor
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 7
+      - MutagenObjectType: ScriptObjectProperty
+        Name: outfits
+        Object: 4153B8:DeviousFollowers.esp
+    - Name: DFR_Rule_Circlet
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Circlet
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 26
+    - Name: DFR_Rule_Ring
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Ring
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 24
+    - Name: DFR_Rule_CrawlInTown
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: crawl in town
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 12
+    - Name: DFR_Rule_Whore
+      Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: tool
+        Object: 01210D:DeviousFollowers.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: deal
+        Object: 0E53C8:DeviousFollowers.esp
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: whore (plug)
+      - MutagenObjectType: ScriptObjectProperty
+        Name: SignPlug
+        Object: 0D8DA4:DeviousFollowers.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: DealPlayerDummy
+        Object: 1BD274:DeviousFollowers.esp
+        Alias: 2
+      - MutagenObjectType: ScriptObjectProperty
+        Name: DealMaster
+        Object: 0E53C8:DeviousFollowers.esp
+        Alias: 1
+      - MutagenObjectType: ScriptObjectProperty
+        Name: PlayerRef
+        Object: 000014:Skyrim.esm
+      - MutagenObjectType: ScriptObjectProperty
+        Name: libs
+        Object: 00F624:Devious Devices - Integration.esm
+      - MutagenObjectType: ScriptObjectProperty
+        Name: MasterAlias
+        Object: 000D62:DeviousFollowers.esp
+        Alias: 1
+    - Name: DFR_Rule_Boots
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: boots
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 9
     - Name: DFR_Rule_Collar
       Properties:
       - MutagenObjectType: ScriptStringProperty
@@ -264,41 +395,20 @@ VirtualMachineAdapter:
       - MutagenObjectType: ScriptStringProperty
         Name: eventName
         Data: Corset
-    - Name: DFR_Rule_WhoreArmor
+    - Name: DFR_Rule_Chastity
       Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: OpenBelt
+        Object: 13ED9E:DeviousFollowers.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: PlayerRef
+        Object: 000014:Skyrim.esm
       - MutagenObjectType: ScriptStringProperty
         Name: eventName
-        Data: whore armor
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 7
-    - Name: DFR_Rule_NPiercing
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: nipple piercing
+        Data: chastity
       - MutagenObjectType: ScriptObjectProperty
         Name: deal
-        Object: 06BE67:DeviousFollowers.esp
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 4
-    - Name: DFR_Rule_Circlet
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Circlet
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 26
-    - Name: DFR_Rule_Blindfold
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Blindfold
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 8
+        Object: 01C868:DeviousFollowers.esp
     - Name: DFR_Rule_Milking
       Properties:
       - MutagenObjectType: ScriptStringProperty
@@ -307,227 +417,14 @@ VirtualMachineAdapter:
       - MutagenObjectType: ScriptIntProperty
         Name: ruleIndex
         Data: 20
-    - Name: DFR_Rule_Extend
+    - Name: DFR_Rule_Blindfold
       Properties:
       - MutagenObjectType: ScriptStringProperty
         Name: eventName
-        Data: extend
-    - Name: DFR_Rule_Ring
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Ring
+        Data: Blindfold
       - MutagenObjectType: ScriptIntProperty
         Name: ruleIndex
-        Data: 24
-    - Name: DFR_Rule_Skooma
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Skooma
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 19
-    - Name: DFR_Rule_Gag
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: gag
-      - MutagenObjectType: ScriptObjectProperty
-        Name: deal
-        Object: 01C866:DeviousFollowers.esp
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 3
-    - Name: DFR_Rule_Cuffs
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Cuffs
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 1
-    - Name: DFR_Rule_Amulet
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Amulet
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 25
-    - Name: DFR_Rule_Boots
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: boots
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 9
-    - Name: DFR_Rule_Jacket
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Jacket
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 16
-    - Name: DFR_Rule_WhoreTat
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: whore (tattoo)
-      - MutagenObjectType: ScriptObjectProperty
-        Name: DealMaster
-        Object: 0E53C8:DeviousFollowers.esp
-        Alias: 1
-      - MutagenObjectType: ScriptObjectProperty
-        Name: MasterAlias
-        Object: 000D62:DeviousFollowers.esp
-        Alias: 1
-      - MutagenObjectType: ScriptObjectProperty
-        Name: deal
-        Object: 0E53C8:DeviousFollowers.esp
-      - MutagenObjectType: ScriptObjectProperty
-        Name: tool
-        Object: 01210D:DeviousFollowers.esp
-      - MutagenObjectType: ScriptObjectProperty
-        Name: PlayerRef
-        Object: 000014:Skyrim.esm
-      - MutagenObjectType: ScriptObjectProperty
-        Name: DealPlayerDummy
-        Object: 0E53C8:DeviousFollowers.esp
-        Alias: 2
-    - Name: DFR_Rule_Gloves
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Gloves
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 10
-    - Name: DFR_Rule_AnalPlug
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Anal Plug
-    - Name: DFR_Rule_Sex
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: sex
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 22
-    - Name: DFR_Rule_Key
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Key
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 18
-    - Name: DFR_Rule_Inkeeper
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Innkeeper
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 13
-    - Name: DFR_Rule_VPiercing
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: vaginal piercing
-      - MutagenObjectType: ScriptObjectProperty
-        Name: deal
-        Object: 06BE67:DeviousFollowers.esp
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 5
-    - Name: DFR_Rule_Slut
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: slut
-    - Name: DFR_Rule_NakedInTown
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Naked
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 6
-    - Name: DFR_Rule_Chastity
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: chastity
-      - MutagenObjectType: ScriptObjectProperty
-        Name: OpenBelt
-        Object: 13ED9E:DeviousFollowers.esp
-      - MutagenObjectType: ScriptObjectProperty
-        Name: PlayerRef
-        Object: 000014:Skyrim.esm
-      - MutagenObjectType: ScriptObjectProperty
-        Name: deal
-        Object: 01C868:DeviousFollowers.esp
-    - Name: DFR_Rule_CrawlInTown
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: crawl in town
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 12
-    - Name: DFR_Rule_PetsuitInTown
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: petsuit in town
-      - MutagenObjectType: ScriptIntProperty
-        Name: ruleIndex
-        Data: 11
-    - Name: DFR_Rule_Whore
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: whore (plug)
-      - MutagenObjectType: ScriptObjectProperty
-        Name: DealMaster
-        Object: 0E53C8:DeviousFollowers.esp
-        Alias: 1
-      - MutagenObjectType: ScriptObjectProperty
-        Name: MasterAlias
-        Object: 000D62:DeviousFollowers.esp
-        Alias: 1
-      - MutagenObjectType: ScriptObjectProperty
-        Name: PlayerRef
-        Object: 000014:Skyrim.esm
-      - MutagenObjectType: ScriptObjectProperty
-        Name: SignPlug
-        Object: 0D8DA4:DeviousFollowers.esp
-      - MutagenObjectType: ScriptObjectProperty
-        Name: libs
-        Object: 00F624:Devious Devices - Integration.esm
-      - MutagenObjectType: ScriptObjectProperty
-        Name: deal
-        Object: 0E53C8:DeviousFollowers.esp
-      - MutagenObjectType: ScriptObjectProperty
-        Name: tool
-        Object: 01210D:DeviousFollowers.esp
-      - MutagenObjectType: ScriptObjectProperty
-        Name: DealPlayerDummy
-        Object: 1BD274:DeviousFollowers.esp
-        Alias: 2
-    - Name: DFR_Rule_CumCovering
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: cum covering
-      - MutagenObjectType: ScriptObjectProperty
-        Name: deal
-        Object: 01C867:DeviousFollowers.esp
+        Data: 8
     - Name: DFR_Rule_BoundInTown
       Properties:
       - MutagenObjectType: ScriptStringProperty
@@ -536,27 +433,147 @@ VirtualMachineAdapter:
       - MutagenObjectType: ScriptIntProperty
         Name: ruleIndex
         Data: 14
+    - Name: DFR_Rule_Lactacid
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: lactacid
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 23
+    - Name: DFR_Rule_NakedInTown
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Naked
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 6
+    - Name: DFR_Rule_Slut
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: slut
+    - Name: DFR_Rule_VPiercing
+      Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: deal
+        Object: 06BE67:DeviousFollowers.esp
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: vaginal piercing
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 5
+    - Name: DFR_Rule_Gloves
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Gloves
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 10
+    - Name: DFR_Rule_WhoreTat
+      Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: DealPlayerDummy
+        Object: 0E53C8:DeviousFollowers.esp
+        Alias: 2
+      - MutagenObjectType: ScriptObjectProperty
+        Name: tool
+        Object: 01210D:DeviousFollowers.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: deal
+        Object: 0E53C8:DeviousFollowers.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: DealMaster
+        Object: 0E53C8:DeviousFollowers.esp
+        Alias: 1
+      - MutagenObjectType: ScriptObjectProperty
+        Name: PlayerRef
+        Object: 000014:Skyrim.esm
+      - MutagenObjectType: ScriptObjectProperty
+        Name: MasterAlias
+        Object: 000D62:DeviousFollowers.esp
+        Alias: 1
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: whore (tattoo)
+    - Name: DFR_Rule_Jacket
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Jacket
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 16
+    - Name: DFR_Rule_Cuffs
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Cuffs
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 1
+    - Name: DFR_Rule_Skooma
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Skooma
+      - MutagenObjectType: ScriptIntProperty
+        Name: ruleIndex
+        Data: 19
+    - Name: DFR_Rule_CumCovering
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: cum covering
+      - MutagenObjectType: ScriptObjectProperty
+        Name: deal
+        Object: 01C867:DeviousFollowers.esp
+    - Name: DFR_Rule_NoBathing
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: No Bathing
+      - MutagenObjectType: ScriptObjectProperty
+        Name: ScoldScene
+        Object: 3E2936:DeviousFollowers.esp
   - Property:
       Name: ''
       Object: 1BD274:DeviousFollowers.esp
       Alias: 6
     Scripts:
-    - Name: DFR_Punish_DogSex
+    - Name: DFR_Event_RapeTime
       Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Dog Sex
-      - MutagenObjectType: ScriptObjectProperty
-        Name: scanner
-        Object: 38C766:DeviousFollowers.esp
       - MutagenObjectType: ScriptObjectProperty
         Name: tool
         Object: 01210D:DeviousFollowers.esp
-    - Name: DFR_Punish_Hunger
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Rapetime
+    - Name: DFR_Rule_Tats
       Properties:
       - MutagenObjectType: ScriptStringProperty
         Name: eventName
-        Data: Hunger
+        Data: tattoos
+    - Name: DFR_Punish_Sex
+      Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: NoBathingScene
+        Object: 3E2933:DeviousFollowers.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: tool
+        Object: 01210D:DeviousFollowers.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: MasterAlias
+        Object: 000D62:DeviousFollowers.esp
+        Alias: 1
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: sex
+    - Name: DFR_Punish_Hunger
+      Properties:
       - MutagenObjectType: ScriptObjectListProperty
         Name: FoodDrinkKwds
         Objects:
@@ -564,53 +581,54 @@ VirtualMachineAdapter:
           Object: 0A0E56:Skyrim.esm
         - Name: ''
           Object: 08CDEA:Skyrim.esm
-    - Name: DFR_Punish_HorseSex
-      Properties:
       - MutagenObjectType: ScriptStringProperty
         Name: eventName
-        Data: horse sex
-      - MutagenObjectType: ScriptObjectProperty
-        Name: scanner
-        Object: 2EF72D:DeviousFollowers.esp
-      - MutagenObjectType: ScriptObjectProperty
-        Name: tool
-        Object: 01210D:DeviousFollowers.esp
-    - Name: DFR_Punish_Sex
-      Properties:
-      - MutagenObjectType: ScriptObjectProperty
-        Name: NoBathingScene
-        Object: 3E2933:DeviousFollowers.esp
-      - MutagenObjectType: ScriptObjectProperty
-        Name: MasterAlias
-        Object: 000D62:DeviousFollowers.esp
-        Alias: 1
-      - MutagenObjectType: ScriptObjectProperty
-        Name: tool
-        Object: 01210D:DeviousFollowers.esp
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: sex
-    - Name: DFR_Event_RapeTime
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: Rapetime
-      - MutagenObjectType: ScriptObjectProperty
-        Name: tool
-        Object: 01210D:DeviousFollowers.esp
-    - Name: DFR_Rule_Tats
-      Properties:
-      - MutagenObjectType: ScriptStringProperty
-        Name: eventName
-        Data: tattoos
+        Data: Hunger
     - Name: DFR_Punish_Spank
       Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: tool
+        Object: 01210D:DeviousFollowers.esp
       - MutagenObjectType: ScriptStringProperty
         Name: eventName
         Data: Spanking
+    - Name: DFR_Event_Arrows
+      Properties:
       - MutagenObjectType: ScriptObjectProperty
-        Name: tool
-        Object: 01210D:DeviousFollowers.esp
+        Name: Services
+        Object: 40B16E:DeviousFollowers.esp
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Arrows
+    - Name: DFR_Event_Food
+      Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: Services
+        Object: 40B16E:DeviousFollowers.esp
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: FOOD
+    - Name: DFR_Event_Masturbation
+      Properties:
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: Masturbation
+    - Name: DFR_Event_Potions
+      Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: Services
+        Object: 40B16E:DeviousFollowers.esp
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: POTIONS
+    - Name: DFR_Event_Sharpen
+      Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: Services
+        Object: 40B16E:DeviousFollowers.esp
+      - MutagenObjectType: ScriptStringProperty
+        Name: eventName
+        Data: sharpen
 Flags:
 - StartGameEnabled
 - AllowRepeatedStages
@@ -643,6 +661,16 @@ Aliases:
   Flags: []
   ForcedReference: 000014:Skyrim.esm
   VoiceTypes: Null
+- ID: 4
+  Name: Rules
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null
+- ID: 6
+  Name: Events
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null
 - ID: 1
   Name: Follower
   Flags:
@@ -660,14 +688,4 @@ Aliases:
   Name: Actor
   Flags:
   - Optional
-  VoiceTypes: Null
-- ID: 4
-  Name: Rules
-  Flags: []
-  ForcedReference: 000014:Skyrim.esm
-  VoiceTypes: Null
-- ID: 6
-  Name: Events
-  Flags: []
-  ForcedReference: 000014:Skyrim.esm
   VoiceTypes: Null

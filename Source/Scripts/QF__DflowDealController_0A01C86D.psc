@@ -4,41 +4,14 @@ Scriptname QF__DflowDealController_0A01C86D Extends Quest Hidden Conditional
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-; _DflowDealMulti
-; Premature deal removal cost multiplier as a percentage. Scales up cost of deal removal before it's standard duration has elapsed.
-; Set to 0 to disable.
-; CostIncrease = This x DaysAheadOfSchedule x DebtCost / 100
-; Ranges from 0 to 2000 => 0.0 to +20.0, 0.0 does nothing
-
-bool property CanReject auto hidden conditional
-bool property CanBuyout auto hidden conditional
-bool property AskedBuyoutRecently auto hidden conditional
+DFR_Events property Events auto
 
 function Prep()
-    int favour = DFR_RelationshipManager.Get().Favour
-    
-    int chance
-    if favour > 50
-        chance = 50
-    elseIf favour > 0
-        chance = 25
-    else
-        chance = 10
-    endif
-
-    CanReject = Utility.RandomInt(0, 100) < chance
-    AskedBuyoutRecently = Adv_Util.BeforeTimeStamp(none, "DFR_LastBuyoutAttemptAt", Utility.RandomFloat(1, 3))
-    CanBuyout = !AskedBuyoutRecently && Utility.RandomFloat(0, 1.0) < chance
-
-    if CanBuyout
-        StorageUtil.UnsetFloatValue(none, "DFR_LastBuyoutAttemptAt")
-    endIf
-    
-    DFR_Util.Log("DealController - CanReject = " + CanReject + " CanBuyout = " + CanBuyout)
+    Events.Setup(Utility.CreateStringArray(1, SelectedRuleId), 0, true, Willpower.GetValue() < 6)
 endFunction
 
 function PersistBuyoutDecision()
-    StorageUtil.SetFloatValue(none, "DFR_LastBuyoutAttemptAt", GameDaysPassed.GetValue())
+    StorageUtil.SetfloatValue(none, "DFR_LastBuyoutAttemptAt", GameDaysPassed.GetValue())
 endFunction
 
 Function RecalculateDealCosts()
@@ -49,9 +22,9 @@ Function RecalculateDealCosts()
    
 EndFunction
 
-Float Function SetDealBuyout(Float now, string dealName, GlobalVariable timer, GlobalVariable targetPrice)
+float Function SetDealBuyout(float now, string dealName, GlobalVariable timer, GlobalVariable targetPrice)
 
-    Int stage = DFR_DealHelpers.GetNumRules(dealName)
+    int stage = DFR_DealHelpers.GetNumRules(dealName)
 
     _DUtil.Info("DF - SetDealBuyout - " + dealName + " stage = " + stage)
 
@@ -61,37 +34,15 @@ Float Function SetDealBuyout(Float now, string dealName, GlobalVariable timer, G
         return 0.0
     endIf
 
-    Float timerValue = timer.GetValue()
-    Float stageScale = stage As Float
+    float timerValue = timer.GetValue()
+    float stageScale = stage As float
     
-    Float price = DealBuyoutPrice * stageScale
+    float price = DealBuyoutPrice * stageScale
     
     If timerValue > now ; Buyout is in the future
         price += (timerValue - now) * DealEarlyOutPrice
     EndIf
 
-    ; Add expensive debt extra after early buyout cost. It's not part of the early buyout option.
-    ; _MDDeal modular = dealQuest As _MDDeal
-    ; If modular
-    ;     Int count = modular.ExpensiveCount
-    ;     If count > 0
-    ;         ExpensiveDebtCount += (count as Float)
-
-    ;         Float deepDebtScale = 1.0
-
-    ;         If 2 == count
-    ;             deepDebtScale = 3.0
-    ;         Else
-    ;             deepDebtScale = 7.0
-    ;         EndIf
-            
-    ;         Float dailyDebt = _DflowDebtPerDay.GetValue()
-    ;         Float deepDebtDifficulty = _DFDeepDebtDifficulty.GetValue()
-            
-    ;         price += deepDebtScale * dailyDebt * deepDebtDifficulty
-    ;     EndIf
-    ; EndIf
-    
     price = Math.Ceiling(price)
     targetPrice.SetValue(price)
     
@@ -102,7 +53,7 @@ EndFunction
 Function UpdateIt()
 
     RecalculateDealCosts()
-    Float now = GameDaysPassed.GetValue()
+    float now = GameDaysPassed.GetValue()
     
     ExpensiveDebtCount = 0.0
 
@@ -114,28 +65,6 @@ Function UpdateIt()
         i += 1
     endWhile
 
-    ; SetDealBuyout(now, DealB, _DflowDealBPTimer, _DflowDealBP)
-    ; SetDealBuyout(now, DealO, _DflowDealOPTimer, _DflowDealOP)
-    ; SetDealBuyout(now, DealH, _DflowDealHPTimer, _DflowDealHP)
-    ; SetDealBuyout(now, DealP, _DflowDealPPTimer, _DflowDealPP)
-    ; SetDealBuyout(now, DealSQ, _DflowDealSPTimer, _DflowDealSP)
-    ; SetDealBuyout(now, DealM1, _DflowDealM1PTimer, _DflowDealM1P)
-    ; SetDealBuyout(now, DealM2, _DflowDealM2PTimer, _DflowDealM2P)
-    ; SetDealBuyout(now, DealM3, _DflowDealM3PTimer, _DflowDealM3P)
-    ; SetDealBuyout(now, DealM4, _DflowDealM4PTimer, _DflowDealM4P)
-    ; SetDealBuyout(now, DealM5, _DflowDealM5PTimer, _DflowDealM5P)
-
-    ; UpdateCurrentInstanceGlobal(_DflowDealBP)
-    ; UpdateCurrentInstanceGlobal(_DflowDealHP)
-    ; UpdateCurrentInstanceGlobal(_DflowDealOP)
-    ; UpdateCurrentInstanceGlobal(_DflowDealPP)
-    ; UpdateCurrentInstanceGlobal(_DflowDealSP)
-    ; UpdateCurrentInstanceGlobal(_DflowDealM1P)
-    ; UpdateCurrentInstanceGlobal(_DflowDealM2P)
-    ; UpdateCurrentInstanceGlobal(_DflowDealM3P)
-    ; UpdateCurrentInstanceGlobal(_DflowDealM4P)
-    ; UpdateCurrentInstanceGlobal(_DflowDealM5P)
-
     _DflowExpensiveDebts.SetValue(ExpensiveDebtCount)
 EndFunction
 
@@ -143,7 +72,7 @@ EndFunction
 ; Called by all deals, including modular deals, when a deal is added OR removed.
 ; The parameter is always 1 for Add
 ; The parameter is always -1 for Remove
-Function DealAdd(Int a)
+Function DealAdd(int a)
     _DUtil.Info("DF - DealAdd - " + a)
 
     Deals += a
@@ -155,11 +84,11 @@ Function DealAdd(Int a)
     
     ; Reduce fatigue when deals are removed
     If a < 0
-        Float fatigueValue = _DFFatigue.GetValue()
-        Float fatigueDelta = _DFFatigueRate.GetValue()
-        Float dealDays = _DflowDealBaseDays.GetValue()
+        float fatigueValue = _DFFatigue.GetValue()
+        float fatigueDelta = _DFFatigueRate.GetValue()
+        float dealDays = _DflowDealBaseDays.GetValue()
         ; Add fatigue when deal gained.
-        fatigueValue += fatigueDelta * (dealDays + 1.0) * (a As Float)
+        fatigueValue += fatigueDelta * (dealDays + 1.0) * (a As float)
         
         If fatigueValue < 0.0
             fatigueValue = 0.0
@@ -172,7 +101,7 @@ EndFunction
 
 
 ; Called to add or remove 'maxed out' deals.
-Function DealMaxAdd(Int a)
+Function DealMaxAdd(int a)
     DealsMax += a
 EndFunction
 
@@ -181,102 +110,26 @@ Function Res()
     Deals = 0 
 EndFunction
 
-Int Function SelectRandomActiveDeal()
+int Function SelectRandomActiveDeal()
 
     int numDeals = DFR_DealHelpers.GetNum()
     DFR_DealHelpers.InitDeals(DealNames)
 
     if numDeals > 0
-        int dealIndex = Utility.RandomInt(0, numDeals - 1)
+        int dealIndex = Utility.Randomint(0, numDeals - 1)
         string dealName = DFR_DealHelpers.GetDealAt(dealIndex)
         return DFR_DealHelpers.GetDealIndex(dealName)
     endIf
-
-    ; Int[] possibleDeals = New Int[10]
-    ; Int possibleCount = 0
-    
-    ; If DealB.GetStage() >= 1
-    ;     possibleDeals[0] = 0
-    ;     possibleCount += 1
-    ; EndIf
-    ; If DealH.GetStage() >= 1
-    ;     possibleDeals[possibleCount] = 1
-    ;     possibleCount += 1
-    ; EndIf
-    ; If DealO.GetStage() >= 1
-    ;     possibleDeals[possibleCount] = 2
-    ;     possibleCount += 1
-    ; EndIf
-    ; If DealP.GetStage() >= 1
-    ;     possibleDeals[possibleCount] = 3
-    ;     possibleCount += 1
-    ; EndIf
-    ; If DealSQ.GetStage() >= 1
-    ;     possibleDeals[possibleCount] = 4
-    ;     possibleCount += 1
-    ; EndIf
-    ; If DealM1.GetStage() >= 1
-    ;     possibleDeals[possibleCount] = 5
-    ;     possibleCount += 1
-    ; EndIf
-    ; If DealM2.GetStage() >= 1
-    ;     possibleDeals[possibleCount] = 6
-    ;     possibleCount += 1
-    ; EndIf
-    ; If DealM3.GetStage() >= 1
-    ;     possibleDeals[possibleCount] = 7
-    ;     possibleCount += 1
-    ; EndIf
-    ; If DealM4.GetStage() >= 1
-    ;     possibleDeals[possibleCount] = 8
-    ;     possibleCount += 1
-    ; EndIf
-    ; If DealM5.GetStage() >= 1
-    ;     possibleDeals[possibleCount] = 9
-    ;     possibleCount += 1
-    ; EndIf
-    
-    ; If possibleCount > 0
-    ;     Int selected = Utility.RandomInt(0, possibleCount - 1)
-    ;     Int selectedDeal = possibleDeals[selected]
-    ;     Return selectedDeal
-    ; EndIf
-
-    ; There were no active deals.
     Return -1
 
 EndFunction
 
-GlobalVariable Function GetDealTimer(Int dealNumber)
-
+GlobalVariable Function GetDealTimer(int dealNumber)
     return DealTimers[dealNumber]
-
-    ; If 0 == dealNumber ; B
-    ;     Return _DflowDealBPTimer
-    ; ElseIf 1 == dealNumber ; H
-    ;     Return _DflowDealHPTimer
-    ; ElseIf 2 == dealNumber ; O
-    ;     Return _DflowDealOPTimer
-    ; ElseIf 3 == dealNumber ; P
-    ;     Return _DflowDealPPTimer
-    ; ElseIf 4 == dealNumber ; S
-    ;     Return _DflowDealSPTimer
-    ; ElseIf 5 == dealNumber ; M1
-    ;     Return _DflowDealM1PTimer
-    ; ElseIf 6 == dealNumber ; M2
-    ;     Return _DflowDealM2PTimer
-    ; ElseIf 7 == dealNumber ; M3
-    ;     Return _DflowDealM3PTimer
-    ; ElseIf 8 == dealNumber ; M4
-    ;     Return _DflowDealM4PTimer
-    ; Else ; If 9 == dealNumber ; M5
-    ;     Return _DflowDealM5PTimer
-    ; EndIf
-    
 EndFunction
 
 Function AddRndDay()
-    Int dealNumber = SelectRandomActiveDeal()
+    int dealNumber = SelectRandomActiveDeal()
     If dealNumber >= 0
         GlobalVariable timer = GetDealTimer(dealNumber)
         AddDayToTimer(timer)
@@ -285,19 +138,18 @@ Function AddRndDay()
 EndFunction
 
 Function AddDayToTimer(GlobalVariable timer)
-    Float current = timer.GetValue()
+    float current = timer.GetValue()
     timer.SetValue(current + 1.0)
 EndFunction
 
 Function ExtendRandomDeal()
-    Int dealNumber = SelectRandomActiveDeal()
+    int dealNumber = SelectRandomActiveDeal()
     If dealNumber >= 0
         ExtendDeal(dealNumber)
     EndIf
 EndFunction
 
-; Turns a deal into an extended deal
-Function ExtendDeal(Int dealNumber) ; B H O P S M1 M2 M3 M4 M5
+Function ExtendDeal(int dealNumber) 
     If dealNumber >= 0
         GlobalVariable timer = GetDealTimer(dealNumber)
         ExtendDealTimer(timer)
@@ -306,57 +158,33 @@ EndFunction
 
 Function ExtendDealTimer(GlobalVariable dealTimer)
 
-    Float baseDays = _DflowDealBaseDays.GetValue()
+    float baseDays = _DflowDealBaseDays.GetValue()
     
-    Float current = dealTimer.GetValue()
+    float current = dealTimer.GetValue()
     If current < baseDays
         current = baseDays
     EndIf
-    Float newDays = current + baseDays
+    float newDays = current + baseDays
     
     dealTimer.SetValue(newDays)
 
 EndFunction
 
 Function SaveTimes()
-
     int i = 0
     while i < DealTimers.Length
-        StorageUtil.SetFloatValue(none, "DFR_Deal_Timers_" + DealNames[i], DealTimers[i].GetValue())
+        StorageUtil.SetfloatValue(none, "DFR_Deal_Timers_" + DealNames[i], DealTimers[i].GetValue())
         i += 1
     endWhile
-
-    ; SPTimer = _DflowDealSPTimer.GetValue()
-    ; PPTimer = _DflowDealPPTimer.GetValue()
-    ; OPTimer = _DflowDealOPTimer.GetValue()
-    ; HPTimer = _DflowDealHPTimer.GetValue()
-    ; BPTimer = _DflowDealBPTimer.GetValue()
-    ; M1Timer = _DflowDealM1PTimer.GetValue()
-    ; M2Timer = _DflowDealM2PTimer.GetValue()
-    ; M3Timer = _DflowDealM3PTimer.GetValue()
-    ; M4Timer = _DflowDealM4PTimer.GetValue()
-    ; M5Timer = _DflowDealM5PTimer.GetValue()
 EndFunction
 
 Function LoadTimes()
-
     int i = 0
     while i < DealTimers.Length
-        float val = StorageUtil.GetFloatValue(none, "DFR_Deal_Timers_" + DealNames[i], DealTimers[i].GetValue())
+        float val = StorageUtil.GetfloatValue(none, "DFR_Deal_Timers_" + DealNames[i], DealTimers[i].GetValue())
         DealTimers[i].SetValue(val)
         i += 1
     endWhile
-
-    ; _DflowDealSPTimer.SetValue(SPTimer)
-    ; _DflowDealPPTimer.SetValue(PPTimer)
-    ; _DflowDealOPTimer.SetValue(OPTimer)
-    ; _DflowDealHPTimer.SetValue(HPTimer)
-    ; _DflowDealBPTimer.SetValue(BPTimer)
-    ; _DflowDealM1PTimer.SetValue(M1Timer)
-    ; _DflowDealM2PTimer.SetValue(M2Timer)
-    ; _DflowDealM3PTimer.SetValue(M3Timer)
-    ; _DflowDealM4PTimer.SetValue(M4Timer)
-    ; _DflowDealM5PTimer.SetValue(M5Timer)
 EndFunction
 
 Function ResetAllDeals()
@@ -375,30 +203,6 @@ Function ResetAllDeals()
         i += 1
     endWhile
 
-    ; _DflowDealSPTimer.SetValue(0.0)
-    ; _DflowDealPPTimer.SetValue(0.0)
-    ; _DflowDealOPTimer.SetValue(0.0)
-    ; _DflowDealHPTimer.SetValue(0.0)
-    ; _DflowDealBPTimer.SetValue(0.0)
-    ; _DflowDealM1PTimer.SetValue(0.0)
-    ; _DflowDealM2PTimer.SetValue(0.0)
-    ; _DflowDealM3PTimer.SetValue(0.0)
-    ; _DflowDealM4PTimer.SetValue(0.0)
-    ; _DflowDealM5PTimer.SetValue(0.0)
-    ; If DealO.GetStage() == 4
-    ;     libs.RemoveDevice(libs.PlayerRef, item1 , item1R, libs.zad_DeviousBelt, skipevents = false, skipmutex = true)
-    ; EndIf
-    ; DealB.Reset()
-    ; DealO.Reset()
-    ; DealP.Reset()
-    ; DealSQ.Reset()
-    ; DealH.Reset() 
-    ; (DealM1 as _MDDeal).End()
-    ; (DealM2 as _MDDeal).End()
-    ; (DealM3 as _MDDeal).End()
-    ; (DealM4 as _MDDeal).End()
-    ; (DealM5 as _MDDeal).End()
-
     Deals = 0
     DealsMax = 0 ; Not the max deals but the number of maxed-out deals.
 EndFunction
@@ -416,7 +220,7 @@ Function AddRandomDeal()
 
 EndFunction
 
-Function RemoveDeviceByIndex(Int index)
+Function RemoveDeviceByIndex(int index)
 
     _DUtil.Notify("Remove Device Index " + index)
 
@@ -459,23 +263,20 @@ EndFunction
 
 Function PickRandomDeal()
     Debug.Trace("DF - PickRandomDeal - start")
-    Adversity.ClearSelectedEvents("deviousfollowers", "rule")
 
     NewDeal = (UberController As _DFDealUberController).GetPotentialDeal(DealBias)
-    string rule = DFR_DealHelpers.SplitId(NewDeal)[1]
+    SelectedRuleId = DFR_DealHelpers.SplitId(NewDeal)[1]
     
-    if NewDeal != "" && rule != ""
-        Adversity.SelectEvent(rule)
-    else
+    if NewDeal == "" || SelectedRuleId == ""
         Debug.Trace("DF - PickRandomDeal - failed to get valid new deal")
     endIf
 
-    Debug.Trace("DF - PickRandomDeal - NewDeal = " + NewDeal)
+    Debug.Trace("DF - PickRandomDeal - NewDeal = " + NewDeal + " - SelectedRuleId = " + SelectedRuleId)
 EndFunction
 
 Function PickAnyRandomDeal()
     Debug.Trace("DF - PickAnyRandomDeal")
-    (UberController As _DFDealUberController).RejectedDeal = -1
+    (UberController As _DFDealUberController).RejectedDeal = ""
     PickRandomDeal()
 EndFunction
 
@@ -485,6 +286,7 @@ Function AcceptPendingDeal()
 
     (UberController As _DFDealUberController).AddDealById(NewDeal)
     NewDeal = ""
+    SelectedRuleId = ""
     
     ; Select the next deal ... well in advance.
     PickRandomDeal()
@@ -494,21 +296,35 @@ Function AcceptPendingDeal()
 EndFunction
 
 Function RejectPendingDeal()
-
     Debug.Trace("DF - RejectPendingDeal - NewDeal " + NewDeal)
     (UberController As _DFDealUberController).RejectDeal(NewDeal)
-    
-    DFR_RelationshipManager RelManager = DFR_RelationshipManager.Get()
-    if RelManager.IsSlave()
-        RelManager.DecFavour()
-    endIf
     
     ; Select the next deal ... well in advance.
     PickRandomDeal()
     
     Debug.Trace("DF - RejectPendingDeal - end")
-
 EndFunction
+
+Function AcceptRule(string asId)
+    DFR_Util.Log("AcceptRule - " + asId + " - " + SelectedRuleId)
+    if asId == SelectedRuleId
+        AcceptPendingDeal()
+    elseIf !Adversity.FilterEventsByValid(Utility.CreateStringArray(1, SelectedRuleId)).Length
+        PickRandomDeal()
+    endIf
+EndFunction
+
+Function RefuseRule(string asId)
+    if asId == SelectedRuleId
+        RejectPendingDeal()
+    endIf
+EndFunction
+
+function ResetRule(string asId)
+    if asId == SelectedRuleId
+        PickRandomDeal()
+    endIf
+endFunction
 
 Function Buyout(int aiIndex)
     string deal = DealNames[aiIndex]
@@ -525,161 +341,15 @@ Function Buyout(int aiIndex)
     _DUtil.Info("DF - Buyout - END - " + deal)
 EndFunction
 
-function SetupSlaveryDeals()
-    string path = Adversity.GetConfigPath("deviousfollowers")
-
-    SlaveryRules = JsonUtil.StringListToArray(path, "slavery-rules")
-    string[] excludeRules = JsonUtil.StringListToArray(path, "exclude-slavery-rules")
-
-    int i = 0
-    while i < SlaveryRules.Length
-        SlaveryRules[i] = "deviousfollowers/" + SlaveryRules[i]
-        StorageUtil.SetIntValue(self, "DFR_ChosenSlave_" + SlaveryRules[i], 1)
-        i += 1
-    endWhile
-
-    i = 0
-    while i < excludeRules.length
-        excludeRules[i] = "deviousfollowers/" + excludeRules[i]
-        StorageUtil.SetIntValue(self, "DFR_SlaveExclude_" + SlaveryRules[i], 1)
-        i += 1
-    endWhile
-
-    int expectedRules = JsonUtil.GetIntValue(path, "num-slavery-rules")
-    int leftOver = expectedRules - SlaveryRules.Length
-   
-    if leftOver
-        i = 0
-        while i < leftOver
-            string[] candidates = (UberController As _DFDealUberController).GetCandidates()
-
-            int j = 0
-            int k = 0
-            while j < candidates.length
-                if !StorageUtil.GetIntValue(self, "DFR_ChosenSlave_" + candidates[j])
-                    candidates[k] = candidates[j]
-                    k += 1
-                endIf
-
-                j += 1
-            endWhile
-
-            candidates = PapyrusUtil.ResizeStringArray(candidates, k)
-            candidates = Adversity.FilterEventsBySeverity(candidates, 3)
-           
-            string ruleId = candidates[Utility.RandomInt(0, candidates.length - 1)]
-
-            Adversity.ReserveEvent(ruleId)
-            SlaveryRules = PapyrusUtil.PushString(SlaveryRules, ruleId)
-            i += 1
-        endWhile
-    endIf
- 
-    i = 0
-    while i < SlaveryRules.length
-        string ruleId = SlaveryRules[i]
-        StorageUtil.UnsetIntValue(self, "DFR_SlaveryRuleRejected_" + ruleId)
-        StorageUtil.UnsetIntValue(self, "DFR_SlaveExclude_" + ruleId)
-        i += 1
-    endWhile
-
-    i = 0
-    while i < excludeRules.length
-        StorageUtil.UnsetIntValue(self, "DFR_SlaveExclude_" + excludeRules[i])
-        i += 1
-    endWhile
-
-
-    CurrSlaveryRuleIndex = -1
-    DFR_DealHelpers.Remove("Slavery")
-    DFR_DealHelpers.Create("Slavery")
-    InEnslavementSetup = true
-    Adversity.ClearSelectedEvents("deviousfollowers", "rule")
-endFunction
-
-function NextSlaveryRule()
-    CurrSlaveryRuleIndex += 1
-    DFR_Util.Log("NextSlaveryRule - Slavery Rules = " + SlaveryRules)
-   
-    if CurrSlaveryRuleIndex < SlaveryRules.Length
-        string ruleId = SlaveryRules[CurrSlaveryRuleIndex]
-        Adversity.SelectEvent(ruleId)
-        DFR_Util.Log("NextSlaveryRule - " + ruleId)
-    endIf
-
-    FinishedSlaveryRules = (CurrSlaveryRuleIndex == SlaveryRules.Length - 1)
-endFunction
-
-function AcceptSlaveryRule(bool abAccept = true)
-    string ruleId = SlaveryRules[CurrSlaveryRuleIndex]
-
-    Adversity.StartEvent(ruleId)
-    DFR_DealHelpers.AddRule("Slavery", ruleId)
-    Debug.Notification(Adversity.GetEventDesc(ruleId))
-
-    if !abAccept
-        DFR_RelationshipManager.Get().DecFavour()
-    endIf
-
-    DFR_Util.Log("AcceptSlaveryRule - " + ruleId + " - " + abAccept)
-
-    NextSlaveryRule()
-endFunction
-
-function RejectSlaveryRule()
-    string ruleId = SlaveryRules[CurrSlaveryRuleIndex]
-
-    Adversity.UnselectEvent(ruleId)
-    DFR_RelationshipManager.Get().DecFavour()
-    StorageUtil.SetIntValue(self, "DFR_SlaveryRuleRejected_" + ruleId, 1)
-    
-    DFR_Util.Log("RejectSlaveryRule - " + ruleId)
-
-    NextSlaveryRule()
-endFunction
-
-function CheckSlaveryDeals()
-    int i = CurrSlaveryRuleIndex
-    while i < SlaveryRules.length
-        string ruleId = SlaveryRules[i]
-        
-        if !Adversity.IsEventActive(ruleId) && !StorageUtil.GetIntValue(self, "DFR_SlaveryRuleRejected_" + ruleId)
-            Adversity.StartEvent(ruleId)
-            DFR_DealHelpers.AddRule("Slavery", ruleId)
-            Debug.Notification(Adversity.GetEventDesc(ruleId))
-        endIf
-
-        StorageUtil.UnsetIntValue(self, "DFR_SlaveryRuleRejected_" + ruleId)
-
-        i += 1
-    endWhile
-    Tool.ReduceResist(DFR_DealHelpers.GetNumRules("Slavery"))
-    FinishedSlaveryRules = true
-    InEnslavementSetup = false
-    PickRandomDeal()
-endFunction
-
-function RemoveSlaveDeal()
-    int numRules = DFR_DealHelpers.GetNumRules("Slavery")
-    
-    int i = 0
-    while i < numRules
-        Adversity.StopEvent(DFR_DealHelpers.GetRuleAt("Slavery", i))
-        i += 1
-    endWhile
-
-    DFR_DealHelpers.Remove("Slavery")
-endFunction
-
 _LDC property LDC auto
-GlobalVariable Property _DflowDealBasePrice Auto ; The buyout cost
-GlobalVariable Property _DflowDealBaseDebt Auto ; The relief amount
-GlobalVariable Property _DflowDealMulti Auto
-GlobalVariable Property _DflowDealBaseDays Auto
+GlobalVariable property _DflowDealBasePrice auto ; The buyout cost
+GlobalVariable property _DflowDealBaseDebt auto ; The relief amount
+GlobalVariable property _DflowDealMulti auto
+GlobalVariable property _DflowDealBaseDays auto
 
-String[] Property DealNames Auto
-GlobalVariable[] Property DealPrices Auto
-GlobalVariable[] Property DealTimers Auto
+string[] property DealNames auto
+GlobalVariable[] property DealPrices auto
+GlobalVariable[] property DealTimers auto
 
 string[] SlaveryRules
 int CurrSlaveryRuleIndex
@@ -687,72 +357,64 @@ bool property FinishedSlaveryRules auto hidden conditional
 bool property InEnslavementSetup auto hidden conditional
 float property RejectRuleChance auto hidden
 
-GlobalVariable Property GameDaysPassed Auto
-GlobalVariable Property _DFCostScale Auto
-GlobalVariable Property _DFFatigue Auto
-GlobalVariable Property _DFFatigueRate Auto
-GlobalVariable Property _DflowDebtPerDay Auto
-GlobalVariable Property _DflowExpensiveDebts Auto
-GlobalVariable Property _DFDeepDebtDifficulty Auto
+GlobalVariable property GameDaysPassed auto
+GlobalVariable property _DFCostScale auto
+GlobalVariable property _DFFatigue auto
+GlobalVariable property _DFFatigueRate auto
+GlobalVariable property _DflowDebtPerDay auto
+GlobalVariable property _DflowExpensiveDebts auto
+GlobalVariable property _DFDeepDebtDifficulty auto
 
-Quest Property UberController Auto
-Quest Property DealO  Auto 
-Quest Property DealB  Auto 
-Quest Property DealH  Auto 
-Quest Property DealP  Auto 
-Quest Property DealSQ Auto 
-Quest Property DealM1 Auto 
-Quest Property DealM2 Auto 
-Quest Property DealM3 Auto 
-Quest Property DealM4 Auto 
-Quest Property DealM5 Auto 
-Message Property msg  Auto  
-_DFTools Property Tool Auto
+Quest property UberController auto
+Quest property DealO  auto 
+Quest property DealB  auto 
+Quest property DealH  auto 
+Quest property DealP  auto 
+Quest property DealSQ auto 
+Quest property DealM1 auto 
+Quest property DealM2 auto 
+Quest property DealM3 auto 
+Quest property DealM4 auto 
+Quest property DealM5 auto 
+Message property msg  auto  
+_DFTools property Tool auto
 
-Int Property Deals = 0 Auto  Conditional
-Int Property DealsMax = 0 Auto  Conditional ; Number of maxed out deals.
+int property Deals = 0 auto  Conditional
+int property DealsMax = 0 auto  Conditional ; Number of maxed out deals.
 
-Int Property DealOMax  Auto Conditional
-Bool Property DealO1 Auto	Conditional
-Bool Property DealO2 Auto	Conditional
+int property DealOMax  auto Conditional
+bool property DealO1 auto	Conditional
+bool property DealO2 auto	Conditional
 
-Int Property DealBMax  Auto Conditional
-Bool Property DealB1 Auto	Conditional
-Bool Property DealB2 Auto	Conditional
+int property DealBMax  auto Conditional
+bool property DealB1 auto	Conditional
+bool property DealB2 auto	Conditional
 
-Int Property DealHMax  Auto Conditional
-Bool Property DealH1 Auto	Conditional
-Bool Property DealH2 Auto	Conditional
+int property DealHMax  auto Conditional
+bool property DealH1 auto	Conditional
+bool property DealH2 auto	Conditional
 
-Int Property DealPMax  Auto Conditional
-Int Property DealSQMax  Auto Conditional
+int property DealPMax  auto Conditional
+int property DealSQMax  auto Conditional
 
 ; The full ID of the new deal (e.g. each modular deal+rule combination is unique)
-String Property NewDeal Auto Conditional
+string property NewDeal auto Conditional
+string property SelectedRuleId auto Conditional
 ; The de-duplicated ID of the new deal (e.g. modular deals have 1XX values matching the shared rule)
-;Int Property DealOffering Auto Conditional
+;int property DealOffering auto Conditional
 
-Actor Property PlayerRef Auto
-Armor Property Item1 Auto
-Armor Property Item1r Auto
-ZadLibs Property libs Auto
+Actor property PlayerRef auto
+Armor property Item1 auto
+Armor property Item1r auto
+ZadLibs property libs auto
 
-Float Property DealBias = 50.0 Auto
-Float Property DealDebtRelief Auto
-Float Property DealBuyoutPrice Auto
-Float Property DealEarlyOutPrice Auto
+float property DealBias = 50.0 auto
+float property DealDebtRelief auto
+float property DealBuyoutPrice auto
+float property DealEarlyOutPrice auto
 
-Float Property ExpensiveDebtCount Auto
+float property ExpensiveDebtCount auto
 
-Float SPTimer = 0.0
-Float PPTimer = 0.0
-Float OPTimer = 0.0
-Float HPTimer = 0.0
-Float BPTimer = 0.0
-Float M1Timer = 0.0
-Float M2Timer = 0.0
-Float M3Timer = 0.0
-Float M4Timer = 0.0
-Float M5Timer = 0.0
+MiscObject property Gold auto
 
-MiscObject Property Gold Auto 
+GlobalVariable property Willpower auto

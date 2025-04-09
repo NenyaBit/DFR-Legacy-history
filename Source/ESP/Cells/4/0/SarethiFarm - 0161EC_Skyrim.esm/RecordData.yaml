@@ -42,13 +42,13 @@ Music: 06D546:Skyrim.esm
 ImageSpace: 0B215C:Skyrim.esm
 Persistent:
 - MutagenObjectType: PlacedNpc
-  FormKey: 0C0169:DeviousFollowers.esp
+  FormKey: 0C0168:DeviousFollowers.esp
   MajorRecordFlagsRaw: 1024
   SkyrimMajorRecordFlags:
   - 0x400
-  Base: 023A92:Skyrim.esm
+  Base: 0C0164:DeviousFollowers.esp
   Placement:
-    Position: 503.86804, -42.9881, 46.99994
+    Position: 481.48163, -207.74742, 47.00006
   MajorFlags:
   - Persistent
 - MutagenObjectType: PlacedNpc
@@ -62,13 +62,13 @@ Persistent:
   MajorFlags:
   - Persistent
 - MutagenObjectType: PlacedNpc
-  FormKey: 0C0168:DeviousFollowers.esp
+  FormKey: 0C0169:DeviousFollowers.esp
   MajorRecordFlagsRaw: 1024
   SkyrimMajorRecordFlags:
   - 0x400
-  Base: 0C0164:DeviousFollowers.esp
+  Base: 023A92:Skyrim.esm
   Placement:
-    Position: 481.48163, -207.74742, 47.00006
+    Position: 503.86804, -42.9881, 46.99994
   MajorFlags:
   - Persistent
 MajorFlags:

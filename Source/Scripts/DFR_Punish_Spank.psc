@@ -12,6 +12,6 @@ bool function OnStart(Actor akTarget)
     SexLabUtil.GetAPI().ClearForcedGender(akTarget)
 
     DFR_Util.Log("Spanking complete")
-    Stop()
+    DFR_RelationshipManager.Get().CompleteEvent(GetEventId())
     return true
 endFunction

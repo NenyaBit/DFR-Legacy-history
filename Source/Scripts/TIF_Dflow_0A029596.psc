@@ -6,6 +6,7 @@ Scriptname TIF_Dflow_0A029596 Extends TopicInfo Hidden
 Function Fragment_10(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
+Libs.UnlockDevice(PlayerRef, Mittens)
 GetOwningQuest().setstage(299)
 GameQ.reset()
 GameQ.setstage(10)
@@ -36,3 +37,5 @@ _Dftools property tool auto
 
 GlobalVariable Property TEMP  Auto  
 GlobalVariable Property debt  Auto  
+
+Armor Property Mittens  Auto  

@@ -1,9 +1,0 @@
-name: Whore Armor (Light)
-addKeywords:
-  - _DFWArmor
-  - Adv_RuleItemKwd
-variants:
-  - pieces:
-    - id: 00LBAabs1
-    - id: 00LBAbikini1
-    - id: 00LBAboot

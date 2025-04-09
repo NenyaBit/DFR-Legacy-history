@@ -1,0 +1,192 @@
+FormKey: 40B16E:DeviousFollowers.esp
+EditorID: DFR_Services
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR_Services
+    Properties:
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: InventoryFilters
+      Objects:
+      - Name: ''
+        Object: 40B176:DeviousFollowers.esp
+      - Name: ''
+        Object: 41028D:DeviousFollowers.esp
+      - Name: ''
+        Object: 410294:DeviousFollowers.esp
+      - Name: ''
+        Object: 41029E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: MagickaPotionEffectKwds
+      Objects:
+      - Name: ''
+        Object: 065A34:Skyrim.esm
+      - Name: ''
+        Object: 065A33:Skyrim.esm
+      - Name: ''
+        Object: 042508:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: variant
+      Object: 410280:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: SharpenWeapon
+      Object: 40B16E:DeviousFollowers.esp
+      Alias: 5
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: TownKeywords
+      Objects:
+      - Name: ''
+        Object: 013166:Skyrim.esm
+      - Name: ''
+        Object: 01CB87:Skyrim.esm
+      - Name: ''
+        Object: 013168:Skyrim.esm
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: StaminaPotionEffectKwds
+      Objects:
+      - Name: ''
+        Object: 065A32:Skyrim.esm
+      - Name: ''
+        Object: 065A35:Skyrim.esm
+      - Name: ''
+        Object: 042504:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FollowerAlias
+      Object: 40B16E:DeviousFollowers.esp
+      Alias: 0
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: CurrentCounts
+      Objects:
+      - Name: ''
+        Object: 40B179:DeviousFollowers.esp
+      - Name: ''
+        Object: 410292:DeviousFollowers.esp
+      - Name: ''
+      - Name: ''
+        Object: 41029D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: DesiredCounts
+      Objects:
+      - Name: ''
+        Object: 40B178:DeviousFollowers.esp
+      - Name: ''
+        Object: 410293:DeviousFollowers.esp
+      - Name: ''
+      - Name: ''
+        Object: 41029C:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ServiceEvent
+      Object: 1BD274:DeviousFollowers.esp
+      Alias: 6
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: HealthPotionEffectKwds
+      Objects:
+      - Name: ''
+        Object: 065A30:Skyrim.esm
+      - Name: ''
+        Object: 065A31:Skyrim.esm
+      - Name: ''
+        Object: 042503:Skyrim.esm
+  FileName: ''
+  Aliases:
+  - Property:
+      Name: ''
+      Object: 40B16E:DeviousFollowers.esp
+      Alias: 0
+    Scripts:
+    - Name: DFR_Services_Follower
+Flags:
+- AllowRepeatedStages
+Priority: 100
+Type: Misc
+TextDisplayGlobals:
+- 40B179:DeviousFollowers.esp
+- 40B178:DeviousFollowers.esp
+- 410292:DeviousFollowers.esp
+- 410293:DeviousFollowers.esp
+- 41029C:DeviousFollowers.esp
+- 41029D:DeviousFollowers.esp
+Stages:
+- Index: 10
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Running
+Objectives:
+- Index: 10
+  Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: Get <Alias.ShortName=Follower> some food (<Global=DFR_Current_Food>/<Global=DFR_Desired_Food>)
+  Targets:
+  - AliasID: 4
+- Index: 20
+  Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: Get <Alias.ShortName=Follower> some health potions (<Global=DFR_Current_Potions>/<Global=DFR_Desired_Potions>)
+  Targets:
+  - AliasID: 4
+- Index: 21
+  Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: Get <Alias.ShortName=Follower> some stamina potions (<Global=DFR_Current_Potions>/<Global=DFR_Desired_Potions>)
+  Targets:
+  - AliasID: 4
+- Index: 22
+  Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: Get <Alias.ShortName=Follower> some magicka potions (<Global=DFR_Current_Potions>/<Global=DFR_Desired_Potions>)
+  Targets:
+  - AliasID: 4
+- Index: 30
+  Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: Sharpen <Alias.ShortName=Follower>'s dagger
+  Targets:
+  - AliasID: 4
+- Index: 40
+  Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: Refill <Alias.ShortName=Follower>'s arrows (<Global=DFR_Current_Arrows>/<Global=DFR_Desired_Arrows>)
+  Targets:
+  - AliasID: 4
+NextAliasID: 6
+Aliases:
+- ID: 4
+  Name: Follower
+  Flags:
+  - StoresText
+  External:
+    Quest: 000D62:DeviousFollowers.esp
+    AliasID: 1
+  VoiceTypes: Null
+- Name: ContainerChecker
+  Flags:
+  - Optional
+  VoiceTypes: Null
+- ID: 5
+  Name: SharpenWeapon
+  Flags:
+  - Optional
+  CreateReferenceToObject:
+    Object: 01397E:Skyrim.esm
+    AliasID: 4
+    Create: In
+  Conditions:
+  - MutagenObjectType: ConditionGlobal
+    Data:
+      MutagenObjectType: GetGlobalValueConditionData
+      Global: 40B16C:DeviousFollowers.esp
+    ComparisonValue: 000814:Adversity Framework.esm
+  VoiceTypes: Null

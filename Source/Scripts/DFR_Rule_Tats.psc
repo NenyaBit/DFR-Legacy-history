@@ -13,6 +13,8 @@ bool function OnStart(Actor akTarget)
         ModEvent.Send(handle)
     endIf
 
+    DFR_RelationshipManager.Get().CompleteEvent(GetEventId())
+
     Stop()
     return true
 endFunction

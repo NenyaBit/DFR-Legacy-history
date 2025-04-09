@@ -6,6 +6,7 @@ GlobalVariable property Lives auto
 QF__Gift_09000D62 property Q auto
 _DflowMCM property MCM auto
 _DFGoldConQScript property GoldCon auto
+_DFtools property Tool auto
 
 bool property RescueValid = false auto hidden
 bool property BothDowned = false auto hidden conditional
@@ -13,7 +14,6 @@ bool property WasDefeated = false auto hidden conditional
 bool property FollowerSavedPlayer auto hidden conditional
 
 ; TODO: if a slave goes down, the master decides to relegate them to town and favour decreases
-; 
 
 function Maintenance()
     DFR_Util.Log("DFR_DefeatHandler - Maintenance - Acheron = " + Game.IsPluginInstalled("Acheron.esm"))
@@ -42,6 +42,7 @@ endEvent
 function ResetTaunts()
     BothDowned = false
     WasDefeated = false
+    FollowerSavedPlayer = false
 endFunction
 
 event OnActorDefeated(Actor akVictim)
@@ -74,6 +75,7 @@ event OnActorDefeated(Actor akVictim)
         endif
     elseIf akVictim == PlayerRef
         DFR_Util.Log("DFR_DefeatHandler - Player went down")
+        Tool.DeferPunishments()
     endIf
 endEvent
 

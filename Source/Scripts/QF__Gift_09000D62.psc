@@ -118,6 +118,14 @@ endFunction
 function Prep()
     Tool.MCM.MDC.UpdateTimerStatusCondition()
     DFR_Licenses.Get().CheckLicenseStatus()
+    DFR_RelationshipManager.Get().SetupDialogue()
+endFunction
+
+function Maintenance()
+    Actor master = Alias__DMaster.GetRef() as Actor
+    if master
+        Adversity.InitializeActor("deviousfollowers", master)
+    endIf
 endFunction
 
 Function UpdateVersion()
@@ -825,7 +833,8 @@ EndFunction
 Function ApplyPunishmentDebt()
     Tool.MCM.CalculateScaledDebts()    
     Float punishmentDebt = _DFPunDebt.GetValue()
-    if GetStage() >= 98
+    
+    if DFR_RelationshipManager.Get().HasHighFavour()
         punishmentDebt *= 0.5
     endIf
 
@@ -861,8 +870,6 @@ Function BuyoutOfSlavery()
     SetPostSlaveryDebt()
     SetPostSlaveryDeals()
     ReduceExpectedDeals(10.0)
-
-    DealController.RemoveSlaveDeal()
     
     Actor who = Alias__DMaster.GetActorRef()
 
@@ -931,6 +938,11 @@ Function DeviceRemovalGold()
 
     Float currentPrice = CalculateDeviceRemovalCost()
     Int removalGold = currentPrice As Int
+
+    if DFR_RelationshipManager.Get().HasHighFavour()
+        removalGold = Math.Floor(removalGold as float * 0.5)
+    endIf
+
     Int playerGold = PlayerRef.GetGoldAmount()
     If playerGold < removalGold || (_GoldControl As _DFGoldConQScript).Enabled
         ; Add debt instead - scale by debt percentage adjustment
@@ -1141,61 +1153,68 @@ Function DebtInc()
     _DFMinimumContractRemaining.SetValue(contractRemaining)
     
     Float debtAdjust = _DFDailyDebtAdjust.GetValue()
-    Float boredom = _DFBoredom.GetValue()
+    ; Float boredom = _DFBoredom.GetValue()
 
-    If gameDaysNow > _DFBoredomTimer.GetValue()
+    ; If gameDaysNow > _DFBoredomTimer.GetValue()
     
-        BTimerReset()
+    ;     BTimerReset()
         
-        ; This begins at zero. It's reset to zero on a new agreement, and on enslavement.
-        Int expectedDeals = (_DFExpectedDealCount.GetValue() + 0.5) As Int
-        Int deals = DealController.Deals
+    ;     ; This begins at zero. It's reset to zero on a new agreement, and on enslavement.
+    ;     Int expectedDeals = (_DFExpectedDealCount.GetValue() + 0.5) As Int
+    ;     Int deals = DealController.Deals
             
-        ; Don't increase boredom for very low willpower PC
-        If Will.GetValue() >= 2.0
+    ;     ; Don't increase boredom for very low willpower PC
+    ;     If Will.GetValue() >= 2.0
         
-            If deals >= expectedDeals && boredom > 0.0
-                ; Reset boredom, increase expected deals
-                boredom = 0.0
-                _DFBoredom.SetValue(boredom)
-                debtAdjust = 0.0
-                Float excessDeals = (deals - expectedDeals) As Float
-                _DFBoredomTimer.SetValue(_DFBoredomTimer.GetValue() + excessDeals * _DFBoredomIntervalDays.GetValue()) ; extend timer due to excess deals
+    ;         If deals >= expectedDeals && boredom > 0.0
+    ;             ; Reset boredom, increase expected deals
+    ;             boredom = 0.0
+    ;             _DFBoredom.SetValue(boredom)
+    ;             debtAdjust = 0.0
+    ;             Float excessDeals = (deals - expectedDeals) As Float
+    ;             _DFBoredomTimer.SetValue(_DFBoredomTimer.GetValue() + excessDeals * _DFBoredomIntervalDays.GetValue()) ; extend timer due to excess deals
                 
-                expectedDeals += 1
-                Int limit = _DFExpectedDealLimit.GetValue() As Int
-                If expectedDeals > limit
-                    expectedDeals = limit
-                EndIf
-                _DFExpectedDealCount.SetValue(expectedDeals As Float)
-                Debug.Notification("$DF_CONFIDENT_FOLLOWER")
-            Else
-                Debug.Notification("$DF_BORED_FOLLOWER")
-                Float boreDelta = 1.0 + ((expectedDeals - deals) As Float) / 10.0
-                boredom += boreDelta
-                Tool.AdjustBoredom(boreDelta)
-            EndIf
+    ;             expectedDeals += 1
+    ;             Int limit = _DFExpectedDealLimit.GetValue() As Int
+    ;             If expectedDeals > limit
+    ;                 expectedDeals = limit
+    ;             EndIf
+    ;             _DFExpectedDealCount.SetValue(expectedDeals As Float)
+    ;             Debug.Notification("$DF_CONFIDENT_FOLLOWER")
+    ;         Else
+    ;             Debug.Notification("$DF_BORED_FOLLOWER")
+    ;             Float boreDelta = 1.0 + ((expectedDeals - deals) As Float) / 10.0
+    ;             boredom += boreDelta
+    ;             Tool.AdjustBoredom(boreDelta)
+    ;         EndIf
         
-        Else
-            If deals < expectedDeals
-                Debug.Notification("$DF_BORED_FOLLOWER")
-                Float boreDelta = 1.2 + ((expectedDeals - deals) As Float) / 10.0
-                boredom += boreDelta
-                Tool.AdjustBoredom(boreDelta)
-            EndIf
-        EndIf
+    ;     Else
+    ;         If deals < expectedDeals
+    ;             Debug.Notification("$DF_BORED_FOLLOWER")
+    ;             Float boreDelta = 1.2 + ((expectedDeals - deals) As Float) / 10.0
+    ;             boredom += boreDelta
+    ;             Tool.AdjustBoredom(boreDelta)
+    ;         EndIf
+    ;     EndIf
         
-    EndIf
-    
+    ; EndIf
 
-    ; If follower is "bored", then add debt rate increment.
-    If boredom > 0.0
-        ; Increase debt adjust by increment (adjust is a percentage)
-        debtAdjust += _DFDailyDebtIncrement.GetValue() * daysElapsed
-    EndIf
-    
-    ; _DFDailyDebtAdjust accumulates while bored
-    ; It's reset (above) when boredom <= 0 AND deals >= expected AND willpower >= 2.0
+    ; ; If follower is "bored", then add debt rate increment.
+    ; If boredom > 0.0
+    ;     ; Increase debt adjust by increment (adjust is a percentage)
+    ;     debtAdjust += _DFDailyDebtIncrement.GetValue() * daysElapsed
+    ; EndIf
+
+    float debtIncrement = _DFDailyDebtIncrement.GetValue()
+
+    if DFR_RelationshipManager.Get().HasLowFavour() ; if lo favour gradually accumulate debt increase
+        debtAdjust += debtIncrement * daysElapsed
+    elseIf DFR_RelationshipManager.Get().HasHighFavour() ; if hi favour gradually accumulate debt discount
+        debtAdjust -= debtIncrement * daysElapsed
+    elseIf debtAdjust < 0 ; if neutral, remove any benefit but retain penalty ;)
+        debtAdjust = 0
+    endIf
+
     _DFDailyDebtAdjust.SetValue(debtAdjust)
     
     Float deals = DealController.Deals As Float
@@ -1751,19 +1770,16 @@ Function StartSlaverySetup(int aiMode)
     SetStage(10)
     Game.GetPlayer().SendModEvent("PlayerRefEnslaved")
     Tool.LDC.EquipCollar()
-    DealController.SetupSlaveryDeals()
     EnslavementIntro.Start()
 EndFunction
 
 Function NextSlaveryRule()
-    DealController.NextSlaveryRule()
 EndFunction
 
 Function FinishSlaverySetup()
     ; TODO: ensure all enslavement deals are active
     ; ensure collar is equipped
     DFR_RelationshipManager.Get().DelayForcedDealTimer()
-    DealController.CheckSlaveryDeals()
     SetStage(40)
 EndFunction
 
@@ -1845,6 +1861,10 @@ EndFunction
 
 ; Check for follower that should not be devious.
 Bool Function IsIgnore(Actor who)
+    if !Adversity.GetActorBool("deviousfollowers", who, "devious")
+        Return true
+    endIf
+    
     Int tagged = StorageUtil.GetIntValue(who, TagNeverDevious, -1)
     If tagged >= 0
         Return True

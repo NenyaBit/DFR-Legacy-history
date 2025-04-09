@@ -494,60 +494,6 @@ Function SceneErrorCatchandPlay(Scene theScene, Int timer)
 
 EndFunction
 
-string lastHeavy
-string lastLight
-string lastMage
-
-int function CalcWhoreArmourCost(string asOutfit)
-    int cost = 0
-    Armor[] items = Adversity.GetOutfitPieces(lastHeavy)
-    int i = 0
-    while i < items.length
-        cost += items[i].GetGoldValue()
-        i += 1
-    endWhile
-    return cost
-endFunction
-
-Function GiveWhoreArmor(Bool punish)
-
-    Actor player = Game.GetPlayer()
-
-    If punish
-        int armourCost = CalcWhoreArmourCost(lastHeavy) + CalcWhoreArmourCost(lastLight) + CalcWhoreArmourCost(lastMage)
-        (Q as QF__Gift_09000D62).AdjustDebt(armourCost * 1.05)
-    EndIf
-
-    Adv_OutfitManager manager = Adv_OutfitManager.Get()
-    bool validating = manager.IsValidating()
-    
-    if validating
-        manager.RemoveValidOutfit(lastHeavy)
-        manager.RemoveValidOutfit(lastLight)
-        manager.RemoveValidOutfit(lastHeavy)
-    endIf
-
-    lastHeavy = Adversity.GiveRandomOutfit(player, "deviousfollowers", "whore-armor-heavy")
-    lastLight = Adversity.GiveRandomOutfit(player, "deviousfollowers", "whore-armor-light")
-    lastMage = Adversity.GiveRandomOutfit(player, "deviousfollowers", "whore-armor-mage")
-
-    if validating
-        manager.AddValidOutfit(lastHeavy)
-        manager.AddValidOutfit(lastLight)
-        manager.AddValidOutfit(lastMage)
-    endIf    
-EndFunction
-
-Bool Function IsWearingWhoreArmor()
-    string[] outfits = new string[3]
-    outfits[0] = lastHeavy
-    outfits[1] = lastLight
-    outfits[2] = lastMage
-
-    return Adversity.ValidateOutfits(outfits)
-endFunction
-
-
 Function AddPunishmentDebt(Int multiple = 1)
 
     While multiple > 0
@@ -556,8 +502,6 @@ Function AddPunishmentDebt(Int multiple = 1)
     EndWhile
 
 EndFunction
-    
-
 
 Actor Function GetNearestActor()
     ; This scanned for up to a minute, with the standard radius and scanner.
@@ -2315,29 +2259,17 @@ EndFunction
 
 
 Function UnequipGear()
+    Keyword[] kwds = new Keyword[3]
+    kwds[0] = Keyword.GetKeyword("ArmorClothing")
+    kwds[1] = Keyword.GetKeyword("ArmorLight")
+    kwds[2] = Keyword.GetKeyword("ArmorHeavy")
 
-    Armor a = PlayerRef.GetWornForm(0x00000002) as Armor
-    Armor b = PlayerRef.GetWornForm(0x00000004) as Armor
-    Armor c = PlayerRef.GetWornForm(0x00000008) as Armor
-    Armor d = PlayerRef.GetWornForm(0x00000080) as Armor
-    Armor e = PlayerRef.GetWornForm(0x0) as Armor
-
-    If a && (a.HasKeyword(ArmorClothing)||a.HasKeyword(ArmorHeavy)||a.HasKeyword(ArmorLight)) && !a.HasKeyword(Warmer) && !a.HasKeyword(SLNS)
-        PlayerRef.UnequipItem(a)
-    EndIf
-
-    If b && (b.HasKeyword(ArmorClothing)||b.HasKeyword(ArmorHeavy)||b.HasKeyword(ArmorLight)) && !d.HasKeyword(Warmer) && !a.HasKeyword(SLNS)
-        PlayerRef.UnequipItem(b)
-    EndIf
-
-    If c && (c.HasKeyword(ArmorClothing)||c.HasKeyword(ArmorHeavy)||c.HasKeyword(ArmorLight)) && !c.HasKeyword(Warmer) && !a.HasKeyword(SLNS)
-        PlayerRef.UnequipItem(c)
-    EndIf
-
-    If d && (d.HasKeyword(ArmorClothing)||d.HasKeyword(ArmorHeavy)||d.HasKeyword(ArmorLight)) && !d.HasKeyword(Warmer) && !a.HasKeyword(SLNS)
-        PlayerRef.UnequipItem(d)
-    EndIf
-
+    Form[] items = PyramidUtils.GetItemsByKeyword(PlayerRef, kwds)
+    int i = 0
+    while i < items.length
+        PlayerRef.UnequipItem(items[i])
+        i += 1
+    endWhile
 EndFunction
 
 Function ConfiscateClothing(ObjectReference akContainer = none, bool abExcludeFootwear = true)
@@ -2349,9 +2281,10 @@ Function ConfiscateClothing(ObjectReference akContainer = none, bool abExcludeFo
 
     UnequipGear()
 
-    Keyword[] clothingKwds = new Keyword[2]
-    clothingKwds[0] = Keyword.GetKeyword("VendorItemClothing")
-    clothingKwds[1] = Keyword.GetKeyword("VendorItemArmor")
+    Keyword[] clothingKwds = new Keyword[3]
+    clothingKwds[0] = Keyword.GetKeyword("ArmorClothing")
+    clothingKwds[1] = Keyword.GetKeyword("ArmorLight")
+    clothingKwds[2] = Keyword.GetKeyword("ArmorHeavy")
 
     Keyword[] excludeKwds = new Keyword[6]
     excludeKwds[0] = Keyword.GetKeyword("Adv_RuleItemKwd")

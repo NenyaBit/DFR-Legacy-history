@@ -23,3 +23,7 @@ endFunction
 float function DaysSinceStart()
     return Utility.GetCurrentGameTime() - StorageUtil.GetFloatValue(none, "DFR_RelationshipStart")
 endFunction
+
+function AddDebt(float afDebt) global
+    QF__Gift_09000D62.Get().AddDebt(afDebt)
+endFunction

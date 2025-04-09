@@ -1,114 +1,101 @@
 Scriptname _Dtick extends Quest  conditional
 
 ; FOLDSTART - Properties
-Quest Property _DFlowSleep Auto
-_Dftools Property Tool Auto
-SexLabFramework Property SexLab Auto
-Zadlibs Property libs Auto
-Quest Property _DFlow Auto
-QF__Gift_09000D62 Property Q  Auto  
-DialogueFollowerScript Property VanillaDialogFollower Auto
-_DFlowFollowerController Property FollowerController Auto
-_DFlowFollowerController Property DFlowFollowerController Auto ; Duplicate of above, because I messed up and released an ESP with it unset.
-_DFGoldConQScript Property GoldControl Auto ; Not set in earlier versions - mod event code will not add gold control properly in old games.
-Quest Property DealController Auto
-_DFlowModDealController Property ModDealController Auto
-Quest Property _DFLicenses Auto
+Quest property _DFlowSleep auto
+_Dftools property Tool auto
+SexLabFramework property SexLab auto
+Zadlibs property libs auto
+Quest property _DFlow auto
+QF__Gift_09000D62 property Q  auto  
+DialogueFollowerScript property VanillaDialogFollower auto
+_DFlowFollowerController property FollowerController auto
+_DFlowFollowerController property DFlowFollowerController auto ; Duplicate of above, because I messed up and released an ESP with it unset.
+_DFGoldConQScript property GoldControl auto ; Not set in earlier versions - mod event code will not add gold control properly in old games.
+Quest property DealController auto
+_DFlowModDealController property ModDealController auto
+DFR_RelationshipManager property RelManager auto
+DFR_Services property Services auto
+DFR_Outfits property Outfits auto
 
-Actor Property PlayerRef Auto
-Actor Property Follower Auto
-ReferenceAlias Property FollowerAlias Auto
-FormList Property _DFPauseModsList Auto
+Actor property PlayerRef auto
+Actor property Follower auto
+ReferenceAlias property FollowerAlias auto
+FormList property _DFPauseModsList auto
 
-Faction Property Enslaved Auto ; Not set and hopefully, not used. Probably intended to be soft-dep'd onto ZAP.
-Faction Property DismissedFollowerFaction Auto
-Faction Property DMasterFaction Auto
-Faction Property DIgnoreFaction Auto
+Faction property Enslaved auto ; Not set and hopefully, not used. Probably intended to be soft-dep'd onto ZAP.
+Faction property DismissedFollowerFaction auto
+Faction property DMasterFaction auto
+Faction property DIgnoreFaction auto
 
-Armor Property mittsI Auto
-Armor Property mittsR Auto
-Armor Property glovesI Auto
-Armor Property glovesR Auto
-Armor Property dealAmulet Auto
-Armor Property dealCirclet Auto
-Armor Property dealRing Auto
+Armor property mittsI auto
+Armor property mittsR auto
+Armor property glovesI auto
+Armor property glovesR auto
+Armor property dealAmulet auto
+Armor property dealCirclet auto
+Armor property dealRing auto
 
-MiscObject Property Gold001 Auto
+MiscObject property Gold001 auto
 
-Keyword Property NewProperty  Auto
-Keyword Property _DFCrawlRequired Auto
-Keyword Property _DFSlaveGloves Auto
-Keyword Property _DFSlaveMitts Auto
+Keyword property Newproperty  auto
+Keyword property _DFCrawlRequired auto
+Keyword property _DFSlaveGloves auto
+Keyword property _DFSlaveMitts auto
 
-GlobalVariable Property Lives Auto
-GlobalVariable Property _DFlowLivesMax Auto
-GlobalVariable Property _DFFollowerHasMaxLives Auto
-GlobalVariable Property _DFLivesFollowerRape Auto
-GlobalVariable Property _DWill Auto
-GlobalVariable Property _DFMinimumContract Auto
-GlobalVariable Property _DFMinimumContractRemaining Auto
-GlobalVariable Property _DFFollowerCount Auto
-GlobalVariable Property _DFStanding Auto
-GlobalVariable Property pPlayerFollowerCount Auto
-GlobalVariable Property _DFSeverityMitigation Auto
-GlobalVariable Property _DFSeverityMitigationBase Auto
-GlobalVariable Property _DFSlutCount Auto
-GlobalVariable Property _DFModMmePresent Auto
-GlobalVariable Property _DFModSkoomaWhorePresent Auto
-GlobalVariable Property _DFModSLSPresent Auto
-GlobalVariable Property Pause Auto
-GlobalVariable Property _DF_State2 Auto
-GlobalVariable Property _DF_State3 Auto
-GlobalVariable Property _DF_State4 Auto
+GlobalVariable property Lives auto
+GlobalVariable property _DFlowLivesMax auto
+GlobalVariable property _DFFollowerHasMaxLives auto
+GlobalVariable property _DFLivesFollowerRape auto
+GlobalVariable property _DWill auto
+GlobalVariable property _DFMinimumContract auto
+GlobalVariable property _DFMinimumContractRemaining auto
+GlobalVariable property _DFFollowerCount auto
+GlobalVariable property _DFStanding auto
+GlobalVariable property pPlayerFollowerCount auto
+GlobalVariable property _DFSeverityMitigation auto
+GlobalVariable property _DFSeverityMitigationBase auto
+GlobalVariable property _DFSlutCount auto
+GlobalVariable property _DFModMmePresent auto
+GlobalVariable property _DFModSkoomaWhorePresent auto
+GlobalVariable property _DFModSLSPresent auto
+GlobalVariable property Pause auto
+GlobalVariable property _DF_State2 auto
+GlobalVariable property _DF_State3 auto
+GlobalVariable property _DF_State4 auto
 
 
-ObjectReference Property GetCrosshairTarget 
+ObjectReference property GetCrosshairTarget 
     ObjectReference Function Get()
         _dtickPlayerAlias playerAlias = GetNthAlias(0) As _dtickPlayerAlias
         Return playerAlias.CrosshairTarget
     EndFunction
-EndProperty
+Endproperty
 
-Bool Property IsPaused
+Bool property IsPaused
     Bool Function Get()
         Return 0.0 == Pause.GetValue()
     EndFunction
-EndProperty
+Endproperty
 
-Bool Property NotPaused
+Bool property NotPaused
     Bool Function Get()
         Return 0.0 != Pause.GetValue()
     EndFunction
-EndProperty
+Endproperty
 
 
-Bool Property RunOnce Auto
-Bool Property WasEnslaved Auto
+Bool property RunOnce auto
+Bool property WasEnslaved auto
 
-Int Property Suspend = 0 Auto conditional
-Int Property PEnslaved = 0 Auto conditional
-Int Property modID Auto
-Int Property mtIdleBase Auto
-Int Property mtBase Auto
-Int Property mtxBase Auto
-Int Property sneakBase Auto
-Int Property sneakmtBase Auto
-Int Property h2heqp Auto
-Int Property h2hidle Auto
-Int Property h2hatkpow Auto
-Int Property h2hatk Auto
-Int Property h2hstag Auto
-Int Property jump Auto
-Int Property sprint Auto
-Int Property shout1 Auto
-Int Property mtturn Auto
+Int property Suspend = 0 auto conditional
+Int property PEnslaved = 0 auto conditional
 
-Float Property SlutTimer Auto
-Float Property SlutTimerPeriod
+Float property SlutTimer auto
+Float property SlutTimerPeriod
     Float Function Get()
         Return 60.0 * 10.0 ; Ten real minutes
     EndFunction
-EndProperty
+Endproperty
 
 
 ; FOLDEND - Properties
@@ -173,21 +160,11 @@ Event Init()
     RegisterForModEvent("MME_MilkingDone", "HandleMilkDone")
     RegisterForModEvent("Bis_BatheEvent", "OnBis_BatheEvent")
 
-    modID = FNIS_aa.GetAAModID("dfs", "DeviousFollowers", True)
-    mtIdleBase = FNIS_aa.GetGroupBaseValue(modID,FNIS_aa._mtidle(),"DeviousFollowers",True) 
-    mtBase = FNIS_aa.GetGroupBaseValue(modID,FNIS_aa._mt(),"DeviousFollowers",True) 
-    mtxBase = FNIS_aa.GetGroupBaseValue(modID,FNIS_aa._mtx(),"DeviousFollowers",True)
-    sneakBase=FNIS_aa.GetGroupBaseValue(ModID,FNIS_aa._sneakidle(),"DeviousFollowers",True)
-    sneakmtBase=FNIS_aa.GetGroupBaseValue(ModID,FNIS_aa._sneakmt(),"DeviousFollowers",True)
-    h2heqp=FNIS_aa.GetGroupBaseValue(ModID,FNIS_aa._h2heqp(),"DeviousFollowers",True)
-    h2hidle=FNIS_aa.GetGroupBaseValue(ModID,FNIS_aa._h2hidle(),"DeviousFollowers",True)
-    h2hatkpow=FNIS_aa.GetGroupBaseValue(ModID,FNIS_aa._h2hatkpow(),"DeviousFollowers",True)
-    h2hatk=FNIS_aa.GetGroupBaseValue(ModID,FNIS_aa._h2hatk(),"DeviousFollowers",True)
-    h2hstag=FNIS_aa.GetGroupBaseValue(ModID,FNIS_aa._h2hstag(),"DeviousFollowers",True)
-    jump=FNIS_aa.GetGroupBaseValue(ModID,FNIS_aa._jump(),"DeviousFollowers",True)
-    sprint=FNIS_aa.GetGroupBaseValue(ModID,FNIS_aa._sprint(),"DeviousFollowers",True)
-    shout1=FNIS_aa.GetGroupBaseValue(ModID,FNIS_aa._shout(),"DeviousFollowers",True)
-    mtturn=FNIS_aa.GetGroupBaseValue(ModID,FNIS_aa._mtturn(),"DeviousFollowers",True)
+    RelManager.Maintenance()
+    Services.Maintenance()
+    Outfits.Maintenance()
+    Q.Maintenance()
+    
     lastVictimCount = SexLab.GetSkill(PlayerRef, "Victim")
     Follower = FollowerAlias.GetActorReference()
     lastVictimCountFollower = SexLab.GetSkill(Follower, "Victim")
@@ -220,13 +197,17 @@ Event Init()
 EndEvent
 
 Event OnAnimationStart(int tid, bool HasPlayer)
-    _DUtil.Info("DF - deferring punishments due to sl scene")
-    Tool.DeferPunishments()
+    if HasPlayer
+        _DUtil.Info("DF - deferring punishments due to sl scene")
+        Tool.DeferPunishments()
+    endIf
 EndEvent
 
 Event OnAnimationEnd(int tid, bool HasPlayer)
-    _DUtil.Info("DF - deferring punishments due to sl scene")
-    Tool.DeferPunishments()
+    if HasPlayer
+        _DUtil.Info("DF - deferring punishments due to sl scene")
+        Tool.DeferPunishments()
+    endIf
 EndEvent
 
 Event PauseByEvent(Bool pausedState, Form sender)
@@ -258,7 +239,7 @@ Event PEnslave(String eventName, String strArg, Float numArg, Form sender)
     If NotPaused
         Debug.TraceConditional("DF - isn't paused, so check if we should pause...", True)
     
-        If Q.Tool.MCM._DFZAZAutoPause && PEnslaved == 0 && Q.GetStage() < 90
+        If Q.Tool.MCM._DFZAZautoPause && PEnslaved == 0 && Q.GetStage() < 90
             Debug.TraceConditional("DF - auto-pause because we aren't already paused", True)
             FirePauseEvent(True)
         EndIf
@@ -276,7 +257,7 @@ EndEvent
 Event PUnEnslave(String eventName, String strArg, Float numArg, Form sender)
     GotoState("InEvent")
     Debug.TraceConditional("DF - SS/SD+/SLTR says player is NOT enslaved via some foreign mod", True)
-    If Q.Tool.MCM._DFZAZAutoPause && PEnslaved == 1 && Q.GetStage() < 90
+    If Q.Tool.MCM._DFZAZautoPause && PEnslaved == 1 && Q.GetStage() < 90
         Debug.TraceConditional("DF - unpause because we were auto-paused", True)
         FirePauseEvent(False)
     EndIf
@@ -748,14 +729,6 @@ Event OnUpdate()
         If RunOnce
             Tool.LDC.Init()
         Endif
-        
-        If IsSlsPresent() != 0.0
-            RegisterSlsExceptions() ; Stop SLS taking deal items
-            (_DFLicenses As _DFLicensing).TryResumeLicensing()
-        Else
-            (_DFLicenses As _DFLicensing).TryStop()
-        EndIf
-        
     EndIf
     
     Float state2 = _DF_State2.GetValue()

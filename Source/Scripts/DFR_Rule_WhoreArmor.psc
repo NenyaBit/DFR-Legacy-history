@@ -1,11 +1,13 @@
 Scriptname DFR_Rule_WhoreArmor extends DFR_Rule_Builtin  
 
-function OnStart(bool abResume = false)
-    Adv_OutfitManager.Get().StartValidation()
-    parent.OnStart(abResume)
+DFR_Outfits property Outfits auto
+
+bool function OnStart(Actor akTarget)
+    Outfits.StartWhoreArmorRule()
+    return parent.OnStart(akTarget)
 endFunction 
 
-function OnStop(bool abPause = true)
-    Adv_OutfitManager.Get().StopValidation()
-    parent.OnStart(abPause)
+function OnStop()
+    Outfits.StopWhoreArmorRule()
+    return parent.OnStop()
 endFunction

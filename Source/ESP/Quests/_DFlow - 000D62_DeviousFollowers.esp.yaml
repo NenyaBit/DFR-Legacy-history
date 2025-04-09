@@ -2,341 +2,338 @@ FormKey: 000D62:DeviousFollowers.esp
 EditorID: _DFlow
 VirtualMachineAdapter:
   Scripts:
+  - Name: _DFlowProps
   - Name: _DflowConditionals
     Properties:
     - MutagenObjectType: ScriptFloatProperty
       Name: DebtPunTimer
-  - Name: _DFlowProps
   - Name: QF__Gift_09000D62
     Properties:
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DMaster
-      Object: 015712:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: ETimerP
-      Object: 01720A:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFMinimumContractRemaining
-      Object: 218C7C:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DealAmulet
-      Object: 2943F2:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowItems
-      Object: 0559F0:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFEndlessSlaveryTarget
-      Object: 3272C5:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Actor1
-      Object: 0E1BA9:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFCrawlRequired
-      Object: 213D46:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: CanRehireGV
-      Object: 104F35:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: tool
-      Object: 01210D:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: BootsR
-      Object: 213D45:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: B
-      Object: 02816B:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: q2
-      Object: 1B5B9E:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFMinimumContract
-      Object: 218C7B:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: CrimeFactionHaafingar
-      Object: 029DB0:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DealRing
-      Object: 2943F1:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Gold001
-      Object: 00000F:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DebtPollhrs
-      Object: 00C551:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFBoredom
-      Object: 231892:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _Dtats
-      Object: 01A80B:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: SSMessage
-      Object: 0BB211:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFPunDebt
-      Object: 0439EC:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: EnslavementIntro
-      Object: 38C70F:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: EnslavePerLevel
-      Object: 024F7C:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFBoredomIntervalDays
-      Object: 231893:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Ticker
-      Object: 010617:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Mitts
-      Object: 032C61:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: failure
-      Object: 00C54A:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: VendorRawFoodKeyword
       Object: 0A0E56:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFStanding
-      Object: 248476:DeviousFollowers.esp
+      Name: _DFlowRemovalP
+      Object: 03C894:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFSlaveryTarget
-      Object: 31D0B5:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: VendorKeyKeyword
-      Object: 0914EF:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: VendorBookKeyword
-      Object: 0937A2:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: FreedomCost
-      Object: 00C549:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: pDialogueFollower
-      Object: 0750BA:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: PlayerRef
-      Object: 000014:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: CollarR
-      Object: 2115A6:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Rend
-      Object: 02FA8A:Devious Devices - Expansion.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: HirelingCommentNextAllowed
-      Object: 104817:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _GoldControl
-      Object: 112478:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: EnslavementHalfDebt
-      Object: 0110DE:DeviousFollowers.esp
-    - MutagenObjectType: ScriptIntProperty
-      Name: CurrentLevel
-      Data: 1
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowSold
-      Object: 15A1A4:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowRemovalInc
-      Object: 03E8F2:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: pPlayerFollowerCount
-      Object: 0BCC98:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFDailyDebtIncrement
-      Object: 22C95D:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowSoldItems
-      Object: 0559F4:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: QuestStage
-      Object: 00C54D:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DebtPerFollower
-      Object: 024F7B:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFDailyDebtAdjust
-      Object: 231894:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: SlaveFaction
-      Object: 000804:Adversity Framework.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFFatigue
-      Object: 22C95B:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: c
-      Object: 02816F:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: BoredomQuest
-      Object: 26BB92:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Item
-      Object: 02FA8B:Devious Devices - Expansion.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: SSO
-      Object: 02F68A:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFDailyDealTimer
-      Object: 29E61E:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DealCirclet
-      Object: 2943F3:DeviousFollowers.esp
+      Name: _DFDiscountLimit
+      Object: 231897:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: FollowerHuntingBow
       Object: 10E2DD:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: FollowerIronArrow
-      Object: 10E2DE:Skyrim.esm
+      Name: _DFFatigue
+      Object: 22C95B:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: Actor2
-      Object: 0B9986:Skyrim.esm
+      Name: BoredomQuest
+      Object: 26BB92:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: CurrentLevel
+      Data: 1
     - MutagenObjectType: ScriptObjectProperty
-      Name: pDismissedFollower
-      Object: 05C84C:Skyrim.esm
+      Name: ScanActor
+      Object: 000014:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: boots
-      Object: 213D44:DeviousFollowers.esp
+      Name: Actor5
+      Object: 0B998C:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowItemsPerRemoved
-      Object: 03E8F3:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: VendorNoSaleKeyword
-      Object: 0FF9FB:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: PlayerFollowerCount
-      Object: 0BCC98:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFDisable
-      Object: 0B8A73:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Intrest
-      Object: 00C546:DeviousFollowers.esp
+      Name: tool
+      Object: 01210D:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Alias__DMaster
       Object: 000D62:DeviousFollowers.esp
       Alias: 1
     - MutagenObjectType: ScriptObjectProperty
-      Name: CurrentHireling
-      Object: 0BD738:Skyrim.esm
+      Name: FollowerIronArrow
+      Object: 10E2DE:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: GameDaysPassed
       Object: 000039:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: DebtPerLevel
-      Object: 024F7A:DeviousFollowers.esp
+      Name: Pit
+      Object: 0372BC:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFFollowerCount
-      Object: 225284:DeviousFollowers.esp
+      Name: B
+      Object: 02816B:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: SexLabNoStripKeyword
-      Object: 02F16E:SexLab.esm
+      Name: _DFStanding
+      Object: 248476:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFBoredomTimer
-      Object: 231896:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowRemovalP
-      Object: 03C894:DeviousFollowers.esp
+      Name: QuestStage
+      Object: 00C54D:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: VendorToolKeyword
       Object: 0914EE:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: Actor3
-      Object: 0B9988:Skyrim.esm
+      Name: _DFBoredomTimer
+      Object: 231896:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: timer
-      Object: 004E3A:DeviousFollowers.esp
+      Name: Ticker
+      Object: 010617:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: VendorAnimalPartKeyword
-      Object: 0914EB:Skyrim.esm
+      Name: _DflowRemovalInc
+      Object: 03E8F2:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: _DFSlaveryWatcher
       Object: 31D0B2:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: Lives
-      Object: 02DB9E:DeviousFollowers.esp
+      Name: Fac
+      Object: 015712:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: VendorFirewoodKeyword
-      Object: 0914EF:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowDealBaseDebt
-      Object: 03CDFA:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: LivesM
-      Object: 02E663:DeviousFollowers.esp
-    - MutagenObjectType: ScriptIntProperty
-      Name: Flow
-      Data: 101
-    - MutagenObjectType: ScriptObjectProperty
-      Name: ScanActor
-      Object: 000014:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Actor4
-      Object: 0B9984:Skyrim.esm
+      Name: _DFSlaveryTarget
+      Object: 31D0B5:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: _DflowRemovalDebtTimes
       Object: 03E8F1:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: will
-      Object: 01A2A7:Update.esm
+      Name: DealCirclet
+      Object: 2943F3:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFExpectedDealLimit
-      Object: 239148:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: WR
-      Object: 0267EA:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: HasHirelingGV
-      Object: 0BCC97:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Actor5
-      Object: 0B998C:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DealController
-      Object: 01C86D:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: ETimer
-      Object: 017209:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Debt
-      Object: 00C54F:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Enslavemsg1
-      Object: 00A4DF:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Collar
-      Object: 213D43:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Fac
-      Object: 015712:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: mittsR
-      Object: 032C62:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowRemovalBasePrice
-      Object: 03C893:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFDiscountLimit
-      Object: 231897:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFLicenses
-      Object: 2FEA42:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: EnslavementDebt
-      Object: 00C548:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFExpectedDealCount
-      Object: 231895:DeviousFollowers.esp
+      Name: SexLabNoStripKeyword
+      Object: 02F16E:SexLab.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: libs
       Object: 00F624:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: Pit
-      Object: 0372BC:Skyrim.esm
+      Name: DealRing
+      Object: 2943F1:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Rend
+      Object: 02FA8A:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerFollowerCount
+      Object: 0BCC98:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFPunDebt
+      Object: 0439EC:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _Dtats
+      Object: 01A80B:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LivesM
+      Object: 02E663:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: will
+      Object: 01A2A7:Update.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Debt
+      Object: 00C54F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFDailyDealTimer
+      Object: 29E61E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CrimeFactionHaafingar
+      Object: 029DB0:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFEndlessSlaveryTarget
+      Object: 3272C5:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: c
+      Object: 02816F:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Actor1
+      Object: 0E1BA9:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: mittsR
+      Object: 032C62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Enslavemsg1
+      Object: 00A4DF:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: q2
+      Object: 1B5B9E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CanRehireGV
+      Object: 104F35:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HasHirelingGV
+      Object: 0BCC97:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: timer
+      Object: 004E3A:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFExpectedDealCount
+      Object: 231895:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFDisable
+      Object: 0B8A73:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowSoldItems
+      Object: 0559F4:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: SlaveFaction
+      Object: 000804:Adversity Framework.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowItems
+      Object: 0559F0:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFCrawlRequired
+      Object: 213D46:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFFollowerCount
+      Object: 225284:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DealController
+      Object: 01C86D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Item
+      Object: 02FA8B:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Collar
+      Object: 213D43:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ETimerP
+      Object: 01720A:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CurrentHireling
+      Object: 0BD738:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Mitts
+      Object: 032C61:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFDailyDebtAdjust
+      Object: 231894:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FreedomCost
+      Object: 00C549:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DebtPerFollower
+      Object: 024F7B:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VendorKeyKeyword
+      Object: 0914EF:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Actor4
+      Object: 0B9984:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: EnslavementHalfDebt
+      Object: 0110DE:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Lives
+      Object: 02DB9E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: EnslavePerLevel
+      Object: 024F7C:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: EnslavementDebt
+      Object: 00C548:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: SSO
+      Object: 02F68A:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Intrest
+      Object: 00C546:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HirelingCommentNextAllowed
+      Object: 104817:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFMinimumContractRemaining
+      Object: 218C7C:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ETimer
+      Object: 017209:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _GoldControl
+      Object: 112478:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Actor3
+      Object: 0B9988:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFExpectedDealLimit
+      Object: 239148:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: SSMessage
+      Object: 0BB211:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: WR
+      Object: 0267EA:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowRemovalBasePrice
+      Object: 03C893:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: pDialogueFollower
+      Object: 0750BA:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: BootsR
+      Object: 213D45:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CollarR
+      Object: 2115A6:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: pPlayerFollowerCount
+      Object: 0BCC98:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Actor2
+      Object: 0B9986:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: EnslavementIntro
+      Object: 38C70F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VendorAnimalPartKeyword
+      Object: 0914EB:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DebtPollhrs
+      Object: 00C551:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: boots
+      Object: 213D44:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: Flow
+      Data: 101
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DMaster
+      Object: 015712:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VendorBookKeyword
+      Object: 0937A2:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VendorFirewoodKeyword
+      Object: 0914EF:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowSold
+      Object: 15A1A4:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VendorNoSaleKeyword
+      Object: 0FF9FB:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: pDismissedFollower
+      Object: 05C84C:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFBoredom
+      Object: 231892:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowItemsPerRemoved
+      Object: 03E8F3:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFMinimumContract
+      Object: 218C7B:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFBoredomIntervalDays
+      Object: 231893:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFDailyDebtIncrement
+      Object: 22C95D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: failure
+      Object: 00C54A:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowDealBaseDebt
+      Object: 03CDFA:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DealAmulet
+      Object: 2943F2:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: DebtPerDay
       Object: 00C547:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DebtPerLevel
+      Object: 024F7A:DeviousFollowers.esp
   FileName: QF__Gift_09000D62
   Fragments:
   - Unknown2: 1
@@ -350,18 +347,18 @@ VirtualMachineAdapter:
     Unknown2: 1
     ScriptName: QF__Gift_09000D62
     FragmentName: Fragment_12
-  - Stage: 100
+  - Stage: 1337
     Unknown2: 1
     ScriptName: QF__Gift_09000D62
-    FragmentName: Fragment_8
+    FragmentName: Fragment_22
   - Stage: 98
     Unknown2: 1
     ScriptName: QF__Gift_09000D62
     FragmentName: Fragment_32
-  - Stage: 3
+  - Stage: 1338
     Unknown2: 1
     ScriptName: QF__Gift_09000D62
-    FragmentName: Fragment_34
+    FragmentName: Fragment_28
   - Stage: 9
     Unknown2: 1
     ScriptName: QF__Gift_09000D62
@@ -378,14 +375,14 @@ VirtualMachineAdapter:
     Unknown2: 1
     ScriptName: QF__Gift_09000D62
     FragmentName: Fragment_14
-  - Stage: 1338
+  - Stage: 3
     Unknown2: 1
     ScriptName: QF__Gift_09000D62
-    FragmentName: Fragment_28
-  - Stage: 1337
+    FragmentName: Fragment_34
+  - Stage: 100
     Unknown2: 1
     ScriptName: QF__Gift_09000D62
-    FragmentName: Fragment_22
+    FragmentName: Fragment_8
   Aliases:
   - Property:
       Name: ''
@@ -398,11 +395,11 @@ VirtualMachineAdapter:
         Name: Lives
         Object: 02DB9E:DeviousFollowers.esp
       - MutagenObjectType: ScriptObjectProperty
-        Name: q
-        Object: 000D62:DeviousFollowers.esp
-      - MutagenObjectType: ScriptObjectProperty
         Name: MCM
         Object: 00C545:DeviousFollowers.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: q
+        Object: 000D62:DeviousFollowers.esp
       - MutagenObjectType: ScriptObjectProperty
         Name: GoldCon
         Object: 112478:DeviousFollowers.esp

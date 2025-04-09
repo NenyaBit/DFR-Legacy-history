@@ -21,7 +21,7 @@ _DflowSleepQuestScript  Property SQ Auto
 _DFlowUnflaggedFollowerScan Property UnflaggedFollowersScan Auto
 _LDC Property LDC Auto
 DialogueFollowerScript Property VanillaFollowerQuest Auto 
-_DFLicensing Property _DFLicenses Auto
+DFR_Licenses Property _DFLicenses Auto
 
 Quest Property Dflow  Auto  ; Same quest as Q ...
 Quest Property DealO  Auto 
@@ -579,9 +579,13 @@ Event OnConfigOpen()
     licenseStatusEnabledNew = _DFLicenses.Enabled
     Debug.TraceConditional("DF - OnConfigOpen - licenses enabled on " + _DFLicenses + " is " + licenseStatusEnabledNew, True)
     Debug.TraceConditional("DF - OnConfigOpen - end", True)
+    SetMenuNames()
+    Init()
 EndEvent
 
 Event OnConfigClose()
+
+    LastPage = ""
 
     Debug.TraceConditional("DF - OnConfigClose - start", True)
 
@@ -644,20 +648,22 @@ EndFunction
 
 Function SetMenuNames()
 
-    Pages = new String[13]
+    Pages = new String[15]
     Pages[0] = "$DF_STATS"
     Pages[1] = "$DF_GENERAL"
     Pages[2] = "$DF_WILLPOWER"
-    Pages[3] = "$DF_COSTS"
-    Pages[4] = "Rules"
-    Pages[5] = "Rule Settings"
-    Pages[6] = "$DF_PUNISHMENTS"
-    Pages[7] = "$DF_CHAOSM"
-    Pages[8] = "$DF_MISC"
-    Pages[9] = "$DF_OTHER"
-    Pages[10] = "$DF_COST_EXPLORER"
-    Pages[11] = "$DF_DEBUG"
-    Pages[12] = "$DF_HELP"
+    Pages[3] = "Relationship"
+    Pages[4] = "$DF_COSTS"
+    Pages[5] = "Rules"
+    Pages[6] = "Events"
+    Pages[7] = "Content Settings"
+    Pages[8] = "$DF_PUNISHMENTS"
+    Pages[9] = "$DF_CHAOSM"
+    Pages[10] = "$DF_MISC"
+    Pages[11] = "$DF_OTHER"
+    Pages[12] = "$DF_COST_EXPLORER"
+    Pages[13] = "$DF_DEBUG"
+    Pages[14] = "$DF_HELP"
     
     DealInfos = New String[20] ; classic deal info
     DealInfos[ 0] = "$DF_RULE_B_1"
@@ -680,7 +686,6 @@ Function SetMenuNames()
     DealInfos[17] = "$DF_RULE_S_2"
     DealInfos[18] = "$DF_RULE_S_3"
     DealInfos[19] = "$DF_RULE_S_4"
-    
 EndFunction
 
 
@@ -767,6 +772,8 @@ EndFunction
 
 Event OnPageReset(String page)
 
+    LastPage = page
+
     If Version != GetDFVersion() 
         AddHeaderOption("$DF_UPDATE_REQUIRED")
         ResetAllOIDs()
@@ -816,7 +823,7 @@ Event OnPageReset(String page)
     EndIf
     ; FOLDEND - Costs
     ; FOLDSTART - Deal Options
-    If page == Pages[5]
+    If page == Pages[7]
         If mcmLocked
             AddHeaderOption("$DF_MCM_LOCKED_HEADER")
             ; Custom whore armor - replicated from below because we want to be able to change this even in HARDCORE mode.
@@ -829,7 +836,7 @@ Event OnPageReset(String page)
     EndIf
     ; FOLDEND - Deal Options
     ; FOLDSTART - Modular Deal Settings
-    If page==Pages[4]
+    If page==Pages[5]
         If mcmLocked
             AddHeaderOption("$DF_MCM_LOCKED_HEADER")
         Else
@@ -889,6 +896,7 @@ Event OnPageReset(String page)
     Endif
     ; FOLDEND - Debug
     
+    OnPageResetExt(page)
 EndEvent
 
 Function DoStatsPageMenu()
@@ -1192,6 +1200,7 @@ string function GetStatusText(int aiStatus)
     endIf
 endFunction
 
+string LastPage = ""
 int CurrPackIndex = 0
 string[] AllPacks
 string[] AllPackNames
@@ -1810,7 +1819,6 @@ Function DoHelpPageMenu()
 
 EndFunction
 
-
 Function ShowClassicDealOptions(Int start, String name, Int stage)
     AddHeaderOption(name)
     If stage <= 0
@@ -2299,7 +2307,7 @@ Event OnOptionHighlight(Int option)
         EndWhile
     EndIf
     
-
+    OnOptionHighlightExt(option)
 EndEvent
 
 
@@ -2345,6 +2353,7 @@ Event OnOptionMenuOpen(Int option)
         SetMenuDialogOptions(AllPackNames)
     EndIf
 
+    OnOptionMenuOpenExt(option)
 EndEvent
 
 Event OnOptionMenuAccept(Int option, Int index)
@@ -2381,6 +2390,8 @@ Event OnOptionMenuAccept(Int option, Int index)
         SetMenuOptionValue(option, AllPackNames[index])
         ForcePageReset()
     EndIf
+
+    OnOptionMenuAcceptExt(option, index)
 EndEvent
 
 Event OnOptionSelect(Int option)
@@ -2921,9 +2932,9 @@ Event OnOptionSelect(Int option)
         SetOptionFlags(option, OPTION_FLAG_DISABLED)
         Tool.FitFullSet()
     ElseIf option == OID_AddWhoreArmor
-        Tool.GiveWhoreArmor(false)
+        DFR_Outfits.Get().GiveWhoreArmor(false)
     ElseIf option == OID_ValidateWhoreArmor
-        SetTextOptionValue(OID_ValidateWhoreArmor, Tool.IsWearingWhoreArmor())
+        SetTextOptionValue(OID_ValidateWhoreArmor, DFR_Outfits.Get().IsWearingWhoreArmor())
     ElseIf option == OID_RemoveHood
         removeItemKeyword = LDC.Libs.zad_DeviousHood
     ElseIf option == OID_RemoveBlindfold
@@ -3060,24 +3071,7 @@ Event OnOptionSelect(Int option)
         Debug.MessageBox("If you want all followers non-devious by default, then use the option in the 'Debug' MCM to find all followers and make them all non-devious. You can then use the enable/disable toggle to enable just the ones you want. The auto scan will not disable any followers you explicitly enabled, and it will not modify current followers or vanilla hirelings, so it's safe to re-run it if you add more followers to your game.")
     ElseIf StorageUtil.GetStringValue(none, "OID_RuleStatus_" + option) != ""
         string rule = StorageUtil.GetStringValue(none, "OID_RuleStatus_" + option)
-
-        if Adversity.IsEventActive(rule)
-            ; do nothing
-            DFR_Util.Log("cannot disable rule due to active " + rule)
-        elseIf Adversity.GetEventName(rule) == "extend"
-            ; do nothing
-            DFR_Util.Log("cannot disable extend rule")
-        elseIf Adversity.IsEventEnabled(rule)
-            if !Adversity.DisableEvent(rule)
-                DFR_Util.Log("failed to disable rule " + rule)
-            endIf
-        elseIf Adversity.IsEventDisabled(rule)
-            if !Adversity.EnableEvent(rule)
-                DFR_Util.Log("failed to enable rule " + rule)
-            endIf
-        endIf
-
-        SetTextOptionValue(option, GetStatusText(Adversity.GetEventStatus(rule)))
+        ToggleEvent(option, rule)
     Endif
     
     If removeItemKeyword
@@ -3134,7 +3128,7 @@ Event OnOptionSelect(Int option)
             ii += 1
         EndWhile
     EndIf
-    
+    OnOptionSelectExt(option)
 EndEvent
 
 
@@ -3690,6 +3684,7 @@ Event OnOptionSliderOpen(Int option)
         SetSliderDialogInterval(1000.0)
     EndIf
 
+    OnOptionSliderOpenExt(option)
 EndEvent
 
 
@@ -4159,6 +4154,7 @@ Event OnOptionSliderAccept(Int option, Float value)
 
     EndIf
 
+    OnOptionSliderAcceptExt(option, value)
 EndEvent
 
 
@@ -4584,7 +4580,6 @@ Function PauseMod()
 
         ; Don't save debt as it shouldn't be modified while we're paused.
         GoldCont.Pause() ; Can modify debt
-        _DFLicenses.Pause(True)
         QuestStage.SetValue(DFlow.getstage())
         DealBstage = DealB.getstage()
         DealOstage = DealO.getstage()
@@ -4639,7 +4634,6 @@ Function ResumeMod()
             Dflow.start()
             Dflow.Setstage(QuestStage.GetValue() As Int)
 
-            _DFLicenses.Pause(False)
             DealB.SetStage(DealBstage)
             DealO.SetStage(DealOstage)
             DealH.SetStage(DealHstage)
@@ -5850,3 +5844,312 @@ EndFunction
 Bool Function IsSlsPresent()
     Return 0.0 != _DFModSlsPresent.GetValue()
 EndFunction
+
+; GENERATED - START
+
+DFR_RelationshipManager property RelationshipManager auto 
+
+
+string format = "{0}"
+
+function OnPageResetExt(string page)
+    if page == "Relationship"
+        ShowRelationshipPage()
+    elseIf page == "Events"
+        ShowEventsPage()
+    endIf
+endFunction
+
+function ShowRelationshipPage()
+    SetCursorFillMode(LEFT_TO_RIGHT)
+
+    OID_DFR_RelationshipManager_FavourIncrement = AddSliderOption("Favour Increment", RelationshipManager.FavourIncrement, "{0}")
+    OID_DFR_RelationshipManager_FavourDecrement = AddSliderOption("Favour Decrement", RelationshipManager.FavourDecrement, "{0}")
+    OID_DFR_RelationshipManager_FavourDailyDecay = AddSliderOption("Favour Daily Decay", RelationshipManager.FavourDailyDecay, "{0}")
+    OID_DFR_RelationshipManager_FavourDailyDecaySlave = AddSliderOption("Favour Decay (Slave)", RelationshipManager.FavourDailyDecaySlave, "{0}")
+    OID_DFR_RelationshipManager_FavourDailyDecayDealPrevention = AddSliderOption("Active Rule Decay Prevention", RelationshipManager.FavourDailyDecayDealPrevention, "{0}")
+    OID_DFR_RelationshipManager_RecentlyFavouredDuration = AddSliderOption("Recent Favour Duration", RelationshipManager.RecentlyFavouredDuration, "{0}")
+    OID_DFR_RelationshipManager_ServiceCooldown = AddSliderOption("Service Cooldown Duration", RelationshipManager.ServiceCooldown, "{0}")
+    OID_DFR_RelationshipManager_NumServicesToSeverity = AddSliderOption("Escalation to Severity Conversion Rate", RelationshipManager.NumServicesToSeverity, "{2}")
+endFunction
+
+function ShowEventsPage()
+    SetCursorFillMode(LEFT_TO_RIGHT)
+
+    OID_CurrentPack = AddMenuOption("Current Pack", GetCurrentPack())
+    
+AddEmptyOption()
+
+    AddHeaderOption("")
+    AddHeaderOption("")
+    PopulateEvents()
+    DummyFunc()
+endFunction
+
+event OnOptionSelectExt(int a_option)
+    
+    
+
+    AcceptEvents(a_option)
+endEvent
+
+event OnOptionSliderOpenExt(int a_option)
+    if a_option == OID_DFR_RelationshipManager_FavourIncrement
+        SetSliderDialogStartValue(RelationshipManager.FavourIncrement)
+        SetSliderDialogDefaultValue(10)
+        SetSliderDialogRange(0, 200)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_RelationshipManager_FavourDecrement
+        SetSliderDialogStartValue(RelationshipManager.FavourDecrement)
+        SetSliderDialogDefaultValue(10)
+        SetSliderDialogRange(0, 200)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_RelationshipManager_FavourDailyDecay
+        SetSliderDialogStartValue(RelationshipManager.FavourDailyDecay)
+        SetSliderDialogDefaultValue(20)
+        SetSliderDialogRange(0, 200)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_RelationshipManager_FavourDailyDecaySlave
+        SetSliderDialogStartValue(RelationshipManager.FavourDailyDecaySlave)
+        SetSliderDialogDefaultValue(10)
+        SetSliderDialogRange(0, 200)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_RelationshipManager_FavourDailyDecayDealPrevention
+        SetSliderDialogStartValue(RelationshipManager.FavourDailyDecayDealPrevention)
+        SetSliderDialogDefaultValue(10)
+        SetSliderDialogRange(0, 200)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_RelationshipManager_RecentlyFavouredDuration
+        SetSliderDialogStartValue(RelationshipManager.RecentlyFavouredDuration)
+        SetSliderDialogDefaultValue(1)
+        SetSliderDialogRange(0, 10)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_RelationshipManager_ServiceCooldown
+        SetSliderDialogStartValue(RelationshipManager.ServiceCooldown)
+        SetSliderDialogDefaultValue(1)
+        SetSliderDialogRange(0, 10)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_RelationshipManager_NumServicesToSeverity
+        SetSliderDialogStartValue(RelationshipManager.NumServicesToSeverity)
+        SetSliderDialogDefaultValue(1)
+        SetSliderDialogRange(0, 1)
+        SetSliderDialogInterval(0.01)
+    
+    endIf
+
+    ShowEventCooldown(a_option)
+endEvent
+
+event OnOptionSliderAcceptExt(int a_option, float a_value)
+    format = "{0}"
+    if a_option == OID_DFR_RelationshipManager_FavourIncrement
+        RelationshipManager.FavourIncrement = a_value as int
+        format = "{0}"
+    elseIf a_option == OID_DFR_RelationshipManager_FavourDecrement
+        RelationshipManager.FavourDecrement = a_value as int
+        format = "{0}"
+    elseIf a_option == OID_DFR_RelationshipManager_FavourDailyDecay
+        RelationshipManager.FavourDailyDecay = a_value as int
+        format = "{0}"
+    elseIf a_option == OID_DFR_RelationshipManager_FavourDailyDecaySlave
+        RelationshipManager.FavourDailyDecaySlave = a_value as int
+        format = "{0}"
+    elseIf a_option == OID_DFR_RelationshipManager_FavourDailyDecayDealPrevention
+        RelationshipManager.FavourDailyDecayDealPrevention = a_value as int
+        format = "{0}"
+    elseIf a_option == OID_DFR_RelationshipManager_RecentlyFavouredDuration
+        RelationshipManager.RecentlyFavouredDuration = a_value as int
+        format = "{0}"
+    elseIf a_option == OID_DFR_RelationshipManager_ServiceCooldown
+        RelationshipManager.ServiceCooldown = a_value as int
+        format = "{0}"
+    elseIf a_option == OID_DFR_RelationshipManager_NumServicesToSeverity
+        RelationshipManager.NumServicesToSeverity = a_value
+        format = "{2}"
+    
+    endIf
+
+    AcceptEventCooldown(a_option, a_value)
+
+    SetSliderOptionValue(a_option, a_value, format)
+endEvent
+
+event OnOptionMenuOpenExt(int a_option)
+    if a_option == OID_CurrentPack
+        SetMenuDialogOptions(PopulatePacks())
+        SetMenuDialogStartIndex(GetCurrentPackIndex())
+        SetMenuDialogDefaultIndex(0)
+    
+    endIf
+endEvent
+
+event OnOptionMenuAcceptExt(int a_option, int a_index)
+    string val = ""
+    if a_option == OID_CurrentPack
+        val = SetCurrentPack(a_index)
+    
+    endIf
+    SetMenuOptionValue(a_option, val)
+endEvent
+
+event OnOptionHighlightExt(int a_option)
+    if a_option == OID_DFR_RelationshipManager_FavourIncrement
+        SetInfoText("Base amount of favour increase when you've pleased your follower.")
+    elseIf a_option == OID_DFR_RelationshipManager_FavourDecrement
+        SetInfoText("Base favour decrease when annoying your follower.")
+    elseIf a_option == OID_DFR_RelationshipManager_FavourDailyDecay
+        SetInfoText("How much favour goes down every 24 hours.")
+    elseIf a_option == OID_DFR_RelationshipManager_FavourDailyDecaySlave
+        SetInfoText("How much favour goes down every 24 hours while you're a slave.")
+    elseIf a_option == OID_DFR_RelationshipManager_FavourDailyDecayDealPrevention
+        SetInfoText("How much favour decay you can avoid per active rule.")
+    elseIf a_option == OID_DFR_RelationshipManager_RecentlyFavouredDuration
+        SetInfoText("How long your follower considers you to have recently serviced them in hours. Bypasses minimum favour checks for various interactions.")
+    elseIf a_option == OID_DFR_RelationshipManager_ServiceCooldown
+        SetInfoText("How long before you can service your follower after you've completed a service event.")
+    elseIf a_option == OID_DFR_RelationshipManager_NumServicesToSeverity
+        SetInfoText("This rate times your escalation stat dictates the maximum severity of the rules/events your follower gives you. Lower means slower escalation, higher means faster escalation.")
+    
+    endIf
+    
+    GetEventDesc(a_option)
+    GetCooldownDesc(a_option)
+endEvent
+
+function Init()
+    AllPacks = Adversity.GetPacks("deviousfollowers")
+    CurrPackIndex = 0
+    DFR_Util.Log("MCM - AllPacks = " + AllPacks + " - CurrPackIndex = " + CurrPackIndex)
+endFunction
+
+; events
+
+string[] function GetEvents()
+    if CurrPackIndex > AllPacks.length || CurrPackIndex < 0
+        CurrPackIndex = 0
+    endIf
+     
+    string[] allEvents = Adversity.GetPackEvents(AllPacks[CurrPackIndex])
+    allEvents = Adversity.FilterEventsByTags(allEvents, Utility.CreateStringArray(1, "type:event"))
+
+    return allEvents
+endFunction
+
+function PopulateEvents()
+    string[] allEvents = GetEvents()
+
+    int i = 0
+    while i < allEvents.length
+        if _DFAnimalCont || Adversity.GetEventTags(allEvents[i]).Find("creature") < 0
+            int oid = AddTextOption(Adversity.GetEventName(allEvents[i]), GetStatusText(Adversity.GetEventStatus(allEvents[i])))
+            StorageUtil.SetStringValue(self, "DFR_Event_OID_" + oid, allEvents[i])
+            oid = AddSliderOption("Cooldown", Adversity.GetEventCooldown(allEvents[i]), "{1}d")
+            StorageUtil.SetStringValue(self, "DFR_Cooldown_OID_" + oid, allEvents[i])
+        endIf
+       
+        i += 1
+    endWhile
+endFunction
+
+function GetEventDesc(int a_option)
+    if StorageUtil.GetStringValue(self, "DFR_Event_OID_" + a_option, "none") != "none"
+        string currEvent = StorageUtil.GetStringValue(self, "DFR_Event_OID_" + a_option, -1)
+        SetInfoText(Adversity.GetEventDesc(currEvent))
+    endIf
+endFunction
+
+function AcceptEvents(int a_option)
+    if StorageUtil.GetStringValue(self, "DFR_Event_OID_" + a_option, "none") != "none"
+        ToggleEvent(a_option, StorageUtil.GetStringValue(self, "DFR_Event_OID_" + a_option, "none"))
+    endIf
+endFunction
+
+function ToggleEvent(int aiOption, string asEvent)
+    if Adversity.IsEventActive(asEvent)
+        ; do nothing
+        DFR_Util.Log("cannot disable event due to active " + asEvent)
+    elseIf Adversity.GetEventName(asEvent) == "extend"
+        ; do nothing
+        DFR_Util.Log("cannot disable extend event")
+    elseIf Adversity.IsEventEnabled(asEvent)
+        if !Adversity.DisableEvent(asEvent)
+            DFR_Util.Log("failed to disable event " + asEvent)
+        endIf
+    elseIf Adversity.IsEventDisabled(asEvent)
+        if !Adversity.EnableEvent(asEvent)
+            DFR_Util.Log("failed to enable event " + asEvent)
+        endIf
+    endIf
+
+    SetTextOptionValue(aiOption, GetStatusText(Adversity.GetEventStatus(asEvent)))
+endFunction
+
+function DummyFunc()
+    ; placeholder
+endFunction
+
+function ShowEventCooldown(int a_option)
+    if StorageUtil.GetStringValue(self, "DFR_Cooldown_OID_" + a_option, "none") != "none"
+        string id = StorageUtil.GetStringValue(self, "DFR_Cooldown_OID_" + a_option, -1)
+        SetSliderDialogStartValue(Adversity.GetEventCooldown(id))
+        SetSliderDialogDefaultValue(0)
+        SetSliderDialogRange(0, 14)
+        SetSliderDialogInterval(0.1)
+    endIf
+endFunction
+
+function AcceptEventCooldown(int a_option, float a_value)
+    if StorageUtil.GetStringValue(self, "DFR_Cooldown_OID_" + a_option, "none") != "none"
+        string id = StorageUtil.GetStringValue(self, "DFR_Cooldown_OID_" + a_option)
+        Adversity.SetEventCooldown(id, a_value)
+        format = "{1}d"
+    endIf
+endFunction
+
+function GetCooldownDesc(int a_option)
+    if StorageUtil.GetStringValue(self, "DFR_Cooldown_OID_" + a_option, "none") != "none"
+        SetInfoText("How long (in days) before this event can be started again.")
+    endIf
+endFunction
+
+; packs
+
+string function GetCurrentPack()
+    return Adversity.GetPackName(AllPacks[CurrPackIndex])
+endFunction
+
+int function GetCurrentPackIndex()
+    return CurrPackIndex
+endFunction
+
+string function SetCurrentPack(int a_index)
+    CurrPackIndex = a_index
+    OnPageReset(LastPage)
+    return Adversity.GetPackName(AllPacks[CurrPackIndex])
+endFunction
+
+string[] function PopulatePacks()
+    string[] packNames = Utility.CreateStringArray(AllPacks.length)
+
+    int i = 0
+    while i < packNames.length
+        packNames[i] = Adversity.GetPackName(AllPacks[i])
+        i += 1
+    endWhile
+    
+    return packNames
+endFunction
+
+
+int OID_DFR_RelationshipManager_FavourIncrement
+int OID_DFR_RelationshipManager_FavourDecrement
+int OID_DFR_RelationshipManager_FavourDailyDecay
+int OID_DFR_RelationshipManager_FavourDailyDecaySlave
+int OID_DFR_RelationshipManager_FavourDailyDecayDealPrevention
+int OID_DFR_RelationshipManager_RecentlyFavouredDuration
+int OID_DFR_RelationshipManager_ServiceCooldown
+int OID_DFR_RelationshipManager_NumServicesToSeverity
+int OID_CurrentPack
+
+
+;GENERATED - END

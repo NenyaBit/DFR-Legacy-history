@@ -676,9 +676,6 @@ Function SetRule(Int ruleIndex, Int b)
     ElseIf ruleIndex == 6  ; Naked
         NakedRule = b
     ElseIf ruleIndex == 7  ; Whore
-        If 2 == b
-            Tool.GiveWhoreArmor(False)
-        EndIf
         WhoreRule = b
     ElseIf ruleIndex == 8  ; Blindfold
         If 1 == b && BlindFoldRule > 1

@@ -1,4 +1,4 @@
-Scriptname DFR_DeviceController extends Quest  
+Scriptname DFR_DeviceController extends Quest conditional
 
 Actor property PlayerRef auto
 zadLibs property Libs auto
@@ -6,6 +6,8 @@ QF__Gift_09000D62 property Flow auto
 GlobalVariable property Lives auto
 GlobalVariable property RemovalPrice auto
 MiscObject property Gold auto
+
+float property FavourMinimum = 0.0 auto hidden conditional
 
 GlobalVariable[] property RemovalBlocked auto ; 0 = allowed, 1 = blocked (generic), 2 = blocked (deal)
 

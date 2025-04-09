@@ -6588,22 +6588,22 @@ PreferredPathing:
   - Navmeshes:
     - 0A3F44:Skyrim.esm
   NavmeshTree:
-  - NavMesh: 0B87DF:Skyrim.esm
-    NodeIndex: 4
-  - NavMesh: 0A3F44:Skyrim.esm
-    NodeIndex: 9
-  - NavMesh: 0E88CC:Skyrim.esm
-    NodeIndex: 7
-  - NavMesh: 079BBF:Skyrim.esm
-    NodeIndex: 6
-  - NavMesh: 105E9A:Skyrim.esm
-  - NavMesh: 103120:Skyrim.esm
-    NodeIndex: 2
-  - NavMesh: 10377B:Skyrim.esm
-    NodeIndex: 1
   - NavMesh: 1030CB:Skyrim.esm
     NodeIndex: 8
+  - NavMesh: 10377B:Skyrim.esm
+    NodeIndex: 1
   - NavMesh: 100F4B:Skyrim.esm
     NodeIndex: 3
+  - NavMesh: 0A3F44:Skyrim.esm
+    NodeIndex: 9
   - NavMesh: 098776:Skyrim.esm
     NodeIndex: 5
+  - NavMesh: 103120:Skyrim.esm
+    NodeIndex: 2
+  - NavMesh: 0B87DF:Skyrim.esm
+    NodeIndex: 4
+  - NavMesh: 0E88CC:Skyrim.esm
+    NodeIndex: 7
+  - NavMesh: 105E9A:Skyrim.esm
+  - NavMesh: 079BBF:Skyrim.esm
+    NodeIndex: 6

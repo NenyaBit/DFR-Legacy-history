@@ -1,9 +1,10 @@
 name: Core
 quest: DFR_Pack
-events: 
+events:
+  # RULES
   - name: Amulet
     global: DFR_Rule_Amulet
-    desc: You must wear an annoying amulet.
+    desc: You must wear an special amulet.
     severity: 1
     tags: [type:rule, path:accessory]
     keywords: 
@@ -24,7 +25,7 @@ events:
   - name: Boots
     global: DFR_Rule_Boots
     desc: You must wear boots.
-    severity: 3
+    severity: 2
     tags: [type:rule, path:bondage]
     conflicts: 
       - type: wear
@@ -54,7 +55,7 @@ events:
         loc: town
   - name: Circlet
     global: DFR_Rule_Circlet
-    desc: You must wear an annoying circlet.
+    desc: You must wear an special circlet.
     severity: 1
     tags: [type:rule, path:accessory]
     keywords: 
@@ -172,7 +173,7 @@ events:
   - name: Naked
     global: DFR_Rule_NakedInTown
     desc: You must be naked in towns.
-    severity: 3
+    severity: 4
     tags: [type:rule, path:slut, naked]
     conflicts:
       - type: naked
@@ -212,7 +213,7 @@ events:
   - name: Sex
     global: DFR_Rule_Sex
     desc: You must offer sex daily.
-    severity: 3
+    severity: 4
     tags: [type:rule, path:slut]
   - name: Skooma
     global: DFR_Rule_Skooma
@@ -252,68 +253,70 @@ events:
   - name: Whore (Plug)
     global: DFR_Rule_WhorePlug
     desc: Your follower will whore you out. 
-    severity: 5
+    severity: 4
     tags: [type:rule, path:whore]
     compatible: [deviousfollowers/core/anal plug]
     excludes: [deviousfollowers/core/whore (plug)]
     conflicts: 
       - type: wear
-        slots: 
+        slots:
           - 48
   - name: Whore (Tattoo)
     global: DFR_Rule_WhoreTattoo
     desc: Your follower will whore you out. 
-    severity: 5
+    severity: 4
     tags: [type:rule, path:whore, requires:skimpy|naked]
     requirements:
       - SlaveTats.esp
   - name: Whore Armor
     global: DFR_Rule_WhoreArmor
-    desc: You must wear whore armor or nothing.
-    severity: 3
+    desc: You must wear the armour your follower provides when outside of towns.
+    severity: 2
     tags: [type:rule, path:whore, skimpy]
     conflicts:
       - type: outfit
         exclusive: true
+        loc:
+          - town
   - name: Innkeeper
     global: DFR_Rule_Innkeeper
     desc: Your follower will offer you to innkeepers.
-    severity: 5
+    severity: 4
     tags: [type:rule, path:whore]
   - name: Merchant
     global: DFR_Rule_Merchant
     desc: Your follower will offer you to merchants.
-    severity: 5
+    severity: 4
     tags: [type:rule, path:whore]
-  - name: Sex
-    global: DFR_Punish_Sex
+
+  # EVENTS
+  - name: Food
+    global: DFR_Event_Food
     severity: 1
-    tags: [type:punishment]
-  - name: Dog Sex
-    global: DFR_Punish_DogSex
-    severity: 2
-    tags: [type:punishment]
-  - name: Horse Sex
-    global: DFR_Punish_HorseSex
-    severity: 2
-    tags: [type:punishment]
-  - name: Spanking
-    global: DFR_Punish_Spanking
+    tags: [type:event, subtype:service]
+    conditions:
+      - GetGlobalValue DFR_LocType == 2
+  - name: Potions
+    global: DFR_Event_Potions
     severity: 1
-    tags: [type:punishment]
-    requirements: 
-      - Impact Play.esp
-  - name: Tattoos
-    global: DFR_Punish_Tattoos
+    tags: [type:event, subtype:service]
+    conditions:
+      - GetGlobalValue DFR_LocType == 2
+  - name: Sharpen
+    global: DFR_Event_Sharpen
     severity: 1
-    tags: [type:punishment]
-    requirements: 
-      - RapeTattoos.esp
+    tags: [type:event, subtype:service]
+    conditions:
+      - GetGlobalValue DFR_LocType == 2
+  - name: Arrows
+    global: DFR_Event_Arrows
+    severity: 1
+    tags: [type:event, subtype:service]
+    conditions:
+      - GetGlobalValue DFR_LocType == 2
   - name: Hunger
-    global: DFR_Punish_Hunger
-    severity: 1
-    tags: [type:punishment]
-  - name: RapeTime
-    global: DFR_Punish_RapeTime
+    global: DFR_Event_Hunger
     severity: 2
-    tags: [type:punishment]
+    tags: [type:event, subtype:service]
+    conditions:
+      - GetGlobalValue DFR_LocType != 2

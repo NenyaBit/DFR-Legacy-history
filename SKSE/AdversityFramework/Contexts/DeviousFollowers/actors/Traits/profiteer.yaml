@@ -1,0 +1,18 @@
+name: Profiteer
+faction: DFR_Trait_Profiteer
+events:
+  like: 
+    - core/whore armor
+    - core/whore (tattoos)
+    - core/whore (sign)
+    - core/slut
+    - core/skooma
+    - core/lactacid
+    - core/circlet
+    - dealerchoice/prostitution
+    - dealerchoice/clean
+    - tag:fashion
+  dislike:
+    - tag:bondage
+    - core/filth
+    - core/chastity

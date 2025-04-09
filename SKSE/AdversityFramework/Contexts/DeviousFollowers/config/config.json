@@ -4,6 +4,10 @@
         "slavery-rules": [],
         "exclude-slavery-rules": ["core/collar", "core/petsuit in town"]
     },
+    "string": {
+        "forced-service": "core/arrows",
+        "forced-punishment": "core/arrows"
+    },
     "int": {
         "num-slavery-rules": 3
     }

@@ -33,6 +33,6 @@ Effects:
       MutagenObjectType: GetVMQuestVariableConditionData
       RunOnTypeIndex: 0
       Quest: 01A282:Devious Devices - Integration.esm
-      SecondUnusedIntParameter: -733391488
+      SecondUnusedIntParameter: -964111712
       VariableName: ::bootsSlowdownToggle_var
     ComparisonValue: 1

@@ -5,114 +5,107 @@ QF__Gift_09000D62 property Flow auto
 Adv_LicenseUtils property Util auto
 ReferenceAlias property MasterAlias auto
 DFR_RelationshipManager property RelManager auto
+_DFGoldConQScript property GoldControl auto
 
-; Status: -2 = disabled both, -1 = disabled external, 0 = disabled internal, 1 = enabled
+int property MinFavourRequired = 0 auto hidden conditional
+
 GlobalVariable[] property LicenseStatuses auto
+
+int STATUS_DISABLED_BOTH = -2
+int STATUS_DISABLED_EXT = -1
+int STATUS_DISABLED_INT = 0
+int STATUS_ENABLED = 1
+
+int LICENSE_TYPE_MAGIC = 0
+int LICENSE_TYPE_WEAPON = 1
+int LICENSE_TYPE_ARMOR = 2
+int LICENSE_TYPE_BIKINI = 3
+int LICENSE_TYPE_CLOTHES = 4
+int LICENSE_TYPE_CURFEW = 5
+int LICENSE_TYPE_WHORE = 6
+
+bool property WaitingForRefresh = false auto hidden conditional
+
+bool property HasGivenLicenses auto hidden conditional
+
 bool property PrefersRegularArmor auto hidden conditional
 bool property LicensesAvailable auto hidden conditional
 
-float property BasePrice = 150.0 auto hidden
-float[] property Markups auto
-int[] property DefaultStatus auto
-
+bool property Enabled auto hidden conditional
 bool property HandlingLicenses = false auto hidden conditional
-bool property CanGiveLicenses auto hidden conditional
 bool property NeedsLicenses auto hidden conditional
+
+float property BasePrice = 150.0 auto hidden
+float property Markup = 10.0 auto hidden
+int[] property DefaultStatus auto
 
 FormList property LicensingLocations auto
 
 Keyword[] property CityKeywords auto
 
-bool Blocked = false
-bool Initialized = false
-
 DFR_Licenses function Get() global
     return Quest.GetQuest("DFR_Licenses") as DFR_Licenses
 endFunction
 
-function Maintenance()
-    DFR_Util.Log("DFR_Licenses - Maintenance")
-    Initialized = false
-    RegisterForSingleUpdate(5.0)
-endFunction
-
-event OnUpdate()
-    UpdateLicenses()
-endEvent
-
-function UpdateLicenses()
-    if !Blocked && !Initialized
-        Initialized = true
-        LoadBarracks()
-        CheckLicenseStatus()
-    elseIf !Blocked && Initialized
-        RefreshLicenses()
-    endIf
-endFunction
-
 function BeginLicensing()
+    Reset()
     HandlingLicenses = true
-    if CanGiveLicenses
-        RefreshLicenses()
-    endIf
+    QueueRefresh()
 endFunction
 
 function Reset()
     HandlingLicenses = false
     PrefersRegularArmor = false
+    HasGivenLicenses = false
     int i = 0
     while i < DefaultStatus.Length
         LicenseStatuses[i].SetValue(DefaultStatus[i])
         i += 1
     endWhile
-    CheckLicenseStatus()
+
+    if !Util.IsEnabled(LICENSE_TYPE_BIKINI)
+        LicenseStatuses[LICENSE_TYPE_ARMOR].SetValue(STATUS_ENABLED)
+        LicenseStatuses[LICENSE_TYPE_BIKINI].SetValue(STATUS_DISABLED_EXT)
+    endIf
 endFunction
 
 function CheckLicenseStatus()
-    CanGiveLicenses = CanRefresh()
     bool available = false
     bool needs = false
+
+    if (RelManager.IsSlave() || GoldControl.Enabled) && PrefersRegularArmor
+        ToggleArmorPreference()
+    endIf
 
     if Util.LicensesAvailable() 
         int i = 0
         while i < LicenseStatuses.Length
             int status = LicenseStatuses[i].GetValue() as int
-            bool enabled = Util.IsEnabled(i)
+            bool licenseEnabled = Util.IsEnabled(i)
             bool has = Util.HasValid(i)
+
+            if status > STATUS_ENABLED
+                status = STATUS_ENABLED
+            endIf
             
-            if enabled
-                if status == -1
-                    status = 1
+            if licenseEnabled
+                if status == STATUS_DISABLED_EXT
+                    status = STATUS_ENABLED
                 endIf
             else
-                if status == 1
-                    status = -1
-                elseIf status == 0
-                    status = -2
+                if status == STATUS_ENABLED
+                    status = STATUS_DISABLED_EXT
+                elseIf status == STATUS_DISABLED_INT
+                    status = STATUS_DISABLED_BOTH
                 endIf
             endIf
     
-            if RelManager.IsSlave()
-                if i == 2 && status == 1 ; disable regular armour
-                    PrefersRegularArmor = false
-                    status = 0
-                endIf
-
-                if i == 3 && status == 0 ; enable bikini armour
-                    status = 1
-                endIf
-            endIf
-    
-            if status == 1 && !has
+            if status == STATUS_ENABLED && !has
                 needs = true
             endIf
     
-            if status > -1
+            if status > STATUS_DISABLED_EXT
                 available = true
-            endIf
-
-            if has && status == 1
-                status = 2
             endIf
 
             ;DFR_Util.Log("DFR_Licenses - CheckLicenseStatus - License " + i + " - Status = " + status + " - Enabled = " + enabled + " - Has = " + has)
@@ -125,78 +118,88 @@ function CheckLicenseStatus()
 
     LicensesAvailable = available
     NeedsLicenses = needs
-   
-    ;DFR_Util.Log("DFR_Licenses - CheckLicenseStatus - LicensesAvailable = " + LicensesAvailable + " NeedsLicenses = " + NeedsLicenses + " CanGiveLicenses = " + CanGiveLicenses)
+
+    ;DFR_Util.Log("DFR_Licenses - CheckLicenseStatus - " + LicensesAvailable + " - " + NeedsLicenses)
 endFunction
 
 function ToggleArmorPreference()
     PrefersRegularArmor = !PrefersRegularArmor
 
-    if PrefersRegularArmor
-        LicenseStatuses[2].SetValue(1)
-        LicenseStatuses[3].SetValue(0)
-    elseIf !PrefersRegularArmor
-        LicenseStatuses[2].SetValue(1)
-        LicenseStatuses[3].SetValue(0)
+    if PrefersRegularArmor && LicenseStatuses[LICENSE_TYPE_ARMOR].GetValue() == STATUS_DISABLED_INT
+        LicenseStatuses[LICENSE_TYPE_ARMOR].SetValue(STATUS_ENABLED)
+        LicenseStatuses[LICENSE_TYPE_BIKINI].SetValue(STATUS_DISABLED_INT)
+    elseIf !PrefersRegularArmor && LicenseStatuses[LICENSE_TYPE_BIKINI].GetValue() == STATUS_DISABLED_INT
+        LicenseStatuses[LICENSE_TYPE_BIKINI].SetValue(STATUS_ENABLED)
+        LicenseStatuses[LICENSE_TYPE_ARMOR].SetValue(STATUS_DISABLED_INT)
     endIf
+
+    QueueRefresh()
 endFunction
 
 function ToggleLicense(int aiType)
-    Blocked = true
-
     int status = LicenseStatuses[aiType].GetValue() as int
     
-    if status == -2
-        status = -1
-    elseIf status == 0
-        status = 1
-    elseIf status == 1 || status == 2
-        status = 0
-    endIf
-
-    if status == 1 && aiType == 2 && !PrefersRegularArmor
-        aiType = 3
+    if status == STATUS_DISABLED_BOTH
+        status = STATUS_DISABLED_EXT
+    elseIf status == STATUS_DISABLED_INT
+        status = STATUS_ENABLED
+    elseIf status == STATUS_ENABLED
+        status = STATUS_DISABLED_INT
     endIf
 
     LicenseStatuses[aiType].SetValue(status)
-    
-    if status == 0
-        if aiType == 2
-            LicenseStatuses[3].SetValue(status)
-        elseIf aiType == 3
-            LicenseStatuses[2].SetValue(status)
-        endIf
+ 
+    if status == STATUS_ENABLED && aiType == LICENSE_TYPE_ARMOR && !PrefersRegularArmor
+        LicenseStatuses[LICENSE_TYPE_BIKINI].SetValue(status)
     endIf
 
-    Blocked = false
+    if status
+        QueueRefresh()
+    endIf
 endFunction
 
 function RefreshLicenses()
-    if Blocked || !HandlingLicenses || !MasterAlias.GetRef() || !CanRefresh() || (RelManager.IsSlave() && RelManager.Favour < 50)
-        return
-    endIf
+    WaitingForRefresh = false
 
-    Blocked = true
+    DFR_Util.Log("Refreshing")
+
     int i = 0
     while i < LicenseStatuses.Length
-        if LicenseStatuses[i].GetValue() == 1 && !Util.HasValid(i)
+        if LicenseStatuses[i].GetValue() == STATUS_ENABLED && !Util.HasValid(i)
             GiveLicense(i)
         endIf
         i += 1
     endWhile
-    CheckLicenseStatus()
-    Blocked = false
+
+    HasGivenLicenses = true
 endFunction
 
 function GiveLicense(int aiType)
     DFR_Util.Log("DFR_Licenses - GiveLicense - " + aiType)
-    Flow.ChargeForSLSLicense(BasePrice, Markups[aiType])
+    Flow.ChargeForSLSLicense(BasePrice, Markup)
     Util.Give(aiType, 0, MasterAlias.GetRef() as Actor, false)
 endFunction
 
 bool function CanRefresh()
+    DFR_Util.Log("CanRefresh - " + Util.LicensesAvailable() + " - " + Adv_LocUtils.LocationHasKwds(PlayerRef.GetCurrentLocation(), CityKeywords) + " - " + LicensingLocations.Find(PlayerRef.GetParentCell()) >= 0)
     return Util.LicensesAvailable() && (Adv_LocUtils.LocationHasKwds(PlayerRef.GetCurrentLocation(), CityKeywords) || LicensingLocations.Find(PlayerRef.GetParentCell()) >= 0)
 endFunction
+
+function QueueRefresh()
+    if CanRefresh()
+        RefreshLicenses()
+    else
+        WaitingForRefresh = true
+    endIf
+endFunction
+
+function TryRefresh()
+    DFR_Util.Log("TryRefresh - " + WaitingForRefresh + " - " + CanRefresh())
+
+    if WaitingForRefresh && CanRefresh()
+        RefreshLicenses()
+    endIf
+endFunction 
 
 function LoadBarracks()
     LicensingLocations.Revert()
@@ -216,4 +219,8 @@ function LoadBarracks()
             LicensingLocations.AddForm(loc)
         EndIf
     EndWhile
+endFunction
+
+bool function IsHandlingBikiniArmor()
+    return Util.IsEnabled(LICENSE_TYPE_ARMOR) && !Util.HasValid(LICENSE_TYPE_ARMOR)
 endFunction

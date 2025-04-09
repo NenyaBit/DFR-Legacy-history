@@ -1,0 +1,444 @@
+name: Whore Armor (Light)
+addKeywords:
+  - _DFWArmor
+  - Adv_RuleItemKwd
+variants:
+  - severity: 1
+    sequence:
+      - key: stormcloak
+    pieces:
+      - name: Stormcloak Gorget A
+        id: 0x890|TAWOBA_guards_addon.esp
+      - name: Stormcloak Cape A
+        id: 0x88F|TAWOBA_guards_addon.esp
+      - name: Stormcloak Leggings Long A
+        id: 0x888|TAWOBA_guards_addon.esp
+      - name: Stormcloak bikini J
+        id: 0x86C|TAWOBA_guards_addon.esp
+      - name: Stormcloak Tasset A
+        id: 0x85E|TAWOBA_guards_addon.esp
+      - name: Stormcloak Thigh A
+        id: 0x842|TAWOBA_guards_addon.esp
+      - name: Stormcloak Abs A
+        id: 0x832|TAWOBA_guards_addon.esp
+      - name: Stormcloak Gauntlets Long A
+        id: 0x82F|TAWOBA_guards_addon.esp
+      - name: Stormcloak Pauldrons A
+        id: 0x815|TAWOBA_guards_addon.esp
+      - name: Stormcloak Boots Long A
+        id: 0x80F|TAWOBA_guards_addon.esp
+      - name: Stormcloak Circlet A
+        id: 0x804|TAWOBA_guards_addon.esp
+  - severity: 2
+    sequence:
+      - key: stormcloak
+    pieces:
+      - name: Stormcloak Gorget A
+        id: 0x890|TAWOBA_guards_addon.esp
+      - name: Stormcloak Cape A
+        id: 0x88F|TAWOBA_guards_addon.esp
+      - name: Stormcloak bikini J
+        id: 0x86C|TAWOBA_guards_addon.esp
+      - name: Stormcloak Tasset A
+        id: 0x85E|TAWOBA_guards_addon.esp
+      - name: Stormcloak Thigh A
+        id: 0x842|TAWOBA_guards_addon.esp
+      - name: Stormcloak Abs A
+        id: 0x832|TAWOBA_guards_addon.esp
+      - name: Stormcloak Gauntlets Long A
+        id: 0x82F|TAWOBA_guards_addon.esp
+      - name: Stormcloak Pauldrons A
+        id: 0x815|TAWOBA_guards_addon.esp
+      - name: Stormcloak Boots Long A
+        id: 0x80F|TAWOBA_guards_addon.esp
+      - name: Stormcloak Circlet A
+        id: 0x804|TAWOBA_guards_addon.esp
+      - name: Stormcloak Officer Shorts A
+        id: 0x830|TAWOBA_sons.esp
+  - severity: 3
+    sequence:
+      - key: stormcloak
+    tags: ['bikini']
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Stormcloak Gorget A
+        id: 0x890|TAWOBA_guards_addon.esp
+      - name: Stormcloak Cape A
+        id: 0x88F|TAWOBA_guards_addon.esp
+      - name: Stormcloak Tasset A
+        id: 0x85E|TAWOBA_guards_addon.esp
+      - name: Stormcloak Thigh A
+        id: 0x842|TAWOBA_guards_addon.esp
+      - name: Stormcloak Abs A
+        id: 0x832|TAWOBA_guards_addon.esp
+      - name: Stormcloak Gauntlets Long A
+        id: 0x82F|TAWOBA_guards_addon.esp
+      - name: Stormcloak bikini D
+        id: 0x820|TAWOBA_guards_addon.esp
+      - name: Stormcloak Pauldrons A
+        id: 0x815|TAWOBA_guards_addon.esp
+      - name: Stormcloak Boots Long A
+        id: 0x80F|TAWOBA_guards_addon.esp
+      - name: Stormcloak Circlet A
+        id: 0x804|TAWOBA_guards_addon.esp
+      - name: Stormcloak Officer Shorts A
+        id: 0x830|TAWOBA_sons.esp
+  - severity: 4
+    sequence:
+      - key: stormcloak
+    tags: ['bikini']
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Stormcloak Gorget A
+        id: 0x890|TAWOBA_guards_addon.esp
+      - name: Stormcloak Cape A
+        id: 0x88F|TAWOBA_guards_addon.esp
+      - name: Stormcloak Tasset A
+        id: 0x85E|TAWOBA_guards_addon.esp
+      - name: Stormcloak Thigh A
+        id: 0x842|TAWOBA_guards_addon.esp
+      - name: Stormcloak Abs A
+        id: 0x832|TAWOBA_guards_addon.esp
+      - name: Stormcloak Gauntlets Long A
+        id: 0x82F|TAWOBA_guards_addon.esp
+      - name: Stormcloak Thong B
+        id: 0x822|TAWOBA_guards_addon.esp
+      - name: Stormcloak bikini D
+        id: 0x820|TAWOBA_guards_addon.esp
+      - name: Stormcloak Pauldrons A
+        id: 0x815|TAWOBA_guards_addon.esp
+      - name: Stormcloak Boots Long A
+        id: 0x80F|TAWOBA_guards_addon.esp
+      - name: Stormcloak Circlet A
+        id: 0x804|TAWOBA_guards_addon.esp
+  - severity: 5
+    sequence:
+      - key: stormcloak
+    tags: ['bikini']
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Stormcloak Gorget A
+        id: 0x890|TAWOBA_guards_addon.esp
+      - name: Stormcloak Tasset A
+        id: 0x85E|TAWOBA_guards_addon.esp
+      - name: Stormcloak Thigh A
+        id: 0x842|TAWOBA_guards_addon.esp
+      - name: Stormcloak Abs A
+        id: 0x832|TAWOBA_guards_addon.esp
+      - name: Stormcloak Gauntlets Long A
+        id: 0x82F|TAWOBA_guards_addon.esp
+      - name: Stormcloak Thong B
+        id: 0x822|TAWOBA_guards_addon.esp
+      - name: Stormcloak bikini D
+        id: 0x820|TAWOBA_guards_addon.esp
+      - name: Stormcloak Pauldrons A
+        id: 0x815|TAWOBA_guards_addon.esp
+      - name: Stormcloak Boots Long A
+        id: 0x80F|TAWOBA_guards_addon.esp
+      - name: Stormcloak Circlet A
+        id: 0x804|TAWOBA_guards_addon.esp
+  - severity: 1
+    sequence:
+      - key: dawnguard
+    pieces:
+      - name: Dawnguard Leggings Long A
+        id: 0x908|TAWOBA_dawn.esp
+      - name: Dawnguard Abs Long A
+        id: 0x9A8|TAWOBA_dawn.esp
+      - name: Dawnguard Bikini F
+        id: 0x82C|TAWOBA_dawn.esp
+      - name: Dawnguard Cape A
+        id: 0x81E|TAWOBA_dawn.esp
+      - name: Dawnguard Tasset A
+        id: 0x81C|TAWOBA_dawn.esp
+      - name: Dawnguard Pauldrons A
+        id: 0x81B|TAWOBA_dawn.esp
+      - name: Dawnguard Thigh A
+        id: 0x817|TAWOBA_dawn.esp
+      - name: Dawnguard Circlet A
+        id: 0x816|TAWOBA_dawn.esp
+      - name: Dawnguard Gorget A
+        id: 0x814|TAWOBA_dawn.esp
+      - name: Dawnguard Gauntlets A
+        id: 0x813|TAWOBA_dawn.esp
+      - name: Dawnguard Boots Long A
+        id: 0x812|TAWOBA_dawn.esp
+  - severity: 2
+    sequence:
+      - key: dawnguard
+    pieces:
+      - name: Dawnguard Thong C
+        id: 0x84A|TAWOBA_dawn.esp
+      - name: Dawnguard Abs Long A
+        id: 0x9A8|TAWOBA_dawn.esp
+      - name: Dawnguard Bikini F
+        id: 0x82C|TAWOBA_dawn.esp
+      - name: Dawnguard Cape A
+        id: 0x81E|TAWOBA_dawn.esp
+      - name: Dawnguard Tasset A
+        id: 0x81C|TAWOBA_dawn.esp
+      - name: Dawnguard Pauldrons A
+        id: 0x81B|TAWOBA_dawn.esp
+      - name: Dawnguard Thigh A
+        id: 0x817|TAWOBA_dawn.esp
+      - name: Dawnguard Circlet A
+        id: 0x816|TAWOBA_dawn.esp
+      - name: Dawnguard Gorget A
+        id: 0x814|TAWOBA_dawn.esp
+      - name: Dawnguard Gauntlets A
+        id: 0x813|TAWOBA_dawn.esp
+      - name: Dawnguard Boots Long A
+        id: 0x812|TAWOBA_dawn.esp
+  - severity: 3
+    sequence:
+      - key: dawnguard
+    tags: ['bikini']
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Dawnguard Thong C
+        id: 0x84A|TAWOBA_dawn.esp
+      - name: Dawnguard Abs Long A
+        id: 0x9A8|TAWOBA_dawn.esp
+      - name: Dawnguard Cape A
+        id: 0x81E|TAWOBA_dawn.esp
+      - name: Dawnguard Tasset A
+        id: 0x81C|TAWOBA_dawn.esp
+      - name: Dawnguard Pauldrons A
+        id: 0x81B|TAWOBA_dawn.esp
+      - name: Dawnguard Thigh A
+        id: 0x817|TAWOBA_dawn.esp
+      - name: Dawnguard Circlet A
+        id: 0x816|TAWOBA_dawn.esp
+      - name: Dawnguard Gorget A
+        id: 0x814|TAWOBA_dawn.esp
+      - name: Dawnguard Gauntlets A
+        id: 0x813|TAWOBA_dawn.esp
+      - name: Dawnguard Boots Long A
+        id: 0x812|TAWOBA_dawn.esp
+      - name: Dawnguard Bikini A
+        id: 0x811|TAWOBA_dawn.esp
+  - severity: 4
+    sequence:
+      - key: dawnguard
+    tags: ['bikini']
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Dawnguard Thong C
+        id: 0x84A|TAWOBA_dawn.esp
+      - name: Dawnguard Cape A
+        id: 0x81E|TAWOBA_dawn.esp
+      - name: Dawnguard Tasset A
+        id: 0x81C|TAWOBA_dawn.esp
+      - name: Dawnguard Pauldrons A
+        id: 0x81B|TAWOBA_dawn.esp
+      - name: Dawnguard Thigh A
+        id: 0x817|TAWOBA_dawn.esp
+      - name: Dawnguard Circlet A
+        id: 0x816|TAWOBA_dawn.esp
+      - name: Dawnguard Gorget A
+        id: 0x814|TAWOBA_dawn.esp
+      - name: Dawnguard Gauntlets A
+        id: 0x813|TAWOBA_dawn.esp
+      - name: Dawnguard Boots Long A
+        id: 0x812|TAWOBA_dawn.esp
+      - name: Dawnguard Bikini A
+        id: 0x811|TAWOBA_dawn.esp
+      - name: Dawnguard Abs A
+        id: 0x810|TAWOBA_dawn.esp
+  - severity: 5
+    sequence:
+      - key: dawnguard
+    tags: ['bikini']
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Dawnguard Thong C
+        id: 0x84A|TAWOBA_dawn.esp
+      - name: Dawnguard Cape A
+        id: 0x81E|TAWOBA_dawn.esp
+      - name: Dawnguard Tasset A
+        id: 0x81C|TAWOBA_dawn.esp
+      - name: Dawnguard Pauldrons A
+        id: 0x81B|TAWOBA_dawn.esp
+      - name: Dawnguard Thigh A
+        id: 0x817|TAWOBA_dawn.esp
+      - name: Dawnguard Gorget A
+        id: 0x814|TAWOBA_dawn.esp
+      - name: Dawnguard Gauntlets A
+        id: 0x813|TAWOBA_dawn.esp
+      - name: Dawnguard Boots Long A
+        id: 0x812|TAWOBA_dawn.esp
+      - name: Dawnguard Bikini A
+        id: 0x811|TAWOBA_dawn.esp
+      - name: Dawnguard Abs A
+        id: 0x810|TAWOBA_dawn.esp
+  - severity: 1
+    sequence:
+      - key: kardia
+    pieces:
+      - name: Kardia's Malta Waffenrock
+        id: 0x00083E|TBD - NiseKardiaArmor.esp
+      - name: "Kardia's Sleeves & Stockings Heels"
+        id: 0x000839|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Gambeson
+        id: 0x00081B|TBD - NiseKardiaArmor.esp
+      - name: Rogue Pants
+        id: 0x000829|RogueOutfit.esp
+  - severity: 2
+    sequence:
+      - key: kardia
+    pieces:
+      - name: Kardia's Malta Waffenrock
+        id: 0x00083E|TBD - NiseKardiaArmor.esp
+      - name: "Kardia's Sleeves & Stockings Heels"
+        id: 0x000839|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Gambeson Stockings
+        id: 0x000834|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Gambeson
+        id: 0x00081B|TBD - NiseKardiaArmor.esp
+      - name: Wayward Knight 4 Skirt - SMP
+        id: 0x000F9A|ahzWaywardKnight.esp
+      - name: Wayward Knight Innerwear
+        id: 0x00083D|ahzWaywardKnight.esp
+  - severity: 3
+    sequence:
+      - key: kardia
+    tags: ['bikini']
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Kardia's Panty Xtra1 (B)
+        id: 0x000863|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Malta Waffenrock
+        id: 0x00083E|TBD - NiseKardiaArmor.esp
+      - name: "Kardia's Sleeves & Stockings Heels"
+        id: 0x000839|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Gambeson Stockings
+        id: 0x000834|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Gambeson
+        id: 0x00081B|TBD - NiseKardiaArmor.esp
+  - severity: 4
+    sequence:
+      - key: kardia
+    tags: ['bikini']
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Kardia's Panty Xtra1 (B)
+        id: 0x000863|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Malta Waffenrock
+        id: 0x00083E|TBD - NiseKardiaArmor.esp
+      - name: "Kardia's Sleeves & Stockings Heels"
+        id: 0x000839|TBD - NiseKardiaArmor.esp
+      - name: "Kardia's Sleeves & Stockings Gloves"
+        id: 0x000835|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Gambeson Stockings
+        id: 0x000834|TBD - NiseKardiaArmor.esp
+  - severity: 5
+    sequence:
+      - key: kardia
+    tags: ['bikini']
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Kardia's Bikini Heels
+        id: 0x000831|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Bikini Stockings
+        id: 0x000830|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Bikini Gloves
+        id: 0x00082E|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Bikini
+        id: 0x000815|TBD - NiseKardiaArmor.esp
+  - severity: 1
+    sequence:
+      - key: elegant
+    pieces:
+      - name: Elegant Explorer Boots
+        id: 0x00080D|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Pants
+        id: 0x00080C|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Gloves
+        id: 0x00080B|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Corset
+        id: 0x00080A|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Jacket
+        id: 0x000809|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Shirt
+        id: 0x000808|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Leotard
+        id: 0x000801|[J3] Elegant Explorer.esp
+  - severity: 2
+    sequence:
+      - key: elegant
+    pieces:
+      - name: Elegant Explorer Boots
+        id: 0x00080D|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Gloves
+        id: 0x00080B|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Corset
+        id: 0x00080A|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Jacket
+        id: 0x000809|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Shirt
+        id: 0x000808|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Leotard
+        id: 0x000801|[J3] Elegant Explorer.esp
+      - name: Wayward Knight 3 Skirt - SMP
+        id: 0x000F99|ahzWaywardKnight.esp
+  - severity: 3
+    sequence:
+      - key: elegant
+    pieces:
+      - name: Elegant Explorer Boots
+        id: 0x00080D|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Gloves
+        id: 0x00080B|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Corset
+        id: 0x00080A|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Jacket
+        id: 0x000809|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Shirt
+        id: 0x000808|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Leotard
+        id: 0x000801|[J3] Elegant Explorer.esp
+  - severity: 4
+    sequence:
+      - key: elegant
+    tags: ['bikini']
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Elegant Explorer Boots
+        id: 0x00080D|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Gloves
+        id: 0x00080B|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Corset
+        id: 0x00080A|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Jacket
+        id: 0x000809|[J3] Elegant Explorer.esp
+      - name: Rogue Top [Dark]
+        id: 0x000819|RogueOutfit.esp
+      - name: Leather Thong B
+        id: 0x01DA7|The Amazing World of Bikini Armors REMASTERED.esp
+  - severity: 5
+    sequence:
+      - key: elegant
+    tags: ['bikini']
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Elegant Explorer Boots
+        id: 0x00080D|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Gloves
+        id: 0x00080B|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Corset
+        id: 0x00080A|[J3] Elegant Explorer.esp
+      - name: Elegant Explorer Jacket
+        id: 0x000809|[J3] Elegant Explorer.esp
+      - name: Rogue Top [Dark]
+        id: 0x000819|RogueOutfit.esp

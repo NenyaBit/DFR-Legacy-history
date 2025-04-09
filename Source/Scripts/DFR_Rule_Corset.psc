@@ -7,7 +7,9 @@ bool function OnStart(Actor akTarget)
     else
         LDC.AddDeviceByKeyword(LDC.libs.zad_DeviousCorset)
     endIf
-endFunction 
+
+    return true
+endFunction
 
 function OnStop()
     _LDC LDC = (GetOwningQuest() as _DFlowModDealController).Tool.LDC

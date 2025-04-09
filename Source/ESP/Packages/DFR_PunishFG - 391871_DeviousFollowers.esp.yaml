@@ -68,7 +68,7 @@ Conditions:
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 010617:DeviousFollowers.esp
-    SecondUnusedIntParameter: -733245440
+    SecondUnusedIntParameter: -963975360
     VariableName: ::Suspend_var
 - MutagenObjectType: ConditionGlobal
   Data:
@@ -79,7 +79,7 @@ Conditions:
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 38C70D:DeviousFollowers.esp
-    SecondUnusedIntParameter: -733245408
+    SecondUnusedIntParameter: -963975328
     VariableName: ::ForcedPunishment_var
   ComparisonValue: 1
 - MutagenObjectType: ConditionGlobal
@@ -87,7 +87,7 @@ Conditions:
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 38C70D:DeviousFollowers.esp
-    SecondUnusedIntParameter: -733245376
+    SecondUnusedIntParameter: -963975296
     VariableName: ::ForcedPunishmentTImer_var
   ComparisonValue: 000039:Skyrim.esm
 - MutagenObjectType: ConditionFloat
@@ -116,7 +116,6 @@ Data:
     MutagenObjectType: PackageDataTopic
     Topics:
     - MutagenObjectType: TopicReference
-      Reference: 3AFEC9:DeviousFollowers.esp
 - Key: 8
   Value:
     MutagenObjectType: PackageDataLocation

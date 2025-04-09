@@ -8,7 +8,6 @@ Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 libs.EquipDevice(libs.PlayerRef, I , R, libs.zad_DeviousArmbinder)
 (GetOwningQuest() as _DDeal).Triggered = True
-(Humility As _DflowHumliation).BoundHands = 1
 ;END CODE
 EndFunction
 ;END FRAGMENT

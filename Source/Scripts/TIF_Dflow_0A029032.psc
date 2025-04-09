@@ -9,9 +9,9 @@ Actor akSpeaker = akSpeakerRef as Actor
 float a = Debt.getvalue()
 GameQ.reset()
 GameQ.setstage(10)
+libs.UnlockDevice(PlayerRef, Mittens)
 GetOwningQuest().setstage(299)
 q.Etimerreset()
-
 Utility.wait(2)
 a = a+1500
 Debt.setvalue(a)
@@ -41,3 +41,5 @@ _Dftools property tool auto
 
 GlobalVariable Property TEMP  Auto  
 GlobalVariable Property debt  Auto  
+
+Armor Property Mittens  Auto  
