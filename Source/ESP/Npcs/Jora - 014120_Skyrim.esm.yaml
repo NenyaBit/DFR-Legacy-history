@@ -147,7 +147,7 @@ PlayerSkills:
   Magicka: 50
   Stamina: 70
   Unused: 16748
-  Unused2: 0xFE440F
+  Unused2: 0x7EC50F
 HeadParts:
 - 040228:Skyrim.esm
 - 0E4DA1:Skyrim.esm

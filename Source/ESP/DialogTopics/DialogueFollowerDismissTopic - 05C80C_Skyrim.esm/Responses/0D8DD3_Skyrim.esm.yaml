@@ -8,11 +8,11 @@ VirtualMachineAdapter:
       Name: _df_follower
       Object: 1B5B9E:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: pDialogueFollower
-      Object: 0750BA:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
       Name: DismissedFollowerFaction
       Object: 05C84C:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: pDialogueFollower
+      Object: 0750BA:Skyrim.esm
   ScriptFragments:
     MutagenObjectType: ScriptFragments
     FileName: TIF__000D8DD3

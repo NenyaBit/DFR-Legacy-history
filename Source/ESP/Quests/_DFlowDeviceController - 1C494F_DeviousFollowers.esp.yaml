@@ -5,14 +5,14 @@ VirtualMachineAdapter:
   - Name: _LDC
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: libs
-      Object: 00F624:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
       Name: xlibs
       Object: 00CA01:Devious Devices - Expansion.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: xlibs2
       Object: 00CA01:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: libs
+      Object: 00F624:Devious Devices - Integration.esm
   - Name: QF__DFlowDeviceController_081C494F
   FileName: QF__DFlowDeviceController_081C494F
   Fragments:

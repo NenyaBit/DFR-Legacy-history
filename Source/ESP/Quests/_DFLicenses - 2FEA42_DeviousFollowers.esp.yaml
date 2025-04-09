@@ -5,17 +5,23 @@ VirtualMachineAdapter:
   - Name: _DFLicensing
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFLicenseSupplyWeapon
-      Object: 2FEA61:DeviousFollowers.esp
+      Name: _DFlow
+      Object: 000D62:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DWill
-      Object: 01A2A7:Update.esm
+      Name: _DFLicenseSupplyBikini
+      Object: 2FEA65:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: _DFLicenseSupplyCurfew
       Object: 2FEA64:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFLicenseSupplyMagic
-      Object: 2FEA60:DeviousFollowers.esp
+      Name: _DFLicenseSupplyWeapon
+      Object: 2FEA61:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowDealController
+      Object: 01C86D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseSupplyArmor
+      Object: 2FEA5F:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: _DflowGoldMode
       Object: 112478:DeviousFollowers.esp
@@ -23,17 +29,29 @@ VirtualMachineAdapter:
       Name: _DFLicenseEnabledMagic
       Object: 303BA3:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFLicenseSupplyBikini
-      Object: 2FEA65:DeviousFollowers.esp
+      Name: _DFLicenseEnableCount
+      Object: 303BA1:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlow
-      Object: 000D62:DeviousFollowers.esp
+      Name: _DFLicenseSupplyClothes
+      Object: 2FEA62:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFLicenseEnabledProtection
-      Object: 303BA2:DeviousFollowers.esp
+      Name: _DFLicenseLocations
+      Object: 317FB0:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseSupplyMagic
+      Object: 2FEA60:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseSupplyProtection
+      Object: 2FEA68:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: PlayerRef
       Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: KeywordCity
+      Object: 013168:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFLicenseEnabledProtection
+      Object: 303BA2:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: _DFLicenseSupplyWhore
       Object: 2FEA63:DeviousFollowers.esp
@@ -41,26 +59,8 @@ VirtualMachineAdapter:
       Name: _DFLicenseStatus
       Object: 2FEA69:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFLicenseLocations
-      Object: 317FB0:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFLicenseEnableCount
-      Object: 303BA1:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFLicenseSupplyClothes
-      Object: 2FEA62:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFLicenseSupplyArmor
-      Object: 2FEA5F:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFLicenseSupplyProtection
-      Object: 2FEA68:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: KeywordCity
-      Object: 013168:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowDealController
-      Object: 01C86D:DeviousFollowers.esp
+      Name: _DWill
+      Object: 01A2A7:Update.esm
   - Name: _Dx_QF__DFLicenses_092FEA42
   FileName: _Dx_QF__DFLicenses_092FEA42
   Fragments:

@@ -5,48 +5,48 @@ VirtualMachineAdapter:
   - Name: _MDDeal
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: tool
-      Object: 01210D:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DMC
-      Object: 1BD274:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
       Name: GameDaysPassed
       Object: 000039:Skyrim.esm
     - MutagenObjectType: ScriptIntProperty
       Name: Rule2Code
     - MutagenObjectType: ScriptObjectProperty
-      Name: PlayerRef
-      Object: 000014:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Gold001
-      Object: 00000F:Skyrim.esm
-    - MutagenObjectType: ScriptIntProperty
-      Name: Rule1Code
-    - MutagenObjectType: ScriptIntProperty
-      Name: Enabled
-      Data: 1
-    - MutagenObjectType: ScriptObjectProperty
       Name: _DflowDealBaseDays
       Object: 03CDFB:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DC
+      Object: 01C86D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptFloatProperty
+      Name: Delay
+    - MutagenObjectType: ScriptObjectProperty
       Name: DealPrice
       Object: 1DD58C:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: Rule1Code
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tool
+      Object: 01210D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: LDC
       Object: 1C494F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DMC
+      Object: 1BD274:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: DealPriceTimer
       Object: 1DD590:DeviousFollowers.esp
     - MutagenObjectType: ScriptIntProperty
       Name: Stat
     - MutagenObjectType: ScriptIntProperty
+      Name: Enabled
+      Data: 1
+    - MutagenObjectType: ScriptIntProperty
       Name: Rule3Code
-    - MutagenObjectType: ScriptFloatProperty
-      Name: Delay
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DC
-      Object: 01C86D:DeviousFollowers.esp
   - Name: QF__081E24D2
   FileName: QF__081E24D2
   Fragments:

@@ -32,6 +32,7 @@ GlobalVariable Property StatusActive Auto
 Function ShowBuyoutMenu()
     buyoutDeal = DealManager.ShowBuyoutMenu()
     Debug.Trace("DF - Menu Opened - Selected " + buyoutDeal)
+    _DFBuyout.SetValue(DealManager.GetDealCost(buyoutDeal))
     Cancelled = buyoutDeal == ""
 EndFunction
 
@@ -53,7 +54,7 @@ Function HandleBuyout()
     endIf
 
     DealManager.RemoveDeal(buyoutDeal)
-    PlayerRef.RemoveItem(Gold, DealManager.GetDealCost(buyoutDeal))
+    PlayerRef.RemoveItem(Gold, _DFBuyout.GetValue() as int)
 
     Debug.Trace("DF - Buyout ENDED - " + buyoutDeal)
 EndFunction

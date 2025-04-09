@@ -1,6 +1,6 @@
 {
     "name": "1000008",
-    "priority": 10000300,
+    "priority": 2110000300,
     "conditions": [
         {
             "condition": "IsChild",

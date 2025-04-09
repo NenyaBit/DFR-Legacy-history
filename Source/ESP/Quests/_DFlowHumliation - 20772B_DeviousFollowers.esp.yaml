@@ -5,19 +5,19 @@ VirtualMachineAdapter:
   - Name: _DFlowHumliation
     Properties:
     - MutagenObjectType: ScriptFloatProperty
-      Name: NotiPer
-      Data: 1.01
-    - MutagenObjectType: ScriptFloatProperty
       Name: timer
+    - MutagenObjectType: ScriptBoolProperty
+      Name: active
+      Data: True
+    - MutagenObjectType: ScriptFloatProperty
+      Name: Multi
+      Data: 5
     - MutagenObjectType: ScriptObjectProperty
       Name: tool
       Object: 01210D:DeviousFollowers.esp
     - MutagenObjectType: ScriptFloatProperty
-      Name: Multi
-      Data: 5
-    - MutagenObjectType: ScriptBoolProperty
-      Name: active
-      Data: True
+      Name: NotiPer
+      Data: 1.01
   - Name: QF__DFlowHumliation_0820772B
   FileName: QF__DFlowHumliation_0820772B
   Fragments:

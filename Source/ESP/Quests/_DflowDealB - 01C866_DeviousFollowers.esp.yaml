@@ -8,62 +8,52 @@ VirtualMachineAdapter:
       Name: GameDaysPassed
       Object: 000039:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowDealBCleaning3
-      Object: 0EA316:DeviousFollowers.esp
+      Name: _DflowDealBaseDays
+      Object: 03CDFB:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealBCleaning2Resist
+      Object: 0EA318:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: libs
+      Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealBCleaning1Resist
+      Object: 0EA317:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowDealBPTimer
+      Object: 03CDFF:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealBCleaning1
+      Object: 0EA314:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DDeal
+      Object: 01C866:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: _DFlowDealBCleaning4
       Object: 0EA319:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: DDeal
-      Object: 01C866:DeviousFollowers.esp
+      Name: _DFlowDealBCleaning3
+      Object: 0EA316:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: _DFlowDealBCleaning2
       Object: 0EA315:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: q
       Object: 000D62:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowDealBCleaning1Resist
-      Object: 0EA317:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowDealBaseDays
-      Object: 03CDFB:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowDealBCleaning1
-      Object: 0EA314:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: libs
-      Object: 00F624:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowDealBCleaning2Resist
-      Object: 0EA318:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowDealBPTimer
-      Object: 03CDFF:DeviousFollowers.esp
   - Name: _DF_BondageDeal
     Properties:
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Gold001
-      Object: 00000F:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Hands
-      Object: 0159AC:Devious Devices - Expansion.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Collar
     - MutagenObjectType: ScriptObjectProperty
       Name: LDC
       Object: 1C494F:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: Item1
-      Object: 0E7B65:DeviousFollowers.esp
-    - MutagenObjectType: ScriptIntProperty
-      Name: Said1
+      Name: Hands
+      Object: 0159AC:Devious Devices - Expansion.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: GameDaysPassed
-      Object: 000039:Skyrim.esm
+      Name: gag
+      Object: 00D4F0:Devious Devices - Expansion.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: PlayerRef
-      Object: 000014:Skyrim.esm
+      Name: _DFBoredom
+      Object: 231892:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: tool
       Object: 01210D:DeviousFollowers.esp
@@ -71,25 +61,35 @@ VirtualMachineAdapter:
       Name: Item1R
       Object: 0E7B66:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: boots
+      Object: 047BFE:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptIntProperty
+      Name: Said1
+    - MutagenObjectType: ScriptFloatProperty
+      Name: Delay
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Collar
+    - MutagenObjectType: ScriptObjectProperty
       Name: DC
       Object: 01C86D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Item1
+      Object: 0E7B65:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Corset
       Object: 047BFE:Devious Devices - Expansion.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: libs
       Object: 00F624:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFBoredom
-      Object: 231892:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: boots
-      Object: 047BFE:Devious Devices - Expansion.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: gag
-      Object: 00D4F0:Devious Devices - Expansion.esm
-    - MutagenObjectType: ScriptFloatProperty
-      Name: Delay
   FileName: QF__DflowDealB_0A01C866
   Fragments:
   - Unknown2: 1

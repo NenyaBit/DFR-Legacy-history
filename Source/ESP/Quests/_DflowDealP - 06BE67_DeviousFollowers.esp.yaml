@@ -5,18 +5,18 @@ VirtualMachineAdapter:
   - Name: QF__DflowDealP_0806BE67
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowDealBaseDays
-      Object: 03CDFB:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
       Name: GameDaysPassed
       Object: 000039:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowDealPPTimer
-      Object: 075CED:DeviousFollowers.esp
+      Name: _DflowDealBaseDays
+      Object: 03CDFB:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Alias__DMaster
       Object: 06BE67:DeviousFollowers.esp
       Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowDealPPTimer
+      Object: 075CED:DeviousFollowers.esp
   - Name: _DF_PiercingDeal
     Properties:
     - MutagenObjectType: ScriptObjectProperty
@@ -26,20 +26,17 @@ VirtualMachineAdapter:
       Name: PlayerRef
       Object: 000014:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
+      Name: _DFBoredom
+      Object: 231892:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Vag
+      Object: 093831:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
       Name: Gold001
       Object: 00000F:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: DC
       Object: 01C86D:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: LDC
-      Object: 1C494F:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Vag
-      Object: 093831:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: PTool
-      Object: 0409A4:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: Nips
       Object: 093833:DeviousFollowers.esp
@@ -47,8 +44,11 @@ VirtualMachineAdapter:
       Name: tool
       Object: 01210D:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFBoredom
-      Object: 231892:DeviousFollowers.esp
+      Name: PTool
+      Object: 0409A4:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LDC
+      Object: 1C494F:DeviousFollowers.esp
   FileName: QF__DflowDealP_0806BE67
   Fragments:
   - Unknown2: 1

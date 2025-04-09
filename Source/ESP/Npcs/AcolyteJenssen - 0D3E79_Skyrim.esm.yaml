@@ -145,7 +145,7 @@ PlayerSkills:
   Stamina: 70
   Unused: 16748
   GearedUpWeapons: 1
-  Unused2: 0xFE440F
+  Unused2: 0x7EC50F
 HeadParts:
 - 02425C:Skyrim.esm
 - 051416:Skyrim.esm

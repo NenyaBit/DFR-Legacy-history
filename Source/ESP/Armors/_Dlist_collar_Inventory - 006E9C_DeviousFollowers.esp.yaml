@@ -5,54 +5,31 @@ VirtualMachineAdapter:
   - Name: zadCollarScript
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: deviceRendered
-      Object: 006E9D:DeviousFollowers.esp
+      Name: zad_DD_EscapeLockPickMSG
+      Object: 063001:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_EscapeLockPickSuccessMSG
-      Object: 063003:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptFloatProperty
-      Name: CutDeviceEscapeChance
+      Name: zad_DD_EscapeCutFailureMSG
+      Object: 063005:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_UnlockFailJammedMSG
-      Object: 063007:Devious Devices - Integration.esm
+      Name: Aroused
+      Object: 04290F:SexLabAroused.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_RepairLockNotJammedMSG
-      Object: 063008:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptFloatProperty
-      Name: LockJamChance
-      Data: 33
+      Name: zad_DeviceMsg
+      Object: 06DCE5:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: deviceInventory
-      Object: 006E9C:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_EscapeStruggleMSG
-      Object: 062FFE:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DeviceMsgMagic
-      Object: 00B573:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_EscapeDeviceMSG
-      Object: 063013:Devious Devices - Integration.esm
+      Name: zad_DD_RepairLockFailureMSG
+      Object: 06300B:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: zad_DD_OnLeaveItNotWornMSG
       Object: 06300F:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: KeyBreakChance
+      Data: 25
     - MutagenObjectType: ScriptObjectProperty
-      Name: deviceKey
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_RepairLockMSG
-      Object: 063009:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_EscapeCutMSG
-      Object: 063004:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_KeyBreakJamMSG
-      Object: 063012:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_OnNoKeyMSG
-      Object: 06300D:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_EscapeLockPickFailureMSG
-      Object: 063002:Devious Devices - Integration.esm
+      Name: Lockpick
+      Object: 00000A:Skyrim.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: BaseEscapeChance
     - MutagenObjectType: ScriptFloatProperty
       Name: LockPickEscapeChance
       Data: 15
@@ -60,76 +37,99 @@ VirtualMachineAdapter:
       Name: deviceQuest
       Object: 00F624:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_UnlockFailJammedMSG
+      Object: 063007:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_KeyBreakMSG
+      Object: 063011:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviousDevice
+      Object: 003DF7:Devious Devices - Assets.esm
+    - MutagenObjectType: ScriptObjectProperty
       Name: zad_DD_OnPutOnDevice
       Object: 009F7C:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: zad_DeviceRemoveMsg
       Object: 00C039:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DeviousDevice
-      Object: 003DF7:Devious Devices - Assets.esm
+      Name: zad_DD_RepairLockMSG
+      Object: 063009:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_RepairLockSuccessMSG
-      Object: 06300A:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptFloatProperty
-      Name: BaseEscapeChance
-    - MutagenObjectType: ScriptFloatProperty
-      Name: CatastrophicFailureChance
-      Data: 10
+      Name: deviceKey
     - MutagenObjectType: ScriptObjectProperty
-      Name: Lockpick
-      Object: 00000A:Skyrim.esm
+      Name: zad_DD_KeyBreakJamMSG
+      Object: 063012:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_OnNotEnoughKeysMSG
-      Object: 06300E:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptFloatProperty
-      Name: KeyBreakChance
-      Data: 25
+      Name: zad_DD_EscapeCutMSG
+      Object: 063004:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_EscapeStruggleSuccessMSG
-      Object: 063000:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptStringProperty
-      Name: deviceName
-      Data: Collar
+      Name: zad_DeviceMsgMagic
+      Object: 00B573:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_EscapeLockPickMSG
-      Object: 063001:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_RepairLockFailureMSG
-      Object: 06300B:Devious Devices - Integration.esm
+      Name: zad_DD_EscapeDeviceMSG
+      Object: 063013:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: zad_DD_EscapeStruggleFailureMSG
       Object: 062FFF:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_EscapeCutSuccessMSG
-      Object: 063006:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_OnLeaveItWornMSG
-      Object: 063010:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DeviceEscapeMsg
-      Object: 05A3E0:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptFloatProperty
-      Name: LockAccessDifficulty
-      Data: 15
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_EscapeCutFailureMSG
-      Object: 063005:Devious Devices - Integration.esm
+      Name: libs
+      Object: 00F624:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: zad_DD_OnEquipDeviceMSG
       Object: 06300C:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DeviceMsg
-      Object: 06DCE5:Devious Devices - Integration.esm
+      Name: zad_DD_EscapeStruggleSuccessMSG
+      Object: 063000:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: LockAccessDifficulty
+      Data: 15
     - MutagenObjectType: ScriptObjectProperty
-      Name: libs
-      Object: 00F624:Devious Devices - Integration.esm
+      Name: zad_DD_OnNotEnoughKeysMSG
+      Object: 06300E:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DD_KeyBreakMSG
-      Object: 063011:Devious Devices - Integration.esm
+      Name: deviceInventory
+      Object: 006E9C:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: Aroused
-      Object: 04290F:SexLabAroused.esm
+      Name: zad_DeviceEscapeMsg
+      Object: 05A3E0:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnLeaveItWornMSG
+      Object: 063010:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: CatastrophicFailureChance
+      Data: 10
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeCutSuccessMSG
+      Object: 063006:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: LockJamChance
+      Data: 33
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_RepairLockSuccessMSG
+      Object: 06300A:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeLockPickSuccessMSG
+      Object: 063003:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptFloatProperty
+      Name: CutDeviceEscapeChance
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_RepairLockNotJammedMSG
+      Object: 063008:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: deviceRendered
+      Object: 006E9D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_OnNoKeyMSG
+      Object: 06300D:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptStringProperty
+      Name: deviceName
+      Data: Collar
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeLockPickFailureMSG
+      Object: 063002:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DD_EscapeStruggleMSG
+      Object: 062FFE:Devious Devices - Integration.esm
 Name:
   TargetLanguage: English
   Value: Deprecated Town Collar
