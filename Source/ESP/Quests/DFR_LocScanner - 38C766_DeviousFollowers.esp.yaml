@@ -1,0 +1,280 @@
+FormKey: 38C766:DeviousFollowers.esp
+EditorID: DFR_LocScanner
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR_LocScanner
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: numHorses
+      Object: 429875:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: DogAliases
+      Objects:
+      - Name: ''
+        Object: 38C766:DeviousFollowers.esp
+        Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: HorseAliases
+      Objects:
+      - Name: ''
+        Object: 38C766:DeviousFollowers.esp
+        Alias: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: NumDogs
+      Object: 41F5F4:DeviousFollowers.esp
+  Versioning:
+  - Break0
+  ExtraBindDataVersion: 0
+  FileName: ''
+Flags:
+- AllowRepeatedStages
+- 0x1000
+NextAliasID: 6
+Aliases:
+- Name: Dog1
+  Flags:
+  - Optional
+  - MatchingRefInLoadedArea
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetDeadConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: HasLoaded3DConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 0131EE:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 018B33:Dawnguard.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 0122B7:Dawnguard.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 018B36:Dawnguard.esm
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 2
+  Name: Dog1000
+  Flags:
+  - Optional
+  - MatchingRefInLoadedArea
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetDeadConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: HasLoaded3DConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 0131EE:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 018B33:Dawnguard.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 0122B7:Dawnguard.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 018B36:Dawnguard.esm
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 4
+  Name: Dog1000000
+  Flags:
+  - Optional
+  - MatchingRefInLoadedArea
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetDeadConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: HasLoaded3DConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 0131EE:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 018B33:Dawnguard.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 0122B7:Dawnguard.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 018B36:Dawnguard.esm
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 1
+  Name: Horse1
+  Flags:
+  - Optional
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 0131FD:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionGlobal
+    CompareOperator: LessThan
+    Data:
+      MutagenObjectType: GetDistanceConditionData
+      Target: 000014:Skyrim.esm
+    ComparisonValue: 2EF726:DeviousFollowers.esp
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: IsInCombatConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsInSceneConditionData
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsInListConditionData
+      FormList: 2EF72F:DeviousFollowers.esp
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 00E50F:SexLab.esm
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 029567:Devious Devices - Integration.esm
+  VoiceTypes: Null
+- ID: 3
+  Name: Horse1000
+  Flags:
+  - Optional
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 0131FD:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionGlobal
+    CompareOperator: LessThan
+    Data:
+      MutagenObjectType: GetDistanceConditionData
+      Target: 000014:Skyrim.esm
+    ComparisonValue: 2EF726:DeviousFollowers.esp
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: IsInCombatConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsInSceneConditionData
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsInListConditionData
+      FormList: 2EF72F:DeviousFollowers.esp
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 00E50F:SexLab.esm
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 029567:Devious Devices - Integration.esm
+  VoiceTypes: Null
+- ID: 5
+  Name: Horse1000000
+  Flags:
+  - Optional
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetIsRaceConditionData
+      Race: 0131FD:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionGlobal
+    CompareOperator: LessThan
+    Data:
+      MutagenObjectType: GetDistanceConditionData
+      Target: 000014:Skyrim.esm
+    ComparisonValue: 2EF726:DeviousFollowers.esp
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: IsInCombatConditionData
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsInSceneConditionData
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsInListConditionData
+      FormList: 2EF72F:DeviousFollowers.esp
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 00E50F:SexLab.esm
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 029567:Devious Devices - Integration.esm
+  VoiceTypes: Null

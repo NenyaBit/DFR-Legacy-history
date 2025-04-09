@@ -346,6 +346,23 @@ variants:
     addKeywords:
       - _SLS_BikiniArmor
     pieces:
+      - name: Kardia's Panty Xtra1 (B)
+        id: 0x000863|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Malta Waffenrock
+        id: 0x00083E|TBD - NiseKardiaArmor.esp
+      - name: "Kardia's Sleeves & Stockings Heels"
+        id: 0x000839|TBD - NiseKardiaArmor.esp
+      - name: "Kardia's Sleeves & Stockings Gloves"
+        id: 0x000835|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Gambeson Stockings
+        id: 0x000834|TBD - NiseKardiaArmor.esp
+  - severity: 5
+    sequence:
+      - key: kardia
+    tags: ['bikini']
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
       - name: Kardia's Bikini Heels
         id: 0x000831|TBD - NiseKardiaArmor.esp
       - name: Kardia's Bikini Stockings

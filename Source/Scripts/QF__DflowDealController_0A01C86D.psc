@@ -305,20 +305,23 @@ Function RejectPendingDeal()
     Debug.Trace("DF - RejectPendingDeal - end")
 EndFunction
 
-Function AcceptRule(string asId)
+bool function AcceptRule(string asId)
     DFR_Util.Log("AcceptRule - " + asId + " - " + SelectedRuleId)
     if asId == SelectedRuleId
         AcceptPendingDeal()
+        return true
     elseIf !Adversity.FilterEventsByValid(Utility.CreateStringArray(1, SelectedRuleId)).Length
         PickRandomDeal()
     endIf
-EndFunction
 
-Function RefuseRule(string asId)
+    return false
+endFunction
+
+function RefuseRule(string asId)
     if asId == SelectedRuleId
         RejectPendingDeal()
     endIf
-EndFunction
+endFunction
 
 function ResetRule(string asId)
     if asId == SelectedRuleId
@@ -328,15 +331,17 @@ endFunction
 
 Function Buyout(int aiIndex)
     string deal = DealNames[aiIndex]
-    _DUtil.Info("DF - Buyout - START - " + deal)
-    
-    (UberController As _DFDealUberController).RemoveDealById(deal)
+
+    _DUtil.Info("DF - Buyout - START - " + deal + " - " + DealPrices[aiIndex] + " - " +  DealPrices[aiIndex].GetValue() + " - " + DealTimers[aiIndex])
 
     if !Gold
         Gold = Game.GetFormFromFile(0xF, "Skyrim.esm") as MiscObject
     endIf
 
     PlayerRef.RemoveItem(Gold, DealPrices[aiIndex].GetValue() as int)
+
+    
+    (UberController As _DFDealUberController).RemoveDealById(deal)
 
     _DUtil.Info("DF - Buyout - END - " + deal)
 EndFunction

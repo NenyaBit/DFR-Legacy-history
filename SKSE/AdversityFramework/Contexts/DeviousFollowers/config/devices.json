@@ -17,11 +17,6 @@
             "espName": "Devious Devices - Integration.esm"
         },
         {
-            "name": "Steel Collar (Padded) (Posture)",
-            "formId": "0x017759",
-            "espName": "Devious Devices - Integration.esm"
-        },
-        {
             "name": "Steel Collar (Padded)",
             "formId": "0x01775C",
             "espName": "Devious Devices - Integration.esm"
@@ -39,11 +34,6 @@
         {
             "name": "Black Leather Restrictive Collar",
             "formId": "0x04DBEF",
-            "espName": "Devious Devices - Integration.esm"
-        },
-        {
-            "name": "Iron Yoke",
-            "formId": "0x04F18C",
             "espName": "Devious Devices - Integration.esm"
         },
         {
@@ -84,11 +74,6 @@
         {
             "name": "Black Ebonite Collar",
             "formId": "0x00D4DF",
-            "espName": "Devious Devices - Expansion.esm"
-        },
-        {
-            "name": "Black Ebonite Collar (Posture)",
-            "formId": "0x00E538",
             "espName": "Devious Devices - Expansion.esm"
         },
         {

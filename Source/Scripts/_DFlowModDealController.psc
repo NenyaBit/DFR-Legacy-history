@@ -286,27 +286,14 @@ Function Update()
     JacketRule = 1
     ExpensiveRule = 1
     KeyRule = 1
-    SkoomaRule = 0 ; Some rules start disabled because they require supporting mods.
-    MilkingRule = 0
-    SpankingRule = 0
+    SkoomaRule = 1 ; Some rules start disabled because they require supporting mods.
+    MilkingRule = 1
+    SpankingRule = 1
     SexRule = 1
-    LactacidRule = 0
+    LactacidRule = 1
     RingRule = 1
     AmuletRule = 1
     CircletRule = 1
-    
-   If Tool.CheckSpanking()
-        SpankingRule = 1
-   EndIf
-
-    If IsSkoomaWhorePresent()
-        SkoomaRule = 1
-    EndIf
-
-    If IsMmePresent()
-        MilkingRule = 1
-        LactacidRule = 1
-    EndIf
     
     KeySearchTimer = Utility.GetCurrentGameTime() + (1.0/24.0)
     

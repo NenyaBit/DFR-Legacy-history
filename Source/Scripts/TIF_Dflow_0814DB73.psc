@@ -12,7 +12,7 @@ q.Tool.PrepareForScene()
 GetOwningquest().Setstage(402)
 ; NOTE actually DogScene2
 ; which triggers jarl scene2
-_DflowGamesDogScene.Start()
+_DflowGamesDogScene.forceStart()
 ;END CODE
 EndFunction
 ;END FRAGMENT

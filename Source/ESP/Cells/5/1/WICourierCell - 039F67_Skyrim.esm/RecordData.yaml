@@ -35,6 +35,16 @@ Location: 10D4BA:Skyrim.esm
 ImageSpace: 0A2687:Skyrim.esm
 Persistent:
 - MutagenObjectType: PlacedObject
+  FormKey: 2B7B95:DeviousFollowers.esp
+  MajorRecordFlagsRaw: 1024
+  EditorID: _DFKeyContainer
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 2B7B94:DeviousFollowers.esp
+  EncounterZone: 0F90B1:Skyrim.esm
+  Placement:
+    Position: 876.9503, 627.5665, 0.00012207031
+- MutagenObjectType: PlacedObject
   FormKey: 06F8EF:Skyrim.esm
   MajorRecordFlagsRaw: 1024
   EditorID: WICrowdTriggerRef
@@ -59,16 +69,6 @@ Persistent:
   Base: 2B7B94:DeviousFollowers.esp
   Placement:
     Position: 877.013, 699.75134, 0.00012207031
-- MutagenObjectType: PlacedObject
-  FormKey: 2B7B95:DeviousFollowers.esp
-  MajorRecordFlagsRaw: 1024
-  EditorID: _DFKeyContainer
-  SkyrimMajorRecordFlags:
-  - 0x400
-  Base: 2B7B94:DeviousFollowers.esp
-  EncounterZone: 0F90B1:Skyrim.esm
-  Placement:
-    Position: 876.9503, 627.5665, 0.00012207031
 Temporary:
 - MutagenObjectType: PlacedObject
   FormKey: 039FA5:Skyrim.esm

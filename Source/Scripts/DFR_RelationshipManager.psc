@@ -3,43 +3,22 @@ Scriptname DFR_RelationshipManager extends Quest conditional
 GlobalVariable property GameDaysPassed auto
 GlobalVariable property DebugMode auto
 DFR_Events property Events auto
+DFR_Rules property Rules auto
+_DFDealUberController property Deals auto
+
+Quest property SlaveryIntro auto
 
 int property Favour auto hidden conditional
 GlobalVariable property FavourGlobal auto
 GlobalVariable property TargetSeverity auto
 
 bool property CanApologise auto hidden conditional
-float property ForcedPunishmentTimer auto hidden conditional
 int property NumFavourLevels = 4 auto hidden
-float property ForcedDealTimer auto hidden conditional
-bool property ForcedPunishment = false auto hidden conditional
-
-int Escalation = 0
 
 float property LastServiced auto hidden
-
 float property RecentlyFavoured auto hidden conditional
 float property LastFavoured = -1.0 auto hidden
-
-Actor LastMaster
-
-string SelectedEvent
-
-bool ServiceOrPunishmentActive = false
-
-float LastCheckedFavour = 0.0
-
-; user adjusable
-int property FavourIncrement = 10 auto hidden
-int property FavourDecrement = 10 auto hidden
-int property FavourDailyDecay = 10 auto hidden
-int property FavourDailyDecaySlave = 20 auto hidden
-int property FavourDailyDecayDealPrevention = 2 auto hidden
-float property RemembersFor = 30.0 auto hidden
-float property ForcedPunishmentDelay = 0.25 auto hidden
-int[] property ForcedPunishChances auto hidden
-int property RecentlyFavouredDuration = 3 auto hidden 
-int property ServiceCooldown = 4 auto hidden
+float property ForcedEventTimer = 0.0 auto hidden conditional
 
 float NumServicesToSeverity_Var = 0.2
 float property NumServicesToSeverity hidden
@@ -55,6 +34,37 @@ float property NumServicesToSeverity hidden
         SetTargetSeverity()    
     endFunction
 EndProperty
+
+Actor LastMaster
+string SelectedEvent
+bool property ServiceOrPunishmentActive = false auto hidden conditional
+float LastCheckedFavour = 0.0
+int Escalation = 0
+bool InSlaverySetup = false
+
+; user adjusable
+int property FavourIncrement = 10 auto hidden
+int property FavourDecrement = 10 auto hidden
+int property FavourDailyDecay = 10 auto hidden
+int property FavourDailyDecaySlave = 20 auto hidden
+int property FavourDailyDecayDealPrevention = 2 auto hidden
+float property RemembersFor = 30.0 auto hidden
+float property ForcedPunishmentDelay = 0.25 auto hidden
+int[] property ForcedPunishChances auto hidden
+int property RecentlyFavouredDuration = 3 auto hidden
+int property ServiceCooldown = 4 auto hidden
+
+bool property AllowForcedEvents = true auto hidden conditional
+float property ForcedServiceCooldown = 8.0 auto hidden
+float property ForcedPunishmentCooldown = 0.25 auto hidden
+
+int property MaxServiceRules = 10 auto hidden
+int property ServiceRuleCooldownMin = 2 auto hidden
+int property ServiceRuleCooldownMax = 3 auto hidden
+
+float property ServiceRuleTimer = 0.0 auto hidden
+
+float property ServiceLocationChangeTimer = 0.0 auto hidden conditional
 
 DFR_RelationshipManager function Get() global
     return Quest.GetQuest("DFR_RelationshipManager") as DFR_RelationshipManager
@@ -78,54 +88,134 @@ function SetStageRegular(Actor akMaster)
     Favour = StorageUtil.GetIntValue(akMaster, "DFR_Cached_Favour")
     FavourGlobal.SetValue(Favour)
     RestartPolling()
-    DelayForcedDealTimer()
-    SetStage(10)
     SendModEvent("DFR_RelStage_Change", "", 1)
+
+    ServiceRuleTimer = 0.0
 
     if akMaster != LastMaster
         Escalation = 0
     endIf
 
+    if GetStage() == 50
+        ; convert all service rules back to deals
+        int i = 0
+        while i < Rules.NumRules
+            string pickedDeal = Deals.PickDeal(0)
+            Deals.AddDealById(pickedDeal + "/" + Rules.ActiveRules[i])
+            Rules.Remove(Rules.ActiveRules[i])
+            i += 1
+        endWhile
+    endIf
+
     SetTargetSeverity()
 
     LastMaster = akMaster
+
+    SetStage(10)
 endFunction
 
-function SetStageSlavery(Actor akMaster)
+function SetupSlavery(Actor akMaster, int aiMethod)
+    DFR_Util.Log("Setup Slavery - " + akMaster + " - " + aiMethod)
+
+    InSlaverySetup = true
+
+    SetStage(50)
+    SetTargetSeverity()
+    
+    ServiceRuleTimer = GameDaysPassed.GetValue() + Utility.RandomInt(ServiceRuleCooldownMin, ServiceRuleCooldownMax)
+    ForcedServiceCooldown = GameDaysPassed.GetValue() + ForcedPunishmentCooldown
+
     CheckAndClearFavour(akMaster)
     Favour = StorageUtil.GetIntValue(akMaster, "DFR_Cached_Favour")
     FavourGlobal.SetValue(Favour)
     RestartPolling()
     CanApologise = false
-    DelayForcedDealTimer()
-    SetStage(50)
     SendModEvent("DFR_RelStage_Change", "", 5)
 
-    if akMaster != LastMaster
-        Escalation = 0
-    endIf
-
-    SetTargetSeverity()
+    DFR_Util.Log("Setup Slavery - " + GetStage())
 
     LastMaster = akMaster
-endFunction
-
-function StartApologyTimer()
-    CanApologise = true
-
-    SetupPunishChances()
     
-    if !ForcedPunishment
-        ForcedPunishment = Utility.RandomInt(0, 99) <= ForcedPunishChances[GetFavourLevel()]
-        ForcedPunishmentTimer = GameDaysPassed.GetValue() + 0.0104
-    endIf
+    ; convert existing rules to deals
+    string[] existingRules = Utility.CreateStringArray(0)
+    string[] existingDeals = DFR_DealHelpers.GetDeals()
 
-    DFR_Util.Log("StartApologyTimer - ForcedPunishment = " + ForcedPunishment + " - Punish Chance = " + ForcedPunishChances[GetFavourLevel()] + " - ForcedPunishmentTimer = " + ForcedPunishmentTimer)
+    int i = 0
+    int numExisting = 0
+    while i < existingDeals.Length
+        string[] dealRules = DFR_DealHelpers.GetRules(existingDeals[i])
+
+        int j = 0
+        while j < dealRules.Length
+            if Adversity.EventHasTag(dealRules[j], "subtype:service")
+                Rules.Add(dealRules[j], 3, 2)
+                numExisting += 1
+            else
+                Adversity.StopEvent(dealRules[j])
+            endIf
+
+            j += 1
+        endWhile
+
+        DFR_DealHelpers.Remove(existingDeals[i])
+
+        i += 1
+    endWhile
+
+    DFR_Util.Log("Setup Slavery - finished deal -> rule conversion")
+
+    ; select and setup slavery events
+    string path = Adversity.GetConfigPath("deviousfollowers")
+    
+    DFR_Util.Log("Setup Slavery - Path = " + path)
+
+
+    DFR_Util.Log("Setup Slavery - Num Starter Rules = " + SlaveryRules)
+
+    string[] slaveryRules = JsonUtil.StringListToArray(path, "include-slavery-rules")
+
+    i = 0
+    while i < slaveryRules.length
+        slaveryRules[i] = "deviousfollowers/" + slaveryRules[i]
+        i += 1
+    endWhile
+
+    DFR_Util.Log("Setup Slavery - Starter Rules = " + slaveryRules)
+ 
+    slaveryRules = Adversity.FilterEventsByValid(slaveryRules, akMaster)
+    
+    DFR_Util.Log("Setup Slavery - Valid Starter Rules = " + slaveryRules)
+
+    int numSlaveryRules = JsonUtil.GetIntValue(path, "num-starting-slavery-rules")
+    numSlaveryRules -= SlaveryRules.Length
+    numSlaveryRules -= numExisting
+
+    i = 0
+    while i < numSlaveryRules
+        string rule = SelectEvent("service", 5, true, slaveryRules)
+
+        if rule == ""
+            i = numSlaveryRules
+        else
+            slaveryRules = PapyrusUtil.PushString(slaveryRules, rule)
+        endIf
+
+        i += 1
+    endWhile
+
+    DFR_Util.Log("Setup Slavery - All Starter Rules = " + slaveryRules)
+
+    Events.Setup(slaveryRules, Events.CONTEXT_TYPE_SLAVERY_SETUP, false, true, false)
+
+    DFR_Util.Log("Setup Slavery - finished setup - starting scene")
+    
+    SlaveryIntro.Start()
 endFunction
 
-function ResetForcedPunishment()
-    ForcedPunishment = false
-    CanApologise = false
+function CompleteSlaverySetup()
+    InSlaverySetup = false
+    ForcedEventTimer = GameDaysPassed.GetValue() + (ForcedServiceCooldown as float * 0.042)
+    SelectEvent("service", 5, false, Utility.CreateStringArray(0))
 endFunction
 
 function DecFavour(int aiSeverity = 1)
@@ -142,11 +232,16 @@ function DecFavour(int aiSeverity = 1)
         Debug.Notification(GetSubject() + " was extremely annoyed by that")
     endIf
 
+    float now = GameDaysPassed.GetValue()
+
+    CanApologise = true
     RecentlyFavoured = - 1
     LastServiced = -1
 
-    StartApologyTimer()
-    DFR_Util.Log("DecFavour - favour = " + favour)
+    float before = ForcedEventTimer
+    ForcedEventTimer = now + (ForcedPunishmentCooldown as float * 0.042)
+
+    DFR_Util.Log("DecFavour - favour = " + favour + " before = " + before + " after = " + ForcedEventTimer)
 endFunction
 
 function IncFavour(int aiSeverity = 1)
@@ -162,10 +257,12 @@ function IncFavour(int aiSeverity = 1)
     elseIf aiSeverity == 2
         Debug.Notification(GetSubject() + " was extremely pleased by that")
     endIf
+
+    float now = GameDaysPassed.GetValue()
     
     CanApologise = false
-    LastFavoured = GameDaysPassed.GetValue()
-    RecentlyFavoured = LastFavoured + (RecentlyFavouredDuration as float * 0.042)
+    LastFavoured = now
+    RecentlyFavoured = now + (RecentlyFavouredDuration as float * 0.042)
 
     DFR_Util.Log("IncFavour - favour = " + favour)
 endFunction
@@ -274,11 +371,11 @@ int[] function CreateFavourArray()
     return arr
 endFunction
 
-function DelayForcedDealTimer()
-    ForcedDealTimer = GameDaysPassed.GetValue() + Utility.RandomInt(1, 3)
-endFunction
+event OnMenuClose(string asMenu)
+    PickAndSelectEvent()
+endEvent
 
-event OnMenuOpen(string asMenu)
+function PickAndSelectEvent()
     int severity = GetTargetSeverity()
     
     if CanApologise
@@ -292,12 +389,12 @@ event OnMenuOpen(string asMenu)
         type = "punishment"
     endIf
 
-    SelectedEvent = SelectEvent("service", severity)
+    SelectedEvent = SelectEvent(type, severity, false, Utility.CreateStringArray(0))
 
     DFR_Util.Log("Relationship - Severity = " + severity + " - SelectedEvent = " + SelectedEvent)
-endEvent
+endFunction
 
-string function SelectEvent(string asType, int aiSeverity)
+string function SelectEvent(string asType, int aiSeverity, bool abRulesOnly, string[] asExclude)
     if DebugMode.GetValue()
         string path = Adversity.GetConfigPath("deviousfollowers")
         string forced = JsonUtil.GetStringValue(path, "forced-" + asType)
@@ -310,22 +407,40 @@ string function SelectEvent(string asType, int aiSeverity)
     endIf
 
     string[] candidates = Adversity.GetContextEvents("deviousfollowers")
-    candidates = Adversity.FilterEventsByTags(candidates, Utility.CreateStringArray(1, "subtype:" + asType))
-    DFR_Util.Log("Candidates 1 = " + candidates)
-    candidates = Adversity.FilterEventsByValid(candidates)
-    DFR_Util.Log("Candidates 2 = " + candidates)
-    candidates = Adversity.FilterEventsByCooldown(candidates)
-    DFR_Util.Log("Candidates 3 = " + candidates)
 
-    int i = aiSeverity
+    if abRulesOnly
+        candidates = Adversity.FilterEventsByTags(candidates, Utility.CreateStringArray(1, "type:rule"))
+    elseIf asExclude || GetTargetSeverity() < 3 || Rules.NumRules >= MaxServiceRules || ServiceRuleTimer > GameDaysPassed.GetValue()
+        candidates = Adversity.FilterEventsByTags(candidates, Utility.CreateStringArray(1, "type:rule"), abInvert = true)
+    endIf
+    DFR_Util.Log("Candidates 1 = " + candidates)
+
+    candidates = Adversity.FilterEventsByTags(candidates, Utility.CreateStringArray(1, "subtype:" + asType))
+    DFR_Util.Log("Candidates 2 = " + candidates)
+    candidates = Adversity.FilterEventsByValid(candidates)
+    DFR_Util.Log("Candidates 3 = " + candidates)
+    candidates = Adversity.FilterEventsByCooldown(candidates)
+    DFR_Util.Log("Candidates 4 = " + candidates)
+
+    int i = 0
+    int j = 0
+    while i < candidates.Length
+        if asExclude.Find(candidates[i]) == -1
+            candidates[j] = candidates[i]
+            j += 1
+        endIf
+        i += 1
+    endWhile
+
+    candidates = PapyrusUtil.ResizeStringArray(candidates, j)
+
+    DFR_Util.Log("Candidates 5 = " + candidates)
+
+    i = aiSeverity
     int maxSeverity = GetMaxSeverity()
-    
-    DFR_Util.Log("Candidates i = " + i + " - max = " + maxSeverity)
-    
+        
     while i <= maxSeverity
         string[] tmp = Adversity.FilterEventsBySeverity(candidates, i, false)
-
-        DFR_Util.Log("Candidates " + i + " = " + candidates)
 
         if tmp.Length
             int[] weights = Utility.CreateIntArray(tmp.Length, 100)
@@ -340,70 +455,77 @@ string function SelectEvent(string asType, int aiSeverity)
 endFunction
 
 function SetupDialogue()
+    if InSlaverySetup
+        DFR_Util.Log("Setup Dialogue - aborting due to slavery setup")
+        return
+    endIf
+
     int num = 0
-    int context = 2
+    int context = Events.CONTEXT_TYPE_SERVICE
 
-    DFR_Util.Log("SetupDialogue - " + (GameDaysPassed.GetValue() - LastServiced) as string + " - " + (ServiceCooldown as float * 0.042) as string)
+    DFR_Util.Log("SetupDialogue - " + (GameDaysPassed.GetValue() - LastServiced) as string + " - " + (ServiceCooldown as float * 0.042) as string + " - " + SelectedEvent)
 
-    if !ServiceOrPunishmentActive && (GameDaysPassed.GetValue() - LastServiced) > (ServiceCooldown as float * 0.042) && SelectedEvent != ""
+    if !ServiceOrPunishmentActive && SelectedEvent != "" && CanApologise || ((GameDaysPassed.GetValue() - LastServiced) > (ServiceCooldown as float * 0.042))
         num = 1
         if CanApologise
-            context = 3
+            context = Events.CONTEXT_TYPE_APOLOGY
         endIf
     endIf
 
     Events.Setup(Utility.CreateStringArray(num, SelectedEvent), context)
 endFunction
 
+function DelayLocationTimer()
+    ServiceLocationChangeTimer = GameDaysPassed.GetValue() + (0.042 * 0.5)
+endFunction
+
 function AcceptEvent(string asId, int aiContext)
+    CanApologise = false
+
+    ForcedEventTimer = GameDaysPassed.GetValue() + (ForcedServiceCooldown as float * 0.042)
+
     Escalate(Adversity.GetEventSeverity(asId))
-    ServiceOrPunishmentActive = true
+    if Adversity.EventHasTag(asId, "type:rule")
+        Rules.Add(asId, StorageUtil.GetIntValue(self, "Term_" + asId), aiContext)
+        ServiceRuleTimer = GameDaysPassed.GetValue() + Utility.RandomInt(ServiceRuleCooldownMin, ServiceRuleCooldownMax)
+    else
+        if Adversity.IsEventActive(asId)
+            ServiceOrPunishmentActive = true
+        endIf
+    endIf
+    
     DFR_Util.Log("Events - AcceptEvent - ServiceOrPunishmentActive = " + ServiceOrPunishmentActive)
 endFunction
 
 function RefuseEvent(string asId, int aiContext)
+    CanApologise = false
     DeEscalate(Adversity.GetEventSeverity(asId))
     DFR_Util.Log("Events - RefuseEvent - Escalation = " + Escalation)
     LastServiced = GameDaysPassed.GetValue()
+    ServiceOrPunishmentActive = false
 endFunction
 
 function CompleteEvent(string asId)
+    DFR_Util.Log("Events - CompleteEvent = " + asId + " - " + Escalation)
+    
     string context = Events.GetContext(asId)
-    if context == 2 || context == 3
+    
+    if Events.IncreasesFavour(asId)
         IncFavour()
-        ServiceOrPunishmentActive = false
     endIf
-
-    DFR_Util.Log("Events - CompleteEvent = " + asId + " - " + Escalation)
-
+    
+    ServiceOrPunishmentActive = false
     LastServiced = GameDaysPassed.GetValue()
 endFunction
 
-function FailEvent(string asId)
+function FailEvent(string asId)    
+    DFR_Util.Log("Events - CompleteEvent = " + asId + " - " + Escalation)
+  
     string context = Events.GetContext(asId)
-    if context == 2 || context == 3
-        DecFavour(2)
-        ServiceOrPunishmentActive = false
-    endIf
-    DFR_Util.Log("Events - CompleteEvent = " + asId + " - " + Escalation)
 
+    DecFavour(2)
+    ServiceOrPunishmentActive = false
     LastServiced = GameDaysPassed.GetValue()
-endFunction
-
-int function GetMaxSeverity()
-    if IsSlave()
-        return 5
-    endIf
-
-    return 4
-endFunction
-
-int function GetTargetSeverity()
-    if IsSlave()
-        return 5
-    endIf
-
-    return PapyrusUtil.ClampInt(1 + Math.Floor(Escalation * NumServicesToSeverity), 1, GetMaxSeverity())
 endFunction
 
 function Escalate(int aiAmount = 1)
@@ -431,4 +553,20 @@ function SetTargetSeverity()
             ModEvent.Send(handle)
         endIf
     endIf
+endFunction
+
+int function GetMaxSeverity()
+    if IsSlave()
+        return 5
+    endIf
+
+    return 4
+endFunction
+
+int function GetTargetSeverity()
+    if IsSlave()
+        return 5
+    endIf
+
+    return PapyrusUtil.ClampInt(1 + Math.Floor(Escalation * NumServicesToSeverity), 1, GetMaxSeverity())
 endFunction

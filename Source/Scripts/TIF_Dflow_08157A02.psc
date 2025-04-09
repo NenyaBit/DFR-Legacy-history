@@ -8,6 +8,7 @@ Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 Tool.UnequipGear()
 tool.addcum()
+Skincare.ResetTimer(true)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -24,3 +25,5 @@ Keyword Property kw  Auto
 MiscObject Property Gold001  Auto  
 
 
+
+DFR_Skincare Property Skincare  Auto  

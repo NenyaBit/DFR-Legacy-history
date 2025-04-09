@@ -1,0 +1,25 @@
+FormKey: 42986F:DeviousFollowers.esp
+EditorID: DFR_Slavery
+Flags:
+- AllowRepeatedStages
+Stages:
+- Index: 1
+  Flags:
+  - StartUpStage
+- Index: 2
+- Index: 3
+- Index: 4
+- Index: 5
+- Index: 6
+- Index: 7
+- Index: 8
+- Index: 9
+- Index: 10
+NextAliasID: 1
+Aliases:
+- Name: Master
+  Flags: []
+  External:
+    Quest: 000D62:DeviousFollowers.esp
+    AliasID: 1
+  VoiceTypes: Null

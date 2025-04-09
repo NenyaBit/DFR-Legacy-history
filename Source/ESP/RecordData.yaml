@@ -15,9 +15,9 @@ ModHeader:
     FileSize: 0
   - Master: Dragonborn.esm
     FileSize: 0
-  - Master: Adversity Framework.esm
-    FileSize: 0
   - Master: SexLab.esm
+    FileSize: 0
+  - Master: Adversity Framework.esm
     FileSize: 0
   - Master: Devious Devices - Assets.esm
     FileSize: 0

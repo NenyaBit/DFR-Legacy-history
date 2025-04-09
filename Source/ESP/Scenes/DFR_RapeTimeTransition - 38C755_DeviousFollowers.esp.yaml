@@ -37,7 +37,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 01210D:DeviousFollowers.esp
-      SecondUnusedIntParameter: -963972896
+      SecondUnusedIntParameter: -714879616
       VariableName: ::FirstTime_var
     ComparisonValue: 1
   Unused2: {}
@@ -114,7 +114,7 @@ Actions:
   HeadtrackActorID: -1
   LoopingMax: 10
   LoopingMin: 1
-  Emotion: Neutral
+  Emotion: Happy
   EmotionValue: 0
 - Type: Timer
   Name: ''
@@ -158,13 +158,16 @@ Actions:
 - Name: ''
   ActorID: 1
   Index: 9
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
   StartPhase: 0
   EndPhase: 0
   Topic: 3A5CB0:DeviousFollowers.esp
-  HeadtrackActorID: -1
+  HeadtrackActorID: 0
   LoopingMax: 10
   LoopingMin: 1
-  Emotion: Neutral
+  Emotion: Happy
   EmotionValue: 0
 Quest: 01210D:DeviousFollowers.esp
 LastActionIndex: 9

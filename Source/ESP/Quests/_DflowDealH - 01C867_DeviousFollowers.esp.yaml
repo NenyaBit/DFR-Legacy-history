@@ -15,31 +15,31 @@ VirtualMachineAdapter:
       Object: 03CDFB:DeviousFollowers.esp
   - Name: _DDeal
     Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFBoredom
+      Object: 231892:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
     - MutagenObjectType: ScriptIntProperty
       Name: Stat
     - MutagenObjectType: ScriptObjectProperty
       Name: tool
       Object: 01210D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LDC
+      Object: 1C494F:DeviousFollowers.esp
     - MutagenObjectType: ScriptFloatProperty
       Name: Delay
     - MutagenObjectType: ScriptObjectProperty
       Name: GameDaysPassed
       Object: 000039:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFBoredom
-      Object: 231892:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Gold001
-      Object: 00000F:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: PlayerRef
-      Object: 000014:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
       Name: DC
       Object: 01C86D:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: LDC
-      Object: 1C494F:DeviousFollowers.esp
   FileName: QF__DflowDealH_0B01C867
   Fragments:
   - Unknown2: 1

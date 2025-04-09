@@ -5,18 +5,18 @@ VirtualMachineAdapter:
   - Name: TIF__000BCC86
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: CurrentHireling
-      Object: 0BD738:Skyrim.esm
+      Name: HasHirelingGV
+      Object: 0BCC98:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: Hireling
       Object: 0BCC94:Skyrim.esm
       Alias: 0
     - MutagenObjectType: ScriptObjectProperty
-      Name: HasHirelingGV
-      Object: 0BCC98:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
       Name: HirelingRecognizeVorstag
       Object: 104F3D:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CurrentHireling
+      Object: 0BD738:Skyrim.esm
   ScriptFragments:
     MutagenObjectType: ScriptFragments
     FileName: TIF__000BCC86

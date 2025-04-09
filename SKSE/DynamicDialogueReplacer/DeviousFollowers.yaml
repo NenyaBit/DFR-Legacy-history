@@ -1,16 +1,18 @@
 topics:
+
+# FOLLOWER GENERIC
 - id: DialogueFollowerTradeTopic
   with: DFR_RelReplaceTrade
   conditions:
   - GetInFaction _DMaster == 1 AND
-  - GetGlobalValue DFR_Favour < DFR_Trade_FavourMin OR
-  - GetStage DFR_RelationshipManager == 50 AND
+  - GetStage DFR_RelationshipManager == DFR_Rel_Slave OR
+  - GetGlobalValue DFR_Favour < DFR_Trade_FavourMin
+
 # DEAL REQUEST
 - id: DFR_EventsOffers
   text: I'm ready to make a deal. What will satisfy you?
   conditions: 
   - GetGlobalValue DFR_EventContext == 0
-
 - id: DFR_EventsOffers
   text: Can do I do something for you, master?
   conditions: 
@@ -32,6 +34,10 @@ topics:
   - GetGlobalValue DFR_EventContext == 3
 # DEAL ACCEPTANCE
 - id: DFR_EventsAccept
+  text: Yes, master.
+  conditions: 
+  - GetStage DFR_RelationshipManager == DFR_Rel_Slave
+- id: DFR_EventsAccept
   text: I'll do as you say.
   conditions: 
   - GetGlobalValue DFR_EventContext == 0
@@ -45,11 +51,25 @@ topics:
   text: I'm not doing that.
   conditions:
   - GetGlobalValue DFR_EventContext == 0 OR
+  - GetGlobalValue DFR_EventContext == 4 OR
+- id: DFR_EventsRefuse
+  text: Please no, master.
+  conditions:
+  - GetStage DFR_RelationshipManager == DFR_Rel_Slave
+  - GetGlobalValue DFR_EventContext == 2 OR
+  - GetGlobalValue DFR_EventContext == 3 OR
+
 - id: DFR_EventsRefuse
   text: Not right now.
   conditions:
   - GetGlobalValue DFR_EventContext == 2 OR
   - GetGlobalValue DFR_EventContext == 3 OR
+
+- id: DFR_RulesTopic
+  text: About your expectations...
+  conditions:
+  - GetStage DFR_RelationshipManager == DFR_Rel_Slave
+
 topicInfos:
 # DEAL OFFERS
 - conditions:
@@ -74,11 +94,18 @@ topicInfos:
   - sub: When I put my hand on your shoulder, you need to tell that person that you're
       a slut.
 - conditions:
-  - GetGlobalValue DFR_Rule_CumCovering == Adv_Status_Selected AND
+  - GetGlobalValue DFR_Rule_Skincare == Adv_Status_Selected AND
+  id: 0x406065|DeviousFollowers.esp
+  priority: 5
+  random: true
+  responses:
+  - sub: My slave's skin should be positively glowing. To ensure that, you'll apply this special balm every day. 
+- conditions:
+  - GetGlobalValue DFR_Rule_Skincare == Adv_Status_Selected AND
   id: 0x406065|DeviousFollowers.esp
   random: true
   responses:
-  - sub: I noticed your skin is rather dry. I'll apply a special balm whenever we're in town.
+  - sub: I noticed your skin is rather dry. I want you to keep it moisturized using a special balm I've found.
 - conditions:
   - GetGlobalValue DFR_Rule_Chastity == Adv_Status_Selected AND
   - GetGlobalValue DFR_Target_Severity >= 3 AND
@@ -158,7 +185,7 @@ topicInfos:
   - sub: You will promise to stay naked while we're in town. You're a bit of an exhibitionist
       so I think you'll like it.
 - conditions:
-  - GetGlobalValue DFR_Rule_WhoreArmor == Adv_Status_Selected AND
+  - GetGlobalValue DFR_Rule_Armor == Adv_Status_Selected AND
   - GetGlobalValue DFR_Rule_NakedInTown == Adv_Status_Active AND
   id: 0x406065|DeviousFollowers.esp
   random: true
@@ -166,7 +193,15 @@ topicInfos:
   - sub: While I still want you naked in towns, you will wear some sexy armor for
       me when we're out and about.
 - conditions:
-  - GetGlobalValue DFR_Rule_WhoreArmor == Adv_Status_Selected AND
+  - GetGlobalValue DFR_Rule_Armor == Adv_Status_Selected AND
+  - GetStage DFR_RelationshipManager == DFR_Rel_Slave
+  id: 0x406065|DeviousFollowers.esp
+  priority: 5
+  random: true
+  responses:
+  - sub: If you are going to wear armour, it'll be what I choose. And don't worry, I've picked out something befitting a slave whore.
+- conditions:
+  - GetGlobalValue DFR_Rule_Armor == Adv_Status_Selected AND
   id: 0x406065|DeviousFollowers.esp
   random: true
   responses:
@@ -411,11 +446,49 @@ topicInfos:
   - sub: You know what would be some really naughty fun? 
   - sub: If you played with yourself right here and now.
 - conditions:
+  - GetGlobalValue DFR_Event_Spanking == Adv_Status_Selected AND
+  - GetStage DFR_RelationshipManager >= DFR_Rel_Slave
+  id: 0x406065|DeviousFollowers.esp
+  priority: 5
+  random: true
+  responses:
+  - sub: I'm going to make your ass nice and red.
+- conditions:
+  - GetGlobalValue DFR_Event_Spanking == Adv_Status_Selected AND
+  id: 0x406065|DeviousFollowers.esp
+  random: true
+  responses:
+  - sub: I want to make your ass nice and red.
+- conditions:
+  - GetGlobalValue DFR_Event_Sex == Adv_Status_Selected AND
+  - GetGlobalValue DFR_EventContext == 3 AND
+  - GetStage DFR_RelationshipManager >= DFR_Rel_Slave
+  id: 0x406065|DeviousFollowers.esp
+  random: true
+  responses:
+  - sub: I'm going to fuck you so hard your holes will be sore for a week.
+- conditions:
+  - GetGlobalValue DFR_Event_Sex == Adv_Status_Selected AND
+  - GetStage DFR_RelationshipManager >= DFR_Rel_Slave
+  id: 0x406065|DeviousFollowers.esp
+  random: true
+  responses:
+  - sub: I feel like fucking you, nice and slow.
+- conditions:
   - GetGlobalValue DFR_Event_Sex == Adv_Status_Selected AND
   id: 0x406065|DeviousFollowers.esp
   random: true
   responses:
   - sub: Why don't you and I have some fun? I've seen the way you look at me.
+- conditions:
+  - GetGlobalValue DFR_Event_HorseSex == Adv_Status_Selected AND
+  - GetGlobalValue DFR_EventContext == 3 AND
+  - GetStage DFR_RelationshipManager >= DFR_Rel_Slave
+  id: 0x406065|DeviousFollowers.esp
+  priority: 5
+  random: true
+  responses:
+  - sub: I'm going to let that stallion over there ram your holes until you can hardly walk.
 - conditions:
   - GetGlobalValue DFR_Event_HorseSex == Adv_Status_Selected AND
   id: 0x406065|DeviousFollowers.esp
@@ -424,11 +497,37 @@ topicInfos:
   - sub: I think it'd be a lot of fun to watch you try to fit that horse in one of your holes.
 - conditions:
   - GetGlobalValue DFR_Event_DogSex == Adv_Status_Selected AND
+  - GetGlobalValue DFR_EventContext == 3 AND
+  - GetStage DFR_RelationshipManager >= DFR_Rel_Slave
+  id: 0x406065|DeviousFollowers.esp
+  priority: 5
+  random: true
+  responses:
+  - sub: My cock is too pleasant for you to learn your lesson so I'm going to let that mutt over there teach it to you for me.
+- conditions:
+  - GetGlobalValue DFR_Event_DogSex == Adv_Status_Selected AND
   id: 0x406065|DeviousFollowers.esp
   random: true
   responses:
   - sub: You see that mutt over there? I think you'd really enjoy his knot.
-  - sub: Why don't you go say hello? 
+  - sub: Why don't you go say hello?
+- conditions:
+  - GetGlobalValue DFR_Event_Tattoos == Adv_Status_Selected AND
+  - GetStage DFR_RelationshipManager == DFR_Rel_Slave AND
+  - GetGlobalValue DFR_EventContext == 3
+  id: 0x406065|DeviousFollowers.esp
+  priority: 5
+  random: true
+  responses:
+  - sub: Since you can't seem to learn your lesson, I'm going to give you a permanent reminder right on your body.
+- conditions:
+  - GetGlobalValue DFR_Event_Tattoos == Adv_Status_Selected AND
+  - GetStage DFR_RelationshipManager == DFR_Rel_Slave
+  id: 0x406065|DeviousFollowers.esp
+  priority: 1
+  random: true
+  responses:
+  - sub: I feel like sketching something on your body. 
 - conditions:
   - GetGlobalValue DFR_Event_Tattoos == Adv_Status_Selected AND
   id: 0x406065|DeviousFollowers.esp
@@ -437,6 +536,11 @@ topicInfos:
   - sub: Can I draw some art on your body? Just for fun. 
 
 # DEAL ACCEPTANCE
+- id: 0x2AD947|DeviousFollowers.esp
+  responses:
+  - sub: Good slave.
+  conditions:
+  - GetStage DFR_RelationshipManager == DFR_Rel_Slave
 - id: 0x2AD947|DeviousFollowers.esp
   responses:
   - sub: This will be fun and remember...a deal is a deal.
@@ -464,6 +568,18 @@ topicInfos:
   - GetGlobalValue DFR_Rule_Lactacid == Adv_Status_Selected
   - GetGlobalValue DFR_Target_Severity < 3 AND
   
+- id: 0x406064|DeviousFollowers.esp
+  responses:
+  - sub: Good, next...
+  conditions:
+  - GetGlobalValue DFR_EventContext == 4
+
+- id: 0x406067|DeviousFollowers.esp
+  responses:
+  - sub: Wrong answer, whore, try to get it right on the next one.
+  conditions:
+  - GetGlobalValue DFR_EventContext == 4
+
 # DEAL REFUSAL
 - id: 0x2AD948|DeviousFollowers.esp
   responses:
@@ -478,7 +594,12 @@ topicInfos:
   - GetGlobalValue DFR_ForceEvents == 1
 - id: 0x2AD948|DeviousFollowers.esp
   responses:
-  - sub: Well, okay then. 
+  - sub: Maybe I need to tune up the intensity of your collar. You'll do as I say.
+  conditions:
+  - GetGlobalValue DFR_EventContext == 4
+- id: 0x2AD948|DeviousFollowers.esp
+  responses:
+  - sub: Well, okay then.
   
 # DEAL WALKAWAY
 - id: 0x2AD94B|DeviousFollowers.esp
@@ -489,3 +610,301 @@ topicInfos:
 - id: 0x2AD94B|DeviousFollowers.esp
   responses:
   - sub: Well that's rude.
+
+# RULE REMOVAL ACCEPT
+- id: 0x429835|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Amulet == DFR_Status_Allow
+- id: 0x42986A|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_AnalPlug == DFR_Status_Allow
+- id: 0x429831|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Armor == DFR_Status_Allow
+- id: 0x429838|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Blindfold == DFR_Status_Allow
+- id: 0x42983B|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Boots == DFR_Status_Allow
+- id: 0x42983E|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_BoundInTown == DFR_Status_Allow
+- id: 0x429840|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Chastity == DFR_Status_Allow
+- id: 0x429842|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Circlet == DFR_Status_Allow
+- id: 0x429844|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Collar == DFR_Status_Allow
+- id: 0x429846|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Corset == DFR_Status_Allow
+- id: 0x429848|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Crawling == DFR_Status_Allow
+- id: 0x42984A|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Cuffs == DFR_Status_Allow
+- id: 0x41F627|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Gag == DFR_Status_Allow
+- id: 0x42984E|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Gloves == DFR_Status_Allow
+- id: 0x42986C|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Innkeeper == DFR_Status_Allow
+- id: 0x429850|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Jacket == DFR_Status_Allow
+- id: 0x429852|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Key == DFR_Status_Allow
+- id: 0x429854|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Lactacid == DFR_Status_Allow
+- id: 0x42986E|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Merchant == DFR_Status_Allow
+- id: 0x429856|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Milking == DFR_Status_Allow
+- id: 0x42985A|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_NakedIntown == DFR_Status_Allow
+- id: 0x429858|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_NipplePiercings == DFR_Status_Allow
+- id: 0x42985C|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Petsuit == DFR_Status_Allow
+- id: 0x42985E|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Ring == DFR_Status_Allow
+- id: 0x429860|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Sex == DFR_Status_Allow
+- id: 0x42984C|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Skincare == DFR_Status_Allow
+- id: 0x429862|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Skooma == DFR_Status_Allow
+- id: 0x429864|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Slut == DFR_Status_Allow
+- id: 0x429866|DeviousFollowers.esp
+  responses:
+  - sub: Fine.
+  conditions:
+  - GetGlobalValue DFR_Rule_Spanking == DFR_Status_Allow
+
+# RULE REMOVAL REFUSAL
+- id: 0x429835|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Amulet == DFR_Status_Refuse
+- id: 0x42986A|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_AnalPlug == DFR_Status_Refuse
+- id: 0x429831|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Armor == DFR_Status_Refuse
+- id: 0x429838|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Blindfold == DFR_Status_Refuse
+- id: 0x42983B|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Boots == DFR_Status_Refuse
+- id: 0x42983E|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_BoundInTown == DFR_Status_Refuse
+- id: 0x429840|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Chastity == DFR_Status_Refuse
+- id: 0x429842|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Circlet == DFR_Status_Refuse
+- id: 0x429844|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Collar == DFR_Status_Refuse
+- id: 0x429846|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Corset == DFR_Status_Refuse
+- id: 0x429848|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Crawling == DFR_Status_Refuse
+- id: 0x42984A|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Cuffs == DFR_Status_Refuse
+- id: 0x41F627|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Gag == DFR_Status_Refuse
+- id: 0x42984E|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Gloves == DFR_Status_Refuse
+- id: 0x42986C|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Innkeeper == DFR_Status_Refuse
+- id: 0x429850|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Jacket == DFR_Status_Refuse
+- id: 0x429852|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Key == DFR_Status_Refuse
+- id: 0x429854|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Lactacid == DFR_Status_Refuse
+- id: 0x42986E|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Merchant == DFR_Status_Refuse
+- id: 0x429856|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Milking == DFR_Status_Refuse
+- id: 0x42985A|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_NakedIntown == DFR_Status_Refuse
+- id: 0x429858|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_NipplePiercings == DFR_Status_Refuse
+- id: 0x42985C|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Petsuit == DFR_Status_Refuse
+- id: 0x42985E|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Ring == DFR_Status_Refuse
+- id: 0x429860|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Sex == DFR_Status_Refuse
+- id: 0x42984C|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Skincare == DFR_Status_Refuse
+- id: 0x429862|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Skooma == DFR_Status_Refuse
+- id: 0x429864|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Slut == DFR_Status_Refuse
+- id: 0x429866|DeviousFollowers.esp
+  responses:
+  - sub: No.
+  conditions:
+  - GetGlobalValue DFR_Rule_Spanking == DFR_Status_Refuse
+
+
+
+

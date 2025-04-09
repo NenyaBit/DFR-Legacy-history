@@ -1,7 +1,7 @@
 {
     "stringList": {
         "forced-rules": [],
-        "slavery-rules": [],
+        "include-slavery-rules": ["core/armor"],
         "exclude-slavery-rules": ["core/collar", "core/petsuit in town"]
     },
     "string": {
@@ -9,6 +9,6 @@
         "forced-punishment": "core/arrows"
     },
     "int": {
-        "num-slavery-rules": 3
+        "num-starting-slavery-rules": 3
     }
 }

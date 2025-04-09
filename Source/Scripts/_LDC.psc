@@ -27,6 +27,25 @@ Armor function GetGenericDeviceByKeyword(Actor akActor, Keyword kw)
 		return none
 	endIf
 
+	Keyword[] kwds = new Keyword[1]
+	kwds[0] = kw
+
+	Form[] items = PyramidUtils.GetItemsByKeyword(akActor, kwds)
+	DFR_Util.Log("Found - " + items + " - " + kwds)
+
+	if items.length
+		Armor existing = items[0] as Armor
+		DFR_Util.Log("Existing - " + existing)
+		if existing
+			Armor inventory = zadNativeFunctions.GetInventoryDevice(items[0] as Armor)
+			DFR_Util.Log("Inventory - " + inventory)
+			if inventory
+				DFR_Util.Log("Found existing " + inventory)
+				return inventory
+			endIf
+		endIf
+	endIf
+
 	Armor[] options = Adversity.GetDevicesByKeyword("deviousfollowers", Game.GetPlayer(), kw)
 
 	Armor chosen = none

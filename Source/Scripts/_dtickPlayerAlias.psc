@@ -9,11 +9,11 @@ _DflowMCM property MCM auto
 _DFGoldConQScript property GoldCont auto
 _Dtick property Q auto
 DFR_Outfits property Outfits auto
+DFR_RelationshipManager property RelManager auto
 ObjectReference property CrosshairTarget auto
 
 ; 0 = wilderness, 1 = dungeon, 2 = city/town - unlike LocType kwds this will work even while in interior locations
-GlobalVariable property CurrentLocationType auto 
-
+GlobalVariable property CurrentLocationType auto
 
 String OldType
 
@@ -58,6 +58,9 @@ Event OnLocationChange(Location OldLocation, Location newLocation)
             MCM.Noti(newType)
             Outfits.DelayValidationTimer()
         EndIf
+
+        RelManager.PickAndSelectEvent()
+        RelManager.SetupDialogue()
 
         Outfits.CheckSwap()
         

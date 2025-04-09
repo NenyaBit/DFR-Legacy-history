@@ -74,14 +74,14 @@ Conditions:
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 01C866:DeviousFollowers.esp
-    SecondUnusedIntParameter: -963974720
+    SecondUnusedIntParameter: -714880480
     VariableName: ::Delay_var
   ComparisonValue: 000039:Skyrim.esm
 - MutagenObjectType: ConditionFloat
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 010617:DeviousFollowers.esp
-    SecondUnusedIntParameter: -963974688
+    SecondUnusedIntParameter: -714880448
     VariableName: ::Suspend_var
 PackageTemplate: 03C1C4:Skyrim.esm
 DataInputVersion: 18

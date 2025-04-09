@@ -3,7 +3,6 @@ Scriptname DFR_Events extends Quest conditional
 ReferenceAlias property FollowerAlias auto
 DFR_RelationshipManager property RelManager auto
 QF__DflowDealController_0A01C86D property DealController auto
-DFR_Slavery property Slavery auto
 _DFtools property Tool auto
 
 bool property Display auto hidden conditional
@@ -11,11 +10,17 @@ bool property Loop auto hidden conditional
 bool property AllowWalkaway auto hidden conditional
 
 GlobalVariable property Forced auto
-GlobalVariable property EventContext auto ; 0 = deals, 1 = over debt forced deals, 2 = service, 3 = apology, 4 = enslavement setup
+GlobalVariable property EventContext auto
+
+int property CONTEXT_TYPE_DEALS = 0 autoreadonly hidden
+int property CONTEXT_TYPE_FORCED = 1 autoreadonly hidden
+int property CONTEXT_TYPE_SERVICE = 2 autoreadonly hidden
+int property CONTEXT_TYPE_APOLOGY = 3 autoreadonly hidden
+int property CONTEXT_TYPE_SLAVERY_SETUP = 4 autoreadonly hidden
+int property CONTEXT_TYPE_CHALLENGE = 5 autoreadonly hidden
 
 string[] CurrEvents
 int NextEventIndex
-
 bool IncreaseFavour
 
 ; called from rel manager and deal controller
@@ -60,6 +65,8 @@ function Refuse()
         Adv_Collar.Get().Zap()
     endIf
 
+    RelManager.DecFavour()
+
     if Forced.GetValue()
         ActivateEvent(CurrEvents[NextEventIndex - 1])
     else
@@ -75,30 +82,20 @@ function ActivateEvent(string asId)
     
     if Adversity.StartEvent(asId, FollowerAlias.GetRef() as Actor)
         StorageUtil.SetStringValue(self, "DFR_EventContext_" + asId, context)
+        StorageUtil.SetStringValue(self, "DFR_EventFavour_" + asId, IncreaseFavour)
 
-        if IsRule(asId)
-            DFR_Util.Log("ActivateEvent - " + asId + " is rule")
-            if RelManager.IsSlave()
-                Slavery.AcceptRule(asId)
-            else
-                DealController.AcceptRule(asId)
-            endIf
-        endIf
-
-        if context == 2 || context == 3
+        if context == 0
+            DealController.AcceptRule(asId)
+        else
             RelManager.AcceptEvent(asId, context)
         endIf
+
         DFR_Util.Log("Events - Activating Event = " + asId + " - Done")
     else
         Adversity.UnselectEvent(asId)
 
-        if IsRule(asId)
-            DFR_Util.Log("ActivateEvent - " + asId + " is rule")
-            if RelManager.IsSlave()
-                Slavery.ResetRule(asId)
-            else
-                DealController.ResetRule(asId)
-            endIf
+        if context == 0
+            DealController.ResetRule(asId)
         endIf
 
         DFR_Util.Log("Events - Activating Event = " + asId + " - Failed")
@@ -107,21 +104,13 @@ endFunction
 
 function DeactivateEvent(string asId)
     Adversity.UnselectEvent(asId)
-
-    if IsRule(asId)
-        if RelManager.IsSlave()
-            Slavery.RefuseRule(asId)
-        else
-            DealController.RefuseRule(asId)
-        endIf
-    endIf
-
     int context = EventContext.GetValue() as int
-    if context == 2 || context == 3
+
+    if context == 0
+        DealController.AcceptRule(asId)
+    else
         RelManager.RefuseEvent(asId, context)
     endIf
-
-    RelManager.DecFavour()
 
     DFR_Util.Log("Events - Deactivating Event = " + asId)
 endFunction
@@ -131,30 +120,22 @@ bool function IsRule(string asId)
     return Adversity.EventHasTag(asId, "type:rule")
 endFunction
 
-function Walkaway()
-    RelManager.DecFavour()
-    if !AllowWalkaway
-        ; iterate through remaining inactive and activate
-        int i = NextEventIndex - 1
-        while i < CurrEvents.Length
-            ActivateEvent(CurrEvents[i])
-            i += 1
-        endWhile
-    endIf
-endFunction
-
 function Next()
     NextEventIndex += 1
 
-    if NextEventIndex < CurrEvents.Length - 1
+    if NextEventIndex < CurrEvents.Length
+        DFR_Util.Log("Events - Next - selecting event - " + CurrEvents[NextEventIndex])
         Adversity.SelectEvent(CurrEvents[NextEventIndex])
-    endIf
-
-    if NextEventIndex >= (CurrEvents.Length - 1)
-        Loop = false        
+    else
+        DFR_Util.Log("Events - Next - disabling loop - " + NextEventIndex + " < " + CurrEvents.Length + " = " + NextEventIndex < CurrEvents.Length)
+        Loop = false
     endIf
 endFunction
 
 string function GetContext(string asId)
+    return StorageUtil.GetStringValue(self, "DFR_EventContext_" + asId, -1)
+endFunction
+
+string function IncreasesFavour(string asId)
     return StorageUtil.GetStringValue(self, "DFR_EventContext_" + asId, -1)
 endFunction

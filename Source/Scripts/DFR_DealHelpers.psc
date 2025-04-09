@@ -32,6 +32,10 @@ int function GetNumRules(string asDeal) global
     return StorageUtil.StringListCount(none, GetKey(asDeal))
 endFunction
 
+int function GetNumAllRules(string asDeal) global
+    return StorageUtil.StringListCount(none, GetKey(asDeal))
+endFunction
+
 string[] function GetDeals() global
     return StorageUtil.StringListToArray(none, GetAllKey())
 endFunction

@@ -4,6 +4,9 @@ VirtualMachineAdapter:
   Scripts:
   - Name: DFR_Services
     Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: variant
+      Object: 410280:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectListProperty
       Name: InventoryFilters
       Objects:
@@ -16,6 +19,68 @@ VirtualMachineAdapter:
       - Name: ''
         Object: 41029E:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
+      Name: FollowerAlias
+      Object: 40B16E:DeviousFollowers.esp
+      Alias: 0
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: HealthPotionEffectKwds
+      Objects:
+      - Name: ''
+        Object: 065A30:Skyrim.esm
+      - Name: ''
+        Object: 065A31:Skyrim.esm
+      - Name: ''
+        Object: 042503:Skyrim.esm
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: CurrentCounts
+      Objects:
+      - Name: ''
+        Object: 40B179:DeviousFollowers.esp
+      - Name: ''
+        Object: 410292:DeviousFollowers.esp
+      - Name: ''
+      - Name: ''
+        Object: 41029D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: SharpenWeapon
+      Object: 40B16E:DeviousFollowers.esp
+      Alias: 5
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: StaminaPotionEffectKwds
+      Objects:
+      - Name: ''
+        Object: 065A32:Skyrim.esm
+      - Name: ''
+        Object: 065A35:Skyrim.esm
+      - Name: ''
+        Object: 042504:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: DesiredCounts
+      Objects:
+      - Name: ''
+        Object: 40B178:DeviousFollowers.esp
+      - Name: ''
+        Object: 410293:DeviousFollowers.esp
+      - Name: ''
+      - Name: ''
+        Object: 41029C:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: TownKeywords
+      Objects:
+      - Name: ''
+        Object: 013166:Skyrim.esm
+      - Name: ''
+        Object: 01CB87:Skyrim.esm
+      - Name: ''
+        Object: 013168:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ServiceEvent
+      Object: 1BD274:DeviousFollowers.esp
+      Alias: 6
+    - MutagenObjectType: ScriptObjectProperty
       Name: GameDaysPassed
       Object: 000039:Skyrim.esm
     - MutagenObjectType: ScriptObjectListProperty
@@ -27,71 +92,6 @@ VirtualMachineAdapter:
         Object: 065A33:Skyrim.esm
       - Name: ''
         Object: 042508:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: variant
-      Object: 410280:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: SharpenWeapon
-      Object: 40B16E:DeviousFollowers.esp
-      Alias: 5
-    - MutagenObjectType: ScriptObjectListProperty
-      Name: TownKeywords
-      Objects:
-      - Name: ''
-        Object: 013166:Skyrim.esm
-      - Name: ''
-        Object: 01CB87:Skyrim.esm
-      - Name: ''
-        Object: 013168:Skyrim.esm
-    - MutagenObjectType: ScriptObjectListProperty
-      Name: StaminaPotionEffectKwds
-      Objects:
-      - Name: ''
-        Object: 065A32:Skyrim.esm
-      - Name: ''
-        Object: 065A35:Skyrim.esm
-      - Name: ''
-        Object: 042504:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: FollowerAlias
-      Object: 40B16E:DeviousFollowers.esp
-      Alias: 0
-    - MutagenObjectType: ScriptObjectListProperty
-      Name: CurrentCounts
-      Objects:
-      - Name: ''
-        Object: 40B179:DeviousFollowers.esp
-      - Name: ''
-        Object: 410292:DeviousFollowers.esp
-      - Name: ''
-      - Name: ''
-        Object: 41029D:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectListProperty
-      Name: DesiredCounts
-      Objects:
-      - Name: ''
-        Object: 40B178:DeviousFollowers.esp
-      - Name: ''
-        Object: 410293:DeviousFollowers.esp
-      - Name: ''
-      - Name: ''
-        Object: 41029C:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: PlayerRef
-      Object: 000014:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: ServiceEvent
-      Object: 1BD274:DeviousFollowers.esp
-      Alias: 6
-    - MutagenObjectType: ScriptObjectListProperty
-      Name: HealthPotionEffectKwds
-      Objects:
-      - Name: ''
-        Object: 065A30:Skyrim.esm
-      - Name: ''
-        Object: 065A31:Skyrim.esm
-      - Name: ''
-        Object: 042503:Skyrim.esm
   FileName: ''
   Aliases:
   - Property:
@@ -174,6 +174,7 @@ Aliases:
 - Name: ContainerChecker
   Flags:
   - Optional
+  ForcedReference: 0C0168:DeviousFollowers.esp
   VoiceTypes: Null
 - ID: 5
   Name: SharpenWeapon

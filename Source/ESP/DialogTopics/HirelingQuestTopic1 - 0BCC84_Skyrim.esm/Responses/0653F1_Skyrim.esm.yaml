@@ -5,11 +5,11 @@ VirtualMachineAdapter:
   - Name: TIF__000653F1
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: HirelingRecognizeErik
-      Object: 104F3A:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
       Name: HasHirelingGV
       Object: 0BCC97:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HirelingRecognizeErik
+      Object: 104F3A:Skyrim.esm
   ScriptFragments:
     MutagenObjectType: ScriptFragments
     FileName: TIF__000653F1

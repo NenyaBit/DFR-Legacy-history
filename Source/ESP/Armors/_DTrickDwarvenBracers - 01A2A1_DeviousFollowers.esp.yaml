@@ -5,17 +5,17 @@ VirtualMachineAdapter:
   - Name: _Dtrick
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: CurseMSG
-      Object: 01A2A2:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
       Name: libs
       Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: deviceInventory
+      Object: 019277:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: deviceRendered
       Object: 019276:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: deviceInventory
-      Object: 019277:DeviousFollowers.esp
+      Name: CurseMSG
+      Object: 01A2A2:DeviousFollowers.esp
 Name:
   TargetLanguage: English
   Value: Dwarven Bracers of Eminent Sure Grip

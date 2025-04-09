@@ -1,19 +1,18 @@
 Scriptname DFR_Rule_CumCovering extends Adv_EventBase  
 
-_DDeal property Deal auto
+DFR_Skincare property Skincare auto
 
 function OnModuleLoadGame()
-    RegisterForModEvent("Bis_BatheEvent", "OnBis_BatheEvent")
+    Skincare.Maintenance()
+    EventName = "Skincare"
 endFunction
 
 bool function OnStart(Actor akTarget)
-    Deal.Triggered = false
-    Deal.Said1 = 0
-    Deal.DelayHrs(4.0)
+    DFR_Util.Log("Skincare Start")
+    return Skincare.Start()
 endFunction
 
-event OnBis_BatheEvent(Form akTarget)
-    if akTarget == Game.GetPlayer() && IsActive()
-	    Deal.Said1 = 1
-    endIf
-endEvent
+function OnStop()
+    DFR_Util.Log("Skincare Stop")
+    Skincare.Reset()
+endFunction

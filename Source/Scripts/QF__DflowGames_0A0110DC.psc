@@ -1,6 +1,11 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
-;NEXT FRAGMENT INDEX 0
+;NEXT FRAGMENT INDEX 22
 Scriptname QF__DflowGames_0A0110DC Extends Quest Hidden
+
+;BEGIN ALIAS PROPERTY Player
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Player Auto
+;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY SceneYOU
 ;ALIAS PROPERTY TYPE ReferenceAlias
@@ -17,79 +22,10 @@ ReferenceAlias Property Alias_Follower Auto
 ReferenceAlias Property Alias_Jarl Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY Player
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Player Auto
-;END ALIAS PROPERTY
-
-;BEGIN FRAGMENT Fragment_12
-Function Fragment_12()
-;BEGIN CODE
-;CODE NOT LOADED
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_3
-Function Fragment_3()
-;BEGIN CODE
-;CODE NOT LOADED
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_16
-Function Fragment_16()
-;BEGIN CODE
-;CODE NOT LOADED
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_8
-Function Fragment_8()
-;BEGIN CODE
-;CODE NOT LOADED
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_20
-Function Fragment_20()
-;BEGIN CODE
-;CODE NOT LOADED
-;END CODE
-EndFunction
-;END FRAGMENT
-
 ;BEGIN FRAGMENT Fragment_11
 Function Fragment_11()
 ;BEGIN CODE
-;CODE NOT LOADED
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_10
-Function Fragment_10()
-;BEGIN CODE
-;CODE NOT LOADED
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_6
-Function Fragment_6()
-;BEGIN CODE
-;CODE NOT LOADED
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_2
-Function Fragment_2()
-;BEGIN CODE
-;CODE NOT LOADED
+libs.RemoveDevice(libs.PlayerRef, CollarI , CollarR, libs.zad_DeviousCollar, skipevents = false, skipmutex = true)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -97,7 +33,126 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_15
 Function Fragment_15()
 ;BEGIN CODE
-;CODE NOT LOADED
+Q.Reset()
+Q.SetStage(10)
+QQ.Debtm((QQ.Debt.Getvalue()*0.5))
+QQ.Etimerreset()
+QQ.ReduceBoredom(3)
+Reset()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_20
+Function Fragment_20()
+;BEGIN CODE
+Q.Reset()
+Q.SetStage(10)
+QQ.Debtm((QQ.Debt.Getvalue()*0.5))
+QQ.Etimerreset()
+QQ.ReduceBoredom(5)
+Reset()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_10
+Function Fragment_10()
+;BEGIN CODE
+QQ.ReduceBoredom()
+Q.Reset()
+Q.SetStage(10)
+Libs.ManipulateGenericDeviceByKeyword(libs.PlayerRef,libs.zad_Deviousgag,false)
+QQ.ETimerReset()
+Reset()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_12
+Function Fragment_12()
+;BEGIN CODE
+libs.RemoveDevice(libs.PlayerRef, BinderI , BinderR, libs.zad_DeviousArmbinder, skipevents = false, skipmutex = true)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_6
+Function Fragment_6()
+;BEGIN CODE
+Q.SetStage(200)
+libs.EquipDevice(libs.PlayerRef, HarnI , HarnR, libs.zad_DeviousHarness, skipevents = false, skipmutex = true)
+libs.EquipDevice(libs.PlayerRef, BinderI , BinderR, libs.zad_DeviousArmbinder, skipevents = false, skipmutex = true)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_3
+Function Fragment_3()
+;BEGIN CODE
+libs.removeDevice(libs.PlayerRef, HI , HR, libs.zad_DeviousHarness, skipevents = false, skipmutex = true)
+libs.removeDevice(libs.PlayerRef, HGI , HGR, libs.zad_Deviousgag, skipevents = false, skipmutex = true)
+libs.removeDevice(libs.PlayerRef, HTI , HTR, libs.zad_DeviousPlugAnal, skipevents = false, skipmutex = true)
+libs.removeDevice(libs.PlayerRef, HOOFI , HOOFR, libs.zad_DeviousGloves, skipevents = false, skipmutex = true)
+setstage(0)
+reset()
+QQ.ReduceBoredom()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_2
+Function Fragment_2()
+;BEGIN CODE
+libs.removeDevice(libs.PlayerRef, HOOFI , HOOFR, libs.zad_DeviousGloves, skipevents = false, skipmutex = true)
+Utility.wait(5)
+libs.equipDevice(libs.PlayerRef, HTI , HTR, libs.zad_DeviousPlugAnal, skipevents = false, skipmutex = true)
+libs.equipDevice(libs.PlayerRef, HI , HR, libs.zad_DeviousHarness, skipevents = false, skipmutex = true)
+libs.equipDevice(libs.PlayerRef, HGI , HGR, libs.zad_Deviousgag, skipevents = false, skipmutex = true)
+
+Utility.wait(1)
+libs.equipDevice(libs.PlayerRef, HOOFI , HOOFR, libs.zad_DeviousGloves, skipevents = false, skipmutex = true)
+
+Armor a = PlayerRef.GetWornForm(0x00000002) as Armor
+Armor b = PlayerRef.GetWornForm(0x00000004) as Armor
+Armor c = PlayerRef.GetWornForm(0x00000008) as Armor
+Armor d = PlayerRef.GetWornForm(0x00000080) as Armor
+
+
+If a && !a.HasKeyword(zad_lockable)
+PlayerRef.UnequipItem(a)
+
+endif
+
+If c && !c.HasKeyword(zad_lockable)
+PlayerRef.UnequipItem(c)
+endif
+
+If d && !d.HasKeyword(zad_lockable)
+PlayerRef.UnequipItem(d)
+endif
+
+If b && !b.HasKeyword(zad_lockable)
+PlayerRef.UnequipItem(b)
+endif
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_16
+Function Fragment_16()
+;BEGIN CODE
+qq.tool.UnequipGear()
+libs.equipDevice(libs.PlayerRef, Xlibs2.zadx_PetSuit_Black_Inventory, xlibs2.zadx_PetSuit_Black_Rendered, libs.zad_DeviousPetSuit, skipevents = false, skipmutex = true)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_8
+Function Fragment_8()
+;BEGIN CODE
+libs.RemoveDevice(libs.PlayerRef, HarnI , HarnR, libs.zad_DeviousHarness, skipevents = false, skipmutex = true)
+libs.EquipDevice(libs.PlayerRef, CollarI , CollarR, libs.zad_DeviousCollar, skipevents = false, skipmutex = true)
 ;END CODE
 EndFunction
 ;END FRAGMENT

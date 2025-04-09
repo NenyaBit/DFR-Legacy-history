@@ -1,42 +1,42 @@
 FormKey: 4153B8:DeviousFollowers.esp
-VersionControl: 12600
 EditorID: DFR_Outfits
 VirtualMachineAdapter:
   Scripts:
   - Name: DFR_Outfits
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: TargetSeverity
-      Object: 4153CB:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Licenses
-      Object: 3B4FD7:DeviousFollowers.esp
+      Name: WhoreArmorValidStatus
+      Object: 4153BA:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: manager
       Object: 000824:Adversity Framework.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: LocTransitionCooldown
-      Object: 4153B9:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: GameDaysPassed
-      Object: 000039:Skyrim.esm
+      Name: Flow
+      Object: 000D62:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: PlayerRef
       Object: 000014:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: Flow
-      Object: 000D62:DeviousFollowers.esp
+      Name: LocTransitionCooldown
+      Object: 4153B9:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: WhoreArmorValidStatus
-      Object: 4153BA:DeviousFollowers.esp
+      Name: Licenses
+      Object: 3B4FD7:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Relationship
       Object: 38C70D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: TargetSeverity
+      Object: 4153CB:DeviousFollowers.esp
   Versioning:
   - Break0
   ExtraBindDataVersion: 0
   FileName: ''
 Flags:
 - StartGameEnabled
+- 0x10
 - RunOnce
 NextAliasID: 0

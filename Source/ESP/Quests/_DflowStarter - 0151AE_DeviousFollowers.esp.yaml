@@ -20,7 +20,7 @@ DialogConditions:
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 000D62:DeviousFollowers.esp
-    SecondUnusedIntParameter: -963976832
+    SecondUnusedIntParameter: -714880832
     VariableName: ::Delay_var
   ComparisonValue: 000039:Skyrim.esm
 - MutagenObjectType: ConditionFloat

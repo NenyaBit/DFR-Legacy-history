@@ -5,11 +5,11 @@ VirtualMachineAdapter:
   - Name: TIF__0001A1CD
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: HirelingRecognizeJenassa
-      Object: 104F38:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
       Name: HasHirelingGV
       Object: 0BCC98:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HirelingRecognizeJenassa
+      Object: 104F38:Skyrim.esm
   ScriptFragments:
     MutagenObjectType: ScriptFragments
     FileName: TIF__0001A1CD

@@ -5,6 +5,9 @@ VirtualMachineAdapter:
   - Name: DFR_Collar
     Properties:
     - MutagenObjectType: ScriptObjectProperty
+      Name: Collar
+      Object: 000800:Adversity Framework.esm
+    - MutagenObjectType: ScriptObjectProperty
       Name: MasterAlias
       Object: 3ECB48:DeviousFollowers.esp
       Alias: 1
@@ -12,14 +15,11 @@ VirtualMachineAdapter:
       Name: LeadScene
       Object: 3ECB4A:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: LeashScene
-      Object: 3ECB49:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
       Name: Flow
       Object: 000D62:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: Collar
-      Object: 000800:Adversity Framework.esm
+      Name: LeashScene
+      Object: 3ECB49:DeviousFollowers.esp
   Versioning:
   - Break0
   ExtraBindDataVersion: 0

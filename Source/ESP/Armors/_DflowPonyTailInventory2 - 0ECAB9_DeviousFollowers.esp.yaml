@@ -5,32 +5,23 @@ VirtualMachineAdapter:
   - Name: zadPlugScript
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: deviceInventory
-      Object: 0ECAB9:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DeviceMsg
-      Object: 05C997:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DeviousDevice
-      Object: 01DD7D:Devious Devices - Assets.esm
-    - MutagenObjectType: ScriptObjectProperty
       Name: zad_DeviceRemoveMsg
       Object: 00C039:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DeviceMsgMagic
-      Object: 00B573:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Aroused
-      Object: 04290F:SexLabAroused.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: Lockpick
       Object: 00000A:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: deviceQuest
-      Object: 00F624:Devious Devices - Integration.esm
+      Name: Aroused
+      Object: 04290F:SexLabAroused.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: deviceRendered
-      Object: 0ECABA:DeviousFollowers.esp
+      Name: zad_DeviceMsgMagic
+      Object: 00B573:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviceEscapeMsg
+      Object: 05A3E0:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviousDevice
+      Object: 01DD7D:Devious Devices - Assets.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: zad_DeviousBelt
       Object: 003330:Devious Devices - Assets.esm
@@ -38,8 +29,17 @@ VirtualMachineAdapter:
       Name: libs
       Object: 00F624:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: zad_DeviceEscapeMsg
-      Object: 05A3E0:Devious Devices - Integration.esm
+      Name: deviceInventory
+      Object: 0ECAB9:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: deviceQuest
+      Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: deviceRendered
+      Object: 0ECABA:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_DeviceMsg
+      Object: 05C997:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: deviceKey
       Object: 008A4F:Devious Devices - Integration.esm

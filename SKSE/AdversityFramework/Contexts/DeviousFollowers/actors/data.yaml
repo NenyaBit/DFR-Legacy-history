@@ -1,32 +1,36 @@
-- id: HirelingBelrand
+- id: 0xB9988|Skyrim.esm
   traits:
     - id: Profiteer
   data:
     devious: true
     combatStyle: heavy
     playerCombatPref: light
-- id: HirelingErikTheSlayer
+    buyer: true
+- id: 0x656E2|Skyrim.esm
   traits:
     - id: Profiteer
   data:
     devious: true
     combatStyle: light
     playerCombatPref: heavy
-- id: HirelingJenassa
+    buyer: true
+- id: 0xE1BA9|Skyrim.esm
   traits:
     - id: Profiteer
   data:
     devious: true
     combatStyle: light
     playerCombatPref: heavy
-- id: HirelingMarcurio
+    buyer: true
+- id: 0xB9986|Skyrim.esm
   traits:
     - id: Profiteer
   data:
     devious: true
     combatStyle: magic
     playerCombatPref: light
-- id: HirelingStenvar
+    buyer: true
+- id: 0xB998C|Skyrim.esm
   traits:
     - id: Profiteer
     - id: Brute
@@ -34,11 +38,13 @@
     devious: true
     combatStyle: heavy
     playerCombatPref: magic
-- id: HirelingVorstag
+    buyer: true
+- id: 0xB9984|Skyrim.esm
   traits:
     - id: Profiteer
   data:
     devious: true
     combatStyle: heavy
     playerCombatPref: light
+    buyer: true
     

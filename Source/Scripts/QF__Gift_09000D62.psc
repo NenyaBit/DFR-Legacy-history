@@ -179,7 +179,6 @@ EndFunction
 ; Picks a slaver to be the new DF, or tries to at least.
 ; May even raise the slaver from the dead! (This seems a terrible idea, but it probably never happens).
 Function Enslave()
-
     Actor slaver = ScanActor
 
     ExternalRemoveFollower() ; Resets to stage 0, then resets everything.
@@ -189,6 +188,7 @@ Function Enslave()
     EndIf
     
     If !slaver
+        ; TODO: replace with adv actor check
         ; Pick a vanilla mercenary anyway
         Actor[] mercs = New Actor[5]
         mercs[0] = Actor1
@@ -251,19 +251,68 @@ EndFunction
 Function EnslaveDirect()
     Tool.UnequipGear()
     Actor whoMaster = Alias__DMaster.GetActorRef()
+
     If whoMaster
-        ResetPunishmentTracking(whoMaster)
-        _DFBoredom.SetValue(0.0)
-        _DFDailyDebtAdjust.SetValue(0.0)
-        _DFExpectedDealCount.SetValue(0)
-        PriceReset() ; Reset device removal cost
-        SetDebt(FreedomCost.GetValue())
-        PlayerRef.RemoveItem(Gold001, PlayerRef.GetItemCount(Gold001))
-        ResetPunishmentTracking(whoMaster)
-        StartSlaverySetup(1)
+        _DFSlaveryTarget.SetValue(3)
+        EnslavedDueToDebt()
     else
         Enslave()
     EndIf
+EndFunction
+
+Function EnslavedDueToDebt()
+
+    Debug.TraceConditional("DF - EnslavedDueToDebt - begin", True)
+
+    ; SSO was unset, so probably wasn't working - repaired for updaters in MCM version update step.
+    ; SSO = GetFormFromFile(0x0002F68A, "DeviousFollowers.esp")
+    Int slaveryTarget = _DFSlaveryTarget.GetValue() As Int
+    
+    If _DFlowSold.Active
+        slaveryTarget = _DFEndlessSlaveryTarget.GetValue() As Int
+    EndIf
+    
+    If 1 == slaveryTarget && Tool.HaveSimpleSlavery()
+        ; Simple slavery
+        Debug.Notification("You feel dizzy... Your vision blurs...")
+
+        ; Player is sent to Simple Slavery ... remove them from DF.
+        SendModEvent("DF-RemoveFollower")
+        PlayerRef.RemoveItem(Gold001, 16000) ; Just steal a bunch of gold.
+        SetDebt(0)
+        Reset()
+        SetStage(0)
+        Start()
+        DDelay()
+        SendModEvent("SSLV Entry") ; Welcome to the auction - we also listen for this, but it's more reliable to be explicit, maybe?
+    ElseIf 2 == slaveryTarget && Tool.HaveLola()
+        ; Submissive Lola
+        Debug.TraceConditional("DF - EnslavedDueToDebt - Start SlaveryWatcher", True)
+        Debug.Notification("Start the slavery watcher...")
+        ; Player is sent to Submissive Lola
+        _DFSlaveryWatcher.Start()
+        ;_DFSlaveryWatcher.SetStage(10)
+    Else
+        ; Internal DF slavery        
+        ETimerReset()
+        StartSlaverySetup(1)
+    EndIf
+    
+    Utility.Wait(10.0) ; Allow some time for the slavery to clear immediate events before we resume.
+    Tool.ResumeAll()
+    
+    ; Set a new destination for next enslavement.
+    Tool.PickSlaveryDestination()
+    PickEndlessSlaveryDestination()
+    Debug.TraceConditional("DF - EnslavedDueToDebt - end", True)
+EndFunction
+
+Function StartSlaverySetup(int aiMode)
+    SetStage(10)
+    Tool.LDC.EquipCollar()
+    DFR_RelationshipManager.Get().SetupSlavery(Alias__DMaster.GetRef() as Actor, aiMode)
+    Game.GetPlayer().SendModEvent("PlayerRefEnslaved")
+    SetStage(40)
 EndFunction
 
 ; Fit all missing slave items
@@ -845,6 +894,21 @@ Function ApplyPunishmentDebt()
     AdjustDebt(punishmentDebt)
 EndFunction
 
+Function ApplyPunishmentDebtTimes(int aiTimes)
+    Tool.MCM.CalculateScaledDebts()
+    Float punishmentDebt = _DFPunDebt.GetValue() * aiTimes
+    
+    if DFR_RelationshipManager.Get().HasHighFavour()
+        punishmentDebt *= 0.5
+    endIf
+
+    if punishmentDebt < 10.0
+        punishmentDebt = 10.0
+    endIf
+    
+    AdjustDebt(punishmentDebt)
+EndFunction
+
  ; Add punishment debt
 Function PunDebt()
     Tool.PunDebt()
@@ -864,11 +928,7 @@ EndFunction
 
 
 Function BuyoutOfSlavery()
-    
-    PlayerRef.RemoveFromFaction(SlaveFaction)
-
     SetPostSlaveryDebt()
-    SetPostSlaveryDeals()
     ReduceExpectedDeals(10.0)
     
     Actor who = Alias__DMaster.GetActorRef()
@@ -880,7 +940,6 @@ Function BuyoutOfSlavery()
     SetStage(10)
     
     SendModEvent("PlayerRefFreed")
-
 EndFunction
 
 
@@ -1051,9 +1110,7 @@ Function DebtPay(Float amount)
 EndFunction
 
 ; Pay off debt with amount, and return any cash left over.
-Int Function DebtPayGoldQ(Float amount)
-    ; TODO: if enslaved, check living expenses and apply excess there before proceeding
-    
+Int Function DebtPayGoldQ(Float amount)    
     ; This had a bug that was eating credit values set into debt as negative numbers.
     
 	Int mainStage = GetStage()
@@ -1711,78 +1768,6 @@ Function RepairFollower()
 
 EndFunction
 
-Function EnslavedDueToDebt()
-
-    Debug.TraceConditional("DF - EnslavedDueToDebt - begin", True)
-
-    ; SSO was unset, so probably wasn't working - repaired for updaters in MCM version update step.
-    ; SSO = GetFormFromFile(0x0002F68A, "DeviousFollowers.esp")
-    Int slaveryTarget = _DFSlaveryTarget.GetValue() As Int
-    
-    If _DFlowSold.Active
-        slaveryTarget = _DFEndlessSlaveryTarget.GetValue() As Int
-    EndIf
-    
-    If 1 == slaveryTarget && Tool.HaveSimpleSlavery()
-        ; Simple slavery
-        Debug.Notification("You feel dizzy... Your vision blurs...")
-
-        ; Player is sent to Simple Slavery ... remove them from DF.
-        SendModEvent("DF-RemoveFollower")
-        PlayerRef.RemoveItem(Gold001, 16000) ; Just steal a bunch of gold.
-        SetDebt(0)
-        Reset()
-        SetStage(0)
-        Start()
-        DDelay()
-        SendModEvent("SSLV Entry") ; Welcome to the auction - we also listen for this, but it's more reliable to be explicit, maybe?
-    ElseIf 2 == slaveryTarget && Tool.HaveLola()
-        ; Submissive Lola
-        Debug.TraceConditional("DF - EnslavedDueToDebt - Start SlaveryWatcher", True)
-        Debug.Notification("Start the slavery watcher...")
-        ; Player is sent to Submissive Lola
-        _DFSlaveryWatcher.Start()
-        ;_DFSlaveryWatcher.SetStage(10)
-    Else
-        ; Internal DF slavery        
-        EnslaveDebt()
-    EndIf
-    
-    Utility.Wait(10.0) ; Allow some time for the slavery to clear immediate events before we resume.
-    Tool.ResumeAll()
-    
-    ; Set a new destination for next enslavement.
-    Tool.PickSlaveryDestination()
-    PickEndlessSlaveryDestination()
-    Debug.TraceConditional("DF - EnslavedDueToDebt - end", True)
-EndFunction
-
-Function EnslaveDebt()
-    ETimerReset()
-    DFR_RelationshipManager.Get().SaveFavour(Alias__DMaster.GetRef() as Actor)
-    StartSlaverySetup(1)
-EndFunction
-
-Function StartSlaverySetup(int aiMode)
-    ((self as Quest) as _DflowConditionals).EnslavementMethod = aiMode
-    PlayerRef.AddToFaction(SlaveFaction)
-    DFR_RelationshipManager.Get().SetStageSlavery(Alias__DMaster.GetRef() as Actor)
-    SetStage(10)
-    Game.GetPlayer().SendModEvent("PlayerRefEnslaved")
-    Tool.LDC.EquipCollar()
-    EnslavementIntro.Start()
-EndFunction
-
-Function NextSlaveryRule()
-EndFunction
-
-Function FinishSlaverySetup()
-    ; TODO: ensure all enslavement deals are active
-    ; ensure collar is equipped
-    DFR_RelationshipManager.Get().DelayForcedDealTimer()
-    SetStage(40)
-EndFunction
-
 ; This is only used when forced into gold control due to debt.
 Function EnterGoldControl()
 
@@ -1871,8 +1856,6 @@ Bool Function IsIgnore(Actor who)
     EndIf
     Return who.GetFactionRank(_DFDisable) >= -1
 EndFunction
-
-Faction property SlaveFaction auto
 
 _DflowFollowerController Property Q2 Auto
 zadlibs Property libs  Auto  
@@ -2027,6 +2010,3 @@ Int[] honorRange
 Int[] lustRange
 Int[] controlRange
 Int[] playfulRange
-
-
-Scene property EnslavementIntro auto

@@ -10,7 +10,17 @@ q.Tool.PrepareForScene()
 (GetOwningquest() as QF__DflowGames_0A0110DC).Alias_SceneYOU.Forcerefto(q.Tool.PC)
 (GetOwningquest() as QF__DflowGames_0A0110DC).Alias_Jarl.Forcerefto(Akspeaker)
 GetOwningquest().Setstage(402)
-_DflowGamesDogScene.Start()
+_DflowGamesDogScene.ForceStart()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_1
+Function Fragment_1(ObjectReference akSpeakerRef)
+Actor akSpeaker = akSpeakerRef as Actor
+;BEGIN CODE
+;WARNING: Unable to load fragment source from function Fragment_1 in script TIF_Dflow_090C014D
+;Source NOT loaded
 ;END CODE
 EndFunction
 ;END FRAGMENT

@@ -10,8 +10,17 @@ VirtualMachineAdapter:
   - Name: DFR_DeviceController
     Properties:
     - MutagenObjectType: ScriptObjectProperty
+      Name: libs
+      Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gold
+      Object: 00000F:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
       Name: Lives
       Object: 02DB9E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: RemovalPrice
+      Object: 03C894:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectListProperty
       Name: RemovalBlocked
       Objects:
@@ -28,20 +37,11 @@ VirtualMachineAdapter:
       - Name: ''
         Object: 3BA100:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: RemovalPrice
-      Object: 03C894:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: libs
-      Object: 00F624:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: PlayerRef
-      Object: 000014:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
       Name: Flow
       Object: 000D62:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: Gold
-      Object: 00000F:Skyrim.esm
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
   Versioning:
   - Break0
   ExtraBindDataVersion: 0

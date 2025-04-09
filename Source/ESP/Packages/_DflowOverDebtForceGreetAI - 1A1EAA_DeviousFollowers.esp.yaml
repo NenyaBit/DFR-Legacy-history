@@ -94,14 +94,14 @@ Conditions:
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 010617:DeviousFollowers.esp
-    SecondUnusedIntParameter: -963974976
+    SecondUnusedIntParameter: -714880256
     VariableName: ::Suspend_var
 - MutagenObjectType: ConditionGlobal
   CompareOperator: LessThan
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 000D62:DeviousFollowers.esp
-    SecondUnusedIntParameter: -963974944
+    SecondUnusedIntParameter: -714880224
     VariableName: ::DebtPunTimer_var
   ComparisonValue: 000039:Skyrim.esm
 - MutagenObjectType: ConditionFloat

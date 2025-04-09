@@ -5,11 +5,11 @@ VirtualMachineAdapter:
   - Name: _DFSlaveryWatching
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: tick
-      Object: 010617:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
       Name: q
       Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tick
+      Object: 010617:DeviousFollowers.esp
   - Name: _Dx_QF__DFSlaveryWatcher_0931D0B2
     Properties:
     - MutagenObjectType: ScriptObjectProperty

@@ -1,0 +1,66 @@
+FormKey: 41F5F3:DeviousFollowers.esp
+EditorID: DFR_Skincare
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR__QF_DFR_Skincare_0A41F5F3
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_Player
+      Object: 41F5F3:DeviousFollowers.esp
+      Alias: 3
+  - Name: DFR_Skincare
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Flow
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: SpecialLotion
+      Object: 42982E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: RelManager
+      Object: 38C70D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: RegularLotion
+      Object: 42982C:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: SL
+      Object: 000D62:SexLab.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LotionList
+      Object: 41F5FC:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+  FileName: DFR__QF_DFR_Skincare_0A41F5F3
+  Fragments:
+  - Unknown2: 1
+    ScriptName: DFR__QF_DFR_Skincare_0A41F5F3
+    FragmentName: Fragment_0
+  Aliases:
+  - Property:
+      Name: ''
+      Object: 41F5F3:DeviousFollowers.esp
+      Alias: 3
+    Scripts:
+    - Name: DFR_Skincare_Player
+      Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: LotionList
+        Object: 41F5FC:DeviousFollowers.esp
+Flags:
+- AllowRepeatedStages
+Stages:
+- Flags:
+  - StartUpStage
+  LogEntries:
+  - Flags: []
+NextAliasID: 4
+Aliases:
+- ID: 3
+  Name: Player
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null

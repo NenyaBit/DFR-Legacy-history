@@ -5,14 +5,14 @@ VirtualMachineAdapter:
   - Name: _DAddHitListEffect
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DCalm
-      Object: 011BA6:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
       Name: hitlist
       Object: 011641:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: PlayerRef
       Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DCalm
+      Object: 011BA6:DeviousFollowers.esp
 Name:
   TargetLanguage: English
   Value: Add To hit List Effect

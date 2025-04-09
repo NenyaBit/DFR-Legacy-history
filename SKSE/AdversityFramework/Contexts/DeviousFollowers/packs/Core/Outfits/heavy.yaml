@@ -139,8 +139,6 @@ variants:
         id: 0x818|ahzWaywardKnight.esp
       - name: Wayward Knight Couters
         id: 0x817|ahzWaywardKnight.esp
-      - name: Wayward Knight Tassets
-        id: 0x816|ahzWaywardKnight.esp
       - name: Wayward Knight Legguards
         id: 0x814|ahzWaywardKnight.esp
       - name: Dwarven Bikini Top 03 - Slot 48
@@ -329,6 +327,27 @@ variants:
       - name: Kardia's Plate Gauntlets (B)
         id: 0x000880|TBD - NiseKardiaArmor.esp
   - severity: 4
+    sequence:
+      - key: kardia
+    tags: [bikini]
+    addKeywords:
+      - _SLS_BikiniArmor
+    pieces:
+      - name: Kardia's Plate Armor (No BP)
+        id: 0x00080D|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Panty Fabric (B)
+        id: 0x000DEA|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Heels
+        id: 0x000D65|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Xtra Breast Plates
+        id: 0x00083B|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Legs
+        id: 0x00082C|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Helm (Opened)
+        id: 0x000810|TBD - NiseKardiaArmor.esp
+      - name: Kardia's Plate Gauntlets (B)
+        id: 0x000880|TBD - NiseKardiaArmor.esp
+  - severity: 5
     sequence:
       - key: kardia
     tags: [bikini]

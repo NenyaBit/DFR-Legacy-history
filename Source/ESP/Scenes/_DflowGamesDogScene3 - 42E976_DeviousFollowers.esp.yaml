@@ -1,0 +1,111 @@
+FormKey: 42E976:DeviousFollowers.esp
+EditorID: _DflowGamesDogScene3
+Flags: []
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- ID: 2
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+- ID: 1
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+- ID: 3
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Name: ''
+  ActorID: 2
+  Index: 1
+  StartPhase: 0
+  EndPhase: 0
+  Topic: 42E977:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: ''
+  ActorID: 1
+  Index: 2
+  StartPhase: 1
+  EndPhase: 1
+  Topic: 42E979:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: ''
+  ActorID: 2
+  Index: 3
+  StartPhase: 2
+  EndPhase: 2
+  Topic: 42E97B:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: ''
+  ActorID: 1
+  Index: 4
+  StartPhase: 3
+  EndPhase: 3
+  Topic: 42E97D:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 2
+  Index: 6
+  StartPhase: 0
+  EndPhase: 0
+  TimerSeconds: 2
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 7
+  StartPhase: 1
+  EndPhase: 1
+  TimerSeconds: 2
+- Type: Timer
+  Name: ''
+  ActorID: 2
+  Index: 8
+  StartPhase: 2
+  EndPhase: 2
+  TimerSeconds: 2
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 9
+  StartPhase: 3
+  EndPhase: 3
+  TimerSeconds: 2
+Quest: 0110DC:DeviousFollowers.esp
+LastActionIndex: 9
+VNAM: 0x03000000030000000300000003000000

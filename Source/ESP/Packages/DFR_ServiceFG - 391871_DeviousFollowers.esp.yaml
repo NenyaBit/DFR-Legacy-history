@@ -1,5 +1,8 @@
-FormKey: 3AFECB:DeviousFollowers.esp
-EditorID: DFR_GameFG
+FormKey: 391871:DeviousFollowers.esp
+EditorID: DFR_ServiceFG
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR__PF_DFR_PunishFG_0A391871
 Flags:
 - PreferredSpeed
 Type: Package
@@ -11,6 +14,11 @@ ScheduleMinute: -1
 Unknown3: 0x000000
 Conditions:
 - MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetInFactionConditionData
+    Faction: 015712:DeviousFollowers.esp
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
   CompareOperator: GreaterThanOrEqualTo
   Data:
     MutagenObjectType: GetStageConditionData
@@ -18,11 +26,6 @@ Conditions:
     Reference: 000014:Skyrim.esm
     Quest: 000D62:DeviousFollowers.esp
   ComparisonValue: 10
-- MutagenObjectType: ConditionGlobal
-  Data:
-    MutagenObjectType: GetStageConditionData
-    Quest: 38C70D:DeviousFollowers.esp
-  ComparisonValue: 38C70C:DeviousFollowers.esp
 - MutagenObjectType: ConditionFloat
   CompareOperator: LessThan
   Data:
@@ -31,11 +34,6 @@ Conditions:
     Reference: 000014:Skyrim.esm
     Quest: 000D62:DeviousFollowers.esp
   ComparisonValue: 98
-- MutagenObjectType: ConditionFloat
-  Data:
-    MutagenObjectType: GetInFactionConditionData
-    Faction: 015712:DeviousFollowers.esp
-  ComparisonValue: 1
 - MutagenObjectType: ConditionFloat
   CompareOperator: NotEqualTo
   Data:
@@ -70,42 +68,66 @@ Conditions:
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 010617:DeviousFollowers.esp
-    SecondUnusedIntParameter: -963975104
+    SecondUnusedIntParameter: -714880672
     VariableName: ::Suspend_var
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 410291:DeviousFollowers.esp
+  ComparisonValue: 2
 - MutagenObjectType: ConditionGlobal
   CompareOperator: LessThan
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
-    Quest: 000D62:DeviousFollowers.esp
-    SecondUnusedIntParameter: -963975072
-    VariableName: ::DebtPunTimer_var
+    Quest: 38C70D:DeviousFollowers.esp
+    SecondUnusedIntParameter: -714880640
+    VariableName: ::ForcedEventTimer_var
   ComparisonValue: 000039:Skyrim.esm
 - MutagenObjectType: ConditionGlobal
-  CompareOperator: LessThanOrEqualTo
+  CompareOperator: LessThan
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 38C70D:DeviousFollowers.esp
-    SecondUnusedIntParameter: -963975040
-    VariableName: ::ForcedDealTimer_var
+    SecondUnusedIntParameter: -714880608
+    VariableName: ::ServiceLocationChangeTimer_var
   ComparisonValue: 000039:Skyrim.esm
 - MutagenObjectType: ConditionFloat
-  Flags:
-  - OR
   Data:
-    MutagenObjectType: LocationHasKeywordConditionData
-    RunOnType: Reference
-    Reference: 000014:Skyrim.esm
-    Keyword: 0A6E84:Skyrim.esm
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 38C70D:DeviousFollowers.esp
+    SecondUnusedIntParameter: -714880576
+    VariableName: ::AllowForcedEvents_var
   ComparisonValue: 1
 - MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 38C70D:DeviousFollowers.esp
+    SecondUnusedIntParameter: -714880544
+    VariableName: ::ServiceOrPunishmentActive_var
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 38C75F:DeviousFollowers.esp
+    SecondUnusedIntParameter: -714880512
+    VariableName: ::Display_var
+  ComparisonValue: 1
+- MutagenObjectType: ConditionGlobal
   Flags:
   - OR
   Data:
-    MutagenObjectType: LocationHasKeywordConditionData
-    RunOnType: Reference
-    Reference: 000014:Skyrim.esm
-    Keyword: 0130DC:Skyrim.esm
-  ComparisonValue: 1
+    MutagenObjectType: GetStageConditionData
+    Quest: 38C70D:DeviousFollowers.esp
+  ComparisonValue: 38C70C:DeviousFollowers.esp
+- MutagenObjectType: ConditionGlobal
+  CompareOperator: LessThanOrEqualTo
+  Flags:
+  - OR
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 01A2A7:Update.esm
+  ComparisonValue: 00080E:Adversity Framework.esm
 PackageTemplate: 03C1C4:Skyrim.esm
 DataInputVersion: 18
 Data:
@@ -114,6 +136,7 @@ Data:
     MutagenObjectType: PackageDataTopic
     Topics:
     - MutagenObjectType: TopicReference
+      Reference: 2AD93D:DeviousFollowers.esp
 - Key: 8
   Value:
     MutagenObjectType: PackageDataLocation

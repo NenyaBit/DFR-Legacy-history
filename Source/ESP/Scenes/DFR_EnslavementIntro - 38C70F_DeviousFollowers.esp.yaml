@@ -41,7 +41,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 000D62:DeviousFollowers.esp
-      SecondUnusedIntParameter: -963971744
+      SecondUnusedIntParameter: -714878464
       VariableName: ::EnslavementMethod_var
   Unused2: {}
   EditorWidth: 200
@@ -51,7 +51,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 000D62:DeviousFollowers.esp
-      SecondUnusedIntParameter: -963971680
+      SecondUnusedIntParameter: -714878400
       VariableName: ::EnslavementMethod_var
   Unused2: {}
   EditorWidth: 200
@@ -63,7 +63,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 000D62:DeviousFollowers.esp
-      SecondUnusedIntParameter: -963971616
+      SecondUnusedIntParameter: -714878336
       VariableName: ::EnslavementMethod_var
   - MutagenObjectType: ConditionFloat
     Flags:
@@ -71,7 +71,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 000D62:DeviousFollowers.esp
-      SecondUnusedIntParameter: -963971584
+      SecondUnusedIntParameter: -714878304
       VariableName: ::EnslavementMethod_var
     ComparisonValue: 2
   Unused2: {}
@@ -82,7 +82,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 000D62:DeviousFollowers.esp
-      SecondUnusedIntParameter: -963971520
+      SecondUnusedIntParameter: -714878240
       VariableName: ::EnslavementMethod_var
     ComparisonValue: 1
   Unused2: {}
@@ -93,7 +93,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 000D62:DeviousFollowers.esp
-      SecondUnusedIntParameter: -963971456
+      SecondUnusedIntParameter: -714878176
       VariableName: ::EnslavementMethod_var
     ComparisonValue: 1
   Unused2: {}
@@ -127,7 +127,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 00C545:DeviousFollowers.esp
-      SecondUnusedIntParameter: -963971232
+      SecondUnusedIntParameter: -714877952
       VariableName: ::EnslavedGoldControl_var
     ComparisonValue: 1
   Unused2: {}
@@ -284,8 +284,6 @@ Actions:
   Index: 17
   StartPhase: 8
   EndPhase: 8
-  Packages:
-  - 38C722:DeviousFollowers.esp
 - Type: Timer
   Name: ''
   ActorID: 1

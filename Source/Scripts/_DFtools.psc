@@ -211,6 +211,7 @@ MiscObject Property Gold001 Auto
 
 Scene Property _DflowGamesDogKitten Auto  ; Dog sex scene 1
 Scene Property _DflowGamesDogKitten2 Auto ; Dog sex scene 2
+Scene property _DFlowGamesDogScene3 Auto
 Scene Property RapeTimeIntro Auto
 Scene property RapeTimeEnding Auto
 Scene Property RapeTimeTransition Auto
@@ -1066,12 +1067,11 @@ Bool Function SexInternal_1(Actor b, Bool waitComplete = False)
         r = SexLabUtil.QuickStart(PlayerRef, b, none, none, none,  PlayerRef, "", "Boobjob")
     EndIf
     
-    
     ; Try for anything. Probably going to be a bad result.
     If !r
         r = SexLabUtil.QuickStart(PlayerRef, b, none, none, none,  PlayerRef, "", "")
     EndIf
-    
+
     If waitComplete
         WaitForSex()
     EndIf
@@ -1101,7 +1101,7 @@ Bool Function SexInternal_2(Actor b, Actor c, Bool waitComplete = False)
     EndIf
     
     If !r
-     r = SexLabUtil.QuickStart(PlayerRef, b, c, none, none,  PlayerRef, "", "")
+        r = SexLabUtil.QuickStart(PlayerRef, b, c, none, none,  PlayerRef, "", "")
     EndIf
     
     If waitComplete
@@ -1133,7 +1133,7 @@ Bool Function SexInternal_3(Actor b, Actor c, Actor d, Bool waitComplete = False
     EndIf
     
     If !r
-     r = SexLabUtil.QuickStart(PlayerRef, b, c, d, none,  PlayerRef, "", "")
+        r = SexLabUtil.QuickStart(PlayerRef, b, c, d, none,  PlayerRef, "", "")
     EndIf
 
     If waitComplete
@@ -1519,7 +1519,9 @@ Bool Function Spank(Actor spanker, Int severity = -1)
     Bool playedOK = False
 
     ; If the rape animation (with spanking) is used, then treat as rape "Victim".
-    SexLab.QuickStart(PlayerRef, Spanker, AnimationTags = "spanking")
+    if !SexLab.QuickStart(PlayerRef, Spanker, Victim = PlayerRef, AnimationTags = "spanking")
+        SexLab.QuickStart(PlayerRef, Spanker, AnimationTags = "spanking")
+    endIf
 
     ; now handled thru custom anim events in Impact Play - ponzi
     
@@ -3244,33 +3246,84 @@ Function JarlScene2(Actor Jarl)
         Utility.Wait(4.0)
     EndIf
 
-    If Dog
+    DFR_LocScanner Scanner = DFR_LocScanner.Get()
+    Scanner.Scan()
+    
+    Actor dog1 = none
+    Actor dog2 = none
+
+    if Scanner.Dogs.Length
+        dog1 = Scanner.Dogs[0]
+        Sexlab.TreatAsMale(dog1)
+    endIf
+
+    if Scanner.Dogs.Length > 1
+        dog2 = Scanner.Dogs[1]
+        Sexlab.TreatAsMale(dog2)
+    endIf
+
+    if !dog1
+        Dog.Enable()
+        dog1 = Dog
+        dog1.MoveTo(Game.Getplayer())
+    endIf
+    
+    DFR_Util.Log("Jarl Scene 2 - Dog 1 = " + dog1 + " - Dog 2 = " + dog2)
+
+    If dog1
         MCM.Noti("Unsnap") ; free for sex
         Debug.Notification("$DF_JARLDOG1")
-        Dog.Enable()
-        Dog.AllowPCDialogue(False) ; It's silly if you can talk to the dog.
-        Dog.MoveTo(Game.Getplayer())
+        dog1.AllowPCDialogue(False) ; It's silly if you can talk to the dog.
         Utility.Wait(4.0)
 
-        If SexInternal_1(Dog)
+        If SexInternal_1(dog1)
             DelayPlaySceneAndWait(15.0, timeoutAfter, _DflowGamesDogKitten2) ; dog sex dialog
             Debug.Notification("$DF_JARLDOG2") ; stops, then starts again
             Utility.Wait(4.0)
         EndIf
-        
-        If SexInternal_1(Dog)
+
+        _DflowGamesDogKitten2.Stop()
+
+        If SexInternal_1(dog1)
             DelayPlaySceneAndWait(15.0, timeoutAfter, _DflowGamesDogKitten2) ; dog sex dialog
             Debug.Notification("$DF_JARLDOG3") ; still knotted
             Utility.Wait(4.0)
         EndIf
 
-        If SexInternal_1(Dog)
+        _DflowGamesDogKitten2.Stop()
+
+        _DFlowGamesDogScene3.Start()
+        Adv_SceneUtils.WaitForScene(PlayerRef)
+
+        DFR_Util.Log("Starting 2 dog scene")
+        bool skip = false
+        if Sexlab.QuickStart(PlayerRef, dog1, dog2)
+            skip = true
+            DelayPlaySceneAndWait(15.0, timeoutAfter, _DflowGamesDogKitten2) ; dog sex dialog
+            Debug.Notification("$DF_JARLDOG4") ; dog off
+            Utility.Wait(3.0)
+        endIf
+
+        _DflowGamesDogKitten2.Stop()
+
+        DFR_Util.Log("Starting regular 1 dog scene")
+        If !skip && SexInternal_1(dog1)
             DelayPlaySceneAndWait(15.0, timeoutAfter, _DflowGamesDogKitten2) ; dog sex dialog
             Debug.Notification("$DF_JARLDOG4") ; dog off
             Utility.Wait(3.0)
         EndIf
+
         MCM.Noti("Snap")
     EndIf
+
+    if dog1
+        Sexlab.ClearForcedGender(dog1)
+    endIf
+
+    if dog2
+        Sexlab.ClearForcedGender(dog2)
+    endIf
+
     Utility.Wait(10.0)
     
 EndFunction
@@ -3401,13 +3454,13 @@ Function DisableControlsForScene()
     ; Game.DisablePlayerControls(abMovement = True, abFighting = True, abCamSwitch = False, abLooking = False, abSneaking = True, abMenu = False, abActivate = True, abJournalTabs = True, aiDisablePOVType = 0)
     ; So we need another approach...
     libs.UpdateControls()
-    PlayerRef.SetDontMove()
+    Game.SetPlayerAIDriven(true)
 EndFunction
 
 Function EnablePlayerControls()
     ; Game.EnablePlayerControls(True, True, True, True, True, True, True, True, 0)
     libs.UpdateControls()
-    PlayerRef.SetDontMove(False)
+    Game.SetPlayerAIDriven(false)
 EndFunction
 
 Function PrepareForScene()

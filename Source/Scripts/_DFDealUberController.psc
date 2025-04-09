@@ -68,6 +68,9 @@ _DFlowProps Property DFlowProps Auto
 GlobalVariable Property _DFZero Auto
 GlobalVariable property DebugMode auto 
 
+DFR_RelationshipManager property RelManager auto
+DFR_Events property Events auto
+
 String Property Context = "deviousfollowers" Auto
 ; FOLDEND - Properties
 
@@ -131,7 +134,7 @@ Function RejectDeal(string targetDeal)
         RejectedDeal = ruleId
     EndIf
 
-    DFR_RelationshipManager.Get().DeEscalate()
+    RelManager.DeEscalate()
     
     Adversity.UnselectEvent(DFR_DealHelpers.SplitId(targetDeal)[1])
 
@@ -152,10 +155,6 @@ string[] Function GetCandidates()
 EndFunction
 
 string[] Function FilterBySeverity(string[] asRules, int aiMode)
-    if DFR_RelationshipManager.Get().IsSlave() && aiMode == 1
-        aiMode += 1
-    endIf
-
     int minSeverity = 1
     int maxSeverity = 2
 
@@ -247,25 +246,8 @@ string[] function GetForcedRules()
     return forced
 endFunction
 
-string Function GetPotentialDeal(Float bias = 50.0)
-
-    _DUtil.Info("DF - GetPotentialDeal - START")
-    MDC.StartMDC() ; does nothing if started already
-
+string function PickDeal(float afBias)
     int maxDeals = MDC.MaxModDealsSetting
-    int totalRules = Adversity.GetActiveEvents(Context, "rule").Length
-    int maxRules = 15
-            
-    If totalRules >= maxRules
-        Debug.TraceConditional("DF - GetPotentialDeal - aborting due to totalDeals > maxDeals (" + totalRules + " >= " + maxRules + ")", ShowDiagnostics)
-        
-        RejectedDeal = ""
-        
-        _DUtil.Info("DF - GetPotentialDeal - END")
-        Return "default/deviousfollowers/core/extend"
-    EndIf
-
-    ; choose a deal (existing or new)
     int numDeals = DFR_DealHelpers.GetNum()
 
     int i = 0
@@ -299,17 +281,40 @@ string Function GetPotentialDeal(Float bias = 50.0)
             i += 1
         endWhile
 
-        InitializeDeal(dealName, bias)
+        InitializeDeal(dealName, afBias)
     else ; existing deal
         int dealIndex = openDeals[chosenDealIndex]
         dealName = DC.DealNames[dealIndex]
     endIf
 
+    return dealName
+endFunction
+
+string Function GetPotentialDeal(Float bias = 50.0)
+
+    _DUtil.Info("DF - GetPotentialDeal - START")
+    MDC.StartMDC() ; does nothing if started already
+
+    int maxDeals = MDC.MaxModDealsSetting
+    int totalRules = Adversity.GetActiveEvents(Context, "rule").Length
+    int maxRules = 15
+            
+    If totalRules >= maxRules
+        Debug.TraceConditional("DF - GetPotentialDeal - aborting due to totalDeals > maxDeals (" + totalRules + " >= " + maxRules + ")", ShowDiagnostics)
+        
+        RejectedDeal = ""
+        
+        _DUtil.Info("DF - GetPotentialDeal - END")
+        Return "default/deviousfollowers/core/extend"
+    EndIf
+
+    ; choose a deal (existing or new)
+    string dealName = PickDeal(bias)
     _DUtil.Info("DF - GetPotentialDeal - chosen deal = " + dealName)
     
+    ; actually choose a rule
+
     string chosen
-
-
     string[] forced = GetForcedRules()
     _DUtil.Info("DF - GetPotentialDeal - forced = " + forced)
     forced = Adversity.FilterEventsByValid(forced)
@@ -356,10 +361,11 @@ Function MakeDeal(string id, bool reduceDebt = True)
         return
     endIf
 
-    If reduceDebt && !DFR_RelationshipManager.Get().IsSlave()
+    If reduceDebt
         _Dutil.Info("DF - MakeDeal - reduce debt")
         DFlowQ.DealDebt()
     EndIf
+
     QF__DflowDealController_0A01C86D DC = (self As Quest) As QF__DflowDealController_0A01C86D
     
     DFR_DealHelpers.InitDeals(DC.DealNames)
@@ -378,8 +384,11 @@ Function MakeDeal(string id, bool reduceDebt = True)
         stage = DFR_DealHelpers.GetNumRules(deal)
         Tool.ReduceResist(stage)
        
-        DFR_RelationshipManager.Get().IncFavour()
-        DFR_RelationshipManager.Get().Escalate(Adversity.GetEventSeverity(rule))
+        if Events.IncreasesFavour(rule)
+            RelManager.IncFavour()
+        endIf
+
+        RelManager.Escalate(Adversity.GetEventSeverity(rule))
 
         GlobalVariable timer = DC.GetDealTimer(DFR_DealHelpers.GetDealIndex(deal))
 

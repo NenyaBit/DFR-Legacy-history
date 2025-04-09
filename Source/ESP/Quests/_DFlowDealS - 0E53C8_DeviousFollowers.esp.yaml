@@ -5,29 +5,35 @@ VirtualMachineAdapter:
   - Name: _DDeal
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: DC
-      Object: 01C86D:DeviousFollowers.esp
+      Name: Item1R
+      Object: 10D53B:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: tool
-      Object: 01210D:DeviousFollowers.esp
+      Name: _DFBoredom
+      Object: 231892:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: Item2R
-      Object: 10D53C:DeviousFollowers.esp
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: Item3R
       Object: 0D8DA5:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: Item1
-      Object: 031704:Devious Devices - Integration.esm
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: Item1R
-      Object: 10D53B:DeviousFollowers.esp
+      Name: Item2R
+      Object: 10D53C:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Item3
       Object: 0D8DA4:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: Gold001
-      Object: 00000F:Skyrim.esm
+      Name: tool
+      Object: 01210D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Item1
+      Object: 031704:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LDC
+      Object: 1C494F:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Item2
       Object: 10D539:DeviousFollowers.esp
@@ -35,84 +41,78 @@ VirtualMachineAdapter:
       Name: GameDaysPassed
       Object: 000039:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: PlayerRef
-      Object: 000014:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFBoredom
-      Object: 231892:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: LDC
-      Object: 1C494F:DeviousFollowers.esp
+      Name: DC
+      Object: 01C86D:DeviousFollowers.esp
   - Name: QF__DFlowDealS_090E53C8
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlow_DMaster
-      Object: 000D62:DeviousFollowers.esp
-      Alias: 1
+      Name: _DFlowDealSWhoreOutMsg
+      Object: 10AD94:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowDealSPTimer
-      Object: 0E53CA:DeviousFollowers.esp
+      Name: Normal
+      Object: 1034AF:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Alias_Player
       Object: 0E53C8:DeviousFollowers.esp
       Alias: 0
     - MutagenObjectType: ScriptObjectProperty
-      Name: Normal
-      Object: 1034AF:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Again
-      Object: 1085CC:DeviousFollowers.esp
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: WhoreOut
       Object: 0F19F9:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowDealBaseDays
-      Object: 03CDFB:DeviousFollowers.esp
+      Name: _DflowDealSPTimer
+      Object: 0E53CA:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: GangRape
       Object: 1085D7:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: tool
-      Object: 01210D:DeviousFollowers.esp
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: Alias__DMaster
       Object: 0E53C8:DeviousFollowers.esp
       Alias: 1
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowDealSWhoreOutMsgResist
-      Object: 10AD95:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: GameDaysPassed
-      Object: 000039:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Overpay
-      Object: 1085EF:DeviousFollowers.esp
+      Name: xlibs
+      Object: 00CA01:Devious Devices - Expansion.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: Alias_Client
       Object: 0E53C8:DeviousFollowers.esp
       Alias: 3
     - MutagenObjectType: ScriptObjectProperty
-      Name: Alias_You
-      Object: 0E53C8:DeviousFollowers.esp
-      Alias: 2
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowDealSWhoreOutMsg
-      Object: 10AD94:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Gold001
-      Object: 00000F:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: xlibs
-      Object: 00CA01:Devious Devices - Expansion.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: libs
-      Object: 00F624:Devious Devices - Integration.esm
+      Name: _DflowDealBaseDays
+      Object: 03CDFB:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Thief
       Object: 1034B9:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
+      Name: libs
+      Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_You
+      Object: 0E53C8:DeviousFollowers.esp
+      Alias: 2
+    - MutagenObjectType: ScriptObjectProperty
       Name: Notpayed
       Object: 1085E5:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tool
+      Object: 01210D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlow_DMaster
+      Object: 000D62:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Again
+      Object: 1085CC:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowDealSWhoreOutMsgResist
+      Object: 10AD95:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Overpay
+      Object: 1085EF:DeviousFollowers.esp
   FileName: QF__DFlowDealS_090E53C8
   Fragments:
   - Unknown2: 1

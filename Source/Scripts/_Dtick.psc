@@ -16,6 +16,9 @@ _DFlowModDealController property ModDealController auto
 DFR_RelationshipManager property RelManager auto
 DFR_Services property Services auto
 DFR_Outfits property Outfits auto
+DFR_LocScanner property Scanner auto
+DFR_Rules property Rules auto
+DFR_Skincare property Skincare auto
 
 Actor property PlayerRef auto
 Actor property Follower auto
@@ -163,6 +166,9 @@ Event Init()
     RelManager.Maintenance()
     Services.Maintenance()
     Outfits.Maintenance()
+    Scanner.Maintenance()
+    Rules.Maintenance()
+    Skincare.Maintenance()
     Q.Maintenance()
     
     lastVictimCount = SexLab.GetSkill(PlayerRef, "Victim")

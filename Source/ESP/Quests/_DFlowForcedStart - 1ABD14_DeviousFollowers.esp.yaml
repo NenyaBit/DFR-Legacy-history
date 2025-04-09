@@ -5,14 +5,8 @@ VirtualMachineAdapter:
   - Name: QF__DFlowForcedStart_081ABD14
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: R
-      Object: 1AE4BA:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: KeyKW
-      Object: 1AE4BB:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowMinimumContractRemaining
-      Object: 218C7C:DeviousFollowers.esp
+      Name: q
+      Object: 000D62:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: _DflowDebtPerDay
       Object: 00C547:DeviousFollowers.esp
@@ -25,17 +19,23 @@ VirtualMachineAdapter:
       Object: 1ABD14:DeviousFollowers.esp
       Alias: 1
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowEnslaveDebt
-      Object: 00C548:DeviousFollowers.esp
+      Name: R
+      Object: 1AE4BA:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlowMinimumContractRemaining
+      Object: 218C7C:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: libs
       Object: 00F624:Devious Devices - Integration.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: q
-      Object: 000D62:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
       Name: I
       Object: 1AE4B9:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: KeyKW
+      Object: 1AE4BB:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowEnslaveDebt
+      Object: 00C548:DeviousFollowers.esp
   FileName: QF__DFlowForcedStart_081ABD14
   Fragments:
   - Stage: 20

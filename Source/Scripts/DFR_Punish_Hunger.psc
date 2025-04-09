@@ -1,4 +1,4 @@
-Scriptname DFR_Punish_Hunger extends Adv_EventBase
+Scriptname DFR_Punish_Hunger extends DFR_FailableEvent
 
 Keyword[] property FoodDrinkKwds auto
 
@@ -30,8 +30,8 @@ bool function OnStart(Actor akTarget)
     endWhile
 
     PyramidUtils.RemoveForms(player, items, _DFTools.Get().ConfiscationContainer)
-    Stop()
-    DFR_RelationshipManager.Get().CompleteEvent(GetEventId())
+    
+    Complete()
 
     return true
 endFunction

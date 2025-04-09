@@ -22,6 +22,8 @@ FormList[] property InventoryFilters auto
 GlobalVariable[] property DesiredCounts auto
 GlobalVariable[] property CurrentCounts auto
 
+Actor property Dummy auto
+
 Actor LastFollower
 float[] property TimeToComplete auto hidden
 float TimeStarted
@@ -39,13 +41,7 @@ event OnInit()
 endEvent
 
 function Maintenance()
-    float[] deadlines = Utility.CreateFloatArray(4, 2.0)
-    int i = 0
-    while i < TimeToComplete.Length
-        deadlines[i] = TimeToComplete[i]
-        i += 1
-    endWhile
-
+    float[] deadlines = Utility.CreateFloatArray(4, 8.0)
     TimeToComplete = deadlines
     
     if IsRunning()
@@ -76,13 +72,13 @@ bool function SelectService(int aiIndex)
         Variant.SetValue(0)
     endIf
 
-    LastIndex = aiIndex
-
     return true
 endFunction
 
 bool function StartService(Actor akMaster, int aiIndex)
     DFR_Util.Log("StartService - " + akMaster + " - " + aiIndex)
+    
+    LastIndex = aiIndex
     
     if SetStage(10)
         Overdue = false
@@ -138,19 +134,16 @@ function OpenGiftMenu(int aiIndex)
         endIf
     endIf
 
-    FollowerAlias.ForceRefTo(LastFollower)
-
     LastIndex = aiIndex
     FormList filter = InventoryFilters[aiIndex]
 
     RegisterForMenu("GiftMenu")
-    LastFollower.ShowGiftMenu(true, filter, true, false)
+    (FollowerAlias.GetRef() as Actor).ShowGiftMenu(true, filter, true, false)
 
     Utility.Wait(0.2)
 endFunction
 
 event OnMenuClose(string asMenu)
-    FollowerAlias.Clear()
     UnregisterForMenu("GiftMenu")
 endEvent
 
@@ -230,7 +223,6 @@ function CompleteService(int aiIndex)
     Stop()
     Reset()
     GetEventScr(aiIndex).Complete()
-    FollowerAlias.Clear()
 endFunction
 
 event OnUpdateGameTime()
@@ -252,7 +244,6 @@ function Fail()
     Stop()
     Reset()
     GetEventScr(LastIndex).Fail()
-    FollowerAlias.Clear()
     Reset()
 endFunction
 

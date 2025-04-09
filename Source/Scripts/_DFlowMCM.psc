@@ -22,6 +22,7 @@ _DFlowUnflaggedFollowerScan Property UnflaggedFollowersScan Auto
 _LDC Property LDC Auto
 DialogueFollowerScript Property VanillaFollowerQuest Auto 
 DFR_Licenses Property _DFLicenses Auto
+DFR_Rules property RuleManager auto
 
 Quest Property Dflow  Auto  ; Same quest as Q ...
 Quest Property DealO  Auto 
@@ -974,10 +975,30 @@ Function DoStatsPageMenu()
         AddEmptyOption()
     EndIf
 
-   
+    AddHeaderOption("Service/Punishment Rules")
+    AddHeaderOption("")
+    int numServiceRules = RuleManager.ActiveRules.Length
+
+    int i = 0
+    while i < numServiceRules
+        AddTextOption(Adversity.GetEventName(RuleManager.ActiveRules[i]), "")
+        i += 1
+    endWhile
+    
+    if !numServiceRules
+        AddTextOption("None Active", "")
+    endIf
+
+    if numServiceRules / 2 == 1
+        AddEmptyOption()
+    endIf
+
     ; DEAL DISPLAYS
-    SetCursorFillMode(TOP_TO_BOTTOM)
+
     AddHeaderOption("Active Deals")
+    AddHeaderOption("")
+
+    SetCursorFillMode(TOP_TO_BOTTOM)
     string[] activeDeals = DFR_DealHelpers.GetDeals()
 
     if activeDeals.length == 0
@@ -989,7 +1010,7 @@ Function DoStatsPageMenu()
     string[] leftCol = Utility.CreateStringArray(0)
     string[] rightCol = Utility.CreateStringArray(0)
 
-    int i = 0
+    i = 0
     while i < activeDeals.length
         if !Math.LogicalAnd(i, 1)
             leftCol = PapyrusUtil.PushString(leftCol, activeDeals[i])
@@ -1002,12 +1023,16 @@ Function DoStatsPageMenu()
 
     DFR_Util.Log("Left Deal Col = " + leftCol)
     DFR_Util.Log("Right Deal Col = " + rightCol)
-    
+
     DisplayDealStatuses(leftCol)
 
     ; right column
-    SetCursorPosition(15)
-    AddHeaderOption("")
+    int offset = RuleManager.ActiveRules.Length
+    if offset / 2 == 1
+        offset += 1
+    endIf
+
+    SetCursorPosition(19 + offset)
 
     DisplayDealStatuses(rightCol)
 EndFunction
@@ -1028,7 +1053,7 @@ function DisplayDealStatuses(string[] asDeals)
         AddHeaderOption(deal)
         int j = 0
         while j < rules.Length
-            AddTextOption(Adversity.GetEventName(rules[j]), Adversity.GetEventDesc(rules[j]))
+            AddTextOption(Adversity.GetEventName(rules[j]), "")
             j += 1
         endWhile
 
@@ -5848,6 +5873,9 @@ EndFunction
 ; GENERATED - START
 
 DFR_RelationshipManager property RelationshipManager auto 
+DFR_DeviceController property DeviceController auto 
+DFR_Loans property Loans auto 
+DFR_Licenses property Licenses auto 
 
 
 string format = "{0}"
@@ -5863,14 +5891,26 @@ endFunction
 function ShowRelationshipPage()
     SetCursorFillMode(LEFT_TO_RIGHT)
 
+    AddHeaderOption("Favour")
+    AddHeaderOption("")
     OID_DFR_RelationshipManager_FavourIncrement = AddSliderOption("Favour Increment", RelationshipManager.FavourIncrement, "{0}")
     OID_DFR_RelationshipManager_FavourDecrement = AddSliderOption("Favour Decrement", RelationshipManager.FavourDecrement, "{0}")
     OID_DFR_RelationshipManager_FavourDailyDecay = AddSliderOption("Favour Daily Decay", RelationshipManager.FavourDailyDecay, "{0}")
     OID_DFR_RelationshipManager_FavourDailyDecaySlave = AddSliderOption("Favour Decay (Slave)", RelationshipManager.FavourDailyDecaySlave, "{0}")
     OID_DFR_RelationshipManager_FavourDailyDecayDealPrevention = AddSliderOption("Active Rule Decay Prevention", RelationshipManager.FavourDailyDecayDealPrevention, "{0}")
     OID_DFR_RelationshipManager_RecentlyFavouredDuration = AddSliderOption("Recent Favour Duration", RelationshipManager.RecentlyFavouredDuration, "{0}")
-    OID_DFR_RelationshipManager_ServiceCooldown = AddSliderOption("Service Cooldown Duration", RelationshipManager.ServiceCooldown, "{0}")
     OID_DFR_RelationshipManager_NumServicesToSeverity = AddSliderOption("Escalation to Severity Conversion Rate", RelationshipManager.NumServicesToSeverity, "{2}")
+    OID_DFR_DeviceController_FavourMinimum = AddSliderOption("Device Removal Favour Minimum", DeviceController.FavourMinimum, "{0}")
+    OID_DFR_Loans_FavourRequired = AddSliderOption("Loan Favour Minimum", Loans.FavourRequired, "{0}")
+    OID_DFR_Licenses_MinFavourRequired = AddSliderOption("License Favour Minimum", Licenses.MinFavourRequired, "{0}")
+    AddHeaderOption("Services/Apologies")
+    AddHeaderOption("")
+    OID_DFR_RelationshipManager_ServiceCooldown = AddSliderOption("Service Cooldown Duration", RelationshipManager.ServiceCooldown, "{0}")
+    OID_DFR_RelationshipManager_ForcedServiceCooldown = AddSliderOption("Forced Service Cooldown", RelationshipManager.ForcedServiceCooldown, "{0}h")
+    OID_DFR_RelationshipManager_ForcedPunishmentCooldown = AddSliderOption("Forced Punishment Cooldown", RelationshipManager.ForcedPunishmentCooldown, "{0}h")
+    OID_DFR_RelationshipManager_MaxServiceRules = AddSliderOption("Max Service Rules", RelationshipManager.MaxServiceRules, "{0}")
+    OID_DFR_RelationshipManager_ServiceRuleCooldownMin = AddSliderOption("Service Rule Cooldown Min", RelationshipManager.ServiceRuleCooldownMin, "{0}d")
+    OID_DFR_RelationshipManager_ServiceRuleCooldownMax = AddSliderOption("Service Rule Cooldown Max", RelationshipManager.ServiceRuleCooldownMax, "{0}d")
 endFunction
 
 function ShowEventsPage()
@@ -5924,16 +5964,56 @@ event OnOptionSliderOpenExt(int a_option)
         SetSliderDialogDefaultValue(1)
         SetSliderDialogRange(0, 10)
         SetSliderDialogInterval(1)
-    elseIf a_option == OID_DFR_RelationshipManager_ServiceCooldown
-        SetSliderDialogStartValue(RelationshipManager.ServiceCooldown)
-        SetSliderDialogDefaultValue(1)
-        SetSliderDialogRange(0, 10)
-        SetSliderDialogInterval(1)
     elseIf a_option == OID_DFR_RelationshipManager_NumServicesToSeverity
         SetSliderDialogStartValue(RelationshipManager.NumServicesToSeverity)
         SetSliderDialogDefaultValue(1)
         SetSliderDialogRange(0, 1)
         SetSliderDialogInterval(0.01)
+    elseIf a_option == OID_DFR_DeviceController_FavourMinimum
+        SetSliderDialogStartValue(DeviceController.FavourMinimum)
+        SetSliderDialogDefaultValue(0)
+        SetSliderDialogRange(-101, 100)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_Loans_FavourRequired
+        SetSliderDialogStartValue(Loans.FavourRequired)
+        SetSliderDialogDefaultValue(0)
+        SetSliderDialogRange(-101, 100)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_Licenses_MinFavourRequired
+        SetSliderDialogStartValue(Licenses.MinFavourRequired)
+        SetSliderDialogDefaultValue(0)
+        SetSliderDialogRange(-101, 100)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_RelationshipManager_ServiceCooldown
+        SetSliderDialogStartValue(RelationshipManager.ServiceCooldown)
+        SetSliderDialogDefaultValue(1)
+        SetSliderDialogRange(0, 10)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_RelationshipManager_ForcedServiceCooldown
+        SetSliderDialogStartValue(RelationshipManager.ForcedServiceCooldown)
+        SetSliderDialogDefaultValue(8)
+        SetSliderDialogRange(0, 72)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_RelationshipManager_ForcedPunishmentCooldown
+        SetSliderDialogStartValue(RelationshipManager.ForcedPunishmentCooldown)
+        SetSliderDialogDefaultValue(0.5)
+        SetSliderDialogRange(-1, 5)
+        SetSliderDialogInterval(0.1)
+    elseIf a_option == OID_DFR_RelationshipManager_MaxServiceRules
+        SetSliderDialogStartValue(RelationshipManager.MaxServiceRules)
+        SetSliderDialogDefaultValue(0.5)
+        SetSliderDialogRange(0, 10)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_RelationshipManager_ServiceRuleCooldownMin
+        SetSliderDialogStartValue(RelationshipManager.ServiceRuleCooldownMin)
+        SetSliderDialogDefaultValue(2)
+        SetSliderDialogRange(0, 10)
+        SetSliderDialogInterval(0.1)
+    elseIf a_option == OID_DFR_RelationshipManager_ServiceRuleCooldownMax
+        SetSliderDialogStartValue(RelationshipManager.ServiceRuleCooldownMax)
+        SetSliderDialogDefaultValue(3)
+        SetSliderDialogRange(0, 10)
+        SetSliderDialogInterval(0.1)
     
     endIf
 
@@ -5960,12 +6040,36 @@ event OnOptionSliderAcceptExt(int a_option, float a_value)
     elseIf a_option == OID_DFR_RelationshipManager_RecentlyFavouredDuration
         RelationshipManager.RecentlyFavouredDuration = a_value as int
         format = "{0}"
-    elseIf a_option == OID_DFR_RelationshipManager_ServiceCooldown
-        RelationshipManager.ServiceCooldown = a_value as int
-        format = "{0}"
     elseIf a_option == OID_DFR_RelationshipManager_NumServicesToSeverity
         RelationshipManager.NumServicesToSeverity = a_value
         format = "{2}"
+    elseIf a_option == OID_DFR_DeviceController_FavourMinimum
+        DeviceController.FavourMinimum = a_value as int
+        format = "{0}"
+    elseIf a_option == OID_DFR_Loans_FavourRequired
+        Loans.FavourRequired = a_value as int
+        format = "{0}"
+    elseIf a_option == OID_DFR_Licenses_MinFavourRequired
+        Licenses.MinFavourRequired = a_value as int
+        format = "{0}"
+    elseIf a_option == OID_DFR_RelationshipManager_ServiceCooldown
+        RelationshipManager.ServiceCooldown = a_value as int
+        format = "{0}"
+    elseIf a_option == OID_DFR_RelationshipManager_ForcedServiceCooldown
+        RelationshipManager.ForcedServiceCooldown = a_value
+        format = "{0}h"
+    elseIf a_option == OID_DFR_RelationshipManager_ForcedPunishmentCooldown
+        RelationshipManager.ForcedPunishmentCooldown = a_value
+        format = "{0}h"
+    elseIf a_option == OID_DFR_RelationshipManager_MaxServiceRules
+        RelationshipManager.MaxServiceRules = a_value as int
+        format = "{0}"
+    elseIf a_option == OID_DFR_RelationshipManager_ServiceRuleCooldownMin
+        RelationshipManager.ServiceRuleCooldownMin = a_value as int
+        format = "{0}d"
+    elseIf a_option == OID_DFR_RelationshipManager_ServiceRuleCooldownMax
+        RelationshipManager.ServiceRuleCooldownMax = a_value as int
+        format = "{0}d"
     
     endIf
 
@@ -6005,10 +6109,26 @@ event OnOptionHighlightExt(int a_option)
         SetInfoText("How much favour decay you can avoid per active rule.")
     elseIf a_option == OID_DFR_RelationshipManager_RecentlyFavouredDuration
         SetInfoText("How long your follower considers you to have recently serviced them in hours. Bypasses minimum favour checks for various interactions.")
-    elseIf a_option == OID_DFR_RelationshipManager_ServiceCooldown
-        SetInfoText("How long before you can service your follower after you've completed a service event.")
     elseIf a_option == OID_DFR_RelationshipManager_NumServicesToSeverity
         SetInfoText("This rate times your escalation stat dictates the maximum severity of the rules/events your follower gives you. Lower means slower escalation, higher means faster escalation.")
+    elseIf a_option == OID_DFR_DeviceController_FavourMinimum
+        SetInfoText("Minimum favour required for your follower to be willing to help you out with devices. Set to -101 to disable favour requirement.")
+    elseIf a_option == OID_DFR_Loans_FavourRequired
+        SetInfoText("Minimum favour required to play the gambling game and borrow gold. Set to -101 to disable favour requirement.")
+    elseIf a_option == OID_DFR_Licenses_MinFavourRequired
+        SetInfoText("Minimum favour required to talk to your follower about licenses. Set to -101 to disable favour requirement.")
+    elseIf a_option == OID_DFR_RelationshipManager_ServiceCooldown
+        SetInfoText("How long before you can voluntarily service your follower after you've completed a service event.")
+    elseIf a_option == OID_DFR_RelationshipManager_ForcedServiceCooldown
+        SetInfoText("How long in hours between forced service events. Should be greater than the the regular service cooldown.")
+    elseIf a_option == OID_DFR_RelationshipManager_ForcedPunishmentCooldown
+        SetInfoText("How long in hours after annoying your master before they can force a punishment. Voluntarily apologising before the forcegreet will increase favour.")
+    elseIf a_option == OID_DFR_RelationshipManager_MaxServiceRules
+        SetInfoText("The maximum number of non-deal service rules your follower can give you. During enslavement, this is also the maximum number of rules your follower can give you at a time.")
+    elseIf a_option == OID_DFR_RelationshipManager_ServiceRuleCooldownMin
+        SetInfoText("The minimum amount of time in days before your follower can give you a rule as a service or punishment.")
+    elseIf a_option == OID_DFR_RelationshipManager_ServiceRuleCooldownMax
+        SetInfoText("The maximum amount of time in days before your follower can give you a rule as a service or punishment.")
     
     endIf
     
@@ -6147,8 +6267,16 @@ int OID_DFR_RelationshipManager_FavourDailyDecay
 int OID_DFR_RelationshipManager_FavourDailyDecaySlave
 int OID_DFR_RelationshipManager_FavourDailyDecayDealPrevention
 int OID_DFR_RelationshipManager_RecentlyFavouredDuration
-int OID_DFR_RelationshipManager_ServiceCooldown
 int OID_DFR_RelationshipManager_NumServicesToSeverity
+int OID_DFR_DeviceController_FavourMinimum
+int OID_DFR_Loans_FavourRequired
+int OID_DFR_Licenses_MinFavourRequired
+int OID_DFR_RelationshipManager_ServiceCooldown
+int OID_DFR_RelationshipManager_ForcedServiceCooldown
+int OID_DFR_RelationshipManager_ForcedPunishmentCooldown
+int OID_DFR_RelationshipManager_MaxServiceRules
+int OID_DFR_RelationshipManager_ServiceRuleCooldownMin
+int OID_DFR_RelationshipManager_ServiceRuleCooldownMax
 int OID_CurrentPack
 
 

@@ -1,5 +1,5 @@
-FormKey: 38C722:DeviousFollowers.esp
-EditorID: DFR_EnslavementRulesExplain
+FormKey: 41F617:DeviousFollowers.esp
+EditorID: DFR_SlaveryIntroPkg
 Type: Package
 PreferredSpeed: Run
 ScheduleMonth: -1
@@ -7,7 +7,6 @@ ScheduleDayOfWeek: 255
 ScheduleHour: -1
 ScheduleMinute: -1
 Unknown3: 0x000000
-OwnerQuest: 000D62:DeviousFollowers.esp
 PackageTemplate: 03C1C4:Skyrim.esm
 DataInputVersion: 18
 Data:
@@ -16,22 +15,22 @@ Data:
     MutagenObjectType: PackageDataTopic
     Topics:
     - MutagenObjectType: TopicReference
-      Reference: 2AD93D:DeviousFollowers.esp
+      Reference: 41A4E9:DeviousFollowers.esp
 - Key: 8
   Value:
     MutagenObjectType: PackageDataLocation
     Location:
       Target:
-        MutagenObjectType: LocationFallback
-        Type: NearPackageStart
+        MutagenObjectType: LocationTarget
+        Link: 000014:Skyrim.esm
       Radius: 150
 - Key: 62
   Value:
     MutagenObjectType: PackageDataLocation
     Location:
       Target:
-        MutagenObjectType: LocationFallback
-        Type: NearPackageStart
+        MutagenObjectType: LocationTarget
+        Link: 000014:Skyrim.esm
       Radius: 500
 - Key: 75
   Value:

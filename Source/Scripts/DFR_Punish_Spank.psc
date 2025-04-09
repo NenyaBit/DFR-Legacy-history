@@ -8,9 +8,12 @@ bool function OnStart(Actor akTarget)
     if SexLabUtil.QuickStart(player, akTarget, victim = player, animationTags = "spanking")
         DFR_Util.Log("Starting SL spanking")
         Tool.WaitForSex()
+    else
+        SexLabUtil.GetAPI().ClearForcedGender(akTarget)
+        return false
     endIf
+    
     SexLabUtil.GetAPI().ClearForcedGender(akTarget)
-
     DFR_Util.Log("Spanking complete")
     DFR_RelationshipManager.Get().CompleteEvent(GetEventId())
     return true

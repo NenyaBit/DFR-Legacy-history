@@ -1,14 +1,14 @@
-FormKey: 400F5D:DeviousFollowers.esp
-EditorID: DFR_Slavery
+FormKey: 433A83:DeviousFollowers.esp
+VersionControl: 12623
+EditorID: DFR_Jobs
 VirtualMachineAdapter:
   Scripts:
-  - Name: DFR_Slavery
+  - Name: DFR_Jobs
   Versioning:
   - Break0
   ExtraBindDataVersion: 0
   FileName: ''
 Flags:
 - StartGameEnabled
-- 0x10
 - RunOnce
 NextAliasID: 0

@@ -1,0 +1,48 @@
+FormKey: 429870:DeviousFollowers.esp
+EditorID: DFR_SlaveryStartScene
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR__SF_DFR_SlaveryStartScene_0A429870
+  ScriptFragments:
+    FileName: DFR__SF_DFR_SlaveryStartScene_0A429870
+    OnBegin:
+      ExtraBindDataVersion: 1
+      ScriptName: DFR__SF_DFR_SlaveryStartScene_0A429870
+      FragmentName: Fragment_1
+    OnEnd:
+      ExtraBindDataVersion: 1
+      ScriptName: DFR__SF_DFR_SlaveryStartScene_0A429870
+      FragmentName: Fragment_0
+Flags:
+- BeginOnQuestStart
+- StopQuestOnEnd
+- RepeatConditionsWhileTrue
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Type: Package
+  Name: ''
+  ActorID: 0
+  Index: 2
+  StartPhase: 0
+  EndPhase: 0
+  Packages:
+  - 41F617:DeviousFollowers.esp
+Quest: 42986F:DeviousFollowers.esp
+LastActionIndex: 2
+VNAM: 0x03000000030000000300000003000000
+Conditions:
+- MutagenObjectType: ConditionFloat
+  CompareOperator: LessThan
+  Data:
+    MutagenObjectType: GetStageConditionData
+    Quest: 38C70D:DeviousFollowers.esp
+  ComparisonValue: 10

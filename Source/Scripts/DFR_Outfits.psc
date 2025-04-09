@@ -104,8 +104,7 @@ string function PickArmor()
     ProgressToNextSet = false
     
     int minSeverity = Adversity.GetOutfitSeverity(current)
-    int maxSeverity = PapyrusUtil.ClampInt(TargetSeverity.GetValue() as int, 1, 5) + (LostArmorEscalate as int)
-
+    int maxSeverity = PapyrusUtil.ClampInt(TargetSeverity.GetValue() as int+ (LostArmorEscalate as int), 1, 5)
     string current = GetCurrentOutfit()
 
     if minSeverity == maxSeverity
@@ -137,8 +136,10 @@ string function PickArmor()
 
     if BikiniArmor && armorType != "mage"
         string[] tmp = Adversity.FilterOutfitsByTags(outfits, Utility.CreateStringArray(1, "bikini"))
+        if tmp.Length
+            outfits = tmp
+        endIf
     endIf
-
     Log("outfits 2 " + outfits)
 
     string[] tmp = Adversity.FilterOutfitsBySeverity(outfits, minSeverity)
@@ -150,6 +151,13 @@ string function PickArmor()
 
     tmp = Adversity.FilterOutfitsBySeverity(outfits, maxSeverity, false)
     Log("outfits 4 " + outfits)
+
+    if tmp.length
+        outfits = tmp
+    endIf
+
+    tmp = Adversity.FilterOutfitsBySeverity(outfits, maxSeverity)
+    Log("outfits 5 " + outfits)
 
     if tmp.length
         outfits = tmp

@@ -1,13 +1,13 @@
-Scriptname DFR_Punish_HorseSex extends Adv_EventBase  
+Scriptname DFR_Punish_HorseSex extends DFR_FailableEvent  
 
 _DFtools property Tool auto
-DFR_HorseScanner property Scanner auto
+DFR_LocScanner property Scanner auto
 
 bool function OnStart(Actor akTarget)
-    Tool.Sex(Scanner.Scan()[0])
+    Tool.Sex(Scanner.Horses[0])
     Tool.WaitForSex()
-    Stop()
-    DFR_RelationshipManager.Get().CompleteEvent(GetEventId())
+    
+    Complete()
 
     return true
 endFunction
