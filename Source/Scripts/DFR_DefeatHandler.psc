@@ -7,6 +7,7 @@ QF__Gift_09000D62 property Q auto
 _DflowMCM property MCM auto
 _DFGoldConQScript property GoldCon auto
 _DFtools property Tool auto
+DFR_Jobs property Jobs auto
 
 bool property RescueValid = false auto hidden
 bool property BothDowned = false auto hidden conditional
@@ -31,6 +32,8 @@ endFunction
 event OnQuestStart(Quest akQuest)
     if akQuest == Quest.GetQuest("PD_DefeatHandler")
         WasDefeated = true
+        FollowerSavedPlayer = false
+        Jobs.PauseCurrentJob()
     endIf
 endEvent
 

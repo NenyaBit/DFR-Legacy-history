@@ -13,12 +13,8 @@ GlobalVariable property NumHorses auto
 
 Cell LastCell
 
-event OnInit()
-    Maintenance()
-endEvent
-
 function Maintenance()
-    RegisterForSingleUpdate(10)
+    PlayerRef = Game.GetPlayer()
 
     DogAliases = new ReferenceAlias[3]
     DogAliases[0] = GetAliasById(0) as ReferenceAlias
@@ -30,7 +26,7 @@ function Maintenance()
     HorseAliases[1] = GetAliasById(3) as ReferenceAlias
     HorseAliases[2] = GetAliasById(5) as ReferenceAlias
 
-    DFR_Util.Log("Dog Aliases = " + DogAliases + " Horse Aliases = " + HorseAliases)
+    RegisterForSingleUpdate(10)
 endFunction
 
 event OnUpdate()
@@ -56,8 +52,6 @@ function Scan()
 
     NumDogs.SetValue(Dogs.Length)
     NumHorses.SetValue(Horses.Length)
-
-    DFR_Util.Log("LocScanner - " + NumDogs.GetValueInt() + " - " + NumHorses.GetValueInt())
 endFunction
 
 Actor[] function GetActors(ReferenceAlias[] akAliases)

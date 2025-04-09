@@ -975,22 +975,32 @@ Function DoStatsPageMenu()
         AddEmptyOption()
     EndIf
 
+    ; SERVICE RULES
+
     AddHeaderOption("Service/Punishment Rules")
     AddHeaderOption("")
     int numServiceRules = RuleManager.ActiveRules.Length
+    int offset = 0
 
-    int i = 0
-    while i < numServiceRules
-        AddTextOption(Adversity.GetEventName(RuleManager.ActiveRules[i]), "")
-        i += 1
-    endWhile
-    
-    if !numServiceRules
+    ;numServiceRules -= 1
+
+    if numServiceRules
+        int i = 0
+        while i < numServiceRules
+            int oid = AddTextOption(Adversity.GetEventName(RuleManager.ActiveRules[i]), "")
+            StorageUtil.SetStringValue(self, "Status_" + oid, RuleManager.ActiveRules[i])
+            offset += 1
+            i += 1
+        endWhile
+        
+        if Math.LogicalAnd(numServiceRules, 1)
+            offset += 1
+            AddEmptyOption()
+        endIf
+    else
         AddTextOption("None Active", "")
-    endIf
-
-    if numServiceRules / 2 == 1
         AddEmptyOption()
+        offset += 2
     endIf
 
     ; DEAL DISPLAYS
@@ -1010,12 +1020,12 @@ Function DoStatsPageMenu()
     string[] leftCol = Utility.CreateStringArray(0)
     string[] rightCol = Utility.CreateStringArray(0)
 
-    i = 0
+    int i = 0
     while i < activeDeals.length
-        if !Math.LogicalAnd(i, 1)
-            leftCol = PapyrusUtil.PushString(leftCol, activeDeals[i])
-        else
+        if Math.LogicalAnd(i, 1)
             rightCol = PapyrusUtil.PushString(rightCol, activeDeals[i])
+        else
+            leftCol = PapyrusUtil.PushString(leftCol, activeDeals[i])
         endIf
 
         i += 1
@@ -1027,11 +1037,6 @@ Function DoStatsPageMenu()
     DisplayDealStatuses(leftCol)
 
     ; right column
-    int offset = RuleManager.ActiveRules.Length
-    if offset / 2 == 1
-        offset += 1
-    endIf
-
     SetCursorPosition(19 + offset)
 
     DisplayDealStatuses(rightCol)
@@ -1053,7 +1058,8 @@ function DisplayDealStatuses(string[] asDeals)
         AddHeaderOption(deal)
         int j = 0
         while j < rules.Length
-            AddTextOption(Adversity.GetEventName(rules[j]), "")
+            int oid = AddTextOption(Adversity.GetEventName(rules[j]), "")
+            StorageUtil.SetStringValue(self, "Status_" + oid, rules[j])
             j += 1
         endWhile
 
@@ -1368,11 +1374,19 @@ Function DoPunishmentsPageMenu()
     OID_DFZAZAutoPause = AddToggleOption("$DF_AUTOPAUSE",_DFZAZAutoPause)
 
     ; Slaver NPC
+    AddHeaderOption("Set Buyer")
     String targetName = GetTargetActorName()
+
+    String msg = ""
     If !HaveValidSlaverTarget()
-        targetName = "$DF_INELIGIBLE"
+        msg = "$DF_INELIGIBLE"
+    elseIf IsTargetSlaver()
+        msg = "Yes"
+    else
+        msg = "No"
     EndIf
-    OID_Scan2Tog = AddTextOption("$DF_SSLVNPCSLAVER", targetName, ssFlags)
+
+    OID_Scan2Tog = AddTextOption(targetName, msg, ssFlags)
 
     ; Simple Slavery destination
     AddHeaderOption("$DF_ENSLAVEWEIGHTS")
@@ -1381,8 +1395,6 @@ Function DoPunishmentsPageMenu()
     OID_DFSWeightDSlider = AddSliderOption("$DF_DEALENSLAVE", _DFSWeightD,  "$DF_0", ssFlags)
     OID_DFSWeightESlider = AddSliderOption("$DF_NORMALENSLAVE", _DFSWeightE, "$DF_0", ssFlags)
     OID_DFSWeightEDSlider = AddSliderOption("$DF_NORMALDEALENSLAVE", _DFSWeightED , "$DF_0", ssFlags)
-    
-
 EndFunction
 
 Function DoChaosPageMenu()
@@ -1866,6 +1878,13 @@ EndFunction
 
 Event OnOptionHighlight(Int option)
     ; FOLDSTART - General
+
+    if StorageUtil.GetStringValue(self, "Status_" + option, "") != ""
+        string eventId = StorageUtil.GetStringValue(self, "Status_" + option, "")
+        SetInfoText(Adversity.getEventDesc(eventId))
+        return
+    endIf
+
     If option == OID_MinimumContractSlider
         SetInfoText("$DF_MINIMUMCONTRACT_DESC")
     ElseIf option == OID_DebtDifficulty
@@ -2677,8 +2696,12 @@ Event OnOptionSelect(Int option)
     ElseIf option == OID_Scan2Tog ; Add NPC as slaver
     
         If HaveValidSlaverTarget()
-            SetTargetAsSlaverForSS()
-            SetOptionFlags(option, OPTION_FLAG_DISABLED)
+            string msg = "No"
+            if SetTargetAsSlaverForSS()
+                msg = "Yes"
+            endIf
+
+            SetTextOptionValue(OID_Scan2Tog, msg)
         EndIf
     
     ElseIf option == OID_DFLocNotiTog
@@ -5624,33 +5647,62 @@ Bool Function HaveValidSlaverTarget()
             && (cursorTarget.GetFactionRank(PotentialFollowerFaction) >= -1 || cursorTarget.GetFactionRank(HirelingFollowerFaction) >= -1)
 EndFunction
 
-Function SetTargetAsSlaverForSS()
+bool function SetTargetAsSlaverForSS()
     Actor cursorTarget = Tick.GetCrosshairTarget As Actor
-    If cursorTarget
-        Q.ScanActor = cursorTarget
-    EndIf
-EndFunction
+    if cursorTarget
+        Form[] buyers = Adversity.GetContextFormList("deviousfollowers", "buyers", Utility.CreateFormArray(0))
 
+        bool adding = false
+        if buyers.Find(cursorTarget) > -1
+            buyers = PapyrusUtil.RemoveForm(buyers, cursorTarget)
+        else
+            buyers = PapyrusUtil.PushForm(buyers, cursorTarget)
+            adding = true
+        endIf
 
+        DFR_Util.Log("Buyers = " + buyers)
+        if !Adversity.SetContextFormList("deviousfollowers", "buyers", buyers)
+            adding = !adding
+        endIf
+
+        return adding
+    else
+        return false
+    endIf
+endFunction
+
+bool function IsTargetSlaver()
+    Actor cursorTarget = Tick.GetCrosshairTarget As Actor
+    if cursorTarget
+        Form[] buyers = Adversity.GetContextFormList("deviousfollowers", "buyers", Utility.CreateFormArray(0))
+        return buyers.Find(cursorTarget) > -1
+    endIf
+    return false
+endFunction
 
 ; Returns whether the actor is enabled once completed
 Bool Function ToggleActorEnable()
     Actor cursorTarget = Tick.GetCrosshairTarget As Actor
     
+    Form[] exclude = Adversity.GetContextFormList("deviousfollowers", "exclude-actors", Utility.CreateFormArray(0))
+
     If IsToggleActorTargetEnabled()
         ; Disable as a DF, set ignored
         cursorTarget.RemoveFromFaction(EnabledFollowerFaction) ; This doesn't "unignore" a follower, it just makes them not get picked up in the all unflagged followers scan.
         cursorTarget.RemoveFromFaction(_DFMaster)
         cursorTarget.SetFactionRank(_DFDisable, 0)
-        StorageUtil.SetIntValue(cursorTarget, Tool.TagNeverDevious, 1)
+        exclude = PapyrusUtil.PushForm(exclude, cursorTarget)
         Return False
     Else
         ; Enable as a DF
         cursorTarget.SetFactionRank(EnabledFollowerFaction, 0)
         cursorTarget.RemoveFromFaction(_DFDisable)
-        StorageUtil.UnsetIntValue(cursorTarget, Tool.TagNeverDevious)
+        Adversity.SetActorBool("deviousfollowers", cursorTarget, "devious", true)
+        exclude = PapyrusUtil.RemoveForm(exclude, cursorTarget)
         Return True
     EndIf
+
+    Adversity.SetContextFormList("deviousfollowers", "exclude-actors", exclude)
 EndFunction
 
 Function IgnoreFollowers()
@@ -5668,6 +5720,10 @@ Function IgnoreFollowers()
     Int processed = -1
     Int numAliases = UnflaggedFollowersScan.GetNumAliases()
     
+    Form[] exclude = Adversity.GetContextFormList("deviousfollowers", "exclude-actors", Utility.CreateFormArray(0))
+    Form[] newExclude = new Form[128]
+    int numExcluded = 0
+
     While 0 != processed
         Debug.TraceConditional("DF - IgnoreFollowers - IsRunning", True)
         processed = 0
@@ -5681,7 +5737,12 @@ Function IgnoreFollowers()
                 If ignore
                     ignore.SetFactionRank(_DFDisable, 0)
                     ignore.RemoveFromFaction(_DFMaster)
-                    StorageUtil.SetIntValue(ignore, Tool.TagNeverDevious, 1)
+                    
+                    if exclude.Find(ignore) < 0
+                        newExclude[numExcluded] = ignore
+                        numExcluded += 1
+                    endIf
+
                     processed += 1
                     Debug.TraceConditional("DF - IgnoreFollowers - alias " + ii + " contains " + ignore.GetActorBase().GetName(), True)
                 Else
@@ -5704,11 +5765,15 @@ Function IgnoreFollowers()
             Debug.TraceConditional("DF - IgnoreFollowers - is scanning again...", True)
             Utility.Wait(1.0)
         EndIf
-        
-        
     EndWhile
     Debug.TraceConditional("DF - IgnoreFollowers - processed " + totalProcessed + " followers", True)
     
+    exclude = PapyrusUtil.MergeFormArray(exclude, PapyrusUtil.ResizeFormArray(exclude, numExcluded))
+    
+    Debug.TraceConditional("DF - IgnoreFollowers - exclude = " + exclude, True)
+    
+    Adversity.SetContextFormList("deviousfollowers", "exclude-actors", exclude)
+
     Debug.Notification("$DF_IGNORE_COMPLETE_1")
     Debug.Notification("$DF_IGNORE_COMPLETE_2")
     Debug.TraceConditional("DF - IgnoreFollowers - End", True)
@@ -5876,6 +5941,7 @@ DFR_RelationshipManager property RelationshipManager auto
 DFR_DeviceController property DeviceController auto 
 DFR_Loans property Loans auto 
 DFR_Licenses property Licenses auto 
+DFR_Confiscation property Confiscation auto 
 
 
 string format = "{0}"
@@ -5898,19 +5964,25 @@ function ShowRelationshipPage()
     OID_DFR_RelationshipManager_FavourDailyDecay = AddSliderOption("Favour Daily Decay", RelationshipManager.FavourDailyDecay, "{0}")
     OID_DFR_RelationshipManager_FavourDailyDecaySlave = AddSliderOption("Favour Decay (Slave)", RelationshipManager.FavourDailyDecaySlave, "{0}")
     OID_DFR_RelationshipManager_FavourDailyDecayDealPrevention = AddSliderOption("Active Rule Decay Prevention", RelationshipManager.FavourDailyDecayDealPrevention, "{0}")
-    OID_DFR_RelationshipManager_RecentlyFavouredDuration = AddSliderOption("Recent Favour Duration", RelationshipManager.RecentlyFavouredDuration, "{0}")
+    OID_DFR_RelationshipManager_RecentlyFavouredDuration = AddSliderOption("Recent Favour Duration", RelationshipManager.RecentlyFavouredDuration, "{0}h")
     OID_DFR_RelationshipManager_NumServicesToSeverity = AddSliderOption("Escalation to Severity Conversion Rate", RelationshipManager.NumServicesToSeverity, "{2}")
     OID_DFR_DeviceController_FavourMinimum = AddSliderOption("Device Removal Favour Minimum", DeviceController.FavourMinimum, "{0}")
     OID_DFR_Loans_FavourRequired = AddSliderOption("Loan Favour Minimum", Loans.FavourRequired, "{0}")
     OID_DFR_Licenses_MinFavourRequired = AddSliderOption("License Favour Minimum", Licenses.MinFavourRequired, "{0}")
     AddHeaderOption("Services/Apologies")
     AddHeaderOption("")
-    OID_DFR_RelationshipManager_ServiceCooldown = AddSliderOption("Service Cooldown Duration", RelationshipManager.ServiceCooldown, "{0}")
-    OID_DFR_RelationshipManager_ForcedServiceCooldown = AddSliderOption("Forced Service Cooldown", RelationshipManager.ForcedServiceCooldown, "{0}h")
-    OID_DFR_RelationshipManager_ForcedPunishmentCooldown = AddSliderOption("Forced Punishment Cooldown", RelationshipManager.ForcedPunishmentCooldown, "{0}h")
+    OID_DFR_RelationshipManager_ServiceCooldown = AddSliderOption("Service Cooldown Duration", RelationshipManager.ServiceCooldown, "{0}h")
+    OID_DFR_RelationshipManager_ForcedServiceCooldown = AddSliderOption("Forced Service Cooldown", RelationshipManager.ForcedServiceCooldown, "{1}h")
+    OID_DFR_RelationshipManager_ForcedPunishmentCooldown = AddSliderOption("Forced Punishment Cooldown", RelationshipManager.ForcedPunishmentCooldown, "{1}h")
     OID_DFR_RelationshipManager_MaxServiceRules = AddSliderOption("Max Service Rules", RelationshipManager.MaxServiceRules, "{0}")
-    OID_DFR_RelationshipManager_ServiceRuleCooldownMin = AddSliderOption("Service Rule Cooldown Min", RelationshipManager.ServiceRuleCooldownMin, "{0}d")
-    OID_DFR_RelationshipManager_ServiceRuleCooldownMax = AddSliderOption("Service Rule Cooldown Max", RelationshipManager.ServiceRuleCooldownMax, "{0}d")
+    OID_DFR_RelationshipManager_ServiceRuleCooldownMin = AddSliderOption("Service Rule Cooldown Min", RelationshipManager.ServiceRuleCooldownMin, "{1}d")
+    OID_DFR_RelationshipManager_ServiceRuleCooldownMax = AddSliderOption("Service Rule Cooldown Max", RelationshipManager.ServiceRuleCooldownMax, "{1}d")
+    AddHeaderOption("Confiscation")
+    AddHeaderOption("")
+    OID_DFR_Confiscation_Enabled = AddToggleOption("Enabled", Confiscation.Enabled)
+    OID_DFR_Confiscation_MinFavourRequired = AddSliderOption("Favour Requirement", Confiscation.MinFavourRequired, "{0}")
+    OID_DFR_Confiscation_ReturnDelayMin = AddSliderOption("Return Items Delay Min", Confiscation.ReturnDelayMin, "{1}d")
+    OID_DFR_Confiscation_ReturnDelayMax = AddSliderOption("Return Items Delay Max", Confiscation.ReturnDelayMax, "{1}d")
 endFunction
 
 function ShowEventsPage()
@@ -5928,7 +6000,10 @@ endFunction
 
 event OnOptionSelectExt(int a_option)
     
-    
+if a_option == OID_DFR_Confiscation_Enabled
+    Confiscation.Enabled = !Confiscation.Enabled
+    SetToggleOptionValue(OID_DFR_Confiscation_Enabled, Confiscation.Enabled)
+    endIf
 
     AcceptEvents(a_option)
 endEvent
@@ -6002,7 +6077,7 @@ event OnOptionSliderOpenExt(int a_option)
     elseIf a_option == OID_DFR_RelationshipManager_MaxServiceRules
         SetSliderDialogStartValue(RelationshipManager.MaxServiceRules)
         SetSliderDialogDefaultValue(0.5)
-        SetSliderDialogRange(0, 10)
+        SetSliderDialogRange(0, 30)
         SetSliderDialogInterval(1)
     elseIf a_option == OID_DFR_RelationshipManager_ServiceRuleCooldownMin
         SetSliderDialogStartValue(RelationshipManager.ServiceRuleCooldownMin)
@@ -6011,6 +6086,21 @@ event OnOptionSliderOpenExt(int a_option)
         SetSliderDialogInterval(0.1)
     elseIf a_option == OID_DFR_RelationshipManager_ServiceRuleCooldownMax
         SetSliderDialogStartValue(RelationshipManager.ServiceRuleCooldownMax)
+        SetSliderDialogDefaultValue(3)
+        SetSliderDialogRange(0, 10)
+        SetSliderDialogInterval(0.1)
+    elseIf a_option == OID_DFR_Confiscation_MinFavourRequired
+        SetSliderDialogStartValue(Confiscation.MinFavourRequired)
+        SetSliderDialogDefaultValue(3)
+        SetSliderDialogRange(-101, 99)
+        SetSliderDialogInterval(1)
+    elseIf a_option == OID_DFR_Confiscation_ReturnDelayMin
+        SetSliderDialogStartValue(Confiscation.ReturnDelayMin)
+        SetSliderDialogDefaultValue(1)
+        SetSliderDialogRange(0, 10)
+        SetSliderDialogInterval(0.1)
+    elseIf a_option == OID_DFR_Confiscation_ReturnDelayMax
+        SetSliderDialogStartValue(Confiscation.ReturnDelayMax)
         SetSliderDialogDefaultValue(3)
         SetSliderDialogRange(0, 10)
         SetSliderDialogInterval(0.1)
@@ -6039,7 +6129,7 @@ event OnOptionSliderAcceptExt(int a_option, float a_value)
         format = "{0}"
     elseIf a_option == OID_DFR_RelationshipManager_RecentlyFavouredDuration
         RelationshipManager.RecentlyFavouredDuration = a_value as int
-        format = "{0}"
+        format = "{0}h"
     elseIf a_option == OID_DFR_RelationshipManager_NumServicesToSeverity
         RelationshipManager.NumServicesToSeverity = a_value
         format = "{2}"
@@ -6054,22 +6144,31 @@ event OnOptionSliderAcceptExt(int a_option, float a_value)
         format = "{0}"
     elseIf a_option == OID_DFR_RelationshipManager_ServiceCooldown
         RelationshipManager.ServiceCooldown = a_value as int
-        format = "{0}"
+        format = "{0}h"
     elseIf a_option == OID_DFR_RelationshipManager_ForcedServiceCooldown
         RelationshipManager.ForcedServiceCooldown = a_value
-        format = "{0}h"
+        format = "{1}h"
     elseIf a_option == OID_DFR_RelationshipManager_ForcedPunishmentCooldown
         RelationshipManager.ForcedPunishmentCooldown = a_value
-        format = "{0}h"
+        format = "{1}h"
     elseIf a_option == OID_DFR_RelationshipManager_MaxServiceRules
         RelationshipManager.MaxServiceRules = a_value as int
         format = "{0}"
     elseIf a_option == OID_DFR_RelationshipManager_ServiceRuleCooldownMin
-        RelationshipManager.ServiceRuleCooldownMin = a_value as int
-        format = "{0}d"
+        RelationshipManager.ServiceRuleCooldownMin = a_value
+        format = "{1}d"
     elseIf a_option == OID_DFR_RelationshipManager_ServiceRuleCooldownMax
-        RelationshipManager.ServiceRuleCooldownMax = a_value as int
-        format = "{0}d"
+        RelationshipManager.ServiceRuleCooldownMax = a_value
+        format = "{1}d"
+    elseIf a_option == OID_DFR_Confiscation_MinFavourRequired
+        Confiscation.MinFavourRequired = a_value as int
+        format = "{0}"
+    elseIf a_option == OID_DFR_Confiscation_ReturnDelayMin
+        Confiscation.ReturnDelayMin = a_value
+        format = "{1}d"
+    elseIf a_option == OID_DFR_Confiscation_ReturnDelayMax
+        Confiscation.ReturnDelayMax = a_value
+        format = "{1}d"
     
     endIf
 
@@ -6098,9 +6197,9 @@ endEvent
 
 event OnOptionHighlightExt(int a_option)
     if a_option == OID_DFR_RelationshipManager_FavourIncrement
-        SetInfoText("Base amount of favour increase when you've pleased your follower.")
+        SetInfoText("Base favour increase when you've pleased your follower.")
     elseIf a_option == OID_DFR_RelationshipManager_FavourDecrement
-        SetInfoText("Base favour decrease when annoying your follower.")
+        SetInfoText("Base favour decrease when you've annoyed your follower.")
     elseIf a_option == OID_DFR_RelationshipManager_FavourDailyDecay
         SetInfoText("How much favour goes down every 24 hours.")
     elseIf a_option == OID_DFR_RelationshipManager_FavourDailyDecaySlave
@@ -6129,6 +6228,14 @@ event OnOptionHighlightExt(int a_option)
         SetInfoText("The minimum amount of time in days before your follower can give you a rule as a service or punishment.")
     elseIf a_option == OID_DFR_RelationshipManager_ServiceRuleCooldownMax
         SetInfoText("The maximum amount of time in days before your follower can give you a rule as a service or punishment.")
+    elseIf a_option == OID_DFR_Confiscation_Enabled
+        SetInfoText("Whether or not your master can temporarily confiscate items as a punishment for rules e.g. taking away your extra clothes when the naked or armour rule is active. Only occurs during enslavement. You can ask for them to be returned after some time.")
+    elseIf a_option == OID_DFR_Confiscation_MinFavourRequired
+        SetInfoText("The minimum favour required before your master will be willing to return confiscated items. Note that this is always required to get your items back. Set to -101 to disable.")
+    elseIf a_option == OID_DFR_Confiscation_ReturnDelayMin
+        SetInfoText("The minimum amount of time in days before your master will be willing to return items confiscated as punishment.")
+    elseIf a_option == OID_DFR_Confiscation_ReturnDelayMax
+        SetInfoText("The maximum amount of time in days before your master will be willing to return items confiscated as punishment.")
     
     endIf
     
@@ -6160,7 +6267,7 @@ function PopulateEvents()
 
     int i = 0
     while i < allEvents.length
-        if _DFAnimalCont || Adversity.GetEventTags(allEvents[i]).Find("creature") < 0
+        if _DFAnimalCont || !Adversity.EventHasTag(allEvents[i], "creature")
             int oid = AddTextOption(Adversity.GetEventName(allEvents[i]), GetStatusText(Adversity.GetEventStatus(allEvents[i])))
             StorageUtil.SetStringValue(self, "DFR_Event_OID_" + oid, allEvents[i])
             oid = AddSliderOption("Cooldown", Adversity.GetEventCooldown(allEvents[i]), "{1}d")
@@ -6277,6 +6384,10 @@ int OID_DFR_RelationshipManager_ForcedPunishmentCooldown
 int OID_DFR_RelationshipManager_MaxServiceRules
 int OID_DFR_RelationshipManager_ServiceRuleCooldownMin
 int OID_DFR_RelationshipManager_ServiceRuleCooldownMax
+int OID_DFR_Confiscation_Enabled
+int OID_DFR_Confiscation_MinFavourRequired
+int OID_DFR_Confiscation_ReturnDelayMin
+int OID_DFR_Confiscation_ReturnDelayMax
 int OID_CurrentPack
 
 

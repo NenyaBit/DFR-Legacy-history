@@ -111,6 +111,8 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
+bool HasDLola = false
+
 QF__Gift_09000D62 function Get() global
     return Quest.GetQuest("_DFlow") as QF__Gift_09000D62
 endFunction
@@ -119,6 +121,7 @@ function Prep()
     Tool.MCM.MDC.UpdateTimerStatusCondition()
     DFR_Licenses.Get().CheckLicenseStatus()
     DFR_RelationshipManager.Get().SetupDialogue()
+    DFR_Jobs.Get().SetupDialogue()
 endFunction
 
 function Maintenance()
@@ -126,6 +129,7 @@ function Maintenance()
     if master
         Adversity.InitializeActor("deviousfollowers", master)
     endIf
+    HasDLola = Game.IsPluginInstalled("Devious Lola.esp")
 endFunction
 
 Function UpdateVersion()
@@ -179,14 +183,43 @@ EndFunction
 ; Picks a slaver to be the new DF, or tries to at least.
 ; May even raise the slaver from the dead! (This seems a terrible idea, but it probably never happens).
 Function Enslave()
-    Actor slaver = ScanActor
-
+    if !Adversity.AccquireLock("deviousfollowers/slavery-setup") ; released in slavery setup
+        DFR_Util.Log("Failed to accquire lock")
+        return
+    endIf
+    
     ExternalRemoveFollower() ; Resets to stage 0, then resets everything.
 
-    If !slaver || slaver == Game.GetPlayer()
-        slaver = Tool.FindNewFollower()
-    EndIf
+    ; If !slaver || slaver == Game.GetPlayer()
+    ;     slaver = Tool.FindNewFollower()
+    ; EndIf
     
+    Actor slaver
+
+    Form[] buyers = Adversity.GetContextFormList("deviousfollowers", "buyers", Utility.CreateFormArray(0))
+    Actor[] validBuyers = PapyrusUtil.ActorArray(buyers.Length)
+
+    int i = 0
+    int j = 0
+    while i < buyers.Length
+        Actor buyer = buyers[i] as Actor
+
+        if buyer && !buyer.IsDead() && buyer.IsEnabled()
+            validBuyers[j] = buyers[i] as Actor
+            j += 1
+        endIf
+
+        i += 1
+    endWhile
+
+    DFR_Util.Log("Enslave - all buyers = " + buyers)
+    DFR_Util.Log("Enslave - valid buyers = " + validBuyers)
+
+    if j
+        slaver = validBuyers[Utility.RandomInt(0, j - 1)]
+    endIf
+    
+
     If !slaver
         ; TODO: replace with adv actor check
         ; Pick a vanilla mercenary anyway
@@ -202,10 +235,17 @@ Function Enslave()
         ; We have no choice but to enable SOMEBODY
         ForceEnableDevious(slaver)
     EndIf
-    
-    If slaver.IsDead()
+
+    DFR_Util.Log("Enslave - Slaver = " + slaver)
+
+    if slaver.IsDead()
         slaver.Resurrect()
-    EndIf
+    endIf
+
+    if slaver.IsDisabled()
+        slaver.Enable()
+    endIf
+
     
     ObjectReference portDestination = slaver
     PlayerRef.moveTo(portDestination, 100, 100, 50)
@@ -245,6 +285,8 @@ Function Enslave()
         ResetPunishmentTracking(slaver)
         StartSlaverySetup(0)
     EndIf
+
+    Adversity.ReleaseLock("deviousfollowers/slavery-setup")
 EndFunction
 
 ; This is used when player is enslaved without a follower swap due to debt excess.
@@ -935,7 +977,7 @@ Function BuyoutOfSlavery()
 
     DFR_RelationshipManager.Get().SetStageRegular(who)
 
-    Tool.RestoreAllItems()
+    DFR_Confiscation.Get().ReturnItems()
 
     SetStage(10)
     
@@ -985,6 +1027,7 @@ Function PriceUpdate()
     Tool.MCM.CalculateScaledDebts()
 
     Float removalBase = CalculateDeviceRemovalCost()
+
     _DFlowRemovalP.SetValue(removalBase)
     UpdateCurrentInstanceGlobal(_DFlowRemovalP)
     
@@ -997,10 +1040,6 @@ Function DeviceRemovalGold()
 
     Float currentPrice = CalculateDeviceRemovalCost()
     Int removalGold = currentPrice As Int
-
-    if DFR_RelationshipManager.Get().HasHighFavour()
-        removalGold = Math.Floor(removalGold as float * 0.5)
-    endIf
 
     Int playerGold = PlayerRef.GetGoldAmount()
     If playerGold < removalGold || (_GoldControl As _DFGoldConQScript).Enabled
@@ -1025,6 +1064,10 @@ Float Function CalculateDeviceRemovalCost()
     Float increasePrice = _DFlowRemovalInc.GetValue()
     
     Float currentPrice = baseRemovalPrice + (RemovedDevicesCount As Float) * increasePrice
+
+    if DFR_RelationshipManager.Get().HasHighFavour()
+        currentPrice = Math.Floor(currentPrice as float * 0.5)
+    endIf
     
     Return currentPrice
     
@@ -1389,6 +1432,7 @@ Function LostItems()
 EndFunction
 
 
+; used for internal process functions like enslavement - this really should be in the confiscation quest as a util function
 Function StealAllItems()
     ; But send them to a chest, so they aren't destroyed forever...
     Bool taken = False
@@ -1413,7 +1457,7 @@ Function StealAllItems()
     EndIf
 EndFunction
 
-
+; used as a debt solution if you say you can pay them during the FG
 Function RobPlayerItems(Bool voluntary = False)
 
     ; Beginning to question if the correct way to configure this is percentage.
@@ -1571,7 +1615,8 @@ Function StartNewAgreement(Actor newMaster, Int questStageID)
     DealController.PickRandomDeal()
     
     DFR_RelationshipManager.Get().SetStageRegular(Alias__DMaster.GetRef() as Actor)
-  
+    DFR_Collar.Get().MasterAlias.ForceRefTo(Alias__DMaster.GetRef() as Actor)
+
     int handle = ModEvent.Create("DF_StartNewAgreement")
     if handle
         ModEvent.PushForm(handle, newMaster)
@@ -1593,13 +1638,13 @@ Function QuickStartNewAgreement()
     
     ; The returned followers may include some ignored only via storageutil...
     Actor[] followers = Q2.GetFrameworkFollowers(_DFDisable)
-    
+       
     Bool started = False
     Int ii = 0
     Int stopAt = followers.Length
     While ii < stopAt
         Actor who = followers[ii]
-        
+
         If who && !IsIgnore(who)
             stopAt = 0
             
@@ -1612,6 +1657,8 @@ Function QuickStartNewAgreement()
             EndIf
             StartNewAgreement(who, 3) ; resets debt and bounces to stage 10.
             started = True
+        else
+            DFR_Util.Log(who + " is not devious")
         EndIf
         ii += 1
     EndWhile
@@ -1636,9 +1683,9 @@ Function RestartAgreement(Actor newMaster, Int questStageID)
         Alias__DMaster.ForceRefTo(newMaster)
         newMaster.RemoveFromFaction(pDismissedFollower)
         ForceEnableDevious(newMaster)
-    If questStageID < 98 || questStageID >= 200
-        ResetPunishmentTracking(newMaster)
-    EndIf
+        If questStageID < 98 || questStageID >= 200
+            ResetPunishmentTracking(newMaster)
+        EndIf
     EndIf
  
     _DFlowSold.Enable = False 
@@ -1846,14 +1893,6 @@ EndFunction
 
 ; Check for follower that should not be devious.
 Bool Function IsIgnore(Actor who)
-    if !Adversity.GetActorBool("deviousfollowers", who, "devious")
-        Return true
-    endIf
-    
-    Int tagged = StorageUtil.GetIntValue(who, TagNeverDevious, -1)
-    If tagged >= 0
-        Return True
-    EndIf
     Return who.GetFactionRank(_DFDisable) >= -1
 EndFunction
 

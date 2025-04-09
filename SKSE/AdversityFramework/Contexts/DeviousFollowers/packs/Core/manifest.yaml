@@ -31,7 +31,7 @@ events:
       - type: outfit
         exclusive: true
         loc:
-          - town
+          - outside
   - name: Blindfold
     global: DFR_Rule_Blindfold
     desc: You must wear a blindfold in towns.
@@ -131,6 +131,7 @@ events:
     global: DFR_Rule_Extend
     desc: Your follower will extend a random deal.
     severity: 1
+    tags: [type:rule]
   - name: Gag
     global: DFR_Rule_Gag
     desc: You must be gagged everywhere except dungeons.
@@ -180,7 +181,7 @@ events:
     tags: [type:rule, path:cow, subtype:service]
     requirements:
       - MilkModNEW.esp
-  - name: Naked
+  - name: Naked in Town
     global: DFR_Rule_NakedInTown
     desc: You must be naked in towns.
     severity: 4
@@ -188,6 +189,13 @@ events:
     conflicts:
       - type: naked
         loc: town
+  - name: Naked
+    global: DFR_Rule_Naked
+    desc: You must be naked everywhere
+    severity: 5
+    tags: [type:rule, path:slut, naked, subtype:service]
+    conflicts:
+      - type: naked
   - name: Nipple Piercing
     global: DFR_Rule_NipplePiercings
     desc: You must wear nipple piercings.
@@ -304,33 +312,29 @@ events:
     global: DFR_Event_Sex
     severity: 3
     tags: [type:event, subtype:service, subtype:punishment]
-  - name: Spanking
+    exclusive: true
+    conditions:
+      - GetGlobalValue DFR_Rule_Sex != Adv_Status_Active
+  - name: Spanking Event
     global: DFR_Event_Spanking
     severity: 3
     tags: [type:event, subtype:service, subtype:punishment]
-  - name: Horse Sex
-    global: DFR_Event_HorseSex
-    severity: 3
-    tags: [type:event, subtype:service, subtype:punishment]
+    exclusive: true
     conditions:
-      - GetGlobalValue DFR_NumHorses >= 1
-  - name: Dog Sex
-    global: DFR_Event_DogSex
-    severity: 5
-    tags: [type:event, subtype:service, subtype:punishment]
-    conditions:
-      - GetGlobalValue DFR_NumDogs >= 1
+      - GetGlobalValue DFR_Rule_Spanking != Adv_Status_Active
   - name: Tattoos
     global: DFR_Event_Tattoos
     severity: 5
     tags: [type:event, subtype:service, subtype:punishment]
+    exclusive: true
 
   # JOBS
-  - name: Bandit Bounty Quest
-    global: DFR_Event_BanditBounty
+  - name: Bandit Bounty
+    global: DFR_Job_BanditBounty
     severity: 1
+    exclusive: true
     tags: [type:event, subtype:job, combat]
+    exp: true
     conditions:
     - GetStage BQ01 < 10
-    locations:
-      - Whiterun
+    - GetQuestRunning BQ01 == 1

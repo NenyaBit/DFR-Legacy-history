@@ -1,0 +1,21 @@
+FormKey: 433AA9:DeviousFollowers.esp
+EditorID: DFR_Speech
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR_Speech
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FGDelay
+      Object: 433AAA:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+  Versioning:
+  - Break0
+  ExtraBindDataVersion: 0
+  FileName: ''
+Flags:
+- StartGameEnabled
+- 0x10
+- RunOnce
+NextAliasID: 0

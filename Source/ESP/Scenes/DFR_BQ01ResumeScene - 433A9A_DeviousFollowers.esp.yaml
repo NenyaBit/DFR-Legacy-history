@@ -1,0 +1,25 @@
+FormKey: 433A9A:DeviousFollowers.esp
+EditorID: DFR_BQ01ResumeScene
+Flags: []
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Type: Package
+  Name: ''
+  ActorID: 0
+  Index: 2
+  StartPhase: 0
+  EndPhase: 0
+  Packages:
+  - 433AA0:DeviousFollowers.esp
+Quest: 433A88:DeviousFollowers.esp
+LastActionIndex: 2
+VNAM: 0x03000000030000000300000003000000

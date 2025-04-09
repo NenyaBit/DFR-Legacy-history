@@ -2,49 +2,37 @@
   traits:
     - id: Profiteer
   data:
-    devious: true
     combatStyle: heavy
     playerCombatPref: light
-    buyer: true
 - id: 0x656E2|Skyrim.esm
   traits:
     - id: Profiteer
   data:
-    devious: true
     combatStyle: light
     playerCombatPref: heavy
-    buyer: true
 - id: 0xE1BA9|Skyrim.esm
   traits:
     - id: Profiteer
   data:
-    devious: true
     combatStyle: light
     playerCombatPref: heavy
-    buyer: true
 - id: 0xB9986|Skyrim.esm
   traits:
     - id: Profiteer
   data:
-    devious: true
     combatStyle: magic
     playerCombatPref: light
-    buyer: true
 - id: 0xB998C|Skyrim.esm
   traits:
     - id: Profiteer
     - id: Brute
   data:
-    devious: true
     combatStyle: heavy
     playerCombatPref: magic
-    buyer: true
 - id: 0xB9984|Skyrim.esm
   traits:
     - id: Profiteer
   data:
-    devious: true
     combatStyle: heavy
     playerCombatPref: light
-    buyer: true
     

@@ -5,48 +5,48 @@ VirtualMachineAdapter:
   - Name: _MDDeal
     Properties:
     - MutagenObjectType: ScriptIntProperty
-      Name: Rule1Code
+      Name: Stat
     - MutagenObjectType: ScriptObjectProperty
       Name: DMC
       Object: 1BD274:DeviousFollowers.esp
-    - MutagenObjectType: ScriptIntProperty
-      Name: Rule2Code
     - MutagenObjectType: ScriptObjectProperty
-      Name: GameDaysPassed
-      Object: 000039:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowDealBaseDays
-      Object: 03CDFB:DeviousFollowers.esp
+      Name: DealPrice
+      Object: 1DD58B:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Gold001
       Object: 00000F:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: DealPriceTimer
-      Object: 1DD58F:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: PlayerRef
-      Object: 000014:Skyrim.esm
-    - MutagenObjectType: ScriptIntProperty
-      Name: Stat
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DealPrice
-      Object: 1DD58B:DeviousFollowers.esp
-    - MutagenObjectType: ScriptIntProperty
-      Name: Rule3Code
-    - MutagenObjectType: ScriptObjectProperty
-      Name: tool
-      Object: 01210D:DeviousFollowers.esp
+      Name: DC
+      Object: 01C86D:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: LDC
       Object: 1C494F:DeviousFollowers.esp
     - MutagenObjectType: ScriptIntProperty
       Name: Enabled
       Data: 1
+    - MutagenObjectType: ScriptIntProperty
+      Name: Rule3Code
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DealPriceTimer
+      Object: 1DD58F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: Rule1Code
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowDealBaseDays
+      Object: 03CDFB:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tool
+      Object: 01210D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: Rule2Code
     - MutagenObjectType: ScriptFloatProperty
       Name: Delay
     - MutagenObjectType: ScriptObjectProperty
-      Name: DC
-      Object: 01C86D:DeviousFollowers.esp
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
   - Name: QF__081E24D1
   FileName: QF__081E24D1
   Fragments:

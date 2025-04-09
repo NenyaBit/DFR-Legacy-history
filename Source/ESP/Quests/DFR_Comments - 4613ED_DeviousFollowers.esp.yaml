@@ -1,0 +1,18 @@
+FormKey: 4613ED:DeviousFollowers.esp
+VersionControl: 12642
+EditorID: DFR_Comments
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR_Comments
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+  Versioning:
+  - Break0
+  ExtraBindDataVersion: 0
+  FileName: ''
+Flags:
+- StartGameEnabled
+- RunOnce
+NextAliasID: 0

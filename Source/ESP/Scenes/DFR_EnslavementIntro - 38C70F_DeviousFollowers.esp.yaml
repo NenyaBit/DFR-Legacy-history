@@ -41,7 +41,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 000D62:DeviousFollowers.esp
-      SecondUnusedIntParameter: -714878464
+      SecondUnusedIntParameter: -741751296
       VariableName: ::EnslavementMethod_var
   Unused2: {}
   EditorWidth: 200
@@ -51,7 +51,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 000D62:DeviousFollowers.esp
-      SecondUnusedIntParameter: -714878400
+      SecondUnusedIntParameter: -741751232
       VariableName: ::EnslavementMethod_var
   Unused2: {}
   EditorWidth: 200
@@ -63,7 +63,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 000D62:DeviousFollowers.esp
-      SecondUnusedIntParameter: -714878336
+      SecondUnusedIntParameter: -741751168
       VariableName: ::EnslavementMethod_var
   - MutagenObjectType: ConditionFloat
     Flags:
@@ -71,7 +71,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 000D62:DeviousFollowers.esp
-      SecondUnusedIntParameter: -714878304
+      SecondUnusedIntParameter: -741751136
       VariableName: ::EnslavementMethod_var
     ComparisonValue: 2
   Unused2: {}
@@ -82,7 +82,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 000D62:DeviousFollowers.esp
-      SecondUnusedIntParameter: -714878240
+      SecondUnusedIntParameter: -741751072
       VariableName: ::EnslavementMethod_var
     ComparisonValue: 1
   Unused2: {}
@@ -93,7 +93,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 000D62:DeviousFollowers.esp
-      SecondUnusedIntParameter: -714878176
+      SecondUnusedIntParameter: -741751008
       VariableName: ::EnslavementMethod_var
     ComparisonValue: 1
   Unused2: {}
@@ -127,7 +127,7 @@ Phases:
     Data:
       MutagenObjectType: GetVMQuestVariableConditionData
       Quest: 00C545:DeviousFollowers.esp
-      SecondUnusedIntParameter: -714877952
+      SecondUnusedIntParameter: -741750784
       VariableName: ::EnslavedGoldControl_var
     ComparisonValue: 1
   Unused2: {}

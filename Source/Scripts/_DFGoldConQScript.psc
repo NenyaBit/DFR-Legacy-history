@@ -3,7 +3,7 @@ Scriptname _DFGoldConQScript extends Quest  Conditional
 QF__Gift_09000D62 Property Q auto
 ; Access to MCM via Q.Tool.MCM
 ; Access to Tool via Q.Tool
-_DFLicensing Property _DFLicenses Auto
+DFR_Licenses property Licenses auto 
 
 Message Property _DFlowDebtCreditMsg0 Auto
 Message Property _DFlowDebtCreditMsg1 Auto
@@ -50,6 +50,9 @@ Bool Property WasEnabled Auto
 
 Int Property HadGold Auto
 
+string[] Blockers
+bool Blocked = false
+
 _DFGoldConQScript function Get() global
     return Quest.GetQuest("_DflowGoldMode") as _DFGoldConQScript
 endFunction
@@ -84,7 +87,7 @@ Function StartIt()
     Enabled = True
     
     If IsEnabledForcedLicenseControl
-        _DFLicenses.SetStage(9)
+        Licenses.BeginLicensing()
     EndIf
     
 EndFunction
@@ -144,10 +147,23 @@ Function AddCredit(Int surplusCash)
     
 EndFunction
 
+function Block(string asKey)
+    Blockers = PapyrusUtil.PushString(Blockers, asKey)
+    Blocked = true
+endFunction
+
+
+function Unblock(string asKey)
+    Blockers = PapyrusUtil.RemoveString(Blockers, asKey)
+    if Blockers.Length
+        Blocked = false
+    endIf
+endFunction
+
 
 Function Recalc() ; Occurs on location change, or if you talk to the follower about debt.
 
-    If Enabled && Q.GetStage() >= 10
+    If !Blocked && Enabled && Q.GetStage() >= 10
 
         Int pcGold = Game.GetPlayer().GetItemCount(Gold001)
         Int missingGold = 0

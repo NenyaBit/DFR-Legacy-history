@@ -24,6 +24,12 @@ ScheduleDayOfWeek: 255
 ScheduleHour: -1
 ScheduleMinute: -1
 Unknown3: 0x000000
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 410291:DeviousFollowers.esp
+  ComparisonValue: 2
 PackageTemplate: 01C254:Skyrim.esm
 DataInputVersion: 10
 Data:

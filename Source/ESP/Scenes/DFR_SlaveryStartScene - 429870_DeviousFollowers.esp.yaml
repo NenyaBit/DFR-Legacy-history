@@ -44,5 +44,5 @@ Conditions:
   CompareOperator: LessThan
   Data:
     MutagenObjectType: GetStageConditionData
-    Quest: 38C70D:DeviousFollowers.esp
+    Quest: 42986F:DeviousFollowers.esp
   ComparisonValue: 10

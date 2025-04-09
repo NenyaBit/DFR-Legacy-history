@@ -16,8 +16,6 @@ GlobalVariable Property vkjSubmissionScore Auto
 ; Stage 90 - stop event listeners
 ; Stage 100 - done - clear objective
 
-
-
 ; On load handling
 Event Init()
     GotoState("InEvent")
@@ -219,7 +217,6 @@ Bool Function LolaSupported()
 
 EndFunction
 
-
 Bool Function InLola()
 
     Int lolaIndex = Game.GetModByName("submissivelola_est.esp")
@@ -231,11 +228,6 @@ Bool Function InLola()
     Return False
     
 EndFunction
-
-
-
-
-
 
 Event HandleLolaExit(String source, Form ownerActor, Float score, Float daysEnslaved)
     GotoState("InEvent")
@@ -272,6 +264,7 @@ Event HandleSSEntry()
     GotoState("InEvent")
     Debug.TraceConditional("DF - HandleSSEntry", True)
     SetStage(90)
+
     GotoState("")
 EndEvent
 

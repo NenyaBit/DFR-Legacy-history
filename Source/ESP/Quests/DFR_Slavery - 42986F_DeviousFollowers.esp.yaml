@@ -2,6 +2,7 @@ FormKey: 42986F:DeviousFollowers.esp
 EditorID: DFR_Slavery
 Flags:
 - AllowRepeatedStages
+Priority: 100
 Stages:
 - Index: 1
   Flags:

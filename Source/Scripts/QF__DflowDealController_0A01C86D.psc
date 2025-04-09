@@ -339,7 +339,6 @@ Function Buyout(int aiIndex)
     endIf
 
     PlayerRef.RemoveItem(Gold, DealPrices[aiIndex].GetValue() as int)
-
     
     (UberController As _DFDealUberController).RemoveDealById(deal)
 

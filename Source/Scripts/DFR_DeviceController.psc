@@ -17,12 +17,15 @@ endFunction
 
 Function PriceUpdate()
     Flow.PriceUpdate()
+    UpdateCurrentInstanceGlobal(RemovalPrice)
 EndFunction
 
 function BlockRemoval(int aiCode, string asSource, int aiType = 0)
-    if StorageUtil.StringListAdd(self, "DeviceBlockers" + aiCode, asSource, false) >= 0
-        StorageUtil.SetIntValue(self, "DeviceBlockers" + aiCode, StorageUtil.GetIntValue(self, "DeviceBlockers" + aiCode) + aiType)
-        StorageUtil.IntListAdd(self, "DeviceBlockers" + aiCode, aiType)
+    string blockerKey = "DeviceBlockers" + aiCode
+    
+    if StorageUtil.StringListAdd(self, blockerKey, asSource, false) >= 0
+        StorageUtil.SetIntValue(self, blockerKey, StorageUtil.GetIntValue(self, blockerKey) + aiType)
+        StorageUtil.IntListAdd(self, blockerKey, aiType)
         int status = RemovalBlocked[aiCode].GetValue() as int
         if aiCode
             status = 2
@@ -34,15 +37,16 @@ function BlockRemoval(int aiCode, string asSource, int aiType = 0)
 endFunction
 
 function AllowRemoval(int aiCode, string asSource)
-    int index = StorageUtil.StringListFind(self, "DeviceBlockers" + aiCode, asSource)
+    string blockerKey = "DeviceBlockers" + aiCode
+    int index = StorageUtil.StringListFind(self, blockerKey, asSource)
 
-    if index >= 0 && StorageUtil.StringListRemove(self, "DeviceBlockers" + aiCode, asSource, true)
-        StorageUtil.SetIntValue(self, "DeviceBlockers" + aiCode, StorageUtil.GetIntValue(self, "DeviceBlockers" + aiCode) - StorageUtil.IntListGet(self, "DeviceBlockers" + aiCode, index))
-        StorageUtil.IntListRemoveAt(self, "DeviceBlockers" + aiCode, index)
+    if index >= 0 && StorageUtil.StringListRemove(self, blockerKey, asSource, true)
+        StorageUtil.SetIntValue(self, blockerKey, StorageUtil.GetIntValue(self, blockerKey) - StorageUtil.IntListGet(self, blockerKey, index))
+        StorageUtil.IntListRemoveAt(self, blockerKey, index)
 
         int status
-        if StorageUtil.StringListCount(self, "DeviceBlockers" + aiCode)
-            if StorageUtil.GetIntValue(self, "DeviceBlockers" + aiCode)
+        if StorageUtil.StringListCount(self, blockerKey)
+            if StorageUtil.GetIntValue(self, blockerKey)
                 status = 2
             else
                 status = 1
@@ -61,7 +65,7 @@ endFunction
 
 function Remove(int aiCode)
     Keyword kwd = DeviceCodeToKeyword(aiCode)
-    if kwd && Libs.UnlockDeviceByKeyword(PlayerRef, kwd)
+    if (kwd && Libs.UnlockDeviceByKeyword(PlayerRef, kwd)) || (kwd == Libs.zad_DeviousBlindfold && Libs.UnlockDeviceByKeyword(PlayerRef, Libs.zad_DeviousHood))
         if PlayerRef.GetItemCount(Gold) >= RemovalPrice.GetValue()
             Flow.DeviceRemovalGold()
         else

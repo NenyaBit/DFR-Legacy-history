@@ -1,0 +1,32 @@
+FormKey: 4520D8:DeviousFollowers.esp
+EditorID: DFR_CollarLocationScene
+Flags: []
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- ID: 1
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Name: ''
+  ActorID: 1
+  Index: 1
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
+  StartPhase: 0
+  EndPhase: 0
+  Topic: 4520D9:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+Quest: 3ECB48:DeviousFollowers.esp
+LastActionIndex: 1
+VNAM: 0x03000000030000000300000003000000

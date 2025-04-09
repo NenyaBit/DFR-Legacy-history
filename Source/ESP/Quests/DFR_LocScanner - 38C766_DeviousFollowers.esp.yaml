@@ -5,16 +5,8 @@ VirtualMachineAdapter:
   - Name: DFR_LocScanner
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: numHorses
-      Object: 429875:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectListProperty
-      Name: DogAliases
-      Objects:
-      - Name: ''
-        Object: 38C766:DeviousFollowers.esp
-        Alias: 0
-    - MutagenObjectType: ScriptObjectProperty
       Name: PlayerRef
+      Object: 000014:Skyrim.esm
     - MutagenObjectType: ScriptObjectListProperty
       Name: HorseAliases
       Objects:
@@ -24,6 +16,15 @@ VirtualMachineAdapter:
     - MutagenObjectType: ScriptObjectProperty
       Name: NumDogs
       Object: 41F5F4:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: numHorses
+      Object: 429875:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: DogAliases
+      Objects:
+      - Name: ''
+        Object: 38C766:DeviousFollowers.esp
+        Alias: 0
   Versioning:
   - Break0
   ExtraBindDataVersion: 0
@@ -171,18 +172,14 @@ Aliases:
   Name: Horse1
   Flags:
   - Optional
+  - MatchingRefInLoadedArea
+  - MatchingRefClosest
   Conditions:
   - MutagenObjectType: ConditionFloat
     Data:
       MutagenObjectType: GetIsRaceConditionData
       Race: 0131FD:Skyrim.esm
     ComparisonValue: 1
-  - MutagenObjectType: ConditionGlobal
-    CompareOperator: LessThan
-    Data:
-      MutagenObjectType: GetDistanceConditionData
-      Target: 000014:Skyrim.esm
-    ComparisonValue: 2EF726:DeviousFollowers.esp
   - MutagenObjectType: ConditionFloat
     CompareOperator: NotEqualTo
     Data:
@@ -208,18 +205,14 @@ Aliases:
   Name: Horse1000
   Flags:
   - Optional
+  - MatchingRefInLoadedArea
+  - MatchingRefClosest
   Conditions:
   - MutagenObjectType: ConditionFloat
     Data:
       MutagenObjectType: GetIsRaceConditionData
       Race: 0131FD:Skyrim.esm
     ComparisonValue: 1
-  - MutagenObjectType: ConditionGlobal
-    CompareOperator: LessThan
-    Data:
-      MutagenObjectType: GetDistanceConditionData
-      Target: 000014:Skyrim.esm
-    ComparisonValue: 2EF726:DeviousFollowers.esp
   - MutagenObjectType: ConditionFloat
     CompareOperator: NotEqualTo
     Data:
@@ -245,18 +238,14 @@ Aliases:
   Name: Horse1000000
   Flags:
   - Optional
+  - MatchingRefInLoadedArea
+  - MatchingRefClosest
   Conditions:
   - MutagenObjectType: ConditionFloat
     Data:
       MutagenObjectType: GetIsRaceConditionData
       Race: 0131FD:Skyrim.esm
     ComparisonValue: 1
-  - MutagenObjectType: ConditionGlobal
-    CompareOperator: LessThan
-    Data:
-      MutagenObjectType: GetDistanceConditionData
-      Target: 000014:Skyrim.esm
-    ComparisonValue: 2EF726:DeviousFollowers.esp
   - MutagenObjectType: ConditionFloat
     CompareOperator: NotEqualTo
     Data:

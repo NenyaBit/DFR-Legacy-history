@@ -4,9 +4,24 @@ _DFtools property Tool auto
 DFR_LocScanner property Scanner auto
 
 bool function OnStart(Actor akTarget)
-    Tool.Sex(Scanner.Horses[0])
+    Actor player = Game.GetPlayer()
+    DFR_Events events = DFR_Events.Get()
+
+    PyramidUtils.SetActorCalmed(Game.GetPlayer(), true)
+    PyramidUtils.SetActorCalmed(akTarget, true)
+
+    Actor victim = none
+    if events.GetContext(GetEventId()) == events.CONTEXT_TYPE_APOLOGY
+        victim = player
+    endIf
+
+    SexLabUtil.QuickStart(player, Scanner.Horses[0], Victim = victim)
+
     Tool.WaitForSex()
     
+    PyramidUtils.SetActorCalmed(Game.GetPlayer(), false)
+    PyramidUtils.SetActorCalmed(akTarget, false)
+
     Complete()
 
     return true

@@ -2,6 +2,7 @@ name: Whore Armor (Mage)
 addKeywords:
   - _DFWArmor
   - Adv_RuleItemKwd
+  - _SLS_BikiniArmor
 variants:
   - severity: 1
     sequence:

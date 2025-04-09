@@ -248,20 +248,20 @@ function Fail()
 endFunction
 
 DFR_FailableEvent function GetEventScr(int aiIndex)
-    if aiIndex == FOOD_SERVICE_INDEX
-        return ServiceEvent as DFR_Event_Food
+    if (ServiceEvent as DFR_Event_Food).IsActive()
+        return (ServiceEvent as DFR_Event_Food)
     endIf
 
-    if aiIndex == POTION_SERVICE_INDEX
-        return ServiceEvent as DFR_Event_Potions
+    if (ServiceEvent as DFR_Event_Potions).IsActive()
+        return (ServiceEvent as DFR_Event_Potions)
     endIf
 
-    if aiIndex == SHARPEN_SERVICE_INDEX
-        return ServiceEvent as DFR_Event_Sharpen
+    if (ServiceEvent as DFR_Event_Sharpen).IsActive()
+        return (ServiceEvent as DFR_Event_Sharpen)
     endIf
 
-    if aiIndex == ARROW_SERVICE_INDEX
-        return ServiceEvent as DFR_Event_Arrows
+    if (ServiceEvent as DFR_Event_Arrows).IsActive()
+        return (ServiceEvent as DFR_Event_Arrows)
     endIf
 
     return none

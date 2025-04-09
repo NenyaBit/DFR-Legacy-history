@@ -1,6 +1,7 @@
 FormKey: 3ECB4A:DeviousFollowers.esp
 EditorID: DFR_CollarLeadScene
-Flags: []
+Flags:
+- 0x4
 Phases:
 - Name: ''
   Unused2: {}
@@ -12,17 +13,26 @@ Actors:
   - DeathEnd
   - CombatEnd
   - DialoguePause
+- ID: 2
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
 Actions:
 - Name: ''
   ActorID: 1
   Index: 1
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
   StartPhase: 0
   EndPhase: 0
   Topic: 3ECB4B:DeviousFollowers.esp
   HeadtrackActorID: -1
   LoopingMax: 10
   LoopingMin: 1
-  Emotion: Neutral
+  Emotion: Anger
   EmotionValue: 0
 - Type: Timer
   Name: ''

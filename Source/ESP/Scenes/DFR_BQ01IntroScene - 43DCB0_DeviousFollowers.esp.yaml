@@ -1,0 +1,136 @@
+FormKey: 43DCB0:DeviousFollowers.esp
+EditorID: DFR_BQ01IntroScene
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR__SF_DFR_BQ01IntroScene_0A43DCB0
+  ScriptFragments:
+    FileName: DFR__SF_DFR_BQ01IntroScene_0A43DCB0
+    OnEnd:
+      ExtraBindDataVersion: 1
+      ScriptName: DFR__SF_DFR_BQ01IntroScene_0A43DCB0
+      FragmentName: Fragment_1
+Flags:
+- 0x4
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+- ID: 1
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+- ID: 4
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Name: ''
+  ActorID: 1
+  Index: 1
+  Flags:
+  - FaceTarget
+  StartPhase: 0
+  EndPhase: 0
+  Topic: 43DCB4:DeviousFollowers.esp
+  HeadtrackActorID: 0
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Package
+  Name: ''
+  ActorID: 0
+  Index: 2
+  StartPhase: 0
+  EndPhase: 3
+  Packages:
+  - 43DCB6:DeviousFollowers.esp
+- Name: ''
+  ActorID: 0
+  Index: 3
+  Flags:
+  - FaceTarget
+  StartPhase: 1
+  EndPhase: 1
+  Topic: 43DCB7:DeviousFollowers.esp
+  HeadtrackActorID: 1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: ''
+  ActorID: 1
+  Index: 4
+  Flags:
+  - FaceTarget
+  StartPhase: 2
+  EndPhase: 2
+  Topic: 43DCB9:DeviousFollowers.esp
+  HeadtrackActorID: 0
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: ''
+  ActorID: 0
+  Index: 5
+  Flags:
+  - FaceTarget
+  StartPhase: 3
+  EndPhase: 3
+  Topic: 43DCBC:DeviousFollowers.esp
+  HeadtrackActorID: 1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 0
+  Index: 6
+  StartPhase: 1
+  EndPhase: 1
+  TimerSeconds: 2
+- Type: Timer
+  Name: ''
+  ActorID: 0
+  Index: 7
+  StartPhase: 3
+  EndPhase: 3
+  TimerSeconds: 1
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 8
+  StartPhase: 2
+  EndPhase: 2
+  TimerSeconds: 2
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 9
+  StartPhase: 0
+  EndPhase: 0
+  TimerSeconds: 2
+Quest: 433A88:DeviousFollowers.esp
+LastActionIndex: 9
+VNAM: 0x03000000030000000300000003000000

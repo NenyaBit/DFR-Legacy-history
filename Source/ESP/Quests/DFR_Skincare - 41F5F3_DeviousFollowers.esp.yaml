@@ -11,29 +11,26 @@ VirtualMachineAdapter:
   - Name: DFR_Skincare
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: GameDaysPassed
-      Object: 000039:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Flow
-      Object: 000D62:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: SpecialLotion
-      Object: 42982E:DeviousFollowers.esp
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: RelManager
       Object: 38C70D:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: RegularLotion
-      Object: 42982C:DeviousFollowers.esp
+      Name: SpecialLotion
+      Object: 42982E:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: SL
       Object: 000D62:SexLab.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: LotionList
-      Object: 41F5FC:DeviousFollowers.esp
+      Name: Flow
+      Object: 000D62:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: PlayerRef
-      Object: 000014:Skyrim.esm
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: RegularLotion
+      Object: 42982C:DeviousFollowers.esp
   FileName: DFR__QF_DFR_Skincare_0A41F5F3
   Fragments:
   - Unknown2: 1
@@ -46,10 +43,6 @@ VirtualMachineAdapter:
       Alias: 3
     Scripts:
     - Name: DFR_Skincare_Player
-      Properties:
-      - MutagenObjectType: ScriptObjectProperty
-        Name: LotionList
-        Object: 41F5FC:DeviousFollowers.esp
 Flags:
 - AllowRepeatedStages
 Stages:

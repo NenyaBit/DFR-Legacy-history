@@ -14,7 +14,9 @@ int property NumRules auto hidden conditional
 
 string[] property ActiveRules auto hidden
 
-DFR_Rules function Get()
+bool Modified = false
+
+DFR_Rules function Get() global
     return Quest.GetQuest("DFR_Rules") as DFR_Rules
 endFunction
 
@@ -27,6 +29,8 @@ function Maintenance()
 endFunction
 
 function Setup()
+    Modified = true
+
     float now = GameDaysPassed.GetValue()
 
     bool isSlave = RelManager.IsSlave()
@@ -35,6 +39,9 @@ function Setup()
     int i = 0
     while i < ActiveRules.Length
         string rule = ActiveRules[i]
+        
+        StorageUtil.SetIntValue(self, "CachedStatus_" + rule, Adversity.GetEventStatus(rule))
+        
         float expiration = StorageUtil.GetFloatValue(self, rule)
         float extension = StorageUtil.GetFloatValue(self, "ExtensionDuration_" + rule)
 
@@ -54,11 +61,17 @@ function Setup()
 endFunction
 
 event OnMenuClose(string asMenu)
+    if !Modified
+        return
+    endIf
+
     int i = 0
     while i < ActiveRules.Length
-        Adversity.SetEventStatus(ActiveRules[i], 5)
+        Adversity.SetEventStatus(ActiveRules[i], StorageUtil.GetIntValue(self, "CachedStatus_" + ActiveRules[i], 5))
         i += 1
     endWhile
+
+    Modified = false
 endEvent
 
 ; aiTerm: 0 = hidden, 1 = 3-4 hours, 2 = 1-2 days, 3 = 3-5 days, 4 = 6-8 days
@@ -71,18 +84,15 @@ bool function Add(string asRule, int aiTerm, int aiContext)
     float duration = 0.0
 
     if aiTerm > 0
-        float offset = 0.0
         if aiTerm == 1
-            offset = Utility.RandomInt(3, 4) * 0.042
+            duration = Utility.RandomInt(3, 4) * 0.042
         elseIf aiTerm == 2
-            offset = Utility.RandomInt(1, 2)
+            duration = Utility.RandomInt(1, 2)
         elseIf aiTerm == 3
-            offset = Utility.RandomInt(3, 5)
+            duration = Utility.RandomInt(3, 5)
         elseIf aiTerm == 4
-            offset = Utility.RandomInt(6, 8)
+            duration = Utility.RandomInt(6, 8)
         endIf
-
-        duration = offset + offset
     endIf
 
     StorageUtil.SetFloatValue(self, asRule, GameDaysPassed.GetValue() + duration)
@@ -91,6 +101,28 @@ bool function Add(string asRule, int aiTerm, int aiContext)
     NumRules = ActiveRules.Length
 
     Log("Add - " + asRule + " - " + aiTerm + " - " + aiContext + " - " + NumRules)
+endFunction
+
+bool function StartDays(string asRule, int aiMinDays, int aiMaxDays = -1, int aiContext)
+    if ActiveRules.Find(asRule) > -1
+        return false
+    endIf
+
+    if aiMaxDays < 0
+        aiMaxDays = aiMinDays
+    endIf
+
+    if Adversity.StartEvent(asRule)
+        float duration = Utility.RandomInt(aiMinDays, aiMaxDays)
+
+        StorageUtil.SetFloatValue(self, asRule, GameDaysPassed.GetValue() + duration)
+        StorageUtil.SetIntValue(self, asRule, aiContext)
+        ActiveRules = PapyrusUtil.PushString(ActiveRules, asRule)
+        NumRules = ActiveRules.Length
+        Log("StartDays - " + asRule + " - " + duration + " - " + aiContext + " - " + NumRules)
+    else
+        Log("StartDays - Failed")
+    endIf
 endFunction
 
 function Remove(string asRule)
@@ -160,9 +192,25 @@ function Handle(string asRule)
 
     Log("Handle - " + asRule + " - " + status)
 
-    if status == 6
+    if status == STATUS_ACCEPT
         End(asRule)
-    elseIf status == 7
+    elseIf status == STATUS_REFUSE
         DelayRemoval(asRule)
     endIf
+endFunction
+
+bool function CanAddRule(string asRule)
+    if StringUtil.Find(asRule, "deviousfollowers") == -1
+        asRule = "deviousfollowers/" + asRule
+    endIf
+
+    if NumRules >= RelManager.MaxServiceRules
+        return false
+    endIf
+
+    if Adversity.IsEventSelectable(asRule)
+        return false
+    endIf
+
+    return true
 endFunction

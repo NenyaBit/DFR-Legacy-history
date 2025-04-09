@@ -2,6 +2,7 @@ name: Whore Armor (Light)
 addKeywords:
   - _DFWArmor
   - Adv_RuleItemKwd
+  - _SLS_BikiniArmor
 variants:
   - severity: 1
     sequence:
@@ -259,8 +260,6 @@ variants:
     pieces:
       - name: Dawnguard Thong C
         id: 0x84A|TAWOBA_dawn.esp
-      - name: Dawnguard Cape A
-        id: 0x81E|TAWOBA_dawn.esp
       - name: Dawnguard Tasset A
         id: 0x81C|TAWOBA_dawn.esp
       - name: Dawnguard Pauldrons A
@@ -459,3 +458,23 @@ variants:
         id: 0x000809|[J3] Elegant Explorer.esp
       - name: Rogue Top [Dark]
         id: 0x000819|RogueOutfit.esp
+  - severity: 1
+    pieces:
+      - name: Ceara Gloves
+        id: 0x807|[NINI] Ceara.esp
+      - name: Ceara Boots
+        id: 0x806|[NINI] Ceara.esp
+      - name: Ceara Lower
+        id: 0x805|[NINI] Ceara.esp
+      - name: Ceara Upper
+        id: 0x804|[NINI] Ceara.esp
+  - severity: 3
+    pieces:
+      - name: Ceara Upper Slutty Damaged
+        id: 0x811|[NINI] Ceara.esp
+      - name: Ceara Gloves
+        id: 0x807|[NINI] Ceara.esp
+      - name: Ceara Boots
+        id: 0x806|[NINI] Ceara.esp
+      - name: Ceara Lower
+        id: 0x805|[NINI] Ceara.esp

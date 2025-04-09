@@ -12,6 +12,12 @@ Actors:
   - DeathEnd
   - CombatEnd
   - DialoguePause
+- ID: 2
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
 Actions:
 - Type: Timer
   Name: ''
@@ -23,13 +29,16 @@ Actions:
 - Name: ''
   ActorID: 1
   Index: 2
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
   StartPhase: 0
   EndPhase: 0
   Topic: 3ECB4F:DeviousFollowers.esp
   HeadtrackActorID: -1
   LoopingMax: 10
   LoopingMin: 1
-  Emotion: Neutral
+  Emotion: Anger
   EmotionValue: 0
 Quest: 3ECB48:DeviousFollowers.esp
 LastActionIndex: 2

@@ -1,0 +1,861 @@
+FormKey: 447ED4:DeviousFollowers.esp
+EditorID: DFR_UnflaggedFollowerScan
+VirtualMachineAdapter:
+  Scripts:
+  - Name: _dflowunflaggedfollowerscan
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFMaster
+      Object: 015712:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFDisable
+      Object: 0B8A73:DeviousFollowers.esp
+  Versioning:
+  - Break0
+  ExtraBindDataVersion: 0
+  FileName: ''
+Flags:
+- AllowRepeatedStages
+- 0x1000
+NextAliasID: 29
+Aliases:
+- ID: 1
+  Name: Follower
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 28
+  Name: Follower026
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 27
+  Name: Follower025
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 26
+  Name: Follower024
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 25
+  Name: Follower023
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 24
+  Name: Follower022
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 23
+  Name: Follower021
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 22
+  Name: Follower020
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 21
+  Name: Follower019
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 20
+  Name: Follower018
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 19
+  Name: Follower017
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 18
+  Name: Follower016
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 17
+  Name: Follower015
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 16
+  Name: Follower014
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 15
+  Name: Follower013
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 14
+  Name: Follower012
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 13
+  Name: Follower011
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 12
+  Name: Follower010
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 11
+  Name: Follower009
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 10
+  Name: Follower008
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 9
+  Name: Follower007
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 8
+  Name: Follower006
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 7
+  Name: Follower005
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 6
+  Name: Follower004
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 5
+  Name: Follower003
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 4
+  Name: Follower002
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 3
+  Name: Follower001
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 2
+  Name: Follower000
+  Flags:
+  - Optional
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84D:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 05C84E:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 0B8A73:DeviousFollowers.esp
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetInFactionConditionData
+      Faction: 2D1109:DeviousFollowers.esp
+    ComparisonValue: 1
+  VoiceTypes: Null

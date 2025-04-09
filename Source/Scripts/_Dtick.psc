@@ -19,6 +19,7 @@ DFR_Outfits property Outfits auto
 DFR_LocScanner property Scanner auto
 DFR_Rules property Rules auto
 DFR_Skincare property Skincare auto
+DFR_Speech property Speech auto
 
 Actor property PlayerRef auto
 Actor property Follower auto
@@ -29,6 +30,7 @@ Faction property Enslaved auto ; Not set and hopefully, not used. Probably inten
 Faction property DismissedFollowerFaction auto
 Faction property DMasterFaction auto
 Faction property DIgnoreFaction auto
+Faction property DEnableFaction auto
 
 Armor property mittsI auto
 Armor property mittsR auto
@@ -169,7 +171,23 @@ Event Init()
     Scanner.Maintenance()
     Rules.Maintenance()
     Skincare.Maintenance()
+    Speech.Maintenance()
     Q.Maintenance()
+
+    Actor current = Q.Alias__DMaster.GetRef() as Actor
+    Form[] exclude = Adversity.GetcontextFormList("deviousfollowers", "exclude-actors", Utility.CreateFormArray(0))
+    int i = 0
+    while i < exclude.Length
+        if exclude[i]
+            Actor target = exclude[i] as Actor
+            if target && target != current
+                target.AddToFaction(DIgnoreFaction)
+                target.RemoveFromFaction(DEnableFaction)
+            endIf
+        endIf
+
+        i += 1
+    endWhile
     
     lastVictimCount = SexLab.GetSkill(PlayerRef, "Victim")
     Follower = FollowerAlias.GetActorReference()

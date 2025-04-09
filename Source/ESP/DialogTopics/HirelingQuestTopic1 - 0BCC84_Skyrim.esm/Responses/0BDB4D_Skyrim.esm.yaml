@@ -5,11 +5,11 @@ VirtualMachineAdapter:
   - Name: TIF__000BDB4D
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: HasHirelingGV
-      Object: 0BCC98:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
       Name: HirelingRecognizeMarcurio
       Object: 104F3B:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HasHirelingGV
+      Object: 0BCC98:Skyrim.esm
   ScriptFragments:
     MutagenObjectType: ScriptFragments
     FileName: TIF__000BDB4D

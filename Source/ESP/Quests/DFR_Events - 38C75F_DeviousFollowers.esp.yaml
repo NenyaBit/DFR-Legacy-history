@@ -5,14 +5,14 @@ VirtualMachineAdapter:
   - Name: DFR_Events
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: DealController
-      Object: 01C86D:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
       Name: EventContext
       Object: 406068:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: Rules
-      Object: 41F61A:DeviousFollowers.esp
+      Name: RelManager
+      Object: 38C70D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tool
+      Object: 01210D:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Forced
       Object: 406066:DeviousFollowers.esp
@@ -21,11 +21,11 @@ VirtualMachineAdapter:
       Object: 000D62:DeviousFollowers.esp
       Alias: 1
     - MutagenObjectType: ScriptObjectProperty
-      Name: RelManager
-      Object: 38C70D:DeviousFollowers.esp
+      Name: Rules
+      Object: 41F61A:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: tool
-      Object: 01210D:DeviousFollowers.esp
+      Name: DealController
+      Object: 01C86D:DeviousFollowers.esp
   FileName: ''
   Aliases:
   - Property:

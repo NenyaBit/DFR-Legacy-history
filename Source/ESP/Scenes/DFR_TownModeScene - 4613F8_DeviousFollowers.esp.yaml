@@ -1,0 +1,41 @@
+FormKey: 4613F8:DeviousFollowers.esp
+VersionControl: 12642
+EditorID: DFR_TownModeScene
+Flags:
+- BeginOnQuestStart
+- RepeatConditionsWhileTrue
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- ID: 11
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Type: Package
+  Name: ''
+  ActorID: 11
+  Index: 1
+  StartPhase: 0
+  EndPhase: 0
+  Packages:
+  - 461402:DeviousFollowers.esp
+Quest: 433A92:DeviousFollowers.esp
+LastActionIndex: 1
+VNAM: 0x03000000030000000300000003000000
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Flags:
+  - OR
+  Data:
+    MutagenObjectType: GetStageConditionData
+    Quest: 433A92:DeviousFollowers.esp
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetStageConditionData
+    Quest: 433A92:DeviousFollowers.esp
+  ComparisonValue: 3

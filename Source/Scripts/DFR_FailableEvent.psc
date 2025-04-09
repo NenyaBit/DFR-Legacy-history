@@ -6,6 +6,12 @@ function Complete()
     Stop()
 endFunction
 
+function NeutralComplete()
+    DFR_Util.Log("Food Event - Complete")
+    DFR_RelationshipManager.Get().CompleteEvent(GetEventId())
+    Stop()
+endFunction
+
 function Fail()
     DFR_Util.Log("Food Event - Fail")
     DFR_RelationshipManager.Get().FailEvent(GetEventId())

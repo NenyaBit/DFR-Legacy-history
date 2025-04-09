@@ -6,12 +6,12 @@ VirtualMachineAdapter:
   - Name: _Dx_QF__DFlowBoredom_0926BB92
     Properties:
     - MutagenObjectType: ScriptObjectProperty
+      Name: DFQ
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
       Name: Alias_Follower
       Object: 26BB92:DeviousFollowers.esp
       Alias: 0
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DFQ
-      Object: 000D62:DeviousFollowers.esp
   FileName: _Dx_QF__DFlowBoredom_0926BB92
   Fragments:
   - Stage: 10

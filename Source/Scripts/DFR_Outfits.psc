@@ -33,6 +33,8 @@ string LastOutfit = ""
 string SelectedOutfitSwap = ""
 bool property OutfitSequence = false auto hidden conditional
 
+string[] ActiveOutfitRules
+
 DFR_Outfits function Get() global
     return Quest.GetQuest("DFR_Outfits") as DFR_Outfits
 endFunction
@@ -48,6 +50,18 @@ function Prep()
     LostArmorEscalate = !BikiniArmor && SwapCooldown < Utility.GetCurrentGameTime() && Utility.RandomInt(0, 100) < (LostArmorEscalationChance * 100)
     Log("Prep - Escalate = " + LostArmorEscalate)
     PickArmor()
+
+    int i = 0
+    while i < ActiveOutfitRules.Length
+        Adv_EventBase rule = Adversity.GetEvent(ActiveOutfitRules[i])
+        DFR_OutfitRuleBase outfitRule = rule as DFR_OutfitRuleBase
+        
+        if outfitRule
+            outfitRule.Prep()
+        endIf
+
+        i += 1
+    endWhile
 endFunction
 
 string function GetCurrentOutfit()
@@ -259,9 +273,7 @@ function StopWhoreArmorRule()
         Flow.AddDebt(missingCost)
     endWhile
 
-    NumOutfitRulesActive -= 1
-
-    Manager.Remove(WhoreArmorRule)
+    RemoveRule(WhoreArmorRule)
 endFunction
 
 function DelayValidationTimer()
@@ -270,4 +282,38 @@ endFunction
 
 function Log(string asMsg)
     DFR_Util.Log("Outfits - " + asMsg)
+endFunction
+
+bool function AddRule(string asRule, string asOutfit, GlobalVariable akStatus)
+    if Manager.Has(asRule)
+        return false
+    endIf
+
+    ActiveOutfitRules = PapyrusUtil.PushString(ActiveOutfitRules, asRule)
+
+    Manager.Add(asRule, Utility.CreateStringArray(1, asOutfit), akStatus)
+    NumOutfitRulesActive = ActiveOutfitRules.Length
+endFunction
+
+function SetRule(string asRule, string asOutfit)
+    Manager.Swap(asRule, Utility.CreateStringArray(1, asOutfit))
+endFunction
+
+bool function RemoveRule(string asRule)
+    if !Manager.Has(asRule)
+        return false
+    endIf
+
+    ActiveOutfitRules = PapyrusUtil.RemoveString(ActiveOutfitRules, asRule)
+
+    Manager.Remove(WhoreArmorRule)
+    NumOutfitRulesActive = ActiveOutfitRules.Length
+endFunction
+
+string[] function GetOutfits(string asRule)
+    if !Manager.Has(asRule)
+        return Utility.CreateStringArray(0)
+    endIf
+
+    return Manager.GetOutfits(asRule)
 endFunction

@@ -1,0 +1,164 @@
+FormKey: 433A88:DeviousFollowers.esp
+EditorID: DFR_BQ01
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR_BQ01
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: JarlAlias
+      Object: 095125:Skyrim.esm
+      Alias: 8
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Collar
+      Object: 3ECB48:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: QuestGiverAlias
+      Object: 433A88:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: BountyTargetAlias
+      Object: 095125:Skyrim.esm
+      Alias: 7
+    - MutagenObjectType: ScriptObjectProperty
+      Name: StewardAlias
+      Object: 095125:Skyrim.esm
+      Alias: 13
+    - MutagenObjectType: ScriptObjectProperty
+      Name: MasterAlias
+      Object: 433A88:DeviousFollowers.esp
+      Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: RelManager
+      Object: 38C70D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: InnkeeperAlias
+      Object: 095125:Skyrim.esm
+      Alias: 10
+    - MutagenObjectType: ScriptObjectProperty
+      Name: introScene
+      Object: 43DCB0:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: JobEvent
+      Object: 1BD274:DeviousFollowers.esp
+      Alias: 7
+    - MutagenObjectType: ScriptObjectProperty
+      Name: BountyLocationAlias
+      Object: 095125:Skyrim.esm
+      Alias: 6
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ResumeScene
+      Object: 433A9A:DeviousFollowers.esp
+  - Name: DFR__QF_DFR_BQ01_0A433A88
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_QuestGiver
+      Object: 433A88:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_Innkeeper
+      Object: 433A88:DeviousFollowers.esp
+      Alias: 3
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_Player
+      Object: 433A88:DeviousFollowers.esp
+      Alias: 4
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_Steward
+      Object: 433A88:DeviousFollowers.esp
+      Alias: 2
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_master
+      Object: 433A88:DeviousFollowers.esp
+      Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_BountyLocation
+      Object: 433A88:DeviousFollowers.esp
+      Alias: 7
+  FileName: DFR__QF_DFR_BQ01_0A433A88
+  Fragments:
+  - Unknown2: 1
+    ScriptName: DFR__QF_DFR_BQ01_0A433A88
+    FragmentName: Fragment_0
+  - Stage: 200
+    Unknown2: 1
+    ScriptName: DFR__QF_DFR_BQ01_0A433A88
+    FragmentName: Fragment_3
+  - Stage: 10
+    Unknown2: 1
+    ScriptName: DFR__QF_DFR_BQ01_0A433A88
+    FragmentName: Fragment_1
+  - Stage: 100
+    Unknown2: 1
+    ScriptName: DFR__QF_DFR_BQ01_0A433A88
+    FragmentName: Fragment_2
+Flags:
+- AllowRepeatedStages
+Priority: 100
+EventConditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetStageConditionData
+    Quest: 095125:Skyrim.esm
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetQuestRunningConditionData
+    Quest: 095125:Skyrim.esm
+  ComparisonValue: 1
+Stages:
+- Flags:
+  - StartUpStage
+  LogEntries:
+  - Flags: []
+- Index: 10
+  LogEntries:
+  - Flags: []
+- Index: 100
+  LogEntries:
+  - Flags: []
+- Index: 200
+  LogEntries:
+  - Flags: []
+NextAliasID: 8
+Aliases:
+- ID: 4
+  Name: Player
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null
+- Name: Master
+  Flags: []
+  External:
+    Quest: 000D62:DeviousFollowers.esp
+    AliasID: 1
+  VoiceTypes: Null
+- ID: 7
+  Type: Location
+  Name: BountyLocation
+  Flags: []
+  External:
+    Quest: 095125:Skyrim.esm
+    AliasID: 6
+- ID: 2
+  Name: Steward
+  Flags:
+  - Optional
+  External:
+    Quest: 095125:Skyrim.esm
+    AliasID: 13
+  VoiceTypes: Null
+- ID: 3
+  Name: Innkeeper
+  Flags:
+  - Optional
+  External:
+    Quest: 095125:Skyrim.esm
+    AliasID: 10
+  VoiceTypes: Null
+- ID: 1
+  Name: QuestGiver
+  Flags:
+  - Optional
+  VoiceTypes: Null

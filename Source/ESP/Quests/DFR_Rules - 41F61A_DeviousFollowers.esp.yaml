@@ -8,11 +8,11 @@ VirtualMachineAdapter:
       Name: RelManager
       Object: 38C70D:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: Flow
-      Object: 000D62:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
       Name: GameDaysPassed
       Object: 000039:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Flow
+      Object: 000D62:DeviousFollowers.esp
   Versioning:
   - Break0
   ExtraBindDataVersion: 0

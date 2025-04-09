@@ -227,9 +227,6 @@ Key Property PTool Auto
 String[] Property SpankAnimationNames Auto
 String[] Property SpankAnimationNamesExt Auto
 String[] Property SpankAnimationNamesExtAlt Auto
-
-ObjectReference property ConfiscationContainer auto
-
 ; FOLDEND - Properties
 
 ; FOLDSTART - Internal Variables
@@ -251,14 +248,6 @@ Float[] RapistsZPos
 
 _DFTools function Get() global
     return Quest.GetQuest("_DTools") as _DFTools
-endFunction
-
-function PlaceInChest(Form akItem, int aiCount = 1, bool abSilent = false)
-    PlayerRef.RemoveItem(akItem, aiCount, abSilent, ConfiscationContainer)
-endFunction
-
-function RestoreAllItems()
-    ConfiscationContainer.RemoveAllItems(PlayerRef)
 endFunction
 
 Function SexScanStart(Float radius)
@@ -708,13 +697,21 @@ Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
     Adv_SceneUtils.WaitForScene(master)
     
     While now >= realSeconds && now < realSeconds + secondsToTry
-        Game.SetPlayerAIDriven(true)
         Int found = SexScanUpdate(rapists, poolSize)
+
+        int i = 0
+        while i < found
+            if rapists[i]
+                Sexlab.TreatAsMale(rapists[i])
+            endIf
+            i += 1
+        endWhile
+
         Debug.TraceConditional("DF - Rapetime found " + found + " attackers", True)
         poolSize += found
         Int available = poolSize - rr
         Float delay = 3.0
-        
+        bool showedScene = false
         Bool hadSex = False
 
         If available >= 4 && Utility.RandomInt(0, 99) < 20 ; five way animations are rare, so soon get sick of them if we have any at all
@@ -729,7 +726,8 @@ Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
             Debug.TraceConditional("DF - Rapetime - actor3 " + r3.GetActorBase().GetName(), True)
 
             StartRapeTimeApproach(SexLabUtil.MakeActorArray(master, r0, r1, r2, r3))
-            
+            showedScene = true
+
             If SexInternal_4(r0, r1, r2, r3)
                 rr += 4
                 WaitForSex()
@@ -748,7 +746,9 @@ Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
             Debug.TraceConditional("DF - Rapetime - actor1 " + r1.GetActorBase().GetName(), True)
             Debug.TraceConditional("DF - Rapetime - actor2 " + r2.GetActorBase().GetName(), True)
 
-            StartRapeTimeApproach(SexLabUtil.MakeActorArray(master, r0, r1, r2))
+            if !showedScene
+                StartRapeTimeApproach(SexLabUtil.MakeActorArray(master, r0, r1, r2))
+            endIf
 
             If SexInternal_3(r0, r1, r2)
                 rr += 3
@@ -766,8 +766,9 @@ Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
             Debug.TraceConditional("DF - Rapetime - actor0 " + r0.GetActorBase().GetName(), True)
             Debug.TraceConditional("DF - Rapetime - actor1 " + r1.GetActorBase().GetName(), True)
 
-            StartRapeTimeApproach(SexLabUtil.MakeActorArray(master, r0, r1))
-
+            if !showedScene
+                StartRapeTimeApproach(SexLabUtil.MakeActorArray(master, r0, r1))
+            endIf
             If SexInternal_2(r0, r1)
                 rr += 2
                 WaitForSex()
@@ -783,7 +784,9 @@ Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
             Debug.TraceConditional("DF - Rapetime - actor0 " + r0.GetActorBase().GetName(), True)
             rr += 1 ; Always eat solo actor, in case they're the cause sex is failing.
 
-            StartRapeTimeApproach(SexLabUtil.MakeActorArray(master, r0))
+            if !showedScene
+                StartRapeTimeApproach(SexLabUtil.MakeActorArray(master, r0))
+            endIf
 
             If SexInternal_1(r0, True)
                 hadSex = True
@@ -825,6 +828,15 @@ Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
         
         now = Utility.GetCurrentRealTime()
         
+
+        
+        i = 0
+        while i < rapists.Length
+            if rapists[i]
+                Sexlab.ClearForcedGender(rapists[i])
+            endIf
+            i += 1
+        endWhile
     EndWhile
     
     ResumeAll()
@@ -835,7 +847,6 @@ Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
     RapeTimeEnding.Start()
     Adv_SceneUtils.WaitForScene(master)
 
-    Game.SetPlayerAIDriven(false)
     Adv_SceneUtils.ClearAliases(Approachers)
 
     Adversity.ReleaseLock("deviousfollowers/core/rapetime")
@@ -1421,106 +1432,12 @@ Bool Function Spank(Actor spanker, Int severity = -1)
    _DFSpankDealRequests.SetValue(spankRequestCount As Float)
 
    Sexlab.TreatAsMale(spanker)
-    
-    If severity < 0
-        Int mainStage = Q.GetStage()
-        ; For slaves, willpower doesn't matter, master picks at random
-        If mainStage >= 100 && mainStage < 200
-            severity = Utility.RandomInt(0, 2)
-        Else
-            Float will = _DflowWill.GetValue()
-            If will >= 8.0
-                severity = 0
-                If Utility.RandomInt(0, 10000) < 2000
-                    severity = 1
-                EndIf
-            ElseIf will >= 4.0
-                severity = Utility.RandomInt(0, 1)
-            ElseIf will >= 2.0
-                severity = Utility.RandomInt(0, 2)
-            Else
-                severity = Utility.RandomInt(1, 2)
-                If Utility.RandomInt(0, 10000) < 2000
-                    severity = 0
-                EndIf
-            EndIf
-        EndIf
-    EndIf
-    
-    Bool outside = _DFOutdoorSpanking.GetValue() > 0.0
-    If outside
-        Location loc = PlayerRef.GetCurrentLocation()
-        If loc.HasKeyword(LocTypeDwelling) ; Don't count dungeons as interior for this purpose
-            outside = False
-        EndIf
-    EndIf
-    
-    ; SpankAnimationNames : Nibbles
-    ; SpankAnimationNamesExt : Anub
-    ; SpankAnimationNamesExtAlt : Rydin
-    
-    String[] animationNames = SpankAnimationNames
-    If outside
-        animationNames = SpankAnimationNamesExt
-        If Utility.RandomInt(1, 10000) <= 5000
-            animationNames = SpankAnimationNamesExtAlt
-        EndIf
-    Else
-        ; If inside, small chance of Anub or Rydin
-        If Utility.RandomInt(1, 10000) <= 500
-            animationNames = SpankAnimationNamesExt
-        ElseIf Utility.RandomInt(1, 10000) <= 500
-            animationNames = SpankAnimationNamesExtAlt
-        EndIf
-    EndIf
-    
-    String name = animationNames[severity]
-    sslBaseAnimation spankAnim = SexLab.GetAnimationByName(name)
-    
-    If !spankAnim
-        Debug.Notification("Missing sex animation: '" + name + "'")
-        Return False
-    EndIf
-    
-    Actor[] sexActors = New Actor[2]
-    sexActors[0] = PlayerRef
-    SexActors[1] = spanker
-    
-    ; Why do this instead of just assuming from the selection? So the user can change animations in the ESP.
-    ; Pre-defined stage handling only for supported animations.
-    Int knownAnimation = -1
-    
-    If name == "DF Nibbles Spanking (Chair)"
-        knownAnimation = 0
-    ElseIf name == "DF Nibbles Spanking (Paddle)"
-        knownAnimation = 1
-    ElseIf name == "DF Rydin Overlap Spanking"
-        knownAnimation = 2
-    ElseIf name == "DF Rydin Underarm Spanking"
-        knownAnimation = 3
-    ElseIf name == "DF Anubs Spank"
-        knownAnimation = 4
-    ElseIf name ==  "DF Anubs Spank Fist"
-        knownAnimation = 5
-    ElseIf name == "DF Anubs Rape"
-        knownAnimation = 6
-    EndIf
-    
-    ; Debug.Notification("Known Animation " + knownAnimation)
-
-    ; Need this for Anub Rape, which only spanks on one stage
-    Bool isVictim = knownAnimation && 2 == severity
-    Int stageCount = spankAnim.StageCount
-
-    ; Don't administer more spanks than this
-    ; In practice it's usually a lot less
-    Int expectedSpanks = 15 + severity * 10
-    
-    Bool playedOK = False
 
     ; If the rape animation (with spanking) is used, then treat as rape "Victim".
-    if !SexLab.QuickStart(PlayerRef, Spanker, Victim = PlayerRef, AnimationTags = "spanking")
-        SexLab.QuickStart(PlayerRef, Spanker, AnimationTags = "spanking")
+    if !Sexlab.QuickStart(PlayerRef, Spanker, Victim = PlayerRef, AnimationTags = "IPlay_Spanking")
+        if !SexLab.QuickStart(PlayerRef, Spanker, Victim = PlayerRef, AnimationTags = "spanking")
+            SexLab.QuickStart(PlayerRef, Spanker, AnimationTags = "spanking")
+        endIf
     endIf
 
     ; now handled thru custom anim events in Impact Play - ponzi
@@ -1681,8 +1598,7 @@ Bool Function Spank(Actor spanker, Int severity = -1)
         
     Sexlab.ClearForcedGender(spanker)
 
-    Return playedOK
-
+    Return true
 EndFunction
 
 
@@ -2261,10 +2177,12 @@ EndFunction
 
 
 Function UnequipGear()
-    Keyword[] kwds = new Keyword[3]
+    Keyword[] kwds = new Keyword[5]
     kwds[0] = Keyword.GetKeyword("ArmorClothing")
     kwds[1] = Keyword.GetKeyword("ArmorLight")
     kwds[2] = Keyword.GetKeyword("ArmorHeavy")
+    kwds[3] = Keyword.GetKeyword("VendorItemArmor")
+    kwds[4] = Keyword.GetKeyword("VendorItemClothing")
 
     Form[] items = PyramidUtils.GetItemsByKeyword(PlayerRef, kwds)
     int i = 0
@@ -2272,40 +2190,6 @@ Function UnequipGear()
         PlayerRef.UnequipItem(items[i])
         i += 1
     endWhile
-EndFunction
-
-Function ConfiscateClothing(ObjectReference akContainer = none, bool abExcludeFootwear = true)
-    if !akContainer
-        akContainer = ConfiscationContainer
-    endIf
-
-    DFR_Util.Log("ConfiscateClothing - START")
-
-    UnequipGear()
-
-    Keyword[] clothingKwds = new Keyword[3]
-    clothingKwds[0] = Keyword.GetKeyword("ArmorClothing")
-    clothingKwds[1] = Keyword.GetKeyword("ArmorLight")
-    clothingKwds[2] = Keyword.GetKeyword("ArmorHeavy")
-
-    Keyword[] excludeKwds = new Keyword[6]
-    excludeKwds[0] = Keyword.GetKeyword("Adv_RuleItemKwd")
-    excludeKwds[1] = Keyword.GetKeyword("SexlabNoStrip")
-    excludeKwds[2] = Keyword.GetKeyword("zad_Lockable")
-    excludeKwds[3] = Keyword.GetKeyword("zad_InventoryDevice")
-
-    if abExcludeFootwear
-        excludeKwds[4] = Keyword.GetKeyword("ClothingFeet")
-        excludeKwds[5] = Keyword.GetKeyword("ArmorBoots")
-    endIf
-
-    Form[] clothing = PyramidUtils.GetItemsByKeyword(PlayerRef, clothingKwds)
-    DFR_Util.Log("ConfiscateClothing - 1 - " + clothing)
-    clothing = PyramidUtils.FilterFormsByKeyword(clothing, excludeKwds, abInvert = true)
-    DFR_Util.Log("ConfiscateClothing - 2 - " + clothing)
-
-    DFR_Util.Log("ConfiscateClothing - END - " + clothing)
-    PyramidUtils.RemoveForms(PlayerRef, clothing, akContainer)
 EndFunction
 
 Function AbandonPlayer(Actor who)
@@ -3292,19 +3176,21 @@ Function JarlScene2(Actor Jarl)
 
         _DflowGamesDogKitten2.Stop()
 
-        _DFlowGamesDogScene3.Start()
-        Adv_SceneUtils.WaitForScene(PlayerRef)
-
-        DFR_Util.Log("Starting 2 dog scene")
         bool skip = false
-        if Sexlab.QuickStart(PlayerRef, dog1, dog2)
-            skip = true
-            DelayPlaySceneAndWait(15.0, timeoutAfter, _DflowGamesDogKitten2) ; dog sex dialog
-            Debug.Notification("$DF_JARLDOG4") ; dog off
-            Utility.Wait(3.0)
-        endIf
+        if dog2
+            _DFlowGamesDogScene3.Start()
+            Adv_SceneUtils.WaitForScene(PlayerRef)
 
-        _DflowGamesDogKitten2.Stop()
+            DFR_Util.Log("Starting 2 dog scene")
+            if Sexlab.QuickStart(PlayerRef, dog1, dog2)
+                skip = true
+                DelayPlaySceneAndWait(15.0, timeoutAfter, _DflowGamesDogKitten2) ; dog sex dialog
+                Debug.Notification("$DF_JARLDOG4") ; dog off
+                Utility.Wait(3.0)
+            endIf
+
+            _DflowGamesDogKitten2.Stop()
+        endIf
 
         DFR_Util.Log("Starting regular 1 dog scene")
         If !skip && SexInternal_1(dog1)

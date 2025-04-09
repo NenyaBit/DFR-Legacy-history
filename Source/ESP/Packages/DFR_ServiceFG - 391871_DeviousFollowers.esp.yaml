@@ -2,7 +2,17 @@ FormKey: 391871:DeviousFollowers.esp
 EditorID: DFR_ServiceFG
 VirtualMachineAdapter:
   Scripts:
-  - Name: DFR__PF_DFR_PunishFG_0A391871
+  - Name: DFR_ServiceFG_0A391871
+  ScriptFragments:
+    FileName: DFR_ServiceFG_0A391871
+    OnBegin:
+      ExtraBindDataVersion: 1
+      ScriptName: DFR_ServiceFG_0A391871
+      FragmentName: Fragment_0
+    OnEnd:
+      ExtraBindDataVersion: 1
+      ScriptName: DFR_ServiceFG_0A391871
+      FragmentName: Fragment_1
 Flags:
 - PreferredSpeed
 Type: Package
@@ -14,9 +24,18 @@ ScheduleMinute: -1
 Unknown3: 0x000000
 Conditions:
 - MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
   Data:
-    MutagenObjectType: GetInFactionConditionData
-    Faction: 015712:DeviousFollowers.esp
+    MutagenObjectType: IsInCombatConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: IsInSceneConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
   ComparisonValue: 1
 - MutagenObjectType: ConditionFloat
   CompareOperator: GreaterThanOrEqualTo
@@ -27,6 +46,14 @@ Conditions:
     Quest: 000D62:DeviousFollowers.esp
   ComparisonValue: 10
 - MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetInFactionConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Faction: 00E50F:SexLab.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
   CompareOperator: LessThan
   Data:
     MutagenObjectType: GetStageConditionData
@@ -35,67 +62,53 @@ Conditions:
     Quest: 000D62:DeviousFollowers.esp
   ComparisonValue: 98
 - MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetInFactionConditionData
+    Faction: 015712:DeviousFollowers.esp
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetInFactionConditionData
+    Faction: 00E50F:SexLab.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
   CompareOperator: NotEqualTo
   Data:
     MutagenObjectType: IsInSceneConditionData
-    RunOnType: Reference
-    Reference: 000014:Skyrim.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: IsTalkingConditionData
   ComparisonValue: 1
 - MutagenObjectType: ConditionFloat
   Data:
     MutagenObjectType: GetGlobalValueConditionData
     Global: 00081B:Adversity Framework.esm
 - MutagenObjectType: ConditionFloat
-  CompareOperator: NotEqualTo
   Data:
-    MutagenObjectType: IsTalkingConditionData
-    RunOnType: Reference
-    Reference: 000014:Skyrim.esm
-  ComparisonValue: 1
-- MutagenObjectType: ConditionFloat
-  CompareOperator: NotEqualTo
-  Data:
-    MutagenObjectType: IsInCombatConditionData
-    RunOnType: Reference
-    Reference: 000014:Skyrim.esm
-  ComparisonValue: 1
-- MutagenObjectType: ConditionFloat
-  CompareOperator: NotEqualTo
-  Data:
-    MutagenObjectType: IsTalkingConditionData
-  ComparisonValue: 1
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 433AAA:DeviousFollowers.esp
 - MutagenObjectType: ConditionFloat
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 010617:DeviousFollowers.esp
-    SecondUnusedIntParameter: -714880672
+    SecondUnusedIntParameter: -741755488
     VariableName: ::Suspend_var
-- MutagenObjectType: ConditionFloat
-  Data:
-    MutagenObjectType: GetGlobalValueConditionData
-    Global: 410291:DeviousFollowers.esp
-  ComparisonValue: 2
 - MutagenObjectType: ConditionGlobal
   CompareOperator: LessThan
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 38C70D:DeviousFollowers.esp
-    SecondUnusedIntParameter: -714880640
+    SecondUnusedIntParameter: -741755392
     VariableName: ::ForcedEventTimer_var
   ComparisonValue: 000039:Skyrim.esm
-- MutagenObjectType: ConditionGlobal
-  CompareOperator: LessThan
-  Data:
-    MutagenObjectType: GetVMQuestVariableConditionData
-    Quest: 38C70D:DeviousFollowers.esp
-    SecondUnusedIntParameter: -714880608
-    VariableName: ::ServiceLocationChangeTimer_var
-  ComparisonValue: 000039:Skyrim.esm
 - MutagenObjectType: ConditionFloat
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 38C70D:DeviousFollowers.esp
-    SecondUnusedIntParameter: -714880576
+    SecondUnusedIntParameter: -741755360
     VariableName: ::AllowForcedEvents_var
   ComparisonValue: 1
 - MutagenObjectType: ConditionFloat
@@ -103,14 +116,22 @@ Conditions:
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 38C70D:DeviousFollowers.esp
-    SecondUnusedIntParameter: -714880544
-    VariableName: ::ServiceOrPunishmentActive_var
+    SecondUnusedIntParameter: -741755328
+    VariableName: ::ServicesPaused_var
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: NotEqualTo
+  Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 38C70D:DeviousFollowers.esp
+    SecondUnusedIntParameter: -741755296
+    VariableName: ::busy_var
   ComparisonValue: 1
 - MutagenObjectType: ConditionFloat
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 38C75F:DeviousFollowers.esp
-    SecondUnusedIntParameter: -714880512
+    SecondUnusedIntParameter: -741696000
     VariableName: ::Display_var
   ComparisonValue: 1
 - MutagenObjectType: ConditionGlobal
@@ -152,7 +173,7 @@ Data:
       Target:
         MutagenObjectType: LocationTarget
         Link: 000014:Skyrim.esm
-      Radius: 150
+      Radius: 2000
 - Key: 75
   Value:
     MutagenObjectType: PackageDataLocation

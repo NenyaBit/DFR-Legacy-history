@@ -4,6 +4,8 @@ Scriptname _DFlowModDealController extends Quest  Conditional
 ;Teir 1 & 2 Rules
 ; Int state ||1= Can be used || 2= InUse || 3=Inuse second state || 0= Disabled
 _DFtools Property Tool Auto
+DFR_Confiscation property Confiscation auto
+ReferenceAlias property MasterAlias auto
 
 Float Property TimerSetting Auto
 Float Property AllowPretendKeyCheck Auto Conditional
@@ -605,7 +607,7 @@ function EquipOrLockDevice(Armor akDevice)
 endFunction
 
 Function ConfiscateClothing()
-    Tool.ConfiscateClothing()
+    Confiscation.TakeClothing()
 EndFunction
 
 ; b = 0 disable, b = 1 remove, b = 2 add
@@ -1627,30 +1629,35 @@ Function SetAliasForScene(Actor Akactor1 = none, Actor Akactor2 = none)
     EndIf
 EndFunction
 
-
 Function StartInnScene()
-    game.setplayeraidriven(true)
-    Tool.PauseAll()
-    Tool.PlacePCNearPlayer()
-    Tool.SceneErrorCatchandPlay(InnScene, 30)
-    Tool.ResumeAll()
-    game.setplayeraidriven(False)
-    Tool.PC.Disable()
+    if MasterAlias.GetRef().GetParentCell() != Tool.PlayerRef.GetParentCell() || !Adversity.AccquireLock("deviousfollowers/core/innkeeper")
+        CleanInnScene(false)
+        return
+    endIf
+
+    RunScene(InnScene)
 EndFunction
 
 Function StartMerchantScene()
-    Tool.PauseAll()
-    game.setplayeraidriven(true)
-    Tool.PlacePCNearPlayer()
-    Tool.SceneErrorCatchandPlay(MerchantScene, 30)
-    game.setplayeraidriven(false)
-    Tool.ResumeAll()
-    Tool.PC.Disable()
+    if MasterAlias.GetRef().GetParentCell() != Tool.PlayerRef.GetParentCell() || !Adversity.AccquireLock("deviousfollowers/core/merchant")
+        CleanMerchantScene(false)
+        return
+    endIf
+
+    RunScene(MerchantScene)
 EndFunction
 
+function RunScene(Scene akScene)
+    game.setplayeraidriven(true)
+    Tool.PlacePCNearPlayer()
+    Tool.SceneErrorCatchandPlay(akScene, 30)
+    game.setplayeraidriven(false)
+    Tool.PC.Disable()
+endFunction
+
 Function InnOutcome()
-    DFR_Util.Log("Inn Outcome = " + InnkeeperRule)
-	Tool.PauseAll()
+    Adversity.ReleaseLock("deviousfollowers/core/innkeeper")
+
 	If InnKeeperRule == 3 ; Oral
 		Tool.SexOral(Actor1.GetActorReference())
 	ElseIf InnKeeperRule == 4 ; Sex
@@ -1658,46 +1665,80 @@ Function InnOutcome()
 	ElseIf InnKeeperRule == 5 ; Group sex
 		Tool.Rapetime()
 	ElseIf InnKeeperRule == 6 ; Dog sex
-		Tool.Dog.Enable()
-		Tool.Dog.MoveTo(PlayerRef)
-		Tool.Sex(Tool.Dog)
+        Actor[] dogs = DFR_LocScanner.Get().Dogs
+        
+        Actor chosenDog
+        if dogs.Length
+            chosenDog = dogs[0]
+        else
+            Tool.Dog.Enable()
+            Tool.Dog.MoveTo(PlayerRef)
+            chosenDog = Tool.Dog
+        endIf
+		
+		Tool.Sex(chosenDog)
 		Utility.wait(10)
 		While Tool.libs.IsAnimating(Tool.playerref)
 			Utility.wait(4)
 		EndWhile
-		Tool.Dog.Disable()
+
+        if chosenDog == Tool.Dog
+		    Tool.Dog.Disable()
+        endIf
 	EndIf
 EndFunction
 
-function CleanInnScene()
+function CleanInnScene(bool abRelease = true)
     DFR_Util.Log("Cleaning inn scene")
+    if abRelease
+        Adversity.ReleaseLock("deviousfollowers/core/innkeeper")
+    endIf
     InnKeeperRule = 2
 	InnKeeperRuleTimer = Utility.GetCurrentGameTime() + TimerSetting
-	Tool.ResumeAll()
+	MerchantRuleTimer = Utility.GetCurrentGameTime() + TimerSetting
 endFunction
 
 Function MerchantOutcome()
-
-	Tool.PauseAll()
-	If MerchantRule == 3 ; Oral 
+    Adversity.ReleaseLock("deviousfollowers/core/innkeeper")
+    
+    If MerchantRule == 3 ; Oral 
 		Tool.SexOral(Actor1.GetActorReference())
 	ElseIf MerchantRule == 4 ; Sex
 		Tool.Sex(Actor1.GetActorReference())
 	ElseIf MerchantRule == 5 ; Dog sex
-		Tool.Dog.Enable()
-		Tool.Dog.MoveTo(PlayerRef)
-		Tool.Sex(Tool.Dog)
+        Actor[] dogs = DFR_LocScanner.Get().Dogs
+        
+        Actor chosenDog
+        if dogs.Length
+            chosenDog = dogs[0]
+        else
+            Tool.Dog.Enable()
+            Tool.Dog.MoveTo(PlayerRef)
+            chosenDog = Tool.Dog
+        endIf
+		
+		Tool.Sex(chosenDog)
 		Utility.wait(10)
+
 		While Tool.libs.IsAnimating(Tool.playerref)
 			Utility.wait(4)
 		EndWhile
-		Tool.Dog.Disable()
+
+        if chosenDog == Tool.Dog
+		    Tool.Dog.Disable()
+        endIf
 	EndIf
+EndFunction
+
+function CleanMerchantScene(bool abRelease = true)
+    DFR_Util.Log("Cleaning merchant scene")
+    if abRelease
+        Adversity.ReleaseLock("deviousfollowers/core/merchant")
+    endIf
 	MerchantRule = 2
 	MerchantRuleTimer = Utility.GetCurrentGameTime() + TimerSetting
-	Tool.ResumeAll()
-    
-EndFunction
+	InnKeeperRuleTimer = Utility.GetCurrentGameTime() + TimerSetting
+endFunction
 
 Function FastTravelTimerStart()
 	FastTravelTimer = Utility.GetCurrentGameTime() + 0.04 ; slightly less than an hour

@@ -11,6 +11,11 @@ Actor function GetFollower() global
     endIf
 endFunction
 
+bool function Enslave() global
+    QF__Gift_09000D62.Get().Enslave()
+    return true
+endFunction
+
 bool function IsEnslaved() global
     return DFR_RelationshipManager.Get().IsSlave()
 endFunction

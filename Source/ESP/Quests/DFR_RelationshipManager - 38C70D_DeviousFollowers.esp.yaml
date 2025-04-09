@@ -5,26 +5,35 @@ VirtualMachineAdapter:
   - Name: DFR_RelationshipManager
     Properties:
     - MutagenObjectType: ScriptObjectProperty
+      Name: SlaveryIntro
+      Object: 42986F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
       Name: TargetSeverity
       Object: 4153CB:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: FavourGlobal
-      Object: 3E293B:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Rules
       Object: 41F61A:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: SlaveryIntro
-      Object: 42986F:DeviousFollowers.esp
+      Name: FavourGlobal
+      Object: 3E293B:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: DebugMode
-      Object: 41028C:DeviousFollowers.esp
+      Name: Collar
+      Object: 3ECB48:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: events
+      Object: 38C75F:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Deals
+      Object: 01C86D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: config
+      Object: 00C545:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: GameDaysPassed
       Object: 000039:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: events
-      Object: 38C75F:DeviousFollowers.esp
+      Name: DebugMode
+      Object: 41028C:DeviousFollowers.esp
   FileName: ''
   Aliases:
   - Property:
@@ -35,20 +44,11 @@ VirtualMachineAdapter:
     - Name: DFR_RelationshipManager_PlayerAlias
 Flags:
 - StartGameEnabled
+- AllowRepeatedStages
 - 0x10
-- RunOnce
 Priority: 100
 Stages:
 - Index: 10
-- Index: 41
-- Index: 42
-- Index: 43
-- Index: 44
-- Index: 45
-- Index: 46
-- Index: 47
-- Index: 48
-- Index: 49
 - Index: 50
 NextAliasID: 4
 Aliases:

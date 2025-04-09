@@ -6,7 +6,7 @@ Scriptname _Dx_TIF__09299518 Extends TopicInfo Hidden
 Function Fragment_8(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-tool.LDC.EquipDeviceByKeyword(libs.Zad_DeviousArmbinder)
+tool.LDC.EquipDeviceByKeyword(libs.Zad_DeviousHeavyBondage)
 (GetOwningQuest() as _DFlowModDealController).BoundInTownRule = 3
 (GetOwningQuest() as _DFlowModDealController).CheckTrigger(14)
 DFR_DeviceController.Get().BlockRemoval(5, "deviousfollowers/core/heavybondage", 1)

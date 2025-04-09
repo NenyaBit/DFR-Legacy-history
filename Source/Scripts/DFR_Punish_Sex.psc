@@ -11,8 +11,23 @@ function OnModuleLoad()
 endFunction
 
 bool function OnStart(Actor akTarget)
-    Tool.Sex(akTarget)
+    Actor player = Game.GetPlayer()
+    DFR_Events events = DFR_Events.Get()
+
+    PyramidUtils.SetActorCalmed(Game.GetPlayer(), true)
+    PyramidUtils.SetActorCalmed(akTarget, true)
+
+    Actor victim = none
+    if events.GetContext(GetEventId()) == events.CONTEXT_TYPE_APOLOGY
+        victim = player
+    endIf
+
+    SexLabUtil.QuickStart(player, akTarget, Victim = victim)
+
     Tool.WaitForSex()
+
+    PyramidUtils.SetActorCalmed(Game.GetPlayer(), false)
+    PyramidUtils.SetActorCalmed(akTarget, false)
     
     Complete()
 

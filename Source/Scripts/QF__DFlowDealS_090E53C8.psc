@@ -2,9 +2,9 @@
 ;NEXT FRAGMENT INDEX 5
 Scriptname QF__DFlowDealS_090E53C8 Extends Quest Hidden
 
-;BEGIN ALIAS PROPERTY Player
+;BEGIN ALIAS PROPERTY Client
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Player Auto
+ReferenceAlias Property Alias_Client Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY _DMaster
@@ -12,14 +12,14 @@ ReferenceAlias Property Alias_Player Auto
 ReferenceAlias Property Alias__DMaster Auto
 ;END ALIAS PROPERTY
 
+;BEGIN ALIAS PROPERTY Player
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Player Auto
+;END ALIAS PROPERTY
+
 ;BEGIN ALIAS PROPERTY You
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_You Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Client
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Client Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN FRAGMENT Fragment_1
@@ -37,19 +37,6 @@ Else
 temp =_DflowDealSPTimer.GetValue() + _DflowDealBaseDays.GetValue()
 _DflowDealSPTimer.SetValue(temp)
 endif
-Tool.GiveWhoreArmor(False)
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_3
-Function Fragment_3()
-;BEGIN AUTOCAST TYPE _DDeal
-Quest __temp = self as Quest
-_DDeal kmyQuest = __temp as _DDeal
-;END AUTOCAST
-;BEGIN CODE
-kmyQuest.Stage0()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -66,6 +53,18 @@ _DflowDealSPTimer.SetValue(temp)
 kmyQuest.LDC.EquipDeviceByKeyWord(kmyQuest.LDC.libs.zad_deviouspluganal)
 Alias__DMaster.Forcerefto(_DFlow_DMaster.GetReference() )
 Alias_You.Forcerefto(Tool.PC )
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_3
+Function Fragment_3()
+;BEGIN AUTOCAST TYPE _DDeal
+Quest __temp = self as Quest
+_DDeal kmyQuest = __temp as _DDeal
+;END AUTOCAST
+;BEGIN CODE
+kmyQuest.Stage0()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -119,17 +118,19 @@ Int Used = 0
 Bool Running = False
 
 Function WhoreOut()
-Tool.PauseAll()
-If !Running
-	Running = true
-int Outcome = Utility.RandomInt(1,6)
-;1 = Normal
-;2 = Thief
-;3 = Again
-;4 = GangRape
-;5 = Notpayed
-;6 = Overpay.
-		tool.PauseAll()
+	if !Adversity.AccquireLock("deviousfollowers/core/whore")
+		return
+	endIf
+
+	If !Running
+		Running = true
+		int Outcome = Utility.RandomInt(1,6)
+		;1 = Normal
+		;2 = Thief
+		;3 = Again
+		;4 = GangRape
+		;5 = Notpayed
+		;6 = Overpay.
 		game.setplayeraidriven(true)
 		Debug.Notification("$DF_DEALSPULLED")
 		WhoreOut.Start()
@@ -193,7 +194,8 @@ int Outcome = Utility.RandomInt(1,6)
 			_DFlowDealSWhoreOutMsgResist.Show()
 			libs.equipDevice(libs.PlayerRef, xlibs.zadx_HR_IronCuffsFrontInventory, xlibs.zadx_HR_IronCuffsFrontRendered, libs.zad_DeviousArmCuffs, skipevents = false, skipmutex = true)
 		endif
-		Tool.ResumeALL()
 		Running = False
-endif
+	endif
+
+	Adversity.ReleaseLock("deviousfollowers/core/whore")
 EndFunction

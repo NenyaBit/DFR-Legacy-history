@@ -1,0 +1,43 @@
+FormKey: 433A93:DeviousFollowers.esp
+EditorID: DFR_JobProvisionScene
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DCh__SF_DFR_JobProvisionScene_0A433A93
+  ScriptFragments:
+    FileName: DCh__SF_DFR_JobProvisionScene_0A433A93
+    OnBegin:
+      ExtraBindDataVersion: 1
+      ScriptName: DCh__SF_DFR_JobProvisionScene_0A433A93
+      FragmentName: Fragment_0
+Flags:
+- RepeatConditionsWhileTrue
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Type: Package
+  Name: ''
+  ActorID: 0
+  Index: 2
+  StartPhase: 0
+  EndPhase: 0
+  Packages:
+  - 4571EA:DeviousFollowers.esp
+Quest: 433A83:DeviousFollowers.esp
+LastActionIndex: 2
+VNAM: 0x03000000030000000300000003000000
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 433A83:DeviousFollowers.esp
+    SecondUnusedIntParameter: -741746912
+    VariableName: ::ContinuingNextJob_var
+  ComparisonValue: 1

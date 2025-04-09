@@ -20,7 +20,7 @@ Data:
       Target:
         MutagenObjectType: LocationFallback
         Type: AliasForReference
-      Radius: 110
+      Radius: 130
 - Key: 2
   Value:
     MutagenObjectType: PackageDataBool

@@ -1,28 +1,33 @@
 FormKey: 0559F0:DeviousFollowers.esp
-EditorID: _DFlowItems
+EditorID: DFR_Confiscation
 VirtualMachineAdapter:
   Scripts:
-  - Name: QF__DFlowItems_080559F0
+  - Name: QF__DFR_Confiscation_080559F0
     Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowEDHalf
+      Object: 0110DE:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Alias_PawnMerchant
       Object: 0559F0:DeviousFollowers.esp
       Alias: 0
+  - Name: DFR_Confiscation
+    Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowEDHalf
-      Object: 0110DE:DeviousFollowers.esp
-  FileName: QF__DFlowItems_080559F0
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+  FileName: QF__DFR_Confiscation_080559F0
   Fragments:
   - Unknown2: 1
-    ScriptName: QF__DFlowItems_080559F0
+    ScriptName: QF__DFR_Confiscation_080559F0
     FragmentName: Fragment_1
   - Stage: 2
     Unknown2: 1
-    ScriptName: QF__DFlowItems_080559F0
+    ScriptName: QF__DFR_Confiscation_080559F0
     FragmentName: Fragment_2
   - Stage: 1
     Unknown2: 1
-    ScriptName: QF__DFlowItems_080559F0
+    ScriptName: QF__DFR_Confiscation_080559F0
     FragmentName: Fragment_0
 Name:
   TargetLanguage: English

@@ -23,82 +23,82 @@ VirtualMachineAdapter:
   - Name: _DFPotionQuest
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: q
-      Object: 000D62:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: RopesR
-      Object: 1930DE:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowPotionDeal
-      Object: 1930DF:DeviousFollowers.esp
+      Name: bleedOutStop
+      Object: 013ECE:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: Gold001
       Object: 00000F:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: bleedOutStop
-      Object: 013ECE:Skyrim.esm
+      Name: DC
+      Object: 01C86D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptBoolProperty
+      Name: Enabled
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFPotion
-      Object: 18B9EF:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: GagMsg
-      Object: 0EA313:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: ForcedDrink
-      Object: 209EC7:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: GameDaysPassed
-      Object: 000039:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlowPotionDealEvil
-      Object: 1930E0:DeviousFollowers.esp
+      Name: Follower
+      Object: 186A9E:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptIntProperty
+      Name: nState
     - MutagenObjectType: ScriptObjectProperty
       Name: _DMaster
       Object: 000D62:DeviousFollowers.esp
       Alias: 1
     - MutagenObjectType: ScriptObjectProperty
-      Name: theScene
-      Object: 1930F0:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: WeakenMsg
-      Object: 18BA00:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: DC
-      Object: 01C86D:DeviousFollowers.esp
+      Name: _DFlowPotionDeal
+      Object: 1930DF:DeviousFollowers.esp
     - MutagenObjectType: ScriptFloatProperty
       Name: Delay
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DAddicted
-      Object: 186A9E:DeviousFollowers.esp
-      Alias: 0
-    - MutagenObjectType: ScriptBoolProperty
-      Name: EnabledEvil
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: PlayerRef
       Object: 000014:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: Weakened2
-      Object: 18E19D:DeviousFollowers.esp
+      Name: _DFlowPotionDealEvil
+      Object: 1930E0:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: bleedOutStart
-      Object: 013ECC:Skyrim.esm
-    - MutagenObjectType: ScriptIntProperty
-      Name: nState
+      Name: WeakenMsg
+      Object: 18BA00:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: RopesI
+      Object: 1930DD:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: RopesR
+      Object: 1930DE:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: theScene
+      Object: 1930F0:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: tool
       Object: 01210D:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: Follower
-      Object: 186A9E:DeviousFollowers.esp
-      Alias: 1
+      Name: GagMsg
+      Object: 0EA313:DeviousFollowers.esp
     - MutagenObjectType: ScriptBoolProperty
-      Name: Enabled
+      Name: EnabledEvil
+    - MutagenObjectType: ScriptObjectProperty
+      Name: q
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: ForcedDrink
+      Object: 209EC7:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DFPotion
+      Object: 18B9EF:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: bleedOutStart
+      Object: 013ECC:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DAddicted
+      Object: 186A9E:DeviousFollowers.esp
+      Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Weakened2
+      Object: 18E19D:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Dtick
       Object: 010617:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: RopesI
-      Object: 1930DD:DeviousFollowers.esp
   FileName: QF__DFlowPotion_08186A9E
   Fragments:
   - Unknown2: 1
@@ -112,14 +112,14 @@ VirtualMachineAdapter:
     Unknown2: 1
     ScriptName: QF__DFlowPotion_08186A9E
     FragmentName: Fragment_1
-  - Stage: 20
-    Unknown2: 1
-    ScriptName: QF__DFlowPotion_08186A9E
-    FragmentName: Fragment_2
   - Stage: 100
     Unknown2: 1
     ScriptName: QF__DFlowPotion_08186A9E
     FragmentName: Fragment_4
+  - Stage: 20
+    Unknown2: 1
+    ScriptName: QF__DFlowPotion_08186A9E
+    FragmentName: Fragment_2
 Name:
   TargetLanguage: English
   Value: Weird Potion

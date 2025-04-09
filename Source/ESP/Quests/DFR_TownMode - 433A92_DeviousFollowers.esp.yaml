@@ -1,0 +1,209 @@
+FormKey: 433A92:DeviousFollowers.esp
+EditorID: DFR_TownMode
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR_TownMode
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Collar
+      Object: 3ECB48:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_CurrentTown
+      Object: 433A92:DeviousFollowers.esp
+      Alias: 23
+    - MutagenObjectType: ScriptObjectProperty
+      Name: StayScene
+      Object: 4613F8:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_Inn
+      Object: 433A92:DeviousFollowers.esp
+      Alias: 20
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_Player
+      Object: 433A92:DeviousFollowers.esp
+      Alias: 3
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_master
+      Object: 433A92:DeviousFollowers.esp
+      Alias: 11
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_InnCenterMarker
+      Object: 433A92:DeviousFollowers.esp
+      Alias: 21
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_HoldTown
+      Object: 433A92:DeviousFollowers.esp
+      Alias: 19
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_CurrentCity
+      Object: 433A92:DeviousFollowers.esp
+      Alias: 22
+  FileName: DFR_TownMode
+  Fragments:
+  - Unknown2: 1
+    ScriptName: DFR_TownMode
+    FragmentName: Fragment_7
+  - Stage: 5
+    Unknown2: 1
+    ScriptName: DFR_TownMode
+    FragmentName: Fragment_3
+  - Stage: 2
+    Unknown2: 1
+    ScriptName: DFR_TownMode
+    FragmentName: Fragment_0
+  - Stage: 1
+    Unknown2: 1
+    ScriptName: DFR_TownMode
+    FragmentName: Fragment_5
+  - Stage: 3
+    Unknown2: 1
+    ScriptName: DFR_TownMode
+    FragmentName: Fragment_1
+  - Stage: 4
+    Unknown2: 1
+    ScriptName: DFR_TownMode
+    FragmentName: Fragment_6
+  Aliases:
+  - Property:
+      Name: ''
+      Object: 433A92:DeviousFollowers.esp
+      Alias: 3
+    Scripts:
+    - Name: DFR_TownMode_Player
+Flags:
+- AllowRepeatedStages
+Priority: 50
+Type: Misc
+DialogConditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetInFactionConditionData
+    Faction: 015712:DeviousFollowers.esp
+  ComparisonValue: 1
+Stages:
+- Flags:
+  - StartUpStage
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Startup
+- Index: 1
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Waiting
+- Index: 2
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Go to Town
+- Index: 3
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Reached
+- Index: 4
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: In Town
+- Index: 5
+  LogEntries:
+  - Flags: []
+    Entry:
+      TargetLanguage: English
+      Value: Stopped
+Objectives:
+- Index: 2
+  Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: Reach <Alias=Inn>
+NextAliasID: 24
+Aliases:
+- ID: 3
+  Name: Player
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null
+- ID: 11
+  Name: Master
+  Flags: []
+  External:
+    Quest: 000D62:DeviousFollowers.esp
+    AliasID: 1
+  VoiceTypes: Null
+- ID: 19
+  Type: Location
+  Name: HoldTown
+  Flags: []
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsInSameCurrentLocAsRefAliasConditionData
+      ReferenceAliasIndex: 3
+      Keyword: 016771:Skyrim.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: LocationHasKeywordConditionData
+      Keyword: 0A6E84:Skyrim.esm
+    ComparisonValue: 1
+- ID: 22
+  Type: Location
+  Name: CurrentCity
+  Flags:
+  - Optional
+  Location:
+    AliasID: 3
+    Keyword: 013168:Skyrim.esm
+- ID: 23
+  Type: Location
+  Name: CurrentTown
+  Flags:
+  - Optional
+  Location:
+    AliasID: 3
+    Keyword: 013166:Skyrim.esm
+- ID: 20
+  Type: Location
+  Name: Inn
+  Flags:
+  - StoresText
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetInCurrentLocAliasConditionData
+      LocationAliasIndex: 22
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetInCurrentLocAliasConditionData
+      LocationAliasIndex: 23
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetInCurrentLocAliasConditionData
+      LocationAliasIndex: 19
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: LocationHasKeywordConditionData
+      Keyword: 01CB87:Skyrim.esm
+    ComparisonValue: 1
+- ID: 21
+  Name: InnCenterMarker
+  Flags: []
+  Location:
+    AliasID: 20
+    RefType: 01BDF1:Skyrim.esm
+  VoiceTypes: Null

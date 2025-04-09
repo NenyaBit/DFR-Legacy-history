@@ -3,5 +3,5 @@ EditorID: DFR_SlaveryIntro
 Quest: 42986F:DeviousFollowers.esp
 Category: Player
 Flags:
-- TopLevel
+- Blocking
 StartingTopic: 41A4E9:DeviousFollowers.esp

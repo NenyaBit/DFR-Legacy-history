@@ -7,7 +7,6 @@ DFR_RelationshipManager property RelManager auto
 
 Potion property RegularLotion auto
 Potion property SpecialLotion auto
-FormList property LotionList auto
 
 GlobalVariable property GameDaysPassed auto
 float property LastAppliedTimer auto hidden conditional
@@ -20,11 +19,8 @@ bool property FakeRanOut = false auto hidden conditional
 bool property WashedOff = false auto hidden conditional
 bool property GaveDirect = false auto hidden conditional
 
-; stage 1 = regular lotion
-; stage 3 = random cumtainer
-; stage 4 = fake ran out
-
-; TODO: implement collection and multi-NPC events 
+; TODO: multi-NPC sources (stages 4-5)
+; TODO: implement collection event - do this in DC to test inter-pack extension
 
 function Maintenance()
     if IsRunning()
@@ -40,10 +36,12 @@ function Setup()
 endFunction
 
 function GiveLotion(bool abForceSpecial = false)
-    DFR_Util.Log("Skincare Quest - Giving")
+    Log("GiveLotion - Start")
     if RelManager.GetTargetSeverity() < 3 && !GaveSpecialLotion && !abForceSpecial
+        Log("GiveLotion - Regular")
         PlayerRef.AddItem(RegularLotion, Utility.RandomInt(1, 2))
     else
+        Log("GiveLotion - Special")
         GaveSpecialLotion = true
         PlayerRef.AddItem(SpecialLotion, Utility.RandomInt(1, 2))
     endIf
@@ -51,30 +49,31 @@ function GiveLotion(bool abForceSpecial = false)
     FakeRanOut = RelManager.GetTargetSeverity() >= 4 && Utility.RandomInt(0, 1)
 
     LastGivenTimer = GameDaysPassed.GetValue() + (LotionApplyDuration * 0.5 * 0.042)
+    
+    Log("GiveLotion - End - " + LastGivenTimer + " - " + FakeRanOut)
 endFunction
 
 function OnApplyLotion(Form akItem)
-    if !LotionList.HasForm(akItem)
-        DFR_Util.Log("OnApplyLotion - not in list")
+    if akItem != SpecialLotion && akItem != RegularLotion
         return
     endIf
 
     bool special = akItem == SpecialLotion
 
-    DFR_Util.Log("OnApplyLotion - " + special)
+    Log("OnApplyLotion - " + special)
 
     ResetTimer()
 
     WashedOff = false
 
     if special
-        DFR_Util.Log("Adding cum")
+        Log("OnApplyLotion - special")
         SL.AddCum(PlayerRef)
     endIf
 endFunction
 
 event OnBis_BatheEvent(Form akTarget)
-    DFR_Util.Log("Skincare - Detected Bathing")
+    Log("Detected Bathing")
     WashedOff = true
     LastAppliedTimer = 0.0
 endEvent
@@ -95,4 +94,8 @@ function GiveDirect()
     GaveDirect = true
     SL.QuickStart(PlayerRef, Flow.Alias__DMaster.GetRef() as Actor)
     ResetTimer()
+endFunction
+
+function Log(string asMsg)
+    DFR_Util.Log("Skincare - " + asMsg)
 endFunction

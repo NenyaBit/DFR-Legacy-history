@@ -5,8 +5,8 @@ VirtualMachineAdapter:
   - Name: QF__DflowDealP_0806BE67
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowDealPPTimer
-      Object: 075CED:DeviousFollowers.esp
+      Name: _DflowDealBaseDays
+      Object: 03CDFB:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: Alias__DMaster
       Object: 06BE67:DeviousFollowers.esp
@@ -15,37 +15,37 @@ VirtualMachineAdapter:
       Name: GameDaysPassed
       Object: 000039:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowDealBaseDays
-      Object: 03CDFB:DeviousFollowers.esp
+      Name: _DflowDealPPTimer
+      Object: 075CED:DeviousFollowers.esp
   - Name: _DDeal
     Properties:
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Gold001
-      Object: 00000F:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFBoredom
-      Object: 231892:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: PlayerRef
       Object: 000014:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: Nips
-      Object: 093833:DeviousFollowers.esp
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: tool
-      Object: 01210D:DeviousFollowers.esp
+      Name: DC
+      Object: 01C86D:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: LDC
       Object: 1C494F:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: Vag
-      Object: 093831:DeviousFollowers.esp
+      Name: _DFBoredom
+      Object: 231892:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tool
+      Object: 01210D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Nips
+      Object: 093833:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: GameDaysPassed
       Object: 000039:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: DC
-      Object: 01C86D:DeviousFollowers.esp
+      Name: Vag
+      Object: 093831:DeviousFollowers.esp
   FileName: QF__DflowDealP_0806BE67
   Fragments:
   - Unknown2: 1
