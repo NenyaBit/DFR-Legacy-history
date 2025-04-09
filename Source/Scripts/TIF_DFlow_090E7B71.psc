@@ -26,7 +26,8 @@ Actor Property PlayerRef  Auto
 
 Armor Property D  Auto  
 
-Armor Property DE  Auto
+Armor Property DE  Auto  
+
 
 Quest Property GameQ  Auto  
 _Dftools property tool auto

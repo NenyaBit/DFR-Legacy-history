@@ -7,6 +7,7 @@ Function Fragment_1(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 (GetOwningQuest() as QF__DflowDealController_0A01C86D).RejectPendingDeal()
+DFR_RelationshipManager.Get().DecFavour()
 ;END CODE
 EndFunction
 ;END FRAGMENT

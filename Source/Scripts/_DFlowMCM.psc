@@ -8,8 +8,6 @@ ReferenceAlias Property MCMFollower Auto ; The follower alias on the MCM quest -
 ReferenceAlias Property Scan Auto
 ; FOLDEND - ReferenceAlias Properties
 
-Bool Property FNISCompatibility Auto
-
 ; FOLDSTART - Quests
 QF__Gift_09000D62 Property Q  Auto  
 _Dtick Property Tick Auto
@@ -65,8 +63,6 @@ Actor Property FActor Auto
 String _DFKeyDiffS = "$DF_KEYDIF_NORMAL"
 String _DFRemovalModeS = "$DF_REMOVAL_FULL"
 String[] DealInfos
-
-String Property ForcedDeal Auto
 ; FOLDEND - String Properties
 ; FOLDSTART - Int Properties
 Int Property SexPreferenceIndex Auto
@@ -102,6 +98,7 @@ Bool Property _DFMaxResistDeal Auto ; unused
 Bool Property _DFDealEffectWill Auto  ; unused
 Bool Property SkipToTheEnd Auto Conditional
 Bool Property IsPaused Auto Conditional
+Bool Property EnslavedGoldControl = true Auto Hidden Conditional
 ; FOLDEND - Bool Properties
 ; FOLDSTART - Float Properties
 Float Property _DFDebtMaxPL = 0.0 Auto ; unused
@@ -247,6 +244,272 @@ GlobalVariable Property _DFModMmePresent Auto
 GlobalVariable Property _DFModSLSPresent Auto
 ; FOLDEND - GlobalVariable Properties
 
+; FOLDSTART - OIDs
+Int OIDTxtPush ; unused
+Int OID_AFTcount
+Int OID_ActualDealCountText
+Int OID_AddAnalPlug
+Int OID_AddArmCuffs
+Int OID_AddBelt
+Int OID_AddBlindfold
+Int OID_AddBoots
+Int OID_AddBra
+Int OID_AddChainsOfDebt
+Int OID_AddCollar
+Int OID_AddCorsetHarness
+Int OID_AddDebtDebug100
+Int OID_AddDebtDebugTog
+Int OID_AddFollowerDebug
+Int OID_AddFullSet
+Int OID_AddGag
+Int OID_AddGloves
+Int OID_AddHeavyBondage
+Int OID_AddHobbleDress
+Int OID_AddLegCuffs
+Int OID_AddMittens
+Int OID_AddNipplePiercing
+Int OID_AddPetSuit
+Int OID_AddPrisonerChains
+Int OID_AddSlaveKit
+Int OID_AddVaginalPiercing
+Int OID_AddVaginalPlug
+Int OID_BoredomIntervalSlider
+Int OID_BoredomText
+Int OID_ContractRemaining
+Int OID_CopyToSettings
+Int OID_CustomCurve
+Int OID_DFAnimalContTog
+Int OID_DFChaoConcealedTog
+Int OID_DFChaoGoTog
+Int OID_DFChaosDaysSlider
+Int OID_DFChaosPercentSlider
+Int OID_DFDealEffectWillTog ; unused
+Int OID_DFDealSCustArmorTog
+Int OID_DFDealSSignTog
+Int OID_DFDealsMaxDebtSlider
+Int OID_DFDealsMaxMultiSlider
+Int OID_DFDealsMaxPTimeSlider
+Int OID_DFDealsMaxPriceSlider
+Int OID_DFDealsMinDebtSlider
+Int OID_DFDealsMinMultiSlider
+Int OID_DFDealsMinPTimeSlider
+Int OID_DFDealsMinPriceSlider
+Int OID_DFDebtMaxPLSlider
+Int OID_DFDebtMinPLSlider
+Int OID_DFDebtperdayMaxSlider
+Int OID_DFDebtperdayMinSlider
+Int OID_DFGCredToLeaveSlider
+Int OID_DFGDecaySlider
+Int OID_DFGKnockDownTog
+Int OID_DFGOtherTog
+Int OID_DFGRedGoldModSlider
+Int OID_DFGStay0Tog
+Int OID_DFKConcealSlider
+Int OID_DFKeyDiffS
+Int OID_DFLivesChaoMaxSlider
+Int OID_DFLivesChaoMinSlider
+Int OID_DFLivesFollowerRapeTog
+Int OID_DFLocNotiTog
+Int OID_DFMDTimerSlider
+Int OID_DFMaxResistDealTog ; unused
+Int OID_DFMaxResistDevicesTog
+Int OID_DFMaxResistMCMSlider
+Int OID_DFMaxResistMinSlider
+Int OID_DFMaxStolenPerSlider
+Int OID_DFMinStolenPerSlider
+Int OID_DFPotionQTog
+Int OID_DFPotionQDelayMin
+Int OID_DFPotionQDelayMax
+Int OID_DFPotionQESlider
+Int OID_DFPotionQETog
+Int OID_DFPotionQSlider
+Int OID_DFPunDebtMaxSlider
+Int OID_DFPunDebtMinSlider
+Int OID_DFPunDebtSlider
+Int OID_DFRemovalIncMaxSlider
+Int OID_DFRemovalIncMinSlider
+Int OID_DFRemovalMaxSlider
+Int OID_DFRemovalMinSlider
+Int OID_DFRemovalModeS
+Int OID_DFRemovalMultiMaxSlider
+Int OID_DFRemovalMultiMinSlider
+Int OID_DFSWeightDSlider
+Int OID_DFSWeightEDSlider
+Int OID_DFSWeightESlider
+Int OID_DFShowRollMsgTog
+Int OID_DFSoldDeals
+Int OID_DFSoldTimerMax
+Int OID_DFSoldTimerMin
+Int OID_DFSoldTog
+Int OID_debtReduction
+Int OID_dealReduction
+Int OID_DFTheifsBoolTog
+Int OID_DFWillBoolTog
+Int OID_DFZAZAutoPause
+Int OID_DFlowGambleJPotSlider
+Int OID_DFlowItemsPerRemovedSlider
+Int OID_DFlowRemovalDebtTimesSlider
+Int OID_DFlowRemovalIncSlider
+Int OID_DFlowWarmCompTog
+Int OID_DailyDebtIncrement
+Int OID_DealB1 
+Int OID_DealB2 
+Int OID_DealBMax
+Int OID_DealH1
+Int OID_DealH2 
+Int OID_DealHMax 
+Int OID_DealO1
+Int OID_DealO2 
+Int OID_DealBias
+Int OID_DealOMax  
+Int OID_DealPMax
+Int OID_DealSQMax 
+Int OID_DebtDifficulty
+Int OID_CurrPack
+Int OID_DebtPerDayHiLevel
+Int OID_DebtPerDayLoLevel
+Int OID_DebtPerDaySlider
+Int OID_DebtPerFollowerSlider
+Int OID_DebtText
+Int OID_DebugBoredom
+Int OID_DebugDiaTog
+Int OID_DebugResistance
+Int OID_DeepDebtDifficulty
+Int OID_DflowDealBaseDaysSlider
+Int OID_DflowDealBaseDebtSlider
+Int OID_DflowDealBasePriceSlider
+Int OID_DflowDealMultiSlider
+Int OID_DflowEndlessModeTog
+Int OID_DflowGoldModeMaxSlider
+Int OID_DflowGoldModeMinSlider
+Int OID_DflowGoldModeTog
+Int OID_DflowRemovalBasePriceSlider
+Int OID_DiscountLimitSlider
+Int OID_DiscountText
+Int OID_DismissalOption
+Int OID_EFFcount
+Int OID_EnSlavFailerPerLevelSlider
+Int OID_EnableTog
+Int OID_EndScene
+Int OID_EnslavFailSlider
+Int OID_EnslavementSlider
+Int OID_ExpectedDealCountText
+Int OID_ExpectedDealLimitSlider
+Int OID_ExpensiveDeal
+Int OID_ExploreDifficulty
+Int OID_ExploreExponent
+Int OID_ExploreHiPrice
+Int OID_ExploreLoPrice
+Int OID_FatigueRateSlider
+Int OID_FatigueText
+Int OID_FollowerEventCDSlider
+Int OID_FreedomSlider
+Int OID_GetEnslaved
+Int OID_GoldPerFatigueSlider
+Int OID_HardCoreMode
+Int OID_HoursTillBillSlider
+Int OID_IntrestSlider
+Int OID_LDCInitTog
+Int OID_LivesSlider
+Int OID_LoadTog
+Int OID_MaxTatsSlider
+Int OID_MaxWillRegain
+Int OID_MinWillRegain
+Int OID_MinimumContractSlider
+Int OID_Mme
+Int OID_LicenseEnable
+Int OID_ForcedLicenses
+Int OID_LicenseBasePrice
+Int OID_LicenseMarkup
+Int OID_ModDealNumOfDeals
+Int OID_NFFcount
+Int OID_PermitForceStart
+Int OID_RegiveTog
+Int OID_RemoveAnalPlug
+Int OID_RemoveArmCuffs
+Int OID_RemoveBelt
+Int OID_RemoveBlindfold
+Int OID_RemoveBoots
+Int OID_RemoveBra
+Int OID_RemoveCollar
+Int OID_RemoveCorsetHarness
+Int OID_RemoveFollower
+Int OID_RemoveGag
+Int OID_RemoveGloves
+Int OID_RemoveHeavyBondage
+Int OID_RemoveHobbleDress
+Int OID_RemoveHood
+Int OID_RemoveLegCuffs
+Int OID_RemoveMittens
+Int OID_RemoveNipplePiercing
+Int OID_RemoveSuit
+Int OID_AddWhoreArmor
+Int OID_ValidateWhoreArmor
+Int OID_RemoveVaginalPiercing
+Int OID_RemoveVaginalPlug
+Int OID_RepairFollower
+Int OID_ResetTog
+Int OID_ResistText
+Int OID_ResistanceDealSlider
+Int OID_ResistanceDeltaSlider ; No longer used
+Int OID_ResistanceFatigueLimit
+Int OID_ResistanceLevelDelta
+Int OID_ResistanceWillSlider 
+Int OID_RestoreControls
+Int OID_SaveTog
+Int OID_Scan2Tog
+Int OID_ScanTog
+Int OID_SendForAuction
+Int OID_SendResumeTog
+Int OID_SexPreferences
+Int OID_DfcSlaverySlider
+Int OID_LolaSlider
+Int OID_SimplePerSlider
+Int OID_SkipToTheEndTog
+Int OID_SkoomaWhore
+Int OID_Spanking
+Int OID_SpankingAnims
+Int OID_SpankingCode
+Int OID_SpankingCooldown
+Int OID_SuspendOutPut
+Int OID_Test
+Int OID_Test2
+Int OID_ToggleFollower
+Int OID_WillRegainMode ; Not used at this time
+Int OID_WillText
+Int OID__DebtPerLevelSlider ; No longer used
+Int OID_EndlessSoldWeight
+Int OID_EndlessSlaveWeight
+Int OID_EndlessLolaWeight
+Int OID_EndlessAuctionWeight
+
+Int OID_helpBoredom_1
+Int OID_helpChaos_1
+Int OID_helpDealConfiguration_1
+Int OID_helpDeals_1
+Int OID_helpDebt_1
+Int OID_helpDevices_1
+Int OID_helpDevices_2
+Int OID_helpDevices_3
+Int OID_helpEnslavement_1
+Int OID_helpEnslavement_2
+Int OID_helpExclusion_1
+Int OID_helpExclusion_2
+Int OID_helpFatigue_1
+Int OID_helpGambling_1
+Int OID_helpGames_1
+Int OID_helpGoldControl_1
+Int OID_helpGoldControl_2
+Int OID_helpIntro_1
+Int OID_helpIntro_2
+Int OID_helpLives_1
+Int OID_helpPause_1
+Int OID_helpResistance_1
+Int OID_helpSleep_1
+Int OID_helpWillpower_1
+Int[] MDC_OIDs
+; FOLDEND - OIDs
+
 ; FOLDSTART - Internal variables
 String[] sexPreferenceOptions
 String[] dismissalOptions
@@ -269,9 +532,9 @@ Bool licenseStatusEnabledNew
 ; FOLDSTART - Version Functions
 Float Property Version = 0.0 Auto
 
-Function LoadMCMSettings()
-    Debug.Notification("Loading MCM Settings")
-EndFunction
+_DflowMCM function Get() global
+    return Quest.GetQuest("_DflowMCM") as _DflowMCM
+endFunction
 
 String Function GetScriptVersionName()
     ; e.g. 2.12
@@ -316,7 +579,6 @@ Event OnConfigOpen()
     licenseStatusEnabledNew = _DFLicenses.Enabled
     Debug.TraceConditional("DF - OnConfigOpen - licenses enabled on " + _DFLicenses + " is " + licenseStatusEnabledNew, True)
     Debug.TraceConditional("DF - OnConfigOpen - end", True)
-    SetMenuNames()
 EndEvent
 
 Event OnConfigClose()
@@ -382,7 +644,7 @@ EndFunction
 
 Function SetMenuNames()
 
-    Pages = new String[14]
+    Pages = new String[13]
     Pages[0] = "$DF_STATS"
     Pages[1] = "$DF_GENERAL"
     Pages[2] = "$DF_WILLPOWER"
@@ -396,7 +658,7 @@ Function SetMenuNames()
     Pages[10] = "$DF_COST_EXPLORER"
     Pages[11] = "$DF_DEBUG"
     Pages[12] = "$DF_HELP"
-
+    
     DealInfos = New String[20] ; classic deal info
     DealInfos[ 0] = "$DF_RULE_B_1"
     DealInfos[ 1] = "$DF_RULE_B_2"
@@ -504,6 +766,7 @@ Function SetupDebtDifficulty()
 EndFunction
 
 Event OnPageReset(String page)
+
     If Version != GetDFVersion() 
         AddHeaderOption("$DF_UPDATE_REQUIRED")
         ResetAllOIDs()
@@ -552,36 +815,28 @@ Event OnPageReset(String page)
         EndIf
     EndIf
     ; FOLDEND - Costs
-    
-    ; FOLDSTART - Modular Deal Settings
-    If page=="Rules"
-        If mcmLocked
-            AddHeaderOption("$DF_MCM_LOCKED_HEADER")
-        Else
-            groupNames = DealManager.GetPackNames()
-            if groupIndex >= groupNames.length
-                groupIndex = 0
-            endIf
-            DoModularDealsPageMenu()
-        EndIf
-    EndIf
-    ; FOLDEND - Modular Deals
-
     ; FOLDSTART - Deal Options
-    If page == "Rule Settings"
+    If page == Pages[5]
         If mcmLocked
             AddHeaderOption("$DF_MCM_LOCKED_HEADER")
-            ;/ Custom whore armor - replicated from below because we want to be able to change this even in HARDCORE mode.
+            ; Custom whore armor - replicated from below because we want to be able to change this even in HARDCORE mode.
             AddEmptyOption()
             AddHeaderOption("$DF_SIGNCA_HEADER")
             OID_DFDealSCustArmorTog = AddToggleOption("$DF_SIGNCA",_DFDealSCustArmor)
-            /;
         Else
-            DoDealsPageMenu()
+            DoRuleSettingsPageMenu()
         EndIf
     EndIf
     ; FOLDEND - Deal Options
-
+    ; FOLDSTART - Modular Deal Settings
+    If page==Pages[4]
+        If mcmLocked
+            AddHeaderOption("$DF_MCM_LOCKED_HEADER")
+        Else
+            DoRulesPageMenu()
+        EndIf
+    EndIf
+    ; FOLDEND - Modular Deals
     ; FOLDSTART - Punishments
     If page == "$DF_PUNISHMENTS"
         If mcmLocked
@@ -633,26 +888,8 @@ Event OnPageReset(String page)
         DoHelpPageMenu()
     Endif
     ; FOLDEND - Debug
+    
 EndEvent
-
-String Function Uppercase(string c)
-    string u = c
-    if c == "a"
-        u = "A"
-    elseIf c == "b"
-        u = "B"
-    elseIf c == "o"
-        u = "O"
-    elseIf c == "w"
-        u = "W"
-    endif
-
-    return u
-EndFunction
-
-String Function Capitalize(string text) 
-    return Uppercase(StringUtil.GetNthChar(text, 0)) + StringUtil.Substring(text, 1, StringUtil.GetLength(text))
-EndFunction
 
 Function DoStatsPageMenu()
     SetCursorFillMode(LEFT_TO_RIGHT)
@@ -664,18 +901,13 @@ Function DoStatsPageMenu()
 		Return
 	EndIf
    
-    int debtVal = Debt.GetValue() As Int
-
-    if GoldCont.Credit > 0 && !GoldCont.Enabled
-        debtVal = -GoldCont.Credit
-    endIf
-
+    
     If GoldCont.Enabled
         OID_DebtText = AddTextOption("$DF_DEBT", "$DF_IN_GOLD_CONTROL")
     ElseIf Lives.GetValue() <= 0.0
         OID_DebtText = AddTextOption("$DF_DEBT", "$DF_FOLLOWER_ANGRY")
     Else
-        OID_DebtText = AddTextOption("$DF_DEBT", debtVal)
+        OID_DebtText = AddTextOption("$DF_DEBT", (Debt.GetValue() As Int))
     EndIf
     AddTextOption("$DF_DEBTDAILY", FormatFloat_N0(DebtPerDay.GetValue()))
 
@@ -736,43 +968,65 @@ Function DoStatsPageMenu()
 
    
     ; DEAL DISPLAYS
-    string[] dealNames = DealManager.GetDeals()
-
-    int half = dealNames.length / 2
-    int i = 0
-
-    SetCursorFillMode(LEFT_TO_RIGHT)
+    SetCursorFillMode(TOP_TO_BOTTOM)
     AddHeaderOption("Active Deals")
-    AddHeaderOption("")
-    
-    SetCursorFillMode(TOP_TO_BOTTOm)
-    
-    if dealNames.length == 0
-        AddTextOption("None active", "")
+    string[] activeDeals = DFR_DealHelpers.GetDeals()
+
+    if activeDeals.length == 0
+        AddTextOption("None Active", "")
     endIf
 
-    while i < half
-        ShowDeal(dealNames[i])
+    DFR_Util.Log("Active Deals = " + activeDeals)
+
+    string[] leftCol = Utility.CreateStringArray(0)
+    string[] rightCol = Utility.CreateStringArray(0)
+
+    int i = 0
+    while i < activeDeals.length
+        if !Math.LogicalAnd(i, 1)
+            leftCol = PapyrusUtil.PushString(leftCol, activeDeals[i])
+        else
+            rightCol = PapyrusUtil.PushString(rightCol, activeDeals[i])
+        endIf
+
         i += 1
     endWhile
+
+    DFR_Util.Log("Left Deal Col = " + leftCol)
+    DFR_Util.Log("Right Deal Col = " + rightCol)
     
-    SetCursorPosition(17)
-    while i < dealNames.length
-        ShowDeal(dealNames[i])
-        i += 1
-    endWhile
+    DisplayDealStatuses(leftCol)
+
+    ; right column
+    SetCursorPosition(15)
+    AddHeaderOption("")
+
+    DisplayDealStatuses(rightCol)
 EndFunction
 
-Function ShowDeal(string deal)
-    AddHeaderOption(" " + deal)
-    string[] rules = DealManager.GetDealRules(deal)
+function DisplayDealStatuses(string[] asDeals)
     int i = 0
-    while i < rules.length
-        AddTextOption(DealManager.GetRuleName(rules[i]), DealManager.GetRuleDesc(rules[i]))
+    while i < asDeals.length
+        string deal = asDeals[i]
+
+        if deal == ""
+            return
+        endIf
+        string[] rules = DFR_DealHelpers.GetRules(deal)
+        if rules.length == 0
+            return
+        endIf
+    
+        AddHeaderOption(deal)
+        int j = 0
+        while j < rules.Length
+            AddTextOption(Adversity.GetEventName(rules[j]), Adversity.GetEventDesc(rules[j]))
+            j += 1
+        endWhile
+
         i += 1
     endWhile
-    
-EndFunction
+endFunction
 
 Function DoGeneralPageMenu()
     AddHeaderOption("$DF_TITLE")
@@ -832,8 +1086,7 @@ Function DoGeneralPageMenu()
     OID_DFAnimalContTog = AddToggleOption("$DFANIMALCONT",_DFAnimalCont)
     OID_DFLocNotiTog = AddToggleOption("$DF_LOCCHANGENOTI", _DFLocNoti)
     OID_PermitForceStart = AddToggleOption("$DF_ALLOW_FORCESTART", _DFAllowForceStart.GetValue() != 0.0)
-    OID_FNISCompatibility = AddToggleOption("FNIS Compatibility", FNISCompatibility)
-    
+
     ; Dismissal
     AddEmptyOption()
     AddHeaderOption("$DF_DISMISSAL")
@@ -913,11 +1166,7 @@ Function DoCostsPageMenu()
     OID_DFlowRemovalDebtTimesSlider = AddSliderOption("$DF_COSTMULTDEPT", _DFlowRemovalDebtTimes.GetValue(), "$DF_0%")
 EndFunction
 
-
-String MAX_STAGE_PREFIX = "DFR_MaxStage_"
-String FINAL_STAGE_PREFIX = "DFR_FinalStageToggle_"
-
-Function DoDealsPageMenu()
+Function DoRuleSettingsPageMenu()
 
 	If 0.0 == Pause.GetValue() ; This means paused... The underlying property isn't called Pause at all...
 		AddHeaderOption("$DF_DEALSPAGE")
@@ -927,27 +1176,27 @@ Function DoDealsPageMenu()
 
     OID_ExpectedDealLimitSlider = AddSliderOption("$DF_EXPECTED_DEAL_LIMIT", _DFExpectedDealLimit.GetValue() As Int, "$DF_0")
 
-    AddHeaderOption("Whore Deal Settings")
-    ;OID_DFDealSCustArmorTog = AddToggleOption("$DF_SIGNCA",_DFDealSCustArmor)
-
-    OID_DFDealSSignTog = AddToggleOption("$DFDEALSIGNTOG",(DealS As _DDeal).Stat As Bool)
-
+    ; RIGHT COLUMN
     SetCursorPosition(1)
-    ;OID_DealBias = AddSliderOption("$DF_DEAL_BIAS", DC.DealBias, "$DF_0%")
-    AddHeaderOption("Deal Settings")
-	
-    ;OID_ModDealNumOfDeals = AddSliderOption("# of Modular Deals", MDC.MaxModDealsSetting)
-    OID_DFMDTimerSlider = AddSliderOption("$DFMDTimer", MDC.TimerSetting, "$DF_1Days")
-    
-    OID_DeepDebtDifficulty = AddSliderOption("$DF_DEEP_DEBT_DIFFICULTY", _DFDeepDebtDifficulty.GetValue(), "$DF_1")
+    OID_DealBias = AddSliderOption("$DF_DEAL_BIAS", DC.DealBias, "$DF_0%")
+    OID_DFDealSSignTog = AddToggleOption("$DFDEALSIGNTOG", (DealS As _DDeal).Stat As Bool)
 EndFunction
 
+string function GetStatusText(int aiStatus)
+    if aiStatus == 0
+        return "Disabled"
+    elseIf aiStatus == 5
+        return "Active"
+    else
+        return "Enabled"
+    endIf
+endFunction
 
-Int groupIndex
-String[] groupNames
-Int OID_RulesCurrentGroup
+int CurrPackIndex = 0
+string[] AllPacks
+string[] AllPackNames
 
-Function DoModularDealsPageMenu()
+Function DoRulesPageMenu()
 
 	If 0.0 == Pause.GetValue() ; This means paused...
 		AddHeaderOption("$DF_MODDEALSPAGE")
@@ -955,49 +1204,42 @@ Function DoModularDealsPageMenu()
 		Return
 	EndIf
 
-    SetCursorFillMode(LEFT_TO_RIGHT)
+    SetCursorFillMode(LEFT_TO_RIGHT)    
 
-    string currGroup = groupNames[groupIndex]
-    AddTextOption("Current Group", "")
-    OID_RulesCurrentGroup = AddMenuOption("", currGroup)
-    AddHeaderOption("")
-    AddHeaderOption("")
-
-    string[] rules = DealManager.GetPackRules(currGroup)
-
-    
+    AllPacks = Adversity.GetPacks("deviousfollowers")
+    AllPackNames = Utility.CreateStringArray(AllPacks.length)
     int i = 0
-    while i < rules.length
-        string rule = rules[i]
-
-        GlobalVariable status = DealManager.GetRuleGlobal(rule)
-        int value = status.GetValue() as int
-
-        string name = DealManager.GetRuleName(rule)
-        string translated = TranslateStatus(value)
-
-        int flag = OPTION_FLAG_NONE
-
-        if !DealManager.CanEnableRule(rule)
-            flag = OPTION_FLAG_DISABLED
-        endIf
-
-        StorageUtil.SetStringValue(none, "DF_RULE_STATUS_" + AddTextOption(name, translated), rule)
+    while i < AllPacks.length
+        AllPackNames[i] = Adversity.GetPackName(AllPacks[i])
         i += 1
     endWhile
-    
-EndFunction
 
-String Function TranslateStatus(int value)
-    if value == 0
-        return "Disabled"
-    elseIf value == 1 || value == 2
-        return "Enabled"
-    elseIf value == 3
-        return "Active"
-    else
-        return "Invalid"
+    DFR_Util.Log("All Packs = " + AllPacks)
+    DFR_Util.Log("CurrPackIndex = " + CurrPackIndex)
+    
+    if CurrPackIndex < 0
+        CurrPackIndex = 0
     endIf
+
+    string currPack = AllPacks[CurrPackIndex]
+    
+    DFR_Util.Log("currPack = " + currPack)
+
+    OID_CurrPack = AddMenuOption("Current Pack", Adversity.GetPackName(currPack))
+    AddEmptyOption()
+    AddHeaderOption("")
+    AddHeaderOption("")
+    
+    string[] rules = Adversity.GetPackEvents(currPack)
+    
+    rules = Adversity.FilterEventsByTags(rules, Utility.CreateStringArray(1, "type:rule"))
+
+    i = 0
+    while i < rules.length
+        int oid = AddTextOption(Adversity.GetEventName(rules[i]), GetStatusText(Adversity.GetEventStatus(rules[i])))
+        StorageUtil.SetStringValue(none, "OID_RuleStatus_" + oid, rules[i])
+        i += 1
+    endWhile
 EndFunction
 
 Function DoPunishmentsPageMenu()
@@ -1205,12 +1447,12 @@ Function DoMiscAdditionalContentPageMenu()
     EndIf
 
     AddHeaderOption("$DF_POTIONQUEST")
-    OID_DFPotionQTog = AddToggleOption("$DF_POTIONENABLE", DFPotQ.Enabled, OPTION_FLAG_DISABLED)
-    OID_DFPotionQSlider = AddSliderOption("$DFPOTIONDEALS", DFPotQ._DFlowPotionDeal.GetValue(), OPTION_FLAG_DISABLED)
-    OID_DFPotionQETog = AddToggleOption("$DF_POTIONENABLEEVIL", DFPotQ.EnabledEvil, OPTION_FLAG_DISABLED)
-    OID_DFPotionQESlider = AddSliderOption("$DFPOTIONDEALSEVIL", DFPotQ._DFlowPotionDealEvil.GetValue(), OPTION_FLAG_DISABLED)
-    OID_DFPotionQDelayMin = AddSliderOption ("$DFPOTIONTIMERMIN", DFPotQ.DelayMin, "$DF_2DAYS", OPTION_FLAG_DISABLED)
-    OID_DFPotionQDelayMax = AddSliderOption ("$DFPOTIONTIMERMAX", DFPotQ.DelayMax, "$DF_2DAYS", OPTION_FLAG_DISABLED)
+    OID_DFPotionQTog = AddToggleOption("$DF_POTIONENABLE", DFPotQ.Enabled)
+    OID_DFPotionQSlider = AddSliderOption("$DFPOTIONDEALS", DFPotQ._DFlowPotionDeal.GetValue())
+    OID_DFPotionQETog = AddToggleOption("$DF_POTIONENABLEEVIL", DFPotQ.EnabledEvil)
+    OID_DFPotionQESlider = AddSliderOption("$DFPOTIONDEALSEVIL", DFPotQ._DFlowPotionDealEvil.GetValue())
+    OID_DFPotionQDelayMin = AddSliderOption ("$DFPOTIONTIMERMIN", DFPotQ.DelayMin, "$DF_2DAYS")
+    OID_DFPotionQDelayMax = AddSliderOption ("$DFPOTIONTIMERMAX", DFPotQ.DelayMax, "$DF_2DAYS")
     
 
 EndFunction
@@ -1400,7 +1642,7 @@ Function DoDebugPageMenu()
     SetCursorPosition(23)
     AddHeaderOption("")
     SetCursorPosition(24)
-    
+            
     OID_AddSlaveKit        = AddTextOption("$DF_ADD_SLAVE_KIT", "$DF_CLICK_ME")
     OID_AddChainsOfDebt    = AddTextOption("$DF_ADD_CHAINS_OF_DEBT", "$DF_CLICK_ME")
     OID_AddBlindfold       = AddTextOption("$DF_ADD_BLINDFOLD", "$DF_CLICK_ME")
@@ -1423,8 +1665,8 @@ Function DoDebugPageMenu()
     OID_AddPrisonerChains  = AddTextOption("$DF_ADD_PRISONER_CHAINS", "$DF_CLICK_ME")
     OID_AddPetSuit         = AddTextOption("$DF_ADD_PET_SUIT", "$DF_CLICK_ME")
     OID_AddFullSet         = AddTextOption("$DF_ADD_FULL_SET", "$DF_CLICK_ME")
-    OID_AddWhoreArmor      = AddTextOption("Add Whore Armor", "$DF_CLICK_ME")
-
+    OID_AddWhoreArmor = AddTextOption("Add Whore Armor", "$DF_CLICK_ME")
+    OID_ValidateWhoreArmor = AddTextOption("Validate Whore Armor", "")
     If IsDebug()
         AddEmptyOption()
         
@@ -1503,6 +1745,8 @@ Function DoDebugPageMenu()
     OID_RemoveBoots           = AddTextOption("$DF_REMOVE_BOOTS", "$DF_CLICK_ME")
     OID_RemoveSuit            = AddTextOption("$DF_REMOVE_SUIT", "$DF_CLICK_ME")
     
+
+
     If IsDebug()
         AddEmptyOption()
         AddEmptyOption()
@@ -1522,6 +1766,7 @@ Function DoDebugPageMenu()
         OID_Test = AddTextOption("TEST 1", "CLICK TO TEST")
         OID_Test2 = AddTextOption("TEST 2", "CLICK TO TEST")
     EndIf
+    
     
 EndFunction
 
@@ -1585,17 +1830,6 @@ Function ShowClassicDealOptions(Int start, String name, Int stage)
         EndIf
     EndIf
 EndFunction
-
-Event OnOptionInputOpen(int option) 
-
-EndEvent
-
-event OnOptionInputAccept(int a_option, string a_value)
-
-    
-    SetInputOptionValue(a_option, a_value)
-endEvent
-
 
 Event OnOptionHighlight(Int option)
     ; FOLDSTART - General
@@ -1876,8 +2110,31 @@ Event OnOptionHighlight(Int option)
         SetInfoText("$DF_EXPECTED_DEAL_COUNT_DESC")
     ElseIf option == OID_ExpectedDealLimitSlider
         SetInfoText("$DF_EXPECTED_DEAL_LIMIT_DESC")
+        
     ElseIf option == OID_DealBias
         SetInfoText("$DF_DEAL_BIAS_DESC")
+    ElseIf option== OID_DealOMax 
+        SetInfoText("$DF_DEALOMAX_DESC")
+    ElseIf option== OID_DealO1
+        SetInfoText("$DF_DEALO1_DESC")
+    ElseIf option== OID_DealO2
+        SetInfoText("$DF_DEALO2_DESC")
+    ElseIf option== OID_DealBMax 
+        SetInfoText("$DF_DEALBMAX_DESC")
+    ElseIf option== OID_DealB1 
+        SetInfoText("$DF_DEALB1_DESC")
+    ElseIf option== OID_DealB2 
+        SetInfoText("$DF_DEALB2_DESC")
+    ElseIf option== OID_DealHMax
+        SetInfoText("$DF_DEALHMAX_DESC")
+    ElseIf option== OID_DealH1
+        SetInfoText("$DF_DEALH1_DESC")
+    ElseIf option== OID_DealH2
+        SetInfoText("$DF_DEALH2_DESC")
+    ElseIf option== OID_DealPMax
+        SetInfoText("$DF_DEALPMAX_DESC")
+    ElseIf option== OID_DealSQMax 
+        SetInfoText("$DF_DEALSQMAX_DESC")
     ElseIf option==OID_DFSoldTog
         SetInfoText("$DF_SOLDACTIVE_DESC")
     ElseIf option == OID_debtReduction
@@ -2026,13 +2283,23 @@ Event OnOptionHighlight(Int option)
         SetInfoText("$DF_ABOUT_EXCLUSION_1_DESC")
     ElseIf option == OID_helpExclusion_2
         SetInfoText("$DF_ABOUT_EXCLUSION_2_DESC")
+    ElseIf StorageUtil.GetStringValue(none, "OID_RuleStatus_" + option) != ""
+        string rule = StorageUtil.GetStringValue(none, "OID_RuleStatus_" + option)
+        SetInfoText(Adversity.GetEventDesc(rule))
     Endif
     
-    String rulePath = StorageUtil.GetStringValue(none, "DF_RULE_STATUS_" + option, "")
-    if rulePath != ""
-        Debug.Trace("DF - SetInfoText - Rule = " + rulePath)
-        SetInfoText(DealManager.GetRuleInfo(rulePath))
-    endIf
+    If MDC_OIDs && MDC_OIDs.Length > 1
+        Int ii = 1
+        While ii <= MDC.DealsBuilt
+            If 	option == MDC_OIDs[ii]
+                SetInfoText(MDC.OIDTextDesc[ii])
+                ii = MDC.DealsBuilt
+            EndIf
+            ii += 1
+        EndWhile
+    EndIf
+    
+
 EndEvent
 
 
@@ -2072,10 +2339,10 @@ Event OnOptionMenuOpen(Int option)
         SetMenuDialogStartIndex(DismissalIndex)
         SetMenuDialogDefaultIndex(0)
         SetMenuDialogOptions(dismissalOptions)
-    ElseIf option == OID_RulesCurrentGroup
-        SetMenuDialogStartIndex(groupIndex)
+    ElseIf option == OID_CurrPack
+        SetMenuDialogStartIndex(CurrPackIndex)
         SetMenuDialogDefaultIndex(0)
-        SetMenuDialogOptions(groupNames)
+        SetMenuDialogOptions(AllPackNames)
     EndIf
 
 EndEvent
@@ -2105,17 +2372,15 @@ Event OnOptionMenuAccept(Int option, Int index)
         SexPreferenceIndex = index
         SetMenuOptionValue(option, sexPreferenceOptions[index])
         Tool.SetScanGenders(index)
-        
     ElseIf option == OID_DismissalOption
         DismissalIndex = index
         SetMenuOptionValue(option, dismissalOptions[index])
         SetDismissalRules(index)
-    elseIf option == OID_RulesCurrentGroup
-        groupIndex = index
-        SetMenuOptionValue(option, groupNames[index])
+    ElseIf option == OID_CurrPack
+        CurrPackIndex = index
+        SetMenuOptionValue(option, AllPackNames[index])
         ForcePageReset()
     EndIf
-    
 EndEvent
 
 Event OnOptionSelect(Int option)
@@ -2449,6 +2714,65 @@ Event OnOptionSelect(Int option)
     
         _DFHardcoreMode.SetValue(1.0)
         ForcePageReset()
+  
+    ElseIf option == OID_DealO1
+    
+        If DC.DealO1 && DC.DealO2
+            DC.DealO1 = False
+            SetToggleOptionValue(OID_DealO1, False)
+        Else
+            DC.DealO1 = True
+            SetToggleOptionValue(OID_DealO1, True)
+        EndIf
+        
+    ElseIf option == OID_DealO2 
+    
+        If DC.DealO1 && DC.DealO2
+            DC.DealO2 = False
+            SetToggleOptionValue(OID_DealO2, False)
+        Else
+            DC.DealO2 = True
+            SetToggleOptionValue(OID_DealO2, True)
+        EndIf
+        
+    ElseIf option == OID_DealB1
+    
+        If DC.DealB1 && DC.DealB2
+            DC.DealB1 = False
+            SetToggleOptionValue(OID_DealB1, False)
+        Else
+            DC.DealB1 = True
+            SetToggleOptionValue(OID_DealB1, True)
+        EndIf
+        
+    ElseIf option == OID_DealB2  
+    
+        If DC.DealB1 && DC.DealB2
+            DC.DealB2 = False
+            SetToggleOptionValue(OID_DealB2, False)
+        Else
+            DC.DealB2 = True
+            SetToggleOptionValue(OID_DealB2, True)
+        EndIf
+        
+    ElseIf option == OID_DealH1
+    
+        If DC.DealH1 && DC.DealH2
+            DC.DealH1 = False
+        Else
+            DC.DealH1 = True
+        EndIf
+        SetToggleOptionValue(OID_DealH1, DC.DealH1)
+        
+    ElseIf option == OID_DealH2
+    
+        If DC.DealH1 && DC.DealH2
+            DC.DealH2 = False
+        Else
+            DC.DealH2 = True
+        EndIf
+        SetToggleOptionValue(OID_DealH2, DC.DealH2)
+        
     ElseIf option == OID_DFSoldTog
     
         If DSold.Active
@@ -2490,9 +2814,7 @@ Event OnOptionSelect(Int option)
             
             _DFlowForcedStart.JustStopIt()
         EndIf
-    Elseif option == OID_FNISCompatibility
-        FNISCompatibility = !FNISCompatibility
-        SetToggleOptionValue(option, FNISCompatibility)
+        
     ElseIf option == OID_ToggleFollower
     
         If HaveValidToggleActorTarget()
@@ -2594,13 +2916,14 @@ Event OnOptionSelect(Int option)
         Tool.FitPrisonerChains()
     ElseIf option == OID_AddPetSuit
         addItemKeyword = LDC.Libs.zad_DeviousPetSuit
-    ElseIf option == OID_AddWhoreArmor
-        Tool.GiveWhoreArmor(false)
     ElseIf option == OID_AddFullSet
         SetTextOptionValue(option, "$DF_EXIT_MCM")
         SetOptionFlags(option, OPTION_FLAG_DISABLED)
         Tool.FitFullSet()
-
+    ElseIf option == OID_AddWhoreArmor
+        Tool.GiveWhoreArmor(false)
+    ElseIf option == OID_ValidateWhoreArmor
+        SetTextOptionValue(OID_ValidateWhoreArmor, Tool.IsWearingWhoreArmor())
     ElseIf option == OID_RemoveHood
         removeItemKeyword = LDC.Libs.zad_DeviousHood
     ElseIf option == OID_RemoveBlindfold
@@ -2735,12 +3058,34 @@ Event OnOptionSelect(Int option)
         Debug.MessageBox("If you want to stop a follower from becoming devious, before recruiting them, you can target them and use an option in the 'General' MCM to toggle their exclusion from the mod. You can re-enable them the same way. It won't work on any of your current followers, or on NPCs who can't be followers. Disabled/excluded followers won't become devious and aren't charged for, even if they're in a group with a DF.")
     ElseIf option == OID_helpExclusion_2
         Debug.MessageBox("If you want all followers non-devious by default, then use the option in the 'Debug' MCM to find all followers and make them all non-devious. You can then use the enable/disable toggle to enable just the ones you want. The auto scan will not disable any followers you explicitly enabled, and it will not modify current followers or vanilla hirelings, so it's safe to re-run it if you add more followers to your game.")
-    Endif
+    ElseIf StorageUtil.GetStringValue(none, "OID_RuleStatus_" + option) != ""
+        string rule = StorageUtil.GetStringValue(none, "OID_RuleStatus_" + option)
 
+        if Adversity.IsEventActive(rule)
+            ; do nothing
+            DFR_Util.Log("cannot disable rule due to active " + rule)
+        elseIf Adversity.GetEventName(rule) == "extend"
+            ; do nothing
+            DFR_Util.Log("cannot disable extend rule")
+        elseIf Adversity.IsEventEnabled(rule)
+            if !Adversity.DisableEvent(rule)
+                DFR_Util.Log("failed to disable rule " + rule)
+            endIf
+        elseIf Adversity.IsEventDisabled(rule)
+            if !Adversity.EnableEvent(rule)
+                DFR_Util.Log("failed to enable rule " + rule)
+            endIf
+        endIf
+
+        SetTextOptionValue(option, GetStatusText(Adversity.GetEventStatus(rule)))
+    Endif
+    
     If removeItemKeyword
         SetTextOptionWorking(option)
-        LDC.RemoveDeviceByKeyword(removeItemKeyword, PlayerRef)
-        Utility.WaitMenuMode(3.0)
+        Armor device = LDC.libs.GetWornDevice(PlayerRef, removeItemKeyword)
+        if device
+            LDC.libs.UnlockDevice(PlayerRef, device)
+        endIf
         SetTextOptionValue(option, "$DF_DONE")
         removeItemKeyword = None
     EndIf
@@ -2748,34 +3093,47 @@ Event OnOptionSelect(Int option)
     If addItemKeyword
         SetTextOptionWorking(option)
         LDC.EquipDeviceByKeyword(addItemKeyword)
-        Utility.WaitMenuMode(3.0)
         SetTextOptionValue(option, "$DF_DONE")
         addItemKeyword = None
     EndIf
-
-    String rulePath = StorageUtil.GetStringValue(none, "DF_RULE_STATUS_" + option, "")
-    if rulePath != ""
-        Debug.Trace("DF - OnOptionSelect - Rule = " + rulePath)
-        GlobalVariable status = DealManager.GetRuleGlobal(rulePath)
-        int val = status.GetValue() as int
-
-        if val == 0
-            _DFRuleTemplate rule = DealManager.GetRuleScript(rulePath) as _DFRuleTemplate
-
-            Debug.Trace("DF - Rendering rules - rule = " + rule)
-            if DealManager.CanEnableRule(rulePath) && rule.InternalIsValid()
-                val = 1
-            endIf
-        elseIf val == 1 || val == 2
-            if DealManager.CanDisableRule(rulePath)
-                val = 0
-            endIf
-        endIf
-
-        status.SetValue(val)
-
-        SetTextOptionValue(option, TranslateStatus(val))
-    endIf
+        
+    ; Check to see if a rule is being updated...
+    Debug.Trace("DF - MDC.DealsBuilt is " + MDC.DealsBuilt)
+    If MDC_OIDs && MDC_OIDs.Length > 1
+        Int ii = 1
+        While ii <= MDC.DealsBuilt
+        
+            If 	option == MDC_OIDs[ii] 
+                ; Yes, update the rule...
+                Debug.Trace("DF - Update MDC rule " + ii + " current " + MDC.GetRuleState(ii))
+                
+                If 0 == MDC.GetRuleState(ii)
+                
+                    If MDC.EnableRule(ii) ; Can fail to enable unsupported rules
+                        Debug.Trace("DF - ENABLED MDC rule " + ii + " to " + MDC.GetRuleState(ii))
+                        SetTextOptionValue(option, "$DFENABLED")
+                    Else
+                        Debug.Trace("DF - FAILED ENABLED MDC rule " + ii + " to " + MDC.GetRuleState(ii))
+                    EndIf
+                    
+                ElseIf 1 == MDC.GetRuleState(ii)
+                
+                    If MDC.DisableRule(ii)
+                        Debug.Trace("DF - DISABLED MDC rule " + ii + " to " + MDC.GetRuleState(ii))
+                        SetTextOptionValue(option, "$DFDISABLED")
+                    Else
+                        Debug.Trace("DF - FAILED DISABLE MDC rule " + ii + " to " + MDC.GetRuleState(ii))
+                    EndIf
+                Else
+                    Debug.Trace("DF - NO ACT MDC rule " + ii + " to " + MDC.GetRuleState(ii))
+                    ; If the rule state is 2 we can't disable it because it's active.
+                EndIf
+                
+            EndIf
+            
+            ii += 1
+        EndWhile
+    EndIf
     
 EndEvent
 
@@ -2875,19 +3233,16 @@ Event OnOptionSliderOpen(Int option)
         SetSliderDialogDefaultValue(9.0)
         SetSliderDialogRange(0.0, 50.0)
         SetSliderDialogInterval(1.0)
-         
     ElseIf option == OID_DflowGoldModeMinSlider
         SetSliderDialogStartValue(GoldCont.AgreedGoldMin)
         SetSliderDialogDefaultValue(100.0)
         SetSliderDialogRange(0.0, GoldCont.AgreedGoldMax)
         SetSliderDialogInterval(50.0)
-         
     ElseIf option == OID_DflowGoldModeMaxSlider
         SetSliderDialogStartValue(GoldCont.AgreedGoldMax)
         SetSliderDialogDefaultValue(2000.0)
         SetSliderDialogRange(GoldCont.AgreedGoldMin, 10000.0)
         SetSliderDialogInterval(50.0)
-        
     ElseIf option == OID_ResistanceWillSlider
         SetSliderDialogStartValue(_DFResistanceWillDelta)
         SetSliderDialogDefaultValue(0.0)
@@ -3207,6 +3562,32 @@ Event OnOptionSliderOpen(Int option)
         SetSliderDialogDefaultValue(50.0) 
         SetSliderDialogRange(0.0, 100.0)
         SetSliderDialogInterval(1.0)
+    ElseIf option == OID_DealOMax  
+        SetSliderDialogStartValue(DC.DealOMax)
+        SetSliderDialogDefaultValue(3.0) 
+        SetSliderDialogRange(0.0, 3.0)
+        SetSliderDialogInterval(1.0)
+    ElseIf option == OID_DealBMax 
+        SetSliderDialogStartValue(DC.DealBMax)
+        SetSliderDialogDefaultValue(3.0) 
+        SetSliderDialogRange(0.0, 3.0)
+        SetSliderDialogInterval(1)
+    ElseIf option == OID_DealHMax  
+        SetSliderDialogStartValue(DC.DealHMax)
+        SetSliderDialogDefaultValue(3.0) 
+        SetSliderDialogRange(0.0, 3.0)
+        SetSliderDialogInterval(1.0)
+    ElseIf option == OID_DealPMax 
+        SetSliderDialogStartValue(DC.DealPMax)
+        SetSliderDialogDefaultValue(3.0) 
+        SetSliderDialogRange(0.0, 3.0)
+        SetSliderDialogInterval(1.0)
+    ElseIf option == OID_DealSQMax  
+        SetSliderDialogStartValue(DC.DealSQMax)
+        SetSliderDialogDefaultValue(3.0) 
+        SetSliderDialogRange(0.0, 3.0)
+        SetSliderDialogInterval(1.0)
+
 
     ElseIf option == OID_DFSoldTimerMax
         SetSliderDialogStartValue(DSold.TimerMax)
@@ -3308,6 +3689,7 @@ Event OnOptionSliderOpen(Int option)
         SetSliderDialogRange(1000.0, 100000.0)
         SetSliderDialogInterval(1000.0)
     EndIf
+
 EndEvent
 
 
@@ -3384,7 +3766,6 @@ Event OnOptionSliderAccept(Int option, Float value)
     ElseIf option == OID_DflowGoldModeMinSlider
         GoldCont.AgreedGoldMin = value As Int
         SetSliderOptionValue(option, value, "$DF_0GOLD")
-        
     ElseIf option == OID_ResistanceWillSlider
         _DFResistanceWillDelta = value
         SetSliderOptionValue(option, value, "$DF_0")
@@ -3657,6 +4038,46 @@ Event OnOptionSliderAccept(Int option, Float value)
     ElseIf option == OID_DealBias
         DC.DealBias = value
         SetSliderOptionValue(option, value, "$DF_0%")
+    ElseIf option == OID_DealOMax 
+        Int temp = NumDeals()
+        Int change = (value As Int) - DC.DealOMax
+        temp += change
+        If temp >= 0
+            DC.DealOMax = value As Int
+            SetSliderOptionValue(option, value, "$DF_0")
+        EndIf
+    ElseIf option == OID_DealBMax 
+        Int temp = NumDeals()
+        Int change =  (value As Int) - DC.DealBMax
+        temp += change
+        If temp >= 0
+            DC.DealBMax = value As Int
+            SetSliderOptionValue(option, value, "$DF_0")
+        EndIf
+    ElseIf option == OID_DealHMax
+        Int temp = NumDeals()
+        Int change = (value As Int) - DC.DealHMax
+        temp += change
+        If temp >= 0
+            DC.DealHMax = value As Int
+            SetSliderOptionValue(option, value, "$DF_0")
+        EndIf	
+    ElseIf option == OID_DealPMax 
+        Int temp = NumDeals()
+        Int change = (value As Int) - DC.DealPMax
+        temp += change
+        If temp >= 0
+            DC.DealPMax = value As Int
+            SetSliderOptionValue(option, value, "$DF_0")
+        EndIf
+    ElseIf option == OID_DealSQMax  
+        Int temp = NumDeals()
+        Int change = (value As Int) - DC.DealSQMax
+        temp += change
+        If temp >= 0
+            DC.DealSQMax = value As Int
+            SetSliderOptionValue(option, value, "$DF_0")
+        EndIf
     ElseIf option == OID_DFSoldTimerMax
         DSold.TimerMax = value
         SetSliderOptionValue(option, value, "$DF_1Days")
@@ -3707,7 +4128,6 @@ Event OnOptionSliderAccept(Int option, Float value)
     ElseIf option == OID_ModDealNumOfDeals
         MDC.TryChangeModularDealEnables(value As Int)
         SetSliderOptionValue(option, MDC.MaxModDealsSetting, "$DF_0") ; Whether it changed or not, this is now the value.
-        Debug.Trace("DFF: Changing max modular deals")
     ElseIf option == OID_DFMDTimerSlider
         MDC.TimerSetting = value
         SetSliderOptionValue(option, value, "$DF_1Days")
@@ -3736,7 +4156,9 @@ Event OnOptionSliderAccept(Int option, Float value)
         exploreHiPrice = value
         SetSliderOptionValue(option, exploreHiPrice)
         ForcePageReset()
+
     EndIf
+
 EndEvent
 
 
@@ -3830,6 +4252,17 @@ Function ExportSettings()
     ExportFloat("GoldCont.CredToLeave", GoldCont.CredToLeave As Float)
     ExportFloat("_DFAnimalCont",_DFAnimalCont As Float)
     ExportFloat("DC.DealBias", DC.DealBias)
+    ExportFloat("DC.DealOMax", DC.DealOMax As Float)
+    ExportFloat("DC.DealO1",DC.DealO1 As Float)
+    ExportFloat("DC.DealO2", DC.DealO2 As Float)
+    ExportFloat("DC.DealBMax",DC.DealBMax As Float)
+    ExportFloat("DC.DealB1", DC.DealB1 As Float)
+    ExportFloat("DC.DealB2", DC.DealB2 As Float)
+    ExportFloat("DC.DealHMax",DC.DealHMax As Float)
+    ExportFloat("DC.DealH1",DC.DealH1 As Float)
+    ExportFloat("DC.DealH2", DC.DealH2 As Float)
+    ExportFloat("DC.DealPMax",DC.DealPMax As Float)
+    ExportFloat("DC.DealSQMax",DC.DealSQMax As Float)
     ExportFloat("DSold.Active",DSold.Active As Float)
     ExportFloat("DSold.TimerMax",DSold.TimerMax As Float)
     ExportFloat("DSold.TimerMin",DSold.TimerMin As Float)
@@ -4000,6 +4433,17 @@ Function ImportSettings()
     GoldCont.CredToLeave = ImportFloat("GoldCont.CredToLeave", GoldCont.CredToLeave As Float) As Int
     _DFAnimalCont = ImportFloat("_DFAnimalCont",_DFAnimalCont As Float) As Bool
     DC.DealBias = ImportFloat("DC.DealBias", DC.DealBias)
+    DC.DealOMax = ImportFloat("DC.DealOMax", DC.DealOMax As Float) As Int
+    DC.DealO1 = ImportFloat("DC.DealO1",DC.DealO1 As Float)As Bool
+    DC.DealO2 = ImportFloat("DC.DealO2", DC.DealO2 As Float)As Bool
+    DC.DealBMax = ImportFloat("DC.DealBMax",DC.DealBMax As Float) As Int
+    DC.DealB1 = ImportFloat("DC.DealB1", DC.DealB1 As Float)As Bool
+    DC.DealB2 = ImportFloat("DC.DealB2", DC.DealB2 As Float)As Bool
+    DC.DealHMax = ImportFloat("DC.DealHMax",DC.DealHMax As Float) As Int
+    DC.DealH1 = ImportFloat("DC.DealH1",DC.DealH1 As Float)
+    DC.DealH2 = ImportFloat("DC.DealH2", DC.DealH2 As Float)
+    DC.DealPMax = ImportFloat("DC.DealPMax",DC.DealPMax As Float) As Int
+    DC.DealSQMax = ImportFloat("DC.DealSQMax",DC.DealSQMax As Float) As Int
     DSold.Active=importFloat("DSold.Active",DSold.Active As Float) As bool
     DSold.TimerMax=importFloat("DSold.TimerMax",DSold.TimerMax As Float)
     DSold.TimerMin=importFloat("DSold.TimerMin",DSold.TimerMin As Float)
@@ -4142,8 +4586,21 @@ Function PauseMod()
         GoldCont.Pause() ; Can modify debt
         _DFLicenses.Pause(True)
         QuestStage.SetValue(DFlow.getstage())
+        DealBstage = DealB.getstage()
+        DealOstage = DealO.getstage()
+        DealHstage = DealH.getstage()
+        DealPstage = DealP.getstage()
+        DealSstage = DealS.getstage()
+        DealB.reset()
+        DealO.reset()
+        DealH.reset()
+        DealP.reset()
+        DealS.reset()
+        (DealController As  QF__DflowDealController_0A01C86D).Savetimes()
+        ; Sleep quest isn't stopped - now pause aware.
+        ; Tick isn't stopped!
 
-        DealManager.Pause()
+        MDC.PauseAndSave()
         
         Dflow.reset()
         SEvents.Reset()
@@ -4183,8 +4640,11 @@ Function ResumeMod()
             Dflow.Setstage(QuestStage.GetValue() As Int)
 
             _DFLicenses.Pause(False)
-
-            DealManager.Resume()
+            DealB.SetStage(DealBstage)
+            DealO.SetStage(DealOstage)
+            DealH.SetStage(DealHstage)
+            DealP.SetStage(DealPstage)
+            DealS.SetStage(DealSstage)
             
             Tool.RestorePunishmentTracking(Factor)
 
@@ -4204,6 +4664,8 @@ Function ResumeMod()
             DealS.SetStage(0)
             Q.Timer.SetValue(Utility.GetCurrentGameTime())
         EndIf
+
+        (DealController As  QF__DflowDealController_0A01C86D).Loadtimes()
         
         Pause.SetValue(1.0) ; Check to see if this needs to happen here and is used by the other function calls?
         MDC.Resume()
@@ -4219,6 +4681,14 @@ Function ResumeMod()
     Pause.SetValue(1.0)
     
 EndFunction
+
+
+Int Function NumDeals()
+
+    Return DC.DealBMax + DC.DealHMax + DC.DealOMax + DC.DealPMax + DC.DealSQMax + (3 * MDC.MaxModDealsSetting) - 9
+
+EndFunction
+
 
 Function Chaos(Bool forceFullUpdate = False)
 
@@ -4959,7 +5429,18 @@ Function ResetAllOIDs()
     OID_DFlowRemovalIncSlider = -2
     OID_DFlowWarmCompTog = -2
     OID_DailyDebtIncrement = -2
+    OID_DealB1  = -2
+    OID_DealB2  = -2
+    OID_DealBMax = -2
+    OID_DealH1 = -2
+    OID_DealH2  = -2
+    OID_DealHMax  = -2
+    OID_DealO1 = -2
+    OID_DealO2  = -2
     OID_DealBias = -2
+    OID_DealOMax   = -2
+    OID_DealPMax = -2
+    OID_DealSQMax  = -2
     OID_DebtDifficulty = -2
     OID_DebtPerDayHiLevel = -2
     OID_DebtPerDayLoLevel = -2
@@ -5369,258 +5850,3 @@ EndFunction
 Bool Function IsSlsPresent()
     Return 0.0 != _DFModSlsPresent.GetValue()
 EndFunction
-
-
-; FOLDSTART - OIDs
-Int OIDTxtPush ; unused
-Int OID_AFTcount
-Int OID_ActualDealCountText
-Int OID_AddAnalPlug
-Int OID_AddArmCuffs
-Int OID_AddBelt
-Int OID_AddBlindfold
-Int OID_AddBoots
-Int OID_AddBra
-Int OID_AddChainsOfDebt
-Int OID_AddCollar
-Int OID_AddCorsetHarness
-Int OID_AddDebtDebug100
-Int OID_AddDebtDebugTog
-Int OID_AddFollowerDebug
-Int OID_AddFullSet
-Int OID_AddWhoreArmor
-Int OID_AddGag
-Int OID_AddGloves
-Int OID_AddHeavyBondage
-Int OID_AddHobbleDress
-Int OID_AddLegCuffs
-Int OID_AddMittens
-Int OID_AddNipplePiercing
-Int OID_AddPetSuit
-Int OID_AddPrisonerChains
-Int OID_AddSlaveKit
-Int OID_AddVaginalPiercing
-Int OID_AddVaginalPlug
-Int OID_BoredomIntervalSlider
-Int OID_BoredomText
-Int OID_ContractRemaining
-Int OID_CopyToSettings
-Int OID_CustomCurve
-Int OID_DFAnimalContTog
-Int OID_DFChaoConcealedTog
-Int OID_DFChaoGoTog
-Int OID_DFChaosDaysSlider
-Int OID_DFChaosPercentSlider
-Int OID_DFDealEffectWillTog ; unused
-Int OID_DFDealSCustArmorTog
-Int OID_DFDealSSignTog
-Int OID_DFDealsMaxDebtSlider
-Int OID_DFDealsMaxMultiSlider
-Int OID_DFDealsMaxPTimeSlider
-Int OID_DFDealsMaxPriceSlider
-Int OID_DFDealsMinDebtSlider
-Int OID_DFDealsMinMultiSlider
-Int OID_DFDealsMinPTimeSlider
-Int OID_DFDealsMinPriceSlider
-Int OID_DFDebtMaxPLSlider
-Int OID_DFDebtMinPLSlider
-Int OID_DFDebtperdayMaxSlider
-Int OID_DFDebtperdayMinSlider
-Int OID_DFGCredToLeaveSlider
-Int OID_DFGDecaySlider
-Int OID_DFGKnockDownTog
-Int OID_DFGOtherTog
-Int OID_DFGRedGoldModSlider
-Int OID_DFGStay0Tog
-Int OID_DFKConcealSlider
-Int OID_DFKeyDiffS
-Int OID_DFLivesChaoMaxSlider
-Int OID_DFLivesChaoMinSlider
-Int OID_DFLivesFollowerRapeTog
-Int OID_DFLocNotiTog
-Int OID_DFMDTimerSlider
-Int OID_DFMaxResistDealTog ; unused
-Int OID_DFMaxResistDevicesTog
-Int OID_DFMaxResistMCMSlider
-Int OID_DFMaxResistMinSlider
-Int OID_DFMaxStolenPerSlider
-Int OID_DFMinStolenPerSlider
-Int OID_DFPotionQTog
-Int OID_DFPotionQDelayMin
-Int OID_DFPotionQDelayMax
-Int OID_DFPotionQESlider
-Int OID_DFPotionQETog
-Int OID_DFPotionQSlider
-Int OID_DFPunDebtMaxSlider
-Int OID_DFPunDebtMinSlider
-Int OID_DFPunDebtSlider
-Int OID_DFRemovalIncMaxSlider
-Int OID_DFRemovalIncMinSlider
-Int OID_DFRemovalMaxSlider
-Int OID_DFRemovalMinSlider
-Int OID_DFRemovalModeS
-Int OID_DFRemovalMultiMaxSlider
-Int OID_DFRemovalMultiMinSlider
-Int OID_DFSWeightDSlider
-Int OID_DFSWeightEDSlider
-Int OID_DFSWeightESlider
-Int OID_DFShowRollMsgTog
-Int OID_DFSoldDeals
-Int OID_DFSoldTimerMax
-Int OID_DFSoldTimerMin
-Int OID_DFSoldTog
-Int OID_debtReduction
-Int OID_dealReduction
-Int OID_DFTheifsBoolTog
-Int OID_DFWillBoolTog
-Int OID_DFZAZAutoPause
-Int OID_DFlowGambleJPotSlider
-Int OID_DFlowItemsPerRemovedSlider
-Int OID_DFlowRemovalDebtTimesSlider
-Int OID_DFlowRemovalIncSlider
-Int OID_DFlowWarmCompTog
-Int OID_DailyDebtIncrement
-Int OID_DealBias
-Int OID_DebtDifficulty
-Int OID_DebtPerDayHiLevel
-Int OID_DebtPerDayLoLevel
-Int OID_DebtPerDaySlider
-Int OID_DebtPerFollowerSlider
-Int OID_DebtText
-Int OID_DebugBoredom
-Int OID_DebugDiaTog
-Int OID_DebugResistance
-Int OID_DeepDebtDifficulty
-Int OID_DflowDealBaseDaysSlider
-Int OID_DflowDealBaseDebtSlider
-Int OID_DflowDealBasePriceSlider
-Int OID_DflowDealMultiSlider
-Int OID_DflowEndlessModeTog
-Int OID_DflowGoldModeMaxSlider
-Int OID_DflowGoldModeMinSlider
-Int OID_DflowGoldModeTog
-Int OID_DflowRemovalBasePriceSlider
-Int OID_DiscountLimitSlider
-Int OID_DiscountText
-Int OID_DismissalOption
-Int OID_EFFcount
-Int OID_EnSlavFailerPerLevelSlider
-Int OID_EnableTog
-Int OID_EndScene
-Int OID_EnslavFailSlider
-Int OID_EnslavementSlider
-Int OID_ExpectedDealCountText
-Int OID_ExpectedDealLimitSlider
-Int OID_ExpensiveDeal
-Int OID_ExploreDifficulty
-Int OID_ExploreExponent
-Int OID_ExploreHiPrice
-Int OID_ExploreLoPrice
-Int OID_FatigueRateSlider
-Int OID_FatigueText
-Int OID_FollowerEventCDSlider
-Int OID_FreedomSlider
-Int OID_GetEnslaved
-Int OID_GoldPerFatigueSlider
-Int OID_HardCoreMode
-Int OID_HoursTillBillSlider
-Int OID_IntrestSlider
-Int OID_LDCInitTog
-Int OID_LivesSlider
-Int OID_LoadTog
-Int OID_MaxTatsSlider
-Int OID_MaxWillRegain
-Int OID_MinWillRegain
-Int OID_MinimumContractSlider
-Int OID_Mme
-Int OID_LicenseEnable
-Int OID_ForcedLicenses
-Int OID_LicenseBasePrice
-Int OID_LicenseMarkup
-Int OID_ModDealNumOfDeals
-Int OID_NFFcount
-Int OID_FNISCompatibility
-Int OID_PermitForceStart
-Int OID_RegiveTog
-Int OID_RemoveAnalPlug
-Int OID_RemoveArmCuffs
-Int OID_RemoveBelt
-Int OID_RemoveBlindfold
-Int OID_RemoveBoots
-Int OID_RemoveBra
-Int OID_RemoveCollar
-Int OID_RemoveCorsetHarness
-Int OID_RemoveFollower
-Int OID_RemoveGag
-Int OID_RemoveGloves
-Int OID_RemoveHeavyBondage
-Int OID_RemoveHobbleDress
-Int OID_RemoveHood
-Int OID_RemoveLegCuffs
-Int OID_RemoveMittens
-Int OID_RemoveNipplePiercing
-Int OID_RemoveSuit
-Int OID_RemoveVaginalPiercing
-Int OID_RemoveVaginalPlug
-Int OID_RepairFollower
-Int OID_ResetTog
-Int OID_ResistText
-Int OID_ResistanceDealSlider
-Int OID_ResistanceDeltaSlider ; No longer used
-Int OID_ResistanceFatigueLimit
-Int OID_ResistanceLevelDelta
-Int OID_ResistanceWillSlider 
-Int OID_RestoreControls
-Int OID_SaveTog
-Int OID_Scan2Tog
-Int OID_ScanTog
-Int OID_SendForAuction
-Int OID_SendResumeTog
-Int OID_SexPreferences
-Int OID_DfcSlaverySlider
-Int OID_LolaSlider
-Int OID_SimplePerSlider
-Int OID_SkipToTheEndTog
-Int OID_SkoomaWhore
-Int OID_Spanking
-Int OID_SpankingAnims
-Int OID_SpankingCode
-Int OID_SpankingCooldown
-Int OID_SuspendOutPut
-Int OID_Test
-Int OID_Test2
-Int OID_ToggleFollower
-Int OID_WillRegainMode ; Not used at this time
-Int OID_WillText
-Int OID__DebtPerLevelSlider ; No longer used
-Int OID_EndlessSoldWeight
-Int OID_EndlessSlaveWeight
-Int OID_EndlessLolaWeight
-Int OID_EndlessAuctionWeight
-
-Int OID_helpBoredom_1
-Int OID_helpChaos_1
-Int OID_helpDealConfiguration_1
-Int OID_helpDeals_1
-Int OID_helpDebt_1
-Int OID_helpDevices_1
-Int OID_helpDevices_2
-Int OID_helpDevices_3
-Int OID_helpEnslavement_1
-Int OID_helpEnslavement_2
-Int OID_helpExclusion_1
-Int OID_helpExclusion_2
-Int OID_helpFatigue_1
-Int OID_helpGambling_1
-Int OID_helpGames_1
-Int OID_helpGoldControl_1
-Int OID_helpGoldControl_2
-Int OID_helpIntro_1
-Int OID_helpIntro_2
-Int OID_helpLives_1
-Int OID_helpPause_1
-Int OID_helpResistance_1
-Int OID_helpSleep_1
-Int OID_helpWillpower_1
-Int[] MDC_OIDs
-; FOLDEND - OIDs

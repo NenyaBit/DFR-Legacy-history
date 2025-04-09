@@ -1,0 +1,56 @@
+FormKey: 1C494F:DeviousFollowers.esp
+EditorID: DFR_DeviceController
+VirtualMachineAdapter:
+  Scripts:
+  - Name: _LDC
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: libs
+      Object: 00F624:Devious Devices - Integration.esm
+  - Name: DFR_DeviceController
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: libs
+      Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Flow
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: RemovalBlocked
+      Objects:
+      - Name: ''
+        Object: 3BA0FB:DeviousFollowers.esp
+      - Name: ''
+        Object: 3BA0FC:DeviousFollowers.esp
+      - Name: ''
+        Object: 3BA0FD:DeviousFollowers.esp
+      - Name: ''
+        Object: 3BA0FE:DeviousFollowers.esp
+      - Name: ''
+        Object: 3BA0FF:DeviousFollowers.esp
+      - Name: ''
+        Object: 3BA100:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Lives
+      Object: 02DB9E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: RemovalPrice
+      Object: 03C894:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gold
+      Object: 00000F:Skyrim.esm
+  Versioning:
+  - Break0
+  ExtraBindDataVersion: 0
+  FileName: ''
+Flags:
+- StartGameEnabled
+- 0x10
+- RunOnce
+TextDisplayGlobals:
+- 03C893:DeviousFollowers.esp
+- 03C894:DeviousFollowers.esp
+NextAliasID: 0

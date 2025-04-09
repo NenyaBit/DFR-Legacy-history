@@ -13,18 +13,18 @@ VirtualMachineAdapter:
   - Name: _Dx_QF__DFSlaveryWatcher_0931D0B2
     Properties:
     - MutagenObjectType: ScriptObjectProperty
+      Name: _DFlow
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tick
+      Object: 010617:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
       Name: Alias_PlayerSlave
       Object: 31D0B2:DeviousFollowers.esp
       Alias: 0
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DFlow
-      Object: 000D62:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
       Name: _DflowEnable
       Object: 00C54B:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: tick
-      Object: 010617:DeviousFollowers.esp
   FileName: _Dx_QF__DFSlaveryWatcher_0931D0B2
   Fragments:
   - Stage: 50
@@ -35,18 +35,18 @@ VirtualMachineAdapter:
     Unknown2: 1
     ScriptName: _Dx_QF__DFSlaveryWatcher_0931D0B2
     FragmentName: Fragment_0
-  - Stage: 100
-    Unknown2: 1
-    ScriptName: _Dx_QF__DFSlaveryWatcher_0931D0B2
-    FragmentName: Fragment_7
-  - Stage: 90
-    Unknown2: 1
-    ScriptName: _Dx_QF__DFSlaveryWatcher_0931D0B2
-    FragmentName: Fragment_6
   - Stage: 80
     Unknown2: 1
     ScriptName: _Dx_QF__DFSlaveryWatcher_0931D0B2
     FragmentName: Fragment_4
+  - Stage: 90
+    Unknown2: 1
+    ScriptName: _Dx_QF__DFSlaveryWatcher_0931D0B2
+    FragmentName: Fragment_6
+  - Stage: 100
+    Unknown2: 1
+    ScriptName: _Dx_QF__DFSlaveryWatcher_0931D0B2
+    FragmentName: Fragment_7
   Aliases:
   - Property:
       Name: ''

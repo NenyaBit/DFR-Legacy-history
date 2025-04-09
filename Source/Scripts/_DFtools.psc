@@ -1,4 +1,4 @@
-Scriptname _DFtools extends Quest  Hidden
+Scriptname _DFtools extends Quest Hidden Conditional
 
 ; FOLDSTART - Properties
 _LDC Property LDC Auto
@@ -13,9 +13,12 @@ Quest Property _DFlowHorseScan Auto
 Quest Property _DFlowGuardScan Auto
 Quest Property _DFlowGames Auto
 
+bool property FirstTime Auto Hidden Conditional
+
 ReferenceAlias Property Follower Auto
 ReferenceAlias Property VanillaFollower Auto
-
+ReferenceAlias Property Speaker Auto
+ReferenceAlias[] Property Approachers Auto
 
 Bool Property Suspended Auto
 Bool Property PEnslave Auto
@@ -208,6 +211,9 @@ MiscObject Property Gold001 Auto
 
 Scene Property _DflowGamesDogKitten Auto  ; Dog sex scene 1
 Scene Property _DflowGamesDogKitten2 Auto ; Dog sex scene 2
+Scene Property RapeTimeIntro Auto
+Scene property RapeTimeEnding Auto
+Scene Property RapeTimeTransition Auto
 Bool Property DenDmgStop = False Auto
 
 Idle Property BleedOutStart Auto
@@ -221,7 +227,7 @@ String[] Property SpankAnimationNames Auto
 String[] Property SpankAnimationNamesExt Auto
 String[] Property SpankAnimationNamesExtAlt Auto
 
-
+ObjectReference property ConfiscationContainer auto
 
 ; FOLDEND - Properties
 
@@ -242,6 +248,17 @@ Float[] RapistsZPos
 
 ; FOLDEND - Internal Variables
 
+_DFTools function Get() global
+    return Quest.GetQuest("_DTools") as _DFTools
+endFunction
+
+function PlaceInChest(Form akItem, int aiCount = 1, bool abSilent = false)
+    PlayerRef.RemoveItem(akItem, aiCount, abSilent, ConfiscationContainer)
+endFunction
+
+function RestoreAllItems()
+    ConfiscationContainer.RemoveAllItems(PlayerRef)
+endFunction
 
 Function SexScanStart(Float radius)
     SetSexScanRadius(radius)
@@ -342,7 +359,6 @@ Function WaitForSex(Float maxTime = 180.0)
         Utility.Wait(4.0)
     EndWhile
 EndFunction
-
 
 ; The default guard scene requires three guards, but we could look for fewer, or repeat and find more.
 ; Shares radius global with standard and guard scanners. In practice that probably won't ever be changed much from default.
@@ -478,64 +494,58 @@ Function SceneErrorCatchandPlay(Scene theScene, Int timer)
 
 EndFunction
 
-Form[] Function GetJsonWhoreArmor(string jsonKey)
-    Form[] f = JSONUtil.FormListToArray("../Devious Followers Redux/Config/whore-armor", jsonKey)
+string lastHeavy
+string lastLight
+string lastMage
 
-    if !f || f.Length == 0
-        f = JSONUtil.FormListToArray("../Devious Followers Redux/Config/whore-armor.default", jsonKey)
-    endIf   
-
-    return f
-EndFunction
-
-Armor[] Function GetArmorOfType(string prefix) 
-    Armor[] items = new Armor[2]
-
-    Form[] tops = GetJsonWhoreArmor(prefix + "-tops")
-    Form[] bottoms = GetJsonWhoreArmor(prefix + "-bottoms")
-
-    int topIndex = Utility.RandomInt(0, tops.length - 1)
-    if tops.length > 0
-        items[0] = tops[topIndex] as Armor
-    endIf
-    
-    int bottomIndex = topIndex
-    if bottoms.length > 0
-        if bottomIndex >= bottoms.length
-            bottomIndex = Utility.RandomInt(0, bottoms.length - 1)
-        endIf
-        items[1] = bottoms[bottomIndex] as Armor
-    endIf
-
-    return items
-EndFunction
-
-Function GiveArmorOfType(Actor akActor, string prefix)
-    Armor[] items = GetArmorOfType(prefix)
-
-    Keyword kwd = Keyword.GetKeyword("_DFWArmor")
-
-    if !items[0].HasKeyword(kwd)
-        PO3_SKSEFunctions.AddKeywordToForm(items[0], kwd)
-    endIf
-
-    akActor.AddItem(items[0])
-    akActor.AddItem(items[1])
-EndFunction
+int function CalcWhoreArmourCost(string asOutfit)
+    int cost = 0
+    Armor[] items = Adversity.GetOutfitPieces(lastHeavy)
+    int i = 0
+    while i < items.length
+        cost += items[i].GetGoldValue()
+        i += 1
+    endWhile
+    return cost
+endFunction
 
 Function GiveWhoreArmor(Bool punish)
 
     Actor player = Game.GetPlayer()
 
-    GiveArmorOfType(player, "heavy")
-    GiveArmorOfType(player, "light")
-    GiveArmorOfType(player, "mage")
-    
     If punish
-        (Q as QF__Gift_09000D62).PunDebt()
+        int armourCost = CalcWhoreArmourCost(lastHeavy) + CalcWhoreArmourCost(lastLight) + CalcWhoreArmourCost(lastMage)
+        (Q as QF__Gift_09000D62).AdjustDebt(armourCost * 1.05)
     EndIf
+
+    Adv_OutfitManager manager = Adv_OutfitManager.Get()
+    bool validating = manager.IsValidating()
     
+    if validating
+        manager.RemoveValidOutfit(lastHeavy)
+        manager.RemoveValidOutfit(lastLight)
+        manager.RemoveValidOutfit(lastHeavy)
+    endIf
+
+    lastHeavy = Adversity.GiveRandomOutfit(player, "deviousfollowers", "whore-armor-heavy")
+    lastLight = Adversity.GiveRandomOutfit(player, "deviousfollowers", "whore-armor-light")
+    lastMage = Adversity.GiveRandomOutfit(player, "deviousfollowers", "whore-armor-mage")
+
+    if validating
+        manager.AddValidOutfit(lastHeavy)
+        manager.AddValidOutfit(lastLight)
+        manager.AddValidOutfit(lastMage)
+    endIf    
 EndFunction
+
+Bool Function IsWearingWhoreArmor()
+    string[] outfits = new string[3]
+    outfits[0] = lastHeavy
+    outfits[1] = lastLight
+    outfits[2] = lastMage
+
+    return Adversity.ValidateOutfits(outfits)
+endFunction
 
 
 Function AddPunishmentDebt(Int multiple = 1)
@@ -592,11 +602,11 @@ Function SleepGameCheck()
 
     Int stage = Q.GetStage()
     
-    If stage >= 10 && stage < 100 && _DflowWill.GetValue() <= 5 || Debt.GetValue() >= HEDebt.GetValue() 
+    If stage >= 10 && stage < 100 && (DFR_RelationshipManager.Get().IsSlave() || _DflowWill.GetValue() <= 5 || Debt.GetValue() >= HEDebt.GetValue())
     
         If ETimerp.GetValue() <= GameDaysPassed.GetValue()
             
-            Int chance = Utility.RandomInt(0, 1)
+            Int chance = Utility.RandomInt(0, 4)
             
             If chance != 0
                 
@@ -604,12 +614,7 @@ Function SleepGameCheck()
                 If Libs.PlayerRef.WornHasKeyword(libs.zad_Deviousgag)
                 
                     ; Game begins if you are ONLY wearing a gag ... not sure why to be honest ... safer I guess?
-                    If  !Libs.PlayerRef.WornHasKeyword(libs.zad_DeviousHeavyBondage) \
-                        && !Libs.PlayerRef.WornHasKeyword(libs.zad_DeviousCollar)  \
-                        && !Libs.PlayerRef.WornHasKeyword(libs.zad_DeviousCorset) \
-                        && !Libs.PlayerRef.WornHasKeyword(libs.zad_DeviousBelt) \
-                        && !Libs.PlayerRef.WornHasKeyword(libs.zad_DeviousHarness)
-                    
+                    If !Libs.PlayerRef.WornHasKeyword(libs.zad_DeviousHeavyBondage)
                         G.SetStage(300)
                         MCM.noti("S1") ; Follower succeeded in starting the game
                     Else
@@ -727,13 +732,20 @@ EndFunction
 ; The time allowed is capped at four minutes, unless overridden. Will keep looking for rapists for at least that long.
 ; If sex happens it may eat up all that time with a single event.
 Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
+    Adversity.AccquireLock("deviousfollowers/core/rapetime")
+
+    Actor master = (Q As QF__Gift_09000D62).Alias__DMaster.GetRef() as Actor
+    Speaker.ForceRefTo(master)
+    RapeTimeIntro.Start()
+
+    FirstTime = true
 
     Debug.TraceConditional("DF - Rapetime " + (secondsToTry As Int), True)
     Actor[] rapists = new Actor[12]
     Int partnerCount = 0
     
     If secondsToTry < 0.0 ; This is a way of detecting legacy calls to this function
-        secondsToTry = 240.0
+        secondsToTry = 60.0
         scanRadius *= 2.0
     EndIf
         
@@ -747,9 +759,11 @@ Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
     Int rr = 0
     Int limit = rapists.Length
     Int poolSize = 0
+
+    Adv_SceneUtils.WaitForScene(master)
     
     While now >= realSeconds && now < realSeconds + secondsToTry
-    
+        Game.SetPlayerAIDriven(true)
         Int found = SexScanUpdate(rapists, poolSize)
         Debug.TraceConditional("DF - Rapetime found " + found + " attackers", True)
         poolSize += found
@@ -768,6 +782,9 @@ Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
             Debug.TraceConditional("DF - Rapetime - actor1 " + r1.GetActorBase().GetName(), True)
             Debug.TraceConditional("DF - Rapetime - actor2 " + r2.GetActorBase().GetName(), True)
             Debug.TraceConditional("DF - Rapetime - actor3 " + r3.GetActorBase().GetName(), True)
+
+            StartRapeTimeApproach(SexLabUtil.MakeActorArray(master, r0, r1, r2, r3))
+            
             If SexInternal_4(r0, r1, r2, r3)
                 rr += 4
                 WaitForSex()
@@ -785,6 +802,9 @@ Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
             Debug.TraceConditional("DF - Rapetime - actor0 " + r0.GetActorBase().GetName(), True)
             Debug.TraceConditional("DF - Rapetime - actor1 " + r1.GetActorBase().GetName(), True)
             Debug.TraceConditional("DF - Rapetime - actor2 " + r2.GetActorBase().GetName(), True)
+
+            StartRapeTimeApproach(SexLabUtil.MakeActorArray(master, r0, r1, r2))
+
             If SexInternal_3(r0, r1, r2)
                 rr += 3
                 WaitForSex()
@@ -800,6 +820,9 @@ Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
             Debug.TraceConditional("DF - Rapetime - Sex2 " + rr, True)
             Debug.TraceConditional("DF - Rapetime - actor0 " + r0.GetActorBase().GetName(), True)
             Debug.TraceConditional("DF - Rapetime - actor1 " + r1.GetActorBase().GetName(), True)
+
+            StartRapeTimeApproach(SexLabUtil.MakeActorArray(master, r0, r1))
+
             If SexInternal_2(r0, r1)
                 rr += 2
                 WaitForSex()
@@ -814,6 +837,9 @@ Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
             Debug.TraceConditional("DF - Rapetime - Sex1 " + rr, True)
             Debug.TraceConditional("DF - Rapetime - actor0 " + r0.GetActorBase().GetName(), True)
             rr += 1 ; Always eat solo actor, in case they're the cause sex is failing.
+
+            StartRapeTimeApproach(SexLabUtil.MakeActorArray(master, r0))
+
             If SexInternal_1(r0, True)
                 hadSex = True
             Else
@@ -859,9 +885,25 @@ Int Function Rapetime(Float secondsToTry = -1.0, Float scanRadius = 1024.0)
     ResumeAll()
     SetSexScanRadius()
     Debug.TraceConditional("DF - Rapetime finished due to time", True)
+
+    Speaker.ForceRefTo(master)
+    RapeTimeEnding.Start()
+    Adv_SceneUtils.WaitForScene(master)
+
+    Game.SetPlayerAIDriven(false)
+    Adv_SceneUtils.ClearAliases(Approachers)
+
+    Adversity.ReleaseLock("deviousfollowers/core/rapetime")
+
     Return rr
-    
 EndFunction
+
+function StartRapeTimeApproach(Actor[] akRapists)
+    Adv_SceneUtils.FillAliases(Approachers, akRapists)
+    RapeTimeTransition.Start()
+    Adv_SceneUtils.WaitForScene(akRapists[0])
+    FirstTime = false
+endFunction
 
 Function SetSexScanRadius(Float radius = -1.0)
     If radius < 0.0
@@ -871,8 +913,6 @@ Function SetSexScanRadius(Float radius = -1.0)
     EndIf
 EndFunction
 
-
-
 ; QuickStart(actor a1, actor a2 = none, actor a3 = none, actor a4 = none, actor a5 = none, actor victim = none, string hook = "", string tags = "")
 
 Bool Function SingleRape(Actor b)
@@ -880,7 +920,6 @@ Bool Function SingleRape(Actor b)
     If !VaginalOk(PlayerRef) && !AnalOk(PlayerRef) && !OralOk(PlayerRef) && !BoobsOk(PlayerRef)
         Return False
     EndIf
-    MCM.MDC.DelayChastity()
     
      Bool r = False
      
@@ -907,12 +946,12 @@ Bool Function SingleRape(Actor b)
 EndFunction
 
 Bool Function SingleSex(Actor b)
+
     ; Player is NOT victim
         ; Don't attempt sex in full chastity.
     If !VaginalOk(PlayerRef) && !AnalOk(PlayerRef) && !OralOk(PlayerRef) && !BoobsOk(PlayerRef)
         Return False
     EndIf
-    MCM.MDC.DelayChastity()
     
     PauseAll()
     
@@ -986,7 +1025,7 @@ EndFunction
 
 Bool Function SexAnal(Actor b)
     ; Player is victim
-    MCM.MDC.DelayChastity()
+    
     ; Don't attempt anal sex if closed-belted
     If !AnalOk(PlayerRef)
         Return False
@@ -999,7 +1038,6 @@ EndFunction
 
 Bool Function SexOral(Actor b)	
     ; Player is victim
-    MCM.MDC.DelayGag()
 
     ; Don't attempt oral sex if gagged
     Bool r = False
@@ -1285,13 +1323,11 @@ Bool Function CheckSpanking()
 
     ; First two anims MUST exist, third is optional, but must have a name entry
     If SexLab && SpankAnimationNames && SpankAnimationNames.Length >= 3
-        bool canSpank = SexLab.GetAnimationByName(SpankAnimationNames[0]) && SexLab.GetAnimationByName(SpankAnimationNames[1])
-        Debug.Trace("DF - Check Spank - " +  SpankAnimationNames[0] + " = " + SexLab.GetAnimationByName(SpankAnimationNames[0]) + " - " + SpankAnimationNames[1] + " = " + SexLab.GetAnimationByName(SpankAnimationNames[1]))
-        Return canSpank
+        If SexLab.GetAnimationByName(SpankAnimationNames[0]) && \
+            SexLab.GetAnimationByName(SpankAnimationNames[1])
+                Return True
+        EndIf
     EndIf
-
-    Debug.Trace("DF - Check Spank - Uninitialized")
-
     Return False
         
 EndFunction
@@ -1439,6 +1475,8 @@ Bool Function Spank(Actor spanker, Int severity = -1)
    Int spankRequestCount = _DFSpankDealRequests.GetValue() As Int
    spankRequestCount += 1
    _DFSpankDealRequests.SetValue(spankRequestCount As Float)
+
+   Sexlab.TreatAsMale(spanker)
     
     If severity < 0
         Int mainStage = Q.GetStage()
@@ -1537,146 +1575,148 @@ Bool Function Spank(Actor spanker, Int severity = -1)
     Bool playedOK = False
 
     ; If the rape animation (with spanking) is used, then treat as rape "Victim".
-    Int threadID = PlaySexAnimation(sexActors, isVictim, spankAnim)
-    
-    If threadID >= 0
-    
-        Bool staEnabled = DisableSTASpanking() ; Stop STA applying its own spanks as well
+    SexLab.QuickStart(PlayerRef, Spanker, AnimationTags = "spanking")
 
-        Utility.Wait(10.0) ; Give animation some time to Start
+    ; now handled thru custom anim events in Impact Play - ponzi
+    
+    ; If threadID >= 0
+    
+    ;     Bool staEnabled = DisableSTASpanking() ; Stop STA applying its own spanks as well
+
+    ;     Utility.Wait(10.0) ; Give animation some time to Start
             
-        spankCounter = 0
+    ;     spankCounter = 0
         
         
-        Int spanksLeft = expectedSpanks
-        Float rateAdjust = (severity As Float)
+    ;     Int spanksLeft = expectedSpanks
+    ;     Float rateAdjust = (severity As Float)
     
-        While spanksLeft > 0
+    ;     While spanksLeft > 0
             
-            ; This is generally NOT how people respond to sexLab...
-            ; but we have an active task here, makes sense to integrate SL checks with it
-            sslThreadController controller = SexLab.ThreadSlots.GetController(threadID)
+    ;         ; This is generally NOT how people respond to sexLab...
+    ;         ; but we have an active task here, makes sense to integrate SL checks with it
+    ;         sslThreadController controller = SexLab.ThreadSlots.GetController(threadID)
 
-            ; If some dumb filter changed our animation, we're done here... no spanks.
-            If !controller || controller.Animation != spankAnim
-                Return False
-            EndIf
+    ;         ; If some dumb filter changed our animation, we're done here... no spanks.
+    ;         If !controller || controller.Animation != spankAnim
+    ;             Return False
+    ;         EndIf
             
-            Int spankStage = controller.Stage
+    ;         Int spankStage = controller.Stage
 
-            ; Debug.Notification("Stage " + spankStage + " " + outside)
+    ;         ; Debug.Notification("Stage " + spankStage + " " + outside)
 
-            Float delay = 3.0
+    ;         Float delay = 3.0
             
-            String st = controller.GetState()
-            If st != "Animating" && st != "Advancing"
-                spanksLeft = 0
+    ;         String st = controller.GetState()
+    ;         If st != "Animating" && st != "Advancing"
+    ;             spanksLeft = 0
                 
-            ; Nibbles 0, 1, Rydin 2, 3, Anub 4, 5, 6
-            ElseIf 0 == knownAnimation
-                ; Nibbles chair
-                If 4 == spankStage
-                    spanksLeft = 0
-                Else
-                    spanksLeft -= 1
-                    SpankPlayerAss()
-                    If spankStage == 3
-                        delay = 2.0
-                    Else
-                        delay = 4.0
-                    EndIf
-                EndIf
-            ElseIf 1 == knownAnimation
-                ; Nibbles paddle
-                If 5 == spankStage
-                    If spanksLeft > 2
-                        spanksLeft = 2
-                    EndIf
-                EndIf
-                spanksLeft -= 1
-                SpankPlayerAss()
-                delay = 3.0
-            ElseIf 2 == knownAnimation
-                ; Rydin overlap
-                If 2 == spankStage || 4 == spankStage
-                    spanksLeft -= 1
-                    SpankPlayerAss()
-                    delay = 3.0
-                ElseIf 5 == spankStage
-                    spanksLeft -= 1
-                    SpankPlayerAss()
-                    delay = 2.0
-                EndIf
-            ElseIf 3 == knownAnimation
-                ; Rydin underarm
-                If 2 == spankStage 
-                    spanksLeft -= 1
-                    SpankPlayerAss()
-                    delay = 2.5
-                ElseIf 3 == spankStage
-                    spanksLeft -= 1
-                    SpankPlayerAss()
-                    delay = 2.0
-                EndIf
-            ElseIf 4 == knownAnimation
-                ; Anub spank
-                spanksLeft -= 1
-                SpankPlayerAss()
-                delay = 3.0
-            ElseIf 5 == knownAnimation
-                ; Anub spank fist
-                If 3 == spankStage
-                    SpankPlayerTits()
-                    delay = 3.0
-                Else
-                    spanksLeft -= 1
-                    SpankPlayerAss()
-                    delay = 2.5
-                EndIf
-            ElseIf 6 == knownAnimation
-                ; Anub Rape
-                If 2 == controller.Stage || (controller.Stage >= 5 && controller.Stage <= 7)
-                    spanksLeft -= 1
-                    SpankPlayerAss()
-                    delay = 1.5
-                ElseIf controller.Stage > 3
-                    spanksLeft -= 1
-                    SpankPlayerTits()
-                    delay = 2.5
-                EndIf
+    ;         ; Nibbles 0, 1, Rydin 2, 3, Anub 4, 5, 6
+    ;         ElseIf 0 == knownAnimation
+    ;             ; Nibbles chair
+    ;             If 4 == spankStage
+    ;                 spanksLeft = 0
+    ;             Else
+    ;                 spanksLeft -= 1
+    ;                 SpankPlayerAss()
+    ;                 If spankStage == 3
+    ;                     delay = 2.0
+    ;                 Else
+    ;                     delay = 4.0
+    ;                 EndIf
+    ;             EndIf
+    ;         ElseIf 1 == knownAnimation
+    ;             ; Nibbles paddle
+    ;             If 5 == spankStage
+    ;                 If spanksLeft > 2
+    ;                     spanksLeft = 2
+    ;                 EndIf
+    ;             EndIf
+    ;             spanksLeft -= 1
+    ;             SpankPlayerAss()
+    ;             delay = 3.0
+    ;         ElseIf 2 == knownAnimation
+    ;             ; Rydin overlap
+    ;             If 2 == spankStage || 4 == spankStage
+    ;                 spanksLeft -= 1
+    ;                 SpankPlayerAss()
+    ;                 delay = 3.0
+    ;             ElseIf 5 == spankStage
+    ;                 spanksLeft -= 1
+    ;                 SpankPlayerAss()
+    ;                 delay = 2.0
+    ;             EndIf
+    ;         ElseIf 3 == knownAnimation
+    ;             ; Rydin underarm
+    ;             If 2 == spankStage 
+    ;                 spanksLeft -= 1
+    ;                 SpankPlayerAss()
+    ;                 delay = 2.5
+    ;             ElseIf 3 == spankStage
+    ;                 spanksLeft -= 1
+    ;                 SpankPlayerAss()
+    ;                 delay = 2.0
+    ;             EndIf
+    ;         ElseIf 4 == knownAnimation
+    ;             ; Anub spank
+    ;             spanksLeft -= 1
+    ;             SpankPlayerAss()
+    ;             delay = 3.0
+    ;         ElseIf 5 == knownAnimation
+    ;             ; Anub spank fist
+    ;             If 3 == spankStage
+    ;                 SpankPlayerTits()
+    ;                 delay = 3.0
+    ;             Else
+    ;                 spanksLeft -= 1
+    ;                 SpankPlayerAss()
+    ;                 delay = 2.5
+    ;             EndIf
+    ;         ElseIf 6 == knownAnimation
+    ;             ; Anub Rape
+    ;             If 2 == controller.Stage || (controller.Stage >= 5 && controller.Stage <= 7)
+    ;                 spanksLeft -= 1
+    ;                 SpankPlayerAss()
+    ;                 delay = 1.5
+    ;             ElseIf controller.Stage > 3
+    ;                 spanksLeft -= 1
+    ;                 SpankPlayerTits()
+    ;                 delay = 2.5
+    ;             EndIf
 
-            Else
-                ; The player changed the spank animations, we know nothing about them.
-                spanksLeft -= 1
-                If Utility.RandomInt(1, 1000) < 400
-                    SpankPlayerTits()
-                Else
-                    SpankPlayerAss()
-                EndIf
+    ;         Else
+    ;             ; The player changed the spank animations, we know nothing about them.
+    ;             spanksLeft -= 1
+    ;             If Utility.RandomInt(1, 1000) < 400
+    ;                 SpankPlayerTits()
+    ;             Else
+    ;                 SpankPlayerAss()
+    ;             EndIf
                 
-                delay -= rateAdjust
-            EndIf
+    ;             delay -= rateAdjust
+    ;         EndIf
                 
-            Utility.Wait(delay)
+    ;         Utility.Wait(delay)
             
-        EndWhile
+    ;     EndWhile
         
         ;Debug.Notification("Finished with " + spankCounter + " spanks")
         
-        If staEnabled
-            EnableSTASpanking()
-        EndIf
+        ; If staEnabled
+        ;     EnableSTASpanking()
+        ; EndIf
         
-        playedOK = True
+    ;     playedOK = True
         
-    EndIf
+    ; EndIf
 
     ; We need to add tit spanks because otherwise we can't max out pain
     ; Both intensities must max for that to happen.
     Int bonusTitSpanks = Utility.RandomInt(0, 4 + severity * 4)
     
     ; Apply consequences good and bad, whether animation played or not.
-    FixupSpanks(expectedSpanks - spankCounter, bonusTitSpanks)
+    ;FixupSpanks(expectedSpanks - spankCounter, bonusTitSpanks)
     
     ; The special STA functions don't do resist changes, it's all here.
     ReduceResist(15 + severity * 5)
@@ -1693,6 +1733,8 @@ Bool Function Spank(Actor spanker, Int severity = -1)
     ; Exploit freely to do stuff like take out your gag and eat food.
     DeferPunishments()
         
+    Sexlab.ClearForcedGender(spanker)
+
     Return playedOK
 
 EndFunction
@@ -2017,7 +2059,6 @@ Function ReduceResistFloat(Float loss)
         MCM.noti("Will" , now)
         
     EndIf
-    
         
     _Dutil.Info("DF - ReduceResist - final resistance " + resistance)
 
@@ -2279,6 +2320,7 @@ Function UnequipGear()
     Armor b = PlayerRef.GetWornForm(0x00000004) as Armor
     Armor c = PlayerRef.GetWornForm(0x00000008) as Armor
     Armor d = PlayerRef.GetWornForm(0x00000080) as Armor
+    Armor e = PlayerRef.GetWornForm(0x0) as Armor
 
     If a && (a.HasKeyword(ArmorClothing)||a.HasKeyword(ArmorHeavy)||a.HasKeyword(ArmorLight)) && !a.HasKeyword(Warmer) && !a.HasKeyword(SLNS)
         PlayerRef.UnequipItem(a)
@@ -2298,6 +2340,38 @@ Function UnequipGear()
 
 EndFunction
 
+Function ConfiscateClothing(ObjectReference akContainer = none, bool abExcludeFootwear = true)
+    if !akContainer
+        akContainer = ConfiscationContainer
+    endIf
+
+    DFR_Util.Log("ConfiscateClothing - START")
+
+    UnequipGear()
+
+    Keyword[] clothingKwds = new Keyword[2]
+    clothingKwds[0] = Keyword.GetKeyword("VendorItemClothing")
+    clothingKwds[1] = Keyword.GetKeyword("VendorItemArmor")
+
+    Keyword[] excludeKwds = new Keyword[6]
+    excludeKwds[0] = Keyword.GetKeyword("Adv_RuleItemKwd")
+    excludeKwds[1] = Keyword.GetKeyword("SexlabNoStrip")
+    excludeKwds[2] = Keyword.GetKeyword("zad_Lockable")
+    excludeKwds[3] = Keyword.GetKeyword("zad_InventoryDevice")
+
+    if abExcludeFootwear
+        excludeKwds[4] = Keyword.GetKeyword("ClothingFeet")
+        excludeKwds[5] = Keyword.GetKeyword("ArmorBoots")
+    endIf
+
+    Form[] clothing = PyramidUtils.GetItemsByKeyword(PlayerRef, clothingKwds)
+    DFR_Util.Log("ConfiscateClothing - 1 - " + clothing)
+    clothing = PyramidUtils.FilterFormsByKeyword(clothing, excludeKwds, abInvert = true)
+    DFR_Util.Log("ConfiscateClothing - 2 - " + clothing)
+
+    DFR_Util.Log("ConfiscateClothing - END - " + clothing)
+    PyramidUtils.RemoveForms(PlayerRef, clothing, akContainer)
+EndFunction
 
 Function AbandonPlayer(Actor who)
 
@@ -2437,6 +2511,7 @@ Function TryAddDevice(Keyword deviceKeyword)
 
     If !PlayerRef.WornHasKeyword(deviceKeyword)
         LDC.EquipDeviceByKeyword(deviceKeyword)
+        Utility.Wait(2.3)
     EndIf
     Int waits = 6
     While !PlayerRef.WornHasKeyword(deviceKeyword) && waits
@@ -3328,19 +3403,11 @@ Function RestorePunishmentTracking(Actor whoMaster)
 EndFunction
 
 
-Function BlackFade(bool FadeOut = true)
-    Debug.Trace("DF - Fading out")
-    if FadeOut
-        Debug.Trace("DF - Fading out")
-        Game.FadeOutGame(false, true, 60.0, 0.0)
-    else
-        Debug.Trace("DF - Fading in")
-        Game.FadeOutGame(false, true, 0.2, 3.0)
-    endIf
-EndFunction
+
 
 ; A way to call this from tools rather than _DFlow
 Function PunDebt()
+    DFR_RelationshipManager.Get().DecFavour()
 
     (Q As QF__Gift_09000D62).ApplyPunishmentDebt()
     
@@ -3354,9 +3421,6 @@ Function PunDebt()
     DeferPunishments()
     
     Debug.Notification("$DF_PUNDEBT")
-    
-    ; Potentially make PC available for spanking even if cooldown not elapsed.
-    AllowSpanking()
     
 EndFunction
 

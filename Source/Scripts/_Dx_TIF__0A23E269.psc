@@ -15,9 +15,7 @@ EndFunction
 Function Fragment_18(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-_DFlowProps OQ = GetOwningQuest() As _DFlowProps
-OQ.ItemToRemove = 2
-; -- DC.PickRandomDeal()
+(GetOwningQuest() as DFR_DeviceController).PrepDealRemoval(1)
 ;END CODE
 EndFunction
 ;END FRAGMENT

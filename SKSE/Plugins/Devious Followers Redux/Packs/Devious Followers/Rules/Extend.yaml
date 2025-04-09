@@ -1,6 +1,0 @@
-name: Extend Deal
-formId: 0x37D3E5
-modName: DeviousFollowers.esp
-hint: Your follower will extend a random deal.
-info: Extend a random deal. Cannot be disabled.
-preventDisable: true

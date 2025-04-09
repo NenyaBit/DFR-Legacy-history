@@ -6,9 +6,7 @@ Scriptname TIF__0D23914B Extends TopicInfo Hidden
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-_DFlowProps OQ = GetOwningQuest() As _DFlowProps
-OQ.ItemToRemove = 4
-; -- DC.PickRandomDeal()
+(GetOwningQuest() as DFR_DeviceController).PrepDealRemoval(5)
 ;END CODE
 EndFunction
 ;END FRAGMENT

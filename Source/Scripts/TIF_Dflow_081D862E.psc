@@ -8,6 +8,7 @@ Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 tool.LDC.RemoveDeviceByKeyword(libs.Zad_DeviousArmbinder)
 (GetOwningQuest() as _DFlowModDealController).BoundInTownRule = 2
+DFR_DeviceController.Get().AllowRemoval(5, "deviousfollowers/core/heavybondage")
 ;END CODE
 EndFunction
 ;END FRAGMENT

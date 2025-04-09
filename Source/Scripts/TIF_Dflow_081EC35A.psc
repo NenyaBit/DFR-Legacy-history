@@ -7,6 +7,7 @@ Function Fragment_8(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 (GetOwningQuest() as _DFlowModDealController).PetSuitInTownRule = 2
+DFR_DeviceController.Get().AllowRemoval(5, "deviousfollowers/core/heavybondage")
 ;END CODE
 EndFunction
 ;END FRAGMENT

@@ -40,8 +40,8 @@ Conditions:
     MutagenObjectType: GetGlobalValueConditionData
     RunOnType: Reference
     Reference: 000014:Skyrim.esm
-    Global: 391824:DeviousFollowers.esp
-  ComparisonValue: 3824F6:DeviousFollowers.esp
+    Global: 354BE8:DeviousFollowers.esp
+  ComparisonValue: 000814:Adversity Framework.esm
 - MutagenObjectType: ConditionFloat
   CompareOperator: NotEqualTo
   Data:
@@ -49,6 +49,10 @@ Conditions:
     RunOnType: Reference
     Reference: 000014:Skyrim.esm
   ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 00081B:Adversity Framework.esm
 - MutagenObjectType: ConditionFloat
   CompareOperator: NotEqualTo
   Data:
@@ -72,14 +76,14 @@ Conditions:
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 01C868:DeviousFollowers.esp
-    SecondUnusedIntParameter: 262251384
+    SecondUnusedIntParameter: -733245088
     VariableName: ::Delay_var
   ComparisonValue: 000039:Skyrim.esm
 - MutagenObjectType: ConditionFloat
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 010617:DeviousFollowers.esp
-    SecondUnusedIntParameter: 262251376
+    SecondUnusedIntParameter: -733245056
     VariableName: ::Suspend_var
 PackageTemplate: 03C1C4:Skyrim.esm
 DataInputVersion: 18

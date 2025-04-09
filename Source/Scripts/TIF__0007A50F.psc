@@ -6,16 +6,16 @@ Scriptname TIF__0007A50F Extends TopicInfo Hidden
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-_df_follower.DialogDismissFollower(akSpeaker)
+; don't dismiss the follower again if I've already dismissed them
+If !(akspeaker.IsInFaction(DismissedFollowerFaction))
+  (pDialogueFollower as DialogueFollowerScript).DismissFollower(0, 0)
+EndIf
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-; Use _df_follower.DialogDismissFollower(akSpeaker)
-_DflowFollowerController Property _df_follower Auto
+quest Property pDialogueFollower  Auto  
 
-Quest Property pDialogueFollower Auto  
-
-Faction Property DismissedFollowerFaction Auto  
+Faction Property DismissedFollowerFaction  Auto  

@@ -1,3 +1,4 @@
 Scriptname _DflowConditionals extends Quest  Conditional
 
-Float Property DebtPunTimer  Auto  Conditional
+float property DebtPunTimer auto hidden conditional
+int property EnslavementMethod auto hidden conditional

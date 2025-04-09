@@ -1,0 +1,84 @@
+FormKey: 3B4FD7:DeviousFollowers.esp
+EditorID: DFR_Licenses
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR_Licenses
+    Properties:
+    - MutagenObjectType: ScriptIntListProperty
+      Name: DefaultStatus
+      Data:
+      - 1
+      - 1
+      - 0
+      - 1
+      - 1
+      - 1
+      - 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: MasterAlias
+      Object: 000D62:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Util
+      Object: 000802:Adversity Framework.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Flow
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LicensingLocations
+      Object: 317FB0:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: RelManager
+      Object: 38C70D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: LicenseStatuses
+      Objects:
+      - Name: ''
+        Object: 2FEA60:DeviousFollowers.esp
+      - Name: ''
+        Object: 2FEA61:DeviousFollowers.esp
+      - Name: ''
+        Object: 2FEA5F:DeviousFollowers.esp
+      - Name: ''
+        Object: 2FEA65:DeviousFollowers.esp
+      - Name: ''
+        Object: 2FEA62:DeviousFollowers.esp
+      - Name: ''
+        Object: 2FEA64:DeviousFollowers.esp
+      - Name: ''
+        Object: 2FEA63:DeviousFollowers.esp
+    - MutagenObjectType: ScriptFloatListProperty
+      Name: Markups
+      Data:
+      - 10
+      - 10
+      - 20
+      - 10
+      - 10
+      - 20
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: CityKeywords
+      Objects:
+      - Name: ''
+        Object: 013168:Skyrim.esm
+  FileName: ''
+  Aliases:
+  - Property:
+      Name: ''
+      Object: 3B4FD7:DeviousFollowers.esp
+      Alias: 0
+    Scripts:
+    - Name: DFR_Licenses_Player
+Flags:
+- StartGameEnabled
+- 0x10
+- RunOnce
+NextAliasID: 1
+Aliases:
+- Name: Player
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null

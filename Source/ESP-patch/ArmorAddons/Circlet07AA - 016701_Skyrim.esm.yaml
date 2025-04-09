@@ -1,0 +1,47 @@
+FormKey: 016701:Skyrim.esm
+EditorID: Circlet07AA
+FormVersion: 43
+BodyTemplate:
+  FirstPersonFlags:
+  - Circlet
+  ArmorType: Clothing
+  ActsLike44: True
+Race: 000019:Skyrim.esm
+Priority:
+  Male: 8
+  Female: 8
+WeightSliderEnabled:
+  Male: False
+  Female: False
+DetectionSoundValue: 76
+Unknown2: 23
+WeaponAdjust: 1
+WorldModel:
+  Male:
+    File: Armor\Circlets\CircletM7.nif
+    Data: 0x0200000008000000000000002BFB0B3164647300EB08C80E32EA36CB64647300EB08C80EF63890AC64647300262C333B88BB3F5264647300EB08C80E641B49D164647300EB08C80EC2BBDD1C64647300EB08C80E2E2BDCC264647300262C333BAE9B37B164647300EB08C80E
+  Female:
+    File: Armor\Circlets\CircletF7.nif
+    Data: 0x0200000008000000000000002BFB0B3164647300EB08C80E32EA36CB64647300EB08C80EF63890AC64647300262C333B88BB3F5264647300EB08C80E641B49D164647300EB08C80EC2BBDD1C64647300EB08C80E2E2BDCC264647300262C333BAE9B37B164647300EB08C80E
+AdditionalRaces:
+- 000D53:Skyrim.esm
+- 0131F0:Skyrim.esm
+- 013741:Skyrim.esm
+- 013744:Skyrim.esm
+- 013746:Skyrim.esm
+- 013747:Skyrim.esm
+- 013748:Skyrim.esm
+- 067CD8:Skyrim.esm
+- 088794:Skyrim.esm
+- 08883C:Skyrim.esm
+- 088844:Skyrim.esm
+- 088846:Skyrim.esm
+- 097A3D:Skyrim.esm
+- 0A82B9:Skyrim.esm
+- 0A82BA:Skyrim.esm
+- 0B7998:Skyrim.esm
+- 10760A:Skyrim.esm
+- 00E88A:Dawnguard.esm
+- 0117F4:Dawnguard.esm
+- 035538:Dragonborn.esm
+- 03CA97:Dragonborn.esm

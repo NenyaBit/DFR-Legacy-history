@@ -14,6 +14,7 @@ Keywords:
 - 0FF9FB:Skyrim.esm
 - 027F29:Devious Devices - Assets.esm
 - 213D46:DeviousFollowers.esp
+- 000822:Adversity Framework.esm
 Description:
   TargetLanguage: English
   Value: Item reference reserved for scripts interaction. This should not appear in your inventory. Check your Devious Devices mod configuration.

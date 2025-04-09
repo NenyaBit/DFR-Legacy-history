@@ -6,10 +6,7 @@ Scriptname TIF_Dflow_0B022450 Extends TopicInfo Hidden
 Function Fragment_10(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-;libs.ManipulateGenericDeviceByKeyword(libs.Playerref, libs.zad_DeviousCorset,False)
-(GetOwningQuest() as QF__DflowDealController_0A01C86D).LDC.RemoveAndDestroyDeviceByKeyword(libs.zad_DeviousCorset)
-
-(DealQ As _DDeal).BuyOut(_DFlowDealBP)
+(GetOwningQuest() as QF__DflowDealController_0A01C86D).BuyOut(0)
 ;END CODE
 EndFunction
 ;END FRAGMENT

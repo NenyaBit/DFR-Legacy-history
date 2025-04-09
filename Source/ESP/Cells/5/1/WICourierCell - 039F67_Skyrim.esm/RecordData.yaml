@@ -33,7 +33,6 @@ Lighting:
 WaterHeight: 0
 Location: 10D4BA:Skyrim.esm
 ImageSpace: 0A2687:Skyrim.esm
-PersistentUnknownGroupData: 1
 Persistent:
 - MutagenObjectType: PlacedObject
   FormKey: 2B7B95:DeviousFollowers.esp
@@ -45,6 +44,15 @@ Persistent:
   EncounterZone: 0F90B1:Skyrim.esm
   Placement:
     Position: 876.9503, 627.5665, 0.00012207031
+- MutagenObjectType: PlacedObject
+  FormKey: 2C1DA9:DeviousFollowers.esp
+  MajorRecordFlagsRaw: 1024
+  EditorID: _DFMilkBarrel
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 2B7B94:DeviousFollowers.esp
+  Placement:
+    Position: 877.013, 699.75134, 0.00012207031
 - MutagenObjectType: PlacedObject
   FormKey: 06F8EF:Skyrim.esm
   MajorRecordFlagsRaw: 1024
@@ -61,15 +69,6 @@ Persistent:
   LocationReference: 10D4BA:Skyrim.esm
   Placement:
     Position: 1527.5876, -1189.8743, 35.789795
-- MutagenObjectType: PlacedObject
-  FormKey: 2C1DA9:DeviousFollowers.esp
-  MajorRecordFlagsRaw: 1024
-  EditorID: _DFMilkBarrel
-  SkyrimMajorRecordFlags:
-  - 0x400
-  Base: 2B7B94:DeviousFollowers.esp
-  Placement:
-    Position: 877.013, 699.75134, 0.00012207031
 Temporary:
 - MutagenObjectType: PlacedObject
   FormKey: 039FA5:Skyrim.esm

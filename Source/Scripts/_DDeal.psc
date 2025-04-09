@@ -43,26 +43,34 @@ Bool Property Triggered = False Auto
 Float Property Delay Auto Conditional
 Int Property Stat Auto Conditional
 Int Property Said1 = 0 Auto Conditional
-Int Property SelectedStage = -1 Auto Hidden Conditional
 
-Int Property MaxStages Auto Hidden
-Bool[] Property FinalStagesEnabled Auto Hidden
-String[] Property FinalStages Auto Hidden
-Int[] Property FinalStageIndexes Auto Hidden
 
-Float Property TimerCache Auto Hidden
-Int Property StageCache Auto Hidden
+Function Buyout(GlobalVariable price)
 
-; Callbacks
-Function BuyOutCallback()
-    {clean up your deal - unequip devices, remove items, etc.}
+    DC = Quest.GetQuest("_DflowDealController") As QF__DflowDealController_0A01C86D
+
+    Debug.TraceConditional("DF - _DDeal - Buyout", True)
+    Int removeGold = price.GetValue() As Int
+    PlayerRef.RemoveItem(Gold001, removeGold)
+    Debug.TraceConditional("DF - _DDeal - remove " + removeGold + " debt", True)
+    
+    Int s = GetStage()
+    If s > 3
+        s = 3
+    EndIf
+    
+    if s >= 3
+      DC.DealMaxAdd(-1)
+    Endif
+
+    DC.DealAdd(-s)
+    
+    Reset()
+    
+    DC.PickRandomDeal()
+
 EndFunction
 
-Function CleanUp()
-    Debug.Trace("DF - Cleaning up - " + GetName())
-EndFunction
-
-; Utilities
 Function Stage0()
     Debug.TraceConditional("DF - _DDeal:Stage0", True)
 EndFunction
@@ -135,6 +143,14 @@ Function DelayDay()
     Delay = GameDaysPassed.GetValue() + 1.0
 Endfunction
 
+Function DelayDays(int numDays)
+    Delay = GameDaysPassed.GetValue() + numDays
+Endfunction
+
+Function DelayDaysRange(int minDays, int maxDays)
+    Delay = GameDaysPassed.GetValue() + Utility.RandomInt(minDays, maxDays)
+Endfunction
+
 Function DelayHr()
     ; If Delay expires within next 43 minutes, set delay to be in another 100 minutes
     Float now = GameDaysPassed.GetValue()
@@ -167,18 +183,13 @@ Function Roll(Int maxRoll)
 
     Utility.Wait(5.0)
     int rolled = Utility.RandomInt(1, maxRoll)
-
-    Debug.Trace("DF - Ownership - Rolled = " + rolled)
-
     Tool.WaitForSex()
     If Tool.MCM._DFShowRollMsg
         _DFlowRollDealO2.Show(maxRoll, rolled)
     EndIf
     If rolled == 6 
-        Debug.Trace("DF - Ownership - Roll Succeded")
         RollSuccess()
     Else
-        Debug.Trace("DF - Ownership - Roll Failed")
         RollFail()
     EndIf
 
@@ -318,32 +329,4 @@ Function RollFail()
         DC.AddRndDay()
     EndIf
     
-EndFunction
-
-; Internal
-Function Buyout(GlobalVariable price)
-    
-    DC = Quest.GetQuest("_DflowDealController") As QF__DflowDealController_0A01C86D
-
-    Debug.TraceConditional("DF - _DDeal - Buyout", True)
-    Int removeGold = price.GetValue() As Int
-    PlayerRef.RemoveItem(Gold001, removeGold)
-    Debug.TraceConditional("DF - _DDeal - remove " + removeGold + " debt", True)
-    
-    Int s = GetStage()
-    If s > 3
-        s = 3
-    EndIf
-    
-    if s >= 3
-      DC.DealMaxAdd(-1)
-    Endif
-
-    DC.DealAdd(-s)
-    
-    DealManager.RemoveDeal(self)
-    
-    DC.PickRandomDeal()
-
-    BuyOutCallback()
 EndFunction

@@ -50,7 +50,9 @@ Bool Property WasEnabled Auto
 
 Int Property HadGold Auto
 
-
+_DFGoldConQScript function Get() global
+    return Quest.GetQuest("_DflowGoldMode") as _DFGoldConQScript
+endFunction
 
 ; Ends control if it was running, resets state - called by SetStage(0)
 Function ResetIt()

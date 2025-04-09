@@ -8,6 +8,7 @@ Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 (Tool.Q as QF__Gift_09000D62).BuyDebt()
 Tool.LDC.AddDeviceByKeyWord(Tool.LDC.Libs.Zad_DeviousArmCuffs);
+Utility.Wait(8.0)
 Tool.LDC.AddDeviceByKeyWord(Tool.LDC.Libs.Zad_DeviousLegCuffs)
 ;END CODE
 EndFunction

@@ -6,20 +6,7 @@ Scriptname TIF_Dflow_0A00AA4C Extends TopicInfo Hidden
 Function Fragment_10(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-;libs.RemoveDevice(libs.PlayerRef, I , R,libs.zad_DeviousHeavyBondage)
-
-Bool a = q.tool.LDC.RemoveAndDestroyDeviceByKeyWord( libs.zad_DeviousGag )
-if !a
-    a = q.tool.LDC.RemoveAndDestroyDeviceByKeyWord( libs.zad_DeviousHood)
-endif
-if a 
-    q.DeviceRemovalGold()
-else
-    Debug.Notification("$DFNOTREMOVED")
-endif
-
-Lives.setvalue(Lives.getvalue() as int - 1)
-
+(GetOwningQuest() as DFR_DeviceController).Remove(3)
 ;END CODE
 EndFunction
 ;END FRAGMENT

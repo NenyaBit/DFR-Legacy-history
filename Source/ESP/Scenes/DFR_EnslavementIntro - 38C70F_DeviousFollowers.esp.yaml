@@ -1,0 +1,463 @@
+FormKey: 38C70F:DeviousFollowers.esp
+EditorID: DFR_EnslavementIntro
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR_EnslavementIntro_0A38C70F
+  ScriptFragments:
+    FileName: DFR_EnslavementIntro_0A38C70F
+    OnBegin:
+      ExtraBindDataVersion: 1
+      ScriptName: DFR_EnslavementIntro_0A38C70F
+      FragmentName: Fragment_1
+    OnEnd:
+      ExtraBindDataVersion: 1
+      ScriptName: DFR_EnslavementIntro_0A38C70F
+      FragmentName: Fragment_0
+    PhaseFragments:
+    - Flags:
+      - OnCompletion
+      Index: 7
+      Unknown: 16777216
+      ScriptName: DFR_EnslavementIntro_0A38C70F
+      FragmentName: Fragment_7
+    - Flags:
+      - OnCompletion
+      Index: 5
+      Unknown: 16777216
+      ScriptName: DFR_EnslavementIntro_0A38C70F
+      FragmentName: Fragment_4
+    - Flags:
+      - OnCompletion
+      Index: 13
+      Unknown: 16777216
+      ScriptName: DFR_EnslavementIntro_0A38C70F
+      FragmentName: Fragment_5
+Flags:
+- 0x4
+Phases:
+- Name: ''
+  StartConditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetVMQuestVariableConditionData
+      Quest: 000D62:DeviousFollowers.esp
+      SecondUnusedIntParameter: -733244512
+      VariableName: ::EnslavementMethod_var
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  StartConditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetVMQuestVariableConditionData
+      Quest: 000D62:DeviousFollowers.esp
+      SecondUnusedIntParameter: -733244448
+      VariableName: ::EnslavementMethod_var
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  StartConditions:
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetVMQuestVariableConditionData
+      Quest: 000D62:DeviousFollowers.esp
+      SecondUnusedIntParameter: -733244384
+      VariableName: ::EnslavementMethod_var
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetVMQuestVariableConditionData
+      Quest: 000D62:DeviousFollowers.esp
+      SecondUnusedIntParameter: -733244352
+      VariableName: ::EnslavementMethod_var
+    ComparisonValue: 2
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  StartConditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetVMQuestVariableConditionData
+      Quest: 000D62:DeviousFollowers.esp
+      SecondUnusedIntParameter: -733244288
+      VariableName: ::EnslavementMethod_var
+    ComparisonValue: 1
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  StartConditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetVMQuestVariableConditionData
+      Quest: 000D62:DeviousFollowers.esp
+      SecondUnusedIntParameter: -733244224
+      VariableName: ::EnslavementMethod_var
+    ComparisonValue: 1
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  CompletionConditions:
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: IsTalkingConditionData
+      RunOnType: QuestAlias
+      RunOnTypeIndex: 1
+    ComparisonValue: 1
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  StartConditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetVMQuestVariableConditionData
+      Quest: 00C545:DeviousFollowers.esp
+      SecondUnusedIntParameter: -733244000
+      VariableName: ::EnslavedGoldControl_var
+    ComparisonValue: 1
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- ID: 1
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Name: ''
+  ActorID: 1
+  Index: 1
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
+  StartPhase: 0
+  EndPhase: 0
+  Topic: 38C710:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 2
+  StartPhase: 0
+  EndPhase: 0
+  TimerSeconds: 2
+- Name: ''
+  ActorID: 1
+  Index: 3
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
+  StartPhase: 1
+  EndPhase: 1
+  Topic: 38C712:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 4
+  StartPhase: 1
+  EndPhase: 1
+  TimerSeconds: 2
+- Name: ''
+  ActorID: 1
+  Index: 5
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
+  StartPhase: 4
+  EndPhase: 4
+  Topic: 38C714:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 6
+  StartPhase: 4
+  EndPhase: 4
+  TimerSeconds: 3
+- Name: ''
+  ActorID: 1
+  Index: 9
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
+  StartPhase: 5
+  EndPhase: 5
+  Topic: 38C718:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 10
+  StartPhase: 5
+  EndPhase: 5
+  TimerSeconds: 2
+- Name: ''
+  ActorID: 1
+  Index: 11
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
+  StartPhase: 6
+  EndPhase: 6
+  Topic: 38C71A:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 12
+  StartPhase: 6
+  EndPhase: 6
+  TimerSeconds: 2
+- Name: ''
+  ActorID: 1
+  Index: 13
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
+  StartPhase: 7
+  EndPhase: 7
+  Topic: 38C71C:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 14
+  StartPhase: 7
+  EndPhase: 7
+  TimerSeconds: 3
+- Type: Package
+  Name: ''
+  ActorID: 1
+  Index: 17
+  StartPhase: 8
+  EndPhase: 8
+  Packages:
+  - 38C722:DeviousFollowers.esp
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 18
+  StartPhase: 3
+  EndPhase: 3
+  TimerSeconds: 2
+- Name: ''
+  ActorID: 1
+  Index: 19
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
+  StartPhase: 3
+  EndPhase: 3
+  Topic: 38C749:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Name: ''
+  ActorID: 1
+  Index: 20
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
+  StartPhase: 2
+  EndPhase: 2
+  Topic: 38C74B:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 21
+  StartPhase: 2
+  EndPhase: 2
+  TimerSeconds: 3
+- Name: ''
+  ActorID: 1
+  Index: 22
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
+  StartPhase: 12
+  EndPhase: 12
+  Topic: 38C74D:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 23
+  StartPhase: 12
+  EndPhase: 12
+  TimerSeconds: 3
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 24
+  StartPhase: 13
+  EndPhase: 13
+  TimerSeconds: 2
+- Name: ''
+  ActorID: 1
+  Index: 25
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
+  StartPhase: 13
+  EndPhase: 13
+  Topic: 38C74F:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Package
+  Name: ''
+  ActorID: 1
+  Index: 26
+  StartPhase: 0
+  EndPhase: 7
+  Packages:
+  - 38C756:DeviousFollowers.esp
+- Type: Package
+  Name: ''
+  ActorID: 1
+  Index: 27
+  StartPhase: 9
+  EndPhase: 14
+  Packages:
+  - 38C756:DeviousFollowers.esp
+- Name: ''
+  ActorID: 1
+  Index: 28
+  StartPhase: 14
+  EndPhase: 14
+  Topic: 3A5CBD:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 29
+  StartPhase: 14
+  EndPhase: 14
+  TimerSeconds: 2
+- Name: ''
+  ActorID: 1
+  Index: 30
+  StartPhase: 10
+  EndPhase: 10
+  Topic: 3BF218:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 31
+  StartPhase: 10
+  EndPhase: 10
+  TimerSeconds: 3
+- Name: ''
+  ActorID: 1
+  Index: 32
+  StartPhase: 9
+  EndPhase: 9
+  Topic: 3D872D:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 33
+  StartPhase: 9
+  EndPhase: 9
+  TimerSeconds: 3
+- Name: ''
+  ActorID: 1
+  Index: 34
+  StartPhase: 11
+  EndPhase: 11
+  Topic: 3E293C:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 35
+  StartPhase: 11
+  EndPhase: 11
+  TimerSeconds: 3
+Quest: 000D62:DeviousFollowers.esp
+LastActionIndex: 35
+VNAM: 0x03000000030000000300000003000000

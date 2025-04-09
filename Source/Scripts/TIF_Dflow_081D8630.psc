@@ -6,7 +6,7 @@ Scriptname TIF_Dflow_081D8630 Extends TopicInfo Hidden
 Function Fragment_11(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-libs.UnlockDevice(libs.playerRef, (GetOwningQuest() as _DFlowModDealController)._DflowPonyTailDealInventory,(GetOwningQuest() as _DFlowModDealController)._DflowPonyTailDealRend,libs.zad_DeviousPlugAnal)
+libs.RemoveDevice(libs.playerRef, (GetOwningQuest() as _DFlowModDealController)._DflowPonyTailDealInventory,(GetOwningQuest() as _DFlowModDealController)._DflowPonyTailDealRend,libs.zad_DeviousPlugAnal)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -16,7 +16,6 @@ Function Fragment_10(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 tool.LDC.ForceEquipDeviceByKeyword(tool.LDC.libs.zad_DeviousPlugAnal)
-(GetOwningQuest() as _DFlowModDealController).CrawlInTownRule = 3
 ;END CODE
 EndFunction
 ;END FRAGMENT

@@ -6,7 +6,7 @@ Scriptname _Dx_TIF__0A2AD93A Extends TopicInfo Hidden
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-; -- (GetOwningQuest() as QF__DflowDealController_0A01C86D).PickRandomDeal()
+(GetOwningQuest() as QF__DflowDealController_0A01C86D).Prep()
 ;END CODE
 EndFunction
 ;END FRAGMENT

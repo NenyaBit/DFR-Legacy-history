@@ -6,7 +6,7 @@ Scriptname TIF_Dflow_0806E607 Extends TopicInfo Hidden
 Function Fragment_1(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-Q.PunDebt()
+Tool.UnequipGear()
 Tool.ReduceResist(1)
 ;END CODE
 EndFunction
@@ -16,7 +16,7 @@ EndFunction
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-; Nothing to see here
+(GetOwningQuest() as _DDeal).DelayDaysRange(2, 5)
 ;END CODE
 EndFunction
 ;END FRAGMENT

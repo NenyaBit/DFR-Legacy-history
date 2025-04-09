@@ -28,7 +28,7 @@ EndEvent
 
 
 Event OnLocationChange(Location OldLocation, Location newLocation)
-
+    DFR_Util.Log("_DTickPlayerAlias - OnLocationChange - " + OldLocation + " - " + newLocation)
     If newLocation
         GoldCont.Recalc()
 

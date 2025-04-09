@@ -6,21 +6,7 @@ Scriptname _Dx_TIF__0B2CBFFD Extends TopicInfo Hidden
 Function Fragment_1(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-bool ok = q.tool.LDC.RemoveAndDestroyDeviceByKeyWord( libs.zad_DeviousCollar)
-
-If ok
-    q.DeviceRemovalGold()
-    _DFlowLives.setvalue(_DFlowLives.getvalue() as int - 1)
-EndIf
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_0
-Function Fragment_0(ObjectReference akSpeakerRef)
-Actor akSpeaker = akSpeakerRef as Actor
-;BEGIN CODE
-libs.ManipulateGenericDeviceByKeyword(PlayerRef,libs.zad_DeviousCollar,false)
+(GetOwningQuest() as DFR_DeviceController).Remove(4)
 ;END CODE
 EndFunction
 ;END FRAGMENT

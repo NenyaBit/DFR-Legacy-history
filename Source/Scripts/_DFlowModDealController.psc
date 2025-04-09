@@ -1,4 +1,4 @@
-Scriptname _DFlowModDealController extends _DFRulePack Conditional
+Scriptname _DFlowModDealController extends Quest  Conditional
 
 ; FOLDSTART - Properties
 ;Teir 1 & 2 Rules
@@ -41,6 +41,7 @@ Int Property SkoomaRule Auto Conditional ; 19
 Int Property MilkingRule Auto Conditional ; 20
 
 Int Property SexDealRequests Auto Conditional
+Int Property SpankDealRequests Auto Conditional
 Int Property SkoomaDealRequests Auto Conditional
 Int Property LactacidDealRequests Auto Conditional
 Int Property MilkDealRequests Auto Conditional
@@ -54,10 +55,6 @@ Int Property MilkDealDefaults Auto Conditional
 Bool Property IsPaused Auto Conditional
 Bool Property ShowDiagnostics Auto
 
-Float Property DelayGag Auto Hidden Conditional
-Float Property DelayChastity Auto Hidden Conditional
-
-GlobalVariable Property GameDaysPassed Auto
 GlobalVariable Property _DFSpankDealRequests Auto ; Updated by _DFtools
 GlobalVariable Property _DFDailyDealTimer Auto ; Checked by DebtInc in QF__Gift_09000D62, updated in this file.
 GlobalVariable Property _DFModMmePresent Auto
@@ -74,6 +71,7 @@ Scene Property MerchantScene Auto
 Float Property MerchantRuleTimer Auto Conditional
 ; These  regulate the appearance of player dialogs relating to the requests
 Float Property SexDealTimer Auto Conditional
+Float Property SpankDealTimer Auto Conditional
 Float Property SkoomaDealTimer Auto Conditional
 Float Property LactacidDealTimer Auto Conditional
 Float Property MilkDealTimer Auto Conditional
@@ -93,7 +91,7 @@ Int[] Property OIDs Auto ; Putting these here was problematic. This is no longer
 
 Int[] Property DealType Auto
 Int Property DealsBuilt Auto
-Int Property MaxModDealsSetting Auto
+Int Property MaxModDealsSetting Auto ; this actually means max number of deals
 Int Property MaxModDealsAviliable Auto ; This isn't used any longer.
 Bool Property OptimizeRules Auto ; This is now ignored, rules always check for conflicts.
 Bool Property ForceKeyCheck Auto
@@ -603,19 +601,24 @@ Bool Function IsMmePresent()
     Return 0.0 != _DFModMmePresent.GetValue()
 EndFunction
 
-
-Function DelayGag()
-    if PlayerRef.WornHasKeyword(Tool.LDC.libs.zad_Deviousgag)
-        Tool.LDC.RemoveDeviceByKeyword(Tool.LDC.libs.zad_Deviousgag)
+function EquipOrLock(Keyword akKwd)
+    if DFR_RelationshipManager.Get().IsSlave()
+        Tool.LDC.EquipDeviceByKeyword(akKwd)
+    else
+        Tool.LDC.AddDeviceByKeyword(akKwd)
     endIf
-    DelayGag = GameDaysPassed.GetValue() + 0.04
-EndFunction
+endFunction
 
-Function DelayChastity()
-    if PlayerRef.WornHasKeyword(Tool.LDC.libs.zad_DeviousBelt)
-        Tool.LDC.RemoveDeviceByKeyword(Tool.LDC.libs.zad_DeviousBelt)
+function EquipOrLockDevice(Armor akDevice)
+    if DFR_RelationshipManager.Get().IsSlave()
+        Tool.LDC.Libs.LockDevice(PlayerRef, akDevice)
+    else
+        PlayerRef.AddItem(akDevice)
     endIf
-    DelayChastity = GameDaysPassed.GetValue() + 0.04
+endFunction
+
+Function ConfiscateClothing()
+    Tool.ConfiscateClothing()
 EndFunction
 
 ; b = 0 disable, b = 1 remove, b = 2 add
@@ -631,39 +634,43 @@ Function SetRule(Int ruleIndex, Int b)
 
     If ruleIndex == 1      ; Cuffs (Arm + Leg)
         If  1 == b && CuffsRule > 1
-            Tool.LDC.RemoveDeviceByKeyword(Tool.LDC.libs.zad_DeviousArmcuffs)
-            Tool.LDC.RemoveDeviceByKeyword(Tool.LDC.libs.zad_DeviousLegcuffs)
+            Tool.LDC.RemoveAndDestroyDeviceByKeyword(Tool.LDC.libs.zad_DeviousArmcuffs)
+            Tool.LDC.RemoveAndDestroyDeviceByKeyword(Tool.LDC.libs.zad_DeviousLegcuffs)
         ElseIf 2 == b
-            Tool.LDC.AddDeviceByKeyword(Tool.LDC.libs.zad_DeviousArmcuffs)
-            Tool.LDC.AddDeviceByKeyword(Tool.LDC.libs.zad_DeviousLegcuffs)
+            EquipOrLock(Tool.LDC.libs.zad_DeviousArmcuffs)
+            EquipOrLock(Tool.LDC.libs.zad_DeviousLegcuffs)
         EndIf
         CuffsRule = b
     ElseIf ruleIndex == 2  ; Collar
         If 1 == b && CollarRule > 1
-            Tool.LDC.RemoveDeviceByKeyword(Tool.LDC.libs.zad_DeviousCollar)
+            DFR_DeviceController.Get().AllowRemoval(2, "deviousfollowers/core/collar")
+            Tool.LDC.RemoveAndDestroyDeviceByKeyword(Tool.LDC.libs.zad_DeviousCollar)
         ElseIf 2 == b
-            Tool.LDC.AddDeviceByKeyword(Tool.LDC.libs.zad_DeviousCollar)
+            DFR_DeviceController.Get().BlockRemoval(2, "deviousfollowers/core/collar", 1)
+            EquipOrLock(Tool.LDC.libs.zad_DeviousCollar)
         EndIf
         CollarRule = b
     ElseIf ruleIndex == 3  ; Gag
         If 1 == b && GagRule > 1
-            Tool.LDC.RemoveDeviceByKeyword(Tool.LDC.libs.zad_Deviousgag)
+            DFR_DeviceController.Get().AllowRemoval(3, "deviousfollowers/core/gag")
+            Tool.LDC.RemoveAndDestroyDeviceByKeyword(Tool.LDC.libs.zad_Deviousgag)
         ElseIf 2 == b
-            Tool.LDC.AddDeviceByKeyword(Tool.LDC.libs.zad_Deviousgag)
+            DFR_DeviceController.Get().BlockRemoval(3, "deviousfollowers/core/gag", 1)
+            EquipOrLock(Tool.LDC.libs.zad_Deviousgag)
         EndIf
         GagRule = b
     ElseIf ruleIndex == 4  ; Nipple Piercings
         If 1 == b && NPRule > 1
-            Tool.LDC.RemoveDeviceByKeyword(Tool.LDC.libs.zad_deviouspiercingsnipple)
+            Tool.LDC.RemoveAndDestroyDeviceByKeyword(Tool.LDC.libs.zad_deviouspiercingsnipple)
         ElseIf 2 == b
-            Tool.LDC.AddDeviceByKeyword(Tool.LDC.libs.zad_deviouspiercingsnipple)
+            EquipOrLock(Tool.LDC.libs.zad_deviouspiercingsnipple)
         EndIf
         NPRule = b
     ElseIf ruleIndex == 5  ; Vaginal Piercings
         If 1 == b && VPRule > 1
-            Tool.LDC.RemoveDeviceByKeyword(Tool.LDC.libs.zad_deviouspiercingsvaginal)
+            Tool.LDC.RemoveAndDestroyDeviceByKeyword(Tool.LDC.libs.zad_deviouspiercingsvaginal)
         ElseIf 2 == b
-            Tool.LDC.AddDeviceByKeyword(Tool.LDC.libs.zad_deviouspiercingsvaginal)
+            EquipOrLock(Tool.LDC.libs.zad_deviouspiercingsvaginal)
         EndIf
         VPRule = b
     ElseIf ruleIndex == 6  ; Naked
@@ -675,28 +682,33 @@ Function SetRule(Int ruleIndex, Int b)
         WhoreRule = b
     ElseIf ruleIndex == 8  ; Blindfold
         If 1 == b && BlindFoldRule > 1
-            Tool.LDC.RemoveDeviceByKeyword(Tool.LDC.libs.zad_deviousblindfold)
+            DFR_DeviceController.Get().AllowRemoval(0, "deviousfollowers/core/blindfold")
+            Tool.LDC.RemoveAndDestroyDeviceByKeyword(Tool.LDC.libs.zad_deviousblindfold)
         ElseIf 2 == b
-            Tool.LDC.AddDeviceByKeyword(Tool.LDC.libs.zad_deviousblindfold)
+            DFR_DeviceController.Get().BlockRemoval(0, "deviousfollowers/core/blindfold", 1)
+            EquipOrLock(Tool.LDC.libs.zad_deviousblindfold)
         EndIf
         BlindFoldRule = b
     ElseIf ruleIndex == 9  ; Boots
         If 1 == b && BootsRule > 1
-            Tool.LDC.RemoveDeviceByKeyword(Tool.LDC.libs.zad_deviousboots)
+            Tool.LDC.RemoveAndDestroyDeviceByKeyword(Tool.LDC.libs.zad_deviousboots)
         ElseIf 2 == b
-            Tool.LDC.AddDeviceByKeyword(Tool.LDC.libs.zad_deviousboots)
+            EquipOrLock(Tool.LDC.libs.zad_deviousboots)
         EndIf
         BootsRule = b
     ElseIf ruleIndex == 10 ; Gloves
         If 1 == b && GlovesRule > 1
-            Tool.LDC.RemoveDeviceByKeyword(Tool.LDC.libs.zad_deviousgloves)
+            DFR_DeviceController.Get().AllowRemoval(4, "deviousfollowers/core/blindfold")
+            Tool.LDC.RemoveAndDestroyDeviceByKeyword(Tool.LDC.libs.zad_deviousgloves)
         ElseIf 2 == b
-            Tool.LDC.AddDeviceByKeyword(Tool.LDC.libs.zad_deviousgloves)
+            DFR_DeviceController.Get().BlockRemoval(4, "deviousfollowers/core/blindfold", 1)
+            EquipOrLock(Tool.LDC.libs.zad_deviousgloves)
         EndIf
         GlovesRule = b
     ElseIf ruleIndex == 11 ; PetSuit in town
         If 1 == b && PetSuitInTownRule > 1
-            Tool.LDC.RemoveDeviceByKeyword(Tool.LDC.libs.zad_deviousPetSuit)
+            DFR_DeviceController.Get().AllowRemoval(5, "deviousfollowers/core/heavybondage")
+            Tool.LDC.RemoveAndDestroyDeviceByKeyword(Tool.LDC.libs.zad_deviousPetSuit)
         EndIf
         PetSuitInTownRule = b
     ElseIf ruleIndex == 12 ; Crawl in town
@@ -708,12 +720,16 @@ Function SetRule(Int ruleIndex, Int b)
         InnKeeperRule = b
     ElseIf ruleIndex == 14 ; Bound in town
         If 1 == b && BoundInTownRule > 1
-            Tool.LDC.RemoveDeviceByKeyword(Tool.LDC.libs.zad_deviousHeavyBondage)
+            DFR_DeviceController.Get().AllowRemoval(5, "deviousfollowers/core/heavybondage")
+            Tool.LDC.RemoveAndDestroyDeviceByKeyword(Tool.LDC.libs.zad_deviousHeavyBondage)
         EndIf
         BoundInTownRule = b
     ElseIf ruleIndex == 15 ; Merchant
         MerchantRule = b
     ElseIf ruleIndex == 16 ; Jacket
+        if b == 1
+            DFR_DeviceController.Get().AllowRemoval(5, "deviousfollowers/core/heavybondage")
+        endIf
         JacketRule = b
     ElseIf ruleIndex == 17 ; Expensive
         ExpensiveRule = b
@@ -759,7 +775,7 @@ Function SetRule(Int ruleIndex, Int b)
         If 2 == b
             _DFSpankDealRequests.SetValue(0.0)
             SpankDealDefaults = 0
-            Tool.AllowSpanking()
+            SpankDealTimer = Utility.GetCurrentGameTime()
             checkDealTimer = True
         EndIf
         SpankingRule = b
@@ -803,13 +819,11 @@ Function SetRule(Int ruleIndex, Int b)
     If checkDealTimer
         CheckAndClearDealRequests()
     EndIf
-
-    If 2 == b
-        Debug.Notification(OIDTextDesc[ruleIndex])
-    EndIf
-
 EndFunction
 
+function LockCrawlingBoots()
+    Tool.LDC.libs.LockDevice(PlayerRef, (Tool.Q As QF__Gift_09000D62).Boots)
+endFunction
 
 Bool Function IsConflictingRule(Int ruleIndex)
     ; Return true if the rule conflicts with existing rules
@@ -1304,18 +1318,15 @@ Function CheckAndClearDealRequests()
     ElseIf defaultDays > 2
         defaultDays = 2
     EndIf
-    
 
     Bool haveMme = (0.0 != _DFModMmePresent.GetValue())
     Bool haveSkoomaWhore = (0.0 != _DFModSkoomaWhorePresent.GetValue())
-
-    Int spankDealRequests = _DFSpankDealRequests.GetValue() As Int
     
     ; Must provide at least one spanking in the period.
-    If 2 == SpankingRule && spankDealRequests <= 0
+    If 2 == SpankingRule && SpankDealRequests <= 0
         SpankDealDefaults += defaultDays
     EndIf
-    _DFSpankDealRequests.SetValue(0.0)
+    SpankDealRequests = 0
 
     If 2 == SexRule && SexDealRequests <= 0
         SexDealDefaults += defaultDays
@@ -1446,10 +1457,14 @@ Function SexWithPlayer(Actor who, Bool isRape = False)
     EndIf
 EndFunction
 
+Function SpankPlayer(Actor who)
+    Tool.ReduceResistFloat(2.0)
+    SpankDealTimer = Utility.GetCurrentGameTime() + (1.0 / 24.0)
+    SpankDealRequests += 1
+    Tool.Spank(who)
+EndFunction
 
 Function DrinkSkooma()
-    DelayGag()
-
     Tool.ReduceResistFloat(1.0)
     SkoomaDealTimer = Utility.GetCurrentGameTime() + (0.5 / 24.0)
     SkoomaDealRequests += 1
@@ -1476,7 +1491,6 @@ EndFunction
 
 
 Function DrinkLactacid(Int amount = 1)
-    DelayGag()
 
     LactacidDealTimer = Utility.GetCurrentGameTime() + (4.0 / 24.0)
     LactacidDealRequests += 1
@@ -1650,10 +1664,8 @@ Function StartMerchantScene()
     Tool.PC.Disable()
 EndFunction
 
-
-
 Function InnOutcome()
-
+    DFR_Util.Log("Inn Outcome = " + InnkeeperRule)
 	Tool.PauseAll()
 	If InnKeeperRule == 3 ; Oral
 		Tool.SexOral(Actor1.GetActorReference())
@@ -1671,11 +1683,14 @@ Function InnOutcome()
 		EndWhile
 		Tool.Dog.Disable()
 	EndIf
-	InnKeeperRule = 2
+EndFunction
+
+function CleanInnScene()
+    DFR_Util.Log("Cleaning inn scene")
+    InnKeeperRule = 2
 	InnKeeperRuleTimer = Utility.GetCurrentGameTime() + TimerSetting
 	Tool.ResumeAll()
-    
-EndFunction
+endFunction
 
 Function MerchantOutcome()
 

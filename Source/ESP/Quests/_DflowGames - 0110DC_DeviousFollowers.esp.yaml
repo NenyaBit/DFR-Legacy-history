@@ -5,86 +5,86 @@ VirtualMachineAdapter:
   - Name: QF__DflowGames_0A0110DC
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: BinderR
-      Object: 0110F1:Devious Devices - Expansion.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: HarnI
-      Object: 0110E8:Devious Devices - Expansion.esm
+      Name: BinderI
+      Object: 0110F2:Devious Devices - Expansion.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: HGR
       Object: 03B224:Devious Devices - Expansion.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: zad_Lockable
-      Object: 003894:Devious Devices - Assets.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: qq
+      Name: q
       Object: 000D62:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: libs
-      Object: 00F624:Devious Devices - Integration.esm
-    - MutagenObjectType: ScriptFloatProperty
-      Name: CommentTimer
+      Name: HOOFI
+      Object: 026FD1:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: HTR
       Object: 028ACA:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: libs
+      Object: 00F624:Devious Devices - Integration.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HOOFR
+      Object: 026FD0:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HGI
+      Object: 03B223:Devious Devices - Expansion.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: Alias_SceneYOU
       Object: 0110DC:DeviousFollowers.esp
       Alias: 0
     - MutagenObjectType: ScriptObjectProperty
-      Name: CollarR
-      Object: 0110E9:Devious Devices - Expansion.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: BinderI
-      Object: 0110F2:Devious Devices - Expansion.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Alias_Follower
-      Object: 0110DC:DeviousFollowers.esp
-      Alias: 1
-    - MutagenObjectType: ScriptObjectProperty
       Name: HI
       Object: 017C44:Devious Devices - Assets.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: PlayerRef
-      Object: 000014:Skyrim.esm
+      Name: BinderR
+      Object: 0110F1:Devious Devices - Expansion.esm
     - MutagenObjectType: ScriptObjectProperty
-      Name: HOOFI
-      Object: 026FD1:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFGameCommentTimer
-      Object: 2F4838:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: HarnR
-      Object: 016A09:Devious Devices - Expansion.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: CollarI
-      Object: 0110EC:Devious Devices - Expansion.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: HGI
-      Object: 03B223:Devious Devices - Expansion.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: HTI
-      Object: 028AC9:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: HR
-      Object: 01717E:Devious Devices - Assets.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: HOOFR
-      Object: 026FD0:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Alias_Jarl
-      Object: 0110DC:DeviousFollowers.esp
-      Alias: 2
-    - MutagenObjectType: ScriptObjectProperty
-      Name: q
+      Name: qq
       Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptFloatProperty
+      Name: CommentTimer
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HarnI
+      Object: 0110E8:Devious Devices - Expansion.esm
     - MutagenObjectType: ScriptObjectProperty
       Name: Alias_Player
       Object: 0110DC:DeviousFollowers.esp
       Alias: 3
     - MutagenObjectType: ScriptObjectProperty
+      Name: _DFGameCommentTimer
+      Object: 2F4838:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CollarR
+      Object: 0110E9:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HarnR
+      Object: 016A09:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_Jarl
+      Object: 0110DC:DeviousFollowers.esp
+      Alias: 2
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HTI
+      Object: 028AC9:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: zad_Lockable
+      Object: 003894:Devious Devices - Assets.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_Follower
+      Object: 0110DC:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CollarI
+      Object: 0110EC:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
       Name: xlibs2
       Object: 00CA01:Devious Devices - Expansion.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HR
+      Object: 01717E:Devious Devices - Assets.esm
   FileName: QF__DflowGames_0A0110DC
   Fragments:
   - Stage: 300
@@ -107,18 +107,18 @@ VirtualMachineAdapter:
     Unknown2: 1
     ScriptName: QF__DflowGames_0A0110DC
     FragmentName: Fragment_11
-  - Stage: 9999
-    Unknown2: 1
-    ScriptName: QF__DflowGames_0A0110DC
-    FragmentName: Fragment_15
-  - Stage: 201
-    Unknown2: 1
-    ScriptName: QF__DflowGames_0A0110DC
-    FragmentName: Fragment_2
   - Stage: 399
     Unknown2: 1
     ScriptName: QF__DflowGames_0A0110DC
     FragmentName: Fragment_10
+  - Stage: 201
+    Unknown2: 1
+    ScriptName: QF__DflowGames_0A0110DC
+    FragmentName: Fragment_2
+  - Stage: 9999
+    Unknown2: 1
+    ScriptName: QF__DflowGames_0A0110DC
+    FragmentName: Fragment_15
   - Stage: 499
     Unknown2: 1
     ScriptName: QF__DflowGames_0A0110DC

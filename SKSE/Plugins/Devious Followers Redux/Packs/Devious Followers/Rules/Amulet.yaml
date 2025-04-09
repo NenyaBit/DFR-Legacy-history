@@ -1,7 +1,0 @@
-name: Amulet
-formId: 0x3782E4
-hint: You must wear an annoying amulet.
-type: wear
-slots:
-   - 35
-level: 1

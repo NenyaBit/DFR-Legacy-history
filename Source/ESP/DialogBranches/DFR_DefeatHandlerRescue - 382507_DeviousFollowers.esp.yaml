@@ -1,0 +1,7 @@
+FormKey: 382507:DeviousFollowers.esp
+EditorID: DFR_DefeatHandlerRescue
+Quest: 382506:DeviousFollowers.esp
+Category: Player
+Flags:
+- Blocking
+StartingTopic: 382508:DeviousFollowers.esp

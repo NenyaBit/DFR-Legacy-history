@@ -2,22 +2,20 @@
 ;NEXT FRAGMENT INDEX 19
 Scriptname _Dx_TIF__0D24336F Extends TopicInfo Hidden
 
-;BEGIN FRAGMENT Fragment_18
-Function Fragment_18(ObjectReference akSpeakerRef)
-Actor akSpeaker = akSpeakerRef as Actor
-;BEGIN CODE
-_DFlowProps OQ = GetOwningQuest() As _DFlowProps
-OQ.ItemToRemove = 7
-DC.PickRandomDeal()
-;END CODE
-EndFunction
-;END FRAGMENT
-
 ;BEGIN FRAGMENT Fragment_15
 Function Fragment_15(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 ; nothing here
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_18
+Function Fragment_18(ObjectReference akSpeakerRef)
+Actor akSpeaker = akSpeakerRef as Actor
+;BEGIN CODE
+(GetOwningQuest() as DFR_DeviceController).PrepDealRemoval(4)
 ;END CODE
 EndFunction
 ;END FRAGMENT

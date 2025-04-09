@@ -1,6 +1,0 @@
-formId: 0x391815
-hint: You must ask for and consume lactaid daily.
-type: consume
-level: 2
-requirements:
-   - MilkModNEW.esp

@@ -2,14 +2,14 @@
 ;NEXT FRAGMENT INDEX 5
 Scriptname QF__DFlowDealS_090E53C8 Extends Quest Hidden
 
+;BEGIN ALIAS PROPERTY Player
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Player Auto
+;END ALIAS PROPERTY
+
 ;BEGIN ALIAS PROPERTY _DMaster
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias__DMaster Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Client
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Client Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY You
@@ -17,26 +17,10 @@ ReferenceAlias Property Alias_Client Auto
 ReferenceAlias Property Alias_You Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY Player
+;BEGIN ALIAS PROPERTY Client
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Player Auto
+ReferenceAlias Property Alias_Client Auto
 ;END ALIAS PROPERTY
-
-;BEGIN FRAGMENT Fragment_0
-Function Fragment_0()
-;BEGIN AUTOCAST TYPE _DDeal
-Quest __temp = self as Quest
-_DDeal kmyQuest = __temp as _DDeal
-;END AUTOCAST
-;BEGIN CODE
-Float temp = GameDaysPassed.GetValue() + _DflowDealBaseDays.GetValue()
-_DflowDealSPTimer.SetValue(temp)
-kmyQuest.LDC.EquipDeviceByKeyWord(kmyQuest.LDC.libs.zad_deviouspluganal)
-Alias__DMaster.Forcerefto(_DFlow_DMaster.GetReference() )
-Alias_You.Forcerefto(Tool.PC )
-;END CODE
-EndFunction
-;END FRAGMENT
 
 ;BEGIN FRAGMENT Fragment_1
 Function Fragment_1()
@@ -60,17 +44,37 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_3
 Function Fragment_3()
+;BEGIN AUTOCAST TYPE _DDeal
+Quest __temp = self as Quest
+_DDeal kmyQuest = __temp as _DDeal
+;END AUTOCAST
 ;BEGIN CODE
 kmyQuest.Stage0()
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_0
+Function Fragment_0()
+;BEGIN AUTOCAST TYPE _DDeal
+Quest __temp = self as Quest
+_DDeal kmyQuest = __temp as _DDeal
+;END AUTOCAST
+;BEGIN CODE
+Float temp = GameDaysPassed.GetValue() + _DflowDealBaseDays.GetValue()
+_DflowDealSPTimer.SetValue(temp)
+kmyQuest.LDC.EquipDeviceByKeyWord(kmyQuest.LDC.libs.zad_deviouspluganal)
+Alias__DMaster.Forcerefto(_DFlow_DMaster.GetReference() )
+Alias_You.Forcerefto(Tool.PC )
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_2
 Function Fragment_2()
-;BEGIN AUTOCAST TYPE _DF_WhoreDeal
+;BEGIN AUTOCAST TYPE _DDeal
 Quest __temp = self as Quest
-_DF_WhoreDeal kmyQuest = __temp as _DF_WhoreDeal
+_DDeal kmyQuest = __temp as _DDeal
 ;END AUTOCAST
 ;BEGIN CODE
 KmyQuest.DelayHrs(1.0)

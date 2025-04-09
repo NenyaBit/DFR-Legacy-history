@@ -1,9 +1,0 @@
-MutagenObjectType: GlobalShort
-FormKey: 3824F3:DeviousFollowers.esp
-MajorRecordFlagsRaw: 64
-EditorID: _DFStatusEnabled
-SkyrimMajorRecordFlags:
-- 0x40
-MajorFlags:
-- Constant
-Data: 1

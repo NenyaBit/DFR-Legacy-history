@@ -1,0 +1,1 @@
+Scriptname DFR_Rule_Circlet extends DFR_Rule_Builtin

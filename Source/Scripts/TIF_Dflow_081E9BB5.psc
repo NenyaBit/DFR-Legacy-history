@@ -6,7 +6,7 @@ Scriptname TIF_Dflow_081E9BB5 Extends TopicInfo Hidden
 Function Fragment_10(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-(DealQ as _MDDeal).BuyOut(DealPrice)
+(GetOwningQuest() as QF__DflowDealController_0A01C86D).BuyOut(7)
 ;END CODE
 EndFunction
 ;END FRAGMENT

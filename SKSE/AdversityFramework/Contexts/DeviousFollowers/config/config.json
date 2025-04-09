@@ -1,0 +1,10 @@
+{
+    "stringList": {
+        "forced-rules": [],
+        "slavery-rules": [],
+        "exclude-slavery-rules": ["core/collar", "core/petsuit in town"]
+    },
+    "int": {
+        "num-slavery-rules": 3
+    }
+}

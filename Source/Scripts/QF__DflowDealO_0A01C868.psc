@@ -75,6 +75,10 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_18
 Function Fragment_18()
+;BEGIN AUTOCAST TYPE _DDeal
+Quest __temp = self as Quest
+_DDeal kmyQuest = __temp as _DDeal
+;END AUTOCAST
 ;BEGIN CODE
 kmyQuest.Stage0()
 ;END CODE
@@ -83,6 +87,10 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_9
 Function Fragment_9()
+;BEGIN AUTOCAST TYPE _DDeal
+Quest __temp = self as Quest
+_DDeal kmyQuest = __temp as _DDeal
+;END AUTOCAST
 ;BEGIN CODE
 KmyQuest.addcuffs()
 Float temp = GameDaysPassed.GetValue() + _DflowDealBaseDays.GetValue()

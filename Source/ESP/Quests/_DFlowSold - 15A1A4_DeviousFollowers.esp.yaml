@@ -9,10 +9,6 @@ VirtualMachineAdapter:
       Object: 15A1A4:DeviousFollowers.esp
       Alias: 0
     - MutagenObjectType: ScriptObjectProperty
-      Name: Alias_You
-      Object: 15A1A4:DeviousFollowers.esp
-      Alias: 2
-    - MutagenObjectType: ScriptObjectProperty
       Name: Alias_Seller
       Object: 15A1A4:DeviousFollowers.esp
       Alias: 1
@@ -23,48 +19,33 @@ VirtualMachineAdapter:
     - MutagenObjectType: ScriptObjectProperty
       Name: s
       Object: 15A1A4:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_You
+      Object: 15A1A4:DeviousFollowers.esp
+      Alias: 2
   - Name: _DFsold
     Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: q
+      Object: 000D62:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: _DM2
       Object: 06BE67:DeviousFollowers.esp
       Alias: 0
     - MutagenObjectType: ScriptObjectProperty
-      Name: Alias_You
-      Object: 15A1A4:DeviousFollowers.esp
-      Alias: 2
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DM4
-      Object: 0110DC:DeviousFollowers.esp
-      Alias: 1
-    - MutagenObjectType: ScriptObjectProperty
-      Name: SellerMarker
-      Object: 161889:DeviousFollowers.esp
-    - MutagenObjectType: ScriptBoolProperty
-      Name: x
-    - MutagenObjectType: ScriptObjectProperty
       Name: SaleScene
       Object: 15A1A5:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DM3
-      Object: 0E53C8:DeviousFollowers.esp
-      Alias: 1
-    - MutagenObjectType: ScriptFloatProperty
-      Name: timerMin
-      Data: 5
     - MutagenObjectType: ScriptBoolProperty
       Name: Enable
-    - MutagenObjectType: ScriptObjectProperty
-      Name: Alias_Buyer
-      Object: 15A1A4:DeviousFollowers.esp
-      Alias: 0
     - MutagenObjectType: ScriptFloatProperty
-      Name: timer
+      Name: TimerMin
+      Data: 5
     - MutagenObjectType: ScriptBoolProperty
-      Name: active
-    - MutagenObjectType: ScriptFloatProperty
-      Name: timerMax
-      Data: 10
+      Name: X
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DM1
+      Object: 01C868:DeviousFollowers.esp
+      Alias: 0
     - MutagenObjectType: ScriptObjectProperty
       Name: q2
       Object: 1B5B9E:DeviousFollowers.esp
@@ -72,13 +53,32 @@ VirtualMachineAdapter:
       Name: Alias_Seller
       Object: 15A1A4:DeviousFollowers.esp
       Alias: 1
+    - MutagenObjectType: ScriptFloatProperty
+      Name: TimerMax
+      Data: 10
+    - MutagenObjectType: ScriptBoolProperty
+      Name: active
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DM1
-      Object: 01C868:DeviousFollowers.esp
+      Name: Alias_Buyer
+      Object: 15A1A4:DeviousFollowers.esp
       Alias: 0
+    - MutagenObjectType: ScriptFloatProperty
+      Name: timer
     - MutagenObjectType: ScriptObjectProperty
-      Name: q
-      Object: 000D62:DeviousFollowers.esp
+      Name: SellerMarker
+      Object: 161889:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DM3
+      Object: 0E53C8:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DM4
+      Object: 0110DC:DeviousFollowers.esp
+      Alias: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Alias_You
+      Object: 15A1A4:DeviousFollowers.esp
+      Alias: 2
   FileName: QF__DFlowSold_0815A1A4
   Fragments:
   - Stage: 10

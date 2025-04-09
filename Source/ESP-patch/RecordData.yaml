@@ -1,0 +1,21 @@
+SpriggitSource:
+  PackageName: 0.36.14
+  Version: ''
+ModKey: DeviousFollowers - Unofficially Patched.esp
+GameRelease: SkyrimSE
+ModHeader:
+  Flags:
+  - Small
+  FormVersion: 43
+  Stats:
+    Version: 1.7
+  Author: ''
+  MasterReferences:
+  - Master: Skyrim.esm
+    FileSize: 0
+  - Master: Dawnguard.esm
+    FileSize: 0
+  - Master: Dragonborn.esm
+    FileSize: 0
+  - Master: DeviousFollowers.esp
+    FileSize: 0

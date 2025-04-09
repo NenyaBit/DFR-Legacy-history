@@ -5,35 +5,35 @@ VirtualMachineAdapter:
   - Name: _DflowSleepQuestScript
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: Lives
-      Object: 02DB9E:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: tool
-      Object: 01210D:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: MCM
-      Object: 00C545:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: q
-      Object: 000D62:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: LivesMax
-      Object: 02E663:DeviousFollowers.esp
+      Name: _DFFollowerHasMaxLives
+      Object: 23914C:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: _DFlowDebtCreditMsg
       Object: 119B64:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
+      Name: LocTypeInn
+      Object: 01CB87:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Lives
+      Object: 02DB9E:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: LivesMax
+      Object: 02E663:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: q
+      Object: 000D62:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
       Name: GoldCon
       Object: 112478:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: tool
+      Object: 01210D:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
       Name: _DflowEnable
       Object: 00C54B:DeviousFollowers.esp
     - MutagenObjectType: ScriptObjectProperty
-      Name: LocTypeInn
-      Object: 01CB87:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
-      Name: _DFFollowerHasMaxLives
-      Object: 23914C:DeviousFollowers.esp
+      Name: MCM
+      Object: 00C545:DeviousFollowers.esp
   - Name: QF_DFlow_0A01A2A8
   FileName: QF_DFlow_0A01A2A8
   Fragments:

@@ -47,7 +47,7 @@ Function Sale(Actor Buyer)
     Alias_Seller.ForceRefTo(q.Alias__DMaster.GetActorReference())
     
     SaleScene.Start()
-    q.Tool.SceneErrorCatch(SaleScene,60)
+    q.Tool.SceneErrorCatch(SaleScene, 60)
     
     ; Swap followers
     q2.InternalRemoveFollower(q.Alias__DMaster.GetActorReference()) ; This sets the DFlow quest to stage 5
@@ -63,13 +63,17 @@ Function Sale(Actor Buyer)
     endif
     
     FixAliases(Buyer)
-    Q.SetStage(100) ; Basic slavery.
     
     SellerMarker.Moveto(Buyer)
     x = True ; Flag sold is active?
+
     q.Tool.ResumeAll()
     Game.SetPlayerAIDriven(False)
     
+EndFunction
+
+Function ProceedSlavery()
+    q.StartSlaverySetup(2)
 EndFunction
 
 Function ReturnBuyer()
@@ -93,3 +97,4 @@ Endfunction
 function RandomTimer()
     Timer = Utility.GetCurrentGameTime() + Utility.RandomFloat(TimerMin, TimerMax)
 Endfunction
+

@@ -80,8 +80,6 @@ Function SleepStopHandler(Bool abInterrupted, Bool isPaused)
                 If GoldCon.Enabled && MCM.GetStage() < 100
                     GoldCon.ResetAgreedGold()
                 Endif
-                
-                Tool.SleepGameCheck()
             EndIf
             
             Tool.RestoreResist()

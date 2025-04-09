@@ -153,6 +153,8 @@ Event Init()
     RegisterForModEvent("AnimationEnd","Rapecheck")
     RegisterForModEvent("dhlp-Suspend", "Suspend")
     RegisterForModEvent("dhlp-Resume", "Resume")
+    RegisterForModEvent("HookAnimationStart", "OnAnimationStart")
+    RegisterForModEvent("HookAnimationEnd", "OnAnimationEnd")
     
     ; Handle auto-pause for slavery - though this also prevents DFC from setting zbfFactionSlave.
     ; DFC also issues these when putting the player into (or ending) internal slavery, but not Lola.
@@ -169,7 +171,8 @@ Event Init()
     RegisterForModEvent("DF-RemoveFollower", "HandleRemoveFollower")
     RegisterForModEvent("DF-Spank", "HandleSpanks")
     RegisterForModEvent("MME_MilkingDone", "HandleMilkDone")
-    
+    RegisterForModEvent("Bis_BatheEvent", "OnBis_BatheEvent")
+
     modID = FNIS_aa.GetAAModID("dfs", "DeviousFollowers", True)
     mtIdleBase = FNIS_aa.GetGroupBaseValue(modID,FNIS_aa._mtidle(),"DeviousFollowers",True) 
     mtBase = FNIS_aa.GetGroupBaseValue(modID,FNIS_aa._mt(),"DeviousFollowers",True) 
@@ -205,7 +208,8 @@ Event Init()
     
     _DFSlutCount.SetValue(0.0)
 
-    
+    (Quest.GetQuest("DFR_Collar") as DFR_Collar).Maintenance()
+
     _DUtil.Info("_Dtick:Init - almost done")
     
     runDefferredInitTasks = True
@@ -213,6 +217,16 @@ Event Init()
     
     RegisterForSingleUpdate(4.0)
 
+EndEvent
+
+Event OnAnimationStart(int tid, bool HasPlayer)
+    _DUtil.Info("DF - deferring punishments due to sl scene")
+    Tool.DeferPunishments()
+EndEvent
+
+Event OnAnimationEnd(int tid, bool HasPlayer)
+    _DUtil.Info("DF - deferring punishments due to sl scene")
+    Tool.DeferPunishments()
 EndEvent
 
 Event PauseByEvent(Bool pausedState, Form sender)
@@ -478,6 +492,7 @@ Function PauseWorker(Bool pausedState, Form sender)
     If pausedState
         ; Only pause when the list is empty
         If 0 == _DFPauseModsList.GetSize()
+            DFR_Util.Log("Pausing due to PauseWorker")
             Q.Tool.MCM.PauseMod()
         EndIf
         _DFPauseModsList.AddForm(sender)
@@ -492,6 +507,7 @@ EndFunction
 
 
 Function FirePauseEvent(Bool pauseOn)
+    DFR_Util.Log("_DTick - FirePauseEvent")
     Int eventHandle = ModEvent.Create("DF-Pause")
     If eventHandle
         ModEvent.PushBool(eventHandle, pauseOn) ; true if pausing, false if resuming.

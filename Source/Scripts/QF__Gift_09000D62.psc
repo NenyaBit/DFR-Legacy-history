@@ -7,60 +7,10 @@ Scriptname QF__Gift_09000D62 Extends Quest Hidden
 ReferenceAlias Property Alias__DMaster Auto
 ;END ALIAS PROPERTY
 
-;BEGIN FRAGMENT Fragment_34
-Function Fragment_34()
+;BEGIN FRAGMENT Fragment_8
+Function Fragment_8()
 ;BEGIN CODE
-StartNewAgreement(None, 10)
-SetDebt(0)
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_42
-Function Fragment_42()
-;BEGIN CODE
-ResetPunishmentTracking(Alias__DMaster.GetActorRef())
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_32
-Function Fragment_32()
-;BEGIN CODE
-; Enslavement with pre-existing debt
-;
-DTimerReset()
-FitSlaveKit()
-int tG = PlayerRef.GetItemCount(Gold001)
-PlayerRef.RemoveItem(Gold001, tG)
-Enslavemsg1.show()
-SetStage(100)
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_28
-Function Fragment_28()
-;BEGIN CODE
-;WARNING: Unable to load fragment source from function Fragment_28 in script QF__Gift_09000D62
-;Source NOT loaded
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_22
-Function Fragment_22()
-;BEGIN CODE
-Playerref.SendModEvent("DFEnslave")
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_11
-Function Fragment_11()
-;BEGIN CODE
-DTimerReset()
-ResetPunishmentTracking(Alias__DMaster.GetActorRef())
+Debug.MessageBox("Error: Invalid Stage - 100 - please report this")
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -77,40 +27,23 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_14
 Function Fragment_14()
 ;BEGIN CODE
-; Enslavement with defined freedom cost
-;
-SetDebt(FreedomCost.GetValue())
-DTimerReset()
-FitSlaveKit()
-int tG = PlayerRef.GetItemCount(Gold001)
-PlayerRef.RemoveItem(Gold001, tG)
-Enslavemsg1.show()
-SetStage(100)
+Debug.MessageBox("Error: Invalid Stage - 99 - please report this")
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_10
-Function Fragment_10()
+;BEGIN FRAGMENT Fragment_32
+Function Fragment_32()
 ;BEGIN CODE
-; Nothing to see here...
+Debug.MessageBox("Error: Invalid Stage - 98 - please report this")
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_8
-Function Fragment_8()
+;BEGIN FRAGMENT Fragment_41
+Function Fragment_41()
 ;BEGIN CODE
-; nothing (enslavement)
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_13
-Function Fragment_13()
-;BEGIN CODE
-StartNewAgreement(None, 10)
-SetDebt(500)
+DDelay()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -124,15 +57,68 @@ SetDebt(0)
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_41
-Function Fragment_41()
+;BEGIN FRAGMENT Fragment_13
+Function Fragment_13()
 ;BEGIN CODE
-DDelay()
+StartNewAgreement(None, 10)
+SetDebt(500)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_22
+Function Fragment_22()
+;BEGIN CODE
+Playerref.SendModEvent("DFEnslave")
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_34
+Function Fragment_34()
+;BEGIN CODE
+StartNewAgreement(None, 10)
+SetDebt(0)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_10
+Function Fragment_10()
+;BEGIN CODE
+; Nothing to see here...
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_28
+Function Fragment_28()
+;BEGIN CODE
+;WARNING: Unable to load fragment source from function Fragment_28 in script QF__Gift_09000D62
+;Source NOT loaded
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_11
+Function Fragment_11()
+;BEGIN CODE
+DTimerReset()
+ResetPunishmentTracking(Alias__DMaster.GetActorRef())
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
+
+QF__Gift_09000D62 function Get() global
+    return Quest.GetQuest("_DFlow") as QF__Gift_09000D62
+endFunction
+
+function Prep()
+    Tool.MCM.MDC.UpdateTimerStatusCondition()
+    DFR_Licenses.Get().CheckLicenseStatus()
+endFunction
 
 Function UpdateVersion()
     String modName = "DeviousFollowers.esp"
@@ -150,28 +136,13 @@ Function UpdateVersion()
 EndFunction
 
 
-; Adds every single deal in one go on enslavement
+; As far as I can verify, this is only used from within this file, for enslavement.
 Function SetDeals()
-
-    int NumDeals = 0 
-    int MaxedDeals = 0
-    Int Dstage = 0
-
-    string[] rules = DealManager.GetEnslavementRules()
+    DFR_Util.Log("SetDeals - placeholder - this won't work")
     int i = 0
-
-    while i < rules.length
-        int stage = DealManager.ActivateRule(rules[i])
-        if stage == 1
-            NumDeals += 1
-        elseif stage == 3
-            MaxedDeals += 1
-        endIf
+    while i < 15
         i += 1
     endWhile
-
-    Tool.MCM.DC.DealsMax = MaxedDeals
-    Tool.MCM.DC.Deals = NumDeals
 EndFunction
 
 Function ResetDflowMain()
@@ -229,7 +200,12 @@ Function Enslave()
     EndIf
     
     ObjectReference portDestination = slaver
-    PlayerRef.moveTo(portDestination)
+    PlayerRef.moveTo(portDestination, 100, 100, 50)
+
+    ObjectReference center = DFR_CenterMarkerScanner.Get().Scan()
+
+    PlayerRef.moveTo(center)
+    slaver.moveTo(center)
         
     Int choice = SSMessage.Show()
     
@@ -253,45 +229,14 @@ Function Enslave()
         ; Player accepted the devious bargain...
         AddFollower(slaver)
         Alias__DMaster.ForceRefTo(slaver)
-        
-        ; Deals, Enslaved, Enslaved and Deals
-        Float weight = 	Tool.MCM._DFSWeightD + Tool.MCM._DFSWeightE + Tool.MCM._DFSWeightED
-        Float randomF  = Utility.RandomFloat(0, weight)
-        
-        If randomF <= Tool.MCM._DFSWeightED
-        
-            SetDeals()
-            SetupDFSlavery(slaver)
-            Return ; don't choose more outcomes
-            
-        EndIf
-
-        randomF -= Tool.MCM._DFSWeightED
-        
-        If randomF <= Tool.MCM._DFSWeightE
-        
-            SetupDFSlavery(slaver)
-            Return ; don't choose more outcomes
-
-        EndIf
-        
-        ; No enslavement, just deals...
-        SetStage(10)
-        SetDeals()
-        Tool.DealMessages()	
-        
+        StealAllItems()
+        ; LATER: add back deals system (maybe)
+        PriceReset() ; Reset device removal cost
+        SetDebt(FreedomCost.GetValue())
+        PlayerRef.RemoveItem(Gold001, PlayerRef.GetItemCount(Gold001))
+        ResetPunishmentTracking(slaver)
+        StartSlaverySetup(0)
     EndIf
-    
-EndFunction
-
-Function SetupDFSlavery(Actor whoMaster)
-
-    ResetPunishmentTracking(whoMaster)
-
-    PriceReset() ; Reset device removal cost
-    SetStage(98)
-    SetDebt(FreedomCost.GetValue())
-    Game.GetPlayer().SendModEvent("PlayerRefEnslaved")
 EndFunction
 
 ; This is used when player is enslaved without a follower swap due to debt excess.
@@ -300,13 +245,17 @@ Function EnslaveDirect()
     Actor whoMaster = Alias__DMaster.GetActorRef()
     If whoMaster
         ResetPunishmentTracking(whoMaster)
+        _DFBoredom.SetValue(0.0)
+        _DFDailyDebtAdjust.SetValue(0.0)
+        _DFExpectedDealCount.SetValue(0)
+        PriceReset() ; Reset device removal cost
+        SetDebt(FreedomCost.GetValue())
+        PlayerRef.RemoveItem(Gold001, PlayerRef.GetItemCount(Gold001))
+        ResetPunishmentTracking(whoMaster)
+        StartSlaverySetup(1)
+    else
+        Enslave()
     EndIf
-    _DFBoredom.SetValue(0.0)
-    _DFDailyDebtAdjust.SetValue(0.0)
-    _DFExpectedDealCount.SetValue(0)
-    PriceReset() ; Reset device removal cost
-    
-    SetStage(99)
 EndFunction
 
 ; Fit all missing slave items
@@ -443,6 +392,9 @@ EndFunction
 Function SetPostSlaveryDeals()
 
     Debug.TraceConditional("DF - SetPostSlaveryDeals - start", True)
+
+    ((DealController As Quest) As _DFDealUberController).RemoveDealById("Slavery")
+
     Int dealsToRemove = PunishmentDealReduction As Int
     Debug.TraceConditional("DF - SetPostSlaveryDeals - got " + dealsToRemove + " deals", True)
     
@@ -492,7 +444,7 @@ Function UpdateFollowerDismissalTags(Actor whoMaster)
 
     If whoMaster
         Debug.TraceConditional("DF - UpdateFollowerDismissalTags for " + whoMaster.GetActorBase().GetName(), True)
-        
+
         SetPersonality(whoMaster) ; So if we have personality-based dismissal results, there will definitely be one to refer to.
         
         StorageUtil.UnsetIntValue(whoMaster, Tool.TagMaster)
@@ -622,6 +574,10 @@ Function SetPersonality(Actor who)
 
     Debug.TraceConditional("DF - SetPersonality for " + who.GetActorBase().GetName(), True)
     
+    if aggressionRange.Length == 0
+        InitPersonalityValues()
+    endIf
+
     Int personality = StorageUtil.GetIntValue(who, Tool.TagPersonality, -1)
     If personality < 0
         If 1 == Utility.RandomInt(1, 20)
@@ -799,7 +755,7 @@ Function ChargeForSLSLicense(Float basePrice, Float markup)
     
     Float price = basePrice + markupF
     
-    If GetStage() >= 98
+    If DFR_RelationshipManager.Get().IsSlave()
         ; Half-price licenses for poor slaves.
         price *= 0.5
     EndIf
@@ -813,7 +769,6 @@ EndFunction
 Function AdjustDebt(Float debtDelta)
 
     Int surplus = 0
-    Debug.Trace("DF - AdjustDebt - " + debtDelta)
     
     If debtDelta >= 0.0
         AddDebt(debtDelta)
@@ -822,7 +777,7 @@ Function AdjustDebt(Float debtDelta)
         surplus = DebtPayGoldQ(-debtDelta)
     EndIf
     
-    (_GoldControl As _DFGoldConQScript).AddCredit(surplus)
+   (_GoldControl As _DFGoldConQScript).AddCredit(surplus)
 
 EndFunction
 
@@ -839,7 +794,6 @@ Int Function AddDebt(Float amount)
         debtF = amount
     EndIf
 
-    Debug.Trace("DF - AddDebt - " + debtF)
     Debt.SetValue(debtF)
     
     Return debtF As Int
@@ -869,25 +823,17 @@ Function Debt(Float addDebtAmount)
 EndFunction
 
 Function ApplyPunishmentDebt()
-
-    Tool.MCM.CalculateScaledDebts()
-
+    Tool.MCM.CalculateScaledDebts()    
     Float punishmentDebt = _DFPunDebt.GetValue()
-    ; Deliberately allow game to trigger this reduction too...
-    If GetStage() >= 98
-        ; Half punishments for poor slaves.
+    if GetStage() >= 98
         punishmentDebt *= 0.5
-    EndIf
-    
-    ; Always make sure there's some punishment debt, regardless of how _DFPunDebt was calculated.
-    If punishmentDebt < 10.0
-        punishmentDebt = 10.0
-    EndIf
+    endIf
 
-    Debug.Trace("DF - ApplyPunishmentDebt - " + punishmentDebt)
+    if punishmentDebt < 10.0
+        punishmentDebt = 10.0
+    endIf
     
     AdjustDebt(punishmentDebt)
-
 EndFunction
 
  ; Add punishment debt
@@ -909,15 +855,21 @@ EndFunction
 
 
 Function BuyoutOfSlavery()
+    
+    PlayerRef.RemoveFromFaction(SlaveFaction)
 
     SetPostSlaveryDebt()
     SetPostSlaveryDeals()
     ReduceExpectedDeals(10.0)
+
+    DealController.RemoveSlaveDeal()
     
     Actor who = Alias__DMaster.GetActorRef()
-    Reset()
-    Alias__DMaster.ForceRefto(who)
-    
+
+    DFR_RelationshipManager.Get().SetStageRegular(who)
+
+    Tool.RestoreAllItems()
+
     SetStage(10)
     
     SendModEvent("PlayerRefFreed")
@@ -1051,6 +1003,7 @@ EndFunction
 
 ; Noisily pay debt
 Function DebtPay(Float amount)
+    ; TODO: if enslaved, check living expenses and apply excess there before proceeding
 
 	Float currentDebt = Debt.GetValue()
 	Int mainStage = GetStage()
@@ -1087,6 +1040,7 @@ EndFunction
 
 ; Pay off debt with amount, and return any cash left over.
 Int Function DebtPayGoldQ(Float amount)
+    ; TODO: if enslaved, check living expenses and apply excess there before proceeding
     
     ; This had a bug that was eating credit values set into debt as negative numbers.
     
@@ -1118,7 +1072,7 @@ EndFunction
 
 ; Simply set the debt value
 Function SetDebt(Float value)
-
+    DFR_Util.Log("SetDebt = " + value)
     Debt.SetValue(value)
 
 EndFunction
@@ -1259,6 +1213,7 @@ Function DebtInc()
     EndIf
     
 
+    DealController.RecalculateDealCosts()
     Float playerLevel = Game.GetPlayer().GetLevel() As Float
     Float debtPerDayGold = DebtPerDay.GetValue()
     Float D = debtPerDayGold
@@ -1490,6 +1445,7 @@ Function StartNewAgreement(Actor newMaster, Int questStageID)
             If currentDF
                 Debug.TraceConditional("DF - StartNewAgreement - stripping faction from old DF " + currentDF.GetActorBase().GetName(), True)
                 currentDF.RemoveFromFaction(_DMaster) ; This is just to clean up lingering DMaster factions, not a proper follower removal.
+                DFR_RelationshipManager.Get().SaveFavour(currentDF)
                 ; If this follower is being removed, something else should be handling it.
             EndIf
             
@@ -1530,18 +1486,25 @@ Function StartNewAgreement(Actor newMaster, Int questStageID)
         PickEndlessSlaveryDestination()
         
         ; Shouldn't have this stage if it's disabled.
-        If _DFLicenses.GetStage() > 100
-            _DFLicenses.Stop()
-            _DFLicenses.Start()
-        EndIf
-
+        DFR_RelationshipManager.Get().Reset()
     EndIf
 
     SetStage(questStageID)
     ; See also _DflowFollowerController
 
     DealController.PickRandomDeal()
+    
+    DFR_RelationshipManager.Get().SetStageRegular(Alias__DMaster.GetRef() as Actor)
+  
+    int handle = ModEvent.Create("DF_StartNewAgreement")
+    if handle
+        ModEvent.PushForm(handle, newMaster)
+        ModEvent.Send(handle)
+    endIf
 
+    StorageUtil.SetFloatValue(none, "DFR_RelationshipStart", Utility.GetCurrentGameTime())
+
+    Debug.TraceConditional("DF - StartNewAgreement - end", True)
 EndFunction
 
 Function QuickStartNewAgreement()
@@ -1732,19 +1695,6 @@ EndFunction
 Function EnslavedDueToDebt()
 
     Debug.TraceConditional("DF - EnslavedDueToDebt - begin", True)
-    ; _Dtats was unset, so probably wasn't working - repaired for updaters in MCM update.
-    Int maxTattoos = _Dtats.GetValue() As Int
-
-    If maxTattoos > 0
-
-        Int t = Utility.RandomInt(1, maxTattoos)
-        While t > 0
-            t -= 1
-            SendModEvent("RapeTattoos_addTattoo")
-            Utility.Wait(3)
-        EndWhile
-
-    EndIf
 
     ; SSO was unset, so probably wasn't working - repaired for updaters in MCM version update step.
     ; SSO = GetFormFromFile(0x0002F68A, "DeviousFollowers.esp")
@@ -1767,7 +1717,6 @@ Function EnslavedDueToDebt()
         Start()
         DDelay()
         SendModEvent("SSLV Entry") ; Welcome to the auction - we also listen for this, but it's more reliable to be explicit, maybe?
-
     ElseIf 2 == slaveryTarget && Tool.HaveLola()
         ; Submissive Lola
         Debug.TraceConditional("DF - EnslavedDueToDebt - Start SlaveryWatcher", True)
@@ -1775,16 +1724,9 @@ Function EnslavedDueToDebt()
         ; Player is sent to Submissive Lola
         _DFSlaveryWatcher.Start()
         ;_DFSlaveryWatcher.SetStage(10)
-    
-    ElseIf 3 == slaveryTarget
-        ; Sold - Nothing to do, just leave this to play out.
     Else
-        ; 0 == slaveryTarget
-        ; Internal DF slavery
-        SetStage(99) ; This prevents the mod pausing itself in the mod event, so has to happen first
-        ETimerReset()
-        SendModEvent("PlayerRefEnslaved") ; This just sets the "PEnslaved" flag on _Dtick, the enslavement behaviours results from the quest stage.
-
+        ; Internal DF slavery        
+        EnslaveDebt()
     EndIf
     
     Utility.Wait(10.0) ; Allow some time for the slavery to clear immediate events before we resume.
@@ -1794,9 +1736,36 @@ Function EnslavedDueToDebt()
     Tool.PickSlaveryDestination()
     PickEndlessSlaveryDestination()
     Debug.TraceConditional("DF - EnslavedDueToDebt - end", True)
-   
 EndFunction
 
+Function EnslaveDebt()
+    ETimerReset()
+    DFR_RelationshipManager.Get().SaveFavour(Alias__DMaster.GetRef() as Actor)
+    StartSlaverySetup(1)
+EndFunction
+
+Function StartSlaverySetup(int aiMode)
+    ((self as Quest) as _DflowConditionals).EnslavementMethod = aiMode
+    PlayerRef.AddToFaction(SlaveFaction)
+    DFR_RelationshipManager.Get().SetStageSlavery(Alias__DMaster.GetRef() as Actor)
+    SetStage(10)
+    Game.GetPlayer().SendModEvent("PlayerRefEnslaved")
+    Tool.LDC.EquipCollar()
+    DealController.SetupSlaveryDeals()
+    EnslavementIntro.Start()
+EndFunction
+
+Function NextSlaveryRule()
+    DealController.NextSlaveryRule()
+EndFunction
+
+Function FinishSlaverySetup()
+    ; TODO: ensure all enslavement deals are active
+    ; ensure collar is equipped
+    DFR_RelationshipManager.Get().DelayForcedDealTimer()
+    DealController.CheckSlaveryDeals()
+    SetStage(40)
+EndFunction
 
 ; This is only used when forced into gold control due to debt.
 Function EnterGoldControl()
@@ -1883,6 +1852,7 @@ Bool Function IsIgnore(Actor who)
     Return who.GetFactionRank(_DFDisable) >= -1
 EndFunction
 
+Faction property SlaveFaction auto
 
 _DflowFollowerController Property Q2 Auto
 zadlibs Property libs  Auto  
@@ -2037,3 +2007,6 @@ Int[] honorRange
 Int[] lustRange
 Int[] controlRange
 Int[] playfulRange
+
+
+Scene property EnslavementIntro auto

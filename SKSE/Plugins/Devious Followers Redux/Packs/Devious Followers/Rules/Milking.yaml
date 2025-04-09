@@ -1,6 +1,0 @@
-formId: 0x391817
-hint: You must give your follower your milk.
-type: event
-level: 3
-requirements:
-   - MilkModNEW.esp

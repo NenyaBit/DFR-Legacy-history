@@ -1,0 +1,36 @@
+FormKey: 3AADBF:DeviousFollowers.esp
+EditorID: DFR_CenterMarkerScanner
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR_CenterMarkerScanner
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CenterMarkerAlias
+      Object: 3AADBF:DeviousFollowers.esp
+      Alias: 11
+  Versioning:
+  - Break0
+  ExtraBindDataVersion: 0
+  FileName: ''
+Flags:
+- AllowRepeatedStages
+NextAliasID: 12
+Aliases:
+- ID: 6
+  Name: Player
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null
+- ID: 10
+  Type: Location
+  Name: CurrentLocation
+  Flags: []
+  Location:
+    AliasID: 6
+- ID: 11
+  Name: CenterMarker
+  Flags: []
+  Location:
+    AliasID: 10
+    RefType: 01BDF1:Skyrim.esm
+  VoiceTypes: Null

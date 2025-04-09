@@ -6,8 +6,7 @@ Scriptname TIF_DFlow_08075CEA Extends TopicInfo Hidden
 Function Fragment_10(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-Game.GetPlayer().Additem(PTool, 1)
-(DealQ As _DDeal).BuyOut(_DFlowDealPP)
+(GetOwningQuest() as QF__DflowDealController_0A01C86D).BuyOut(8)
 ;END CODE
 EndFunction
 ;END FRAGMENT

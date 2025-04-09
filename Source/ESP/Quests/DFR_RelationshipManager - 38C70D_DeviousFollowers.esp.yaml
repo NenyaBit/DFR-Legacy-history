@@ -1,0 +1,37 @@
+FormKey: 38C70D:DeviousFollowers.esp
+EditorID: DFR_RelationshipManager
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR_RelationshipManager
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: DealController
+      Object: 01C86D:DeviousFollowers.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: GameDaysPassed
+      Object: 000039:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FavourGlobal
+      Object: 3E293B:DeviousFollowers.esp
+  FileName: ''
+  Aliases:
+  - Property:
+      Name: ''
+      Object: 38C70D:DeviousFollowers.esp
+      Alias: 2
+    Scripts:
+    - Name: DFR_RelationshipManager_PlayerAlias
+Flags:
+- StartGameEnabled
+- 0x10
+- RunOnce
+Stages:
+- Index: 10
+- Index: 50
+NextAliasID: 3
+Aliases:
+- ID: 2
+  Name: PlayerAlias
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null

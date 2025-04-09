@@ -6,7 +6,7 @@ Scriptname _Dx_TIF__090AC466 Extends TopicInfo Hidden
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-Q.PriceUpdate()
+(GetOwningQuest() as DFR_DeviceController).PriceUpdate()
 ;END CODE
 EndFunction
 ;END FRAGMENT

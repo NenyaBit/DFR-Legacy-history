@@ -2,31 +2,21 @@
 ;NEXT FRAGMENT INDEX 13
 Scriptname TIF_Dflow_0A00AA48 Extends TopicInfo Hidden
 
-;BEGIN FRAGMENT Fragment_10
-Function Fragment_10(ObjectReference akSpeakerRef)
-Actor akSpeaker = akSpeakerRef as Actor
-;BEGIN CODE
-;libs.RemoveDevice(libs.PlayerRef, I , R,libs.zad_DeviousHeavyBondage)
-
-bool a =q.tool.LDC.RemoveAndDestroyDeviceByKeyWord(libs.zad_DeviousHeavyBondage)
-
-
-if a
-q.DeviceRemovalDebt()
-Lives.setvalue(Lives.getvalue() as int - 1)
-else
-Debug.Notification("$DFNOTREMOVED")
-endif
-;END CODE
-EndFunction
-;END FRAGMENT
-
 ;BEGIN FRAGMENT Fragment_12
 Function Fragment_12(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 ;WARNING: Unable to load fragment source from function Fragment_11 in script TIF_Dflow_0A00AA48
 ;Source NOT loaded
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_10
+Function Fragment_10(ObjectReference akSpeakerRef)
+Actor akSpeaker = akSpeakerRef as Actor
+;BEGIN CODE
+(GetOwningQuest() as DFR_DeviceController).Remove(5)
 ;END CODE
 EndFunction
 ;END FRAGMENT

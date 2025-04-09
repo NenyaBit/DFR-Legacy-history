@@ -9,6 +9,7 @@ Actor akSpeaker = akSpeakerRef as Actor
 tool.LDC.EquipDeviceByKeyword(libs.zad_DeviousStraitJacket)
 (GetOwningQuest() as _DFlowModDealController).JacketRule = 3
 (GetOwningQuest() as _DFlowModDealController).CheckTrigger(16)
+DFR_DeviceController.Get().BlockRemoval(5, "deviousfollowers/core/heavybondage", 1)
 ;END CODE
 EndFunction
 ;END FRAGMENT

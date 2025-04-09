@@ -5,12 +5,12 @@ VirtualMachineAdapter:
   - Name: QF__DFlowItems_080559F0
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: _DflowEDHalf
-      Object: 0110DE:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
       Name: Alias_PawnMerchant
       Object: 0559F0:DeviousFollowers.esp
       Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: _DflowEDHalf
+      Object: 0110DE:DeviousFollowers.esp
   FileName: QF__DFlowItems_080559F0
   Fragments:
   - Unknown2: 1

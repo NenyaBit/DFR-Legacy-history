@@ -9,6 +9,7 @@ Actor akSpeaker = akSpeakerRef as Actor
 tool.LDC.EquipDeviceByKeyword(libs.Zad_DeviousPetSuit)
 (GetOwningQuest() as _DFlowModDealController).PetSuitInTownRule = 3
 (GetOwningQuest() as _DFlowModDealController).CheckTrigger(11)
+DFR_DeviceController.Get().BlockRemoval(5, "deviousfollowers/core/heavybondage", 1)
 ;END CODE
 EndFunction
 ;END FRAGMENT

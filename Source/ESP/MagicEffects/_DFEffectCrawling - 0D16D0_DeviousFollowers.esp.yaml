@@ -1,15 +1,5 @@
 FormKey: 0D16D0:DeviousFollowers.esp
 EditorID: _DFEffectCrawling
-VirtualMachineAdapter:
-  Scripts:
-  - Name: _DFCrawlingEffect
-    Properties:
-    - MutagenObjectType: ScriptObjectProperty
-      Name: tick
-      Object: 010617:DeviousFollowers.esp
-    - MutagenObjectType: ScriptObjectProperty
-      Name: zbc
-      Object: 00F624:Devious Devices - Integration.esm
 Name:
   TargetLanguage: English
   Value: _DFCrawling

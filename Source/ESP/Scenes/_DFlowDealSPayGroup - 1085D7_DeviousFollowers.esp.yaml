@@ -26,10 +26,12 @@ Actions:
 - Name: ''
   ActorID: 1
   Index: 2
+  Flags:
+  - FaceTarget
   StartPhase: 1
   EndPhase: 1
   Topic: 1085DC:DeviousFollowers.esp
-  HeadtrackActorID: -1
+  HeadtrackActorID: 3
   LoopingMax: 10
   LoopingMin: 1
   Emotion: Neutral
@@ -37,10 +39,12 @@ Actions:
 - Name: ''
   ActorID: 3
   Index: 3
+  Flags:
+  - FaceTarget
   StartPhase: 0
   EndPhase: 0
   Topic: 1085E0:DeviousFollowers.esp
-  HeadtrackActorID: -1
+  HeadtrackActorID: 1
   LoopingMax: 10
   LoopingMin: 1
   Emotion: Neutral

@@ -7,7 +7,6 @@ Function Fragment_10(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 libs.ForceEquipDevice(libs.playerRef, (GetOwningQuest() as _DFlowModDealController)._DflowPonyTailDealInventory,(GetOwningQuest() as _DFlowModDealController)._DflowPonyTailDealRend,libs.zad_DeviousPlugAnal)
-(GetOwningQuest() as _DFlowModDealController).CrawlInTownRule = 3
 ;END CODE
 EndFunction
 ;END FRAGMENT

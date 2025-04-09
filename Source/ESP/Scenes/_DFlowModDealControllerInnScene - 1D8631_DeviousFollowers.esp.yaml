@@ -1,5 +1,14 @@
 FormKey: 1D8631:DeviousFollowers.esp
 EditorID: _DFlowModDealControllerInnScene
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR__DFlowModDealControlle_0A1D8631
+  ScriptFragments:
+    FileName: DFR__DFlowModDealControlle_0A1D8631
+    OnEnd:
+      ExtraBindDataVersion: 1
+      ScriptName: DFR__DFlowModDealControlle_0A1D8631
+      FragmentName: Fragment_0
 Flags:
 - 0x4
 Phases:

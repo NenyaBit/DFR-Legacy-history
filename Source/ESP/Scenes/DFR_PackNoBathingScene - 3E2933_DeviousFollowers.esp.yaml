@@ -1,0 +1,36 @@
+FormKey: 3E2933:DeviousFollowers.esp
+EditorID: DFR_PackNoBathingScene
+Flags: []
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- ID: 1
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Name: ''
+  ActorID: 1
+  Index: 1
+  StartPhase: 0
+  EndPhase: 0
+  Topic: 3E2934:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 1
+  Index: 2
+  StartPhase: 0
+  EndPhase: 0
+  TimerSeconds: 2
+Quest: 1BD274:DeviousFollowers.esp
+LastActionIndex: 2
+VNAM: 0x03000000030000000300000003000000

@@ -7,8 +7,34 @@ Scriptname QF__DflowDealP_0806BE67 Extends Quest Hidden
 ReferenceAlias Property Alias__DMaster Auto
 ;END ALIAS PROPERTY
 
+;BEGIN FRAGMENT Fragment_1
+Function Fragment_1()
+;BEGIN AUTOCAST TYPE _DDeal
+Quest __temp = self as Quest
+_DDeal kmyQuest = __temp as _DDeal
+;END AUTOCAST
+;BEGIN CODE
+KmyQuest.addnips()
+Float temp = GameDaysPassed.GetValue() + _DflowDealBaseDays.GetValue()
+_DflowDealPPTimer.SetValue(temp)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_0
+Function Fragment_0()
+;BEGIN CODE
+Reset()
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_3
 Function Fragment_3()
+;BEGIN AUTOCAST TYPE _DDeal
+Quest __temp = self as Quest
+_DDeal kmyQuest = __temp as _DDeal
+;END AUTOCAST
 ;BEGIN CODE
 KmyQuest.DelayHrs(5.0)
 Float Temp = 0.0
@@ -21,6 +47,18 @@ _DflowDealPPTimer.SetValue(temp)
 endif
 
 KmyQuest.Triggered = False
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_4
+Function Fragment_4()
+;BEGIN AUTOCAST TYPE _DDeal
+Quest __temp = self as Quest
+_DDeal kmyQuest = __temp as _DDeal
+;END AUTOCAST
+;BEGIN CODE
+kmyQuest.Stage0()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -41,36 +79,6 @@ Else
 temp =_DflowDealPPTimer.GetValue() + _DflowDealBaseDays.GetValue()
 _DflowDealPPTimer.SetValue(temp)
 endif
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_4
-Function Fragment_4()
-;BEGIN CODE
-kmyQuest.Stage0()
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_1
-Function Fragment_1()
-;BEGIN AUTOCAST TYPE _DDeal
-Quest __temp = self as Quest
-_DDeal kmyQuest = __temp as _DDeal
-;END AUTOCAST
-;BEGIN CODE
-KmyQuest.addnips()
-Float temp = GameDaysPassed.GetValue() + _DflowDealBaseDays.GetValue()
-_DflowDealPPTimer.SetValue(temp)
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_0
-Function Fragment_0()
-;BEGIN CODE
-Reset()
 ;END CODE
 EndFunction
 ;END FRAGMENT

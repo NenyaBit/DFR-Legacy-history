@@ -26,7 +26,6 @@ GlobalVariable Property DealPrice Auto
 ; Used to save days remaining when mod is paused, not normally valid during normal operation.
 Float Property PausedDaysRemaining Auto
 
-Float Property TimerCache Auto Hidden
 
 Function HumNoti()
 	If Triggered
@@ -142,7 +141,6 @@ Function BuyOut(GlobalVariable price)
 
 
     Reset()
-    DealManager.RemoveDeal(self)
 
     DC.PickRandomDeal()
 

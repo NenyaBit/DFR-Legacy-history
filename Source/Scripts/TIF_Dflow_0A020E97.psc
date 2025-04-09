@@ -2,15 +2,6 @@
 ;NEXT FRAGMENT INDEX 3
 Scriptname TIF_Dflow_0A020E97 Extends TopicInfo Hidden
 
-;BEGIN FRAGMENT Fragment_2
-Function Fragment_2(ObjectReference akSpeakerRef)
-Actor akSpeaker = akSpeakerRef as Actor
-;BEGIN CODE
-(GetowningQuest() as _DDeal).DelayDay()
-;END CODE
-EndFunction
-;END FRAGMENT
-
 ;BEGIN FRAGMENT Fragment_1
 Function Fragment_1(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
@@ -18,6 +9,15 @@ Actor akSpeaker = akSpeakerRef as Actor
 Tool.DealDelayhr()
 
 libs.ManipulateGenericDeviceByKeyword(libs.playerref, Libs.Zad_Deviousgag, False)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_2
+Function Fragment_2(ObjectReference akSpeakerRef)
+Actor akSpeaker = akSpeakerRef as Actor
+;BEGIN CODE
+(GetowningQuest() as _DDeal).DelayDay()
 ;END CODE
 EndFunction
 ;END FRAGMENT

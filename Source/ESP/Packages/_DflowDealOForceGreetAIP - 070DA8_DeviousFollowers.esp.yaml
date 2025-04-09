@@ -21,8 +21,17 @@ Conditions:
 - MutagenObjectType: ConditionGlobal
   Data:
     MutagenObjectType: GetGlobalValueConditionData
-    Global: 39182A:DeviousFollowers.esp
-  ComparisonValue: 3824F6:DeviousFollowers.esp
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Global: 354BEA:DeviousFollowers.esp
+  ComparisonValue: 000814:Adversity Framework.esm
+- MutagenObjectType: ConditionGlobal
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Global: 354BE9:DeviousFollowers.esp
+  ComparisonValue: 000814:Adversity Framework.esm
 - MutagenObjectType: ConditionFloat
   CompareOperator: GreaterThanOrEqualTo
   Data:
@@ -31,18 +40,6 @@ Conditions:
     Reference: 000014:Skyrim.esm
     Quest: 000D62:DeviousFollowers.esp
   ComparisonValue: 10
-- MutagenObjectType: ConditionGlobal
-  Flags:
-  - OR
-  Data:
-    MutagenObjectType: GetGlobalValueConditionData
-    Global: 39181F:DeviousFollowers.esp
-  ComparisonValue: 3824F6:DeviousFollowers.esp
-- MutagenObjectType: ConditionGlobal
-  Data:
-    MutagenObjectType: GetGlobalValueConditionData
-    Global: 391819:DeviousFollowers.esp
-  ComparisonValue: 3824F6:DeviousFollowers.esp
 - MutagenObjectType: ConditionFloat
   CompareOperator: LessThan
   Data:
@@ -51,6 +48,10 @@ Conditions:
     Reference: 000014:Skyrim.esm
     Quest: 000D62:DeviousFollowers.esp
   ComparisonValue: 98
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 00081B:Adversity Framework.esm
 - MutagenObjectType: ConditionFloat
   CompareOperator: NotEqualTo
   Data:
@@ -113,14 +114,14 @@ Conditions:
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 06BE67:DeviousFollowers.esp
-    SecondUnusedIntParameter: 262251296
+    SecondUnusedIntParameter: -733245152
     VariableName: ::Delay_var
   ComparisonValue: 000039:Skyrim.esm
 - MutagenObjectType: ConditionFloat
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 010617:DeviousFollowers.esp
-    SecondUnusedIntParameter: 262251288
+    SecondUnusedIntParameter: -733245120
     VariableName: ::Suspend_var
 PackageTemplate: 03C1C4:Skyrim.esm
 DataInputVersion: 18

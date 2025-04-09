@@ -6,12 +6,7 @@ Scriptname TIF_Dflow_0703DE2B Extends TopicInfo Hidden
 Function Fragment_10(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-;libs.RemoveDevice(libs.PlayerRef, I , R,libs.zad_DeviousHeavyBondage)
-(GetOwningQuest() as QF__DflowDealController_0A01C86D).LDC.RemoveAndDestroyDeviceByKeyword( libs.zad_Deviousarmcuffs)
-(GetOwningQuest() as QF__DflowDealController_0A01C86D).LDC.RemoveAndDestroyDeviceByKeyword( libs.zad_Deviouscollar)
-(GetOwningQuest() as QF__DflowDealController_0A01C86D).LDC.RemoveAndDestroyDeviceByKeyword( libs.zad_Deviouslegcuffs)
-(GetOwningQuest() as QF__DflowDealController_0A01C86D).LDC.RemoveAndDestroyDeviceByKeyword( libs.zad_Deviousbelt)
-(DealQ As _DDeal).BuyOut(_DFlowDealOP)
+(GetOwningQuest() as QF__DflowDealController_0A01C86D).BuyOut(6)
 ;END CODE
 EndFunction
 ;END FRAGMENT

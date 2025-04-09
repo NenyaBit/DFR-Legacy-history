@@ -1,10 +1,10 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
-;NEXT FRAGMENT INDEX 1
+;NEXT FRAGMENT INDEX 2
 Scriptname QF__DFlowModDealController_081BD274 Extends Quest Hidden
 
-;BEGIN ALIAS PROPERTY You
+;BEGIN ALIAS PROPERTY Follower
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_You Auto
+ReferenceAlias Property Alias_Follower Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY PlayerRef
@@ -12,9 +12,14 @@ ReferenceAlias Property Alias_You Auto
 ReferenceAlias Property Alias_PlayerRef Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY Follower
+;BEGIN ALIAS PROPERTY You
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Follower Auto
+ReferenceAlias Property Alias_You Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Rules
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Rules Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY Actor

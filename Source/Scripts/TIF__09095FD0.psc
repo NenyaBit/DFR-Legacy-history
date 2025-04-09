@@ -6,6 +6,7 @@ Scriptname TIF__09095FD0 Extends TopicInfo Hidden
 Function Fragment_1(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
+ToolsQuest.UnequipGear()
 ToolsQuest.PiercingActivate(False, 6)
 ;END CODE
 EndFunction
@@ -15,7 +16,7 @@ EndFunction
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-; No code here
+(GetOwningQuest() as _DDeal).DelayDaysRange(2, 5)
 ;END CODE
 EndFunction
 ;END FRAGMENT

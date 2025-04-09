@@ -1,0 +1,37 @@
+FormKey: 3A5CAD:DeviousFollowers.esp
+EditorID: DFR_RapeTimeEnding
+Flags: []
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- ID: 1
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Name: ''
+  ActorID: 1
+  Index: 1
+  StartPhase: 0
+  EndPhase: 0
+  Topic: 3A5CAE:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Package
+  Name: ''
+  ActorID: 1
+  Index: 2
+  StartPhase: 0
+  EndPhase: 0
+  Packages:
+  - 38C756:DeviousFollowers.esp
+Quest: 01210D:DeviousFollowers.esp
+LastActionIndex: 2
+VNAM: 0x03000000030000000300000003000000

@@ -6,9 +6,6 @@ Scriptname TIF_DFlow_0B0094AC Extends TopicInfo Hidden
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-libs.ManipulateGenericDeviceByKeyword(PlayerRef,libs.zad_DeviousGloves,false)
-libs.ManipulateGenericDeviceByKeyword(PlayerRef,libs.zad_DeviousBoots,false)
-libs.ManipulateGenericDeviceByKeyword(PlayerRef,libs.zad_DeviousCollar,false)
 Q.BuyoutOfSlavery()
 ;END CODE
 EndFunction

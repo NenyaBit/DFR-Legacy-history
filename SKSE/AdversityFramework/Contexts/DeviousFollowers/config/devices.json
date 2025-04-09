@@ -1,0 +1,5860 @@
+{
+    "sets": [
+        "steel",
+        "iron",
+        "black leather",
+        "white leather",
+        "red leather",
+        "black ebonite",
+        "white ebonite",
+        "red ebonite",
+        "rope"
+    ],
+    "zad_DeviousCollar": [
+        {
+            "name": "Pony Collar",
+            "formId": "0x0866BA",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Steel Collar (Padded) (Posture)",
+            "formId": "0x017759",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Steel Collar (Padded)",
+            "formId": "0x01775C",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Leather Collar (Harness)",
+            "formId": "0x031C75",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Leather Collar",
+            "formId": "0x032745",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Leather Restrictive Collar",
+            "formId": "0x04DBEF",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Iron Yoke",
+            "formId": "0x04F18C",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Lustrous Collar (Padded)",
+            "formId": "0x001856",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Lustrous Collar (Padded)",
+            "formId": "0x001858",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Lustrous Collar (Padded)",
+            "formId": "0x00185A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Collar",
+            "formId": "0x001DC1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Collar",
+            "formId": "0x001DC3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Collar",
+            "formId": "0x001DC5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Collar (Harness)",
+            "formId": "0x00D4D3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Collar",
+            "formId": "0x00D4DF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Collar (Posture)",
+            "formId": "0x00E538",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Collar (Harness)",
+            "formId": "0x00F008",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Collar (Harness)",
+            "formId": "0x00F010",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Collar",
+            "formId": "0x00F01D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Collar",
+            "formId": "0x00F020",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Collar (Harness)",
+            "formId": "0x0110EA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Collar (Harness)",
+            "formId": "0x0110EC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Collar",
+            "formId": "0x0110FE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Collar",
+            "formId": "0x011100",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Restrictive Collar",
+            "formId": "0x015978",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Restrictive Collar",
+            "formId": "0x01598E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Restrictive Collar",
+            "formId": "0x0159AA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Restrictive Collar",
+            "formId": "0x0159BA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Restrictive Collar",
+            "formId": "0x0159CF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Collar",
+            "formId": "0x01E687",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Collar",
+            "formId": "0x01E688",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Catsuit Collar",
+            "formId": "0x03D2CA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Blue Ebonite Catsuit Collar",
+            "formId": "0x03D94E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Cyan Ebonite Catsuit Collar",
+            "formId": "0x03D950",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Green Ebonite Catsuit Collar",
+            "formId": "0x03D952",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Grey Ebonite Catsuit Collar",
+            "formId": "0x03D954",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Red Ebonite Catsuit Collar",
+            "formId": "0x03D956",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Ebonite Catsuit Collar",
+            "formId": "0x03D958",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Green Ebonite Catsuit Collar",
+            "formId": "0x03D95A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Light Grey Ebonite Catsuit Collar",
+            "formId": "0x03D95C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Orange Ebonite Catsuit Collar",
+            "formId": "0x03D95E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pink Ebonite Catsuit Collar",
+            "formId": "0x03D960",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Purple Ebonite Catsuit Collar",
+            "formId": "0x03D962",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Catsuit Collar",
+            "formId": "0x03D964",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Catsuit Collar",
+            "formId": "0x03D966",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Yellow Ebonite Catsuit Collar",
+            "formId": "0x03D968",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Collar (Padded)",
+            "formId": "0x04000F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Silver Collar (Padded)",
+            "formId": "0x040012",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Transparent Restrictive Collar",
+            "formId": "0x047BFA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Collar",
+            "formId": "0x0486D7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Collar",
+            "formId": "0x0486DA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Collar (Simple)",
+            "formId": "0x04E30A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Collar (Simple)",
+            "formId": "0x04E30C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Collar (Simple)",
+            "formId": "0x04E30E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Collar (Studded)",
+            "formId": "0x04E310",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Collar (Studded)",
+            "formId": "0x04E312",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Collar (Studded)",
+            "formId": "0x04E314",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Bell Collar",
+            "formId": "0x04F910",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Kitten Collar",
+            "formId": "0x04F912",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pet Collar",
+            "formId": "0x04F914",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Puppy Collar",
+            "formId": "0x04F916",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Collar (Padded)",
+            "formId": "0x058470",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Collar (Padded)",
+            "formId": "0x058472",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Collar (Padded)",
+            "formId": "0x058474",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Collar",
+            "formId": "0x0592B8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Collar",
+            "formId": "0x0592B9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Collar",
+            "formId": "0x0592BA",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousBelt": [
+        {
+            "name": "Steel Chastity Belt (Padded)",
+            "formId": "0x009A7B",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Iron Chastity Belt",
+            "formId": "0x00EB5D",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Steel Chastity Belt (Padded) (Open)",
+            "formId": "0x032741",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Red Lustrous Chastity Belt (Padded) (Open)",
+            "formId": "0x0012C6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Lustrous Chastity Belt (Padded) (Open)",
+            "formId": "0x0012C8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Chastity Belt (Padded)",
+            "formId": "0x03FFFD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Silver Chastity Belt (Padded)",
+            "formId": "0x040000",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Crotch Rope",
+            "formId": "0x04E89F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Crotch Rope",
+            "formId": "0x0509C4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Crotch Rope",
+            "formId": "0x051FB5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Crotch Rope",
+            "formId": "0x05255B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Chastity Belt (Padded) (Open)",
+            "formId": "0x057371",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Silver Chastity Belt (Padded) (Open)",
+            "formId": "0x057373",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Chastity Belt (Padded)",
+            "formId": "0x05845A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Chastity Belt (Padded)",
+            "formId": "0x05845C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Chastity Belt (Padded)",
+            "formId": "0x05845E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Chastity Belt (Padded) (Open)",
+            "formId": "0x0584FC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Chastity Belt (Padded) (Open)",
+            "formId": "0x0584FF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Chastity Belt (Padded) (Open)",
+            "formId": "0x058502",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Lustrous Chastity Belt (Padded)",
+            "formId": "0x05862C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Lustrous Chastity Belt (Padded)",
+            "formId": "0x05862E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Lustrous Chastity Belt (Padded)",
+            "formId": "0x058630",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Lustrous Chastity Belt (Padded) (Open)",
+            "formId": "0x058CBF",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousPlug": [
+        {
+            "name": "Plug (Iron) (Set)",
+            "formId": "0x017757",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Primitive) (Set)",
+            "formId": "0x019D16",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Inflatable) (Set)",
+            "formId": "0x019D17",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Soulgem) (Set)",
+            "formId": "0x019D18",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Test Plugs",
+            "formId": "0x02C0BE",
+            "espName": "Devious Devices - Integration.esm"
+        }
+    ],
+    "zad_DeviousBra": [
+        {
+            "name": "Steel Chastity Bra (Padded)",
+            "formId": "0x01775A",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Red Lustrous Chastity Bra (Padded)",
+            "formId": "0x0012D8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Lustrous Chastity Bra (Padded)",
+            "formId": "0x0012DA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Chastity Bra (Padded)",
+            "formId": "0x03FFFF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Silver Chastity Bra (Padded)",
+            "formId": "0x040002",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Chastity Bra (Padded)",
+            "formId": "0x058458",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Chastity Bra (Padded)",
+            "formId": "0x058460",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Chastity Bra (Padded)",
+            "formId": "0x058462",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Lustrous Chastity Bra (Padded)",
+            "formId": "0x058626",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousArmCuffs": [
+        {
+            "name": "Steel Cuffs (Padded) (Arms)",
+            "formId": "0x01775B",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Leather Cuffs (Arms)",
+            "formId": "0x032744",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Lustrous Cuffs (Padded) (Arms)",
+            "formId": "0x001862",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Lustrous Cuffs (Padded) (Arms)",
+            "formId": "0x001864",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Lustrous Cuffs (Padded) (Arms)",
+            "formId": "0x001866",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Cuffs (Arms)",
+            "formId": "0x00D4E1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Cuffs (Arms)",
+            "formId": "0x00F023",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Cuffs (Arms)",
+            "formId": "0x00F026",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Cuffs (Arms)",
+            "formId": "0x011102",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Cuffs (Arms)",
+            "formId": "0x011104",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Cuffs (Padded) (Arms)",
+            "formId": "0x04000B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Silver Cuffs (Padded) (Arms)",
+            "formId": "0x040010",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Arm Cuffs",
+            "formId": "0x04E8A1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Arm Cuffs",
+            "formId": "0x0509C6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Arm Cuffs",
+            "formId": "0x051FB6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Arm Cuffs",
+            "formId": "0x05255C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Cuffs (Padded) (Arms)",
+            "formId": "0x05846A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Cuffs (Padded) (Arms)",
+            "formId": "0x05846C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Cuffs (Padded) (Arms)",
+            "formId": "0x05846E",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousLegCuffs": [
+        {
+            "name": "Steel Cuffs (Padded) (Legs)",
+            "formId": "0x01775D",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Leather Cuffs (Legs)",
+            "formId": "0x032743",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Lustrous Cuffs (Padded) (Legs)",
+            "formId": "0x00185C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Lustrous Cuffs (Padded) (Legs)",
+            "formId": "0x00185E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Lustrous Cuffs (Padded) (Legs)",
+            "formId": "0x001860",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Cuffs (Legs)",
+            "formId": "0x00D4E3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Cuffs (Legs)",
+            "formId": "0x00F029",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Cuffs (Legs)",
+            "formId": "0x00F02C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Cuffs (Legs)",
+            "formId": "0x011106",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Cuffs (Legs)",
+            "formId": "0x011108",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Cuffs (Padded) (Legs)",
+            "formId": "0x04000D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Silver Cuffs (Padded) (Legs)",
+            "formId": "0x040014",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Leg Cuffs",
+            "formId": "0x04E8A3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Leg Cuffs",
+            "formId": "0x0509C8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Leg Cuffs",
+            "formId": "0x051FB7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Leg Cuffs",
+            "formId": "0x05255D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Cuffs (Padded) (Legs)",
+            "formId": "0x058476",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Cuffs (Padded) (Legs)",
+            "formId": "0x058478",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Cuffs (Padded) (Legs)",
+            "formId": "0x05847A",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousHeavyBondage": [
+        {
+            "name": "Black Leather Armbinder",
+            "formId": "0x028A5A",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Iron Yoke",
+            "formId": "0x04F18C",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "High Security Armbinder",
+            "formId": "0x068BDE",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "High Security Armbinder",
+            "formId": "0x068BDE",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant",
+            "formId": "0x000800",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant",
+            "formId": "0x000800",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x000806",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x000806",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant",
+            "formId": "0x000809",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant",
+            "formId": "0x000809",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x00080B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x00080B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant",
+            "formId": "0x00080E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant",
+            "formId": "0x00080E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x000811",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x000811",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000819",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000819",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000821",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000821",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000823",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000823",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress (Open)",
+            "formId": "0x000827",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress (Open)",
+            "formId": "0x000827",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress (Cleavage)",
+            "formId": "0x000829",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress (Cleavage)",
+            "formId": "0x000829",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress (Cleavage)",
+            "formId": "0x00082F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress (Cleavage)",
+            "formId": "0x00082F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress (Open)",
+            "formId": "0x000831",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress (Open)",
+            "formId": "0x000831",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress (Cleavage)",
+            "formId": "0x000839",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress (Cleavage)",
+            "formId": "0x000839",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress (Open)",
+            "formId": "0x00083B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress (Open)",
+            "formId": "0x00083B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress (Cleavage)",
+            "formId": "0x00083D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress (Cleavage)",
+            "formId": "0x00083D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress (Open)",
+            "formId": "0x00083F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress (Open)",
+            "formId": "0x00083F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress (Cleavage)",
+            "formId": "0x000841",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress (Cleavage)",
+            "formId": "0x000841",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress (Open)",
+            "formId": "0x000843",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress (Open)",
+            "formId": "0x000843",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress (Cleavage)",
+            "formId": "0x000845",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress (Cleavage)",
+            "formId": "0x000845",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress (Open)",
+            "formId": "0x000847",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress (Open)",
+            "formId": "0x000847",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DDD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DDD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DDF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DDF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DE1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DE1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket, Catsuit",
+            "formId": "0x00234E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket, Catsuit",
+            "formId": "0x00234E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket, Catsuit (Open)",
+            "formId": "0x002350",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket, Catsuit (Open)",
+            "formId": "0x002350",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket, Catsuit (Topless)",
+            "formId": "0x002352",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket, Catsuit (Topless)",
+            "formId": "0x002352",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket, Catsuit",
+            "formId": "0x002354",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket, Catsuit",
+            "formId": "0x002354",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket, Catsuit (Open)",
+            "formId": "0x002356",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket, Catsuit (Open)",
+            "formId": "0x002356",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket, Catsuit (Topless)",
+            "formId": "0x002358",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket, Catsuit (Topless)",
+            "formId": "0x002358",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket, Catsuit",
+            "formId": "0x00235A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket, Catsuit",
+            "formId": "0x00235A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket, Catsuit (Open)",
+            "formId": "0x00235C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket, Catsuit (Open)",
+            "formId": "0x00235C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket, Catsuit (Topless)",
+            "formId": "0x00235E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket, Catsuit (Topless)",
+            "formId": "0x00235E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Boxbinder",
+            "formId": "0x002429",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Boxbinder",
+            "formId": "0x002429",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Boxbinder",
+            "formId": "0x00242B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Boxbinder",
+            "formId": "0x00242B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Boxbinder Outfit",
+            "formId": "0x00242D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Boxbinder Outfit",
+            "formId": "0x00242D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Boxbinder Outfit",
+            "formId": "0x00242F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Boxbinder Outfit",
+            "formId": "0x00242F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Wooden Yoke",
+            "formId": "0x0024B0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Wooden Yoke",
+            "formId": "0x0024B0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Armbinder",
+            "formId": "0x00D4D6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Armbinder",
+            "formId": "0x00D4D6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Armbinder",
+            "formId": "0x00F013",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Armbinder",
+            "formId": "0x00F013",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Armbinder",
+            "formId": "0x00F016",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Armbinder",
+            "formId": "0x00F016",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Armbinder",
+            "formId": "0x0110F0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Armbinder",
+            "formId": "0x0110F0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Armbinder",
+            "formId": "0x0110F2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Armbinder",
+            "formId": "0x0110F2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket",
+            "formId": "0x02D9CC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket",
+            "formId": "0x02D9CC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Prisoner Chains",
+            "formId": "0x02FA8B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Prisoner Chains",
+            "formId": "0x02FA8B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Prisoner Chains",
+            "formId": "0x02FA8F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Prisoner Chains",
+            "formId": "0x02FA8F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Elbowbinder",
+            "formId": "0x031019",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Elbowbinder",
+            "formId": "0x031019",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Handcuffs",
+            "formId": "0x037C17",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Handcuffs",
+            "formId": "0x037C17",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Handcuffs",
+            "formId": "0x03817D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Handcuffs",
+            "formId": "0x03817D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket (Legbinder)",
+            "formId": "0x039C68",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket (Legbinder)",
+            "formId": "0x039C68",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket (Legbinder)",
+            "formId": "0x039C69",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket (Legbinder)",
+            "formId": "0x039C69",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket (Open, Legbinder)",
+            "formId": "0x039C6A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket (Open, Legbinder)",
+            "formId": "0x039C6A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket (Open, Legbinder)",
+            "formId": "0x039C6B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket (Open, Legbinder)",
+            "formId": "0x039C6B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket (Open, Legbinder)",
+            "formId": "0x039C6C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket (Open, Legbinder)",
+            "formId": "0x039C6C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket (Legbinder)",
+            "formId": "0x039C6D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket (Legbinder)",
+            "formId": "0x039C6D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket",
+            "formId": "0x039C6E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket",
+            "formId": "0x039C6E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket (Open)",
+            "formId": "0x039C6F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket (Open)",
+            "formId": "0x039C6F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket (Topless)",
+            "formId": "0x039C70",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket (Topless)",
+            "formId": "0x039C70",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket (Topless)",
+            "formId": "0x039C71",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket (Topless)",
+            "formId": "0x039C71",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket",
+            "formId": "0x039C72",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket",
+            "formId": "0x039C72",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket",
+            "formId": "0x039C73",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket",
+            "formId": "0x039C73",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket (Legbinder)",
+            "formId": "0x039C74",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket (Legbinder)",
+            "formId": "0x039C74",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket (Legbinder)",
+            "formId": "0x039C75",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket (Legbinder)",
+            "formId": "0x039C75",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket",
+            "formId": "0x039C76",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket",
+            "formId": "0x039C76",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket",
+            "formId": "0x039C77",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket",
+            "formId": "0x039C77",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket (Open, Legbinder)",
+            "formId": "0x039C78",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket (Open, Legbinder)",
+            "formId": "0x039C78",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket (Open, Legbinder)",
+            "formId": "0x039C79",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket (Open, Legbinder)",
+            "formId": "0x039C79",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket (Open, Legbinder)",
+            "formId": "0x039C7A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket (Open, Legbinder)",
+            "formId": "0x039C7A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket (Legbinder)",
+            "formId": "0x039C7B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket (Legbinder)",
+            "formId": "0x039C7B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket (Open)",
+            "formId": "0x039C7C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket (Open)",
+            "formId": "0x039C7C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket (Open)",
+            "formId": "0x039C7D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket (Open)",
+            "formId": "0x039C7D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket (Open)",
+            "formId": "0x039C7E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket (Open)",
+            "formId": "0x039C7E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress",
+            "formId": "0x03ACA5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress",
+            "formId": "0x03ACA5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress (Topless)",
+            "formId": "0x03ACAB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress (Topless)",
+            "formId": "0x03ACAB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Breast Yoke",
+            "formId": "0x03C7FB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Breast Yoke",
+            "formId": "0x03C7FB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Steel Yoke",
+            "formId": "0x03D2E1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Steel Yoke",
+            "formId": "0x03D2E1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Steel Manacles",
+            "formId": "0x03D2E6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Steel Manacles",
+            "formId": "0x03D2E6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Elbowbinder",
+            "formId": "0x0415A3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Elbowbinder",
+            "formId": "0x0415A3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Elbowbinder",
+            "formId": "0x0415A5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Elbowbinder",
+            "formId": "0x0415A5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Elbowbinder",
+            "formId": "0x0415A7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Elbowbinder",
+            "formId": "0x0415A7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Elbowbinder",
+            "formId": "0x0415A9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Elbowbinder",
+            "formId": "0x0415A9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Elbowbinder",
+            "formId": "0x0415AB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Elbowbinder",
+            "formId": "0x0415AB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Strict Rope Armbinder",
+            "formId": "0x0486DD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Strict Rope Armbinder",
+            "formId": "0x0486DD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Armbinder",
+            "formId": "0x0486E3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Armbinder",
+            "formId": "0x0486E3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Pet Suit",
+            "formId": "0x04ACE8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Pet Suit",
+            "formId": "0x04ACE8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Pet Suit",
+            "formId": "0x04B24C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Pet Suit",
+            "formId": "0x04B24C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Pet Suit",
+            "formId": "0x04B24E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Pet Suit",
+            "formId": "0x04B24E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Pet Suit",
+            "formId": "0x04C27F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Pet Suit",
+            "formId": "0x04C27F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Pet Suit",
+            "formId": "0x04C7E9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Pet Suit",
+            "formId": "0x04C7E9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Pet Suit",
+            "formId": "0x04CD4D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Pet Suit",
+            "formId": "0x04CD4D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress",
+            "formId": "0x04E2EA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress",
+            "formId": "0x04E2EA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress",
+            "formId": "0x04E2EC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress",
+            "formId": "0x04E2EC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress (Topless)",
+            "formId": "0x04E2EE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress (Topless)",
+            "formId": "0x04E2EE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress (Topless)",
+            "formId": "0x04E2F0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress (Topless)",
+            "formId": "0x04E2F0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress",
+            "formId": "0x04E2F2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress",
+            "formId": "0x04E2F2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress (Topless)",
+            "formId": "0x04E2F4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress (Topless)",
+            "formId": "0x04E2F4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress",
+            "formId": "0x04E2F6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress",
+            "formId": "0x04E2F6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress",
+            "formId": "0x04E2F8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress",
+            "formId": "0x04E2F8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress (Topless)",
+            "formId": "0x04E2FA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress (Topless)",
+            "formId": "0x04E2FA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress (Topless)",
+            "formId": "0x04E2FC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress (Topless)",
+            "formId": "0x04E2FC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Steel Yoke",
+            "formId": "0x04F92D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Steel Yoke",
+            "formId": "0x04F92D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Elbow Shackles with Collar",
+            "formId": "0x0530C1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Elbow Shackles with Collar",
+            "formId": "0x0530C1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Hooked Elbow Shackles",
+            "formId": "0x053625",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Hooked Elbow Shackles",
+            "formId": "0x053625",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Elbow Shackles",
+            "formId": "0x053629",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Elbow Shackles",
+            "formId": "0x053629",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Boxbinder",
+            "formId": "0x056D6A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Boxbinder",
+            "formId": "0x056D6A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Boxbinder Outfit",
+            "formId": "0x0572CF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Boxbinder Outfit",
+            "formId": "0x0572CF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Strict White Rope Armbinder",
+            "formId": "0x0592C3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Strict White Rope Armbinder",
+            "formId": "0x0592C3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Strict Red Rope Armbinder",
+            "formId": "0x0592C4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Strict Red Rope Armbinder",
+            "formId": "0x0592C4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Strict Black Rope Armbinder",
+            "formId": "0x0592C6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Strict Black Rope Armbinder",
+            "formId": "0x0592C6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Armbinder",
+            "formId": "0x0592C8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Armbinder",
+            "formId": "0x0592C8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Armbinder",
+            "formId": "0x0592CA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Armbinder",
+            "formId": "0x0592CA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Armbinder",
+            "formId": "0x0592CC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Armbinder",
+            "formId": "0x0592CC",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousArmbinder": [
+        {
+            "name": "Black Leather Armbinder",
+            "formId": "0x028A5A",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "High Security Armbinder",
+            "formId": "0x068BDE",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Ebonite Armbinder",
+            "formId": "0x00D4D6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Armbinder",
+            "formId": "0x00F013",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Armbinder",
+            "formId": "0x00F016",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Armbinder",
+            "formId": "0x0110F0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Armbinder",
+            "formId": "0x0110F2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Steel Manacles",
+            "formId": "0x03D2E6",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousGagRing": [
+        {
+            "name": "Black Leather Gag (Ring) (Harness)",
+            "formId": "0x02B076",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Leather Gag (Ring) (Simple)",
+            "formId": "0x034255",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Leather Muzzle Lips Gag",
+            "formId": "0x000D74",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gag (Ring) (Harness)",
+            "formId": "0x00D4F0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gag (Ring) (Simple)",
+            "formId": "0x00D4F8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Gag (Ring) (Harness)",
+            "formId": "0x00F04C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gag (Ring) (Harness)",
+            "formId": "0x00F04E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Gag (Ring) (Simple)",
+            "formId": "0x00F060",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gag (Ring) (Simple)",
+            "formId": "0x00F062",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Gag (Ring) (Harness)",
+            "formId": "0x011128",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gag (Ring) (Harness)",
+            "formId": "0x01112A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Gag (Ring) (Simple)",
+            "formId": "0x011148",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gag (Ring) (Simple)",
+            "formId": "0x01114A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Gag (Ring)",
+            "formId": "0x01F6C7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Gag (Ring)",
+            "formId": "0x01FC3F",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousGag": [
+        {
+            "name": "Black Leather Gag (Ball) (Harness)",
+            "formId": "0x02B073",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Leather Gag (Panel) (Harness)",
+            "formId": "0x02B075",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Leather Gag (Ring) (Harness)",
+            "formId": "0x02B076",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Leather Gag (Ball) (Simple)",
+            "formId": "0x034253",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        
+        {
+            "name": "Red Ebonite Gag (Large Ball) (Simple)",
+            "formId": "0x001D98",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gag (Large Ball) (Harness)",
+            "formId": "0x001D9A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Gag (Large Ball) (Harness)",
+            "formId": "0x001DA4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Gag (Large Ball) (Simple)",
+            "formId": "0x001DA6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Gag (Large Ball) (Harness)",
+            "formId": "0x001DA8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Gag (Large Ball) (Simple)",
+            "formId": "0x001DAA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gag (Large Ball) (Harness)",
+            "formId": "0x001DAC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gag (Large Ball) (Simple)",
+            "formId": "0x001DAE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Gag (Large Ball) (Harness)",
+            "formId": "0x001DB0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Gag (Large Ball) (Simple)",
+            "formId": "0x001DB2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Ball Gag",
+            "formId": "0x001DC7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Ball Gag",
+            "formId": "0x001DC9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Ball Gag",
+            "formId": "0x001DCB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Bit Gag",
+            "formId": "0x001DCD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Bit Gag",
+            "formId": "0x001DCF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Face Mask",
+            "formId": "0x002313",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gag (Ball) (Harness)",
+            "formId": "0x00D4EE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gag (Panel) (Harness)",
+            "formId": "0x00D4F3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gag (Ball) (Simple)",
+            "formId": "0x00D4F6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Gag (Ball) (Harness)",
+            "formId": "0x00F048",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gag (Ball) (Harness)",
+            "formId": "0x00F04A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Gag (Panel) (Harness)",
+            "formId": "0x00F051",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gag (Panel) (Harness)",
+            "formId": "0x00F054",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Gag (Ball) (Simple)",
+            "formId": "0x00F05C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gag (Ball) (Simple)",
+            "formId": "0x00F05E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Gag (Ball) (Harness)",
+            "formId": "0x011124",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gag (Ball) (Harness)",
+            "formId": "0x011126",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Gag (Panel) (Harness)",
+            "formId": "0x01112D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gag (Panel) (Harness)",
+            "formId": "0x011130",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Gag (Ball) (Simple)",
+            "formId": "0x011144",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gag (Ball) (Simple)",
+            "formId": "0x011146",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Scold's Bridle (Light)",
+            "formId": "0x01AB0E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Scold's Bridle",
+            "formId": "0x01B072",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Scold's Bridle (Heavy)",
+            "formId": "0x01B074",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Scold's Bridle (Light)",
+            "formId": "0x01B076",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Scold's Bridle",
+            "formId": "0x01B077",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Scold's Bridle (Heavy)",
+            "formId": "0x01B079",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Gag (Choke Pear)",
+            "formId": "0x01C62C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        
+        {
+            "name": "Iron Gag (Bit)",
+            "formId": "0x01F6C9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Gag (Wood Bit)",
+            "formId": "0x01F6CB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Gag (Bit)",
+            "formId": "0x01FC37",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Gag (Wood Bit)",
+            "formId": "0x01FC39",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gag (Ring) (Harness)",
+            "formId": "0x00D4F0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gag (Ring) (Simple)",
+            "formId": "0x00D4F8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Gag (Ring) (Harness)",
+            "formId": "0x00F04C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gag (Ring) (Harness)",
+            "formId": "0x00F04E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Gag (Ring) (Simple)",
+            "formId": "0x00F060",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gag (Ring) (Simple)",
+            "formId": "0x00F062",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Gag (Ring) (Harness)",
+            "formId": "0x011128",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gag (Ring) (Harness)",
+            "formId": "0x01112A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Gag (Ring) (Simple)",
+            "formId": "0x011148",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gag (Ring) (Simple)",
+            "formId": "0x01114A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Gag (Ring)",
+            "formId": "0x01F6C7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Gag (Ring)",
+            "formId": "0x01FC3F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Gag (Choke Pear)",
+            "formId": "0x01FC57",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gag (Pony)",
+            "formId": "0x03B219",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Gag (Pony)",
+            "formId": "0x03B21B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gag (Pony) (Strap)",
+            "formId": "0x03B21D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Gag (Pony) (Strap)",
+            "formId": "0x03B21F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gag (Pony) (Harness)",
+            "formId": "0x03B229",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Gag (Pony) (Harness)",
+            "formId": "0x03B22B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gag (Pony)",
+            "formId": "0x03BCF7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Gag (Pony)",
+            "formId": "0x03BCF9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gag (Pony)",
+            "formId": "0x03BCFB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Gag (Pony)",
+            "formId": "0x03BCFD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gag (Pony) (Strap)",
+            "formId": "0x03BCFF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Gag (Pony) (Strap)",
+            "formId": "0x03BD01",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gag (Pony) (Strap)",
+            "formId": "0x03BD03",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Gag (Pony) (Strap)",
+            "formId": "0x03BD05",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gag (Pony) (Harness)",
+            "formId": "0x03BD17",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Gag (Pony) (Harness)",
+            "formId": "0x03BD19",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gag (Pony) (Harness)",
+            "formId": "0x03BD1B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Gag (Pony) (Harness)",
+            "formId": "0x03BD1D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gag (Large Ball) (Simple)",
+            "formId": "0x047C05",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gag (Large Ball) (Harness)",
+            "formId": "0x047C07",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Ball Gag",
+            "formId": "0x0486D0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Bit Gag",
+            "formId": "0x0486D3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Face Mask",
+            "formId": "0x049C80",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Transparent Face Mask",
+            "formId": "0x049C82",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Tape Gag",
+            "formId": "0x04B7B5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Tape Gag",
+            "formId": "0x04B7B7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Tape Gag",
+            "formId": "0x04B7B9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Bone Gag",
+            "formId": "0x04F919",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pink Bone Gag",
+            "formId": "0x04F921",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Bone Gag",
+            "formId": "0x04F923",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Extreme Ball Gag Harness (Purple)",
+            "formId": "0x04F925",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Extreme Ball Gag Harness (Red)",
+            "formId": "0x04F927",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Extreme Inflatable Gag Harness",
+            "formId": "0x04F92B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Extreme Panel Gag Harness",
+            "formId": "0x04F92C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Extreme Ball Gag Harness (Black)",
+            "formId": "0x04FE93",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Inflatable Panel Gag",
+            "formId": "0x056785",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Face Mask",
+            "formId": "0x058505",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Muzzle Lips Gag",
+            "formId": "0x0586C1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Muzzle Lips Gag",
+            "formId": "0x0586C2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pink Leather Muzzle Lips Gag",
+            "formId": "0x0586C3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Muzzle Lips Gag",
+            "formId": "0x0586C4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Muzzle Lips Gag",
+            "formId": "0x0586C5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pink Ebonite Muzzle Lips Gag",
+            "formId": "0x0586C6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Muzzle Lips Gag",
+            "formId": "0x0586C7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Bit Gag",
+            "formId": "0x0592B4",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousPlugVaginal": [
+        {
+            "name": "Plug (Soulgem) (Chargeable)",
+            "formId": "0x02BB53",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Iron) (Vaginal)",
+            "formId": "0x031703",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Primitive) (Vaginal)",
+            "formId": "0x031C68",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Soulgem) (Vaginal)",
+            "formId": "0x031C6C",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Inflatable) (Vaginal)",
+            "formId": "0x033CEE",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Training) (Vaginal)",
+            "formId": "0x03C3A0",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Shocker) (Vaginal)",
+            "formId": "0x050C89",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Chaos) (Vaginal)",
+            "formId": "0x050C8A",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Locking) (Vaginal)",
+            "formId": "0x05C999",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Greater Soulgem) (Vaginal)",
+            "formId": "0x01490A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Plug (Grand Soulgem) (Vaginal)",
+            "formId": "0x01490F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Plug (Black Soulgem) (Vaginal)",
+            "formId": "0x014914",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Plug (Filled Soulgem) (Vaginal)",
+            "formId": "0x014919",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Plug (Shock) (Vaginal)",
+            "formId": "0x01491E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Pear of Anguish (Vaginal)",
+            "formId": "0x01B5E6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Pear of Anguish (Chain) (Vaginal)",
+            "formId": "0x01B5E8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Pear of Anguish (Bell) (Vaginal)",
+            "formId": "0x01BB4D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Pear of Anguish (Bell) (Vaginal)",
+            "formId": "0x01FC47",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Pear of Anguish (Chain) (Vaginal)",
+            "formId": "0x01FC4B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Pear of Anguish (Vaginal)",
+            "formId": "0x01FC4F",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousPlugAnal": [
+        {
+            "name": "Plug (Iron) (Anal)",
+            "formId": "0x031704",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Primitive) (Anal)",
+            "formId": "0x031C69",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Soulgem) (Anal)",
+            "formId": "0x031C6B",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Inflatable) (Anal)",
+            "formId": "0x033CED",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Locking) (Anal)",
+            "formId": "0x05C99B",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Plug (Greater Soulgem) (Anal)",
+            "formId": "0x01490D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Plug (Grand Soulgem) (Anal)",
+            "formId": "0x014911",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Plug (Black Soulgem) (Anal)",
+            "formId": "0x014916",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Plug (Filled Soulgem) (Anal)",
+            "formId": "0x01491B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Plug (Shock) (Anal)",
+            "formId": "0x014920",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousBlindfold": [
+        {
+            "name": "Black Leather Blindfold",
+            "formId": "0x031C6F",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Black Leather Blindfold (Custom)",
+            "formId": "0x004E25",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Blindfold",
+            "formId": "0x00D4E6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Blindfold",
+            "formId": "0x00F02F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Blindfold",
+            "formId": "0x00F036",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Blindfold",
+            "formId": "0x011110",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Blindfold",
+            "formId": "0x011112",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Blindfold (Custom)",
+            "formId": "0x01334E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Blindfold (Custom)",
+            "formId": "0x013350",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Blindfold (Custom)",
+            "formId": "0x013352",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Blindfold (Custom)",
+            "formId": "0x013354",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Blindfold (Custom)",
+            "formId": "0x013356",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Blindfold",
+            "formId": "0x04816C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Blindfold",
+            "formId": "0x0592BE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Blindfold",
+            "formId": "0x0592BF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Blindfold",
+            "formId": "0x0592C0",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousHarness": [
+        {
+            "name": "Black Leather Slave Harness",
+            "formId": "0x031C74",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Red Ebonite Chastity Harness, No Collar",
+            "formId": "0x000E10",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Slave Harness, No Collar",
+            "formId": "0x001E38",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Slave Harness, No Collar",
+            "formId": "0x001E39",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Slave Harness, No Collar",
+            "formId": "0x001E3B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Chastity Harness, No Collar",
+            "formId": "0x001E3C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Chastity Harness, No Collar",
+            "formId": "0x001E3D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Chastity Harness",
+            "formId": "0x00231A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Chastity Harness",
+            "formId": "0x00D4CF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Chastity Harness",
+            "formId": "0x00EFFE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Chastity Harness",
+            "formId": "0x00F006",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Chastity Harness",
+            "formId": "0x0110E6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Chastity Harness",
+            "formId": "0x0110E8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Slave Harness",
+            "formId": "0x016A07",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Slave Harness",
+            "formId": "0x016A0A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Slave Harness",
+            "formId": "0x016A0C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Slave Harness",
+            "formId": "0x016A0E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Slave Harness",
+            "formId": "0x016A10",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Full Top Chaotic Rope Harness",
+            "formId": "0x04E8A6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Hishi Chaotic Rope Harness",
+            "formId": "0x04E8A7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pentagram Chaotic Rope Harness",
+            "formId": "0x04E8A9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Simple Chaotic Rope Harness",
+            "formId": "0x04E8AB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Top Chaotic Rope Harness",
+            "formId": "0x04E8AD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Chaotic Rope Harness",
+            "formId": "0x04E8AF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pentagram Chaotic Rope Corset",
+            "formId": "0x04E8B1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Simple Chaotic Rope Corset",
+            "formId": "0x04E8B3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Top Chaotic Rope Corset",
+            "formId": "0x04E8B5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Chaotic Rope Corset",
+            "formId": "0x04E8B8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pentagram Rope Corset",
+            "formId": "0x04E8B9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Simple Rope Corset",
+            "formId": "0x04E8BB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Top Rope Corset",
+            "formId": "0x04E8BD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Corset",
+            "formId": "0x04E8C0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Chaotic Pentagram Rope Corset (Exp)",
+            "formId": "0x04EE23",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Chaotic Simple Rope Corset (Exp)",
+            "formId": "0x04EE25",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Chaotic Top Rope Corset (Exp)",
+            "formId": "0x04EE27",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Chaotic Rope Corset (Exp)",
+            "formId": "0x04EE29",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pentagram Rope Corset (Exp)",
+            "formId": "0x04EE2B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Simple Rope Corset (Exp)",
+            "formId": "0x04EE2D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Top Rope Corset (Exp)",
+            "formId": "0x04EE2F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Corset (Exp)",
+            "formId": "0x04EE31",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Extreme Rope Harness",
+            "formId": "0x04EE33",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Full Top Rope Harness",
+            "formId": "0x04EE35",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Hishi Karada Rope Harness",
+            "formId": "0x04EE37",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pentagram Crotch Rope Harness",
+            "formId": "0x04EE39",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pentagram Rope Harness",
+            "formId": "0x04EE3B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Simple Crotch Rope Harness",
+            "formId": "0x04EE3D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Simple Rope Harness",
+            "formId": "0x04EE3F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Top Crotch Rope Harness",
+            "formId": "0x04EE41",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Top Rope Harness",
+            "formId": "0x04EE44",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Full Top Chaotic Rope Harness",
+            "formId": "0x0509CA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Hishi Chaotic Rope Harness",
+            "formId": "0x0509CC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Chaotic Rope Harness",
+            "formId": "0x0509CE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Pentagram Chaotic Rope Harness",
+            "formId": "0x0509CF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Simple Chaotic Rope Harness",
+            "formId": "0x0509D2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Top Chaotic Rope Harness",
+            "formId": "0x0509D4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Chaotic Rope Corset",
+            "formId": "0x0509D6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Pentagram Chaotic Rope Corset",
+            "formId": "0x0509D7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Simple Chaotic Rope Corset",
+            "formId": "0x0509DB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Top Chaotic Rope Corset",
+            "formId": "0x0509DC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Corset",
+            "formId": "0x0509DE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Pentagram Rope Corset",
+            "formId": "0x0509DF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Simple Rope Corset",
+            "formId": "0x0509E2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Top Rope Corset",
+            "formId": "0x0509E5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Chaotic Rope Corset (Exp)",
+            "formId": "0x0509E6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Chaotic Pentagram Rope Corset (Exp)",
+            "formId": "0x0509E7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Chaotic Simple Rope Corset (Exp)",
+            "formId": "0x0509EA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Chaotic Top Rope Corset (Exp)",
+            "formId": "0x0509EC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Corset (Exp)",
+            "formId": "0x0509EE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Pentagram Rope Corset (Exp)",
+            "formId": "0x0509EF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Simple Rope Corset (Exp)",
+            "formId": "0x0509F2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Top Rope Corset (Exp)",
+            "formId": "0x0509F4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Extreme Rope Harness",
+            "formId": "0x0509F6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Full Top Rope Harness",
+            "formId": "0x0509F8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Hishi Karada Rope Harness",
+            "formId": "0x0509FA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Pentagram Crotch Rope Harness",
+            "formId": "0x0509FC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Pentagram Rope Harness",
+            "formId": "0x0509FE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Simple Crotch Rope Harness",
+            "formId": "0x050A00",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Simple Rope Harness",
+            "formId": "0x050A02",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Top Crotch Rope Harness",
+            "formId": "0x050A04",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Top Rope Harness",
+            "formId": "0x050A06",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Full Top Chaotic Rope Harness",
+            "formId": "0x051FB8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Hishi Chaotic Rope Harness",
+            "formId": "0x051FB9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Chaotic Rope Harness",
+            "formId": "0x051FBA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Pentagram Chaotic Rope Harness",
+            "formId": "0x051FBB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Simple Chaotic Rope Harness",
+            "formId": "0x051FBC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Top Chaotic Rope Harness",
+            "formId": "0x051FBD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Chaotic Rope Corset",
+            "formId": "0x051FBE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Pentagram Chaotic Rope Corset",
+            "formId": "0x051FBF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Simple Chaotic Rope Corset",
+            "formId": "0x051FC0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Top Chaotic Rope Corset",
+            "formId": "0x051FC1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Corset",
+            "formId": "0x051FC2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Pentagram Rope Corset",
+            "formId": "0x051FC3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Simple Rope Corset",
+            "formId": "0x051FC4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Top Rope Corset",
+            "formId": "0x051FC5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Chaotic Rope Corset (Exp)",
+            "formId": "0x051FC6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Chaotic Pentagram Rope Corset (Exp)",
+            "formId": "0x051FC7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Chaotic Simple Rope Corset (Exp)",
+            "formId": "0x051FC8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Chaotic Top Rope Corset (Exp)",
+            "formId": "0x051FC9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Corset (Exp)",
+            "formId": "0x051FCA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Pentagram Rope Corset (Exp)",
+            "formId": "0x051FCB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Simple Rope Corset (Exp)",
+            "formId": "0x051FCC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Top Rope Corset (Exp)",
+            "formId": "0x051FCD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Extreme Rope Harness",
+            "formId": "0x051FCE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Full Top Rope Harness",
+            "formId": "0x051FCF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Hishi Karada Rope Harness",
+            "formId": "0x051FD0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Pentagram Crotch Rope Harness",
+            "formId": "0x051FD1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Pentagram Rope Harness",
+            "formId": "0x051FD2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Simple Crotch Rope Harness",
+            "formId": "0x051FD3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Simple Rope Harness",
+            "formId": "0x051FD4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Top Crotch Rope Harness",
+            "formId": "0x051FD5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Top Rope Harness",
+            "formId": "0x051FD6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Full Top Chaotic Rope Harness",
+            "formId": "0x05255E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Hishi Chaotic Rope Harness",
+            "formId": "0x05255F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Chaotic Rope Harness",
+            "formId": "0x052560",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Pentagram Chaotic Rope Harness",
+            "formId": "0x052561",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Simple Chaotic Rope Harness",
+            "formId": "0x052562",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Top Chaotic Rope Harness",
+            "formId": "0x052563",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Chaotic Rope Corset",
+            "formId": "0x052564",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Pentagram Chaotic Rope Corset",
+            "formId": "0x052565",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Simple Chaotic Rope Corset",
+            "formId": "0x052566",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Top Chaotic Rope Corset",
+            "formId": "0x052567",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Corset",
+            "formId": "0x052568",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Pentagram Rope Corset",
+            "formId": "0x052569",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Simple Rope Corset",
+            "formId": "0x05256A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Top Rope Corset",
+            "formId": "0x05256B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Chaotic Rope Corset (Exp)",
+            "formId": "0x05256C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Chaotic Pentagram Rope Corset (Exp)",
+            "formId": "0x05256D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Chaotic Simple Rope Corset (Exp)",
+            "formId": "0x05256E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Chaotic Top Rope Corset (Exp)",
+            "formId": "0x05256F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Corset (Exp)",
+            "formId": "0x052570",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Pentagram Rope Corset (Exp)",
+            "formId": "0x052571",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Simple Rope Corset (Exp)",
+            "formId": "0x052572",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Top Rope Corset (Exp)",
+            "formId": "0x052573",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Extreme Rope Harness",
+            "formId": "0x052574",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Full Top Rope Harness",
+            "formId": "0x052575",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Hishi Karada Rope Harness",
+            "formId": "0x052576",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Pentagram Crotch Rope Harness",
+            "formId": "0x052577",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Pentagram Rope Harness",
+            "formId": "0x052578",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Simple Crotch Rope Harness",
+            "formId": "0x052579",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Simple Rope Harness",
+            "formId": "0x05257A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Top Crotch Rope Harness",
+            "formId": "0x05257B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Top Rope Harness",
+            "formId": "0x05257C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Slave Harness, No Collar",
+            "formId": "0x057351",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Chastity Harness, No Collar",
+            "formId": "0x057354",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Chastity Harness, No Collar",
+            "formId": "0x057356",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Slave Harness, No Collar",
+            "formId": "0x057358",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Slave Harness, No Collar",
+            "formId": "0x05735A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Chastity Harness, No Collar",
+            "formId": "0x05735C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Harness",
+            "formId": "0x0592A6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Harness",
+            "formId": "0x0592A8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Harness",
+            "formId": "0x0592AA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Harness",
+            "formId": "0x0592AC",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousPiercingsNipple": [
+        {
+            "name": "Jeweled Piercings (Nipples) (Soulgem)",
+            "formId": "0x0409A2",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Jeweled Piercings (Nipples) (Common Soulgem)",
+            "formId": "0x014925",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Jeweled Piercings (Nipples) (Shock)",
+            "formId": "0x014929",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Clamps (Nipples)",
+            "formId": "0x01C62A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Piercings (Nipples)",
+            "formId": "0x01CB91",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Clamps (Nipples)",
+            "formId": "0x01FC53",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Piercings (Nipples)",
+            "formId": "0x01FC55",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousPiercingsVaginal": [
+        {
+            "name": "Jeweled Piercings (Clitoral) (Soulgem)",
+            "formId": "0x047566",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "Jeweled Piercings (Clitoral) (Common Soulgem)",
+            "formId": "0x014923",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Jeweled Piercings (Clitoral) (Shock)",
+            "formId": "0x014927",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousGloves": [
+        {
+            "name": "Black Leather Restrictive Gloves",
+            "formId": "0x04DBEC",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "White Leather Restrictive Gloves",
+            "formId": "0x01597C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Restrictive Gloves",
+            "formId": "0x015990",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Restrictive Gloves",
+            "formId": "0x0159AC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Restrictive Gloves",
+            "formId": "0x0159BD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Restrictive Gloves",
+            "formId": "0x0159D1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Catsuit Gloves",
+            "formId": "0x03D2C6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Catsuit Long Gloves",
+            "formId": "0x03D2D1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Blue Ebonite Catsuit Gloves",
+            "formId": "0x03D904",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Cyan Ebonite Catsuit Gloves",
+            "formId": "0x03D906",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Green Ebonite Catsuit Gloves",
+            "formId": "0x03D908",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Grey Ebonite Catsuit Gloves",
+            "formId": "0x03D90A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Red Ebonite Catsuit Gloves",
+            "formId": "0x03D90C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Ebonite Catsuit Gloves",
+            "formId": "0x03D90E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Green Ebonite Catsuit Gloves",
+            "formId": "0x03D910",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Light Grey Ebonite Catsuit Gloves",
+            "formId": "0x03D912",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Orange Ebonite Catsuit Gloves",
+            "formId": "0x03D914",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pink Ebonite Catsuit Gloves",
+            "formId": "0x03D916",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Purple Ebonite Catsuit Gloves",
+            "formId": "0x03D918",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Catsuit Gloves",
+            "formId": "0x03D91A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red+White Ebonite Catsuit Gloves",
+            "formId": "0x03D91C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Catsuit Gloves",
+            "formId": "0x03D91E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Yellow Ebonite Catsuit Gloves",
+            "formId": "0x03D920",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Blue Ebonite Catsuit Long Gloves",
+            "formId": "0x03D96A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Cyan Ebonite Catsuit Long Gloves",
+            "formId": "0x03D96C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Green Ebonite Catsuit Long Gloves",
+            "formId": "0x03D96E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Grey Ebonite Catsuit Long Gloves",
+            "formId": "0x03D970",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Red Ebonite Catsuit Long Gloves",
+            "formId": "0x03D974",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Ebonite Catsuit Long Gloves",
+            "formId": "0x03D976",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Green Ebonite Catsuit Long Gloves",
+            "formId": "0x03D978",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Light Grey Ebonite Catsuit Long Gloves",
+            "formId": "0x03D97A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Orange Ebonite Catsuit Long Gloves",
+            "formId": "0x03D97C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pink Ebonite Catsuit Long Gloves",
+            "formId": "0x03D97E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Purple Ebonite Catsuit Long Gloves",
+            "formId": "0x03D980",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Catsuit Long Gloves",
+            "formId": "0x03D982",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Catsuit Long Gloves",
+            "formId": "0x03D986",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Yellow Ebonite Catsuit Long Gloves",
+            "formId": "0x03D988",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Transparent Catsuit Long Gloves",
+            "formId": "0x049711",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Transparent Restrictive Gloves",
+            "formId": "0x059224",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousCorset": [
+        {
+            "name": "Black Leather Restrictive Corset",
+            "formId": "0x04DBF0",
+            "espName": "Devious Devices - Integration.esm"
+        },
+        {
+            "name": "White Leather Restrictive Corset",
+            "formId": "0x015973",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Restrictive Corset",
+            "formId": "0x01598C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Restrictive Corset",
+            "formId": "0x0159A8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Restrictive Corset",
+            "formId": "0x0159B8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Restrictive Corset",
+            "formId": "0x0159CD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Transparent Restrictive Corset",
+            "formId": "0x047BFE",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousSuit": [
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant",
+            "formId": "0x000800",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x000806",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant",
+            "formId": "0x000809",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x00080B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant",
+            "formId": "0x00080E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x000811",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000819",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000821",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000823",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress (Open)",
+            "formId": "0x000827",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress (Cleavage)",
+            "formId": "0x000829",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress (Cleavage)",
+            "formId": "0x00082F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress (Open)",
+            "formId": "0x000831",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress (Cleavage)",
+            "formId": "0x000839",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress (Open)",
+            "formId": "0x00083B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress (Cleavage)",
+            "formId": "0x00083D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress (Open)",
+            "formId": "0x00083F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress (Cleavage)",
+            "formId": "0x000841",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress (Open)",
+            "formId": "0x000843",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress (Cleavage)",
+            "formId": "0x000845",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress (Open)",
+            "formId": "0x000847",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Transparent Catsuit",
+            "formId": "0x00182E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DDD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DDF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DE1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket, Catsuit",
+            "formId": "0x00234E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket, Catsuit (Open)",
+            "formId": "0x002350",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket, Catsuit (Topless)",
+            "formId": "0x002352",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket, Catsuit",
+            "formId": "0x002354",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket, Catsuit (Open)",
+            "formId": "0x002356",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket, Catsuit (Topless)",
+            "formId": "0x002358",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket, Catsuit",
+            "formId": "0x00235A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket, Catsuit (Open)",
+            "formId": "0x00235C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket, Catsuit (Topless)",
+            "formId": "0x00235E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Boxbinder",
+            "formId": "0x002429",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Boxbinder",
+            "formId": "0x00242B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Boxbinder Outfit",
+            "formId": "0x00242D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Boxbinder Outfit",
+            "formId": "0x00242F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Hobble Dress (Extreme)",
+            "formId": "0x020733",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Hobble Dress (Extreme)",
+            "formId": "0x024288",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Hobble Dress",
+            "formId": "0x0247F4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Hobble Dress",
+            "formId": "0x02581D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Hobble Dress",
+            "formId": "0x02581F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Hobble Dress (Open)",
+            "formId": "0x025827",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Hobble Dress (Open)",
+            "formId": "0x025829",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Hobble Dress (Open)",
+            "formId": "0x02582B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Hobble Dress",
+            "formId": "0x02582D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Hobble Dress (Extreme)",
+            "formId": "0x02582F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Hobble Dress (Extreme)",
+            "formId": "0x025831",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Hobble Dress",
+            "formId": "0x025834",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Hobble Dress",
+            "formId": "0x025835",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Hobble Dress (Open)",
+            "formId": "0x025837",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Hobble Dress (Open)",
+            "formId": "0x025839",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Hobble Dress (Open)",
+            "formId": "0x02583B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Hobble Dress (Extreme) (Open)",
+            "formId": "0x02583D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Hobble Dress (Extreme) (Open)",
+            "formId": "0x02583F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Hobble Dress (Extreme) (Open)",
+            "formId": "0x025841",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Hobble Dress (Extreme)",
+            "formId": "0x025843",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Hobble Dress (Extreme)",
+            "formId": "0x025845",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Hobble Dress (Extreme) (Open)",
+            "formId": "0x025847",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Hobble Dress (Extreme) (Open)",
+            "formId": "0x025849",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Hobble Dress (Extreme) (Open)",
+            "formId": "0x02584B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Hobble Dress (Elegant)",
+            "formId": "0x02939A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Hobble Dress (Elegant)",
+            "formId": "0x02939C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Hobble Dress (Elegant)",
+            "formId": "0x02939E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Hobble Dress (Elegant)",
+            "formId": "0x0293A0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Hobble Dress (Elegant)",
+            "formId": "0x0293A2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Hobble Dress (Elegant)",
+            "formId": "0x0293A4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket",
+            "formId": "0x02D9CC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket (Legbinder)",
+            "formId": "0x039C68",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket (Legbinder)",
+            "formId": "0x039C69",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket (Open, Legbinder)",
+            "formId": "0x039C6A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket (Open, Legbinder)",
+            "formId": "0x039C6B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket (Open, Legbinder)",
+            "formId": "0x039C6C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket (Legbinder)",
+            "formId": "0x039C6D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket",
+            "formId": "0x039C6E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket (Open)",
+            "formId": "0x039C6F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket (Topless)",
+            "formId": "0x039C70",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket (Topless)",
+            "formId": "0x039C71",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket",
+            "formId": "0x039C72",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket",
+            "formId": "0x039C73",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket (Legbinder)",
+            "formId": "0x039C74",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket (Legbinder)",
+            "formId": "0x039C75",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket",
+            "formId": "0x039C76",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket",
+            "formId": "0x039C77",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket (Open, Legbinder)",
+            "formId": "0x039C78",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket (Open, Legbinder)",
+            "formId": "0x039C79",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket (Open, Legbinder)",
+            "formId": "0x039C7A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket (Legbinder)",
+            "formId": "0x039C7B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket (Open)",
+            "formId": "0x039C7C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket (Open)",
+            "formId": "0x039C7D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket (Open)",
+            "formId": "0x039C7E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress",
+            "formId": "0x03ACA5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress (Topless)",
+            "formId": "0x03ACAB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Breast Yoke",
+            "formId": "0x03C7FB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Catsuit",
+            "formId": "0x03D2C4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Zipsuit",
+            "formId": "0x03D2DB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Blue Ebonite Catsuit",
+            "formId": "0x03D8E6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Cyan Ebonite Catsuit",
+            "formId": "0x03D8E8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Green Ebonite Catsuit",
+            "formId": "0x03D8EA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Grey Ebonite Catsuit",
+            "formId": "0x03D8EC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Red Ebonite Catsuit",
+            "formId": "0x03D8EE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Ebonite Catsuit",
+            "formId": "0x03D8F0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Green Ebonite Catsuit",
+            "formId": "0x03D8F2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Light Grey Ebonite Catsuit",
+            "formId": "0x03D8F4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Orange Ebonite Catsuit",
+            "formId": "0x03D8F6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pink Ebonite Catsuit",
+            "formId": "0x03D8F8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Purple Ebonite Catsuit",
+            "formId": "0x03D8FA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Catsuit",
+            "formId": "0x03D8FC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red+White Ebonite Catsuit",
+            "formId": "0x03D8FE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Catsuit",
+            "formId": "0x03D900",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Yellow Ebonite Catsuit",
+            "formId": "0x03D902",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Body Restraint",
+            "formId": "0x0486E0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Transparent Hobble Dress (Extreme)",
+            "formId": "0x04970F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress",
+            "formId": "0x04E2EA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress",
+            "formId": "0x04E2EC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress (Topless)",
+            "formId": "0x04E2EE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress (Topless)",
+            "formId": "0x04E2F0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress",
+            "formId": "0x04E2F2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress (Topless)",
+            "formId": "0x04E2F4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress",
+            "formId": "0x04E2F6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress",
+            "formId": "0x04E2F8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress (Topless)",
+            "formId": "0x04E2FA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress (Topless)",
+            "formId": "0x04E2FC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Boxbinder",
+            "formId": "0x056D6A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Boxbinder Outfit",
+            "formId": "0x0572CF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Body Restraint",
+            "formId": "0x0592AE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Body Restraint",
+            "formId": "0x0592B0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Body Restraint",
+            "formId": "0x0592B2",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousHobbleSkirt": [
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant",
+            "formId": "0x000800",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x000806",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant",
+            "formId": "0x000809",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x00080B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant",
+            "formId": "0x00080E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x000811",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000819",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000821",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000823",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress (Open)",
+            "formId": "0x000827",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress (Cleavage)",
+            "formId": "0x000829",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress (Cleavage)",
+            "formId": "0x00082F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress (Open)",
+            "formId": "0x000831",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress (Cleavage)",
+            "formId": "0x000839",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress (Open)",
+            "formId": "0x00083B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress (Cleavage)",
+            "formId": "0x00083D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress (Open)",
+            "formId": "0x00083F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress (Cleavage)",
+            "formId": "0x000841",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress (Open)",
+            "formId": "0x000843",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress (Cleavage)",
+            "formId": "0x000845",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress (Open)",
+            "formId": "0x000847",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DDD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DDF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DE1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket (Legbinder)",
+            "formId": "0x039C68",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket (Legbinder)",
+            "formId": "0x039C69",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket (Open, Legbinder)",
+            "formId": "0x039C6A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket (Open, Legbinder)",
+            "formId": "0x039C6B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket (Open, Legbinder)",
+            "formId": "0x039C6C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket (Legbinder)",
+            "formId": "0x039C6D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket (Legbinder)",
+            "formId": "0x039C74",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket (Legbinder)",
+            "formId": "0x039C75",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket (Open, Legbinder)",
+            "formId": "0x039C78",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket (Open, Legbinder)",
+            "formId": "0x039C79",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket (Open, Legbinder)",
+            "formId": "0x039C7A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket (Legbinder)",
+            "formId": "0x039C7B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress",
+            "formId": "0x03ACA5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress (Topless)",
+            "formId": "0x03ACAB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress",
+            "formId": "0x04E2EA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress",
+            "formId": "0x04E2EC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress (Topless)",
+            "formId": "0x04E2EE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress (Topless)",
+            "formId": "0x04E2F0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress",
+            "formId": "0x04E2F2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress (Topless)",
+            "formId": "0x04E2F4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress",
+            "formId": "0x04E2F6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress",
+            "formId": "0x04E2F8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress (Topless)",
+            "formId": "0x04E2FA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress (Topless)",
+            "formId": "0x04E2FC",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousHobbleSkirtRelaxed": [
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant",
+            "formId": "0x000800",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x000806",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant",
+            "formId": "0x000809",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x00080B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant",
+            "formId": "0x00080E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant",
+            "formId": "0x000811",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000819",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x00081F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000821",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant (Open)",
+            "formId": "0x000823",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DD8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DDD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DDF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket Dress, Elegant (Topless)",
+            "formId": "0x001DE1",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousStraitJacket": [
+        {
+            "name": "Red Ebonite Boxbinder",
+            "formId": "0x002429",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Boxbinder",
+            "formId": "0x00242B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket",
+            "formId": "0x02D9CC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket",
+            "formId": "0x039C6E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Straitjacket (Open)",
+            "formId": "0x039C6F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Straitjacket (Topless)",
+            "formId": "0x039C70",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket (Topless)",
+            "formId": "0x039C71",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Straitjacket",
+            "formId": "0x039C72",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket",
+            "formId": "0x039C73",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket",
+            "formId": "0x039C76",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket",
+            "formId": "0x039C77",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Straitjacket (Open)",
+            "formId": "0x039C7C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Straitjacket (Open)",
+            "formId": "0x039C7D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Straitjacket (Open)",
+            "formId": "0x039C7E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Boxbinder",
+            "formId": "0x056D6A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Boxbinder Outfit",
+            "formId": "0x0572CF",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousHood": [
+        {
+            "name": "White Leather Hood",
+            "formId": "0x000D65",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Hood",
+            "formId": "0x0012CE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Hood",
+            "formId": "0x0012D0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Mask (Open Eyes)",
+            "formId": "0x0012D5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Mask (Open Eyes)",
+            "formId": "0x00183C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Mask (Open)",
+            "formId": "0x001843",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Mask (Open Face)",
+            "formId": "0x001844",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Mask of Shame",
+            "formId": "0x01E69B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gas Mask",
+            "formId": "0x03D2CE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Hood",
+            "formId": "0x03D2D7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Hood",
+            "formId": "0x03D850",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Mask (Open Eyes)",
+            "formId": "0x03D855",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Mask (Open Face)",
+            "formId": "0x03D857",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Mask (Open)",
+            "formId": "0x03D859",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Blue Ebonite Gas Mask",
+            "formId": "0x03D9C3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Cyan Ebonite Gas Mask",
+            "formId": "0x03D9C5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Green Ebonite Gas Mask",
+            "formId": "0x03D9C7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Grey Ebonite Gas Mask",
+            "formId": "0x03D9C9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Red Ebonite Gas Mask",
+            "formId": "0x03D9CB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Ebonite Gas Mask",
+            "formId": "0x03D9CD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Green Ebonite Gas Mask",
+            "formId": "0x03D9CF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Light Grey Ebonite Gas Mask",
+            "formId": "0x03D9D1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Orange Ebonite Gas Mask",
+            "formId": "0x03D9D3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pink Ebonite Gas Mask",
+            "formId": "0x03D9D5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Purple Ebonite Gas Mask",
+            "formId": "0x03D9D7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gas Mask",
+            "formId": "0x03D9D9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gas Mask",
+            "formId": "0x03D9DB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Yellow Ebonite Gas Mask",
+            "formId": "0x03D9DD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Blue Ebonite Gas Mask (tube)",
+            "formId": "0x03D9DF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Cyan Ebonite Gas Mask (tube)",
+            "formId": "0x03D9E1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Green Ebonite Gas Mask (tube)",
+            "formId": "0x03D9E3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Grey Ebonite Gas Mask (tube)",
+            "formId": "0x03D9E5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Red Ebonite Gas Mask (tube)",
+            "formId": "0x03D9E7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Ebonite Gas Mask (tube)",
+            "formId": "0x03D9E9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Green Ebonite Gas Mask (tube)",
+            "formId": "0x03D9EB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Light Grey Ebonite Gas Mask (tube)",
+            "formId": "0x03D9ED",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Orange Ebonite Gas Mask (tube)",
+            "formId": "0x03D9EF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pink Ebonite Gas Mask (tube)",
+            "formId": "0x03D9F1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Purple Ebonite Gas Mask (tube)",
+            "formId": "0x03D9F3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gas Mask (tube)",
+            "formId": "0x03D9F5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gas Mask (tube)",
+            "formId": "0x03D9F7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Yellow Ebonite Gas Mask (tube)",
+            "formId": "0x03D9F9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gas Mask (tube)",
+            "formId": "0x03D9FB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Blue Ebonite Gas Mask (filter)",
+            "formId": "0x03D9FD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Cyan Ebonite Gas Mask (filter)",
+            "formId": "0x03D9FF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Green Ebonite Gas Mask (filter)",
+            "formId": "0x03DA01",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Grey Ebonite Gas Mask (filter)",
+            "formId": "0x03DA03",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Red Ebonite Gas Mask (filter)",
+            "formId": "0x03DA05",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Ebonite Gas Mask (filter)",
+            "formId": "0x03DA07",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Green Ebonite Gas Mask (filter)",
+            "formId": "0x03DA09",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Light Grey Ebonite Gas Mask (filter)",
+            "formId": "0x03DA0B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Orange Ebonite Gas Mask (filter)",
+            "formId": "0x03DA0D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pink Ebonite Gas Mask (filter)",
+            "formId": "0x03DA0F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Purple Ebonite Gas Mask (filter)",
+            "formId": "0x03DA11",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gas Mask (filter)",
+            "formId": "0x03DA13",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gas Mask (filter)",
+            "formId": "0x03DA15",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Yellow Ebonite Gas Mask (filter)",
+            "formId": "0x03DA17",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gas Mask (filter)",
+            "formId": "0x03DA19",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Blue Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA1B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Cyan Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA1D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Green Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA1F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Grey Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA21",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Red Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA23",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA25",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Green Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA27",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Light Grey Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA29",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Orange Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA2B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pink Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA2D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Purple Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA2F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA31",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA33",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Yellow Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA35",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Gas Mask (rebreather)",
+            "formId": "0x03DA37",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Transparent Mask (Open Eyes)",
+            "formId": "0x049C76",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Transparent Mask (Open Face)",
+            "formId": "0x049C79",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Transparent Mask (Open)",
+            "formId": "0x049C7C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Mask (Open Face)",
+            "formId": "0x058508",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Mask (Open)",
+            "formId": "0x05850A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Hood",
+            "formId": "0x05850E",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousYoke": [
+        {
+            "name": "Wooden Yoke",
+            "formId": "0x0024B0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Steel Yoke",
+            "formId": "0x03D2E1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Steel Yoke",
+            "formId": "0x04F92D",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousBoots": [
+        {
+            "name": "Iron Ring Slave Boots",
+            "formId": "0x0048B8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Ring Slave Boots (Unlocked)",
+            "formId": "0x00B475",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Pony Boots",
+            "formId": "0x0116F1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Pony Boots",
+            "formId": "0x0116F6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Pony Boots",
+            "formId": "0x0116FA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Pony Boots",
+            "formId": "0x0116FE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Pony Boots",
+            "formId": "0x011702",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Pony Boots",
+            "formId": "0x011706",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Restrictive Boots",
+            "formId": "0x0138DA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Restrictive Boots",
+            "formId": "0x01597E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Restrictive Boots",
+            "formId": "0x015992",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Restrictive Boots",
+            "formId": "0x0159AE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Restrictive Boots",
+            "formId": "0x0159BF",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Restrictive Boots",
+            "formId": "0x0159D3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Ballet Boots",
+            "formId": "0x01F6CE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Ballet Boots (Reinforced)",
+            "formId": "0x01FC31",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Ballet Boots",
+            "formId": "0x01FC33",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Ballet Boots (Reinforced)",
+            "formId": "0x01FC35",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather Slave Ballet Heels",
+            "formId": "0x021CC2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Slave Ballet Heels",
+            "formId": "0x0237BE",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Slave Ballet Heels",
+            "formId": "0x0237C1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D2D4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Transparent Catsuit High Heels",
+            "formId": "0x03D2DD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Blue Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D98A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Cyan Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D98C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Green Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D98E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Grey Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D990",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Red Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D992",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D994",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Green Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D996",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Light Grey Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D998",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Orange Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D99A",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pink Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D99C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Purple Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D99E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D9A0",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D9A2",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Yellow Ebonite Catsuit Ballet Boots",
+            "formId": "0x03D9A4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Transparent Restrictive Boots",
+            "formId": "0x047BFC",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Pony Play Boots",
+            "formId": "0x04A1E7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Catsuit Boots",
+            "formId": "0x057375",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Blue Ebonite Catsuit Boots",
+            "formId": "0x057376",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Cyan Ebonite Catsuit Boots",
+            "formId": "0x057379",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Green Ebonite Catsuit Boots",
+            "formId": "0x05737B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Grey Ebonite Catsuit Boots",
+            "formId": "0x05737D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Dark Red Ebonite Catsuit Boots",
+            "formId": "0x05737F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Golden Ebonite Catsuit Boots",
+            "formId": "0x057381",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Green Ebonite Catsuit Boots",
+            "formId": "0x057383",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Light Grey Ebonite Catsuit Boots",
+            "formId": "0x057385",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Orange Ebonite Catsuit Boots",
+            "formId": "0x057387",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Pink Ebonite Catsuit Boots",
+            "formId": "0x057389",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Purple Ebonite Catsuit Boots",
+            "formId": "0x05738B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Catsuit Boots",
+            "formId": "0x05738D",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red+White Ebonite Catsuit Boots",
+            "formId": "0x05738F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Catsuit Boots",
+            "formId": "0x057391",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Yellow Ebonite Catsuit Boots",
+            "formId": "0x057393",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather High Heels",
+            "formId": "0x058590",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather High Heels",
+            "formId": "0x058592",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite High Heels",
+            "formId": "0x058594",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite High Heels",
+            "formId": "0x058596",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite High Heels",
+            "formId": "0x05859C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Leather High Heels",
+            "formId": "0x05859F",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousCuffsFront": [
+        {
+            "name": "Iron Prisoner Chains",
+            "formId": "0x02FA8B",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Prisoner Chains",
+            "formId": "0x02FA8F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Iron Handcuffs",
+            "formId": "0x037C17",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rusty Iron Handcuffs",
+            "formId": "0x03817D",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousArmbinderElbow": [
+        {
+            "name": "Black Leather Elbowbinder",
+            "formId": "0x031019",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Elbowbinder",
+            "formId": "0x0415A3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Elbowbinder",
+            "formId": "0x0415A5",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Elbowbinder",
+            "formId": "0x0415A7",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Elbowbinder",
+            "formId": "0x0415A9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Elbowbinder",
+            "formId": "0x0415AB",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Strict Rope Armbinder",
+            "formId": "0x0486DD",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Rope Armbinder",
+            "formId": "0x0486E3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Strict White Rope Armbinder",
+            "formId": "0x0592C3",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Strict Red Rope Armbinder",
+            "formId": "0x0592C4",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Strict Black Rope Armbinder",
+            "formId": "0x0592C6",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Rope Armbinder",
+            "formId": "0x0592C8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Rope Armbinder",
+            "formId": "0x0592CA",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Rope Armbinder",
+            "formId": "0x0592CC",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousYokeBB": [
+        {
+            "name": "Iron Breast Yoke",
+            "formId": "0x03C7FB",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousPetSuit": [
+        {
+            "name": "Black Leather Pet Suit",
+            "formId": "0x04ACE8",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Leather Pet Suit",
+            "formId": "0x04B24C",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Leather Pet Suit",
+            "formId": "0x04B24E",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Black Ebonite Pet Suit",
+            "formId": "0x04C27F",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Red Ebonite Pet Suit",
+            "formId": "0x04C7E9",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "White Ebonite Pet Suit",
+            "formId": "0x04CD4D",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ],
+    "zad_DeviousElbowTie": [
+        {
+            "name": "Elbow Shackles with Collar",
+            "formId": "0x0530C1",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Hooked Elbow Shackles",
+            "formId": "0x053625",
+            "espName": "Devious Devices - Expansion.esm"
+        },
+        {
+            "name": "Elbow Shackles",
+            "formId": "0x053629",
+            "espName": "Devious Devices - Expansion.esm"
+        }
+    ]
+}

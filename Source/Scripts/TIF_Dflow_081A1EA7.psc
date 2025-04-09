@@ -1,12 +1,12 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
-;NEXT FRAGMENT INDEX 3
+;NEXT FRAGMENT INDEX 5
 Scriptname TIF_Dflow_081A1EA7 Extends TopicInfo Hidden
 
-;BEGIN FRAGMENT Fragment_2
-Function Fragment_2(ObjectReference akSpeakerRef)
+;BEGIN FRAGMENT Fragment_4
+Function Fragment_4(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-Utility.Wait(5.0)
+Utility.Wait(10.0)
 QF__Gift_09000D62 owning = (GetOwningQuest() as QF__Gift_09000D62)
 owning.EnslavedDueToDebt()
 ;END CODE

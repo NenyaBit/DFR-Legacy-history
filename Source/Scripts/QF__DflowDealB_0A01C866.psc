@@ -2,11 +2,23 @@
 ;NEXT FRAGMENT INDEX 9
 Scriptname QF__DflowDealB_0A01C866 Extends Quest Hidden
 
+;BEGIN FRAGMENT Fragment_8
+Function Fragment_8()
+;BEGIN AUTOCAST TYPE _DDeal
+Quest __temp = self as Quest
+_DDeal kmyQuest = __temp as _DDeal
+;END AUTOCAST
+;BEGIN CODE
+kmyQuest.Stage0()
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_6
 Function Fragment_6()
-;BEGIN AUTOCAST TYPE _DF_BondageDeal
+;BEGIN AUTOCAST TYPE _DDeal
 Quest __temp = self as Quest
-_DF_BondageDeal kmyQuest = __temp as _DF_BondageDeal
+_DDeal kmyQuest = __temp as _DDeal
 ;END AUTOCAST
 ;BEGIN CODE
 KmyQuest.addgag()
@@ -26,6 +38,10 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_7
 Function Fragment_7()
+;BEGIN AUTOCAST TYPE _DDeal
+Quest __temp = self as Quest
+_DDeal kmyQuest = __temp as _DDeal
+;END AUTOCAST
 ;BEGIN CODE
 KmyQuest.DelayForever()
 KmyQuest.Triggered = False
@@ -38,14 +54,6 @@ temp =_DflowDealBPTimer.GetValue() + _DflowDealBaseDays.GetValue()
 _DflowDealBPTimer.SetValue(temp)
 endif
 libs.equipDevice(libs.PlayerRef, kmyQuest.Item1 ,kmyQuest.Item1R, libs.zad_DeviousGag, skipevents = false, skipmutex = true)
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_8
-Function Fragment_8()
-;BEGIN CODE
-kmyQuest.Stage0()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -72,6 +80,10 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_0
 Function Fragment_0()
+;BEGIN AUTOCAST TYPE _DDeal
+Quest __temp = self as Quest
+_DDeal kmyQuest = __temp as _DDeal
+;END AUTOCAST
 ;BEGIN CODE
 KmyQuest.addcorset()
 Float temp = GameDaysPassed.GetValue() + _DflowDealBaseDays.GetValue()

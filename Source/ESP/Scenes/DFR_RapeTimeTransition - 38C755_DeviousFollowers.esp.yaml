@@ -1,0 +1,171 @@
+FormKey: 38C755:DeviousFollowers.esp
+EditorID: DFR_RapeTimeTransition
+VirtualMachineAdapter:
+  Scripts:
+  - Name: DFR_RapeTimeTransition_0A38C755
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Speaker
+      Object: 01210D:DeviousFollowers.esp
+      Alias: 3
+  ScriptFragments:
+    FileName: DFR_RapeTimeTransition_0A38C755
+    OnBegin:
+      ExtraBindDataVersion: 1
+      ScriptName: DFR_RapeTimeTransition_0A38C755
+      FragmentName: Fragment_1
+    PhaseFragments:
+    - Flags:
+      - OnStart
+      Index: 1
+      Unknown: 16777216
+      ScriptName: DFR_RapeTimeTransition_0A38C755
+      FragmentName: Fragment_3
+    - Flags:
+      - OnCompletion
+      Index: 1
+      Unknown: 16777216
+      ScriptName: DFR_RapeTimeTransition_0A38C755
+      FragmentName: Fragment_4
+Flags:
+- 0x4
+Phases:
+- Name: ''
+  StartConditions:
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: NotEqualTo
+    Data:
+      MutagenObjectType: GetVMQuestVariableConditionData
+      Quest: 01210D:DeviousFollowers.esp
+      SecondUnusedIntParameter: -733242464
+      VariableName: ::FirstTime_var
+    ComparisonValue: 1
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  CompletionConditions:
+  - MutagenObjectType: ConditionFloat
+    Flags:
+    - OR
+    Data:
+      MutagenObjectType: GetGlobalValueConditionData
+      Global: 00081B:Adversity Framework.esm
+    ComparisonValue: 1
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: LessThan
+    Data:
+      MutagenObjectType: GetDistanceConditionData
+      Target: 000014:Skyrim.esm
+    ComparisonValue: 130
+  Unused2: {}
+  EditorWidth: 200
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- ID: 1
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+- ID: 3
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+- ID: 4
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+- ID: 5
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+- ID: 6
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Type: Package
+  Name: ''
+  ActorID: 1
+  Index: 1
+  StartPhase: 0
+  EndPhase: 2
+  Packages:
+  - 38C756:DeviousFollowers.esp
+- Name: ''
+  ActorID: 3
+  Index: 2
+  Flags:
+  - FaceTarget
+  - HeadtrackPlayer
+  StartPhase: 2
+  EndPhase: 2
+  Topic: 38C757:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+- Type: Timer
+  Name: ''
+  ActorID: 3
+  Index: 3
+  StartPhase: 2
+  EndPhase: 2
+  TimerSeconds: 2
+- Type: Package
+  Name: ''
+  ActorID: 3
+  Index: 4
+  StartPhase: 0
+  EndPhase: 2
+  Packages:
+  - 38C756:DeviousFollowers.esp
+- Type: Package
+  Name: ''
+  ActorID: 4
+  Index: 5
+  StartPhase: 0
+  EndPhase: 2
+  Packages:
+  - 38C756:DeviousFollowers.esp
+- Type: Package
+  Name: ''
+  ActorID: 5
+  Index: 7
+  StartPhase: 0
+  EndPhase: 2
+  Packages:
+  - 38C756:DeviousFollowers.esp
+- Type: Package
+  Name: ''
+  ActorID: 6
+  Index: 8
+  StartPhase: 0
+  EndPhase: 2
+  Packages:
+  - 38C756:DeviousFollowers.esp
+- Name: ''
+  ActorID: 1
+  Index: 9
+  StartPhase: 0
+  EndPhase: 0
+  Topic: 3A5CB0:DeviousFollowers.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+Quest: 01210D:DeviousFollowers.esp
+LastActionIndex: 9
+VNAM: 0x03000000030000000300000003000000

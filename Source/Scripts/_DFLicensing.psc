@@ -43,6 +43,10 @@ Bool Property BlockedProtection Auto
 Bool Property BlockedClothes Auto
 Bool Property Paused Auto
 
+Bool Property AskedForActualArmor = false Auto Hidden
+Bool Property CanGetBikiniArmor = false Auto Hidden Conditional
+Bool Property CanGetActualArmor = false Auto Hidden Conditional
+
 String[] licenseNames
 String[] licenseTokens
 Int[] licenseStates
@@ -570,9 +574,6 @@ Function UpdateLicenseStates()
     supply[6] = LicenseSupplyCurfew
     ; 7, 8 = Property and Freedom, can be left at 0 as we don't supply them.
     
-    
-
-    
     Debug.TraceConditional("DF - Update licenses " + LicenseCount, ShowDiagnostics)
     
     Int supplyCount = 0
@@ -860,12 +861,14 @@ Float Function DecideArmorOrBikinLicenseSupply(Int supply)
     
     ; 2 bikini, 3 armor - prefer bikini, but if neither enabled, then we support neither.
     If supply > 0
-        If !IsLicenseDisabledInSLS(2)
+        If !IsLicenseDisabledInSLS(2) && (!AskedForActualArmor || DFR_RelationshipManager.Get().IsSlave() || _DFlow.Will.GetValue() <= 4)
             Debug.TraceConditional("DF - Enable bikini supply", ShowDiagnostics)
             LicenseSupplyBikini = 1 
+            LicenseSupplyArmor = 0
             Return 1.0
         ElseIf !IsLicenseDisabledInSLS(3)
             Debug.TraceConditional("DF - Enable armor supply", ShowDiagnostics)
+            LicenseSupplyBikini = 0 
             LicenseSupplyArmor = 1
             Return 1.0
         Else

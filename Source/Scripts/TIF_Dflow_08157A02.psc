@@ -6,7 +6,7 @@ Scriptname TIF_Dflow_08157A02 Extends TopicInfo Hidden
 Function Fragment_8(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-tool.UnequipGear()
+Tool.UnequipGear()
 tool.addcum()
 ;END CODE
 EndFunction

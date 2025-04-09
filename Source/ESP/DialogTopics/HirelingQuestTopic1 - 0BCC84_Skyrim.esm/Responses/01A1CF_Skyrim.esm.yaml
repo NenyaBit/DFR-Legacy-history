@@ -5,11 +5,11 @@ VirtualMachineAdapter:
   - Name: TIF__0001A1CF
     Properties:
     - MutagenObjectType: ScriptObjectProperty
-      Name: HirelingRecognizeBelrand
-      Object: 104F39:Skyrim.esm
-    - MutagenObjectType: ScriptObjectProperty
       Name: HasHirelingGV
       Object: 0BCC98:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: HirelingRecognizeBelrand
+      Object: 104F39:Skyrim.esm
   ScriptFragments:
     MutagenObjectType: ScriptFragments
     FileName: TIF__0001A1CF
